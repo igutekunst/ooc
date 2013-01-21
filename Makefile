@@ -18,4 +18,7 @@ points: $(SOURCES)
 run:
 	./point_test
 
+clean:
+	rm point_test
+
 

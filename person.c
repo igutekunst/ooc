@@ -48,6 +48,6 @@ void print (void * _self){
         printf("Invalid point passed to print\n");
         exit(1);
     }
-    self->print();
+    self->print(self);
 }
 

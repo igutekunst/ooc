@@ -8,9 +8,9 @@
 struct class_header{
     unsigned long magic; 
     size_t size;
-    void *  ( * __construct__ ) (void * _self, ...);
+    void *  ( * __construct__ ) (void * _self, va_list args);
     void *  ( * __destruct__ ) (void * _self);
-    void * (* print) ();
+    void  (* print) (void *);
 
 }Class;
 
