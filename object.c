@@ -1,6 +1,5 @@
 #include "object.h"
 
-
 const struct class_header Class = {
    .magic = MAGIC
 };
@@ -12,7 +11,6 @@ void * new (void * _class, ...) {
         exit(1);
     }
     void * new_object = (struct class_header *) malloc(class->size);
-    printf("Allocating %d bytes\n", class->size) ;
     va_list vl;
     if (class->__construct__){
         va_start(vl, _class);
@@ -25,9 +23,9 @@ void * new (void * _class, ...) {
 }
 
 void * delete (void * _object){
-    struct class_header * class = (struct class_header * ) _object;
+    struct class_header * class = *(struct class_header ** ) _object;
     if (!class || class->magic != MAGIC){
-        printf("shitty dog\n");
+        printf("Attempt to delete non object\n");
         exit(1);
     }
     if( class->__destruct__) {
@@ -40,75 +38,61 @@ void * delete (void * _object){
     return _object;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+char *  str (void * _self){
+    struct class_header * class =  * (struct class_header ** ) _self;
+    if (!class || class->magic != MAGIC){
+        printf("Attempted to print non object\n");
+        exit(1);
+    }
+    if (class->to_string)
+        class->to_string(_self);
+    else
+        return "Object";
+}
+void print (void * _self){
+    struct class_header * class =  * (struct class_header ** ) _self;
+    if (!class || class->magic != MAGIC){
+        printf("Attempted to print non object\n");
+        exit(1);
+    }
+    if (class->print)
+        class->print(_self);
+    else
+        printf("Object at %p\n", _self);
+}
+
+size_t size(void * _self) {
+    struct class_header * class =  * (struct class_header ** ) _self;
+
+    if (!class || class->magic != MAGIC){
+        printf("Attempted to get size of non object\n");
+        exit(1);
+    }
+
+    if (class->get_size)
+        class->get_size(_self);
+    else
+        return class->size;
+
+}
+
+void * type(void * _self){
+    return * (struct class_header **) _self;
+}
+
+size_t len(void * _self) {
+    struct class_header * class =  * (struct class_header ** ) _self;
+
+    if (!class || class->magic != MAGIC){
+        printf("Attempted to get size of non object\n");
+        exit(1);
+    }
+
+    if (class->get_len) 
+        return class->get_len(_self);
+    else {
+        printf("TypeError: object does not suppport len\n") ;
+        exit(1);
+    }
+
+}

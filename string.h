@@ -1,16 +1,17 @@
-#ifndef POINT_H
-#define POINT_H
+#ifndef STRING_H
+#define STRING_H
+
 #include "object.h"
 #include <string.h>
-struct PointClass{
+struct StringClass{
     struct class_header class;
 };
-struct Point{
+struct String{
     struct class_header * class;
     size_t size;
-    double x;
-    double y;
+    size_t len;
+    char * data;
 };
-extern void * Point;
+extern void * String;
 
 #endif

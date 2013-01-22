@@ -1,17 +1,21 @@
-#include <person.h>
+#include "person.h"
 
 
 
 void * __construct__Person(void * self, va_list args);
 void * __destruct__Person(void * self, va_list args);
 void print_Person(void * _self);
+size_t get_size_Person(void * _self);
 
 
-
-struct Person person_class = {
+struct PersonClass{
+    struct class_header class;
+};
+struct PersonClass person_class = {
     .class = {.magic = MAGIC, 
               .size  = (sizeof(struct Person)),
               .print = print_Person,
+              .get_size = get_size_Person,
               .__construct__ = __construct__Person,
              }
 };
@@ -25,10 +29,12 @@ void * __construct__Person(void * _self, va_list args) {
     struct Person * self = (struct Person *) _self;
     char * first = va_arg(args, char *);
     char * last =  va_arg(args, char *);
-    
-    self = (struct Person *) realloc(self, sizeof(struct Person)    + 
-                         strlen(first) + 1 +
-                         strlen(last)  + 1);
+    size_t size =  sizeof(struct Person)    + 
+                 strlen(first) + 1 +
+                 strlen(last)  + 1;
+    self = (struct Person *) realloc(self, size);
+    self->size = size;
+    self->class = Person;
     void * space = (void * ) ( &self[1]);
     self->first  = strcpy(space, first);
     self->last   = strcpy(space + strlen(self->first)+1, last);
@@ -37,21 +43,15 @@ void * __construct__Person(void * _self, va_list args) {
 
     return self;
 }
+
+size_t get_size_Person(void * _self){
+    struct Person * self = (struct Person *) _self;
+    return self->size;
+}
+
 void print_Person(void * _self) {
     struct Person * self = (struct Person *) _self;
     printf("Person <%s %s. Age: %d>\n", self->first, self->last, self->age);
 }
 
-void print (void * _self){
-    struct class_header * class =  * (struct class_header ** ) _self;
-
-    if (!class || class->magic != MAGIC){
-        printf("Invalid object passed to print\n");
-        exit(1);
-    }
-    if (class->print)
-        class->print(_self);
-    else
-        printf("Object at %p\n", _self);
-}
 

@@ -1,8 +1,8 @@
-#include <point.h>
+#include "point.h"
 
 void * __construct__Point(void * self, va_list args);
 void print_Point(void * _self);
-
+size_t get_size_Point(void * _self);
 
 
 
@@ -10,17 +10,25 @@ struct PointClass point_class = {
     .class = {.magic = MAGIC,
               .size = sizeof(struct Point),
               .__construct__ = __construct__Point,
-              .print = print_Point
+              .print = print_Point,
+              .get_size = get_size_Point,
+              .get_len = 0
              }
+
 };
 
 void * Point = &point_class;
 
 
+size_t get_size_Point(void * _self){
+    struct Point * self = (struct Point *) _self;
+    return self->size;
+}
 
 void * __construct__Point(void * _self, va_list args) {
     struct Point * self = (struct Point *) _self;
     self->class = Point;
+    self->size = sizeof(struct Point);
     self->x = va_arg(args, double);
     self->y = va_arg(args, double);
     return self;
