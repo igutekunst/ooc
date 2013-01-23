@@ -1,13 +1,18 @@
 #include "object.h"
 
+
+const struct class_header Class = {
+   .magic = MAGIC
+};
+
 void * new (void * _class, ...) {
     struct class_header * class = (struct class_header * ) _class;
     if (!class || class->magic != MAGIC){
         printf("shitty dog\n");
         exit(1);
     }
-    struct class_header * new_object = (struct class_header *) malloc(class->size);
-    *new_object = * ((struct class_header * ) _class);
+    void * new_object = (struct class_header *) malloc(class->size);
+    printf("Allocating %d bytes\n", class->size) ;
     va_list vl;
     if (class->__construct__){
         va_start(vl, _class);

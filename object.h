@@ -12,10 +12,15 @@ struct class_header{
     void *  ( * __destruct__ ) (void * _self);
     void  (* print) (void *);
 
-}Class;
+};
 
 void * new (void * _class, ...);
 
 void * delete (void * _object);
+
+void  print(void * _object);
+
+
+extern const struct class_header Class;
 
 #endif

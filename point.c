@@ -5,11 +5,12 @@ void print_Point(void * _self);
 
 
 
-struct Point point_class = {
-    .class = {.magic = MAGIC, 
-              .size  = (sizeof(struct Point)),
-              .print = print_Point,
-              .__construct__ = __construct__Point
+
+struct PointClass point_class = {
+    .class = {.magic = MAGIC,
+              .size = sizeof(struct Point),
+              .__construct__ = __construct__Point,
+              .print = print_Point
              }
 };
 
@@ -18,10 +19,11 @@ void * Point = &point_class;
 
 
 void * __construct__Point(void * _self, va_list args) {
-    struct Point * point = (struct Point *) _self;
-    point->x = va_arg(args, double);
-    point->y = va_arg(args, double);
-    return _self;
+    struct Point * self = (struct Point *) _self;
+    self->class = Point;
+    self->x = va_arg(args, double);
+    self->y = va_arg(args, double);
+    return self;
 }
 void print_Point(void * _self) {
     struct Point * self = (struct Point *) _self;

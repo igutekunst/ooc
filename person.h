@@ -10,6 +10,5 @@ struct Person{
     unsigned int age;
 };
 extern void * Person;
-void print(void * object);
 
 #endif

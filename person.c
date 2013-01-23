@@ -43,11 +43,15 @@ void print_Person(void * _self) {
 }
 
 void print (void * _self){
-    struct class_header * self =  (struct class_header * ) _self;
-    if (!self || self->magic != MAGIC){
-        printf("Invalid point passed to print\n");
+    struct class_header * class =  * (struct class_header ** ) _self;
+
+    if (!class || class->magic != MAGIC){
+        printf("Invalid object passed to print\n");
         exit(1);
     }
-    self->print(self);
+    if (class->print)
+        class->print(_self);
+    else
+        printf("Object at %p\n", _self);
 }
 
