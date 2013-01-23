@@ -15,6 +15,7 @@ struct class_header{
     void    (* print)  (void *);
     void*   (* to_string)  (void *);
     void*   (* to_String)  (void *);
+    void*   (* append) (void * _self, va_list args);
 
 };
 
@@ -29,7 +30,7 @@ size_t  len     (void * _object);
 char*   str     (void * _object);
 void*   to_String  (void * _object);
 void*   copy    (void * _object);
-void*   append  (void * _object);
+void*   append  (void * _object, void* _other);
 void*   iter    (void * _object);
 void *  index   (void * _object);
 

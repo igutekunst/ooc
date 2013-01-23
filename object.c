@@ -77,6 +77,12 @@ size_t size(void * _self) {
 }
 
 void * type(void * _self){
+    struct class_header * class =  * (struct class_header ** ) _self;
+    if (!class || class->magic != MAGIC){
+        printf("Attempt to get type of non object");
+        exit(1);
+    }
+
     return * (struct class_header **) _self;
 }
 
@@ -95,4 +101,18 @@ size_t len(void * _self) {
         exit(1);
     }
 
+}
+
+void * append(void * _self, void * _other){
+    struct class_header * class =  * (struct class_header ** ) _self;
+
+    if (!class || class->magic != MAGIC){
+        printf("Attempted to append non object\n");
+        exit(1);
+    }
+
+    if(class->append)
+        class->append(_self, _other);
+    else
+        printf("Type does not support append\n");
 }

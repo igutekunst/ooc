@@ -1,12 +1,12 @@
 CC := gcc
-INC := -I./
 
 CFLAGS := --std=c99 $(INC)
 
 SOURCES := main.c \
 		   object.c \
 		   point.c \
-		   person.c
+		   person.c \
+		   string.c
 
 all: points run
 
