@@ -1,4 +1,4 @@
-#include "point.h"
+#include <obj_point.h>
 
 void * __construct__Point(void * self, va_list args);
 void print_Point(void * _self);

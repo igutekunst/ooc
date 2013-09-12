@@ -1,7 +1,7 @@
 #ifndef STRING_H
 #define STRING_H
 
-#include "object.h"
+#include <object.h>
 #include <string.h>
 struct StringClass{
     struct class_header class;

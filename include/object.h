@@ -11,9 +11,9 @@ struct class_header{
     size_t ( *get_size) (void * _self);
     size_t ( *get_len) (void * _self);
     void *  ( * __construct__ ) (void * _self, va_list args);
-    void *  ( * __destruct__  ) (void * _self);
+    void*  ( * __destruct__  ) (void * _self);
     void    (* print)  (void *);
-    void*   (* to_string)  (void *);
+    char*   (* to_string)  (void *);
     void*   (* to_String)  (void *);
     void*   (* append) (void * _self, va_list args);
 

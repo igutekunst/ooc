@@ -1,6 +1,7 @@
 CC := gcc
 
 CFLAGS := --std=c99 $(INC)
+CFLAGS+=-I$(PWD)/include
 
 SOURCES := main.c \
 		   object.c \

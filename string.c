@@ -1,4 +1,4 @@
-#include "string.h"
+#include <obj_string.h>
 
 
 void * __construct__String(void * self, va_list args);

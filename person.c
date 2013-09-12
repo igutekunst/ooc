@@ -1,4 +1,4 @@
-#include "person.h"
+#include <obj_person.h>
 
 
 
