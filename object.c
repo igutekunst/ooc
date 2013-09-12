@@ -7,7 +7,6 @@ const struct class_header Class = {
 void * new (void * _class, ...) {
     struct class_header * class = (struct class_header * ) _class;
     if (!class || class->magic != MAGIC){
-        printf("shitty dog\n");
         exit(1);
     }
     void * new_object = (struct class_header *) malloc(class->size);
@@ -22,7 +21,7 @@ void * new (void * _class, ...) {
     return new_object;
 }
 
-void * delete (void * _object){
+void * del (void * _object){
     struct class_header * class = *(struct class_header ** ) _object;
     if (!class || class->magic != MAGIC){
         printf("Attempt to delete non object\n");
@@ -44,10 +43,12 @@ char *  str (void * _self){
         printf("Attempted to print non object\n");
         exit(1);
     }
-    if (class->to_string)
-        class->to_string(_self);
-    else
+    if (class->to_string){
+        return class->to_string(_self);
+    }
+    else {
         return "Object";
+    }
 }
 void print (void * _self){
     struct class_header * class =  * (struct class_header ** ) _self;
@@ -113,6 +114,20 @@ void * append(void * _self, void * _other){
 
     if(class->append)
         class->append(_self, _other);
+    else
+        printf("Type does not support append\n");
+}
+
+void * play(void * _self){
+    struct class_header * class =  * (struct class_header ** ) _self;
+
+    if (!class || class->magic != MAGIC){
+        printf("Attempted to append non object\n");
+        exit(1);
+    }
+
+    if(class->play)
+        class->play(_self);
     else
         printf("Type does not support append\n");
 }
