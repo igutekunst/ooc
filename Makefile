@@ -7,10 +7,12 @@ SOURCES := main.c \
 		   object.c \
 		   point.c \
 		   person.c \
-		   string.c
+		   string.c \
+		   Int.c
 
 all: points run
 
+NAME:=point_test
 
 points: $(SOURCES)
 	$(CC) $(CFLAGS) $(SOURCES) -o point_test
