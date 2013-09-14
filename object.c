@@ -1,15 +1,15 @@
-#include "object.h"
+#include <object.h>
 
 const struct class_header Class = {
    .magic = MAGIC
 };
 
-const void * new (void * _class, ...) {
+const void * new (const void * const _class, ...) {
     const struct class_header * class = (struct class_header * ) _class;
     if (!class || class->magic != MAGIC){
         exit(1);
     }
-    void * new_object = (struct class_header *) malloc(class->size);
+    const void * new_object = (struct class_header *) malloc(class->size);
     va_list vl;
     if (class->__construct__){
         va_start(vl, _class);
@@ -79,7 +79,7 @@ size_t size(const void * _self) {
 
 }
 
-const void * type(void * _self){
+const void * type(const void const * _self){
     const struct class_header * class =  * (struct class_header ** ) _self;
     if (!class || class->magic != MAGIC){
         printf("Attempt to get type of non object");
@@ -122,7 +122,7 @@ const void * copy(const void const * _self) {
 
 }
 
-const void * append(const void const* _self, void * _other){
+const void * append(const void const* _self, const void const* _other){
     const struct class_header * class =  * (struct class_header ** ) _self;
 
     if (!class || class->magic != MAGIC){
@@ -151,3 +151,22 @@ void * play(void * _self){
 }
 
 
+
+bool is_obj(const void const * _self, const char * message){
+    const struct class_header * class =  * (struct class_header ** ) _self;
+
+    if (!class || class->magic != MAGIC){
+        if (message) {
+            printf("%s", message);
+            exit(1);
+        } else {
+            return false; 
+        }
+    }
+    return true;
+}
+
+
+const struct class_header * get_class_header(const void const * _self){
+    return   * (struct class_header ** ) _self;
+}

@@ -1,8 +1,8 @@
 #include <obj_point.h>
 
-void * __construct__Point(void * self, va_list args);
-void print_Point(void * _self);
-size_t get_size_Point(void * _self);
+const void * __construct__Point(const void * const self, va_list args);
+void print_Point(const void const * _self);
+size_t get_size_Point(const void const * _self);
 
 
 
@@ -20,12 +20,13 @@ struct PointClass point_class = {
 void * Point = &point_class;
 
 
-size_t get_size_Point(void * _self){
+size_t get_size_Point(const void const * _self){
     struct Point * self = (struct Point *) _self;
     return self->size;
 }
 
-void * __construct__Point(void * _self, va_list args) {
+
+const void * __construct__Point(const void const * _self, va_list args) {
     struct Point * self = (struct Point *) _self;
     self->class = Point;
     self->size = sizeof(struct Point);
@@ -33,7 +34,9 @@ void * __construct__Point(void * _self, va_list args) {
     self->y = va_arg(args, double);
     return self;
 }
-void print_Point(void * _self) {
+
+
+void print_Point(const void const * _self) {
     struct Point * self = (struct Point *) _self;
     printf("Point <%.2f, %.2f>\n", self->x, self->y);
 }

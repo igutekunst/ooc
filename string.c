@@ -6,8 +6,9 @@ void print_String(void * _self);
 size_t get_size_String(const void const* _self);
 size_t get_len_String(const void const* _self);
 const char * str_String(const void const *_self);
-void * append_String(void * _self, void * _other);
+const void * append_String(const void const * _self, const void *const _other);
 const void * copy_String(const void const* _self);
+uint32_t hash_String(const void const * _self);
 
 struct StringClass string_class = {
     .class = {.magic = MAGIC,
@@ -17,7 +18,8 @@ struct StringClass string_class = {
               .get_len = get_len_String,
               .str = str_String,
               .copy = copy_String,
-              .append = append_String
+              .append = append_String,
+              .hash = hash_String
              }
 
 };
@@ -59,7 +61,7 @@ const char * str_String(const void const * _self){
 }
 // Creates a copy of the first string, and
 // appends the second string to it
-void * append_String(void * _self, void * _other){
+const void * append_String(const void const* _self, const void const* _other){
     struct String * self = (struct String *) _self;
     const struct String * other = (const struct String *) _other;
 
@@ -70,7 +72,7 @@ void * append_String(void * _self, void * _other){
         strcpy(new_char_data, self->data);
         strcat(new_char_data, other->data);
         
-        struct String * new_string = new(String, new_char_data);
+        const struct String * new_string = new(String, new_char_data);
         return new_string;
         
         //
