@@ -16,7 +16,7 @@ const void * new (const void * const _class, ...) {
         new_object = class->__construct__(new_object, vl);
         va_end(vl);
     } else {
-        printf("No default constructor. Allocating %d bytes\n", class->size) ;
+        printf("No default constructor. Allocating %zu bytes\n", class->size) ;
     }
     return new_object;
 }
@@ -131,12 +131,15 @@ const void * append(const void * _self, const void * _other){
     }
 
     if(class->append)
-        class->append(_self, _other);
-    else
-        printf("Type does not support append\n");
+        return class->append(_self, _other);
+
+    else {
+        fprintf(stderr, "Type does not support append\n");
+        exit(EXIT_FAILURE);
+    }
 }
 
-void * play(void * _self){
+void  play(void * _self){
     const struct class_header * class =  * (struct class_header ** ) _self;
 
     if (!class || class->magic != MAGIC){
@@ -146,8 +149,10 @@ void * play(void * _self){
 
     if(class->play)
         class->play(_self);
-    else
-        printf("Type does not support append\n");
+    else{
+        fprintf(stderr, "Type does not support append\n");
+        exit(EXIT_FAILURE);
+    }
 }
 
 

@@ -1,7 +1,7 @@
 #include <obj_string.h>
 
 
-void * __construct__String(void * self, va_list args);
+const void * __construct__String(const void * self, va_list args);
 void print_String(void * _self);
 size_t get_size_String(const void * _self);
 size_t get_len_String(const void * _self);
@@ -36,7 +36,7 @@ size_t get_size_String(const void * _self){
     return self->size;
 }
 
-void * __construct__String(void * _self, va_list args) {
+const void * __construct__String(const void * _self, va_list args) {
     struct String * self = (struct String *) _self;
     const char * data = va_arg(args, const char *);
     size_t len = strlen(data);
@@ -104,4 +104,9 @@ const void * append_String(const void * _self, const void * _other){
 const void* copy_String(const void * _self){
     struct String * self = (struct String *) _self;
     return new(String, self->data);
+}
+
+uint32_t hash_String(const void * _self) {
+    struct String * self = (struct String *) _self;
+    return (uint32_t) self->data;;
 }

@@ -41,7 +41,7 @@ void*   to_String  (const void * _object);
 const void*   copy    (const void * _object);
 const void*   append  (const void * _object, const void * _other);
 void*   iter    (void * _object);
-void *  play   (void * _object);
+void   play   (void * _object);
 uint32_t hash (const void * _self);
 
 

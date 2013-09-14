@@ -1,9 +1,9 @@
 
 #include <obj_Int.h>
 
-void * __construct__Int(void * self, va_list args);
-void print_Int(void * _self);
-size_t get_size_Int(void * _self);
+const void * __construct__Int(const void * self, va_list args);
+void print_Int(const void * _self);
+size_t get_size_Int(const void * _self);
 const char * to_str_Int(const void * _self);
 
 void * append_Int(void * _self, void * _other);
@@ -21,12 +21,12 @@ struct IntClass int_class = {
 
 void * Int = &int_class;
 
-size_t get_size_Int(void * _self){
+size_t get_size_Int(const void * _self){
     struct Int * self = (struct Int *) _self;
     return self->size;
 }
 
-void * __construct__Int(void * _self, va_list args) {
+const void * __construct__Int(const void * _self, va_list args) {
     struct Int * self = (struct Int *) _self;
     uint32_t  value = va_arg(args, uint32_t);
     self->class = Int;
@@ -36,7 +36,7 @@ void * __construct__Int(void * _self, va_list args) {
     return self;
 }
 
-void print_Int(void * _self) {
+void print_Int(const void * _self) {
     struct Int * self = (struct Int *) _self;
     printf("%d", self->value);
 }
@@ -47,8 +47,7 @@ const char * to_str_Int(const void * _self){
     printf("printing int\n");
     if (self->str_value)
         return self->str_value;
-
-         
+    return NULL;
 
 }
 
