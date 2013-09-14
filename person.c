@@ -2,10 +2,10 @@
 
 
 
-const void * __construct__Person(const void const * self, va_list args);
-void * __destruct__Person(const void const * self, va_list args);
-void print_Person(const void const * _self);
-size_t get_size_Person(const void const * _self);
+const void * __construct__Person(const void * self, va_list args);
+void * __destruct__Person(const void * self, va_list args);
+void print_Person(const void * _self);
+size_t get_size_Person(const void * _self);
 
 
 struct PersonClass{
@@ -25,7 +25,7 @@ void * Person = &person_class;
 
 //TODO make maxlength values on names..
 //TODO determine whether to cash string length (probably yes)
-const void * __construct__Person(const void const * _self, va_list args) {
+const void * __construct__Person(const void * _self, va_list args) {
     struct Person * self = (struct Person *) _self;
     char * first = va_arg(args, char *);
     char * last =  va_arg(args, char *);
@@ -44,12 +44,12 @@ const void * __construct__Person(const void const * _self, va_list args) {
     return self;
 }
 
-size_t get_size_Person(const void const * _self){
+size_t get_size_Person(const void * _self){
     struct Person * self = (struct Person *) _self;
     return self->size;
 }
 
-void print_Person(const void const * _self) {
+void print_Person(const void * _self) {
     struct Person * self = (struct Person *) _self;
     printf("Person <%s %s. Age: %d>\n", self->first, self->last, self->age);
 }

@@ -13,23 +13,23 @@ struct class_header{
     size_t  ( *get_size) (const void * _self);
     size_t  ( *get_len) (const void * _self);
     size_t  ( *play) (const void * _self);
-    const void *  ( * __construct__ ) (const void const * _self, va_list args);
+    const void *  ( * __construct__ ) (const void * _self, va_list args);
     void*   ( * __destruct__  ) (void * _self);
     void    (* print)  (const void *);
     void*   (* to_string)  (const void *);
     const char*   (* str)  (const void *);
     void*   (* to_String)  (const void *);
-    const void*   (* append) (const void const* _self, const void const * _other);
-    const void*   (* copy) (const void const * _self);
-    void*   (* insert) (const void const * _self, 
-                        const void const * _key, 
-                        const void const * item);
-    uint32_t (* hash) (const void const * _self);
+    const void*   (* append) (const void * _self, const void * _other);
+    const void*   (* copy) (const void * _self);
+    void*   (* insert) (const void * _self, 
+                        const void * _key, 
+                        const void * item);
+    uint32_t (* hash) (const void * _self);
 
 };
 
-const void * type(const void const * _self);
-const void *  new (const void const * _class, ...);
+const void * type(const void * _self);
+const void *  new (const void * _class, ...);
 
 void *  del (void * _object);
 
@@ -38,16 +38,16 @@ size_t  size    (const void * _object);
 size_t  len     (const void * _object);
 const char*   str     (const void * _object);
 void*   to_String  (const void * _object);
-const void*   copy    (const void const* _object);
-const void*   append  (const void const* _object, const void const * _other);
+const void*   copy    (const void * _object);
+const void*   append  (const void * _object, const void * _other);
 void*   iter    (void * _object);
 void *  play   (void * _object);
-uint32_t hash (const void const * _self);
+uint32_t hash (const void * _self);
 
 
 extern const struct class_header Class;
 
-bool is_obj(const void const * _self, const char *message);
-const struct class_header * get_class_header(const void const * _self);
+bool is_obj(const void * _self, const char *message);
+const struct class_header * get_class_header(const void * _self);
 
 #endif

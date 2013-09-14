@@ -4,7 +4,7 @@
 void * __construct__Int(void * self, va_list args);
 void print_Int(void * _self);
 size_t get_size_Int(void * _self);
-const char * to_str_Int(const void const* _self);
+const char * to_str_Int(const void * _self);
 
 void * append_Int(void * _self, void * _other);
 
@@ -42,7 +42,7 @@ void print_Int(void * _self) {
 }
 
 
-const char * to_str_Int(const void const* _self){
+const char * to_str_Int(const void * _self){
     struct Int * self = (struct Int *) _self;
     printf("printing int\n");
     if (self->str_value)

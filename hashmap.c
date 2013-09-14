@@ -3,13 +3,13 @@
 
 void * __construct__HashMap(void * self, va_list args);
 void print_HashMap(void * _self);
-size_t get_size_HashMap(const void const* _self);
-size_t get_len_HashMap(const void const* _self);
-const char * str_HashMap(const void const *_self);
-void * insert_HashMap(const void const * _self, 
-                      const void const * key, 
-                      const void const * _other);
-const void * copy_HashMap(const void const* _self);
+size_t get_size_HashMap(const void * _self);
+size_t get_len_HashMap(const void * _self);
+const char * str_HashMap(const void *_self);
+void * insert_HashMap(const void * _self, 
+                      const void * key, 
+                      const void * _other);
+const void * copy_HashMap(const void * _self);
 
 struct HashMapClass hash_map_class = {
     .class = {.magic = MAGIC,
@@ -26,12 +26,12 @@ struct HashMapClass hash_map_class = {
 
 void * HashMap = &hash_map_class;
 
-size_t get_len_HashMap(const void const* _self){
+size_t get_len_HashMap(const void * _self){
     struct HashMap * self = (struct HashMap *) _self;
     return self->len;
 }
 
-size_t get_size_HashMap(const void const* _self){
+size_t get_size_HashMap(const void * _self){
     struct HashMap * self = (struct HashMap *) _self;
     return self->size;
 }
@@ -50,13 +50,13 @@ void print_HashMap(void * _self) {
 }
 
 
-const char * str_HashMap(const void const * _self){
+const char * str_HashMap(const void * _self){
     struct HashMap * self = (struct HashMap *) _self;
     return self->data;
 }
-void * insert_HashMap(const void const * _self, 
-                      const void const * _key, 
-                      const void const * _item) {
+void * insert_HashMap(const void * _self, 
+                      const void * _key, 
+                      const void * _item) {
     struct HashMap * self = (struct HashMap *) _self;
     if (is_obj(_item, NULL)) {
         if (is_obj(_key, NULL) ){
@@ -70,7 +70,7 @@ void * insert_HashMap(const void const * _self,
     }
 }
 
-const void* copy_HashMap(const void const* _self){
+const void* copy_HashMap(const void * _self){
     struct HashMap * self = (struct HashMap *) _self;
     return new(HashMap, self->data);
 }

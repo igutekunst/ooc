@@ -79,7 +79,7 @@ size_t size(const void * _self) {
 
 }
 
-const void * type(const void const * _self){
+const void * type(const void * _self){
     const struct class_header * class =  * (struct class_header ** ) _self;
     if (!class || class->magic != MAGIC){
         printf("Attempt to get type of non object");
@@ -89,7 +89,7 @@ const void * type(const void const * _self){
     return * (struct class_header **) _self;
 }
 
-size_t len(const void const * _self) {
+size_t len(const void * _self) {
     const struct class_header * class =  * (struct class_header ** ) _self;
 
     if (!class || class->magic != MAGIC){
@@ -105,7 +105,7 @@ size_t len(const void const * _self) {
     }
 
 }
-const void * copy(const void const * _self) {
+const void * copy(const void * _self) {
     const struct class_header * class =  * (struct class_header ** ) _self;
 
     if (!class || class->magic != MAGIC){
@@ -122,7 +122,7 @@ const void * copy(const void const * _self) {
 
 }
 
-const void * append(const void const* _self, const void const* _other){
+const void * append(const void * _self, const void * _other){
     const struct class_header * class =  * (struct class_header ** ) _self;
 
     if (!class || class->magic != MAGIC){
@@ -152,7 +152,7 @@ void * play(void * _self){
 
 
 
-bool is_obj(const void const * _self, const char * message){
+bool is_obj(const void * _self, const char * message){
     const struct class_header * class =  * (struct class_header ** ) _self;
 
     if (!class || class->magic != MAGIC){
@@ -167,6 +167,6 @@ bool is_obj(const void const * _self, const char * message){
 }
 
 
-const struct class_header * get_class_header(const void const * _self){
+const struct class_header * get_class_header(const void * _self){
     return   * (struct class_header ** ) _self;
 }

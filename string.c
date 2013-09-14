@@ -3,12 +3,12 @@
 
 void * __construct__String(void * self, va_list args);
 void print_String(void * _self);
-size_t get_size_String(const void const* _self);
-size_t get_len_String(const void const* _self);
-const char * str_String(const void const *_self);
-const void * append_String(const void const * _self, const void *const _other);
-const void * copy_String(const void const* _self);
-uint32_t hash_String(const void const * _self);
+size_t get_size_String(const void * _self);
+size_t get_len_String(const void * _self);
+const char * str_String(const void *_self);
+const void * append_String(const void * _self, const void *const _other);
+const void * copy_String(const void * _self);
+uint32_t hash_String(const void * _self);
 
 struct StringClass string_class = {
     .class = {.magic = MAGIC,
@@ -26,12 +26,12 @@ struct StringClass string_class = {
 
 void * String = &string_class;
 
-size_t get_len_String(const void const* _self){
+size_t get_len_String(const void * _self){
     struct String * self = (struct String *) _self;
     return self->len;
 }
 
-size_t get_size_String(const void const* _self){
+size_t get_size_String(const void * _self){
     struct String * self = (struct String *) _self;
     return self->size;
 }
@@ -55,13 +55,13 @@ void print_String(void * _self) {
 }
 
 
-const char * str_String(const void const * _self){
+const char * str_String(const void * _self){
     struct String * self = (struct String *) _self;
     return self->data;
 }
 // Creates a copy of the first string, and
 // appends the second string to it
-const void * append_String(const void const* _self, const void const* _other){
+const void * append_String(const void * _self, const void * _other){
     struct String * self = (struct String *) _self;
     const struct String * other = (const struct String *) _other;
 
@@ -101,7 +101,7 @@ const void * append_String(const void const* _self, const void const* _other){
     }
 }
 
-const void* copy_String(const void const* _self){
+const void* copy_String(const void * _self){
     struct String * self = (struct String *) _self;
     return new(String, self->data);
 }
