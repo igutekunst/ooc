@@ -6,6 +6,7 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include <time.h>
+#include <assert.h>
 #include <math.h>
 
 
@@ -25,6 +26,7 @@ struct HashMap{
     size_t m;
     size_t M;
     size_t hwm;
+    size_t lwm;
     uint32_t a;
     uint32_t b;
     struct HashItem * items;

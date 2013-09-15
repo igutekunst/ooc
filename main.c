@@ -3,6 +3,7 @@
 #include <obj_string.h>
 #include <obj_Int.h>
 #include <obj_hashmap.h>
+#include <assert.h>
 int main(int argc, char * argv[]){
     const struct Point * a = new(Point, 5., 7.);
     const struct String *first   = new(String, "isaac");
@@ -23,8 +24,10 @@ int main(int argc, char * argv[]){
         const struct String * key = new(String, c);
         const struct  String * new_item = append(name, key);
         insert(h, key, new_item) ;
+        //make sure same item is returned every time
+        assert(new_item == get(h, key));
     }
-    printf("%d", h->m);
+    printf("seems good\n");
 return 0;
 
 }

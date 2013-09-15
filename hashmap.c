@@ -13,7 +13,7 @@ void * get_HashMap(const void * _self,
                       const void * key);
 const void * copy_HashMap(const void * _self);
 
-void internal_double_HashMap(struct HashMap * self);
+void internal_resize_HashMap(struct HashMap * self, uint32_t new_m);
 
 struct HashItem * alloc_hash_items(size_t n){
    struct HashItem * items =  (struct HashItem *) malloc(sizeof(struct HashItem) * n);
@@ -71,20 +71,29 @@ void * internal_insert_HashMap(struct HashMap * self,
     dest->key = internal_key;
 
     if (self->len > self->hwm){
-        internal_double_HashMap(self);
+        internal_resize_HashMap(self, self->m * 2);
     }
 
 }
-void internal_double_HashMap(struct HashMap * self){
+void internal_resize_HashMap(struct HashMap * self, uint32_t new_m){
     //hold onto items, so we can insert them into the new structure
+    assert( ! (new_m & 0x01)); // make sure it's a power of two
+
+    if (new_m < HASH_TABLE_DEFAULT_LEN) {
+        printf("Limiting lower bound to %d\n", HASH_TABLE_DEFAULT_LEN);
+        new_m = HASH_TABLE_DEFAULT_LEN; 
+    }
     struct HashItem * old_items = self->items;
+    uint32_t old_m = self->m;
 
     // double relavant parameters
     // This is necessary so insertion works
     // If m didn't change, the hash algorithm would put items in old positions
-    self->m  = self->m * 2;
+    self->m  = new_m;
     self->M = lg(self->m);
-    self->hwm  *= 2;
+    self->hwm = self->m * HWM_FRACTION;
+    self->lwm = self->m * HWM_FRACTION * 0.5;
+
 
     // it's also necessary to reset the count since we're essentially making a new 
     // HashMap
@@ -99,7 +108,7 @@ void internal_double_HashMap(struct HashMap * self){
     bool first_level = true;
 
     // Use m/2
-    for(i=0; i <  self->m / 2; i++) {
+    for(i=0; i <  old_m; i++) {
         item = &old_items[i];
         first_level = true;
 
@@ -158,6 +167,7 @@ const void * __construct__HashMap(const void * _self, va_list args) {
     self->M = lg(HASH_TABLE_DEFAULT_LEN);
     //set the highwater mark
     self->hwm = self->m  * HWM_FRACTION;
+    self->lwm = 1;
     self->class = HashMap;
 
     if (!rng_seeded) {
@@ -200,7 +210,7 @@ void * insert_HashMap(const void * _self,
             }
             uint32_t key = header->hash(_key);
             internal_insert_HashMap(self, key, _value);
-            printf("self['%s'] = '%s'\n", str(_key), str(_value));
+            //printf("self['%s'] = '%s'\n", str(_key), str(_value));
         }
     }
 }
@@ -228,6 +238,50 @@ void * get_HashMap(const void * _self,
            }
            return _item->value;
         }
+    return NULL;
+}
+
+
+void * del_item_HashMap(const void * _self, 
+                   const void * _key ) {
+    struct HashMap * self = (struct HashMap *) _self;
+    if (get_obj(_key, "Attempted to delete an invalid key\n")) {
+           const struct class_header * header = get_class_header(_key);
+           if (!header->hash) {
+               fprintf(stderr, "Attempt to use unhashable type as key\n");
+               exit(1);
+           }
+           uint32_t key = header->hash(_key);
+           uint32_t h = internal_hash(self->a, self->b, self->M, key);
+           struct HashItem * _item =  &self->items[h];
+           struct HashItem * _parent;
+           int depth;
+           while(_item && _item->key != key){
+               if (_item->next){
+                    _item = _item->next; 
+                    _parent = _item;
+                    depth++;
+               }
+               else
+                   return NULL;
+           }
+            // unlink item from list
+           if (_item->next){
+               _parent->next = _item->next;
+               if (depth)
+                   free(_item);
+           
+            // or zero out so the table knows it's an empty slot
+            } else{
+                _item->value = NULL;
+                _item->key  = 0;
+           }
+           self->len--;
+           if (self->len < self->lwm) {
+               internal_resize_HashMap(self, self->m / 2)  ;
+           }
+        }
+    return NULL;
 }
 
 const void* copy_HashMap(const void * _self){
