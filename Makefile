@@ -1,14 +1,15 @@
-CC := gcc
+CC := clang
 
 CFLAGS := --std=c99 $(INC)
 CFLAGS+=-I$(PWD)/include
 
-SOURCES := main.c \
+SOURCES := hashmap.c \
+		   main.c \
 		   object.c \
 		   point.c \
 		   person.c \
 		   string.c \
-		   Int.c
+		   Int.c 
 
 all: points run
 

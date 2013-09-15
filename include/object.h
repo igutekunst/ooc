@@ -10,21 +10,25 @@
 struct class_header{
     unsigned long magic; 
     size_t size;
-    size_t  ( *get_size) (const void * _self);
-    size_t  ( *get_len) (const void * _self);
-    size_t  ( *play) (const void * _self);
-    const void *  ( * __construct__ ) (const void * _self, va_list args);
-    void*   ( * __destruct__  ) (void * _self);
-    void    (* print)  (const void *);
-    void*   (* to_string)  (const void *);
-    const char*   (* str)  (const void *);
-    void*   (* to_String)  (const void *);
-    const void*   (* append) (const void * _self, const void * _other);
-    const void*   (* copy) (const void * _self);
-    void*   (* insert) (const void * _self, 
-                        const void * _key, 
-                        const void * item);
-    uint32_t (* hash) (const void * _self);
+    size_t          ( *get_size) (const void * _self);
+    size_t          ( *get_len) (const void * _self);
+    size_t          ( *play) (const void * _self);
+    const void *    ( * __construct__ ) (const void * _self, va_list args);
+    void*           ( * __destruct__  ) (void * _self);
+    void            (* print)  (const void *);
+    void*           (* to_string)  (const void *);
+    const char*     (* str)  (const void *);
+    void*           (* to_String)  (const void *);
+    const void*     (* append) (const void * _self, const void * _other);
+    const void*     (* copy) (const void * _self);
+    void*           (* insert) (const void * _self, 
+                                const void * _key, 
+                                const void * item);
+
+    void*           (* get) (const void * _self, 
+                                const void * _key);
+
+    uint32_t        (* hash) (const void * _self);
 
 };
 
@@ -44,10 +48,15 @@ void*   iter    (void * _object);
 void   play   (void * _object);
 uint32_t hash (const void * _self);
 
+void*   insert (const void * _self, 
+                        const void * _key, 
+                        const void * item);
 
+void*   get (const void * _self, 
+             const void * _key);
 extern const struct class_header Class;
 
-bool is_obj(const void * _self, const char *message);
+bool get_obj(const void * _self, const char *message);
 const struct class_header * get_class_header(const void * _self);
 
 #endif
