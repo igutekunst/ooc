@@ -56,7 +56,7 @@ void*   get (const void * _self,
              const void * _key);
 extern const struct class_header Class;
 
-bool get_obj(const void * _self, const char *message);
+struct class_header * get_obj(const void * _self, const char *message);
 const struct class_header * get_class_header(const void * _self);
 
 #endif

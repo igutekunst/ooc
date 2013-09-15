@@ -5,168 +5,139 @@ const struct class_header Class = {
 };
 
 const void * new (const void * const _class, ...) {
-    const struct class_header * class = (struct class_header * ) _class;
-    if (!class || class->magic != MAGIC){
-        exit(1);
+    const struct class_header * class;
+    if ((class = get_obj(_class,"Attempted to to initialize non class\n" ))) {
+        const void * new_object = (struct class_header *) malloc(class->size);
+        if (class->__construct__){
+            va_list vl;
+            va_start(vl, _class);
+            new_object = class->__construct__(new_object, vl);
+            va_end(vl);
+        } else 
+            printf("No default constructor. Allocating %zu bytes\n", class->size) ;
+        return new_object;
     }
-    const void * new_object = (struct class_header *) malloc(class->size);
-    va_list vl;
-    if (class->__construct__){
-        va_start(vl, _class);
-        new_object = class->__construct__(new_object, vl);
-        va_end(vl);
-    } else {
-        printf("No default constructor. Allocating %zu bytes\n", class->size) ;
-    }
-    return new_object;
 }
 
-void * del (void * _object){
-    const struct class_header * class = *(struct class_header ** ) _object;
-    if (!class || class->magic != MAGIC){
-        printf("Attempt to delete non object\n");
-        exit(1);
+
+void * del (void * _self){
+    const struct class_header * class;
+    if ((class = get_obj(_self,"Attempt to delete non object\n"))) {
+        if( class->__destruct__) {
+            _self = class->__destruct__(_self);
+        } else {
+            printf("No destructor. Freeing\n");
+            free(_self) ;
+        }
+        return _self;
     }
-    if( class->__destruct__) {
-        _object = class->__destruct__(_object);
-    } else {
-        printf("No destructor. Freeing\n");
-        free(_object) ;
-    }
-    
-    return _object;
 }
+
 
 const char *  str (const void * _self){
-    const struct class_header * class =  * (struct class_header ** ) _self;
-    if (!class || class->magic != MAGIC){
-        printf("Attempted to print non object\n");
-        exit(1);
-    }
-    if (class->str){
-        return class->str(_self);
-    }
-    else {
-        return "Object";
+    const struct class_header * class;
+    if ((class = get_obj(_self,"Attempted to print non object\n" ))) {
+        if (class->str){
+            return class->str(_self);
+        }
+        else
+            return "Object";
     }
 }
+
+
 void print (const void * _self){
-    const struct class_header * class =  * (struct class_header ** ) _self;
-    if (!class || class->magic != MAGIC){
-        printf("Attempted to print non object\n");
-        exit(1);
-    }
-    if (class->print) {
-        class->print(_self);
-    } else if (class->str) {
-        printf("%s", class->str(_self));
-    }
-    else
+    const struct class_header * class;
+    if ((class = get_obj(_self,"Attempted to print non object\n" ))) {
+        if (class->print) {
+            class->print(_self);
+        } else if (class->str) {
+            printf("%s", class->str(_self));
+        } else
         printf("Object at %p\n", _self);
+    }
 }
+
 
 size_t size(const void * _self) {
-    const struct class_header * class =  * (struct class_header ** ) _self;
-
-    if (!class || class->magic != MAGIC){
-        printf("Attempted to get size of non object\n");
-        exit(1);
+    const struct class_header * class;
+    if ((class = get_obj(_self,"Attempted to get type of non object\n" ))) {
+        if (class->get_size)
+            return class->get_size(_self);
+        return class->size;
     }
-
-    if (class->get_size)
-        return class->get_size(_self);
-    return class->size;
-
 }
 
-const void * type(const void * _self){
-    const struct class_header * class =  * (struct class_header ** ) _self;
-    if (!class || class->magic != MAGIC){
-        printf("Attempt to get type of non object");
-        exit(1);
-    }
 
-    return * (struct class_header **) _self;
+const void * type(const void * _self){
+    const struct class_header * class;
+    if ((class = get_obj(_self,"Attempted to get type of non object\n" )))
+        return * (struct class_header **) _self;
 }
 
 size_t len(const void * _self) {
-    const struct class_header * class =  * (struct class_header ** ) _self;
-
-    if (!class || class->magic != MAGIC){
-        printf("Attempted to get len of non object\n");
-        exit(1);
+    const struct class_header * class;
+    if ((class = get_obj(_self,"Attempted to get len of non object\n" ))) {
+        if (class->get_len) 
+            return class->get_len(_self);
+        else {
+            printf("TypeError: object does not suppport len\n") ;
+            exit(1);
+        }
     }
-
-    if (class->get_len) 
-        return class->get_len(_self);
-    else {
-        printf("TypeError: object does not suppport len\n") ;
-        exit(1);
-    }
-
 }
+
+
 const void * copy(const void * _self) {
-    const struct class_header * class =  * (struct class_header ** ) _self;
-
-    if (!class || class->magic != MAGIC){
-        printf("Attempted to get len of non object\n");
-        exit(1);
+    const struct class_header * class;
+    if (class = get_obj(_self,"Attempted to get len of non object\n")){
+        if (class->copy) 
+            return class->copy(_self);
+        else {
+            printf("TypeError: object does not suppport copying\n") ;
+            exit(1);
+        }
     }
-
-    if (class->copy) 
-        return class->copy(_self);
-    else {
-        printf("TypeError: object does not suppport copying\n") ;
-        exit(1);
-    }
-
 }
+
 
 const void * append(const void * _self, const void * _other){
-    const struct class_header * class =  * (struct class_header ** ) _self;
+    const struct class_header * class;
 
-    if (!class || class->magic != MAGIC){
-        printf("Attempted to append non object\n");
-        exit(1);
-    }
-
-    if(class->append)
-        return class->append(_self, _other);
-
-    else {
-        fprintf(stderr, "Type does not support append\n");
-        exit(EXIT_FAILURE);
+    if (class = get_obj(_self,"Attempted to append non object\n" )) {
+        if(class->append)
+            return class->append(_self, _other);
+        else {
+            fprintf(stderr, "Type does not support append\n");
+            exit(EXIT_FAILURE);
+        }
     }
 }
 
 void  play(void * _self){
-    const struct class_header * class =  * (struct class_header ** ) _self;
-
-    if (!class || class->magic != MAGIC){
-        printf("Attempted to append non object\n");
-        exit(1);
-    }
-
-    if(class->play)
-        class->play(_self);
-    else{
-        fprintf(stderr, "Type does not support append\n");
-        exit(EXIT_FAILURE);
+    const struct class_header * class;
+    if (class = get_obj(_self, "Attempted to append non object\n")) {
+        if(class->play)
+            class->play(_self);
+        else{
+            fprintf(stderr, "Type does not support append\n");
+            exit(EXIT_FAILURE);
+        }
     }
 }
 
 
 
-inline bool get_obj(const void * _self, const char * message){
+inline struct class_header * get_obj(const void * _self, const char * message){
     const struct class_header * class =  * (struct class_header ** ) _self;
     if (class && class->magic == MAGIC){
-        return true;
+        return class;
     }
     if (message) {
         printf("%s", message);
         exit(1);
     } else {
-        return false; 
+        return NULL;
     }
 
 }
