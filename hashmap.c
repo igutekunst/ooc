@@ -9,8 +9,11 @@ const char * str_HashMap(const void *_self);
 void * insert_HashMap(const void * _self, 
                       const void * key, 
                       const void * _other);
+void * get_HashMap(const void * _self, 
+                      const void * key);
 const void * copy_HashMap(const void * _self);
 
+void internal_double_HashMap(struct HashMap * self);
 
 struct HashItem * alloc_hash_items(size_t n){
    struct HashItem * items =  (struct HashItem *) malloc(sizeof(struct HashItem) * n);
@@ -40,8 +43,77 @@ uint32_t random_b(uint32_t m){
     uint32_t M = lg(m);
     return random() % (2 << ( W- M));
 }
-uint32_t hash_internal(uint32_t a, uint32_t b, uint32_t M, uint32_t key){
+
+uint32_t internal_hash(uint32_t a, uint32_t b, uint32_t M, uint32_t key){
     return  (unsigned) (a*key+b) >> (W-M);
+}
+
+void * internal_insert_HashMap(struct HashMap * self,
+                               uint32_t internal_key,
+                               const void * _value) {
+    struct HashItem * dest =  &self->items[internal_key];
+    int depth = 0;
+    while(dest->value){
+        depth++;
+        if (dest->next)
+            dest = dest->next; 
+        else {
+            dest->next = malloc(sizeof(struct HashItem));
+            memset(dest->next, 0, sizeof(struct HashItem));
+            dest = dest->next;
+        }
+    }
+    // Increase the length
+    self->len++;
+    if (self->len > self->hwm){
+        printf("Doubling time\n");
+        printf("Table size: %d\n", self->m);
+        internal_double_HashMap(self);
+    }
+    dest->value = _value;
+    dest->key = internal_key;
+
+    if(depth)
+        printf("insert collision\td:%d\n", depth);
+}
+void internal_double_HashMap(struct HashMap * self){
+    //hold onto items, so we can insert them into the new structure
+    struct HashItem * old_items = self->items;
+
+    // double relavant parameters
+    // This is necessary so insertion works
+    // If m didn't change, the hash algorithm would put items in old positions
+    self->m *= 2;
+    self->M = lg(self->m);
+    self->hwm = self->m  * HWM_FRACTION;
+
+    // allocate new space
+    self->items = alloc_hash_items(self->m);
+
+    int i; 
+    struct HashItem * item;
+    bool first_level = true;
+
+    // Use m/2
+    for(i=0; i <  self->m / 2; i++) {
+        item = &old_items[i];
+        first_level = true;
+
+        while( item->value) {
+            //internal_insert_HashMap(self, item->key, item->value);
+            if(item->next){
+                struct HashItem * old_item = item; 
+                item = item->next;
+                if (!first_level)
+                    free(old_item);
+                first_level = false;
+            } else {
+                item->value = NULL; 
+            }
+        }
+    }
+    free(old_items);
+
 }
 
 struct HashMapClass hash_map_class = {
@@ -52,7 +124,8 @@ struct HashMapClass hash_map_class = {
               .get_len = get_len_HashMap,
               .str = str_HashMap,
               .copy = copy_HashMap,
-              .insert = insert_HashMap
+              .insert = insert_HashMap,
+              .get = get_HashMap
              }
 
 };
@@ -77,6 +150,8 @@ const void * __construct__HashMap(const void * _self, va_list args) {
     self->len = 0;
     self->m = HASH_TABLE_DEFAULT_LEN;
     self->M = lg(HASH_TABLE_DEFAULT_LEN);
+    //set the highwater mark
+    self->hwm = self->m  * HWM_FRACTION;
     self->class = HashMap;
 
     if (!rng_seeded) {
@@ -108,26 +183,19 @@ const char * str_HashMap(const void * _self){
 
 void * insert_HashMap(const void * _self, 
                       const void * _key, 
-                      const void * _item) {
+                      const void * _value) {
     struct HashMap * self = (struct HashMap *) _self;
-    printf("Insertting into a hashmap\n");
     if (get_obj(_key, "Attempted to insert invalid key\n")) {
-        if (get_obj(_item, NULL) ){
-           const struct class_header * header = get_class_header(_key);
-           if (!header->hash) {
-               fprintf(stderr, "Attempt to use unhashable type as key\n");
-               exit(1);
-           }
-           uint32_t key = header->hash(_key);
-           uint32_t h = hash_internal(self->a, self->b, self->M, key);
-           printf("Insering into key %d\n", h);
-           struct HashItem * dest =  &self->items[key];
-
-           while(dest->item){
-                dest = dest->next; 
-           }
-           dest->item = _item;
-           dest->key = key;
+        if (get_obj(_value, NULL) ){
+            const struct class_header * header = get_class_header(_key);
+            if (!header->hash) {
+                fprintf(stderr, "Attempt to use unhashable type as key\n");
+                exit(1);
+            }
+            uint32_t key = header->hash(_key);
+            uint32_t h = internal_hash(self->a, self->b, self->M, key);
+            internal_insert_HashMap(self, h, _value);
+            printf("self['%s'] = '%s'\n", str(_key), str(_value));
         }
     }
 }
@@ -135,7 +203,6 @@ void * insert_HashMap(const void * _self,
 void * get_HashMap(const void * _self, 
                    const void * _key ) {
     struct HashMap * self = (struct HashMap *) _self;
-    printf("getting from a hashmap\n");
     if (get_obj(_key, "Attempted to get with  invalid key\n")) {
            const struct class_header * header = get_class_header(_key);
            if (!header->hash) {
@@ -143,12 +210,18 @@ void * get_HashMap(const void * _self,
                exit(1);
            }
            uint32_t key = header->hash(_key);
-           uint32_t h = hash_internal(self->a, self->b, self->M, key);
-           struct HashItem * _item =  &self->items[key];
+           uint32_t h = internal_hash(self->a, self->b, self->M, key);
+           struct HashItem * _item =  &self->items[h];
+           int depth;
            while(_item && _item->key != key){
-                _item = _item->next; 
+               if (_item->next){
+                    _item = _item->next; 
+                    depth++;
+               }
+               else
+                   return NULL;
            }
-           return _item;
+           return _item->value;
         }
 }
 

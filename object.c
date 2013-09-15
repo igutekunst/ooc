@@ -159,7 +159,6 @@ void  play(void * _self){
 
 inline bool get_obj(const void * _self, const char * message){
     const struct class_header * class =  * (struct class_header ** ) _self;
-    printf("%d %x\n", class != 0, class->magic == MAGIC);
     if (class && class->magic == MAGIC){
         return true;
     }
@@ -202,7 +201,6 @@ void * get(const void * _self,
                       const void * _key ) {
     if(get_obj(_self, "Failed to get from non collection\n")){
         const struct class_header * self = get_class_header(_self);
-        printf("valid get obj. getting\n");
         if(self->get)
             return self->get(_self, _key) ;
     }

@@ -14,7 +14,7 @@ struct HashMapClass{
 };
 typedef struct HashItem {
     uint32_t key;
-    void * item;    
+    void * value;    
     struct HashItem * next;
 };
 
@@ -24,6 +24,7 @@ struct HashMap{
     size_t len;
     size_t m;
     size_t M;
+    size_t hwm;
     uint32_t a;
     uint32_t b;
     struct HashItem * items
@@ -40,6 +41,7 @@ extern void * HashMap;
 #define W   32
 #define HASH_TABLE_DEFAULT_LEN 32
 #define MAX_A  4294967295
+#define HWM_FRACTION 0.5
 
 
 
