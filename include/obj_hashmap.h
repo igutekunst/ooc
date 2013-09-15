@@ -27,7 +27,7 @@ struct HashMap{
     size_t hwm;
     uint32_t a;
     uint32_t b;
-    struct HashItem * items
+    struct HashItem * items;
 
 };
 

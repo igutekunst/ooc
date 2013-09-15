@@ -5,18 +5,20 @@ const struct class_header Class = {
 };
 
 const void * new (const void * const _class, ...) {
-    const struct class_header * class;
-    if ((class = get_obj(_class,"Attempted to to initialize non class\n" ))) {
-        const void * new_object = (struct class_header *) malloc(class->size);
-        if (class->__construct__){
-            va_list vl;
-            va_start(vl, _class);
-            new_object = class->__construct__(new_object, vl);
-            va_end(vl);
-        } else 
-            printf("No default constructor. Allocating %zu bytes\n", class->size) ;
-        return new_object;
+    const struct class_header * class = (struct class_header * ) _class;
+    if (!class || class->magic != MAGIC){
+        exit(1);
     }
+    const void * new_object = (struct class_header *) malloc(class->size);
+    va_list vl;
+    if (class->__construct__){
+        va_start(vl, _class);
+        new_object = class->__construct__(new_object, vl);
+        va_end(vl);
+    } else {
+        printf("No default constructor. Allocating %zu bytes\n", class->size) ;
+    }
+    return new_object;
 }
 
 
@@ -31,6 +33,7 @@ void * del (void * _self){
         }
         return _self;
     }
+    return NULL;
 }
 
 
@@ -43,6 +46,7 @@ const char *  str (const void * _self){
         else
             return "Object";
     }
+    return NULL;
 }
 
 
@@ -66,6 +70,7 @@ size_t size(const void * _self) {
             return class->get_size(_self);
         return class->size;
     }
+    return 0;
 }
 
 
@@ -73,6 +78,7 @@ const void * type(const void * _self){
     const struct class_header * class;
     if ((class = get_obj(_self,"Attempted to get type of non object\n" )))
         return * (struct class_header **) _self;
+    return NULL;
 }
 
 size_t len(const void * _self) {
@@ -85,12 +91,13 @@ size_t len(const void * _self) {
             exit(1);
         }
     }
+    return 0;
 }
 
 
 const void * copy(const void * _self) {
     const struct class_header * class;
-    if (class = get_obj(_self,"Attempted to get len of non object\n")){
+    if ((class = get_obj(_self,"Attempted to get len of non object\n"))){
         if (class->copy) 
             return class->copy(_self);
         else {
@@ -98,13 +105,14 @@ const void * copy(const void * _self) {
             exit(1);
         }
     }
+    return NULL;
 }
 
 
 const void * append(const void * _self, const void * _other){
     const struct class_header * class;
 
-    if (class = get_obj(_self,"Attempted to append non object\n" )) {
+    if ((class = get_obj(_self,"Attempted to append non object\n" ))) {
         if(class->append)
             return class->append(_self, _other);
         else {
@@ -112,11 +120,12 @@ const void * append(const void * _self, const void * _other){
             exit(EXIT_FAILURE);
         }
     }
+    return NULL;
 }
 
 void  play(void * _self){
     const struct class_header * class;
-    if (class = get_obj(_self, "Attempted to append non object\n")) {
+    if ((class = get_obj(_self, "Attempted to append non object\n"))) {
         if(class->play)
             class->play(_self);
         else{
@@ -129,7 +138,7 @@ void  play(void * _self){
 
 
 inline struct class_header * get_obj(const void * _self, const char * message){
-    const struct class_header * class =  * (struct class_header ** ) _self;
+    struct class_header * class =  * (struct class_header ** ) _self;
     if (class && class->magic == MAGIC){
         return class;
     }
@@ -153,7 +162,7 @@ uint32_t hash(const void * _self) {
         const struct class_header * self = get_class_header(_self);
         return self->hash(_self) ;
     }
-
+    return 0;
 }
 
 void * insert(const void * _self, 
@@ -165,7 +174,7 @@ void * insert(const void * _self,
         if (self->insert)
             self->insert(_self, _key, _other) ;
     }
-
+    return NULL;
 }
 
 void * get(const void * _self, 
@@ -175,5 +184,5 @@ void * get(const void * _self,
         if(self->get)
             return self->get(_self, _key) ;
     }
-
+    return NULL;
 }

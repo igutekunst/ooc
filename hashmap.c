@@ -45,13 +45,15 @@ uint32_t random_b(uint32_t m){
 }
 
 uint32_t internal_hash(uint32_t a, uint32_t b, uint32_t M, uint32_t key){
-    return  (unsigned) (a*key+b) >> (W-M);
+    return (uint32_t) (a*key+b) >> (W-M);
 }
 
 void * internal_insert_HashMap(struct HashMap * self,
                                uint32_t internal_key,
                                const void * _value) {
-    struct HashItem * dest =  &self->items[internal_key];
+
+    uint32_t h = internal_hash(self->a, self->b, self->M, internal_key);
+    struct HashItem * dest =  &self->items[h];
     int depth = 0;
     while(dest->value){
         depth++;
@@ -65,16 +67,13 @@ void * internal_insert_HashMap(struct HashMap * self,
     }
     // Increase the length
     self->len++;
-    if (self->len > self->hwm){
-        printf("Doubling time\n");
-        printf("Table size: %d\n", self->m);
-        internal_double_HashMap(self);
-    }
     dest->value = _value;
     dest->key = internal_key;
 
-    if(depth)
-        printf("insert collision\td:%d\n", depth);
+    if (self->len > self->hwm){
+        internal_double_HashMap(self);
+    }
+
 }
 void internal_double_HashMap(struct HashMap * self){
     //hold onto items, so we can insert them into the new structure
@@ -83,9 +82,14 @@ void internal_double_HashMap(struct HashMap * self){
     // double relavant parameters
     // This is necessary so insertion works
     // If m didn't change, the hash algorithm would put items in old positions
-    self->m *= 2;
+    self->m  = self->m * 2;
     self->M = lg(self->m);
-    self->hwm = self->m  * HWM_FRACTION;
+    self->hwm  *= 2;
+
+    // it's also necessary to reset the count since we're essentially making a new 
+    // HashMap
+    self->len = 0;
+
 
     // allocate new space
     self->items = alloc_hash_items(self->m);
@@ -100,7 +104,7 @@ void internal_double_HashMap(struct HashMap * self){
         first_level = true;
 
         while( item->value) {
-            //internal_insert_HashMap(self, item->key, item->value);
+            internal_insert_HashMap(self, item->key, item->value);
             if(item->next){
                 struct HashItem * old_item = item; 
                 item = item->next;
@@ -130,7 +134,9 @@ struct HashMapClass hash_map_class = {
 
 };
 
+
 void * HashMap = &hash_map_class;
+
 
 size_t get_len_HashMap(const void * _self){
     struct HashMap * self = (struct HashMap *) _self;
@@ -193,8 +199,7 @@ void * insert_HashMap(const void * _self,
                 exit(1);
             }
             uint32_t key = header->hash(_key);
-            uint32_t h = internal_hash(self->a, self->b, self->M, key);
-            internal_insert_HashMap(self, h, _value);
+            internal_insert_HashMap(self, key, _value);
             printf("self['%s'] = '%s'\n", str(_key), str(_value));
         }
     }
