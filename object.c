@@ -177,7 +177,7 @@ void * insert(const void * _self,
     return NULL;
 }
 
-void * get(const void * _self, 
+void * get_item(const void * _self, 
                       const void * _key ) {
     if(get_obj(_self, "Failed to get from non collection\n")){
         const struct class_header * self = get_class_header(_self);

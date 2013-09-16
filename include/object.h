@@ -52,7 +52,7 @@ void*   insert (const void * _self,
                         const void * _key, 
                         const void * item);
 
-void*   get (const void * _self, 
+void*   get_item (const void * _self, 
              const void * _key);
 extern const struct class_header Class;
 

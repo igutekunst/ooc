@@ -25,7 +25,7 @@ int main(int argc, char * argv[]){
         const struct  String * new_item = append(name, key);
         insert(h, key, new_item) ;
         //make sure same item is returned every time
-        assert(new_item == get(h, key));
+        assert(new_item == get_item(h, key));
     }
     printf("seems good\n");
 return 0;
