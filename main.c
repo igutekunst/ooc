@@ -15,12 +15,38 @@ int main(int argc, char * argv[]){
 
 
     // Testing HashMaps
+    const struct HashMap * h_iter_test  = new(HashMap);
+    const struct String * s1 = new(String, "Value 1\n")  ;
+    const struct String * s2 = new(String, "Value 2\n")  ;
+    const struct String * s3 = new(String, "Value 3\n")  ;
+
+    const struct String * k1 = new(String, "key1")  ;
+    const struct String * k2 = new(String, "key2")  ;
+    const struct String * k3 = new(String, "key3")  ;
+    insert(h_iter_test, k1, s1);
+    insert(h_iter_test, k2, s2);
+    insert(h_iter_test, k3, s3);
+    struct HashMap_iter * it =   iter(h_iter_test);
+
+    for (void * i = next(it); i != NULL; i = next(it)){
+        if (i){
+            print(i);
+        } else {
+            printf("No more items");
+            break;
+        }
+    }
+    exit(0);
+    printf("Made iterator \n");
+
+
+
     
     const struct HashMap * h = new(HashMap);
     int i; 
     for(i = 0; i < 64 ; i++){
-        char c[3];
-        sprintf(c, "%d", i);
+        char c[10];
+        sprintf(c, "key%d", i);
         const struct String * key = new(String, c);
         const struct  String * new_item = append(name, key);
         insert(h, key, new_item) ;

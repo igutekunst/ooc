@@ -13,6 +13,11 @@
 struct HashMapClass{
     struct class_header class;
 };
+
+struct HashMapClass_iter{
+    struct class_header class;
+};
+
 typedef struct HashItem {
     uint32_t key;
     void * value;    
@@ -33,8 +38,16 @@ struct HashMap{
 
 };
 
+struct HashMap_iter{
+    struct class_header * class;
+    struct HashItem * current_item;
+    int index;
+    struct HashMap * hash_map;
+    int position;
+};
 
 extern void * HashMap;
+extern void * HashMap_iter;
 #define ODD 1
 #define EVEN 0
 // Hash Paramters. 

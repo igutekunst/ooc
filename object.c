@@ -94,6 +94,19 @@ size_t len(const void * _self) {
     return 0;
 }
 
+void del_item(const void * _self, const void * key) {
+    const struct class_header * class;
+    if ((class = get_obj(_self,"Attempted to call del_item on non object\n" ))) {
+        if (class->del_item) 
+            class->del_item(class, key);
+        else {
+            printf("TypeError: object does not suppport deleting items. \n") ;
+            exit(1);
+        }
+    }
+    return ;
+}
+
 
 const void * copy(const void * _self) {
     const struct class_header * class;
@@ -183,6 +196,25 @@ void * get_item(const void * _self,
         const struct class_header * self = get_class_header(_self);
         if(self->get)
             return self->get(_self, _key) ;
+    }
+    return NULL;
+}
+
+const void * iter(const void * _self ) {
+    if(get_obj(_self, "Failed to get from non collection\n")){
+        const struct class_header * self = get_class_header(_self);
+        if(self->iter)
+            return self->iter(_self) ;
+    }
+    return NULL;
+}
+
+const void * next(const void * _self ) {
+    if(get_obj(_self, "Failed to get next on non object\n")){
+        const struct class_header * self = get_class_header(_self);
+        if(self->next){
+            return self->next(_self) ;
+        }
     }
     return NULL;
 }

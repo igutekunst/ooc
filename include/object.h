@@ -20,6 +20,7 @@ struct class_header{
     const char*     (* str)  (const void *);
     void*           (* to_String)  (const void *);
     const void*     (* append) (const void * _self, const void * _other);
+    const void*     (* iter)    (const void * _object);
     const void*     (* copy) (const void * _self);
     void*           (* insert) (const void * _self, 
                                 const void * _key, 
@@ -29,6 +30,9 @@ struct class_header{
                                 const void * _key);
 
     uint32_t        (* hash) (const void * _self);
+    void           (* del_item) (const void * _self, const void * key);
+
+    const void *    (* next) (const void * _self);
 
 };
 
@@ -37,18 +41,21 @@ const void *  new (const void * _class, ...);
 
 void *  del (void * _object);
 
-void    print   (const void * _object);
-size_t  size    (const void * _object);
-size_t  len     (const void * _object);
-const char*   str     (const void * _object);
-void*   to_String  (const void * _object);
-const void*   copy    (const void * _object);
-const void*   append  (const void * _object, const void * _other);
-void*   iter    (void * _object);
-void   play   (void * _object);
-uint32_t hash (const void * _self);
+void            print   (const void * _object);
+size_t          size    (const void * _object);
+size_t          len     (const void * _object);
+const char*     str     (const void * _object);
+void*           to_String  (const void * _object);
+const void*     copy    (const void * _object);
+const void*     append  (const void * _object, const void * _other);
+const void*     iter    (const void * _object);
+void            play    (void * _object);
+uint32_t        hash    (const void * _self);
 
-void*   insert (const void * _self, 
+const void*     next    (const void * _self);
+void            del_item (const void * _self, const void * key);
+
+void*           insert (const void * _self, 
                         const void * _key, 
                         const void * item);
 
