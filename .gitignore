@@ -22,12 +22,15 @@
 
 # http://www.gnu.org/software/autoconf
 
-/autom4te.cache
-/aclocal.m4
-/compile
-/depcomp
-/install-sh
-/missing
+*autom4te.cache
+*aclocal.m4
+*compile
+*depcomp
+*install-sh
+*missing
+Makefile
+.deps
+config.h
 
 
 #Ctags

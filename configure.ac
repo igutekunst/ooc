@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.69])
-AC_INIT([ooc], [0.0.1], [igutekunst@gmail.com])
+AC_INIT([ooc], [0.0.2], [igutekunst@gmail.com])
 
 AM_INIT_AUTOMAKE([0.0.1 foreign])
 AC_CONFIG_SRCDIR([src])
