@@ -7,6 +7,7 @@ AC_INIT([ooc], [0.0.3], [igutekunst@gmail.com])
 AM_INIT_AUTOMAKE([0.0.1 foreign])
 AC_CONFIG_SRCDIR([src])
 AC_CONFIG_HEADERS([config.h])
+AC_CONFIG_SUBDIRS([libooc])
 
 # Set some compiler settings
 AC_PROG_CC_STDC
