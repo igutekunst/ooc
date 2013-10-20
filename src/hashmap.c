@@ -1,4 +1,4 @@
-#include <obj_hashmap.h>
+#include "hashmap.h"
 
 bool rng_seeded = false;
 const void *    __construct__HashMap(const void * self, va_list args);

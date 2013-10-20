@@ -1,8 +1,8 @@
-#include <obj_point.h>
-#include <obj_person.h>
-#include <obj_string.h>
-#include <obj_Int.h>
-#include <obj_hashmap.h>
+#include "point.h"
+#include "person.h"
+#include "string.h"
+#include "Int.h"
+#include "hashmap.h"
 #include <assert.h>
 #include <config.h>
 int usage(){
@@ -35,9 +35,9 @@ int main(int argc, char * argv[]){
 
     struct HashMap_iter * it =   iter(h_iter_test);
 
-    for (void * i = next(it); i != NULL; i = next(it)){
-        if (i){
-            print(i);
+    for (void * item = next(it); item != NULL; item = next(it)){
+        if (item){
+            print(item);
         }
     }
     exit(0);
