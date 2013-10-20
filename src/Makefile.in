@@ -90,11 +90,9 @@ CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
-am_main_OBJECTS = main.$(OBJEXT) object.$(OBJEXT) string.$(OBJEXT) \
-	hashmap.$(OBJEXT) point.$(OBJEXT) person.$(OBJEXT) \
-	Int.$(OBJEXT)
+am_main_OBJECTS = main.$(OBJEXT)
 main_OBJECTS = $(am_main_OBJECTS)
-main_LDADD = $(LDADD)
+main_DEPENDENCIES = ../libooc/src/libooc.a
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
 am__v_P_0 = false
@@ -237,14 +235,9 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-main_SOURCES = main.c \
-			   object.c object.h \
-			   string.c string.h \
-			   hashmap.c hashmap.h \
-			   point.c point.h \
-			   person.c person.h \
-			   Int.c Int.h
-
+main_SOURCES = main.c
+main_LDADD = ../libooc/src/libooc.a
+AM_CPPFLAGS = -I../libooc/src
 all: all-am
 
 .SUFFIXES:
@@ -332,13 +325,7 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Int.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/hashmap.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/main.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/object.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/person.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/point.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/string.Po@am__quote@
 
 .c.o:
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<

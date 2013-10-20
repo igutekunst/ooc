@@ -14,7 +14,6 @@
 
 @SET_MAKE@
 
-
 VPATH = @srcdir@
 am__is_gnu_make = test -n '$(MAKEFILE_LIST)' && test -n '$(MAKELEVEL)'
 am__make_running_with_option = \
@@ -79,7 +78,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 subdir = src
 DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
-	$(top_srcdir)/depcomp $(pkginclude_HEADERS)
+	$(top_srcdir)/depcomp
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
@@ -115,7 +114,7 @@ am__uninstall_files_from_dir = { \
     || { echo " ( cd '$$dir' && rm -f" $$files ")"; \
          $(am__cd) "$$dir" && rm -f $$files; }; \
   }
-am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(pkgincludedir)"
+am__installdirs = "$(DESTDIR)$(libdir)"
 LIBRARIES = $(lib_LIBRARIES)
 ARFLAGS = cru
 AM_V_AR = $(am__v_AR_@AM_V@)
@@ -163,7 +162,6 @@ am__can_run_installinfo = \
     n|no|NO) false;; \
     *) (install-info --version) >/dev/null 2>&1;; \
   esac
-HEADERS = $(pkginclude_HEADERS)
 am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP)
 # Read a list of newline-separated strings from the standard input,
 # and print each of them once, without duplicates.  Input order is
@@ -276,17 +274,11 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 lib_LIBRARIES = libooc.a
 libooc_a_SOURCES = object.c object.h \
-			   	   string.c string.h \
-			   	   hashmap.c hashmap.h \
-			       point.c point.h \
-			   	   person.c person.h \
-			       Int.c Int.h
-
-pkginclude_HEADERS = object.h \
-				  string.h \
-				  hashmap.h \
-				  person.h \
-				  point.h
+			   string.c string.h \
+			   hashmap.c hashmap.h \
+			   point.c point.h \
+			   person.c person.h \
+			   Int.c Int.h
 
 all: all-am
 
@@ -385,27 +377,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(COMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
-install-pkgincludeHEADERS: $(pkginclude_HEADERS)
-	@$(NORMAL_INSTALL)
-	@list='$(pkginclude_HEADERS)'; test -n "$(pkgincludedir)" || list=; \
-	if test -n "$$list"; then \
-	  echo " $(MKDIR_P) '$(DESTDIR)$(pkgincludedir)'"; \
-	  $(MKDIR_P) "$(DESTDIR)$(pkgincludedir)" || exit 1; \
-	fi; \
-	for p in $$list; do \
-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
-	  echo "$$d$$p"; \
-	done | $(am__base_list) | \
-	while read files; do \
-	  echo " $(INSTALL_HEADER) $$files '$(DESTDIR)$(pkgincludedir)'"; \
-	  $(INSTALL_HEADER) $$files "$(DESTDIR)$(pkgincludedir)" || exit $$?; \
-	done
-
-uninstall-pkgincludeHEADERS:
-	@$(NORMAL_UNINSTALL)
-	@list='$(pkginclude_HEADERS)'; test -n "$(pkgincludedir)" || list=; \
-	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
-	dir='$(DESTDIR)$(pkgincludedir)'; $(am__uninstall_files_from_dir)
 
 ID: $(am__tagged_files)
 	$(am__define_uniq_tagged_files); mkid -fID $$unique
@@ -491,9 +462,9 @@ distdir: $(DISTFILES)
 	done
 check-am: all-am
 check: check-am
-all-am: Makefile $(LIBRARIES) $(HEADERS)
+all-am: Makefile $(LIBRARIES)
 installdirs:
-	for dir in "$(DESTDIR)$(libdir)" "$(DESTDIR)$(pkgincludedir)"; do \
+	for dir in "$(DESTDIR)$(libdir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: install-am
@@ -548,7 +519,7 @@ info: info-am
 
 info-am:
 
-install-data-am: install-pkgincludeHEADERS
+install-data-am:
 
 install-dvi: install-dvi-am
 
@@ -593,7 +564,7 @@ ps: ps-am
 
 ps-am:
 
-uninstall-am: uninstall-libLIBRARIES uninstall-pkgincludeHEADERS
+uninstall-am: uninstall-libLIBRARIES
 
 .MAKE: install-am install-strip
 
@@ -604,13 +575,11 @@ uninstall-am: uninstall-libLIBRARIES uninstall-pkgincludeHEADERS
 	install-data install-data-am install-dvi install-dvi-am \
 	install-exec install-exec-am install-html install-html-am \
 	install-info install-info-am install-libLIBRARIES install-man \
-	install-pdf install-pdf-am install-pkgincludeHEADERS \
-	install-ps install-ps-am install-strip installcheck \
-	installcheck-am installdirs maintainer-clean \
-	maintainer-clean-generic mostlyclean mostlyclean-compile \
-	mostlyclean-generic pdf pdf-am ps ps-am tags tags-am uninstall \
-	uninstall-am uninstall-libLIBRARIES \
-	uninstall-pkgincludeHEADERS
+	install-pdf install-pdf-am install-ps install-ps-am \
+	install-strip installcheck installcheck-am installdirs \
+	maintainer-clean maintainer-clean-generic mostlyclean \
+	mostlyclean-compile mostlyclean-generic pdf pdf-am ps ps-am \
+	tags tags-am uninstall uninstall-am uninstall-libLIBRARIES
 
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
