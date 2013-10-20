@@ -4,6 +4,11 @@
 #include <obj_Int.h>
 #include <obj_hashmap.h>
 #include <assert.h>
+#include <config.h>
+int usage(){
+    printf("This is " PACKAGE_STRING ".");
+    return 0;
+}
 int main(int argc, char * argv[]){
     const struct Point * a = new(Point, 5., 7.);
     const struct String *first   = new(String, "isaac");
@@ -23,17 +28,16 @@ int main(int argc, char * argv[]){
     const struct String * k1 = new(String, "key1")  ;
     const struct String * k2 = new(String, "key2")  ;
     const struct String * k3 = new(String, "key3")  ;
+
     insert(h_iter_test, k1, s1);
     insert(h_iter_test, k2, s2);
     insert(h_iter_test, k3, s3);
+
     struct HashMap_iter * it =   iter(h_iter_test);
 
     for (void * i = next(it); i != NULL; i = next(it)){
         if (i){
             print(i);
-        } else {
-            printf("No more items");
-            break;
         }
     }
     exit(0);

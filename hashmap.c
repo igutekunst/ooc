@@ -105,7 +105,6 @@ void internal_resize_HashMap(struct HashMap * self, uint32_t new_m){
     // HashMap
     self->len = 0;
 
-
     // allocate new space
     self->items = alloc_hash_items(self->m);
 
@@ -261,9 +260,7 @@ void  del_item_HashMap(const void * _self,
            }
            if(_item->key == item_key){
                printf("Key match\n");
-           
            } else {
-           
                printf("Keys do not match\n");
            }
            // unlink item from list
