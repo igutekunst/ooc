@@ -74,6 +74,24 @@ START_TEST(test_string_copy){
 }
 END_TEST
 
+START_TEST(test_string_hash){
+
+    const struct String * h;
+    const struct String * c;
+    h = new(String, "Hello");
+
+    c= copy(h);
+
+    ck_assert_str_eq(str(h), str(c));
+    ck_assert(h != c);
+    
+    ck_assert(hash(h) == hash(c));
+
+}
+END_TEST
+
+
+
 Suite * string_suite (void) {
     Suite * s = suite_create("String");
     TCase *tc_core = tcase_create("Core");
@@ -82,6 +100,7 @@ Suite * string_suite (void) {
     tcase_add_test(tc_core, test_string_append);
     tcase_add_test(tc_core, test_string_copy);
     tcase_add_test(tc_core, test_string_equals);
+    tcase_add_test(tc_core, test_string_hash);
 
     suite_add_tcase(s, tc_core);
     return s;
