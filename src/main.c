@@ -1,8 +1,8 @@
-#include "point.h"
-#include "person.h"
-#include "string.h"
-#include "Int.h"
-#include "hashmap.h"
+#include <src/point.h>
+#include <src/person.h>
+#include <src/string.h>
+#include <src/Int.h>
+#include <src/hashmap.h>
 #include <assert.h>
 #include <config.h>
 int usage(){
