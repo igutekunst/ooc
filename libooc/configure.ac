@@ -4,7 +4,7 @@
 AC_PREREQ([2.69])
 AC_INIT([ooc], [0.0.1], [igutekunst@gmail.com])
 
-AM_INIT_AUTOMAKE([0.0.1 foreign])
+AM_INIT_AUTOMAKE([0.0.1 foreign parallel-tests color-tests])
 AC_CONFIG_SRCDIR([src])
 AC_CONFIG_HEADERS([config.h])
 
@@ -28,11 +28,15 @@ AC_PROG_CC
 AM_PROG_AR
 AC_PROG_RANLIB
 
+# Tests
+AM_PATH_CHECK() 
+
 # Checks for library functions.
 AC_FUNC_MALLOC
 AC_FUNC_REALLOC
 AC_CHECK_FUNCS([memset])
 
 AC_CONFIG_FILES([Makefile
-                 src/Makefile])
+                 src/Makefile
+                 tests/Makefile])
 AC_OUTPUT

@@ -193,6 +193,8 @@ AWK = @AWK@
 CC = @CC@
 CCDEPMODE = @CCDEPMODE@
 CFLAGS = @CFLAGS@
+CHECK_CFLAGS = @CHECK_CFLAGS@
+CHECK_LIBS = @CHECK_LIBS@
 CPP = @CPP@
 CPPFLAGS = @CPPFLAGS@
 CYGPATH_W = @CYGPATH_W@
@@ -274,11 +276,11 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 lib_LIBRARIES = libooc.a
 libooc_a_SOURCES = object.c object.h \
-			   string.c string.h \
-			   hashmap.c hashmap.h \
-			   point.c point.h \
-			   person.c person.h \
-			   Int.c Int.h
+			   	   string.c string.h \
+				   hashmap.c hashmap.h \
+				   point.c point.h \
+				   person.c person.h \
+				   Int.c Int.h
 
 all: all-am
 

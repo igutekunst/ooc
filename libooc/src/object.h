@@ -20,6 +20,7 @@ struct class_header{
     const char*     (* str)  (const void *);
     void*           (* to_String)  (const void *);
     const void*     (* append) (const void * _self, const void * _other);
+    bool            (* equals) (const void * _self, const void * _other);
     const void*     (* iter)    (const void * _object);
     const void*     (* copy) (const void * _self);
     void*           (* insert) (const void * _self, 
@@ -48,6 +49,7 @@ const char*     str     (const void * _object);
 void*           to_String  (const void * _object);
 const void*     copy    (const void * _object);
 const void*     append  (const void * _object, const void * _other);
+bool            equals  (const void * _object, const void * _other);
 const void*     iter    (const void * _object);
 void            play    (void * _object);
 uint32_t        hash    (const void * _self);

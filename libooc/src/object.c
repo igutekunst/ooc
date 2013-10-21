@@ -28,8 +28,8 @@ void * del (void * _self){
         if( class->__destruct__) {
             _self = class->__destruct__(_self);
         } else {
-            printf("No destructor. Freeing\n");
             free(_self) ;
+            return NULL;
         }
         return _self;
     }
@@ -122,14 +122,32 @@ const void * copy(const void * _self) {
 }
 
 
+bool equals(const void * _self, const void * _other){
+    const struct class_header * class;
+    const struct class_header * other;
+
+    if ((class = get_obj(_self,"attempted to append non object\n" ))) {
+        other = get_obj(_other,"attempted to compare non object\n" );
+        if(class->equals){
+            return class->equals(_self, _other);
+        } else  if (class->hash && other->hash) {
+            return hash(_self) == hash(_other);
+        } else{
+            fprintf(stderr, "type does not support comparrason\n");
+            exit(EXIT_FAILURE);
+        }
+    }
+    return NULL;
+}
+
 const void * append(const void * _self, const void * _other){
     const struct class_header * class;
 
-    if ((class = get_obj(_self,"Attempted to append non object\n" ))) {
+    if ((class = get_obj(_self,"attempted to append non object\n" ))) {
         if(class->append)
             return class->append(_self, _other);
         else {
-            fprintf(stderr, "Type does not support append\n");
+            fprintf(stderr, "type does not support append\n");
             exit(EXIT_FAILURE);
         }
     }

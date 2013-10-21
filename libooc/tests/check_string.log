@@ -1,0 +1,7 @@
+Running suite(s): String
+Attempted to make a NULL string
+100%: Checks: 4, Failures: 0, Errors: 0
+check_string.c:13:P:Core:test_string_create_delete:0: Passed
+check_string.c:31:P:Core:test_string_append:0: Passed
+check_string.c:70:P:Core:test_string_copy:0: Passed
+check_string.c:50:P:Core:test_string_equals:0: Passed
