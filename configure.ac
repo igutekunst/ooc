@@ -2,9 +2,9 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.69])
-AC_INIT([ooc], [0.0.1], [igutekunst@gmail.com])
+AC_INIT([libooc], [0.1.0], [igutekunst@gmail.com])
 
-AM_INIT_AUTOMAKE([0.0.1 foreign parallel-tests color-tests])
+AM_INIT_AUTOMAKE([0.1.0 foreign parallel-tests color-tests])
 AC_CONFIG_SRCDIR([src])
 AC_CONFIG_HEADERS([config.h])
 
