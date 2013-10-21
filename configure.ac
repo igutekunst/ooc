@@ -2,12 +2,11 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.69])
-AC_INIT([ooc], [0.0.3], [igutekunst@gmail.com])
-AC_CONFIG_AUX_DIR([.])’
-AM_INIT_AUTOMAKE([0.0.1 foreign])
+AC_INIT([ooc], [0.0.1], [igutekunst@gmail.com])
+
+AM_INIT_AUTOMAKE([0.0.1 foreign parallel-tests color-tests])
 AC_CONFIG_SRCDIR([src])
 AC_CONFIG_HEADERS([config.h])
-#AC_CONFIG_SUBDIRS([src])
 
 # Set some compiler settings
 AC_PROG_CC_STDC
@@ -15,9 +14,6 @@ AC_PROG_CC_STDC
 # Checks for programs.
 
 # Checks for libraries.
-
-#copies necessary libraries
-#AC_CONFIG_LINKS([src/libooc:../libooc])
 
 # Checks for header files.
 AC_CHECK_HEADERS([stddef.h stdint.h stdlib.h string.h])
@@ -28,11 +24,19 @@ AC_C_INLINE
 AC_TYPE_SIZE_T
 AC_TYPE_UINT32_T
 
+AC_PROG_CC
+AM_PROG_AR
+AC_PROG_RANLIB
+
+# Tests
+AM_PATH_CHECK() 
+
 # Checks for library functions.
 AC_FUNC_MALLOC
 AC_FUNC_REALLOC
 AC_CHECK_FUNCS([memset])
 
 AC_CONFIG_FILES([Makefile
-                 src/Makefile])
+                 src/Makefile
+                 tests/Makefile])
 AC_OUTPUT
