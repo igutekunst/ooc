@@ -1,6 +1,9 @@
 ooc
 ===
 
+[![Build Status](https://travis-ci.org/igutekunst/ooc.png)](https://travis-ci.org/igutekunst/ooc/png)
+
+
 Experimenting with Object Oriented C
 
 To install, do the usual dance.
