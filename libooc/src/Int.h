@@ -1,7 +1,7 @@
 #ifndef OBJ_INT_H
 #define OBJ_INT_H
 
-#include <object.h>
+#include "object.h"
 #include <string.h>
 #include <stdint.h>
 struct IntClass{

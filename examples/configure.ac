@@ -5,9 +5,9 @@ AC_PREREQ([2.69])
 AC_INIT([ooc], [0.0.3], [igutekunst@gmail.com])
 AC_CONFIG_AUX_DIR([.])’
 AM_INIT_AUTOMAKE([0.0.1 foreign])
-#AC_CONFIG_SRCDIR([src])
+AC_CONFIG_SRCDIR([src])
 AC_CONFIG_HEADERS([config.h])
-AC_CONFIG_SUBDIRS([libooc examples])
+#AC_CONFIG_SUBDIRS([src])
 
 # Set some compiler settings
 AC_PROG_CC_STDC
@@ -15,6 +15,9 @@ AC_PROG_CC_STDC
 # Checks for programs.
 
 # Checks for libraries.
+
+#copies necessary libraries
+#AC_CONFIG_LINKS([src/libooc:../libooc])
 
 # Checks for header files.
 AC_CHECK_HEADERS([stddef.h stdint.h stdlib.h string.h])
@@ -30,5 +33,6 @@ AC_FUNC_MALLOC
 AC_FUNC_REALLOC
 AC_CHECK_FUNCS([memset])
 
-AC_CONFIG_FILES([Makefile ])
+AC_CONFIG_FILES([Makefile
+                 src/Makefile])
 AC_OUTPUT
