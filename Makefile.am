@@ -1,1 +1,1 @@
-SUBDIRS = libooc examples
+SUBDIRS = src
