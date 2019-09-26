@@ -1,36 +1,29 @@
 ooc
 ===
 
-[![Build Status](https://travis-ci.org/igutekunst/ooc.png)](https://travis-ci.org/igutekunst/ooc/png)
+Experimenting with "Object Oriented C".
+
+This library is a toy implementation of "objects" in C, with the idea
+to enable dynamic dispatch and polymorphism of a set of carefully written "classes" .
+
+This library aims to enable:
+* Less boilerplate code to do common tasks
+* A friendlier standard library
+* A "batteries included" C like environment.
 
 
-Experimenting with Object Oriented C
+The design of both the API and internals are inspired by Python, though no attempt has been
+made to mimic python APIs exactly, or interface with Python, though this may be a goal in the 
+future. 
 
-To install, do the usual dance.
-````
-./configure
-make
-make install
-````
+This library is completely experimental, and has not been used in any real projects as far as I know. 
 
-This will install a useless program named `main` It does nothing useful. Updates will be coming.
-
+It's here to share some ideas with friends and the world. My hope is it will be useful one day, at which point
+I will promote it with more confidence!
 
 libOOC
 ====
 
-To install just the library without the usefless executable
-
-````
-cd libooc
-./configure
-make
-make install
-````
-
-You can now compile programs using libOOC by including <libooc/object.h> and <libooc/{the object you want}.h>
-
-Compile with the -llibooc flag
 
 Example 
 ````
@@ -43,5 +36,3 @@ int main(int argc, char * argv[]) {
 
 ````
 
-The readme is a work in progress. The project is not really intended for public consumption yet, more as a
-notbook of my ideas...

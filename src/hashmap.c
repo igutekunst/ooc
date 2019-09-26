@@ -1,4 +1,4 @@
-#include "hashmap.h"
+#include "../include/ooc/hashmap.h"
 
 bool rng_seeded = false;
 const void *    __construct__HashMap(const void * self, va_list args);
@@ -6,16 +6,16 @@ void            print_HashMap(void * _self);
 size_t          get_size_HashMap(const void * _self);
 size_t          get_len_HashMap(const void * _self);
 const char *    str_HashMap(const void *_self);
-void *          insert_HashMap(const void * _self, 
+void insert_HashMap(const void * _self,
                                const void * key, 
                                const void * _other);
-void *          get_HashMap(const void * _self, 
+const void *          get_HashMap(const void * _self,
                             const void * key);
 
 const void *    copy_HashMap(const void * _self);
 const void *    next_HashMap(const void * _self);
 
-void internal_resize_HashMap(struct HashMap * self, uint32_t new_m);
+void internal_resize_HashMap(struct HashMap * self, uint64_t new_m);
 
 struct HashItem * alloc_hash_items(size_t n){
    struct HashItem * items =  (struct HashItem *) malloc(sizeof(struct HashItem) * n);
@@ -24,15 +24,15 @@ struct HashItem * alloc_hash_items(size_t n){
 }
 
 
-uint32_t random_a(){
-    uint32_t a = random() % MAX_A;
+uint64_t random_a(){
+    uint64_t a = random() % MAX_A;
     while (! (a &  0x01) ) 
         a =  random() % MAX_A;
     return a;
 }
 
-uint32_t lg(uint32_t n){
-    uint32_t ans = 0;
+uint64_t lg(uint64_t n){
+    uint64_t ans = 0;
     while (n)  {
         n >>=1; 
         ans++;
@@ -40,21 +40,21 @@ uint32_t lg(uint32_t n){
     return ans - 1;
 }
 
-uint32_t random_b(uint32_t m){
+uint64_t random_b(uint64_t m){
 
-    uint32_t M = lg(m);
+    uint64_t M = lg(m);
     return random() % (2 << ( W- M));
 }
 
-uint32_t internal_hash(uint32_t a, uint32_t b, uint32_t M, uint32_t key){
-    return (uint32_t) (a*key+b) >> (W-M);
+uint64_t internal_hash(uint64_t a, uint64_t b, uint64_t M, uint64_t key){
+    return (uint64_t) (a*key+b) >> (W-M);
 }
 
 void  internal_insert_HashMap(struct HashMap * self,
-                               uint32_t internal_key,
+                               uint64_t internal_key,
                                const void * _value) {
 
-    uint32_t h = internal_hash(self->a, self->b, self->M, internal_key);
+    uint64_t h = internal_hash(self->a, self->b, self->M, internal_key);
     struct HashItem * dest =  &self->items[h];
     int depth = 0;
     while(dest->value){
@@ -81,7 +81,7 @@ void  internal_insert_HashMap(struct HashMap * self,
     }
 
 }
-void internal_resize_HashMap(struct HashMap * self, uint32_t new_m){
+void internal_resize_HashMap(struct HashMap * self, uint64_t new_m){
     //hold onto items, so we can insert them into the new structure
     assert( ! (new_m & 0x01)); // make sure it's a power of two
 
@@ -90,7 +90,7 @@ void internal_resize_HashMap(struct HashMap * self, uint32_t new_m){
         new_m = HASH_TABLE_DEFAULT_LEN; 
     }
     struct HashItem * old_items = self->items;
-    uint32_t old_m = self->m;
+    uint64_t old_m = self->m;
 
     // double relavant parameters
     // This is necessary so insertion works
@@ -188,7 +188,7 @@ const char * str_HashMap(const void * _self){
 }
 
 
-void * insert_HashMap(const void * _self, 
+void insert_HashMap(const void * _self,
                       const void * _key, 
                       const void * _value) {
     struct HashMap * self = (struct HashMap *) _self;
@@ -199,14 +199,14 @@ void * insert_HashMap(const void * _self,
                 fprintf(stderr, "Attempt to use unhashable type as key\n");
                 exit(1);
             }
-            uint32_t key = header->hash(_key);
+            uint64_t key = header->hash(_key);
             internal_insert_HashMap(self, key, _value);
             //printf("self['%s'] = '%s'\n", str(_key), str(_value));
         }
     }
 }
 
-void * get_HashMap(const void * _self, 
+const void * get_HashMap(const void * _self,
                    const void * _key ) {
     struct HashMap * self = (struct HashMap *) _self;
     if (get_obj(_key, "Attempted to get with  invalid key\n")) {
@@ -215,8 +215,8 @@ void * get_HashMap(const void * _self,
                fprintf(stderr, "Attempt to use unhashable type as key\n");
                exit(1);
            }
-           uint32_t key = header->hash(_key);
-           uint32_t h = internal_hash(self->a, self->b, self->M, key);
+           uint64_t key = header->hash(_key);
+           uint64_t h = internal_hash(self->a, self->b, self->M, key);
            struct HashItem * _item =  &self->items[h];
            int depth;
            while(_item && _item->key != key){
@@ -242,8 +242,8 @@ void  del_item_HashMap(const void * _self,
                fprintf(stderr, "Attempt to use unhashable type as key\n");
                exit(1);
            }
-           uint32_t item_key = key->hash(key);
-           uint32_t h = internal_hash(self->a, self->b, self->M, item_key);
+           uint64_t item_key = key->hash(key);
+           uint64_t h = internal_hash(self->a, self->b, self->M, item_key);
 
            struct HashItem * _item =  &self->items[h];
 

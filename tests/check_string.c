@@ -1,6 +1,6 @@
 #include <check.h>
-#include "../src/object.h"
-#include "../src/string.h"
+#include <ooc/object.h>
+#include <ooc/string.h>
 
 START_TEST(test_string_create_delete){
     const struct String * s;

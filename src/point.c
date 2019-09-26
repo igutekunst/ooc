@@ -1,4 +1,4 @@
-#include "point.h"
+#include "../include/ooc/point.h"
 
 const void * __construct__Point(const void * const self, va_list args);
 void print_Point(const void * _self);

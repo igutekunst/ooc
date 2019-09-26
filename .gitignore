@@ -29,3 +29,5 @@ config.h
 
 #Ctags
 tags
+
+cmake-build-debug

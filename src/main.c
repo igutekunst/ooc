@@ -1,17 +1,13 @@
-#include <src/point.h>
-#include <src/person.h>
-#include <src/string.h>
-#include <src/Int.h>
-#include <src/hashmap.h>
+#include <ooc/point.h>
+#include <ooc/person.h>
+#include <ooc/string.h>
+#include <ooc/Int.h>
+#include <ooc/hashmap.h>
 #include <assert.h>
-#include <config.h>
-int usage(){
-    printf("This is " PACKAGE_STRING ".");
-    return 0;
-}
+
 int main(int argc, char * argv[]){
     const struct Point * a = new(Point, 5., 7.);
-    const struct String *first   = new(String, "isaac");
+    const struct String *first   = new(String, "Isaac");
     const struct String *cool   = new(String, "cool");
     
     const struct String * name = new(String, "Isaac Harrison Gutekunst");
@@ -40,24 +36,8 @@ int main(int argc, char * argv[]){
             print(item);
         }
     }
-    exit(0);
-    printf("Made iterator \n");
 
+    printf("%s", clsname(tim));
 
-
-    
-    const struct HashMap * h = new(HashMap);
-    int i; 
-    for(i = 0; i < 64 ; i++){
-        char c[10];
-        sprintf(c, "key%d", i);
-        const struct String * key = new(String, c);
-        const struct  String * new_item = append(name, key);
-        insert(h, key, new_item) ;
-        //make sure same item is returned every time
-        assert(new_item == get_item(h, key));
-    }
-    printf("seems good\n");
-return 0;
-
+    return 0;
 }

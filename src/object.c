@@ -1,4 +1,5 @@
-#include <object.h>
+#include <assert.h>
+#include "../include/ooc/object.h"
 
 const struct class_header Class = {
    .magic = MAGIC
@@ -7,6 +8,7 @@ const struct class_header Class = {
 const void * new (const void * const _class, ...) {
     const struct class_header * class = (struct class_header * ) _class;
     if (!class || class->magic != MAGIC){
+        fprintf(stderr, "new called with invalid class\n");
         exit(1);
     }
     const void * new_object = (struct class_header *) malloc(class->size);
@@ -22,18 +24,15 @@ const void * new (const void * const _class, ...) {
 }
 
 
-void * del (void * _self){
+void del (const void *_object){
     const struct class_header * class;
-    if ((class = get_obj(_self,"Attempt to delete non object\n"))) {
+    if ((class = get_obj(_object, "Attempt to delete non object\n"))) {
         if( class->__destruct__) {
-            _self = class->__destruct__(_self);
+            _object = class->__destruct__(_object);
         } else {
-            free(_self) ;
-            return NULL;
+            free((void*) _object) ;
         }
-        return _self;
     }
-    return NULL;
 }
 
 
@@ -81,18 +80,34 @@ const void * type(const void * _self){
     return NULL;
 }
 
+
 size_t len(const void * _self) {
     const struct class_header * class;
     if ((class = get_obj(_self,"Attempted to get len of non object\n" ))) {
         if (class->get_len) 
             return class->get_len(_self);
         else {
-            printf("TypeError: object does not suppport len\n") ;
+            printf("TypeError: object does not support len\n") ;
             exit(1);
         }
     }
     return 0;
 }
+
+
+const char* clsname(const void * _self) {
+    const struct class_header * class;
+    if ((class = get_obj(_self,"Attempted to get name of invalid object\n" ))) {
+        if (class->object_name)
+            return class->object_name;
+        else {
+            printf("TypeError: object does not support name\n.") ;
+            exit(1);
+        }
+    }
+    return 0;
+}
+
 
 void del_item(const void * _self, const void * key) {
     const struct class_header * class;
@@ -100,7 +115,7 @@ void del_item(const void * _self, const void * key) {
         if (class->del_item) 
             class->del_item(class, key);
         else {
-            printf("TypeError: object does not suppport deleting items. \n") ;
+            printf("TypeError: object does not support del. \n") ;
             exit(1);
         }
     }
@@ -143,29 +158,16 @@ bool equals(const void * _self, const void * _other){
 const void * append(const void * _self, const void * _other){
     const struct class_header * class;
 
-    if ((class = get_obj(_self,"attempted to append non object\n" ))) {
+    if ((class = get_obj(_self,"Attempted to append non object\n" ))) {
         if(class->append)
             return class->append(_self, _other);
         else {
-            fprintf(stderr, "type does not support append\n");
+            fprintf(stderr, "Type does not support append\n");
             exit(EXIT_FAILURE);
         }
     }
     return NULL;
 }
-
-void  play(void * _self){
-    const struct class_header * class;
-    if ((class = get_obj(_self, "Attempted to append non object\n"))) {
-        if(class->play)
-            class->play(_self);
-        else{
-            fprintf(stderr, "Type does not support append\n");
-            exit(EXIT_FAILURE);
-        }
-    }
-}
-
 
 
 inline struct class_header * get_obj(const void * _self, const char * message){
@@ -174,10 +176,11 @@ inline struct class_header * get_obj(const void * _self, const char * message){
         return class;
     }
     if (message) {
-        printf("%s", message);
+        fprintf(stderr, "%s", message);
         exit(1);
     } else {
-        return NULL;
+        fprintf(stderr, "get_obj failed for unknown reason");
+        exit(1);
     }
 
 }
@@ -187,9 +190,9 @@ inline const struct class_header * get_class_header(const void * _self){
     return   * (struct class_header ** ) _self;
 }
 
-uint32_t hash(const void * _self) {
+uint64_t hash(const void * _self) {
     
-    if(get_obj(_self, "Failed to insert into non collection\n")){
+    if(get_obj(_self, "hash called with invalid object")){
         const struct class_header * self = get_class_header(_self);
         return self->hash(_self) ;
     }
@@ -202,17 +205,17 @@ void * insert(const void * _self,
     
     if(get_obj(_self, "Failed to insert into non collection\n")){
         const struct class_header * self = get_class_header(_self);
-        if (self->insert)
+        assert(self->insert);
             self->insert(_self, _key, _other) ;
     }
     return NULL;
 }
 
-void * get_item(const void * _self, 
+const void * get_item(const void * _self,
                       const void * _key ) {
     if(get_obj(_self, "Failed to get from non collection\n")){
         const struct class_header * self = get_class_header(_self);
-        if(self->get)
+        assert(self->get);
             return self->get(_self, _key) ;
     }
     return NULL;

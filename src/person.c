@@ -1,4 +1,4 @@
-#include "person.h"
+#include "../include/ooc/person.h"
 
 
 

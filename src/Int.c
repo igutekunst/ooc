@@ -1,5 +1,5 @@
 
-#include "Int.h"
+#include "../include/ooc/Int.h"
 
 const void * __construct__Int(const void * self, va_list args);
 void print_Int(const void * _self);

@@ -18,11 +18,12 @@ struct HashMapClass_iter{
     struct class_header class;
 };
 
-typedef struct HashItem {
-    uint32_t key;
-    void * value;    
+struct HashItem {
+    uint64_t key;
+    const void * value;
     struct HashItem * next;
 };
+typedef struct HashItem HashItem;
 
 struct HashMap{
     struct class_header * class;
@@ -32,8 +33,8 @@ struct HashMap{
     size_t M;
     size_t hwm;
     size_t lwm;
-    uint32_t a;
-    uint32_t b;
+    uint64_t a;
+    uint64_t b;
     struct HashItem * items;
 
 };
