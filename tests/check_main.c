@@ -2,13 +2,17 @@
 #include <stdlib.h>
 #include "check_hashmap.h"
 #include "check_string.h"
+#include "check_int.h"
 
 int main(void){
     int number_failed;
-    Suite *string_suite = string_suite_create();
-    Suite *hashmap_suite = hashmap_suite_create();
-    SRunner *sr = srunner_create (string_suite);
+    Suite* ooc_suite = string_suite_create();
+    Suite* hashmap_suite = hashmap_suite_create();
+    Suite* int_suite = int_suite_create();
+    SRunner *sr = srunner_create (ooc_suite);
     srunner_add_suite(sr, hashmap_suite);
+    srunner_add_suite(sr, int_suite);
+
     srunner_set_fork_status(sr, CK_NOFORK);
     srunner_run_all (sr, CK_VERBOSE);
     number_failed = srunner_ntests_failed (sr);

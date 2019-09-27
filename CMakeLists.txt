@@ -19,6 +19,7 @@ add_library(ooc
         src/person.c
         src/point.c
         src/string.c
+        src/trait_math.c
 
         include/ooc/person.h
         include/ooc/point.h
@@ -26,8 +27,12 @@ add_library(ooc
         include/ooc/object.h
         include/ooc/Int.h
         include/ooc/hashmap.h
+
+        src/trait_math_internal.h
+        include/ooc/trait_math.h
         )
 
+target_include_directories(ooc PRIVATE include)
 add_executable(main src/main.c )
 target_include_directories(main PRIVATE include)
 
@@ -42,6 +47,8 @@ add_executable(test_string
         tests/check_hashmap.c
         tests/check_hashmap.h
         tests/check_main.c
+        tests/check_int.c
+        tests/check_int.h
         )
 
 LINK_DIRECTORIES(/usr/local/lib)

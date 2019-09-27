@@ -37,7 +37,6 @@ int main(int argc, char * argv[]){
         }
     }
 
-    printf("%s", clsname(tim));
 
     return 0;
 }

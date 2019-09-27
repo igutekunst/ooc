@@ -1,4 +1,5 @@
-#include "../include/ooc/person.h"
+#include <ooc/person.h>
+#include "object_internal.h"
 
 
 
@@ -16,7 +17,7 @@ struct PersonClass person_class = {
               .size  = (sizeof(struct Person)),
               .print = print_Person,
               .get_size = get_size_Person,
-              .__construct__ = __construct__Person,
+              .object_init = __construct__Person,
              }
 };
 

@@ -5,13 +5,14 @@
 #include <ooc/object.h>
 #include "check_utils.h"
 
-void fill_random_chars(char* str, size_t len) {
-   for (size_t i = 0; i < len; i++)  {
+void fill_random_str(char* str, size_t len) {
+   for (size_t i = 0; i < len -1; i++)  {
        char c = 0;
        do {
-           c = 'a' + random() % 26;
+           c = 'a' + random() % 25;
        } while (c == 0);
 
       str[i] = c;
    }
+   str[len -1] = '\0';
 }

@@ -1,73 +1,109 @@
 #ifndef OBJECT_H
 #define OBJECT_H
+
 #include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
 #include <stdbool.h>
 #include <stdint.h>
-#define MAGIC ((unsigned long ) 0xBD71472)
-struct class_header {
-    unsigned long magic;
-    size_t size;
-    size_t          ( *get_size) (const void * _self);
-    const char *    ( *get_name) (const void * _self);
-    size_t          ( *get_len) (const void * _self);
-    size_t          ( *play) (const void * _self);
-    const void *    ( * __construct__ ) (const void * _self, va_list args);
-    void*           ( * __destruct__  ) (const void * _self);
-    void            (* print)  (const void *);
-    void*           (* to_string)  (const void *);
-    const char*     (* str)  (const void *);
-    void*           (* to_String)  (const void *);
-    const void*     (* append) (const void * _self, const void * _other);
-    bool            (* equals) (const void * _self, const void * _other);
-    const void*     (* iter)    (const void * _object);
-    const void*     (* copy) (const void * _self);
-    void            (* insert) (const void * _self,
-                                const void * _key,
-                                const void * item);
 
-    const void*     (* get) (const void * _self,
-                             const void * _key);
+/**
+ * @defgroup common Common functions
+ * @{
+ */
 
-    uint64_t        (* hash) (const void * _self);
-    void            (* del_item) (const void * _self, const void * key);
+/**
+ * @brief Create a new ooc object.
+ *
+ * This function allocates memory and returns a void* to a
+ * newly allocated ooc object, or NULL on failure.
+ *
+ * _class should be a pointer to an ooc class object, such as
+ * String or HashMap.
+ * @param class ooc class object
+ * @return new object or type class, or NULL
+ */
+const void *new(const void *class, ...);
 
-    const void *    (* next) (const void * _self);
-    const char*     object_name;
+/**
+ * @brief get ooc class object
+ * @param self ooc object
+ * @return ooc class of a given ooc object
+ */
+const void *type(const void *self);
 
-};
+/**
+ * @brief delete an ooc object
+ * @param object
+ */
+void del(const void *object);
 
-const void * type(const void * _self);
-const void *  new (const void * _class, ...);
+/**
+ * @brief get size in bytes
+ *
+ * Get the full size in bytes of an ooc object.
+ * This is implementation defined, and may not include the
+ * size of items contained in a collection for example
+ * @param _object
+ * @return size in bytes of object
+ */
+size_t size(const void *_object);
 
-void del (const void *_object);
+const char *clsname(const void *_self);
 
-void            print       (const void * _object);
-size_t          size        (const void * _object);
-size_t          len         (const void * _object);
-const char *    clsname     (const void * _self);
-const char*     str         (const void * _object);
-void*           to_String   (const void * _object);
-const void*     copy        (const void * _object);
-const void*     append      (const void * _object, const void * _other);
-bool            equals      (const void * _object, const void * _other);
-const void*     iter        (const void * _object);
-uint64_t        hash        (const void * _self);
+void print(const void *_object);
 
-const void*     next        (const void * _self);
-void            del_item    (const void * _self, const void * key);
+size_t len(const void *_object);
 
-void*           insert      (const void * _self,
-                             const void * _key,
-                             const void * item);
+const void *copy(const void *_object);
 
-const void * get_item    (const void * _self,
-                          const void * _key);
+bool equals(const void *_object, const void *_other);
+
+/**  @}
+ * End of Common functions
+ * */
+
+
+const char *str(const void *_object);
+
+void *to_String(const void *_object);
+
+
+/**
+ *
+ * @defgroup collection Functions for working with collections
+ * @{
+ */
+const void *append(const void *_object, const void *_other);
+
+void *insert(const void *_self,
+             const void *_key,
+             const void *item);
+
+const void *get_item(const void *_self,
+                     const void *_key);
+
+struct class_header *get_obj(const void *_self, const char *message);
+
+inline struct class_header *get_obj_type(const void *_self, const void *class, const char *message);
+
+const void *iter(const void *_object);
+
+uint64_t hash(const void *_self);
+
+const void *next(const void *_self);
+
+void del_item(const void *_self, const void *key);
+
+/**
+ * @}
+ */
+
+
 extern const struct class_header Class;
 
-struct class_header * get_obj(const void * _self, const char *message);
-const struct class_header * get_class_header(const void * _self);
+
+const struct class_header *get_class_header(const void *_self);
 
 #endif

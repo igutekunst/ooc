@@ -6,6 +6,6 @@
 #define OOC_CHECK_UTILS_H
 #include <stdlib.h>
 
-void fill_random_chars(char* str, size_t len);
+void fill_random_str(char* str, size_t len);
 
 #endif //OOC_CHECK_UTILS_H

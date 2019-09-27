@@ -4,9 +4,6 @@
 #include "object.h"
 #include <string.h>
 
-struct StringClass{
-    struct class_header class;
-};
 
 struct String{
     struct class_header * class;

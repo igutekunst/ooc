@@ -112,24 +112,42 @@ END_TEST
 
 
 START_TEST(test_string_hashing_many) {
-    const size_t NUM_ITERATIONS = 10000;
+    const size_t NUM_ITERATIONS = 100000;
     const struct String* keys[NUM_ITERATIONS];
     const struct String* values[NUM_ITERATIONS];
     const struct HashMap* hashmap = new(HashMap);
+
     for (size_t i = 0; i < NUM_ITERATIONS; i++) {
         char key[10];
         char value[10];
-        fill_random_chars(key, sizeof(value));
-        fill_random_chars(value, sizeof(value));
+        fill_random_str(key, sizeof(value));
+        //fill_random_str(value, sizeof(value));
+        memcpy(value, key, sizeof(value));
 
         keys[i]  = new(String, key);
         values[i]  = new(String, value);
-        insert(hashmap, keys[i], values[i]);
     }
+    // Start timing at beginning of inserts
+    clock_t t = clock();
+    size_t collisions = 0;
+    for (size_t i = 0; i < NUM_ITERATIONS; i++) {
+        ck_assert_int_eq(i - collisions, len(hashmap));
+        void* item;
+        insert(hashmap, keys[i], values[i]);
 
+    }
+    clock_t insert_clocks = clock() - t;
+    t = clock();
     for (size_t i = 0; i < NUM_ITERATIONS; i++) {
         ck_assert_str_eq(str(values[i]), str(get_item(hashmap, keys[i])));
     }
+    clock_t get_clocks = clock() - t;
+    double insert_time = ((double)insert_clocks)/CLOCKS_PER_SEC; // in seconds
+    double get_time = ((double)get_clocks)/CLOCKS_PER_SEC; // in seconds
+    printf("Inserted %zu items in %f seconds\n", NUM_ITERATIONS, insert_time);
+    printf("Retrieved %zu items in %f seconds\n", NUM_ITERATIONS, get_time);
+
+    printf("Detected %zu hash collisions\n", collisions);
 
     del(hashmap);
 

@@ -6,7 +6,7 @@
 
 START_TEST(test_hashmap_add_delete) {
         srandom(1337);
-        const size_t NUM_ITERATIONS = 10;
+        const size_t NUM_ITERATIONS = 1000;
         const struct String* keys[NUM_ITERATIONS];
         const struct String* values[NUM_ITERATIONS];
         const struct HashMap* hashmap = new(HashMap);
@@ -14,8 +14,8 @@ START_TEST(test_hashmap_add_delete) {
             ck_assert_int_eq(i, len(hashmap));
             char key[10];
             char value[10];
-            fill_random_chars(key, sizeof(value));
-            fill_random_chars(value, sizeof(value));
+            fill_random_str(key, sizeof(value));
+            fill_random_str(value, sizeof(value));
 
             keys[i]  = new(String, key);
             values[i]  = new(String, value);
@@ -28,10 +28,8 @@ START_TEST(test_hashmap_add_delete) {
         }
 
         for (size_t i = 0; i < NUM_ITERATIONS; i++) {
-            printf("before delete: len: %d, NI: %d\n", len(hashmap), NUM_ITERATIONS - i );
             ck_assert_int_eq(NUM_ITERATIONS -i, len(hashmap));
             del_item(hashmap, keys[i]);
-            printf("after delete: len: %d, NI: %d\n", len(hashmap), NUM_ITERATIONS - i );
         }
 
         //del(hashmap);

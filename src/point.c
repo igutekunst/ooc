@@ -1,4 +1,9 @@
-#include "../include/ooc/point.h"
+#include <ooc/point.h>
+#include "object_internal.h"
+
+struct PointClass{
+    struct class_header class;
+};
 
 const void * __construct__Point(const void * const self, va_list args);
 void print_Point(const void * _self);
@@ -9,7 +14,7 @@ size_t get_size_Point(const void * _self);
 struct PointClass point_class = {
     .class = {.magic = MAGIC,
               .size = sizeof(struct Point),
-              .__construct__ = __construct__Point,
+              .object_init = __construct__Point,
               .print = print_Point,
               .get_size = get_size_Point,
               .get_len = 0

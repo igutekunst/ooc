@@ -1,3 +1,0 @@
-[submodule "3rd_party/check"]
-	path = 3rd_party/check
-	url = https://github.com/libcheck/check.git

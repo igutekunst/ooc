@@ -1,7 +1,13 @@
-#include "../include/ooc/string.h"
+#include <ooc/string.h>
+#include "object_internal.h"
 #include <string.h>
 #include <stdlib.h>
+#define FNV_PRIME_32 16777619
+#define FNV_OFFSET_32 2166136261U
 
+struct StringClass{
+    struct class_header class;
+};
 
 size_t String_get_len(const void * _self){
     struct String * self = (struct String *) _self;
@@ -94,10 +100,8 @@ bool String_equal(const void * _self, const void * _other){
 
     if (type(other) == String){
         return strcmp(str(self), str(other)) == 0;
-    }else if(other->hash) {
-        return hash(self) == hash(other);
-    }else {
-        printf("Cannot append some type to string\n") ;
+    } else {
+        printf("Cannot compare String to %s\n", clsname(other));
         exit(1);
     }
 }
@@ -108,13 +112,26 @@ const void* String_copy(const void * _self){
     return new(String, self->string_data);
 }
 
+uint32_t FNV32(char *s, size_t len) {
+    // adapter from http://ctips.pbworks.com/w/page/7277591/FNV%20Hash
+    uint32_t hash = FNV_OFFSET_32, i;
+    for(i = 0; i < len; i++)
+    {
+        hash = hash ^ (s[i]); // xor next byte into the bottom of the hash
+        hash = hash * FNV_PRIME_32; // Multiply by prime number found to work well
+    }
+    return hash;
+}
 
 uint64_t String_hash(const void * _self) {
     // See https://cp-algorithms.com/string/string-hashing.html
+    // Consider https://github.com/haipome/fnv/blob/master/fnv.c
     struct String * self = (struct String *) _self;
 
-    //TODO Consider generating random numbers at some point during startup strings don't always hash the same way
-    int64_t p = 313;
+    return FNV32(self->string_data, self->len);
+
+    // TODO reduce collisions
+    int64_t p = 53;
     int64_t m = 1e9 + 9;
     int64_t hash_value = 0;
     int64_t p_pow = 1;
@@ -130,7 +147,7 @@ uint64_t String_hash(const void * _self) {
 struct StringClass string_class = {
     .class = {.magic = MAGIC,
               .size = sizeof(struct String),
-              .__construct__ = __construct__String,
+              .object_init = __construct__String,
               .get_size = String_get_size,
               .get_len = String_get_len,
               .str = String_str,

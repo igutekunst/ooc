@@ -1,5 +1,5 @@
-ooc
-===
+Objected Oriented C {#mainpage}
+===================
 
 Experimenting with "Object Oriented C".
 
@@ -21,9 +21,10 @@ This library is completely experimental, and has not been used in any real proje
 It's here to share some ideas with friends and the world. My hope is it will be useful one day, at which point
 I will promote it with more confidence!
 
-libOOC
-====
-
+##Working Modules
+* HashMap
+* String
+* Int
 
 Example 
 ````
@@ -35,4 +36,10 @@ int main(int argc, char * argv[]) {
 }
 
 ````
+
+##Future Work
+* Add Int, Float and BigInt support
+* Add list
+* Add referencing counting
+* Traits
 

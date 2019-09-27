@@ -4,14 +4,12 @@
 #include "object.h"
 #include <string.h>
 #include <stdint.h>
-struct IntClass{
-    struct class_header class;
-};
+#define MAX_STR_SIZE 20
 struct Int{
     struct class_header * class;
     size_t size;
-    uint32_t value;
-    char * str_value;
+    int value;
+    char str_value[MAX_STR_SIZE];
 };
 extern void * Int;
 

@@ -1,10 +1,17 @@
 #include <assert.h>
-#include "../include/ooc/object.h"
+#include <ooc/object.h>
+#include "object_internal.h"
 
 const struct class_header Class = {
    .magic = MAGIC
 };
 
+/**
+ *
+ * @param _class
+ * @param ...
+ * @return
+ */
 const void * new (const void * const _class, ...) {
     const struct class_header * class = (struct class_header * ) _class;
     if (!class || class->magic != MAGIC){
@@ -13,9 +20,9 @@ const void * new (const void * const _class, ...) {
     }
     const void * new_object = (struct class_header *) malloc(class->size);
     va_list vl;
-    if (class->__construct__){
+    if (class->object_init){
         va_start(vl, _class);
-        new_object = class->__construct__(new_object, vl);
+        new_object = class->object_init(new_object, vl);
         va_end(vl);
     } else {
         printf("No default constructor. Allocating %zu bytes\n", class->size) ;
@@ -27,8 +34,8 @@ const void * new (const void * const _class, ...) {
 void del (const void *_object){
     const struct class_header * class;
     if ((class = get_obj(_object, "Attempt to delete non object\n"))) {
-        if( class->__destruct__) {
-            _object = class->__destruct__(_object);
+        if( class->object_deinit) {
+            class->object_deinit(_object);
         } else {
             free((void*) _object) ;
         }
@@ -117,7 +124,7 @@ const void * copy(const void * _self) {
         if (class->copy) 
             return class->copy(_self);
         else {
-            printf("TypeError: object does not suppport copying\n") ;
+            printf("TypeError: object does not support copying\n") ;
             exit(1);
         }
     }
@@ -133,28 +140,24 @@ bool equals(const void * _self, const void * _other){
         other = get_obj(_other,"attempted to compare non object\n" );
         if(class->equals){
             return class->equals(_self, _other);
-        } else  if (class->hash && other->hash) {
-            return hash(_self) == hash(_other);
-        } else{
-            fprintf(stderr, "type does not support comparrason\n");
-            exit(EXIT_FAILURE);
+        }  else {
+            return _self == _other;
         }
     }
     return NULL;
 }
 
-const void * append(const void * _self, const void * _other){
+const void* append(const void * _self, const void * _other){
     const struct class_header * class;
 
     if ((class = get_obj(_self,"Attempted to append non object\n" ))) {
-        if(class->append)
+        if(class->append) {
             return class->append(_self, _other);
-        else {
+        } else {
             fprintf(stderr, "Type does not support append\n");
             exit(EXIT_FAILURE);
         }
     }
-    return NULL;
 }
 
 
@@ -162,6 +165,23 @@ inline struct class_header * get_obj(const void * _self, const char * message){
     struct class_header * class =  * (struct class_header ** ) _self;
     if (class && class->magic == MAGIC){
         return class;
+    }
+    if (message) {
+        fprintf(stderr, "%s", message);
+        exit(1);
+    } else {
+        fprintf(stderr, "get_obj failed for unknown reason");
+        exit(1);
+    }
+}
+
+
+inline struct class_header * get_obj_type(const void * _self, const void* class, const char * message ){
+    struct class_header * class_header =  * (struct class_header ** ) _self;
+    if (class_header && class_header->magic == MAGIC){
+        if (class_header == class) {
+            return class;
+        }
     }
     if (message) {
         fprintf(stderr, "%s", message);
