@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="indexpage" kind="page">
+    <compoundname>index</compoundname>
+    <title>Objected Oriented C</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Experimenting with &quot;Object Oriented C&quot;.</para><para>This library is a toy implementation of &quot;objects&quot; in C, with the idea to enable dynamic dispatch and polymorphism of a set of carefully written &quot;classes&quot; .</para><para>This library aims to enable:<itemizedlist>
+<listitem><para>Less boilerplate code to do common tasks</para></listitem><listitem><para>A friendlier standard library</para></listitem><listitem><para>A &quot;batteries included&quot; C like environment.</para></listitem></itemizedlist>
+</para><para>The design of both the API and internals are inspired by Python, though no attempt has been made to mimic python APIs exactly, or interface with Python, though this may be a goal in the future.</para><para>This library is completely experimental, and has not been used in any real projects as far as I know.</para><para>It&apos;s here to share some ideas with friends and the world. My hope is it will be useful one day, at which point I will promote it with more confidence!</para><para><heading level="2">Working Modules</heading>
+</para><para><itemizedlist>
+<listitem><para><ref refid="structHashMap" kindref="compound">HashMap</ref></para></listitem><listitem><para><ref refid="structString" kindref="compound">String</ref></para></listitem><listitem><para><ref refid="structInt" kindref="compound">Int</ref></para></listitem></itemizedlist>
+</para><para>Example <programlisting><codeline><highlight class="normal">#include<sp/>&lt;libooc/hashmap.h&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">int<sp/>main(int<sp/>argc,<sp/>char<sp/>*<sp/>argv[])<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>struct<sp/>HashMap<sp/>*<sp/>h<sp/>=<sp/>new(HashMap);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>///<sp/>etc</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para><para><heading level="2">Future Work</heading>
+</para><para><itemizedlist>
+<listitem><para>Add <ref refid="structInt" kindref="compound">Int</ref>, Float and BigInt support</para></listitem><listitem><para>Add list</para></listitem><listitem><para>Add referencing counting</para></listitem><listitem><para>Traits </para></listitem></itemizedlist>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>

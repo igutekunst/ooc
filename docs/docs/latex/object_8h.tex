@@ -1,0 +1,110 @@
+\hypertarget{object_8h}{}\section{/\+Users/igutek/\+Documents/\+Projects/ooc/include/ooc/object.h File Reference}
+\label{object_8h}\index{/\+Users/igutek/\+Documents/\+Projects/ooc/include/ooc/object.\+h@{/\+Users/igutek/\+Documents/\+Projects/ooc/include/ooc/object.\+h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const void $\ast$ \mbox{\hyperlink{group__common_ga621d73ced80293aaecd6839e6bdec30d}{new}} (const void $\ast$class,...)
+\begin{DoxyCompactList}\small\item\em Create a new ooc object. \end{DoxyCompactList}\item 
+const void $\ast$ \mbox{\hyperlink{group__common_ga68940c707bbebe6946aeca72df1ee803}{type}} (const void $\ast$self)
+\begin{DoxyCompactList}\small\item\em get ooc class object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__common_gae293fe2fbbf9f2e8a87c1141e7412814}{del}} (const void $\ast$\+\_\+object)
+\item 
+size\+\_\+t \mbox{\hyperlink{group__common_gafac8564ed88a6f8585f043fc6b2fa7e1}{size}} (const void $\ast$\+\_\+object)
+\item 
+const char $\ast$ \mbox{\hyperlink{group__common_gadcc35aece3f8a4c822a9bf2a591f087b}{clsname}} (const void $\ast$\+\_\+self)
+\item 
+void \mbox{\hyperlink{group__common_ga34dc6ab72cfd51381e8173226484e827}{print}} (const void $\ast$\+\_\+object)
+\item 
+size\+\_\+t \mbox{\hyperlink{group__common_ga15be7f4a5b9c979feb83b76278f6716c}{len}} (const void $\ast$\+\_\+object)
+\item 
+const void $\ast$ \mbox{\hyperlink{group__common_gab08ed4d7b5aa115383f38057e006be9d}{copy}} (const void $\ast$\+\_\+object)
+\item 
+bool \mbox{\hyperlink{group__common_ga4b83176929aeea62524d2a126d3c897f}{equals}} (const void $\ast$\+\_\+object, const void $\ast$\+\_\+other)
+\item 
+const char $\ast$ \mbox{\hyperlink{object_8h_a6ab4b3e256d10044340c1f861c031438}{str}} (const void $\ast$\+\_\+object)
+\item 
+void $\ast$ \mbox{\hyperlink{object_8h_a0260ca338ae2a831d9a9aa244da5560d}{to\+\_\+\+String}} (const void $\ast$\+\_\+object)
+\item 
+const void $\ast$ \mbox{\hyperlink{group__collection_ga2bd4216bcf1d5810032394f57fbf5c2f}{append}} (const void $\ast$\+\_\+object, const void $\ast$\+\_\+other)
+\item 
+void $\ast$ \mbox{\hyperlink{group__collection_gaa1b700b0fbad0b56b81291260569d8b2}{insert}} (const void $\ast$\+\_\+self, const void $\ast$\+\_\+key, const void $\ast$item)
+\item 
+const void $\ast$ \mbox{\hyperlink{group__collection_gaa467fc1e6a3036f13ea20b36a6e672a1}{get\+\_\+item}} (const void $\ast$\+\_\+self, const void $\ast$\+\_\+key)
+\item 
+struct \mbox{\hyperlink{structclass__header}{class\+\_\+header}} $\ast$ \mbox{\hyperlink{group__collection_gaaad95663edf19fd4b734bd9977976169}{get\+\_\+obj}} (const void $\ast$\+\_\+self, const char $\ast$message)
+\item 
+const void $\ast$ \mbox{\hyperlink{group__collection_ga0cb67414335937707c9b92809a10895b}{iter}} (const void $\ast$\+\_\+object)
+\item 
+uint64\+\_\+t \mbox{\hyperlink{group__collection_gae0b3682e6ff5038e94c9e551bdd0d489}{hash}} (const void $\ast$\+\_\+self)
+\item 
+const void $\ast$ \mbox{\hyperlink{group__collection_gaecc46e74b03a83ca8a8023cc7264489c}{next}} (const void $\ast$\+\_\+self)
+\item 
+void \mbox{\hyperlink{group__collection_ga8b99290b943601321e5bf291daecaae3}{del\+\_\+item}} (const void $\ast$\+\_\+self, const void $\ast$key)
+\item 
+const struct \mbox{\hyperlink{structclass__header}{class\+\_\+header}} $\ast$ \mbox{\hyperlink{object_8h_a8837e68ffda149b4f7015cafab0c2a3c}{get\+\_\+class\+\_\+header}} (const void $\ast$\+\_\+self)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const struct \mbox{\hyperlink{structclass__header}{class\+\_\+header}} \mbox{\hyperlink{object_8h_a48931ea75855e6980404ced5938a79ec}{Class}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{object_8h_a8837e68ffda149b4f7015cafab0c2a3c}\label{object_8h_a8837e68ffda149b4f7015cafab0c2a3c}} 
+\index{object.\+h@{object.\+h}!get\+\_\+class\+\_\+header@{get\+\_\+class\+\_\+header}}
+\index{get\+\_\+class\+\_\+header@{get\+\_\+class\+\_\+header}!object.\+h@{object.\+h}}
+\subsubsection{\texorpdfstring{get\+\_\+class\+\_\+header()}{get\_class\_header()}}
+{\footnotesize\ttfamily const struct \mbox{\hyperlink{structclass__header}{class\+\_\+header}}$\ast$ get\+\_\+class\+\_\+header (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+self }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 180 of file object.\+c.
+
+
+
+Referenced by del\+\_\+item(), get\+\_\+\+Hash\+Map(), get\+\_\+item(), hash(), insert(), insert\+\_\+\+Hash\+Map(), internal\+\_\+insert\+\_\+\+Hash\+Map(), iter(), and next().
+
+\mbox{\Hypertarget{object_8h_a6ab4b3e256d10044340c1f861c031438}\label{object_8h_a6ab4b3e256d10044340c1f861c031438}} 
+\index{object.\+h@{object.\+h}!str@{str}}
+\index{str@{str}!object.\+h@{object.\+h}}
+\subsubsection{\texorpdfstring{str()}{str()}}
+{\footnotesize\ttfamily const char$\ast$ str (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+object }\end{DoxyParamCaption})}
+
+End of Common functions 
+
+Definition at line 46 of file object.\+c.
+
+
+
+References get\+\_\+obj(), and class\+\_\+header\+::str.
+
+
+
+Referenced by get\+\_\+\+Hash\+Map(), insert\+\_\+\+Hash\+Map(), and String\+\_\+equal().
+
+\mbox{\Hypertarget{object_8h_a0260ca338ae2a831d9a9aa244da5560d}\label{object_8h_a0260ca338ae2a831d9a9aa244da5560d}} 
+\index{object.\+h@{object.\+h}!to\+\_\+\+String@{to\+\_\+\+String}}
+\index{to\+\_\+\+String@{to\+\_\+\+String}!object.\+h@{object.\+h}}
+\subsubsection{\texorpdfstring{to\+\_\+\+String()}{to\_String()}}
+{\footnotesize\ttfamily void$\ast$ to\+\_\+\+String (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+object }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{object_8h_a48931ea75855e6980404ced5938a79ec}\label{object_8h_a48931ea75855e6980404ced5938a79ec}} 
+\index{object.\+h@{object.\+h}!Class@{Class}}
+\index{Class@{Class}!object.\+h@{object.\+h}}
+\subsubsection{\texorpdfstring{Class}{Class}}
+{\footnotesize\ttfamily const struct \mbox{\hyperlink{structclass__header}{class\+\_\+header}} Class}
+
+
+
+Definition at line 5 of file object.\+c.
+

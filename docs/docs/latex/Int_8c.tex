@@ -1,0 +1,138 @@
+\hypertarget{Int_8c}{}\section{/\+Users/igutek/\+Documents/\+Projects/ooc/src/\+Int.c File Reference}
+\label{Int_8c}\index{/\+Users/igutek/\+Documents/\+Projects/ooc/src/\+Int.\+c@{/\+Users/igutek/\+Documents/\+Projects/ooc/src/\+Int.\+c}}
+{\ttfamily \#include $<$ooc/\+Int.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}object\+\_\+internal.\+h\char`\"{}}\newline
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structIntClass}{Int\+Class}}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const void $\ast$ \mbox{\hyperlink{Int_8c_ae873d36964132e55e78d420070550a21}{\+\_\+\+\_\+construct\+\_\+\+\_\+\+Int}} (const void $\ast$self, va\+\_\+list args)
+\item 
+void \mbox{\hyperlink{Int_8c_a6100918901d95112924d8135157c5f3e}{print\+\_\+\+Int}} (const void $\ast$\+\_\+self)
+\item 
+size\+\_\+t \mbox{\hyperlink{Int_8c_abb3319f5992def2d229948d2ed6599b9}{get\+\_\+size\+\_\+\+Int}} (const void $\ast$\+\_\+self)
+\item 
+const char $\ast$ \mbox{\hyperlink{Int_8c_a5f323fab797bbc86aac561ba2e5e4007}{to\+\_\+str\+\_\+\+Int}} (const void $\ast$\+\_\+self)
+\item 
+void $\ast$ \mbox{\hyperlink{Int_8c_a1691ac04f4e88ad79d85283840d6f151}{append\+\_\+\+Int}} (void $\ast$\+\_\+self, void $\ast$\+\_\+other)
+\item 
+void \mbox{\hyperlink{Int_8c_a6d622faaba5978eeafe94e22c341faeb}{test\+\_\+int}} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structIntClass}{Int\+Class}} \mbox{\hyperlink{Int_8c_a51f8590f130ffc55b99a4c1b67d5e6fa}{int\+\_\+class}}
+\item 
+void $\ast$ \mbox{\hyperlink{Int_8c_a58f95e509cb472a46236fb2ba211af09}{Int}} = \&\mbox{\hyperlink{Int_8c_a51f8590f130ffc55b99a4c1b67d5e6fa}{int\+\_\+class}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{Int_8c_ae873d36964132e55e78d420070550a21}\label{Int_8c_ae873d36964132e55e78d420070550a21}} 
+\index{Int.\+c@{Int.\+c}!\+\_\+\+\_\+construct\+\_\+\+\_\+\+Int@{\+\_\+\+\_\+construct\+\_\+\+\_\+\+Int}}
+\index{\+\_\+\+\_\+construct\+\_\+\+\_\+\+Int@{\+\_\+\+\_\+construct\+\_\+\+\_\+\+Int}!Int.\+c@{Int.\+c}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+construct\+\_\+\+\_\+\+Int()}{\_\_construct\_\_Int()}}
+{\footnotesize\ttfamily const void $\ast$ \+\_\+\+\_\+construct\+\_\+\+\_\+\+Int (\begin{DoxyParamCaption}\item[{const void $\ast$}]{self,  }\item[{va\+\_\+list}]{args }\end{DoxyParamCaption})}
+
+
+
+Definition at line 34 of file Int.\+c.
+
+
+
+References Int, and Int\+::value.
+
+\mbox{\Hypertarget{Int_8c_a1691ac04f4e88ad79d85283840d6f151}\label{Int_8c_a1691ac04f4e88ad79d85283840d6f151}} 
+\index{Int.\+c@{Int.\+c}!append\+\_\+\+Int@{append\+\_\+\+Int}}
+\index{append\+\_\+\+Int@{append\+\_\+\+Int}!Int.\+c@{Int.\+c}}
+\subsubsection{\texorpdfstring{append\+\_\+\+Int()}{append\_Int()}}
+{\footnotesize\ttfamily void$\ast$ append\+\_\+\+Int (\begin{DoxyParamCaption}\item[{void $\ast$}]{\+\_\+self,  }\item[{void $\ast$}]{\+\_\+other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{Int_8c_abb3319f5992def2d229948d2ed6599b9}\label{Int_8c_abb3319f5992def2d229948d2ed6599b9}} 
+\index{Int.\+c@{Int.\+c}!get\+\_\+size\+\_\+\+Int@{get\+\_\+size\+\_\+\+Int}}
+\index{get\+\_\+size\+\_\+\+Int@{get\+\_\+size\+\_\+\+Int}!Int.\+c@{Int.\+c}}
+\subsubsection{\texorpdfstring{get\+\_\+size\+\_\+\+Int()}{get\_size\_Int()}}
+{\footnotesize\ttfamily size\+\_\+t get\+\_\+size\+\_\+\+Int (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+self }\end{DoxyParamCaption})}
+
+
+
+Definition at line 29 of file Int.\+c.
+
+
+
+References Int\+::size.
+
+\mbox{\Hypertarget{Int_8c_a6100918901d95112924d8135157c5f3e}\label{Int_8c_a6100918901d95112924d8135157c5f3e}} 
+\index{Int.\+c@{Int.\+c}!print\+\_\+\+Int@{print\+\_\+\+Int}}
+\index{print\+\_\+\+Int@{print\+\_\+\+Int}!Int.\+c@{Int.\+c}}
+\subsubsection{\texorpdfstring{print\+\_\+\+Int()}{print\_Int()}}
+{\footnotesize\ttfamily void print\+\_\+\+Int (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+self }\end{DoxyParamCaption})}
+
+
+
+Definition at line 44 of file Int.\+c.
+
+\mbox{\Hypertarget{Int_8c_a6d622faaba5978eeafe94e22c341faeb}\label{Int_8c_a6d622faaba5978eeafe94e22c341faeb}} 
+\index{Int.\+c@{Int.\+c}!test\+\_\+int@{test\+\_\+int}}
+\index{test\+\_\+int@{test\+\_\+int}!Int.\+c@{Int.\+c}}
+\subsubsection{\texorpdfstring{test\+\_\+int()}{test\_int()}}
+{\footnotesize\ttfamily void test\+\_\+int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 61 of file Int.\+c.
+
+\mbox{\Hypertarget{Int_8c_a5f323fab797bbc86aac561ba2e5e4007}\label{Int_8c_a5f323fab797bbc86aac561ba2e5e4007}} 
+\index{Int.\+c@{Int.\+c}!to\+\_\+str\+\_\+\+Int@{to\+\_\+str\+\_\+\+Int}}
+\index{to\+\_\+str\+\_\+\+Int@{to\+\_\+str\+\_\+\+Int}!Int.\+c@{Int.\+c}}
+\subsubsection{\texorpdfstring{to\+\_\+str\+\_\+\+Int()}{to\_str\_Int()}}
+{\footnotesize\ttfamily const char $\ast$ to\+\_\+str\+\_\+\+Int (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+self }\end{DoxyParamCaption})}
+
+
+
+Definition at line 50 of file Int.\+c.
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{Int_8c_a58f95e509cb472a46236fb2ba211af09}\label{Int_8c_a58f95e509cb472a46236fb2ba211af09}} 
+\index{Int.\+c@{Int.\+c}!Int@{Int}}
+\index{Int@{Int}!Int.\+c@{Int.\+c}}
+\subsubsection{\texorpdfstring{Int}{Int}}
+{\footnotesize\ttfamily void$\ast$ \mbox{\hyperlink{structInt}{Int}} = \&\mbox{\hyperlink{Int_8c_a51f8590f130ffc55b99a4c1b67d5e6fa}{int\+\_\+class}}}
+
+
+
+Definition at line 27 of file Int.\+c.
+
+
+
+Referenced by \+\_\+\+\_\+construct\+\_\+\+\_\+\+Int().
+
+\mbox{\Hypertarget{Int_8c_a51f8590f130ffc55b99a4c1b67d5e6fa}\label{Int_8c_a51f8590f130ffc55b99a4c1b67d5e6fa}} 
+\index{Int.\+c@{Int.\+c}!int\+\_\+class@{int\+\_\+class}}
+\index{int\+\_\+class@{int\+\_\+class}!Int.\+c@{Int.\+c}}
+\subsubsection{\texorpdfstring{int\+\_\+class}{int\_class}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structIntClass}{Int\+Class}} int\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+    .class = \{.magic = \mbox{\hyperlink{object__internal_8h_a94630370ae389fb1189282fa0742f310}{MAGIC}},
+              .size = \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct }\mbox{\hyperlink{structInt}{Int}}),
+              .object\_init = \mbox{\hyperlink{Int_8c_ae873d36964132e55e78d420070550a21}{\_\_construct\_\_Int}},
+              .print = \mbox{\hyperlink{Int_8c_a6100918901d95112924d8135157c5f3e}{print\_Int}},
+              .get\_size = \mbox{\hyperlink{Int_8c_abb3319f5992def2d229948d2ed6599b9}{get\_size\_Int}},
+              .str = \mbox{\hyperlink{Int_8c_a5f323fab797bbc86aac561ba2e5e4007}{to\_str\_Int}}
+             \}
+
+\}
+\end{DoxyCode}
+
+
+Definition at line 16 of file Int.\+c.
+

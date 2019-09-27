@@ -1,0 +1,451 @@
+\hypertarget{structclass__header}{}\section{class\+\_\+header Struct Reference}
+\label{structclass__header}\index{class\+\_\+header@{class\+\_\+header}}
+
+
+{\ttfamily \#include $<$object\+\_\+internal.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+unsigned long \mbox{\hyperlink{structclass__header_aa98964036010ad63554856c5f4680cec}{magic}}
+\item 
+size\+\_\+t \mbox{\hyperlink{structclass__header_a5ba6bf54fc12a2a31a2b39937cd50e84}{size}}
+\item 
+size\+\_\+t($\ast$ \mbox{\hyperlink{structclass__header_a5c135b5316d0d9d22dce1f32fb8befb1}{get\+\_\+size}} )(const void $\ast$\+\_\+self)
+\item 
+size\+\_\+t($\ast$ \mbox{\hyperlink{structclass__header_a1b7cb949741b9a64fd3569af94f30cba}{get\+\_\+len}} )(const void $\ast$\+\_\+self)
+\item 
+const void $\ast$($\ast$ \mbox{\hyperlink{structclass__header_a560f3c418eb904136bfcb91d3618430c}{object\+\_\+init}} )(const void $\ast$\+\_\+self, va\+\_\+list args)
+\item 
+void($\ast$ \mbox{\hyperlink{structclass__header_aa07a11a17f5d79a66c9086b8d10969b7}{object\+\_\+deinit}} )(const void $\ast$\+\_\+self)
+\item 
+void($\ast$ \mbox{\hyperlink{structclass__header_a23181c1eac1455a8f23dd9d14f8b6abd}{print}} )(const void $\ast$\+\_\+self)
+\item 
+const char $\ast$($\ast$ \mbox{\hyperlink{structclass__header_af8a0a6de1e1eb96faab68cc58fcf84d0}{str}} )(const void $\ast$\+\_\+self)
+\item 
+void $\ast$($\ast$ \mbox{\hyperlink{structclass__header_a67a4f888ffa78b4905bc3585fe1f17a4}{to\+\_\+\+String}} )(const void $\ast$\+\_\+self)
+\item 
+const void $\ast$($\ast$ \mbox{\hyperlink{structclass__header_a10e4c230bf810df38e3581caabad02bb}{append}} )(const void $\ast$\+\_\+self, const void $\ast$\+\_\+other)
+\item 
+bool($\ast$ \mbox{\hyperlink{structclass__header_a01dc6aae9011475ec7be8500d4f63c5b}{equals}} )(const void $\ast$\+\_\+self, const void $\ast$\+\_\+other)
+\item 
+const void $\ast$($\ast$ \mbox{\hyperlink{structclass__header_ab45bdc16b08b8cde751d161dd0c4f230}{iter}} )(const void $\ast$\+\_\+object)
+\item 
+const void $\ast$($\ast$ \mbox{\hyperlink{structclass__header_a26ec3e94c98bf5d3eff10d37cf2696ef}{copy}} )(const void $\ast$\+\_\+self)
+\item 
+void($\ast$ \mbox{\hyperlink{structclass__header_ada4fc11b4f09e8248a28c7d2e39e17ea}{insert}} )(const void $\ast$\+\_\+self, const void $\ast$\+\_\+key, const void $\ast$item)
+\item 
+const void $\ast$($\ast$ \mbox{\hyperlink{structclass__header_ab2de24bb8c5d3b1b5e74a69bb6c307b2}{get}} )(const void $\ast$\+\_\+self, const void $\ast$\+\_\+key)
+\item 
+void($\ast$ \mbox{\hyperlink{structclass__header_a4d88d979ecf23c184577d937454ab973}{del\+\_\+item}} )(const void $\ast$\+\_\+self, const void $\ast$key)
+\item 
+uint64\+\_\+t($\ast$ \mbox{\hyperlink{structclass__header_aa0035a2c833b1e46f0ae401d6b44ee65}{hash}} )(const void $\ast$\+\_\+self)
+\item 
+const void $\ast$($\ast$ \mbox{\hyperlink{structclass__header_a34b23ea4b047e4526bfb743d5be3e69c}{next}} )(const void $\ast$\+\_\+self)
+\item 
+const char $\ast$ \mbox{\hyperlink{structclass__header_af7f2f5623c98afb59519062172644350}{object\+\_\+name}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+All ooc classes have a \mbox{\hyperlink{structclass__header}{class\+\_\+header}}.
+
+The header provides function pointers to implementations of all supported methods for a given class.
+
+Each object (instantiation of a class) has a pointer to the per-\/class \mbox{\hyperlink{structclass__header}{class\+\_\+header}}.
+
+A minimum class must at least provide implementations for magic, size, object\+\_\+init, object\+\_\+deinit and object\+\_\+name 
+
+Definition at line 21 of file object\+\_\+internal.\+h.
+
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{structclass__header_a10e4c230bf810df38e3581caabad02bb}\label{structclass__header_a10e4c230bf810df38e3581caabad02bb}} 
+\index{class\+\_\+header@{class\+\_\+header}!append@{append}}
+\index{append@{append}!class\+\_\+header@{class\+\_\+header}}
+\subsubsection{\texorpdfstring{append}{append}}
+{\footnotesize\ttfamily const void$\ast$($\ast$ class\+\_\+header\+::append) (const void $\ast$\+\_\+self, const void $\ast$\+\_\+other)}
+
+Implement to enable appending items to an class. If an class supports appending, it should probably support either get, or iteration.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+self} & ooc container object \\
+\hline
+{\em \+\_\+other} & ooc object supported by container \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 101 of file object\+\_\+internal.\+h.
+
+
+
+Referenced by append().
+
+\mbox{\Hypertarget{structclass__header_a26ec3e94c98bf5d3eff10d37cf2696ef}\label{structclass__header_a26ec3e94c98bf5d3eff10d37cf2696ef}} 
+\index{class\+\_\+header@{class\+\_\+header}!copy@{copy}}
+\index{copy@{copy}!class\+\_\+header@{class\+\_\+header}}
+\subsubsection{\texorpdfstring{copy}{copy}}
+{\footnotesize\ttfamily const void$\ast$($\ast$ class\+\_\+header\+::copy) (const void $\ast$\+\_\+self)}
+
+Copy an ooc object.
+
+Implement functionality to copy an object. The expectation is that it is deep copy. Perhaps there should be a convention for shallow copies
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+self} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+copy of \+\_\+self 
+\end{DoxyReturn}
+
+
+Definition at line 134 of file object\+\_\+internal.\+h.
+
+
+
+Referenced by copy().
+
+\mbox{\Hypertarget{structclass__header_a4d88d979ecf23c184577d937454ab973}\label{structclass__header_a4d88d979ecf23c184577d937454ab973}} 
+\index{class\+\_\+header@{class\+\_\+header}!del\+\_\+item@{del\+\_\+item}}
+\index{del\+\_\+item@{del\+\_\+item}!class\+\_\+header@{class\+\_\+header}}
+\subsubsection{\texorpdfstring{del\+\_\+item}{del\_item}}
+{\footnotesize\ttfamily void($\ast$ class\+\_\+header\+::del\+\_\+item) (const void $\ast$\+\_\+self, const void $\ast$key)}
+
+Implement to enabled indexed deletion from a collection. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+self} & ooc object \\
+\hline
+{\em key} & key to delete \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 172 of file object\+\_\+internal.\+h.
+
+\mbox{\Hypertarget{structclass__header_a01dc6aae9011475ec7be8500d4f63c5b}\label{structclass__header_a01dc6aae9011475ec7be8500d4f63c5b}} 
+\index{class\+\_\+header@{class\+\_\+header}!equals@{equals}}
+\index{equals@{equals}!class\+\_\+header@{class\+\_\+header}}
+\subsubsection{\texorpdfstring{equals}{equals}}
+{\footnotesize\ttfamily bool($\ast$ class\+\_\+header\+::equals) (const void $\ast$\+\_\+self, const void $\ast$\+\_\+other)}
+
+Implement to allow objects to be compared with a custom function. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+self} & \\
+\hline
+{\em \+\_\+other} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if objects are equal. If not implemented, equals will compare pointers 
+\end{DoxyReturn}
+
+
+Definition at line 112 of file object\+\_\+internal.\+h.
+
+\mbox{\Hypertarget{structclass__header_ab2de24bb8c5d3b1b5e74a69bb6c307b2}\label{structclass__header_ab2de24bb8c5d3b1b5e74a69bb6c307b2}} 
+\index{class\+\_\+header@{class\+\_\+header}!get@{get}}
+\index{get@{get}!class\+\_\+header@{class\+\_\+header}}
+\subsubsection{\texorpdfstring{get}{get}}
+{\footnotesize\ttfamily const void$\ast$($\ast$ class\+\_\+header\+::get) (const void $\ast$\+\_\+self, const void $\ast$\+\_\+key)}
+
+Implement to enable indexed access. value = get(collection, key) value = collection\mbox{[}key\mbox{]}
+
+Typically, key must be in collection, or this function should exit early with an error. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+self} & ooc object \\
+\hline
+{\em \+\_\+key} & ooc object key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 162 of file object\+\_\+internal.\+h.
+
+\mbox{\Hypertarget{structclass__header_a1b7cb949741b9a64fd3569af94f30cba}\label{structclass__header_a1b7cb949741b9a64fd3569af94f30cba}} 
+\index{class\+\_\+header@{class\+\_\+header}!get\+\_\+len@{get\+\_\+len}}
+\index{get\+\_\+len@{get\+\_\+len}!class\+\_\+header@{class\+\_\+header}}
+\subsubsection{\texorpdfstring{get\+\_\+len}{get\_len}}
+{\footnotesize\ttfamily size\+\_\+t($\ast$ class\+\_\+header\+::get\+\_\+len) (const void $\ast$\+\_\+self)}
+
+Get number of items in container object 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+self} & ooc object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of items in container 
+\end{DoxyReturn}
+
+
+Definition at line 37 of file object\+\_\+internal.\+h.
+
+
+
+Referenced by len().
+
+\mbox{\Hypertarget{structclass__header_a5c135b5316d0d9d22dce1f32fb8befb1}\label{structclass__header_a5c135b5316d0d9d22dce1f32fb8befb1}} 
+\index{class\+\_\+header@{class\+\_\+header}!get\+\_\+size@{get\+\_\+size}}
+\index{get\+\_\+size@{get\+\_\+size}!class\+\_\+header@{class\+\_\+header}}
+\subsubsection{\texorpdfstring{get\+\_\+size}{get\_size}}
+{\footnotesize\ttfamily size\+\_\+t($\ast$ class\+\_\+header\+::get\+\_\+size) (const void $\ast$\+\_\+self)}
+
+Get size of object in bytes 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+self} & ooc object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+size in bytes 
+\end{DoxyReturn}
+
+
+Definition at line 30 of file object\+\_\+internal.\+h.
+
+
+
+Referenced by size().
+
+\mbox{\Hypertarget{structclass__header_aa0035a2c833b1e46f0ae401d6b44ee65}\label{structclass__header_aa0035a2c833b1e46f0ae401d6b44ee65}} 
+\index{class\+\_\+header@{class\+\_\+header}!hash@{hash}}
+\index{hash@{hash}!class\+\_\+header@{class\+\_\+header}}
+\subsubsection{\texorpdfstring{hash}{hash}}
+{\footnotesize\ttfamily uint64\+\_\+t($\ast$ class\+\_\+header\+::hash) (const void $\ast$\+\_\+self)}
+
+Implement to enable storing in a hash table.
+
+Note\+: as of now, Hash\+Tables will also use \mbox{\hyperlink{structclass__header_a01dc6aae9011475ec7be8500d4f63c5b}{equals()}} to confirm keys are unique. If hash is not implemented, as of now, the Hash\+Table does not support it. This may change in the future.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+self} & ooc object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+64 bit user defined hash 
+\end{DoxyReturn}
+
+
+Definition at line 189 of file object\+\_\+internal.\+h.
+
+
+
+Referenced by del\+\_\+item\+\_\+\+Hash\+Map(), get\+\_\+\+Hash\+Map(), insert\+\_\+\+Hash\+Map(), and internal\+\_\+insert\+\_\+\+Hash\+Map().
+
+\mbox{\Hypertarget{structclass__header_ada4fc11b4f09e8248a28c7d2e39e17ea}\label{structclass__header_ada4fc11b4f09e8248a28c7d2e39e17ea}} 
+\index{class\+\_\+header@{class\+\_\+header}!insert@{insert}}
+\index{insert@{insert}!class\+\_\+header@{class\+\_\+header}}
+\subsubsection{\texorpdfstring{insert}{insert}}
+{\footnotesize\ttfamily void($\ast$ class\+\_\+header\+::insert) (const void $\ast$\+\_\+self, const void $\ast$\+\_\+key, const void $\ast$item)}
+
+Implement to enable indexed assignment. insert(collection, key, value) is equivalent to collection\mbox{[}key\mbox{]} = value
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+self} & ooc object \\
+\hline
+{\em \+\_\+key} & ooc object key to index into collection \\
+\hline
+{\em item} & value to store at given index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 145 of file object\+\_\+internal.\+h.
+
+\mbox{\Hypertarget{structclass__header_ab45bdc16b08b8cde751d161dd0c4f230}\label{structclass__header_ab45bdc16b08b8cde751d161dd0c4f230}} 
+\index{class\+\_\+header@{class\+\_\+header}!iter@{iter}}
+\index{iter@{iter}!class\+\_\+header@{class\+\_\+header}}
+\subsubsection{\texorpdfstring{iter}{iter}}
+{\footnotesize\ttfamily const void$\ast$($\ast$ class\+\_\+header\+::iter) (const void $\ast$\+\_\+object)}
+
+Return an iterator to support iteration. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+object} & ooc object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ooc iterator 
+\end{DoxyReturn}
+
+
+Definition at line 122 of file object\+\_\+internal.\+h.
+
+\mbox{\Hypertarget{structclass__header_aa98964036010ad63554856c5f4680cec}\label{structclass__header_aa98964036010ad63554856c5f4680cec}} 
+\index{class\+\_\+header@{class\+\_\+header}!magic@{magic}}
+\index{magic@{magic}!class\+\_\+header@{class\+\_\+header}}
+\subsubsection{\texorpdfstring{magic}{magic}}
+{\footnotesize\ttfamily unsigned long class\+\_\+header\+::magic}
+
+
+
+Definition at line 22 of file object\+\_\+internal.\+h.
+
+\mbox{\Hypertarget{structclass__header_a34b23ea4b047e4526bfb743d5be3e69c}\label{structclass__header_a34b23ea4b047e4526bfb743d5be3e69c}} 
+\index{class\+\_\+header@{class\+\_\+header}!next@{next}}
+\index{next@{next}!class\+\_\+header@{class\+\_\+header}}
+\subsubsection{\texorpdfstring{next}{next}}
+{\footnotesize\ttfamily const void$\ast$($\ast$ class\+\_\+header\+::next) (const void $\ast$\+\_\+self)}
+
+Implement to support iteration. You must implement \mbox{\hyperlink{structclass__header_ab45bdc16b08b8cde751d161dd0c4f230}{iter()}} and \mbox{\hyperlink{structclass__header_a34b23ea4b047e4526bfb743d5be3e69c}{next()}} to support iteration.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+self} & iterable returned from \mbox{\hyperlink{structclass__header_ab45bdc16b08b8cde751d161dd0c4f230}{iter()}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+next item in iteration. 
+\end{DoxyReturn}
+
+
+Definition at line 199 of file object\+\_\+internal.\+h.
+
+\mbox{\Hypertarget{structclass__header_aa07a11a17f5d79a66c9086b8d10969b7}\label{structclass__header_aa07a11a17f5d79a66c9086b8d10969b7}} 
+\index{class\+\_\+header@{class\+\_\+header}!object\+\_\+deinit@{object\+\_\+deinit}}
+\index{object\+\_\+deinit@{object\+\_\+deinit}!class\+\_\+header@{class\+\_\+header}}
+\subsubsection{\texorpdfstring{object\+\_\+deinit}{object\_deinit}}
+{\footnotesize\ttfamily void($\ast$ class\+\_\+header\+::object\+\_\+deinit) (const void $\ast$\+\_\+self)}
+
+De-\/initialize and free resources used by \+\_\+self.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+self} & ooc object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 59 of file object\+\_\+internal.\+h.
+
+
+
+Referenced by del().
+
+\mbox{\Hypertarget{structclass__header_a560f3c418eb904136bfcb91d3618430c}\label{structclass__header_a560f3c418eb904136bfcb91d3618430c}} 
+\index{class\+\_\+header@{class\+\_\+header}!object\+\_\+init@{object\+\_\+init}}
+\index{object\+\_\+init@{object\+\_\+init}!class\+\_\+header@{class\+\_\+header}}
+\subsubsection{\texorpdfstring{object\+\_\+init}{object\_init}}
+{\footnotesize\ttfamily const void$\ast$($\ast$ class\+\_\+header\+::object\+\_\+init) (const void $\ast$\+\_\+self, va\+\_\+list args)}
+
+Create and initialize an object Technically, \+\_\+self needs to be the full class header for a concrete type, which starts with a \mbox{\hyperlink{structclass__header}{class\+\_\+header}}, followed by class specific fields.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+self} & ooc class like \mbox{\hyperlink{structString}{String}} or \mbox{\hyperlink{structHashMap}{Hash\+Map}}. \\
+\hline
+{\em args} & arguments to initialize object. Varies based on class type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 49 of file object\+\_\+internal.\+h.
+
+\mbox{\Hypertarget{structclass__header_af7f2f5623c98afb59519062172644350}\label{structclass__header_af7f2f5623c98afb59519062172644350}} 
+\index{class\+\_\+header@{class\+\_\+header}!object\+\_\+name@{object\+\_\+name}}
+\index{object\+\_\+name@{object\+\_\+name}!class\+\_\+header@{class\+\_\+header}}
+\subsubsection{\texorpdfstring{object\+\_\+name}{object\_name}}
+{\footnotesize\ttfamily const char$\ast$ class\+\_\+header\+::object\+\_\+name}
+
+Object name as C string 
+
+Definition at line 204 of file object\+\_\+internal.\+h.
+
+
+
+Referenced by clsname().
+
+\mbox{\Hypertarget{structclass__header_a23181c1eac1455a8f23dd9d14f8b6abd}\label{structclass__header_a23181c1eac1455a8f23dd9d14f8b6abd}} 
+\index{class\+\_\+header@{class\+\_\+header}!print@{print}}
+\index{print@{print}!class\+\_\+header@{class\+\_\+header}}
+\subsubsection{\texorpdfstring{print}{print}}
+{\footnotesize\ttfamily void($\ast$ class\+\_\+header\+::print) (const void $\ast$\+\_\+self)}
+
+Print and object to stdout 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+self} & ooc object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 65 of file object\+\_\+internal.\+h.
+
+
+
+Referenced by print().
+
+\mbox{\Hypertarget{structclass__header_a5ba6bf54fc12a2a31a2b39937cd50e84}\label{structclass__header_a5ba6bf54fc12a2a31a2b39937cd50e84}} 
+\index{class\+\_\+header@{class\+\_\+header}!size@{size}}
+\index{size@{size}!class\+\_\+header@{class\+\_\+header}}
+\subsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily size\+\_\+t class\+\_\+header\+::size}
+
+
+
+Definition at line 23 of file object\+\_\+internal.\+h.
+
+\mbox{\Hypertarget{structclass__header_af8a0a6de1e1eb96faab68cc58fcf84d0}\label{structclass__header_af8a0a6de1e1eb96faab68cc58fcf84d0}} 
+\index{class\+\_\+header@{class\+\_\+header}!str@{str}}
+\index{str@{str}!class\+\_\+header@{class\+\_\+header}}
+\subsubsection{\texorpdfstring{str}{str}}
+{\footnotesize\ttfamily const char$\ast$($\ast$ class\+\_\+header\+::str) (const void $\ast$\+\_\+self)}
+
+Return the c string (char$\ast$) representation of an object
+
+May be used by to\+\_\+\+String to make an ooc \mbox{\hyperlink{structString}{String}} representation. Usually it\textquotesingle{}s not necessary to implement to\+\_\+\+String separately.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+self} & ooc object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+c string representation 
+\end{DoxyReturn}
+
+
+Definition at line 78 of file object\+\_\+internal.\+h.
+
+
+
+Referenced by str().
+
+\mbox{\Hypertarget{structclass__header_a67a4f888ffa78b4905bc3585fe1f17a4}\label{structclass__header_a67a4f888ffa78b4905bc3585fe1f17a4}} 
+\index{class\+\_\+header@{class\+\_\+header}!to\+\_\+\+String@{to\+\_\+\+String}}
+\index{to\+\_\+\+String@{to\+\_\+\+String}!class\+\_\+header@{class\+\_\+header}}
+\subsubsection{\texorpdfstring{to\+\_\+\+String}{to\_String}}
+{\footnotesize\ttfamily void$\ast$($\ast$ class\+\_\+header\+::to\+\_\+\+String) (const void $\ast$\+\_\+self)}
+
+Return \mbox{\hyperlink{structString}{String}} representation of object.
+
+May allocate a new \mbox{\hyperlink{structString}{String}} object, and may or may not return a different \mbox{\hyperlink{structString}{String}} object each time.
+
+Usually it is sufficient to implement str.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+self} & ooc objet \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ooc \mbox{\hyperlink{structString}{String}} object 
+\end{DoxyReturn}
+
+
+Definition at line 91 of file object\+\_\+internal.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/igutek/\+Documents/\+Projects/ooc/src/\mbox{\hyperlink{object__internal_8h}{object\+\_\+internal.\+h}}\end{DoxyCompactItemize}

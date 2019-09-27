@@ -1,0 +1,266 @@
+\hypertarget{string_8c}{}\section{/\+Users/igutek/\+Documents/\+Projects/ooc/src/string.c File Reference}
+\label{string_8c}\index{/\+Users/igutek/\+Documents/\+Projects/ooc/src/string.\+c@{/\+Users/igutek/\+Documents/\+Projects/ooc/src/string.\+c}}
+{\ttfamily \#include $<$ooc/string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}object\+\_\+internal.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structStringClass}{String\+Class}}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{string_8c_a6a18c840bbf00da32a4e35a85342095a}{F\+N\+V\+\_\+\+P\+R\+I\+M\+E\+\_\+32}}~16777619
+\item 
+\#define \mbox{\hyperlink{string_8c_a09402fb28fe13d84677fb8a90c3955c5}{F\+N\+V\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+32}}~2166136261U
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{string_8c_ad9f87c949c08dce2651433d0cc06d8dd}{String\+\_\+get\+\_\+len}} (const void $\ast$\+\_\+self)
+\item 
+size\+\_\+t \mbox{\hyperlink{string_8c_a4b419646ac4f54ba6302b8e4e58c9678}{String\+\_\+get\+\_\+size}} (const void $\ast$\+\_\+self)
+\item 
+const void $\ast$ \mbox{\hyperlink{string_8c_a2e1266f696c96e5bfd8ffbed7be891fa}{\+\_\+\+\_\+construct\+\_\+\+\_\+\+String}} (const void $\ast$\+\_\+self, va\+\_\+list args)
+\item 
+void \mbox{\hyperlink{string_8c_ad43e4d63a18fb1a7eebfc5291f704966}{print\+\_\+\+String}} (void $\ast$\+\_\+self)
+\item 
+const char $\ast$ \mbox{\hyperlink{string_8c_a9a56d1c8e084d0302f33b3b90260693d}{String\+\_\+str}} (const void $\ast$\+\_\+self)
+\item 
+const void $\ast$ \mbox{\hyperlink{string_8c_ad84cbc93082cb73a0aeb9911e2768c90}{String\+\_\+append}} (const void $\ast$\+\_\+self, const void $\ast$\+\_\+other)
+\item 
+bool \mbox{\hyperlink{string_8c_a1908c7dc8629ec342445a6e2a7c247f2}{String\+\_\+equal}} (const void $\ast$\+\_\+self, const void $\ast$\+\_\+other)
+\item 
+const void $\ast$ \mbox{\hyperlink{string_8c_a1742803c7014bd0c59f1072d54e1a023}{String\+\_\+copy}} (const void $\ast$\+\_\+self)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{string_8c_a0861087e40ab0649cb2c5ce91798171b}{F\+N\+V32}} (char $\ast$s, size\+\_\+t \mbox{\hyperlink{group__common_ga15be7f4a5b9c979feb83b76278f6716c}{len}})
+\item 
+uint64\+\_\+t \mbox{\hyperlink{string_8c_a518744bdc3e883cc2349d5b4cd32cb95}{String\+\_\+hash}} (const void $\ast$\+\_\+self)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structStringClass}{String\+Class}} \mbox{\hyperlink{string_8c_a46e31843df274eb8ce4b256dc005df49}{string\+\_\+class}}
+\item 
+void $\ast$ \mbox{\hyperlink{string_8c_a7b896f7c16c20c94b9b961fe9e926a4f}{String}} = \&\mbox{\hyperlink{string_8c_a46e31843df274eb8ce4b256dc005df49}{string\+\_\+class}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{string_8c_a09402fb28fe13d84677fb8a90c3955c5}\label{string_8c_a09402fb28fe13d84677fb8a90c3955c5}} 
+\index{string.\+c@{string.\+c}!F\+N\+V\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+32@{F\+N\+V\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+32}}
+\index{F\+N\+V\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+32@{F\+N\+V\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+32}!string.\+c@{string.\+c}}
+\subsubsection{\texorpdfstring{F\+N\+V\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+32}{FNV\_OFFSET\_32}}
+{\footnotesize\ttfamily \#define F\+N\+V\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+32~2166136261U}
+
+
+
+Definition at line 6 of file string.\+c.
+
+
+
+Referenced by F\+N\+V32().
+
+\mbox{\Hypertarget{string_8c_a6a18c840bbf00da32a4e35a85342095a}\label{string_8c_a6a18c840bbf00da32a4e35a85342095a}} 
+\index{string.\+c@{string.\+c}!F\+N\+V\+\_\+\+P\+R\+I\+M\+E\+\_\+32@{F\+N\+V\+\_\+\+P\+R\+I\+M\+E\+\_\+32}}
+\index{F\+N\+V\+\_\+\+P\+R\+I\+M\+E\+\_\+32@{F\+N\+V\+\_\+\+P\+R\+I\+M\+E\+\_\+32}!string.\+c@{string.\+c}}
+\subsubsection{\texorpdfstring{F\+N\+V\+\_\+\+P\+R\+I\+M\+E\+\_\+32}{FNV\_PRIME\_32}}
+{\footnotesize\ttfamily \#define F\+N\+V\+\_\+\+P\+R\+I\+M\+E\+\_\+32~16777619}
+
+
+
+Definition at line 5 of file string.\+c.
+
+
+
+Referenced by F\+N\+V32().
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{string_8c_a2e1266f696c96e5bfd8ffbed7be891fa}\label{string_8c_a2e1266f696c96e5bfd8ffbed7be891fa}} 
+\index{string.\+c@{string.\+c}!\+\_\+\+\_\+construct\+\_\+\+\_\+\+String@{\+\_\+\+\_\+construct\+\_\+\+\_\+\+String}}
+\index{\+\_\+\+\_\+construct\+\_\+\+\_\+\+String@{\+\_\+\+\_\+construct\+\_\+\+\_\+\+String}!string.\+c@{string.\+c}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+construct\+\_\+\+\_\+\+String()}{\_\_construct\_\_String()}}
+{\footnotesize\ttfamily const void$\ast$ \+\_\+\+\_\+construct\+\_\+\+\_\+\+String (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+self,  }\item[{va\+\_\+list}]{args }\end{DoxyParamCaption})}
+
+
+
+Definition at line 24 of file string.\+c.
+
+
+
+References len(), size(), and String.
+
+\mbox{\Hypertarget{string_8c_a0861087e40ab0649cb2c5ce91798171b}\label{string_8c_a0861087e40ab0649cb2c5ce91798171b}} 
+\index{string.\+c@{string.\+c}!F\+N\+V32@{F\+N\+V32}}
+\index{F\+N\+V32@{F\+N\+V32}!string.\+c@{string.\+c}}
+\subsubsection{\texorpdfstring{F\+N\+V32()}{FNV32()}}
+{\footnotesize\ttfamily uint32\+\_\+t F\+N\+V32 (\begin{DoxyParamCaption}\item[{char $\ast$}]{s,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+
+
+Definition at line 115 of file string.\+c.
+
+
+
+References F\+N\+V\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+32, F\+N\+V\+\_\+\+P\+R\+I\+M\+E\+\_\+32, hash(), and len().
+
+
+
+Referenced by String\+\_\+hash().
+
+\mbox{\Hypertarget{string_8c_ad43e4d63a18fb1a7eebfc5291f704966}\label{string_8c_ad43e4d63a18fb1a7eebfc5291f704966}} 
+\index{string.\+c@{string.\+c}!print\+\_\+\+String@{print\+\_\+\+String}}
+\index{print\+\_\+\+String@{print\+\_\+\+String}!string.\+c@{string.\+c}}
+\subsubsection{\texorpdfstring{print\+\_\+\+String()}{print\_String()}}
+{\footnotesize\ttfamily void print\+\_\+\+String (\begin{DoxyParamCaption}\item[{void $\ast$}]{\+\_\+self }\end{DoxyParamCaption})}
+
+
+
+Definition at line 44 of file string.\+c.
+
+\mbox{\Hypertarget{string_8c_ad84cbc93082cb73a0aeb9911e2768c90}\label{string_8c_ad84cbc93082cb73a0aeb9911e2768c90}} 
+\index{string.\+c@{string.\+c}!String\+\_\+append@{String\+\_\+append}}
+\index{String\+\_\+append@{String\+\_\+append}!string.\+c@{string.\+c}}
+\subsubsection{\texorpdfstring{String\+\_\+append()}{String\_append()}}
+{\footnotesize\ttfamily const void$\ast$ String\+\_\+append (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+self,  }\item[{const void $\ast$}]{\+\_\+other }\end{DoxyParamCaption})}
+
+
+
+Definition at line 56 of file string.\+c.
+
+
+
+References len(), size(), String, String\+::string\+\_\+data, and type().
+
+\mbox{\Hypertarget{string_8c_a1742803c7014bd0c59f1072d54e1a023}\label{string_8c_a1742803c7014bd0c59f1072d54e1a023}} 
+\index{string.\+c@{string.\+c}!String\+\_\+copy@{String\+\_\+copy}}
+\index{String\+\_\+copy@{String\+\_\+copy}!string.\+c@{string.\+c}}
+\subsubsection{\texorpdfstring{String\+\_\+copy()}{String\_copy()}}
+{\footnotesize\ttfamily const void$\ast$ String\+\_\+copy (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+self }\end{DoxyParamCaption})}
+
+
+
+Definition at line 110 of file string.\+c.
+
+
+
+References String.
+
+\mbox{\Hypertarget{string_8c_a1908c7dc8629ec342445a6e2a7c247f2}\label{string_8c_a1908c7dc8629ec342445a6e2a7c247f2}} 
+\index{string.\+c@{string.\+c}!String\+\_\+equal@{String\+\_\+equal}}
+\index{String\+\_\+equal@{String\+\_\+equal}!string.\+c@{string.\+c}}
+\subsubsection{\texorpdfstring{String\+\_\+equal()}{String\_equal()}}
+{\footnotesize\ttfamily bool String\+\_\+equal (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+self,  }\item[{const void $\ast$}]{\+\_\+other }\end{DoxyParamCaption})}
+
+
+
+Definition at line 97 of file string.\+c.
+
+
+
+References clsname(), str(), String, and type().
+
+\mbox{\Hypertarget{string_8c_ad9f87c949c08dce2651433d0cc06d8dd}\label{string_8c_ad9f87c949c08dce2651433d0cc06d8dd}} 
+\index{string.\+c@{string.\+c}!String\+\_\+get\+\_\+len@{String\+\_\+get\+\_\+len}}
+\index{String\+\_\+get\+\_\+len@{String\+\_\+get\+\_\+len}!string.\+c@{string.\+c}}
+\subsubsection{\texorpdfstring{String\+\_\+get\+\_\+len()}{String\_get\_len()}}
+{\footnotesize\ttfamily size\+\_\+t String\+\_\+get\+\_\+len (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+self }\end{DoxyParamCaption})}
+
+
+
+Definition at line 12 of file string.\+c.
+
+
+
+References String\+::len.
+
+\mbox{\Hypertarget{string_8c_a4b419646ac4f54ba6302b8e4e58c9678}\label{string_8c_a4b419646ac4f54ba6302b8e4e58c9678}} 
+\index{string.\+c@{string.\+c}!String\+\_\+get\+\_\+size@{String\+\_\+get\+\_\+size}}
+\index{String\+\_\+get\+\_\+size@{String\+\_\+get\+\_\+size}!string.\+c@{string.\+c}}
+\subsubsection{\texorpdfstring{String\+\_\+get\+\_\+size()}{String\_get\_size()}}
+{\footnotesize\ttfamily size\+\_\+t String\+\_\+get\+\_\+size (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+self }\end{DoxyParamCaption})}
+
+
+
+Definition at line 18 of file string.\+c.
+
+
+
+References String\+::size.
+
+\mbox{\Hypertarget{string_8c_a518744bdc3e883cc2349d5b4cd32cb95}\label{string_8c_a518744bdc3e883cc2349d5b4cd32cb95}} 
+\index{string.\+c@{string.\+c}!String\+\_\+hash@{String\+\_\+hash}}
+\index{String\+\_\+hash@{String\+\_\+hash}!string.\+c@{string.\+c}}
+\subsubsection{\texorpdfstring{String\+\_\+hash()}{String\_hash()}}
+{\footnotesize\ttfamily uint64\+\_\+t String\+\_\+hash (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+self }\end{DoxyParamCaption})}
+
+
+
+Definition at line 126 of file string.\+c.
+
+
+
+References F\+N\+V32().
+
+\mbox{\Hypertarget{string_8c_a9a56d1c8e084d0302f33b3b90260693d}\label{string_8c_a9a56d1c8e084d0302f33b3b90260693d}} 
+\index{string.\+c@{string.\+c}!String\+\_\+str@{String\+\_\+str}}
+\index{String\+\_\+str@{String\+\_\+str}!string.\+c@{string.\+c}}
+\subsubsection{\texorpdfstring{String\+\_\+str()}{String\_str()}}
+{\footnotesize\ttfamily const char$\ast$ String\+\_\+str (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+self }\end{DoxyParamCaption})}
+
+
+
+Definition at line 50 of file string.\+c.
+
+
+
+References String\+::string\+\_\+data.
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{string_8c_a7b896f7c16c20c94b9b961fe9e926a4f}\label{string_8c_a7b896f7c16c20c94b9b961fe9e926a4f}} 
+\index{string.\+c@{string.\+c}!String@{String}}
+\index{String@{String}!string.\+c@{string.\+c}}
+\subsubsection{\texorpdfstring{String}{String}}
+{\footnotesize\ttfamily void$\ast$ \mbox{\hyperlink{structString}{String}} = \&\mbox{\hyperlink{string_8c_a46e31843df274eb8ce4b256dc005df49}{string\+\_\+class}}}
+
+
+
+Definition at line 163 of file string.\+c.
+
+
+
+Referenced by \+\_\+\+\_\+construct\+\_\+\+\_\+\+String(), main(), String\+\_\+append(), String\+\_\+copy(), and String\+\_\+equal().
+
+\mbox{\Hypertarget{string_8c_a46e31843df274eb8ce4b256dc005df49}\label{string_8c_a46e31843df274eb8ce4b256dc005df49}} 
+\index{string.\+c@{string.\+c}!string\+\_\+class@{string\+\_\+class}}
+\index{string\+\_\+class@{string\+\_\+class}!string.\+c@{string.\+c}}
+\subsubsection{\texorpdfstring{string\+\_\+class}{string\_class}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structStringClass}{String\+Class}} string\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+    .class = \{.magic = \mbox{\hyperlink{object__internal_8h_a94630370ae389fb1189282fa0742f310}{MAGIC}},
+              .size = \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct }\mbox{\hyperlink{structString}{String}}),
+              .object\_init = \mbox{\hyperlink{string_8c_a2e1266f696c96e5bfd8ffbed7be891fa}{\_\_construct\_\_String}},
+              .get\_size = \mbox{\hyperlink{string_8c_a4b419646ac4f54ba6302b8e4e58c9678}{String\_get\_size}},
+              .get\_len = \mbox{\hyperlink{string_8c_ad9f87c949c08dce2651433d0cc06d8dd}{String\_get\_len}},
+              .str = \mbox{\hyperlink{string_8c_a9a56d1c8e084d0302f33b3b90260693d}{String\_str}},
+              .copy = \mbox{\hyperlink{string_8c_a1742803c7014bd0c59f1072d54e1a023}{String\_copy}},
+              .append = \mbox{\hyperlink{string_8c_ad84cbc93082cb73a0aeb9911e2768c90}{String\_append}},
+              .hash = \mbox{\hyperlink{string_8c_a518744bdc3e883cc2349d5b4cd32cb95}{String\_hash}},
+              .equals = \mbox{\hyperlink{string_8c_a1908c7dc8629ec342445a6e2a7c247f2}{String\_equal}},
+              .object\_name = \textcolor{stringliteral}{"String"}
+             \}
+
+\}
+\end{DoxyCode}
+
+
+Definition at line 147 of file string.\+c.
+

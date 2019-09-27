@@ -1,0 +1,113 @@
+\hypertarget{group__low}{}\section{Low level}
+\label{group__low}\index{Low level@{Low level}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const void $\ast$ \mbox{\hyperlink{group__low_ga504cef7fd39aff50e8e27f4f74568753}{type}} (const void $\ast$\+\_\+self)
+\item 
+const void $\ast$ \mbox{\hyperlink{group__low_gaa356efc2c9e72711bf56b41a4f7b125f}{new}} (const void $\ast$\+\_\+class,...)
+\item 
+void \mbox{\hyperlink{group__low_gae293fe2fbbf9f2e8a87c1141e7412814}{del}} (const void $\ast$\+\_\+object)
+\item 
+size\+\_\+t \mbox{\hyperlink{group__low_gafac8564ed88a6f8585f043fc6b2fa7e1}{size}} (const void $\ast$\+\_\+object)
+\item 
+const char $\ast$ \mbox{\hyperlink{group__low_gadcc35aece3f8a4c822a9bf2a591f087b}{clsname}} (const void $\ast$\+\_\+self)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group__low_gadcc35aece3f8a4c822a9bf2a591f087b}\label{group__low_gadcc35aece3f8a4c822a9bf2a591f087b}} 
+\index{Low level@{Low level}!clsname@{clsname}}
+\index{clsname@{clsname}!Low level@{Low level}}
+\subsubsection{\texorpdfstring{clsname()}{clsname()}}
+{\footnotesize\ttfamily const char$\ast$ clsname (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+self }\end{DoxyParamCaption})}
+
+
+
+Definition at line 105 of file object.\+c.
+
+
+
+References get\+\_\+obj(), and class\+\_\+header\+::object\+\_\+name.
+
+
+
+Referenced by main(), and String\+\_\+equal().
+
+\mbox{\Hypertarget{group__low_gae293fe2fbbf9f2e8a87c1141e7412814}\label{group__low_gae293fe2fbbf9f2e8a87c1141e7412814}} 
+\index{Low level@{Low level}!del@{del}}
+\index{del@{del}!Low level@{Low level}}
+\subsubsection{\texorpdfstring{del()}{del()}}
+{\footnotesize\ttfamily void del (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+object }\end{DoxyParamCaption})}
+
+
+
+Definition at line 34 of file object.\+c.
+
+
+
+References get\+\_\+obj(), and class\+\_\+header\+::object\+\_\+deinit.
+
+\mbox{\Hypertarget{group__low_gaa356efc2c9e72711bf56b41a4f7b125f}\label{group__low_gaa356efc2c9e72711bf56b41a4f7b125f}} 
+\index{Low level@{Low level}!new@{new}}
+\index{new@{new}!Low level@{Low level}}
+\subsubsection{\texorpdfstring{new()}{new()}}
+{\footnotesize\ttfamily const void$\ast$ new (\begin{DoxyParamCaption}\item[{const void $\ast$const}]{\+\_\+class,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+class} & \\
+\hline
+{\em ...} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 15 of file object.\+c.
+
+
+
+References M\+A\+G\+IC.
+
+\mbox{\Hypertarget{group__low_gafac8564ed88a6f8585f043fc6b2fa7e1}\label{group__low_gafac8564ed88a6f8585f043fc6b2fa7e1}} 
+\index{Low level@{Low level}!size@{size}}
+\index{size@{size}!Low level@{Low level}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily size\+\_\+t size (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+object }\end{DoxyParamCaption})}
+
+
+
+Definition at line 72 of file object.\+c.
+
+
+
+References get\+\_\+obj(), and class\+\_\+header\+::get\+\_\+size.
+
+
+
+Referenced by \+\_\+\+\_\+construct\+\_\+\+\_\+\+Person(), \+\_\+\+\_\+construct\+\_\+\+\_\+\+String(), and String\+\_\+append().
+
+\mbox{\Hypertarget{group__low_ga504cef7fd39aff50e8e27f4f74568753}\label{group__low_ga504cef7fd39aff50e8e27f4f74568753}} 
+\index{Low level@{Low level}!type@{type}}
+\index{type@{type}!Low level@{Low level}}
+\subsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily const void$\ast$ type (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+self }\end{DoxyParamCaption})}
+
+
+
+Definition at line 83 of file object.\+c.
+
+
+
+References get\+\_\+obj().
+
+
+
+Referenced by String\+\_\+append(), and String\+\_\+equal().
+

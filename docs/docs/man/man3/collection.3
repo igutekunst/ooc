@@ -1,0 +1,102 @@
+.TH "collection" 3 "Fri Sep 27 2019" "Object-Oriented-C" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+collection
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "const void * \fBappend\fP (const void *_object, const void *_other)"
+.br
+.ti -1c
+.RI "void * \fBinsert\fP (const void *_self, const void *_key, const void *item)"
+.br
+.ti -1c
+.RI "const void * \fBget_item\fP (const void *_self, const void *_key)"
+.br
+.ti -1c
+.RI "struct \fBclass_header\fP * \fBget_obj\fP (const void *_self, const char *message)"
+.br
+.ti -1c
+.RI "const void * \fBiter\fP (const void *_object)"
+.br
+.ti -1c
+.RI "uint64_t \fBhash\fP (const void *_self)"
+.br
+.ti -1c
+.RI "const void * \fBnext\fP (const void *_self)"
+.br
+.ti -1c
+.RI "void \fBdel_item\fP (const void *_self, const void *key)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Function Documentation"
+.PP 
+.SS "const void* append (const void * _object, const void * _other)"
+
+.PP
+Definition at line 150 of file object\&.c\&.
+.PP
+References class_header::append, and get_obj()\&.
+.SS "void del_item (const void * _self, const void * key)"
+
+.PP
+Definition at line 205 of file object\&.c\&.
+.PP
+References get_class_header(), and get_obj()\&.
+.SS "const void* get_item (const void * _self, const void * _key)"
+
+.PP
+Definition at line 218 of file object\&.c\&.
+.PP
+References get_class_header(), and get_obj()\&.
+.SS "struct \fBclass_header\fP* get_obj (const void * _self, const char * message)\fC [inline]\fP"
+
+.PP
+Definition at line 164 of file object\&.c\&.
+.PP
+References MAGIC\&.
+.PP
+Referenced by append(), clsname(), copy(), del(), del_item(), del_item_HashMap(), equals(), get_HashMap(), get_item(), hash(), insert(), insert_HashMap(), iter(), len(), next(), print(), size(), str(), and type()\&.
+.SS "uint64_t hash (const void * _self)"
+
+.PP
+Definition at line 184 of file object\&.c\&.
+.PP
+References get_class_header(), and get_obj()\&.
+.PP
+Referenced by FNV32()\&.
+.SS "void* insert (const void * _self, const void * _key, const void * item)"
+
+.PP
+Definition at line 193 of file object\&.c\&.
+.PP
+References get_class_header(), and get_obj()\&.
+.PP
+Referenced by main()\&.
+.SS "const void* iter (const void * _object)"
+
+.PP
+Definition at line 227 of file object\&.c\&.
+.PP
+References get_class_header(), and get_obj()\&.
+.PP
+Referenced by main()\&.
+.SS "const void* next (const void * _self)"
+
+.PP
+Definition at line 236 of file object\&.c\&.
+.PP
+References get_class_header(), and get_obj()\&.
+.PP
+Referenced by main()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Object-Oriented-C from the source code\&.

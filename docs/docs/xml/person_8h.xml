@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="person_8h" kind="file" language="C++">
+    <compoundname>person.h</compoundname>
+    <includes refid="object_8h" local="yes">object.h</includes>
+    <includes refid="string_8h" local="yes">string.h</includes>
+    <includedby refid="main_8c" local="no">/Users/igutek/Documents/Projects/ooc/src/main.c</includedby>
+    <includedby refid="person_8c" local="no">/Users/igutek/Documents/Projects/ooc/src/person.c</includedby>
+    <incdepgraph>
+      <node id="53">
+        <label>stdbool.h</label>
+      </node>
+      <node id="52">
+        <label>stdarg.h</label>
+      </node>
+      <node id="54">
+        <label>stdint.h</label>
+      </node>
+      <node id="51">
+        <label>stdlib.h</label>
+      </node>
+      <node id="47">
+        <label>/Users/igutek/Documents/Projects/ooc/include/ooc/person.h</label>
+        <link refid="person_8h"/>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+      </node>
+      <node id="49">
+        <label>stddef.h</label>
+      </node>
+      <node id="48">
+        <label>object.h</label>
+        <link refid="object_8h"/>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+      </node>
+      <node id="55">
+        <label>string.h</label>
+        <link refid="string_8h"/>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+      </node>
+      <node id="50">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="58">
+        <label>/Users/igutek/Documents/Projects/ooc/src/person.c</label>
+        <link refid="person_8c"/>
+      </node>
+      <node id="56">
+        <label>/Users/igutek/Documents/Projects/ooc/include/ooc/person.h</label>
+        <link refid="person_8h"/>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+      </node>
+      <node id="57">
+        <label>/Users/igutek/Documents/Projects/ooc/src/main.c</label>
+        <link refid="main_8c"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structPerson" prot="public">Person</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="person_8h_1a588179b669d31ab467e542d8b997361f" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* Person</definition>
+        <argsstring></argsstring>
+        <name>Person</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/include/ooc/person.h" line="13" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/person.c" bodystart="24" bodyend="-1"/>
+        <referencedby refid="person_8c_1a479eaa947f7de8878921d30df63875eb" compoundref="person_8c" startline="29" endline="46">__construct__Person</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>PERSON_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PERSON_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="object_8h" kindref="compound">object.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="string_8h" kindref="compound">string.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="structPerson" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structPerson" kindref="compound">Person</ref>{</highlight></codeline>
+<codeline lineno="7" refid="structPerson_1ac2d72607b366d6b5520a340b3deaced4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structclass__header" kindref="compound">class_header</ref><sp/>*<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="8" refid="structPerson_1afcedcdc3dc5eba7d989eeaa55d236a11" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structPerson_1afcedcdc3dc5eba7d989eeaa55d236a11" kindref="member">size</ref>;</highlight></codeline>
+<codeline lineno="9" refid="structPerson_1a38f2f16e85640e2f851e46319735dc2a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="structPerson_1a38f2f16e85640e2f851e46319735dc2a" kindref="member">first</ref>;</highlight></codeline>
+<codeline lineno="10" refid="structPerson_1a680212888ba741ce822803812588fbcf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="structPerson_1a680212888ba741ce822803812588fbcf" kindref="member">last</ref>;</highlight></codeline>
+<codeline lineno="11" refid="structPerson_1a821d801ffc30ff9d5f12c4be38f03aec" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structPerson_1a821d801ffc30ff9d5f12c4be38f03aec" kindref="member">age</ref>;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/><ref refid="person_8h_1a588179b669d31ab467e542d8b997361f" kindref="member">Person</ref>;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/Users/igutek/Documents/Projects/ooc/include/ooc/person.h"/>
+  </compounddef>
+</doxygen>

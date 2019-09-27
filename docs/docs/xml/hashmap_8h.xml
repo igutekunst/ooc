@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="hashmap_8h" kind="file" language="C++">
+    <compoundname>hashmap.h</compoundname>
+    <includes refid="object_8h" local="yes">object.h</includes>
+    <includes refid="string_8h" local="no">string.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">time.h</includes>
+    <includes local="no">assert.h</includes>
+    <includes local="no">math.h</includes>
+    <includedby refid="hashmap_8c" local="no">/Users/igutek/Documents/Projects/ooc/src/hashmap.c</includedby>
+    <includedby refid="main_8c" local="no">/Users/igutek/Documents/Projects/ooc/src/main.c</includedby>
+    <incdepgraph>
+      <node id="6">
+        <label>stdbool.h</label>
+      </node>
+      <node id="5">
+        <label>stdarg.h</label>
+      </node>
+      <node id="10">
+        <label>assert.h</label>
+      </node>
+      <node id="7">
+        <label>stdint.h</label>
+      </node>
+      <node id="4">
+        <label>stdlib.h</label>
+      </node>
+      <node id="0">
+        <label>/Users/igutek/Documents/Projects/ooc/include/ooc/hashmap.h</label>
+        <link refid="hashmap_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stddef.h</label>
+      </node>
+      <node id="9">
+        <label>time.h</label>
+      </node>
+      <node id="11">
+        <label>math.h</label>
+      </node>
+      <node id="1">
+        <label>object.h</label>
+        <link refid="object_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>string.h</label>
+        <link refid="string_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="13">
+        <label>/Users/igutek/Documents/Projects/ooc/src/hashmap.c</label>
+        <link refid="hashmap_8c"/>
+      </node>
+      <node id="12">
+        <label>/Users/igutek/Documents/Projects/ooc/include/ooc/hashmap.h</label>
+        <link refid="hashmap_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>/Users/igutek/Documents/Projects/ooc/src/main.c</label>
+        <link refid="main_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="hashmap_8h_1a460bbbf2046f6aaf34ce30bb2be13939" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* HashMap</definition>
+        <argsstring></argsstring>
+        <name>HashMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/include/ooc/hashmap.h" line="13" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/hashmap.c" bodystart="539" bodyend="-1"/>
+        <referencedby refid="hashmap_8c_1a91f44dc50fe5d24c4970a8772347bef7" compoundref="hashmap_8c" startline="277" endline="304">__construct__HashMap</referencedby>
+        <referencedby refid="main_8c_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8c" startline="8" endline="43">main</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="hashmap_8h_1a45019180cc2e660110ceabdc4b807f3e" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* HashMap_iter</definition>
+        <argsstring></argsstring>
+        <name>HashMap_iter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/include/ooc/hashmap.h" line="14" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/hashmap.c" bodystart="549" bodyend="-1"/>
+        <referencedby refid="hashmap_8c_1ae8c6201244c05c149ee58f00693fbe18" compoundref="hashmap_8c" startline="500" endline="512">__construct__HashMap_iter</referencedby>
+        <referencedby refid="hashmap_8c_1aa1645276039a5f13164347699538139b" compoundref="hashmap_8c" startline="453" endline="455">iter_HashMap</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>HASH_MAP_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HASH_MAP_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="object_8h" kindref="compound">object.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="string_8h" kindref="compound">string.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;time.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;assert.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;math.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="hashmap_8h_1a460bbbf2046f6aaf34ce30bb2be13939" kindref="member">HashMap</ref>;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="hashmap_8h_1a45019180cc2e660110ceabdc4b807f3e" kindref="member">HashMap_iter</ref>;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/Users/igutek/Documents/Projects/ooc/include/ooc/hashmap.h"/>
+  </compounddef>
+</doxygen>

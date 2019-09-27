@@ -1,0 +1,185 @@
+.TH "/Users/igutek/Documents/Projects/ooc/src/string.c" 3 "Fri Sep 27 2019" "Object-Oriented-C" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/igutek/Documents/Projects/ooc/src/string.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <ooc/string\&.h>\fP
+.br
+\fC#include 'object_internal\&.h'\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBStringClass\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBFNV_PRIME_32\fP   16777619"
+.br
+.ti -1c
+.RI "#define \fBFNV_OFFSET_32\fP   2166136261U"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "size_t \fBString_get_len\fP (const void *_self)"
+.br
+.ti -1c
+.RI "size_t \fBString_get_size\fP (const void *_self)"
+.br
+.ti -1c
+.RI "const void * \fB__construct__String\fP (const void *_self, va_list args)"
+.br
+.ti -1c
+.RI "void \fBprint_String\fP (void *_self)"
+.br
+.ti -1c
+.RI "const char * \fBString_str\fP (const void *_self)"
+.br
+.ti -1c
+.RI "const void * \fBString_append\fP (const void *_self, const void *_other)"
+.br
+.ti -1c
+.RI "bool \fBString_equal\fP (const void *_self, const void *_other)"
+.br
+.ti -1c
+.RI "const void * \fBString_copy\fP (const void *_self)"
+.br
+.ti -1c
+.RI "uint32_t \fBFNV32\fP (char *s, size_t \fBlen\fP)"
+.br
+.ti -1c
+.RI "uint64_t \fBString_hash\fP (const void *_self)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "struct \fBStringClass\fP \fBstring_class\fP"
+.br
+.ti -1c
+.RI "void * \fBString\fP = &\fBstring_class\fP"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define FNV_OFFSET_32   2166136261U"
+
+.PP
+Definition at line 6 of file string\&.c\&.
+.PP
+Referenced by FNV32()\&.
+.SS "#define FNV_PRIME_32   16777619"
+
+.PP
+Definition at line 5 of file string\&.c\&.
+.PP
+Referenced by FNV32()\&.
+.SH "Function Documentation"
+.PP 
+.SS "const void* __construct__String (const void * _self, va_list args)"
+
+.PP
+Definition at line 24 of file string\&.c\&.
+.PP
+References len(), size(), and String\&.
+.SS "uint32_t FNV32 (char * s, size_t len)"
+
+.PP
+Definition at line 115 of file string\&.c\&.
+.PP
+References FNV_OFFSET_32, FNV_PRIME_32, hash(), and len()\&.
+.PP
+Referenced by String_hash()\&.
+.SS "void print_String (void * _self)"
+
+.PP
+Definition at line 44 of file string\&.c\&.
+.SS "const void* String_append (const void * _self, const void * _other)"
+
+.PP
+Definition at line 56 of file string\&.c\&.
+.PP
+References len(), size(), String, String::string_data, and type()\&.
+.SS "const void* String_copy (const void * _self)"
+
+.PP
+Definition at line 110 of file string\&.c\&.
+.PP
+References String\&.
+.SS "bool String_equal (const void * _self, const void * _other)"
+
+.PP
+Definition at line 97 of file string\&.c\&.
+.PP
+References clsname(), str(), String, and type()\&.
+.SS "size_t String_get_len (const void * _self)"
+
+.PP
+Definition at line 12 of file string\&.c\&.
+.PP
+References String::len\&.
+.SS "size_t String_get_size (const void * _self)"
+
+.PP
+Definition at line 18 of file string\&.c\&.
+.PP
+References String::size\&.
+.SS "uint64_t String_hash (const void * _self)"
+
+.PP
+Definition at line 126 of file string\&.c\&.
+.PP
+References FNV32()\&.
+.SS "const char* String_str (const void * _self)"
+
+.PP
+Definition at line 50 of file string\&.c\&.
+.PP
+References String::string_data\&.
+.SH "Variable Documentation"
+.PP 
+.SS "void* \fBString\fP = &\fBstring_class\fP"
+
+.PP
+Definition at line 163 of file string\&.c\&.
+.PP
+Referenced by __construct__String(), main(), String_append(), String_copy(), and String_equal()\&.
+.SS "struct \fBStringClass\fP string_class"
+\fBInitial value:\fP
+.PP
+.nf
+= {
+    \&.class = {\&.magic = MAGIC,
+              \&.size = sizeof(struct String),
+              \&.object_init = __construct__String,
+              \&.get_size = String_get_size,
+              \&.get_len = String_get_len,
+              \&.str = String_str,
+              \&.copy = String_copy,
+              \&.append = String_append,
+              \&.hash = String_hash,
+              \&.equals = String_equal,
+              \&.object_name = "String"
+             }
+
+}
+.fi
+.PP
+Definition at line 147 of file string\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Object-Oriented-C from the source code\&.

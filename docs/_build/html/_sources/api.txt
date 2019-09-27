@@ -1,0 +1,80 @@
+API Documentation
+================
+
+The main library code is grouped into two sections, the Parser and Number Statistics.
+
+The parser is responsible for consuming the input binary stream and breaking apart into
+numbers.
+
+The Number Statics module has data structures and functions for keeping a list of 
+most recently stored numbers, and largest numbers.
+
+Parser
+------
+See parser.c
+
+.. doxygenfunction:: parser_init
+	:project: fitbit
+
+.. doxygenfunction:: parser_parse_byte
+	:project: fitbit
+
+
+Number Statistics
+------------------
+
+Keeping Track of Recent Values
+++++++++++++++++++++++++++++++
+
+.. doxygenfunction:: recent_values_list_init
+	:project: fitbit
+
+.. doxygenfunction:: recent_values_list_add
+	:project: fitbit
+
+.. doxygenfunction:: recent_values_list_print
+	:project: fitbit
+
+**Example Code**
+
+::
+
+    RecentValuesList recent_values;
+
+    recent_values_list_init(&recent_values);
+
+    recent_values_list_add(&recent_values, 1);
+    recent_values_list_add(&recent_values, 5);
+    recent_values_list_add(&recent_values, 3);
+
+    recent_values_list_print(&state.recent_values);
+
+Keeping Track of Largest Values
++++++++++++++++++++++++++++++++
+
+.. doxygenfunction:: largest_values_list_init
+	:project: fitbit
+
+.. doxygenfunction:: largest_values_list_add
+	:project: fitbit
+
+.. doxygenfunction:: largest_values_list_print
+	:project: fitbit
+
+
+**Example Code**
+
+::
+
+    largestValuesList largest_values;
+
+    largest_values_list_init(&largest_values);
+
+    largest_values_list_add(&largest_values, 1);
+    largest_values_list_add(&largest_values, 5);
+    largest_values_list_add(&largest_values, 3);
+
+    largest_values_list_print(&state.recent_values);
+
+
+

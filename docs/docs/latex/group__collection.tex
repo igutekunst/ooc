@@ -1,0 +1,159 @@
+\hypertarget{group__collection}{}\section{Functions for working with collections}
+\label{group__collection}\index{Functions for working with collections@{Functions for working with collections}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const void $\ast$ \mbox{\hyperlink{group__collection_ga2bd4216bcf1d5810032394f57fbf5c2f}{append}} (const void $\ast$\+\_\+object, const void $\ast$\+\_\+other)
+\item 
+void $\ast$ \mbox{\hyperlink{group__collection_gaa1b700b0fbad0b56b81291260569d8b2}{insert}} (const void $\ast$\+\_\+self, const void $\ast$\+\_\+key, const void $\ast$item)
+\item 
+const void $\ast$ \mbox{\hyperlink{group__collection_gaa467fc1e6a3036f13ea20b36a6e672a1}{get\+\_\+item}} (const void $\ast$\+\_\+self, const void $\ast$\+\_\+key)
+\item 
+struct \mbox{\hyperlink{structclass__header}{class\+\_\+header}} $\ast$ \mbox{\hyperlink{group__collection_gaaad95663edf19fd4b734bd9977976169}{get\+\_\+obj}} (const void $\ast$\+\_\+self, const char $\ast$message)
+\item 
+const void $\ast$ \mbox{\hyperlink{group__collection_ga0cb67414335937707c9b92809a10895b}{iter}} (const void $\ast$\+\_\+object)
+\item 
+uint64\+\_\+t \mbox{\hyperlink{group__collection_gae0b3682e6ff5038e94c9e551bdd0d489}{hash}} (const void $\ast$\+\_\+self)
+\item 
+const void $\ast$ \mbox{\hyperlink{group__collection_gaecc46e74b03a83ca8a8023cc7264489c}{next}} (const void $\ast$\+\_\+self)
+\item 
+void \mbox{\hyperlink{group__collection_ga8b99290b943601321e5bf291daecaae3}{del\+\_\+item}} (const void $\ast$\+\_\+self, const void $\ast$key)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group__collection_ga2bd4216bcf1d5810032394f57fbf5c2f}\label{group__collection_ga2bd4216bcf1d5810032394f57fbf5c2f}} 
+\index{Functions for working with collections@{Functions for working with collections}!append@{append}}
+\index{append@{append}!Functions for working with collections@{Functions for working with collections}}
+\subsubsection{\texorpdfstring{append()}{append()}}
+{\footnotesize\ttfamily const void$\ast$ append (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+object,  }\item[{const void $\ast$}]{\+\_\+other }\end{DoxyParamCaption})}
+
+
+
+Definition at line 150 of file object.\+c.
+
+
+
+References class\+\_\+header\+::append, and get\+\_\+obj().
+
+\mbox{\Hypertarget{group__collection_ga8b99290b943601321e5bf291daecaae3}\label{group__collection_ga8b99290b943601321e5bf291daecaae3}} 
+\index{Functions for working with collections@{Functions for working with collections}!del\+\_\+item@{del\+\_\+item}}
+\index{del\+\_\+item@{del\+\_\+item}!Functions for working with collections@{Functions for working with collections}}
+\subsubsection{\texorpdfstring{del\+\_\+item()}{del\_item()}}
+{\footnotesize\ttfamily void del\+\_\+item (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+self,  }\item[{const void $\ast$}]{key }\end{DoxyParamCaption})}
+
+
+
+Definition at line 205 of file object.\+c.
+
+
+
+References get\+\_\+class\+\_\+header(), and get\+\_\+obj().
+
+\mbox{\Hypertarget{group__collection_gaa467fc1e6a3036f13ea20b36a6e672a1}\label{group__collection_gaa467fc1e6a3036f13ea20b36a6e672a1}} 
+\index{Functions for working with collections@{Functions for working with collections}!get\+\_\+item@{get\+\_\+item}}
+\index{get\+\_\+item@{get\+\_\+item}!Functions for working with collections@{Functions for working with collections}}
+\subsubsection{\texorpdfstring{get\+\_\+item()}{get\_item()}}
+{\footnotesize\ttfamily const void$\ast$ get\+\_\+item (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+self,  }\item[{const void $\ast$}]{\+\_\+key }\end{DoxyParamCaption})}
+
+
+
+Definition at line 218 of file object.\+c.
+
+
+
+References get\+\_\+class\+\_\+header(), and get\+\_\+obj().
+
+\mbox{\Hypertarget{group__collection_gaaad95663edf19fd4b734bd9977976169}\label{group__collection_gaaad95663edf19fd4b734bd9977976169}} 
+\index{Functions for working with collections@{Functions for working with collections}!get\+\_\+obj@{get\+\_\+obj}}
+\index{get\+\_\+obj@{get\+\_\+obj}!Functions for working with collections@{Functions for working with collections}}
+\subsubsection{\texorpdfstring{get\+\_\+obj()}{get\_obj()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structclass__header}{class\+\_\+header}}$\ast$ get\+\_\+obj (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+self,  }\item[{const char $\ast$}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 164 of file object.\+c.
+
+
+
+References M\+A\+G\+IC.
+
+
+
+Referenced by append(), clsname(), copy(), del(), del\+\_\+item(), del\+\_\+item\+\_\+\+Hash\+Map(), equals(), get\+\_\+\+Hash\+Map(), get\+\_\+item(), hash(), insert(), insert\+\_\+\+Hash\+Map(), iter(), len(), next(), print(), size(), str(), and type().
+
+\mbox{\Hypertarget{group__collection_gae0b3682e6ff5038e94c9e551bdd0d489}\label{group__collection_gae0b3682e6ff5038e94c9e551bdd0d489}} 
+\index{Functions for working with collections@{Functions for working with collections}!hash@{hash}}
+\index{hash@{hash}!Functions for working with collections@{Functions for working with collections}}
+\subsubsection{\texorpdfstring{hash()}{hash()}}
+{\footnotesize\ttfamily uint64\+\_\+t hash (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+self }\end{DoxyParamCaption})}
+
+
+
+Definition at line 184 of file object.\+c.
+
+
+
+References get\+\_\+class\+\_\+header(), and get\+\_\+obj().
+
+
+
+Referenced by F\+N\+V32().
+
+\mbox{\Hypertarget{group__collection_gaa1b700b0fbad0b56b81291260569d8b2}\label{group__collection_gaa1b700b0fbad0b56b81291260569d8b2}} 
+\index{Functions for working with collections@{Functions for working with collections}!insert@{insert}}
+\index{insert@{insert}!Functions for working with collections@{Functions for working with collections}}
+\subsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void$\ast$ insert (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+self,  }\item[{const void $\ast$}]{\+\_\+key,  }\item[{const void $\ast$}]{item }\end{DoxyParamCaption})}
+
+
+
+Definition at line 193 of file object.\+c.
+
+
+
+References get\+\_\+class\+\_\+header(), and get\+\_\+obj().
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{group__collection_ga0cb67414335937707c9b92809a10895b}\label{group__collection_ga0cb67414335937707c9b92809a10895b}} 
+\index{Functions for working with collections@{Functions for working with collections}!iter@{iter}}
+\index{iter@{iter}!Functions for working with collections@{Functions for working with collections}}
+\subsubsection{\texorpdfstring{iter()}{iter()}}
+{\footnotesize\ttfamily const void$\ast$ iter (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+object }\end{DoxyParamCaption})}
+
+
+
+Definition at line 227 of file object.\+c.
+
+
+
+References get\+\_\+class\+\_\+header(), and get\+\_\+obj().
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{group__collection_gaecc46e74b03a83ca8a8023cc7264489c}\label{group__collection_gaecc46e74b03a83ca8a8023cc7264489c}} 
+\index{Functions for working with collections@{Functions for working with collections}!next@{next}}
+\index{next@{next}!Functions for working with collections@{Functions for working with collections}}
+\subsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily const void$\ast$ next (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+self }\end{DoxyParamCaption})}
+
+
+
+Definition at line 236 of file object.\+c.
+
+
+
+References get\+\_\+class\+\_\+header(), and get\+\_\+obj().
+
+
+
+Referenced by main().
+

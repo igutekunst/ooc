@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="structHashMap__iter" kind="struct" language="C++" prot="public">
+    <compoundname>HashMap_iter</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structHashMap__iter_1a632cf034be2d2d879dc8903f0ec8e003" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structclass__header" kindref="compound">class_header</ref> *</type>
+        <definition>struct class_header* HashMap_iter::class</definition>
+        <argsstring></argsstring>
+        <name>class</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/hashmap.c" line="30" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/hashmap.c" bodystart="30" bodyend="-1"/>
+        <referencedby refid="hashmap_8c_1ae8c6201244c05c149ee58f00693fbe18" compoundref="hashmap_8c" startline="500" endline="512">__construct__HashMap_iter</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structHashMap__iter_1a298e8fda407d7e5baeff91ef0e312780" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structHashItem" kindref="compound">HashItem</ref> *</type>
+        <definition>struct HashItem* HashMap_iter::current_item</definition>
+        <argsstring></argsstring>
+        <name>current_item</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/hashmap.c" line="31" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/hashmap.c" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structHashMap__iter_1a0178778c493f8c8a3afb017cfc9904f0" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int HashMap_iter::index</definition>
+        <argsstring></argsstring>
+        <name>index</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/hashmap.c" line="32" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/hashmap.c" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structHashMap__iter_1a72fd08e2c359a826d7c367528c97da68" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structHashMap" kindref="compound">HashMap</ref> *</type>
+        <definition>struct HashMap* HashMap_iter::hash_map</definition>
+        <argsstring></argsstring>
+        <name>hash_map</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/hashmap.c" line="33" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/hashmap.c" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structHashMap__iter_1ac3021d5a7412b03e27627aef37550c5a" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int HashMap_iter::position</definition>
+        <argsstring></argsstring>
+        <name>position</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/hashmap.c" line="34" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/hashmap.c" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="12">
+        <label>HashMap</label>
+        <link refid="structHashMap"/>
+        <childnode refid="10" relation="usage">
+          <edgelabel>items</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>class</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>class_header</label>
+        <link refid="structclass__header"/>
+      </node>
+      <node id="9">
+        <label>HashMap_iter</label>
+        <link refid="structHashMap__iter"/>
+        <childnode refid="10" relation="usage">
+          <edgelabel>current_item</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>class</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>hash_map</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>HashItem</label>
+        <link refid="structHashItem"/>
+        <childnode refid="10" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/igutek/Documents/Projects/ooc/src/hashmap.c" line="29" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/hashmap.c" bodystart="29" bodyend="35"/>
+    <listofallmembers>
+      <member refid="structHashMap__iter_1a632cf034be2d2d879dc8903f0ec8e003" prot="public" virt="non-virtual"><scope>HashMap_iter</scope><name>class</name></member>
+      <member refid="structHashMap__iter_1a298e8fda407d7e5baeff91ef0e312780" prot="public" virt="non-virtual"><scope>HashMap_iter</scope><name>current_item</name></member>
+      <member refid="structHashMap__iter_1a72fd08e2c359a826d7c367528c97da68" prot="public" virt="non-virtual"><scope>HashMap_iter</scope><name>hash_map</name></member>
+      <member refid="structHashMap__iter_1a0178778c493f8c8a3afb017cfc9904f0" prot="public" virt="non-virtual"><scope>HashMap_iter</scope><name>index</name></member>
+      <member refid="structHashMap__iter_1ac3021d5a7412b03e27627aef37550c5a" prot="public" virt="non-virtual"><scope>HashMap_iter</scope><name>position</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

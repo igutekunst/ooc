@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="object__internal_8h" kind="file" language="C++">
+    <compoundname>object_internal.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">stdarg.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includedby refid="hashmap_8c" local="yes">/Users/igutek/Documents/Projects/ooc/src/hashmap.c</includedby>
+    <includedby refid="Int_8c" local="yes">/Users/igutek/Documents/Projects/ooc/src/Int.c</includedby>
+    <includedby refid="object_8c" local="yes">/Users/igutek/Documents/Projects/ooc/src/object.c</includedby>
+    <includedby refid="person_8c" local="yes">/Users/igutek/Documents/Projects/ooc/src/person.c</includedby>
+    <includedby refid="point_8c" local="yes">/Users/igutek/Documents/Projects/ooc/src/point.c</includedby>
+    <includedby refid="string_8c" local="yes">/Users/igutek/Documents/Projects/ooc/src/string.c</includedby>
+    <incdepgraph>
+      <node id="153">
+        <label>stdbool.h</label>
+      </node>
+      <node id="152">
+        <label>stdarg.h</label>
+      </node>
+      <node id="150">
+        <label>stdint.h</label>
+      </node>
+      <node id="151">
+        <label>stdlib.h</label>
+      </node>
+      <node id="149">
+        <label>/Users/igutek/Documents/Projects/ooc/src/object_internal.h</label>
+        <link refid="object__internal_8h"/>
+        <childnode refid="150" relation="include">
+        </childnode>
+        <childnode refid="151" relation="include">
+        </childnode>
+        <childnode refid="152" relation="include">
+        </childnode>
+        <childnode refid="153" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="158">
+        <label>/Users/igutek/Documents/Projects/ooc/src/person.c</label>
+        <link refid="person_8c"/>
+      </node>
+      <node id="157">
+        <label>/Users/igutek/Documents/Projects/ooc/src/object.c</label>
+        <link refid="object_8c"/>
+      </node>
+      <node id="155">
+        <label>/Users/igutek/Documents/Projects/ooc/src/hashmap.c</label>
+        <link refid="hashmap_8c"/>
+      </node>
+      <node id="154">
+        <label>/Users/igutek/Documents/Projects/ooc/src/object_internal.h</label>
+        <link refid="object__internal_8h"/>
+        <childnode refid="155" relation="include">
+        </childnode>
+        <childnode refid="156" relation="include">
+        </childnode>
+        <childnode refid="157" relation="include">
+        </childnode>
+        <childnode refid="158" relation="include">
+        </childnode>
+        <childnode refid="159" relation="include">
+        </childnode>
+        <childnode refid="160" relation="include">
+        </childnode>
+      </node>
+      <node id="159">
+        <label>/Users/igutek/Documents/Projects/ooc/src/point.c</label>
+        <link refid="point_8c"/>
+      </node>
+      <node id="156">
+        <label>/Users/igutek/Documents/Projects/ooc/src/Int.c</label>
+        <link refid="Int_8c"/>
+      </node>
+      <node id="160">
+        <label>/Users/igutek/Documents/Projects/ooc/src/string.c</label>
+        <link refid="string_8c"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structclass__header" prot="public">class_header</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="object__internal_8h_1a94630370ae389fb1189282fa0742f310" prot="public" static="no">
+        <name>MAGIC</name>
+        <initializer>((unsigned long ) 0xBD71472)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="6" column="9" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="6" bodyend="-1"/>
+        <referencedby refid="group__collection_1gaaad95663edf19fd4b734bd9977976169" compoundref="object_8c" startline="164" endline="177">get_obj</referencedby>
+        <referencedby refid="group__common_1ga621d73ced80293aaecd6839e6bdec30d" compoundref="object_8c" startline="15" endline="31">new</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdarg.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="object__internal_8h_1a94630370ae389fb1189282fa0742f310" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAGIC<sp/>((unsigned<sp/>long<sp/>)<sp/>0xBD71472)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="structclass__header" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structclass__header" kindref="compound">class_header</ref><sp/>{</highlight></codeline>
+<codeline lineno="22" refid="structclass__header_1aa98964036010ad63554856c5f4680cec" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="structclass__header_1aa98964036010ad63554856c5f4680cec" kindref="member">magic</ref>;</highlight></codeline>
+<codeline lineno="23" refid="structclass__header_1a5ba6bf54fc12a2a31a2b39937cd50e84" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structclass__header_1a5ba6bf54fc12a2a31a2b39937cd50e84" kindref="member">size</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="structclass__header_1a5c135b5316d0d9d22dce1f32fb8befb1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>size_t<sp/>(*<ref refid="structclass__header_1a5c135b5316d0d9d22dce1f32fb8befb1" kindref="member">get_size</ref>)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_self);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="structclass__header_1a1b7cb949741b9a64fd3569af94f30cba" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>size_t<sp/>(*<ref refid="structclass__header_1a1b7cb949741b9a64fd3569af94f30cba" kindref="member">get_len</ref>)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_self);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="structclass__header_1a560f3c418eb904136bfcb91d3618430c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*(*object_init<sp/>)(</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_self,</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>va_list<sp/>args</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="structclass__header_1aa07a11a17f5d79a66c9086b8d10969b7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/>(*<ref refid="structclass__header_1aa07a11a17f5d79a66c9086b8d10969b7" kindref="member">object_deinit</ref>)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_self);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="structclass__header_1a23181c1eac1455a8f23dd9d14f8b6abd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/>(*<ref refid="structclass__header_1a23181c1eac1455a8f23dd9d14f8b6abd" kindref="member">print</ref>)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_self);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="structclass__header_1af8a0a6de1e1eb96faab68cc58fcf84d0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*(*str)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_self);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="structclass__header_1a67a4f888ffa78b4905bc3585fe1f17a4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*(*to_String)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_self);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="structclass__header_1a10e4c230bf810df38e3581caabad02bb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*(*append)(</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_self,</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_other</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112" refid="structclass__header_1a01dc6aae9011475ec7be8500d4f63c5b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>bool<sp/>(*<ref refid="structclass__header_1a01dc6aae9011475ec7be8500d4f63c5b" kindref="member">equals</ref>)(</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_self,</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_other</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122" refid="structclass__header_1ab45bdc16b08b8cde751d161dd0c4f230" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*(*iter)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_object);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134" refid="structclass__header_1a26ec3e94c98bf5d3eff10d37cf2696ef" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*(*copy)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_self);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145" refid="structclass__header_1ada4fc11b4f09e8248a28c7d2e39e17ea" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/>(*<ref refid="structclass__header_1ada4fc11b4f09e8248a28c7d2e39e17ea" kindref="member">insert</ref>)(</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_self,</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_key,</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*item</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162" refid="structclass__header_1ab2de24bb8c5d3b1b5e74a69bb6c307b2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*(*get)(</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_self,</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_key</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172" refid="structclass__header_1a4d88d979ecf23c184577d937454ab973" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/>(*<ref refid="structclass__header_1a4d88d979ecf23c184577d937454ab973" kindref="member">del_item</ref>)(</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_self,</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*key</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189" refid="structclass__header_1aa0035a2c833b1e46f0ae401d6b44ee65" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/>(*<ref refid="structclass__header_1aa0035a2c833b1e46f0ae401d6b44ee65" kindref="member">hash</ref>)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_self);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199" refid="structclass__header_1a34b23ea4b047e4526bfb743d5be3e69c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*(*next)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_self);</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204" refid="structclass__header_1af7f2f5623c98afb59519062172644350" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="structclass__header_1af7f2f5623c98afb59519062172644350" kindref="member">object_name</ref>;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h"/>
+  </compounddef>
+</doxygen>

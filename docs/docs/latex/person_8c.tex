@@ -1,0 +1,112 @@
+\hypertarget{person_8c}{}\section{/\+Users/igutek/\+Documents/\+Projects/ooc/src/person.c File Reference}
+\label{person_8c}\index{/\+Users/igutek/\+Documents/\+Projects/ooc/src/person.\+c@{/\+Users/igutek/\+Documents/\+Projects/ooc/src/person.\+c}}
+{\ttfamily \#include $<$ooc/person.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}object\+\_\+internal.\+h\char`\"{}}\newline
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structPersonClass}{Person\+Class}}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const void $\ast$ \mbox{\hyperlink{person_8c_a479eaa947f7de8878921d30df63875eb}{\+\_\+\+\_\+construct\+\_\+\+\_\+\+Person}} (const void $\ast$self, va\+\_\+list args)
+\item 
+void $\ast$ \mbox{\hyperlink{person_8c_a0108e77460f7fc9f156aa8ff2919c496}{\+\_\+\+\_\+destruct\+\_\+\+\_\+\+Person}} (const void $\ast$self, va\+\_\+list args)
+\item 
+void \mbox{\hyperlink{person_8c_ac8f165e3cdab75026b74bdb45923d84c}{print\+\_\+\+Person}} (const void $\ast$\+\_\+self)
+\item 
+size\+\_\+t \mbox{\hyperlink{person_8c_ac756035079421633f84f42223847fbc4}{get\+\_\+size\+\_\+\+Person}} (const void $\ast$\+\_\+self)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structPersonClass}{Person\+Class}} \mbox{\hyperlink{person_8c_ae629a5cc6fd7522471c9556267053bff}{person\+\_\+class}}
+\item 
+void $\ast$ \mbox{\hyperlink{person_8c_a588179b669d31ab467e542d8b997361f}{Person}} = \&\mbox{\hyperlink{person_8c_ae629a5cc6fd7522471c9556267053bff}{person\+\_\+class}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{person_8c_a479eaa947f7de8878921d30df63875eb}\label{person_8c_a479eaa947f7de8878921d30df63875eb}} 
+\index{person.\+c@{person.\+c}!\+\_\+\+\_\+construct\+\_\+\+\_\+\+Person@{\+\_\+\+\_\+construct\+\_\+\+\_\+\+Person}}
+\index{\+\_\+\+\_\+construct\+\_\+\+\_\+\+Person@{\+\_\+\+\_\+construct\+\_\+\+\_\+\+Person}!person.\+c@{person.\+c}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+construct\+\_\+\+\_\+\+Person()}{\_\_construct\_\_Person()}}
+{\footnotesize\ttfamily const void $\ast$ \+\_\+\+\_\+construct\+\_\+\+\_\+\+Person (\begin{DoxyParamCaption}\item[{const void $\ast$}]{self,  }\item[{va\+\_\+list}]{args }\end{DoxyParamCaption})}
+
+
+
+Definition at line 29 of file person.\+c.
+
+
+
+References Person\+::first, Person\+::last, Person, Person\+::size, and size().
+
+\mbox{\Hypertarget{person_8c_a0108e77460f7fc9f156aa8ff2919c496}\label{person_8c_a0108e77460f7fc9f156aa8ff2919c496}} 
+\index{person.\+c@{person.\+c}!\+\_\+\+\_\+destruct\+\_\+\+\_\+\+Person@{\+\_\+\+\_\+destruct\+\_\+\+\_\+\+Person}}
+\index{\+\_\+\+\_\+destruct\+\_\+\+\_\+\+Person@{\+\_\+\+\_\+destruct\+\_\+\+\_\+\+Person}!person.\+c@{person.\+c}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+destruct\+\_\+\+\_\+\+Person()}{\_\_destruct\_\_Person()}}
+{\footnotesize\ttfamily void$\ast$ \+\_\+\+\_\+destruct\+\_\+\+\_\+\+Person (\begin{DoxyParamCaption}\item[{const void $\ast$}]{self,  }\item[{va\+\_\+list}]{args }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{person_8c_ac756035079421633f84f42223847fbc4}\label{person_8c_ac756035079421633f84f42223847fbc4}} 
+\index{person.\+c@{person.\+c}!get\+\_\+size\+\_\+\+Person@{get\+\_\+size\+\_\+\+Person}}
+\index{get\+\_\+size\+\_\+\+Person@{get\+\_\+size\+\_\+\+Person}!person.\+c@{person.\+c}}
+\subsubsection{\texorpdfstring{get\+\_\+size\+\_\+\+Person()}{get\_size\_Person()}}
+{\footnotesize\ttfamily size\+\_\+t get\+\_\+size\+\_\+\+Person (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+self }\end{DoxyParamCaption})}
+
+
+
+Definition at line 48 of file person.\+c.
+
+
+
+References Person\+::size.
+
+\mbox{\Hypertarget{person_8c_ac8f165e3cdab75026b74bdb45923d84c}\label{person_8c_ac8f165e3cdab75026b74bdb45923d84c}} 
+\index{person.\+c@{person.\+c}!print\+\_\+\+Person@{print\+\_\+\+Person}}
+\index{print\+\_\+\+Person@{print\+\_\+\+Person}!person.\+c@{person.\+c}}
+\subsubsection{\texorpdfstring{print\+\_\+\+Person()}{print\_Person()}}
+{\footnotesize\ttfamily void print\+\_\+\+Person (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+self }\end{DoxyParamCaption})}
+
+
+
+Definition at line 53 of file person.\+c.
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{person_8c_a588179b669d31ab467e542d8b997361f}\label{person_8c_a588179b669d31ab467e542d8b997361f}} 
+\index{person.\+c@{person.\+c}!Person@{Person}}
+\index{Person@{Person}!person.\+c@{person.\+c}}
+\subsubsection{\texorpdfstring{Person}{Person}}
+{\footnotesize\ttfamily void$\ast$ \mbox{\hyperlink{structPerson}{Person}} = \&\mbox{\hyperlink{person_8c_ae629a5cc6fd7522471c9556267053bff}{person\+\_\+class}}}
+
+
+
+Definition at line 24 of file person.\+c.
+
+
+
+Referenced by \+\_\+\+\_\+construct\+\_\+\+\_\+\+Person().
+
+\mbox{\Hypertarget{person_8c_ae629a5cc6fd7522471c9556267053bff}\label{person_8c_ae629a5cc6fd7522471c9556267053bff}} 
+\index{person.\+c@{person.\+c}!person\+\_\+class@{person\+\_\+class}}
+\index{person\+\_\+class@{person\+\_\+class}!person.\+c@{person.\+c}}
+\subsubsection{\texorpdfstring{person\+\_\+class}{person\_class}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structPersonClass}{Person\+Class}} person\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+    .class = \{.magic = \mbox{\hyperlink{object__internal_8h_a94630370ae389fb1189282fa0742f310}{MAGIC}}, 
+              .size  = (\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct }\mbox{\hyperlink{structPerson}{Person}})),
+              .\mbox{\hyperlink{group__common_ga34dc6ab72cfd51381e8173226484e827}{print}} = \mbox{\hyperlink{person_8c_ac8f165e3cdab75026b74bdb45923d84c}{print\_Person}},
+              .get\_size = \mbox{\hyperlink{person_8c_ac756035079421633f84f42223847fbc4}{get\_size\_Person}},
+              .object\_init = \mbox{\hyperlink{person_8c_a479eaa947f7de8878921d30df63875eb}{\_\_construct\_\_Person}},
+             \}
+\}
+\end{DoxyCode}
+
+
+Definition at line 15 of file person.\+c.
+

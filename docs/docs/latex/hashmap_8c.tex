@@ -1,0 +1,608 @@
+\hypertarget{hashmap_8c}{}\section{/\+Users/igutek/\+Documents/\+Projects/ooc/src/hashmap.c File Reference}
+\label{hashmap_8c}\index{/\+Users/igutek/\+Documents/\+Projects/ooc/src/hashmap.\+c@{/\+Users/igutek/\+Documents/\+Projects/ooc/src/hashmap.\+c}}
+{\ttfamily \#include \char`\"{}object\+\_\+internal.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$ooc/hashmap.\+h$>$}\newline
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structHashItem}{Hash\+Item}}
+\item 
+struct \mbox{\hyperlink{structHashMap}{Hash\+Map}}
+\item 
+struct \mbox{\hyperlink{structHashMap__iter}{Hash\+Map\+\_\+iter}}
+\item 
+struct \mbox{\hyperlink{structHashMapClass}{Hash\+Map\+Class}}
+\item 
+struct \mbox{\hyperlink{structHashMapClass__iter}{Hash\+Map\+Class\+\_\+iter}}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{hashmap_8c_a9fa4b8c9552dae40afdc18558bfd4893}{O\+DD}}~1
+\item 
+\#define \mbox{\hyperlink{hashmap_8c_a0ecdd7deb868e0319b01e42a1d9db86a}{E\+V\+EN}}~0
+\item 
+\#define \mbox{\hyperlink{hashmap_8c_a649b8f01fd6c0f47ff3cbddaeba63bfb}{W}}~64
+\item 
+\#define \mbox{\hyperlink{hashmap_8c_a513c061a66f664105b12ff672419fc39}{H\+A\+S\+H\+\_\+\+T\+A\+B\+L\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+L\+EN}}~4
+\item 
+\#define \mbox{\hyperlink{hashmap_8c_a4e74c4d2d47cb63f124c970895846958}{M\+A\+X\+\_\+A}}~18446744073709551615L
+\item 
+\#define \mbox{\hyperlink{hashmap_8c_ac5b763fe6cba352a54dc5d482b587329}{H\+W\+M\+\_\+\+F\+R\+A\+C\+T\+I\+ON}}~0.\+5
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structHashItem}{Hash\+Item}} \mbox{\hyperlink{hashmap_8c_a117e434224df522bdd46118932d54501}{Hash\+Item}}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const void $\ast$ \mbox{\hyperlink{hashmap_8c_a91f44dc50fe5d24c4970a8772347bef7}{\+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map}} (const void $\ast$self, va\+\_\+list args)
+\item 
+void \mbox{\hyperlink{hashmap_8c_ade2afccd37e881325eb1ce005a1d8d1e}{print\+\_\+\+Hash\+Map}} (void $\ast$\+\_\+self)
+\item 
+size\+\_\+t \mbox{\hyperlink{hashmap_8c_a700517ea0c1ffc800b7c93b475a5e78a}{get\+\_\+size\+\_\+\+Hash\+Map}} (const void $\ast$\+\_\+self)
+\item 
+size\+\_\+t \mbox{\hyperlink{hashmap_8c_a79dcb455435133253d86b70e31e3cba3}{get\+\_\+len\+\_\+\+Hash\+Map}} (const void $\ast$\+\_\+self)
+\item 
+const char $\ast$ \mbox{\hyperlink{hashmap_8c_a12bafd8be5b1e7cee7f0d61a2a7a4c2e}{str\+\_\+\+Hash\+Map}} (const void $\ast$\+\_\+self)
+\item 
+void \mbox{\hyperlink{hashmap_8c_a2987322764f770f61fe71f0a1320fc7b}{insert\+\_\+\+Hash\+Map}} (const void $\ast$\+\_\+self, const void $\ast$key, const void $\ast$\+\_\+other)
+\item 
+const void $\ast$ \mbox{\hyperlink{hashmap_8c_aa88aa2ed0651f4feb2e275ba14114d14}{get\+\_\+\+Hash\+Map}} (const void $\ast$\+\_\+self, const void $\ast$key)
+\item 
+const void $\ast$ \mbox{\hyperlink{hashmap_8c_a92b093655c1077032c065f51aed37652}{copy\+\_\+\+Hash\+Map}} (const void $\ast$\+\_\+self)
+\item 
+const void $\ast$ \mbox{\hyperlink{hashmap_8c_a5601cd221918b26557f36f577c909407}{next\+\_\+\+Hash\+Map}} (const void $\ast$\+\_\+self)
+\item 
+void \mbox{\hyperlink{hashmap_8c_aa3b3074d83ff5a38f6164c7e4b459fa5}{internal\+\_\+resize\+\_\+\+Hash\+Map}} (struct \mbox{\hyperlink{structHashMap}{Hash\+Map}} $\ast$self, uint64\+\_\+t new\+\_\+m)
+\item 
+void \mbox{\hyperlink{hashmap_8c_ab39c45942b557d7634a849c1292b9522}{internal\+\_\+print\+\_\+table}} (struct \mbox{\hyperlink{structHashMap}{Hash\+Map}} $\ast$self)
+\item 
+struct \mbox{\hyperlink{structHashItem}{Hash\+Item}} $\ast$ \mbox{\hyperlink{hashmap_8c_a5c97b94958e87967d62dc8832202aabc}{alloc\+\_\+hash\+\_\+items}} (size\+\_\+t n)
+\item 
+uint64\+\_\+t \mbox{\hyperlink{hashmap_8c_a2f99243b32985f56493f04b192071dc7}{random\+\_\+a}} ()
+\item 
+uint64\+\_\+t \mbox{\hyperlink{hashmap_8c_a84e2e7a7b9433d44b77193d0b05a1ae7}{lg}} (uint64\+\_\+t n)
+\item 
+uint64\+\_\+t \mbox{\hyperlink{hashmap_8c_af3c89e259a9e4ad29cab4c9e22cfbd5b}{random\+\_\+b}} (uint64\+\_\+t m)
+\item 
+uint64\+\_\+t \mbox{\hyperlink{hashmap_8c_a62d30d0ca399807fa03a80759da17168}{internal\+\_\+hash}} (uint64\+\_\+t a, uint64\+\_\+t b, uint64\+\_\+t M, uint64\+\_\+t key)
+\item 
+void \mbox{\hyperlink{hashmap_8c_a8aa67d2dac0692c1128b50780ad9dfc1}{internal\+\_\+insert\+\_\+\+Hash\+Map}} (struct \mbox{\hyperlink{structHashMap}{Hash\+Map}} $\ast$self, const void $\ast$\+\_\+key, const void $\ast$\+\_\+value)
+\item 
+size\+\_\+t \mbox{\hyperlink{hashmap_8c_a3941f840164dd3ce845aec0bd5fc5652}{internal\+\_\+count\+\_\+\+Hash\+Map}} (struct \mbox{\hyperlink{structHashMap}{Hash\+Map}} $\ast$self)
+\item 
+void \mbox{\hyperlink{hashmap_8c_a4425bb488e5bfb1e9244675a31df3470}{\+\_\+\+\_\+destruct\+\_\+\+\_\+\+Hash\+Map}} (const void $\ast$\+\_\+self, va\+\_\+list args)
+\item 
+void \mbox{\hyperlink{hashmap_8c_a10476d872d0cfcb234391cabf5e888a1}{del\+\_\+item\+\_\+\+Hash\+Map}} (const void $\ast$\+\_\+self, const void $\ast$\+\_\+key)
+\item 
+const void $\ast$ \mbox{\hyperlink{hashmap_8c_aa1645276039a5f13164347699538139b}{iter\+\_\+\+Hash\+Map}} (const void $\ast$\+\_\+self)
+\item 
+const void $\ast$ \mbox{\hyperlink{hashmap_8c_ae8c6201244c05c149ee58f00693fbe18}{\+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map\+\_\+iter}} (const void $\ast$\+\_\+self, va\+\_\+list args)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{hashmap_8c_a4f5276c8ff5ef060a2a4bf1f07192371}{rng\+\_\+seeded}} = false
+\item 
+struct \mbox{\hyperlink{structHashMapClass}{Hash\+Map\+Class}} \mbox{\hyperlink{hashmap_8c_a4b069b7a04e527d80cea5855fb3d2a95}{hash\+\_\+map\+\_\+class}}
+\item 
+void $\ast$ \mbox{\hyperlink{hashmap_8c_a460bbbf2046f6aaf34ce30bb2be13939}{Hash\+Map}} = \&\mbox{\hyperlink{hashmap_8c_a4b069b7a04e527d80cea5855fb3d2a95}{hash\+\_\+map\+\_\+class}}
+\item 
+struct \mbox{\hyperlink{structHashMapClass__iter}{Hash\+Map\+Class\+\_\+iter}} \mbox{\hyperlink{hashmap_8c_a19a320a0fb44773b7b2edde8b06f7e0b}{hash\+\_\+map\+\_\+class\+\_\+iter}}
+\item 
+void $\ast$ \mbox{\hyperlink{hashmap_8c_a45019180cc2e660110ceabdc4b807f3e}{Hash\+Map\+\_\+iter}} = \&\mbox{\hyperlink{hashmap_8c_a19a320a0fb44773b7b2edde8b06f7e0b}{hash\+\_\+map\+\_\+class\+\_\+iter}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{hashmap_8c_a0ecdd7deb868e0319b01e42a1d9db86a}\label{hashmap_8c_a0ecdd7deb868e0319b01e42a1d9db86a}} 
+\index{hashmap.\+c@{hashmap.\+c}!E\+V\+EN@{E\+V\+EN}}
+\index{E\+V\+EN@{E\+V\+EN}!hashmap.\+c@{hashmap.\+c}}
+\subsubsection{\texorpdfstring{E\+V\+EN}{EVEN}}
+{\footnotesize\ttfamily \#define E\+V\+EN~0}
+
+
+
+Definition at line 38 of file hashmap.\+c.
+
+\mbox{\Hypertarget{hashmap_8c_a513c061a66f664105b12ff672419fc39}\label{hashmap_8c_a513c061a66f664105b12ff672419fc39}} 
+\index{hashmap.\+c@{hashmap.\+c}!H\+A\+S\+H\+\_\+\+T\+A\+B\+L\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+L\+EN@{H\+A\+S\+H\+\_\+\+T\+A\+B\+L\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+L\+EN}}
+\index{H\+A\+S\+H\+\_\+\+T\+A\+B\+L\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+L\+EN@{H\+A\+S\+H\+\_\+\+T\+A\+B\+L\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+L\+EN}!hashmap.\+c@{hashmap.\+c}}
+\subsubsection{\texorpdfstring{H\+A\+S\+H\+\_\+\+T\+A\+B\+L\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+L\+EN}{HASH\_TABLE\_DEFAULT\_LEN}}
+{\footnotesize\ttfamily \#define H\+A\+S\+H\+\_\+\+T\+A\+B\+L\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+L\+EN~4}
+
+
+
+Definition at line 43 of file hashmap.\+c.
+
+
+
+Referenced by \+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map(), and internal\+\_\+resize\+\_\+\+Hash\+Map().
+
+\mbox{\Hypertarget{hashmap_8c_ac5b763fe6cba352a54dc5d482b587329}\label{hashmap_8c_ac5b763fe6cba352a54dc5d482b587329}} 
+\index{hashmap.\+c@{hashmap.\+c}!H\+W\+M\+\_\+\+F\+R\+A\+C\+T\+I\+ON@{H\+W\+M\+\_\+\+F\+R\+A\+C\+T\+I\+ON}}
+\index{H\+W\+M\+\_\+\+F\+R\+A\+C\+T\+I\+ON@{H\+W\+M\+\_\+\+F\+R\+A\+C\+T\+I\+ON}!hashmap.\+c@{hashmap.\+c}}
+\subsubsection{\texorpdfstring{H\+W\+M\+\_\+\+F\+R\+A\+C\+T\+I\+ON}{HWM\_FRACTION}}
+{\footnotesize\ttfamily \#define H\+W\+M\+\_\+\+F\+R\+A\+C\+T\+I\+ON~0.\+5}
+
+
+
+Definition at line 45 of file hashmap.\+c.
+
+
+
+Referenced by \+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map(), and internal\+\_\+resize\+\_\+\+Hash\+Map().
+
+\mbox{\Hypertarget{hashmap_8c_a4e74c4d2d47cb63f124c970895846958}\label{hashmap_8c_a4e74c4d2d47cb63f124c970895846958}} 
+\index{hashmap.\+c@{hashmap.\+c}!M\+A\+X\+\_\+A@{M\+A\+X\+\_\+A}}
+\index{M\+A\+X\+\_\+A@{M\+A\+X\+\_\+A}!hashmap.\+c@{hashmap.\+c}}
+\subsubsection{\texorpdfstring{M\+A\+X\+\_\+A}{MAX\_A}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+A~18446744073709551615L}
+
+
+
+Definition at line 44 of file hashmap.\+c.
+
+
+
+Referenced by random\+\_\+a().
+
+\mbox{\Hypertarget{hashmap_8c_a9fa4b8c9552dae40afdc18558bfd4893}\label{hashmap_8c_a9fa4b8c9552dae40afdc18558bfd4893}} 
+\index{hashmap.\+c@{hashmap.\+c}!O\+DD@{O\+DD}}
+\index{O\+DD@{O\+DD}!hashmap.\+c@{hashmap.\+c}}
+\subsubsection{\texorpdfstring{O\+DD}{ODD}}
+{\footnotesize\ttfamily \#define O\+DD~1}
+
+
+
+Definition at line 37 of file hashmap.\+c.
+
+\mbox{\Hypertarget{hashmap_8c_a649b8f01fd6c0f47ff3cbddaeba63bfb}\label{hashmap_8c_a649b8f01fd6c0f47ff3cbddaeba63bfb}} 
+\index{hashmap.\+c@{hashmap.\+c}!W@{W}}
+\index{W@{W}!hashmap.\+c@{hashmap.\+c}}
+\subsubsection{\texorpdfstring{W}{W}}
+{\footnotesize\ttfamily \#define W~64}
+
+
+
+Definition at line 42 of file hashmap.\+c.
+
+
+
+Referenced by internal\+\_\+hash(), and random\+\_\+b().
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{hashmap_8c_a117e434224df522bdd46118932d54501}\label{hashmap_8c_a117e434224df522bdd46118932d54501}} 
+\index{hashmap.\+c@{hashmap.\+c}!Hash\+Item@{Hash\+Item}}
+\index{Hash\+Item@{Hash\+Item}!hashmap.\+c@{hashmap.\+c}}
+\subsubsection{\texorpdfstring{Hash\+Item}{HashItem}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structHashItem}{Hash\+Item}} \mbox{\hyperlink{structHashItem}{Hash\+Item}}}
+
+
+
+Definition at line 12 of file hashmap.\+c.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{hashmap_8c_a91f44dc50fe5d24c4970a8772347bef7}\label{hashmap_8c_a91f44dc50fe5d24c4970a8772347bef7}} 
+\index{hashmap.\+c@{hashmap.\+c}!\+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map@{\+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map}}
+\index{\+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map@{\+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map}!hashmap.\+c@{hashmap.\+c}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map()}{\_\_construct\_\_HashMap()}}
+{\footnotesize\ttfamily const void $\ast$ \+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map (\begin{DoxyParamCaption}\item[{const void $\ast$}]{self,  }\item[{va\+\_\+list}]{args }\end{DoxyParamCaption})}
+
+
+
+Definition at line 277 of file hashmap.\+c.
+
+
+
+References alloc\+\_\+hash\+\_\+items(), H\+A\+S\+H\+\_\+\+T\+A\+B\+L\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+L\+EN, Hash\+Map, H\+W\+M\+\_\+\+F\+R\+A\+C\+T\+I\+ON, lg(), random\+\_\+a(), random\+\_\+b(), rng\+\_\+seeded, and Hash\+Map\+::size.
+
+\mbox{\Hypertarget{hashmap_8c_ae8c6201244c05c149ee58f00693fbe18}\label{hashmap_8c_ae8c6201244c05c149ee58f00693fbe18}} 
+\index{hashmap.\+c@{hashmap.\+c}!\+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map\+\_\+iter@{\+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map\+\_\+iter}}
+\index{\+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map\+\_\+iter@{\+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map\+\_\+iter}!hashmap.\+c@{hashmap.\+c}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map\+\_\+iter()}{\_\_construct\_\_HashMap\_iter()}}
+{\footnotesize\ttfamily const void$\ast$ \+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map\+\_\+iter (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+self,  }\item[{va\+\_\+list}]{args }\end{DoxyParamCaption})}
+
+
+
+Definition at line 500 of file hashmap.\+c.
+
+
+
+References Hash\+Map\+\_\+iter\+::class, and Hash\+Map\+\_\+iter.
+
+\mbox{\Hypertarget{hashmap_8c_a4425bb488e5bfb1e9244675a31df3470}\label{hashmap_8c_a4425bb488e5bfb1e9244675a31df3470}} 
+\index{hashmap.\+c@{hashmap.\+c}!\+\_\+\+\_\+destruct\+\_\+\+\_\+\+Hash\+Map@{\+\_\+\+\_\+destruct\+\_\+\+\_\+\+Hash\+Map}}
+\index{\+\_\+\+\_\+destruct\+\_\+\+\_\+\+Hash\+Map@{\+\_\+\+\_\+destruct\+\_\+\+\_\+\+Hash\+Map}!hashmap.\+c@{hashmap.\+c}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+destruct\+\_\+\+\_\+\+Hash\+Map()}{\_\_destruct\_\_HashMap()}}
+{\footnotesize\ttfamily void \+\_\+\+\_\+destruct\+\_\+\+\_\+\+Hash\+Map (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+self,  }\item[{va\+\_\+list}]{args }\end{DoxyParamCaption})}
+
+
+
+Definition at line 307 of file hashmap.\+c.
+
+\mbox{\Hypertarget{hashmap_8c_a5c97b94958e87967d62dc8832202aabc}\label{hashmap_8c_a5c97b94958e87967d62dc8832202aabc}} 
+\index{hashmap.\+c@{hashmap.\+c}!alloc\+\_\+hash\+\_\+items@{alloc\+\_\+hash\+\_\+items}}
+\index{alloc\+\_\+hash\+\_\+items@{alloc\+\_\+hash\+\_\+items}!hashmap.\+c@{hashmap.\+c}}
+\subsubsection{\texorpdfstring{alloc\+\_\+hash\+\_\+items()}{alloc\_hash\_items()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structHashItem}{Hash\+Item}}$\ast$ alloc\+\_\+hash\+\_\+items (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Definition at line 73 of file hashmap.\+c.
+
+
+
+Referenced by \+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map(), and internal\+\_\+resize\+\_\+\+Hash\+Map().
+
+\mbox{\Hypertarget{hashmap_8c_a92b093655c1077032c065f51aed37652}\label{hashmap_8c_a92b093655c1077032c065f51aed37652}} 
+\index{hashmap.\+c@{hashmap.\+c}!copy\+\_\+\+Hash\+Map@{copy\+\_\+\+Hash\+Map}}
+\index{copy\+\_\+\+Hash\+Map@{copy\+\_\+\+Hash\+Map}!hashmap.\+c@{hashmap.\+c}}
+\subsubsection{\texorpdfstring{copy\+\_\+\+Hash\+Map()}{copy\_HashMap()}}
+{\footnotesize\ttfamily const void $\ast$ copy\+\_\+\+Hash\+Map (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+self }\end{DoxyParamCaption})}
+
+
+
+Definition at line 514 of file hashmap.\+c.
+
+\mbox{\Hypertarget{hashmap_8c_a10476d872d0cfcb234391cabf5e888a1}\label{hashmap_8c_a10476d872d0cfcb234391cabf5e888a1}} 
+\index{hashmap.\+c@{hashmap.\+c}!del\+\_\+item\+\_\+\+Hash\+Map@{del\+\_\+item\+\_\+\+Hash\+Map}}
+\index{del\+\_\+item\+\_\+\+Hash\+Map@{del\+\_\+item\+\_\+\+Hash\+Map}!hashmap.\+c@{hashmap.\+c}}
+\subsubsection{\texorpdfstring{del\+\_\+item\+\_\+\+Hash\+Map()}{del\_item\_HashMap()}}
+{\footnotesize\ttfamily void del\+\_\+item\+\_\+\+Hash\+Map (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+self,  }\item[{const void $\ast$}]{\+\_\+key }\end{DoxyParamCaption})}
+
+
+
+Definition at line 378 of file hashmap.\+c.
+
+
+
+References get\+\_\+obj(), class\+\_\+header\+::hash, internal\+\_\+hash(), Hash\+Item\+::internal\+\_\+key, internal\+\_\+print\+\_\+table(), internal\+\_\+resize\+\_\+\+Hash\+Map(), Hash\+Item\+::next, Hash\+Item\+::present, and Hash\+Item\+::value.
+
+\mbox{\Hypertarget{hashmap_8c_aa88aa2ed0651f4feb2e275ba14114d14}\label{hashmap_8c_aa88aa2ed0651f4feb2e275ba14114d14}} 
+\index{hashmap.\+c@{hashmap.\+c}!get\+\_\+\+Hash\+Map@{get\+\_\+\+Hash\+Map}}
+\index{get\+\_\+\+Hash\+Map@{get\+\_\+\+Hash\+Map}!hashmap.\+c@{hashmap.\+c}}
+\subsubsection{\texorpdfstring{get\+\_\+\+Hash\+Map()}{get\_HashMap()}}
+{\footnotesize\ttfamily const void $\ast$ get\+\_\+\+Hash\+Map (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+self,  }\item[{const void $\ast$}]{key }\end{DoxyParamCaption})}
+
+
+
+Definition at line 343 of file hashmap.\+c.
+
+
+
+References equals(), get\+\_\+class\+\_\+header(), get\+\_\+obj(), class\+\_\+header\+::hash, internal\+\_\+hash(), Hash\+Item\+::internal\+\_\+key, Hash\+Item\+::key, Hash\+Item\+::next, str(), and Hash\+Item\+::value.
+
+\mbox{\Hypertarget{hashmap_8c_a79dcb455435133253d86b70e31e3cba3}\label{hashmap_8c_a79dcb455435133253d86b70e31e3cba3}} 
+\index{hashmap.\+c@{hashmap.\+c}!get\+\_\+len\+\_\+\+Hash\+Map@{get\+\_\+len\+\_\+\+Hash\+Map}}
+\index{get\+\_\+len\+\_\+\+Hash\+Map@{get\+\_\+len\+\_\+\+Hash\+Map}!hashmap.\+c@{hashmap.\+c}}
+\subsubsection{\texorpdfstring{get\+\_\+len\+\_\+\+Hash\+Map()}{get\_len\_HashMap()}}
+{\footnotesize\ttfamily size\+\_\+t get\+\_\+len\+\_\+\+Hash\+Map (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+self }\end{DoxyParamCaption})}
+
+
+
+Definition at line 256 of file hashmap.\+c.
+
+
+
+References internal\+\_\+count\+\_\+\+Hash\+Map(), and internal\+\_\+print\+\_\+table().
+
+\mbox{\Hypertarget{hashmap_8c_a700517ea0c1ffc800b7c93b475a5e78a}\label{hashmap_8c_a700517ea0c1ffc800b7c93b475a5e78a}} 
+\index{hashmap.\+c@{hashmap.\+c}!get\+\_\+size\+\_\+\+Hash\+Map@{get\+\_\+size\+\_\+\+Hash\+Map}}
+\index{get\+\_\+size\+\_\+\+Hash\+Map@{get\+\_\+size\+\_\+\+Hash\+Map}!hashmap.\+c@{hashmap.\+c}}
+\subsubsection{\texorpdfstring{get\+\_\+size\+\_\+\+Hash\+Map()}{get\_size\_HashMap()}}
+{\footnotesize\ttfamily size\+\_\+t get\+\_\+size\+\_\+\+Hash\+Map (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+self }\end{DoxyParamCaption})}
+
+
+
+Definition at line 272 of file hashmap.\+c.
+
+
+
+References Hash\+Map\+::size.
+
+\mbox{\Hypertarget{hashmap_8c_a2987322764f770f61fe71f0a1320fc7b}\label{hashmap_8c_a2987322764f770f61fe71f0a1320fc7b}} 
+\index{hashmap.\+c@{hashmap.\+c}!insert\+\_\+\+Hash\+Map@{insert\+\_\+\+Hash\+Map}}
+\index{insert\+\_\+\+Hash\+Map@{insert\+\_\+\+Hash\+Map}!hashmap.\+c@{hashmap.\+c}}
+\subsubsection{\texorpdfstring{insert\+\_\+\+Hash\+Map()}{insert\_HashMap()}}
+{\footnotesize\ttfamily void insert\+\_\+\+Hash\+Map (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+self,  }\item[{const void $\ast$}]{key,  }\item[{const void $\ast$}]{\+\_\+other }\end{DoxyParamCaption})}
+
+
+
+Definition at line 324 of file hashmap.\+c.
+
+
+
+References get\+\_\+class\+\_\+header(), get\+\_\+obj(), class\+\_\+header\+::hash, internal\+\_\+insert\+\_\+\+Hash\+Map(), and str().
+
+\mbox{\Hypertarget{hashmap_8c_a3941f840164dd3ce845aec0bd5fc5652}\label{hashmap_8c_a3941f840164dd3ce845aec0bd5fc5652}} 
+\index{hashmap.\+c@{hashmap.\+c}!internal\+\_\+count\+\_\+\+Hash\+Map@{internal\+\_\+count\+\_\+\+Hash\+Map}}
+\index{internal\+\_\+count\+\_\+\+Hash\+Map@{internal\+\_\+count\+\_\+\+Hash\+Map}!hashmap.\+c@{hashmap.\+c}}
+\subsubsection{\texorpdfstring{internal\+\_\+count\+\_\+\+Hash\+Map()}{internal\_count\_HashMap()}}
+{\footnotesize\ttfamily size\+\_\+t internal\+\_\+count\+\_\+\+Hash\+Map (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structHashMap}{Hash\+Map}} $\ast$}]{self }\end{DoxyParamCaption})}
+
+
+
+Definition at line 175 of file hashmap.\+c.
+
+
+
+References Hash\+Item\+::next, and Hash\+Item\+::present.
+
+
+
+Referenced by get\+\_\+len\+\_\+\+Hash\+Map().
+
+\mbox{\Hypertarget{hashmap_8c_a62d30d0ca399807fa03a80759da17168}\label{hashmap_8c_a62d30d0ca399807fa03a80759da17168}} 
+\index{hashmap.\+c@{hashmap.\+c}!internal\+\_\+hash@{internal\+\_\+hash}}
+\index{internal\+\_\+hash@{internal\+\_\+hash}!hashmap.\+c@{hashmap.\+c}}
+\subsubsection{\texorpdfstring{internal\+\_\+hash()}{internal\_hash()}}
+{\footnotesize\ttfamily uint64\+\_\+t internal\+\_\+hash (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{a,  }\item[{uint64\+\_\+t}]{b,  }\item[{uint64\+\_\+t}]{M,  }\item[{uint64\+\_\+t}]{key }\end{DoxyParamCaption})}
+
+
+
+Definition at line 102 of file hashmap.\+c.
+
+
+
+References Hash\+Item\+::key, and W.
+
+
+
+Referenced by del\+\_\+item\+\_\+\+Hash\+Map(), get\+\_\+\+Hash\+Map(), and internal\+\_\+insert\+\_\+\+Hash\+Map().
+
+\mbox{\Hypertarget{hashmap_8c_a8aa67d2dac0692c1128b50780ad9dfc1}\label{hashmap_8c_a8aa67d2dac0692c1128b50780ad9dfc1}} 
+\index{hashmap.\+c@{hashmap.\+c}!internal\+\_\+insert\+\_\+\+Hash\+Map@{internal\+\_\+insert\+\_\+\+Hash\+Map}}
+\index{internal\+\_\+insert\+\_\+\+Hash\+Map@{internal\+\_\+insert\+\_\+\+Hash\+Map}!hashmap.\+c@{hashmap.\+c}}
+\subsubsection{\texorpdfstring{internal\+\_\+insert\+\_\+\+Hash\+Map()}{internal\_insert\_HashMap()}}
+{\footnotesize\ttfamily void internal\+\_\+insert\+\_\+\+Hash\+Map (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structHashMap}{Hash\+Map}} $\ast$}]{self,  }\item[{const void $\ast$}]{\+\_\+key,  }\item[{const void $\ast$}]{\+\_\+value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 107 of file hashmap.\+c.
+
+
+
+References equals(), get\+\_\+class\+\_\+header(), class\+\_\+header\+::hash, internal\+\_\+hash(), Hash\+Item\+::internal\+\_\+key, internal\+\_\+resize\+\_\+\+Hash\+Map(), Hash\+Item\+::key, Hash\+Item\+::next, Hash\+Item\+::present, and Hash\+Item\+::value.
+
+
+
+Referenced by insert\+\_\+\+Hash\+Map(), and internal\+\_\+resize\+\_\+\+Hash\+Map().
+
+\mbox{\Hypertarget{hashmap_8c_ab39c45942b557d7634a849c1292b9522}\label{hashmap_8c_ab39c45942b557d7634a849c1292b9522}} 
+\index{hashmap.\+c@{hashmap.\+c}!internal\+\_\+print\+\_\+table@{internal\+\_\+print\+\_\+table}}
+\index{internal\+\_\+print\+\_\+table@{internal\+\_\+print\+\_\+table}!hashmap.\+c@{hashmap.\+c}}
+\subsubsection{\texorpdfstring{internal\+\_\+print\+\_\+table()}{internal\_print\_table()}}
+{\footnotesize\ttfamily void internal\+\_\+print\+\_\+table (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structHashMap}{Hash\+Map}} $\ast$}]{self }\end{DoxyParamCaption})}
+
+
+
+Definition at line 152 of file hashmap.\+c.
+
+
+
+References Hash\+Item\+::internal\+\_\+key, Hash\+Item\+::next, and Hash\+Item\+::present.
+
+
+
+Referenced by del\+\_\+item\+\_\+\+Hash\+Map(), get\+\_\+len\+\_\+\+Hash\+Map(), and internal\+\_\+resize\+\_\+\+Hash\+Map().
+
+\mbox{\Hypertarget{hashmap_8c_aa3b3074d83ff5a38f6164c7e4b459fa5}\label{hashmap_8c_aa3b3074d83ff5a38f6164c7e4b459fa5}} 
+\index{hashmap.\+c@{hashmap.\+c}!internal\+\_\+resize\+\_\+\+Hash\+Map@{internal\+\_\+resize\+\_\+\+Hash\+Map}}
+\index{internal\+\_\+resize\+\_\+\+Hash\+Map@{internal\+\_\+resize\+\_\+\+Hash\+Map}!hashmap.\+c@{hashmap.\+c}}
+\subsubsection{\texorpdfstring{internal\+\_\+resize\+\_\+\+Hash\+Map()}{internal\_resize\_HashMap()}}
+{\footnotesize\ttfamily void internal\+\_\+resize\+\_\+\+Hash\+Map (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structHashMap}{Hash\+Map}} $\ast$}]{self,  }\item[{uint64\+\_\+t}]{new\+\_\+m }\end{DoxyParamCaption})}
+
+
+
+Definition at line 193 of file hashmap.\+c.
+
+
+
+References alloc\+\_\+hash\+\_\+items(), H\+A\+S\+H\+\_\+\+T\+A\+B\+L\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+L\+EN, H\+W\+M\+\_\+\+F\+R\+A\+C\+T\+I\+ON, internal\+\_\+insert\+\_\+\+Hash\+Map(), internal\+\_\+print\+\_\+table(), Hash\+Item\+::key, lg(), Hash\+Item\+::next, Hash\+Item\+::present, random\+\_\+a(), random\+\_\+b(), and Hash\+Item\+::value.
+
+
+
+Referenced by del\+\_\+item\+\_\+\+Hash\+Map(), and internal\+\_\+insert\+\_\+\+Hash\+Map().
+
+\mbox{\Hypertarget{hashmap_8c_aa1645276039a5f13164347699538139b}\label{hashmap_8c_aa1645276039a5f13164347699538139b}} 
+\index{hashmap.\+c@{hashmap.\+c}!iter\+\_\+\+Hash\+Map@{iter\+\_\+\+Hash\+Map}}
+\index{iter\+\_\+\+Hash\+Map@{iter\+\_\+\+Hash\+Map}!hashmap.\+c@{hashmap.\+c}}
+\subsubsection{\texorpdfstring{iter\+\_\+\+Hash\+Map()}{iter\_HashMap()}}
+{\footnotesize\ttfamily const void$\ast$ iter\+\_\+\+Hash\+Map (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+self }\end{DoxyParamCaption})}
+
+
+
+Definition at line 453 of file hashmap.\+c.
+
+
+
+References Hash\+Map\+\_\+iter.
+
+\mbox{\Hypertarget{hashmap_8c_a84e2e7a7b9433d44b77193d0b05a1ae7}\label{hashmap_8c_a84e2e7a7b9433d44b77193d0b05a1ae7}} 
+\index{hashmap.\+c@{hashmap.\+c}!lg@{lg}}
+\index{lg@{lg}!hashmap.\+c@{hashmap.\+c}}
+\subsubsection{\texorpdfstring{lg()}{lg()}}
+{\footnotesize\ttfamily uint64\+\_\+t lg (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Definition at line 87 of file hashmap.\+c.
+
+
+
+Referenced by \+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map(), internal\+\_\+resize\+\_\+\+Hash\+Map(), and random\+\_\+b().
+
+\mbox{\Hypertarget{hashmap_8c_a5601cd221918b26557f36f577c909407}\label{hashmap_8c_a5601cd221918b26557f36f577c909407}} 
+\index{hashmap.\+c@{hashmap.\+c}!next\+\_\+\+Hash\+Map@{next\+\_\+\+Hash\+Map}}
+\index{next\+\_\+\+Hash\+Map@{next\+\_\+\+Hash\+Map}!hashmap.\+c@{hashmap.\+c}}
+\subsubsection{\texorpdfstring{next\+\_\+\+Hash\+Map()}{next\_HashMap()}}
+{\footnotesize\ttfamily const void $\ast$ next\+\_\+\+Hash\+Map (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+self }\end{DoxyParamCaption})}
+
+
+
+Definition at line 464 of file hashmap.\+c.
+
+
+
+References Hash\+Item\+::next, and Hash\+Item\+::value.
+
+\mbox{\Hypertarget{hashmap_8c_ade2afccd37e881325eb1ce005a1d8d1e}\label{hashmap_8c_ade2afccd37e881325eb1ce005a1d8d1e}} 
+\index{hashmap.\+c@{hashmap.\+c}!print\+\_\+\+Hash\+Map@{print\+\_\+\+Hash\+Map}}
+\index{print\+\_\+\+Hash\+Map@{print\+\_\+\+Hash\+Map}!hashmap.\+c@{hashmap.\+c}}
+\subsubsection{\texorpdfstring{print\+\_\+\+Hash\+Map()}{print\_HashMap()}}
+{\footnotesize\ttfamily void print\+\_\+\+Hash\+Map (\begin{DoxyParamCaption}\item[{void $\ast$}]{\+\_\+self }\end{DoxyParamCaption})}
+
+
+
+Definition at line 311 of file hashmap.\+c.
+
+\mbox{\Hypertarget{hashmap_8c_a2f99243b32985f56493f04b192071dc7}\label{hashmap_8c_a2f99243b32985f56493f04b192071dc7}} 
+\index{hashmap.\+c@{hashmap.\+c}!random\+\_\+a@{random\+\_\+a}}
+\index{random\+\_\+a@{random\+\_\+a}!hashmap.\+c@{hashmap.\+c}}
+\subsubsection{\texorpdfstring{random\+\_\+a()}{random\_a()}}
+{\footnotesize\ttfamily uint64\+\_\+t random\+\_\+a (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 80 of file hashmap.\+c.
+
+
+
+References M\+A\+X\+\_\+A.
+
+
+
+Referenced by \+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map(), and internal\+\_\+resize\+\_\+\+Hash\+Map().
+
+\mbox{\Hypertarget{hashmap_8c_af3c89e259a9e4ad29cab4c9e22cfbd5b}\label{hashmap_8c_af3c89e259a9e4ad29cab4c9e22cfbd5b}} 
+\index{hashmap.\+c@{hashmap.\+c}!random\+\_\+b@{random\+\_\+b}}
+\index{random\+\_\+b@{random\+\_\+b}!hashmap.\+c@{hashmap.\+c}}
+\subsubsection{\texorpdfstring{random\+\_\+b()}{random\_b()}}
+{\footnotesize\ttfamily uint64\+\_\+t random\+\_\+b (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{m }\end{DoxyParamCaption})}
+
+
+
+Definition at line 96 of file hashmap.\+c.
+
+
+
+References lg(), and W.
+
+
+
+Referenced by \+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map(), and internal\+\_\+resize\+\_\+\+Hash\+Map().
+
+\mbox{\Hypertarget{hashmap_8c_a12bafd8be5b1e7cee7f0d61a2a7a4c2e}\label{hashmap_8c_a12bafd8be5b1e7cee7f0d61a2a7a4c2e}} 
+\index{hashmap.\+c@{hashmap.\+c}!str\+\_\+\+Hash\+Map@{str\+\_\+\+Hash\+Map}}
+\index{str\+\_\+\+Hash\+Map@{str\+\_\+\+Hash\+Map}!hashmap.\+c@{hashmap.\+c}}
+\subsubsection{\texorpdfstring{str\+\_\+\+Hash\+Map()}{str\_HashMap()}}
+{\footnotesize\ttfamily const char $\ast$ str\+\_\+\+Hash\+Map (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+self }\end{DoxyParamCaption})}
+
+
+
+Definition at line 317 of file hashmap.\+c.
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{hashmap_8c_a4b069b7a04e527d80cea5855fb3d2a95}\label{hashmap_8c_a4b069b7a04e527d80cea5855fb3d2a95}} 
+\index{hashmap.\+c@{hashmap.\+c}!hash\+\_\+map\+\_\+class@{hash\+\_\+map\+\_\+class}}
+\index{hash\+\_\+map\+\_\+class@{hash\+\_\+map\+\_\+class}!hashmap.\+c@{hashmap.\+c}}
+\subsubsection{\texorpdfstring{hash\+\_\+map\+\_\+class}{hash\_map\_class}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structHashMapClass}{Hash\+Map\+Class}} hash\+\_\+map\+\_\+class}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+    .class = \{.magic = \mbox{\hyperlink{object__internal_8h_a94630370ae389fb1189282fa0742f310}{MAGIC}},
+              .size = \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct }\mbox{\hyperlink{structHashMap}{HashMap}}),
+              .object\_init = \mbox{\hyperlink{hashmap_8c_a91f44dc50fe5d24c4970a8772347bef7}{\_\_construct\_\_HashMap}},
+              .object\_deinit = \mbox{\hyperlink{hashmap_8c_a4425bb488e5bfb1e9244675a31df3470}{\_\_destruct\_\_HashMap}},
+              .get\_size = \mbox{\hyperlink{hashmap_8c_a700517ea0c1ffc800b7c93b475a5e78a}{get\_size\_HashMap}},
+              .get\_len = \mbox{\hyperlink{hashmap_8c_a79dcb455435133253d86b70e31e3cba3}{get\_len\_HashMap}},
+              .str = \mbox{\hyperlink{hashmap_8c_a12bafd8be5b1e7cee7f0d61a2a7a4c2e}{str\_HashMap}},
+              .copy = \mbox{\hyperlink{hashmap_8c_a92b093655c1077032c065f51aed37652}{copy\_HashMap}},
+              .insert = \mbox{\hyperlink{hashmap_8c_a2987322764f770f61fe71f0a1320fc7b}{insert\_HashMap}},
+              .get = \mbox{\hyperlink{hashmap_8c_aa88aa2ed0651f4feb2e275ba14114d14}{get\_HashMap}},
+              .del\_item = \mbox{\hyperlink{hashmap_8c_a10476d872d0cfcb234391cabf5e888a1}{del\_item\_HashMap}},
+              .iter = \mbox{\hyperlink{hashmap_8c_aa1645276039a5f13164347699538139b}{iter\_HashMap}},
+              .object\_name = \textcolor{stringliteral}{"HashMap"}
+             \}
+
+\}
+\end{DoxyCode}
+
+
+Definition at line 520 of file hashmap.\+c.
+
+\mbox{\Hypertarget{hashmap_8c_a19a320a0fb44773b7b2edde8b06f7e0b}\label{hashmap_8c_a19a320a0fb44773b7b2edde8b06f7e0b}} 
+\index{hashmap.\+c@{hashmap.\+c}!hash\+\_\+map\+\_\+class\+\_\+iter@{hash\+\_\+map\+\_\+class\+\_\+iter}}
+\index{hash\+\_\+map\+\_\+class\+\_\+iter@{hash\+\_\+map\+\_\+class\+\_\+iter}!hashmap.\+c@{hashmap.\+c}}
+\subsubsection{\texorpdfstring{hash\+\_\+map\+\_\+class\+\_\+iter}{hash\_map\_class\_iter}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structHashMapClass__iter}{Hash\+Map\+Class\+\_\+iter}} hash\+\_\+map\+\_\+class\+\_\+iter}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+    .class = \{.magic = \mbox{\hyperlink{object__internal_8h_a94630370ae389fb1189282fa0742f310}{MAGIC}},
+              .object\_init = \mbox{\hyperlink{hashmap_8c_ae8c6201244c05c149ee58f00693fbe18}{\_\_construct\_\_HashMap\_iter}},
+              .size = \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct }\mbox{\hyperlink{structHashMap__iter}{HashMap\_iter}}),
+              .\mbox{\hyperlink{group__collection_gaecc46e74b03a83ca8a8023cc7264489c}{next}} = \mbox{\hyperlink{hashmap_8c_a5601cd221918b26557f36f577c909407}{next\_HashMap}}
+             \}
+
+\}
+\end{DoxyCode}
+
+
+Definition at line 541 of file hashmap.\+c.
+
+\mbox{\Hypertarget{hashmap_8c_a460bbbf2046f6aaf34ce30bb2be13939}\label{hashmap_8c_a460bbbf2046f6aaf34ce30bb2be13939}} 
+\index{hashmap.\+c@{hashmap.\+c}!Hash\+Map@{Hash\+Map}}
+\index{Hash\+Map@{Hash\+Map}!hashmap.\+c@{hashmap.\+c}}
+\subsubsection{\texorpdfstring{Hash\+Map}{HashMap}}
+{\footnotesize\ttfamily void$\ast$ \mbox{\hyperlink{structHashMap}{Hash\+Map}} = \&\mbox{\hyperlink{hashmap_8c_a4b069b7a04e527d80cea5855fb3d2a95}{hash\+\_\+map\+\_\+class}}}
+
+
+
+Definition at line 539 of file hashmap.\+c.
+
+
+
+Referenced by \+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map(), and main().
+
+\mbox{\Hypertarget{hashmap_8c_a45019180cc2e660110ceabdc4b807f3e}\label{hashmap_8c_a45019180cc2e660110ceabdc4b807f3e}} 
+\index{hashmap.\+c@{hashmap.\+c}!Hash\+Map\+\_\+iter@{Hash\+Map\+\_\+iter}}
+\index{Hash\+Map\+\_\+iter@{Hash\+Map\+\_\+iter}!hashmap.\+c@{hashmap.\+c}}
+\subsubsection{\texorpdfstring{Hash\+Map\+\_\+iter}{HashMap\_iter}}
+{\footnotesize\ttfamily void$\ast$ \mbox{\hyperlink{structHashMap__iter}{Hash\+Map\+\_\+iter}} = \&\mbox{\hyperlink{hashmap_8c_a19a320a0fb44773b7b2edde8b06f7e0b}{hash\+\_\+map\+\_\+class\+\_\+iter}}}
+
+
+
+Definition at line 549 of file hashmap.\+c.
+
+
+
+Referenced by \+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map\+\_\+iter(), and iter\+\_\+\+Hash\+Map().
+
+\mbox{\Hypertarget{hashmap_8c_a4f5276c8ff5ef060a2a4bf1f07192371}\label{hashmap_8c_a4f5276c8ff5ef060a2a4bf1f07192371}} 
+\index{hashmap.\+c@{hashmap.\+c}!rng\+\_\+seeded@{rng\+\_\+seeded}}
+\index{rng\+\_\+seeded@{rng\+\_\+seeded}!hashmap.\+c@{hashmap.\+c}}
+\subsubsection{\texorpdfstring{rng\+\_\+seeded}{rng\_seeded}}
+{\footnotesize\ttfamily bool rng\+\_\+seeded = false}
+
+
+
+Definition at line 55 of file hashmap.\+c.
+
+
+
+Referenced by \+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map().
+

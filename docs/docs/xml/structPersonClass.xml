@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="structPersonClass" kind="struct" language="C++" prot="public">
+    <compoundname>PersonClass</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structPersonClass_1a5ace8304edfca4a772756b37bf7f0212" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structclass__header" kindref="compound">class_header</ref></type>
+        <definition>struct class_header PersonClass::class</definition>
+        <argsstring></argsstring>
+        <name>class</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/person.c" line="53" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/person.c" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="30">
+        <label>class_header</label>
+        <link refid="structclass__header"/>
+      </node>
+      <node id="29">
+        <label>PersonClass</label>
+        <link refid="structPersonClass"/>
+        <childnode refid="30" relation="usage">
+          <edgelabel>class</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/igutek/Documents/Projects/ooc/src/person.c" line="12" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/person.c" bodystart="12" bodyend="14"/>
+    <listofallmembers>
+      <member refid="structPersonClass_1a5ace8304edfca4a772756b37bf7f0212" prot="public" virt="non-virtual"><scope>PersonClass</scope><name>class</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

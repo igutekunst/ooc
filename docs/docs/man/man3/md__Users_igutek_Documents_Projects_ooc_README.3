@@ -1,0 +1,55 @@
+.TH "md__Users_igutek_Documents_Projects_ooc_README" 3 "Fri Sep 27 2019" "Object-Oriented-C" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__Users_igutek_Documents_Projects_ooc_README \- README 
+#Objected Oriented C
+.PP
+Documentation that will appear on the main page
+.PP
+Experimenting with 'Object Oriented C'\&.
+.PP
+This library is a toy implementation of 'objects' in C, with the idea to enable dynamic dispatch and polymorphism of a set of carefully written 'classes' \&.
+.PP
+This library aims to enable:
+.IP "\(bu" 2
+Less boilerplate code to do common tasks
+.IP "\(bu" 2
+A friendlier standard library
+.IP "\(bu" 2
+A 'batteries included' C like environment\&.
+.PP
+.PP
+The design of both the API and internals are inspired by Python, though no attempt has been made to mimic python APIs exactly, or interface with Python, though this may be a goal in the future\&.
+.PP
+This library is completely experimental, and has not been used in any real projects as far as I know\&.
+.PP
+It's here to share some ideas with friends and the world\&. My hope is it will be useful one day, at which point I will promote it with more confidence!
+.PP
+.SS "libOOC"
+.PP
+Example 
+.PP
+.nf
+#include <libooc/hashmap\&.h>
+
+int main(int argc, char * argv[]) {
+    struct HashMap * h = new(HashMap);
+    /// etc
+}
+
+.fi
+.PP
+.PP
+.SS "Future Work"
+.PP
+.IP "\(bu" 2
+Add \fBInt\fP, Float and BigInt support
+.IP "\(bu" 2
+Add list
+.IP "\(bu" 2
+Add referencing counting
+.IP "\(bu" 2
+Traits 
+.PP
+

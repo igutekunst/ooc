@@ -1,0 +1,84 @@
+.TH "basic" 3 "Fri Sep 27 2019" "Object-Oriented-C" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+basic
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "const void * \fBtype\fP (const void *_self)"
+.br
+.ti -1c
+.RI "const void * \fBnew\fP (const void *_class,\&.\&.\&.)"
+.br
+.ti -1c
+.RI "void \fBdel\fP (const void *_object)"
+.br
+.ti -1c
+.RI "size_t \fBsize\fP (const void *_object)"
+.br
+.ti -1c
+.RI "const char * \fBclsname\fP (const void *_self)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Function Documentation"
+.PP 
+.SS "const char* clsname (const void * _self)"
+
+.PP
+Definition at line 105 of file object\&.c\&.
+.PP
+References get_obj(), and class_header::object_name\&.
+.PP
+Referenced by main(), and String_equal()\&.
+.SS "void del (const void * _object)"
+
+.PP
+Definition at line 34 of file object\&.c\&.
+.PP
+References get_obj(), and class_header::object_deinit\&.
+.SS "const void* new (const void *const _class,  \&.\&.\&.)"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fI_class\fP 
+.br
+\fI\&.\&.\&.\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+.RE
+.PP
+
+.PP
+Definition at line 15 of file object\&.c\&.
+.PP
+References MAGIC\&.
+.SS "size_t size (const void * _object)"
+
+.PP
+Definition at line 72 of file object\&.c\&.
+.PP
+References get_obj(), and class_header::get_size\&.
+.PP
+Referenced by __construct__Person(), __construct__String(), and String_append()\&.
+.SS "const void* type (const void * _self)"
+
+.PP
+Definition at line 83 of file object\&.c\&.
+.PP
+References get_obj()\&.
+.PP
+Referenced by String_append(), and String_equal()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Object-Oriented-C from the source code\&.

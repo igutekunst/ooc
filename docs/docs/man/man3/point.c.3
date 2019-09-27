@@ -1,0 +1,89 @@
+.TH "/Users/igutek/Documents/Projects/ooc/src/point.c" 3 "Fri Sep 27 2019" "Object-Oriented-C" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/igutek/Documents/Projects/ooc/src/point.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <ooc/point\&.h>\fP
+.br
+\fC#include 'object_internal\&.h'\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBPointClass\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "const void * \fB__construct__Point\fP (const void *const self, va_list args)"
+.br
+.ti -1c
+.RI "void \fBprint_Point\fP (const void *_self)"
+.br
+.ti -1c
+.RI "size_t \fBget_size_Point\fP (const void *_self)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "struct \fBPointClass\fP \fBpoint_class\fP"
+.br
+.ti -1c
+.RI "void * \fBPoint\fP = &\fBpoint_class\fP"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "const void * __construct__Point (const void *const self, va_list args)"
+
+.PP
+Definition at line 34 of file point\&.c\&.
+.PP
+References Point::class, and Point\&.
+.SS "size_t get_size_Point (const void * _self)"
+
+.PP
+Definition at line 28 of file point\&.c\&.
+.PP
+References Point::size\&.
+.SS "void print_Point (const void * _self)"
+
+.PP
+Definition at line 44 of file point\&.c\&.
+.SH "Variable Documentation"
+.PP 
+.SS "void* \fBPoint\fP = &\fBpoint_class\fP"
+
+.PP
+Definition at line 25 of file point\&.c\&.
+.PP
+Referenced by __construct__Point(), and main()\&.
+.SS "struct \fBPointClass\fP point_class"
+\fBInitial value:\fP
+.PP
+.nf
+= {
+    \&.class = {\&.magic = MAGIC,
+              \&.size = sizeof(struct Point),
+              \&.object_init = __construct__Point,
+              \&.print = print_Point,
+              \&.get_size = get_size_Point,
+              \&.get_len = 0
+             }
+
+}
+.fi
+.PP
+Definition at line 14 of file point\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Object-Oriented-C from the source code\&.

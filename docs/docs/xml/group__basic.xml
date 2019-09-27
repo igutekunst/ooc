@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="group__basic" kind="group">
+    <compoundname>basic</compoundname>
+    <title>Basic functions supported by all objects</title>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__basic_1ga504cef7fd39aff50e8e27f4f74568753" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const void *</type>
+        <definition>const void* type</definition>
+        <argsstring>(const void *_self)</argsstring>
+        <name>type</name>
+        <param>
+          <type>const void *</type>
+          <declname>_self</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/include/ooc/object.h" line="17" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object.c" bodystart="83" bodyend="88"/>
+        <references refid="object_8c_1aaad95663edf19fd4b734bd9977976169" compoundref="object_8c" startline="164" endline="177">get_obj</references>
+        <referencedby refid="string_8c_1ad84cbc93082cb73a0aeb9911e2768c90" compoundref="string_8c" startline="56" endline="94">String_append</referencedby>
+        <referencedby refid="string_8c_1a1908c7dc8629ec342445a6e2a7c247f2" compoundref="string_8c" startline="97" endline="107">String_equal</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__basic_1gaa356efc2c9e72711bf56b41a4f7b125f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const void *</type>
+        <definition>const void* new</definition>
+        <argsstring>(const void *_class,...)</argsstring>
+        <name>new</name>
+        <param>
+          <type>const void *</type>
+          <declname>_class</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>_class</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>...</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/include/ooc/object.h" line="18" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object.c" bodystart="15" bodyend="31"/>
+        <references refid="object__internal_8h_1a94630370ae389fb1189282fa0742f310" compoundref="object__internal_8h" startline="6">MAGIC</references>
+      </memberdef>
+      <memberdef kind="function" id="group__basic_1gae293fe2fbbf9f2e8a87c1141e7412814" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void del</definition>
+        <argsstring>(const void *_object)</argsstring>
+        <name>del</name>
+        <param>
+          <type>const void *</type>
+          <declname>_object</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/include/ooc/object.h" line="19" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object.c" bodystart="34" bodyend="43"/>
+        <references refid="object_8c_1aaad95663edf19fd4b734bd9977976169" compoundref="object_8c" startline="164" endline="177">get_obj</references>
+        <references refid="structclass__header_1aa07a11a17f5d79a66c9086b8d10969b7" compoundref="object__internal_8h" startline="59">class_header::object_deinit</references>
+      </memberdef>
+      <memberdef kind="function" id="group__basic_1gafac8564ed88a6f8585f043fc6b2fa7e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t size</definition>
+        <argsstring>(const void *_object)</argsstring>
+        <name>size</name>
+        <param>
+          <type>const void *</type>
+          <declname>_object</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/include/ooc/object.h" line="20" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object.c" bodystart="72" bodyend="80"/>
+        <references refid="object_8c_1aaad95663edf19fd4b734bd9977976169" compoundref="object_8c" startline="164" endline="177">get_obj</references>
+        <references refid="structclass__header_1a5c135b5316d0d9d22dce1f32fb8befb1" compoundref="object__internal_8h" startline="30">class_header::get_size</references>
+        <referencedby refid="person_8c_1a479eaa947f7de8878921d30df63875eb" compoundref="person_8c" startline="29" endline="46">__construct__Person</referencedby>
+        <referencedby refid="string_8c_1a2e1266f696c96e5bfd8ffbed7be891fa" compoundref="string_8c" startline="24" endline="41">__construct__String</referencedby>
+        <referencedby refid="string_8c_1ad84cbc93082cb73a0aeb9911e2768c90" compoundref="string_8c" startline="56" endline="94">String_append</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__basic_1gadcc35aece3f8a4c822a9bf2a591f087b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* clsname</definition>
+        <argsstring>(const void *_self)</argsstring>
+        <name>clsname</name>
+        <param>
+          <type>const void *</type>
+          <declname>_self</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/include/ooc/object.h" line="21" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object.c" bodystart="105" bodyend="116"/>
+        <references refid="object_8c_1aaad95663edf19fd4b734bd9977976169" compoundref="object_8c" startline="164" endline="177">get_obj</references>
+        <references refid="structclass__header_1af7f2f5623c98afb59519062172644350" compoundref="object__internal_8h" startline="204">class_header::object_name</references>
+        <referencedby refid="main_8c_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8c" startline="8" endline="43">main</referencedby>
+        <referencedby refid="string_8c_1a1908c7dc8629ec342445a6e2a7c247f2" compoundref="string_8c" startline="97" endline="107">String_equal</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

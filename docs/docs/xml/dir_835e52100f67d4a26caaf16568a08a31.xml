@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_835e52100f67d4a26caaf16568a08a31" kind="dir">
+    <compoundname>/Users/igutek/Documents/Projects/ooc/include/ooc</compoundname>
+    <innerfile refid="hashmap_8h">hashmap.h</innerfile>
+    <innerfile refid="Int_8h">Int.h</innerfile>
+    <innerfile refid="object_8h">object.h</innerfile>
+    <innerfile refid="person_8h">person.h</innerfile>
+    <innerfile refid="point_8h">point.h</innerfile>
+    <innerfile refid="string_8h">string.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/igutek/Documents/Projects/ooc/include/ooc/"/>
+  </compounddef>
+</doxygen>

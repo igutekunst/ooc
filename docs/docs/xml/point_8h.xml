@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="point_8h" kind="file" language="C++">
+    <compoundname>point.h</compoundname>
+    <includes refid="object_8h" local="yes">object.h</includes>
+    <includes refid="string_8h" local="no">string.h</includes>
+    <includedby refid="main_8c" local="no">/Users/igutek/Documents/Projects/ooc/src/main.c</includedby>
+    <includedby refid="point_8c" local="no">/Users/igutek/Documents/Projects/ooc/src/point.c</includedby>
+    <incdepgraph>
+      <node id="65">
+        <label>stdbool.h</label>
+      </node>
+      <node id="64">
+        <label>stdarg.h</label>
+      </node>
+      <node id="66">
+        <label>stdint.h</label>
+      </node>
+      <node id="63">
+        <label>stdlib.h</label>
+      </node>
+      <node id="59">
+        <label>/Users/igutek/Documents/Projects/ooc/include/ooc/point.h</label>
+        <link refid="point_8h"/>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+      </node>
+      <node id="61">
+        <label>stddef.h</label>
+      </node>
+      <node id="60">
+        <label>object.h</label>
+        <link refid="object_8h"/>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+      </node>
+      <node id="67">
+        <label>string.h</label>
+        <link refid="string_8h"/>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+      </node>
+      <node id="62">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="68">
+        <label>/Users/igutek/Documents/Projects/ooc/include/ooc/point.h</label>
+        <link refid="point_8h"/>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+      </node>
+      <node id="70">
+        <label>/Users/igutek/Documents/Projects/ooc/src/point.c</label>
+        <link refid="point_8c"/>
+      </node>
+      <node id="69">
+        <label>/Users/igutek/Documents/Projects/ooc/src/main.c</label>
+        <link refid="main_8c"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structPoint" prot="public">Point</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="point_8h_1a1a395805ca983410ef1ba6e0b1e5924f" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* Point</definition>
+        <argsstring></argsstring>
+        <name>Point</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/include/ooc/point.h" line="11" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/point.c" bodystart="25" bodyend="-1"/>
+        <referencedby refid="point_8c_1a939d6d31946f042260f6b45f0d51ae12" compoundref="point_8c" startline="34" endline="41">__construct__Point</referencedby>
+        <referencedby refid="main_8c_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8c" startline="8" endline="43">main</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>POINT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>POINT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="object_8h" kindref="compound">object.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="string_8h" kindref="compound">string.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5" refid="structPoint" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structPoint" kindref="compound">Point</ref>{</highlight></codeline>
+<codeline lineno="6" refid="structPoint_1a5c33b351426ea2f85e8bcd748a287055" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structclass__header" kindref="compound">class_header</ref><sp/>*<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="7" refid="structPoint_1af3ba5fb6c2b53483ccf31342a19ad6ae" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structPoint_1af3ba5fb6c2b53483ccf31342a19ad6ae" kindref="member">size</ref>;</highlight></codeline>
+<codeline lineno="8" refid="structPoint_1ab99c56589bc8ad5fa5071387110a5bc7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="structPoint_1ab99c56589bc8ad5fa5071387110a5bc7" kindref="member">x</ref>;</highlight></codeline>
+<codeline lineno="9" refid="structPoint_1afa38be143ae800e6ad69ce8ed4df62d8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="structPoint_1afa38be143ae800e6ad69ce8ed4df62d8" kindref="member">y</ref>;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/><ref refid="point_8h_1a1a395805ca983410ef1ba6e0b1e5924f" kindref="member">Point</ref>;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/Users/igutek/Documents/Projects/ooc/include/ooc/point.h"/>
+  </compounddef>
+</doxygen>

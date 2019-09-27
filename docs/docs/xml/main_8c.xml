@@ -1,0 +1,208 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="main_8c" kind="file" language="C++">
+    <compoundname>main.c</compoundname>
+    <includes refid="point_8h" local="no">ooc/point.h</includes>
+    <includes refid="person_8h" local="no">ooc/person.h</includes>
+    <includes refid="string_8h" local="no">ooc/string.h</includes>
+    <includes refid="Int_8h" local="no">ooc/Int.h</includes>
+    <includes refid="hashmap_8h" local="no">ooc/hashmap.h</includes>
+    <includes local="no">assert.h</includes>
+    <incdepgraph>
+      <node id="128">
+        <label>stdbool.h</label>
+      </node>
+      <node id="127">
+        <label>stdarg.h</label>
+      </node>
+      <node id="135">
+        <label>assert.h</label>
+      </node>
+      <node id="129">
+        <label>stdint.h</label>
+      </node>
+      <node id="126">
+        <label>stdlib.h</label>
+      </node>
+      <node id="122">
+        <label>ooc/point.h</label>
+        <link refid="point_8h"/>
+        <childnode refid="123" relation="include">
+        </childnode>
+        <childnode refid="130" relation="include">
+        </childnode>
+      </node>
+      <node id="133">
+        <label>ooc/hashmap.h</label>
+        <link refid="hashmap_8h"/>
+        <childnode refid="123" relation="include">
+        </childnode>
+        <childnode refid="130" relation="include">
+        </childnode>
+        <childnode refid="129" relation="include">
+        </childnode>
+        <childnode refid="126" relation="include">
+        </childnode>
+        <childnode refid="134" relation="include">
+        </childnode>
+        <childnode refid="135" relation="include">
+        </childnode>
+        <childnode refid="136" relation="include">
+        </childnode>
+      </node>
+      <node id="131">
+        <label>ooc/person.h</label>
+        <link refid="person_8h"/>
+        <childnode refid="123" relation="include">
+        </childnode>
+        <childnode refid="130" relation="include">
+        </childnode>
+      </node>
+      <node id="124">
+        <label>stddef.h</label>
+      </node>
+      <node id="132">
+        <label>ooc/Int.h</label>
+        <link refid="Int_8h"/>
+        <childnode refid="123" relation="include">
+        </childnode>
+        <childnode refid="130" relation="include">
+        </childnode>
+        <childnode refid="129" relation="include">
+        </childnode>
+      </node>
+      <node id="134">
+        <label>time.h</label>
+      </node>
+      <node id="136">
+        <label>math.h</label>
+      </node>
+      <node id="123">
+        <label>object.h</label>
+        <link refid="object_8h"/>
+        <childnode refid="124" relation="include">
+        </childnode>
+        <childnode refid="125" relation="include">
+        </childnode>
+        <childnode refid="126" relation="include">
+        </childnode>
+        <childnode refid="127" relation="include">
+        </childnode>
+        <childnode refid="128" relation="include">
+        </childnode>
+        <childnode refid="129" relation="include">
+        </childnode>
+      </node>
+      <node id="130">
+        <label>string.h</label>
+        <link refid="string_8h"/>
+        <childnode refid="123" relation="include">
+        </childnode>
+        <childnode refid="130" relation="include">
+        </childnode>
+      </node>
+      <node id="121">
+        <label>/Users/igutek/Documents/Projects/ooc/src/main.c</label>
+        <link refid="main_8c"/>
+        <childnode refid="122" relation="include">
+        </childnode>
+        <childnode refid="131" relation="include">
+        </childnode>
+        <childnode refid="130" relation="include">
+        </childnode>
+        <childnode refid="132" relation="include">
+        </childnode>
+        <childnode refid="133" relation="include">
+        </childnode>
+        <childnode refid="135" relation="include">
+        </childnode>
+      </node>
+      <node id="125">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="main_8c_1a0ddf1224851353fc92bfbff6f499fa97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(int argc, char *argv[])</argsstring>
+        <name>main</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/main.c" line="8" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/main.c" bodystart="8" bodyend="43"/>
+        <references refid="group__common_1gadcc35aece3f8a4c822a9bf2a591f087b" compoundref="object_8c" startline="105" endline="116">clsname</references>
+        <references refid="group__common_1gab08ed4d7b5aa115383f38057e006be9d" compoundref="object_8c" startline="121" endline="132">copy</references>
+        <references refid="hashmap_8c_1a460bbbf2046f6aaf34ce30bb2be13939" compoundref="hashmap_8c" startline="539">HashMap</references>
+        <references refid="group__collection_1gaa1b700b0fbad0b56b81291260569d8b2" compoundref="object_8c" startline="193" endline="203">insert</references>
+        <references refid="group__collection_1ga0cb67414335937707c9b92809a10895b" compoundref="object_8c" startline="227" endline="234">iter</references>
+        <references refid="group__collection_1gaecc46e74b03a83ca8a8023cc7264489c" compoundref="object_8c" startline="236" endline="244">next</references>
+        <references refid="point_8c_1a1a395805ca983410ef1ba6e0b1e5924f" compoundref="point_8c" startline="25">Point</references>
+        <references refid="group__common_1ga34dc6ab72cfd51381e8173226484e827" compoundref="object_8c" startline="59" endline="69">print</references>
+        <references refid="string_8c_1a7b896f7c16c20c94b9b961fe9e926a4f" compoundref="string_8c" startline="163">String</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;<ref refid="point_8h" kindref="compound">ooc/point.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="person_8h" kindref="compound">ooc/person.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="string_8h" kindref="compound">ooc/string.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="Int_8h" kindref="compound">ooc/Int.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="hashmap_8h" kindref="compound">ooc/hashmap.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;assert.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="main_8c_1a0ddf1224851353fc92bfbff6f499fa97" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="main_8c_1a0ddf1224851353fc92bfbff6f499fa97" kindref="member">main</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>argv[]){</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structPoint" kindref="compound">Point</ref><sp/>*<sp/>a<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">(<ref refid="point_8c_1a1a395805ca983410ef1ba6e0b1e5924f" kindref="member">Point</ref>,<sp/>5.,<sp/>7.);</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structString" kindref="compound">String</ref><sp/>*first<sp/><sp/><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">(<ref refid="string_8c_1a7b896f7c16c20c94b9b961fe9e926a4f" kindref="member">String</ref>,<sp/></highlight><highlight class="stringliteral">&quot;Isaac&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structString" kindref="compound">String</ref><sp/>*cool<sp/><sp/><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">(<ref refid="string_8c_1a7b896f7c16c20c94b9b961fe9e926a4f" kindref="member">String</ref>,<sp/></highlight><highlight class="stringliteral">&quot;cool&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structString" kindref="compound">String</ref><sp/>*<sp/>name<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">(<ref refid="string_8c_1a7b896f7c16c20c94b9b961fe9e926a4f" kindref="member">String</ref>,<sp/></highlight><highlight class="stringliteral">&quot;Isaac<sp/>Harrison<sp/>Gutekunst&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structString" kindref="compound">String</ref><sp/>*<sp/>tim<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">(<ref refid="string_8c_1a7b896f7c16c20c94b9b961fe9e926a4f" kindref="member">String</ref>,<sp/></highlight><highlight class="stringliteral">&quot;Timothy<sp/>R<sp/>Mickel&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structString" kindref="compound">String</ref><sp/>*<sp/>name_again<sp/><sp/>=<sp/><ref refid="group__common_1gab08ed4d7b5aa115383f38057e006be9d" kindref="member">copy</ref>(name);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Testing<sp/>HashMaps</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structHashMap" kindref="compound">HashMap</ref><sp/>*<sp/>h_iter_test<sp/><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">(<ref refid="hashmap_8c_1a460bbbf2046f6aaf34ce30bb2be13939" kindref="member">HashMap</ref>);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structString" kindref="compound">String</ref><sp/>*<sp/>s1<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">(<ref refid="string_8c_1a7b896f7c16c20c94b9b961fe9e926a4f" kindref="member">String</ref>,<sp/></highlight><highlight class="stringliteral">&quot;Value<sp/>1\n&quot;</highlight><highlight class="normal">)<sp/><sp/>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structString" kindref="compound">String</ref><sp/>*<sp/>s2<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">(<ref refid="string_8c_1a7b896f7c16c20c94b9b961fe9e926a4f" kindref="member">String</ref>,<sp/></highlight><highlight class="stringliteral">&quot;Value<sp/>2\n&quot;</highlight><highlight class="normal">)<sp/><sp/>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structString" kindref="compound">String</ref><sp/>*<sp/>s3<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">(<ref refid="string_8c_1a7b896f7c16c20c94b9b961fe9e926a4f" kindref="member">String</ref>,<sp/></highlight><highlight class="stringliteral">&quot;Value<sp/>3\n&quot;</highlight><highlight class="normal">)<sp/><sp/>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structString" kindref="compound">String</ref><sp/>*<sp/>k1<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">(<ref refid="string_8c_1a7b896f7c16c20c94b9b961fe9e926a4f" kindref="member">String</ref>,<sp/></highlight><highlight class="stringliteral">&quot;key1&quot;</highlight><highlight class="normal">)<sp/><sp/>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structString" kindref="compound">String</ref><sp/>*<sp/>k2<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">(<ref refid="string_8c_1a7b896f7c16c20c94b9b961fe9e926a4f" kindref="member">String</ref>,<sp/></highlight><highlight class="stringliteral">&quot;key2&quot;</highlight><highlight class="normal">)<sp/><sp/>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structString" kindref="compound">String</ref><sp/>*<sp/>k3<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">(<ref refid="string_8c_1a7b896f7c16c20c94b9b961fe9e926a4f" kindref="member">String</ref>,<sp/></highlight><highlight class="stringliteral">&quot;key3&quot;</highlight><highlight class="normal">)<sp/><sp/>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__collection_1gaa1b700b0fbad0b56b81291260569d8b2" kindref="member">insert</ref>(h_iter_test,<sp/>k1,<sp/>s1);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__collection_1gaa1b700b0fbad0b56b81291260569d8b2" kindref="member">insert</ref>(h_iter_test,<sp/>k2,<sp/>s2);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__collection_1gaa1b700b0fbad0b56b81291260569d8b2" kindref="member">insert</ref>(h_iter_test,<sp/>k3,<sp/>s3);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structHashMap__iter" kindref="compound">HashMap_iter</ref><sp/>*<sp/>it<sp/>=<sp/><sp/><sp/><ref refid="group__collection_1ga0cb67414335937707c9b92809a10895b" kindref="member">iter</ref>(h_iter_test);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>item<sp/>=<sp/><ref refid="group__collection_1gaecc46e74b03a83ca8a8023cc7264489c" kindref="member">next</ref>(it);<sp/>item<sp/>!=<sp/>NULL;<sp/>item<sp/>=<sp/><ref refid="group__collection_1gaecc46e74b03a83ca8a8023cc7264489c" kindref="member">next</ref>(it)){</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(item){</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__common_1ga34dc6ab72cfd51381e8173226484e827" kindref="member">print</ref>(item);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%s&quot;</highlight><highlight class="normal">,<sp/><ref refid="group__common_1gadcc35aece3f8a4c822a9bf2a591f087b" kindref="member">clsname</ref>(tim));</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/Users/igutek/Documents/Projects/ooc/src/main.c"/>
+  </compounddef>
+</doxygen>
