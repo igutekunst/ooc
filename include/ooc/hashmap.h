@@ -22,6 +22,7 @@ struct HashItem {
     uint64_t key;
     const void * value;
     struct HashItem * next;
+    bool present;
 };
 typedef struct HashItem HashItem;
 
@@ -35,6 +36,7 @@ struct HashMap{
     size_t lwm;
     uint64_t a;
     uint64_t b;
+    bool debug;
     struct HashItem * items;
 
 };
@@ -55,7 +57,7 @@ extern void * HashMap_iter;
 // See https://en.wikipedia.org/wiki/Universal_hashing
 // For explanations of parameters
 #define W   32
-#define HASH_TABLE_DEFAULT_LEN 32
+#define HASH_TABLE_DEFAULT_LEN 4
 #define MAX_A  4294967295
 #define HWM_FRACTION 0.5
 

@@ -19,7 +19,6 @@ const void * __construct__String(const void * _self, va_list args) {
     struct String * self = (struct String *) _self;
     const char * data = va_arg(args, const char *);
     if (! data){
-        fprintf(stderr, "Warning: Attempted to make a NULL string\n");
         free(self);
         return NULL;
     }
@@ -111,9 +110,11 @@ const void* String_copy(const void * _self){
 
 
 uint64_t String_hash(const void * _self) {
+    // See https://cp-algorithms.com/string/string-hashing.html
     struct String * self = (struct String *) _self;
 
-    int64_t p = 31;
+    //TODO Consider generating random numbers at some point during startup strings don't always hash the same way
+    int64_t p = 313;
     int64_t m = 1e9 + 9;
     int64_t hash_value = 0;
     int64_t p_pow = 1;

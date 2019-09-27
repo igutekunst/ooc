@@ -1,6 +1,8 @@
 #include <check.h>
 #include <ooc/object.h>
 #include <ooc/string.h>
+#include <ooc/hashmap.h>
+#include "check_utils.h"
 
 START_TEST(test_string_create_delete){
     const struct String * s;
@@ -74,44 +76,82 @@ START_TEST(test_string_copy){
 }
 END_TEST
 
-START_TEST(test_string_hash){
+START_TEST(test_string_hash_simple){
 
     const struct String * h;
     const struct String * c;
-    h = new(String, "Hello");
+    const struct String * n;
 
-    c= copy(h);
+    h = new(String, "Hello");
+    c = new(String, "Hello");
+    n = new(String, "hello");
 
     ck_assert_str_eq(str(h), str(c));
     ck_assert(h != c);
-    
-    //ck_assert(hash(h) == hash(c));
+    ck_assert(hash(h) == hash(c));
+}
+END_TEST
+
+START_TEST(test_string_hash_append){
+
+        const struct String* hello;
+        const struct String* world;
+        const struct String* space;
+        const struct String* hello_world_constructed;
+        const struct String* hello_world = new(String, "Hello world");
+        hello = new(String, "Hello");
+        space = new(String, " ");
+        world = new(String, "world");
+
+        hello_world_constructed = append(append(hello, space), world);
+
+        ck_assert_str_eq(str(hello_world), str(hello_world_constructed));
+        ck_assert(hash(hello_world) == hash(hello_world_constructed));
+    }
+END_TEST
+
+
+START_TEST(test_string_hashing_many) {
+    const size_t NUM_ITERATIONS = 10000;
+    const struct String* keys[NUM_ITERATIONS];
+    const struct String* values[NUM_ITERATIONS];
+    const struct HashMap* hashmap = new(HashMap);
+    for (size_t i = 0; i < NUM_ITERATIONS; i++) {
+        char key[10];
+        char value[10];
+        fill_random_chars(key, sizeof(value));
+        fill_random_chars(value, sizeof(value));
+
+        keys[i]  = new(String, key);
+        values[i]  = new(String, value);
+        insert(hashmap, keys[i], values[i]);
+    }
+
+    for (size_t i = 0; i < NUM_ITERATIONS; i++) {
+        ck_assert_str_eq(str(values[i]), str(get_item(hashmap, keys[i])));
+    }
+
+    del(hashmap);
 
 }
 END_TEST
 
-
-
-Suite * string_suite (void) {
+Suite * string_suite_create (void) {
     Suite * s = suite_create("String");
     TCase *tc_core = tcase_create("Core");
+    TCase *tc_hashing = tcase_create("Hashing");
 
     tcase_add_test(tc_core, test_string_create_delete);
     tcase_add_test(tc_core, test_string_append);
     tcase_add_test(tc_core, test_string_copy);
     tcase_add_test(tc_core, test_string_equals);
-    tcase_add_test(tc_core, test_string_hash);
+
+    tcase_add_test(tc_hashing, test_string_hash_simple);
+    tcase_add_test(tc_hashing, test_string_hash_append);
+    tcase_add_test(tc_hashing, test_string_hashing_many);
 
     suite_add_tcase(s, tc_core);
+    suite_add_tcase(s, tc_hashing);
     return s;
 }
 
-int main(void){
-    int number_failed;
-    Suite *s = string_suite();
-    SRunner *sr = srunner_create (s);
-    srunner_run_all (sr, CK_VERBOSE);
-    number_failed = srunner_ntests_failed (sr);
-    srunner_free (sr);
-    return (number_failed == 0) ? EXIT_SUCCESS : EXIT_FAILURE;
-}

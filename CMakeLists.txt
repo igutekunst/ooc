@@ -35,7 +35,13 @@ target_link_libraries(main ooc)
 
 
 add_executable(test_string
+        tests/check_utils.c
+        tests/check_utils.h
         tests/check_string.c
+        tests/check_string.h
+        tests/check_hashmap.c
+        tests/check_hashmap.h
+        tests/check_main.c
         )
 
 LINK_DIRECTORIES(/usr/local/lib)

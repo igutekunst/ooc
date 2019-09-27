@@ -109,18 +109,6 @@ const char* clsname(const void * _self) {
 }
 
 
-void del_item(const void * _self, const void * key) {
-    const struct class_header * class;
-    if ((class = get_obj(_self,"Attempted to call del_item on non object\n" ))) {
-        if (class->del_item) 
-            class->del_item(class, key);
-        else {
-            printf("TypeError: object does not support del. \n") ;
-            exit(1);
-        }
-    }
-    return ;
-}
 
 
 const void * copy(const void * _self) {
@@ -211,12 +199,24 @@ void * insert(const void * _self,
     return NULL;
 }
 
-const void * get_item(const void * _self,
-                      const void * _key ) {
+void del_item(const void * _self, const void * _key) {
+    if(get_obj(_self, "Failed to get from non collection\n")){
+        const struct class_header * self = get_class_header(_self);
+        if (self->del_item) {
+            self->del_item(_self, _key);
+        } else {
+            printf("TypeError: object does not support del. \n") ;
+            exit(1);
+        }
+    }
+    return ;
+}
+
+const void * get_item(const void * _self, const void * _key ) {
     if(get_obj(_self, "Failed to get from non collection\n")){
         const struct class_header * self = get_class_header(_self);
         assert(self->get);
-            return self->get(_self, _key) ;
+        return self->get(_self, _key) ;
     }
     return NULL;
 }
