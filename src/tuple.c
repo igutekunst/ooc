@@ -10,7 +10,9 @@
 #include <ooc/math.h>
 #include <assert.h>
 #include <ooc/tuple.h>
+#include <stdio.h>
 
+#include <ooc/object.h>
 #include "object_internal.h"
 
 

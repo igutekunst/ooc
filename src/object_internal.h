@@ -1,3 +1,6 @@
+#ifndef OBJECT_INTERNAL_H
+#define OBJECT_INTERNAL_H
+
 #include <stdint.h>
 #include <stdlib.h>
 #include <stdarg.h>
@@ -126,6 +129,47 @@ struct class_header {
     );
 
     /**
+     * Implement to allow objects to be compared for ordering.
+     * @param _self
+     * @param _other
+     * @return COMPARE_GT if _self is > _other
+     *         COMPARE_EQ if _self == _other
+     *         COMPARE_LT if _self < other
+     */
+    bool (*compare)(
+            const void *_self,
+            const void *_other
+    );
+
+    /**
+     *
+     * Implement for containers that support sorting.
+     *
+     * Sorting should happen in place.
+     *
+     * @see sorted for a sort that returns a new container
+     *
+     * @param _self container to be sorted
+     */
+    void (*sort)(
+            const void *_self
+    );
+
+    /**
+     *
+     * Implement for containers that support sorting.
+     *
+     * Returns new sorted collection
+     *
+     * @see sor for a sort that does sorting in place
+     *
+     * @param _self container to be sorted
+     */
+    const void* (*sorted)(
+            const void *_self
+    );
+
+    /**
      * Return an iterator to support iteration.
      * @param _object ooc object
      * @return ooc iterator
@@ -225,3 +269,4 @@ struct ObjectHeader {
     const struct class_header* class;
 };
 
+#endif

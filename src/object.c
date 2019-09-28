@@ -173,6 +173,25 @@ bool equals(const void * _self, const void * _other){
     return NULL;
 }
 
+CompareValue compare(const void * _self, const void * _other){
+    const struct class_header * class;
+    const struct class_header * other;
+
+    if ((class = get_class_header_msg(_self, "Attempted to compare non object"))) {
+        other = get_class_header_msg(_other, "attempted to compare non object\n");
+        if (class->compare == NULL) {
+            fprintf(stderr, "%s does not support comparison\n", clsname(_self));
+            exit(EXIT_FAILURE);
+        }
+        return class->compare(_self, _other);
+    }
+
+    // Should not get here
+    assert(false);
+}
+
+
+
 const void* append(const void * _self, const void * _other){
     const struct class_header * class;
 
@@ -188,6 +207,8 @@ const void* append(const void * _self, const void * _other){
     // Should not get here
     assert(false);
 }
+
+
 
 
 inline struct class_header * get_class_header_msg(const void * _self, const char * message){

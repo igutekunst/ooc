@@ -24,10 +24,10 @@ END_TEST
 
 START_TEST(test_tuple_create_va)
     {
-        struct Int* key_1 = new(Int, 0);
-        struct Int* key_2 = new(Int, 1);
-        struct Int* val_1 = new(Int, 100);
-        struct Int* val_2 = new(Int, 500);
+        const struct Int* key_1 = new(Int, 0);
+        const struct Int* key_2 = new(Int, 1);
+        const struct Int* val_1 = new(Int, 100);
+        const struct Int* val_2 = new(Int, 500);
 
         const void *tuple = new(Tuple, val_1, val_2);
         ck_assert_int_ne(2, size(tuple));
@@ -45,10 +45,10 @@ END_TEST
 
 START_TEST(test_tuple_create_va_mixed)
     {
-        struct Int* key_1 = new(Int, 0);
-        struct Int* key_2 = new(Int, 1);
-        struct Int* val_1 = new(String, "Zero");
-        struct Int* val_2 = new(String, "One");
+        const struct Int* key_1 = new(Int, 0);
+        const struct Int* key_2 = new(Int, 1);
+        const struct String* val_1 = new(String, "Zero");
+        const struct String* val_2 = new(String, "One");
 
         const void *tuple = new(Tuple, val_1, val_2);
         ck_assert_int_ne(2, size(tuple));

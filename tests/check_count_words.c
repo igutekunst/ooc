@@ -50,7 +50,8 @@ START_TEST(test_list_iterate)
 
         const struct HashMap* counts = new(HashMap);
         const void* it = iter(list);
-        for (const struct String* string = next(it); string != NULL; string = next(it)) {
+        const struct String* string;
+        for (string = next(it); string != NULL; string = next(it)) {
             const struct Int* count = NULL;
             if ((count = get_item(counts, string) ) == NULL) {
                 count = new(Int, 0);

@@ -4,6 +4,16 @@
 #include <stdlib.h>
 #define FNV_PRIME_32 16777619
 #define FNV_OFFSET_32 2166136261U
+#include <stdio.h>
+#include <ooc/object.h>
+#include "object_internal.h"
+
+struct String{
+    struct class_header * class;
+    size_t size;
+    size_t len;
+    char * string_data;
+};
 
 struct StringClass{
     struct class_header class;

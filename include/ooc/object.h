@@ -62,6 +62,24 @@ const void *copy(const void *_object);
 
 bool equals(const void *_object, const void *_other);
 
+typedef enum {
+    COMPARE_GT,
+    COMPARE_EQ,
+    COMPARE_LT
+} CompareValue;
+
+CompareValue compare(const void * _self, const void * _other);
+
+/**
+ * @brief Sort a collection in place
+ * @param _self
+ */
+void sort(const void * _self);
+
+const void* sorted(const void * _self);
+
+
+
 /**  @}
  * End of Common functions
  * */
@@ -140,6 +158,7 @@ void values(const void *_self);
 
 /** @}
  */
+
 
 
 extern const struct class_header Class;
