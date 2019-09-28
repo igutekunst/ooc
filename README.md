@@ -40,16 +40,17 @@ int main(int argc, char * argv[]) {
 ##Future Work
 * Add functionality to Int
 * Add Float and BigInt support
-* Add list
 * Add referencing counting
 * Traits
 * Add functional functions such as map, reduce
-* Flesh out list
 * Add internal argument type checking macros/functions
 * Add error handling system, and unify error messages
 * Add global free list, so you can call `del_all` or similar
-* Add File type that supports iteration
 * Add more functions to String
-* Adding sorting to list
-* Add Tuple type
 
+### In Progress
+* Add list
+* Flesh out list
+* Add File type that supports iteration
+* Adding sorting to list (seems to work)
+* Add Tuple type
