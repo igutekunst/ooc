@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <stdbool.h>
+#include <ooc/object.h>
 #include "trait_math_internal.h"
 
 #define MAGIC ((unsigned long ) 0xBD71472)
@@ -136,7 +137,7 @@ struct class_header {
      *         COMPARE_EQ if _self == _other
      *         COMPARE_LT if _self < other
      */
-    bool (*compare)(
+     CompareValue (*compare)(
             const void *_self,
             const void *_other
     );

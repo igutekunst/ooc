@@ -26,25 +26,6 @@ const void* Int_mul(const void* lhs, const void* rhs);
 const void* Int_div(const void* lhs, const void* rhs);
 int Int_to_int(const void* _self);
 
-struct IntClass int_class = {
-        .class = {.magic = MAGIC,
-                .size = sizeof(struct Int),
-                .object_init = Int_init,
-                .print = Int_print,
-                .get_size = Int_get_size,
-                .c_str = Int_to_str,
-                .math  =  {.enabled = true,
-                        .add = Int_add,
-                        .sub = Int_sub,
-                        .mul = Int_mul,
-                        .div = Int_div,
-                        .to_int = Int_to_int
-                }
-        }
-
-};
-
-void* Int = &int_class;
 
 size_t Int_get_size(const void* _self) {
     struct Int* self = (struct Int*) _self;
@@ -109,7 +90,37 @@ int Int_to_int(const void* _self) {
     return self->value;
 }
 
-
-void test_int() {
-
+CompareValue Int_compare(const void* _lhs, const void* _rhs) {
+    struct Int* lhs = (struct Int*) _lhs;
+    struct Int* rhs = (struct Int*) _rhs;
+    if (lhs->value > rhs->value) {
+       return COMPARE_GT;
+    } else if (lhs->value == rhs->value){
+       return COMPARE_EQ;
+    } else {
+        return COMPARE_LT;
+    }
 }
+
+
+struct IntClass int_class = {
+        .class = {.magic = MAGIC,
+                .size = sizeof(struct Int),
+                .object_init = Int_init,
+                .print = Int_print,
+                .get_size = Int_get_size,
+                .c_str = Int_to_str,
+                .object_name = "Int",
+                .compare = Int_compare,
+                .math  =  {.enabled = true,
+                        .add = Int_add,
+                        .sub = Int_sub,
+                        .mul = Int_mul,
+                        .div = Int_div,
+                        .to_int = Int_to_int
+                }
+        }
+
+};
+
+void* Int = &int_class;

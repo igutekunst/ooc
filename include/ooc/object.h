@@ -26,20 +26,20 @@
  * @param argc number of arguments provided
  * @return new object or type class, or NULL
  */
-const void *_new(size_t argc, ...);
+const void* _new(size_t argc, ...);
 
 /**
  * @brief get ooc class object
  * @param self ooc object
  * @return ooc class of a given ooc object
  */
-const void *type(const void *self);
+const void* type(const void* self);
 
 /**
  * @brief delete an ooc object
  * @param object
  */
-void del(const void *object);
+void del(const void* object);
 
 /**
  * @brief get size in bytes
@@ -50,17 +50,17 @@ void del(const void *object);
  * @param _object
  * @return size in bytes of object
  */
-size_t size(const void *_object);
+size_t size(const void* _object);
 
-const char *clsname(const void *_self);
+const char* clsname(const void* _self);
 
-void print(const void *_object);
+void print(const void* _object);
 
-size_t len(const void *_object);
+size_t len(const void* _object);
 
-const void *copy(const void *_object);
+const void* copy(const void* _object);
 
-bool equals(const void *_object, const void *_other);
+bool equals(const void* _object, const void* _other);
 
 typedef enum {
     COMPARE_GT,
@@ -68,16 +68,15 @@ typedef enum {
     COMPARE_LT
 } CompareValue;
 
-CompareValue compare(const void * _self, const void * _other);
+CompareValue compare(const void* _self, const void* _other);
 
 /**
  * @brief Sort a collection in place
  * @param _self
  */
-void sort(const void * _self);
+void obj_sort(const void* object);
 
-const void* sorted(const void * _self);
-
+const void* sorted(const void* _self);
 
 
 /**  @}
@@ -85,10 +84,11 @@ const void* sorted(const void * _self);
  * */
 
 
-const char *c_str(const void *_object);
-const char *c_str_repr(const void *_object);
+const char* c_str(const void* _object);
 
-const void *to_String(const void *_object);
+const char* c_str_repr(const void* _object);
+
+const void* to_String(const void* _object);
 
 
 /**
@@ -96,26 +96,26 @@ const void *to_String(const void *_object);
  * @defgroup collection Collections
  * @{
  */
-const void *append(const void *_object, const void *_other);
+const void* append(const void* _object, const void* _other);
 
-void *set_item(const void *_self,
-               const void *_key,
-               const void *item);
+void* set_item(const void* _self,
+               const void* _key,
+               const void* item);
 
-const void *get_item(const void *_self,
-                     const void *_key);
+const void* get_item(const void* _self,
+                     const void* _key);
 
-struct class_header *get_class_header_msg(const void *_self, const char *message);
+struct class_header* get_class_header_msg(const void* _self, const char* message);
 
-inline const struct class_header *get_obj_type(const void *_self, const void *class, const char *message);
+inline const struct class_header* get_obj_type(const void* _self, const void* class, const char* message);
 
-const void *iter(const void *_object);
+const void* iter(const void* _object);
 
-uint64_t hash(const void *_self);
+uint64_t hash(const void* _self);
 
-const void *next(const void *_self);
+const void* next(const void* _self);
 
-void del_item(const void *_self, const void *key);
+void del_item(const void* _self, const void* key);
 
 /**
  * @brief Create an iterator for an collection's keys
@@ -140,7 +140,7 @@ void del_item(const void *_self, const void *key);
  *
  * @param object Object supporting key:value pair mapping
  */
-void keys(const void *object);
+void keys(const void* object);
 
 /**
  * @brief Create an iterator for an collection's values
@@ -154,7 +154,7 @@ void keys(const void *object);
  *
  * @param object Object supporting key:value pair mapping
  */
-void values(const void *_self);
+void values(const void* _self);
 
 /** @}
  */
@@ -164,7 +164,7 @@ void values(const void *_self);
 extern const struct class_header Class;
 
 
-const struct class_header *get_class_header(const void *_self);
+const struct class_header* get_class_header(const void* _self);
 
 
 #define new(...) _new(PP_NARG(__VA_ARGS__), __VA_ARGS__)

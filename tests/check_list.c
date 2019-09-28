@@ -31,11 +31,11 @@ START_TEST(test_list_append)
         const void *list = new(List);
         append(list, new(String, "One"));
         ck_assert_int_eq(1, len(list));
-        ck_assert_str_eq("[\"One\"]", c_str(list));
+        ck_assert_str_eq("[One]", c_str(list));
 
         append(list, new(String, "Two"));
         ck_assert_int_eq(2, len(list));
-        ck_assert_str_eq("[\"One\", \"Two\"]", c_str(list));
+        ck_assert_str_eq("[One, Two]", c_str(list));
     }
 END_TEST
 
@@ -110,6 +110,20 @@ START_TEST(test_list_va_args)
     }
 END_TEST
 
+START_TEST(test_list_sort)
+    {
+        const struct List *list = new(List,
+                                      new(Int, 10),
+                                      new(Int, 2),
+                                      new(Int, 5),
+                                      new(Int, 4),
+                                      new(Int, 3));
+        obj_sort(list);
+        print(list);
+
+    }
+END_TEST
+
 
 Suite *list_suite_create(void) {
     Suite *s = suite_create("List");
@@ -119,6 +133,7 @@ Suite *list_suite_create(void) {
     tcase_add_test(tc_core, test_list_get);
     tcase_add_test(tc_core, test_list_iterate);
     tcase_add_test(tc_core, test_list_va_args);
+    tcase_add_test(tc_core, test_list_sort);
     //tcase_add_exit_test(tc_core, test_list_get_wrong_index_type, 1);
     suite_add_tcase(s, tc_core);
     return s;

@@ -175,10 +175,7 @@ bool equals(const void * _self, const void * _other){
 
 CompareValue compare(const void * _self, const void * _other){
     const struct class_header * class;
-    const struct class_header * other;
-
     if ((class = get_class_header_msg(_self, "Attempted to compare non object"))) {
-        other = get_class_header_msg(_other, "attempted to compare non object\n");
         if (class->compare == NULL) {
             fprintf(stderr, "%s does not support comparison\n", clsname(_self));
             exit(EXIT_FAILURE);
@@ -188,6 +185,22 @@ CompareValue compare(const void * _self, const void * _other){
 
     // Should not get here
     assert(false);
+}
+
+/**
+ * @brief Sort a collection in place
+ * @param _self
+ */
+void obj_sort(const void* _self) {
+    if(get_class_header_msg(_self, "Failed to create iterator from non collection\n")){
+        const struct class_header * self = get_class_header(_self);
+        if(self->sort == NULL ) {
+            fprintf(stderr, "Class %s does not support sort.\n", clsname(_self));
+            exit(EXIT_FAILURE);
+
+        }
+        self->sort(_self);
+    }
 }
 
 
@@ -286,6 +299,7 @@ void del_item(const void * _self, const void * _key) {
     return ;
 }
 
+// TODO consider a shortcut for get_item(object, new(Int, xx)) for handling integer keys for convenience
 const void * get_item(const void * _self, const void * _key ) {
     if(get_class_header_msg(_self, "get_item called on invalid object")){
         const struct class_header * self = get_class_header(_self);

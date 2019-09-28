@@ -110,9 +110,8 @@ const char* List_to_str(const void* _self) {
     ListItem* item = self->head;
     const struct String* out = typed_new(String, "[");
     while (item != NULL) {
-        out = append(out, new(String, "\""));
+        //TODO figure out string quotes
         out = append(out, to_String(item->value));
-        out = append(out, new(String, "\""));
         if (item->next != NULL) {
             out = append(out, new(String, ", "));
         }
@@ -120,7 +119,6 @@ const char* List_to_str(const void* _self) {
     }
     out = append(out, new(String, "]"));
     return c_str(out);
-    return "[]";
 }
 
 const void* List_append(const void* _self, const void* _other) {
@@ -195,7 +193,6 @@ const void *ListIterator_init(const void *_self, size_t argc, va_list args) {
 
 
 const void * ListIterator_next(const void * _self) {
-
     struct ListIterator * self = (struct ListIterator *) _self;
 
     ListItem* item = NULL;
@@ -216,7 +213,8 @@ const void * ListIterator_next(const void * _self) {
 }
 
 void List_sort(const void * _self) {
-
+    struct List* self = (struct List*) _self;
+    MergeSort(&self->head);
 }
 
 
@@ -242,7 +240,7 @@ void MergeSort(struct ListItem** headRef)
     /* Split head into 'a' and 'b' sublists */
     FrontBackSplit(head, &a, &b);
 
-    /* Recursively sort the sublists */
+    /* Recursively obj_sort the sublists */
     MergeSort(&a);
     MergeSort(&b);
 
@@ -314,6 +312,7 @@ struct ListClass List_class = {
                 .get_size = List_get_size,
                 .get_len = List_get_len,
                 .c_str = List_to_str,
+                .sort = List_sort,
                 .append = List_append,
                 .iter = List_iter,
                 .get_item = List_get_item,
