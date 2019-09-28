@@ -21,7 +21,8 @@ This library is completely experimental, and has not been used in any real proje
 It's here to share some ideas with friends and the world. My hope is it will be useful one day, at which point
 I will promote it with more confidence!
 
-##Working Modules
+Working Modules
+---------------
 * HashMap
 * String
 * Int
@@ -37,7 +38,8 @@ int main(int argc, char * argv[]) {
 
 ````
 
-##Future Work
+Future Work
+-----------
 * Add functionality to Int
 * Add Float and BigInt support
 * Add referencing counting
@@ -48,7 +50,8 @@ int main(int argc, char * argv[]) {
 * Add global free list, so you can call `del_all` or similar
 * Add more functions to String
 
-### In Progress
+In Progress
+--------------
 * Add list
 * Flesh out list
 * Add File type that supports iteration
