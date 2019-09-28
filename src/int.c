@@ -15,7 +15,7 @@ struct IntClass {
     struct class_header class;
 };
 
-const void* Int_init(const void* self, va_list args);
+const void *Int_init(const void *_self, size_t argc, va_list args);
 void Int_print(const void* _self);
 size_t Int_get_size(const void* _self);
 const char* Int_to_str(const void* _self);
@@ -32,7 +32,7 @@ struct IntClass int_class = {
                 .object_init = Int_init,
                 .print = Int_print,
                 .get_size = Int_get_size,
-                .str = Int_to_str,
+                .c_str = Int_to_str,
                 .math  =  {.enabled = true,
                         .add = Int_add,
                         .sub = Int_sub,
@@ -51,7 +51,7 @@ size_t Int_get_size(const void* _self) {
     return self->size;
 }
 
-const void* Int_init(const void* _self, va_list args) {
+const void *Int_init(const void *_self, size_t argc, va_list args) {
     struct Int* self = (struct Int*) _self;
     uint32_t value = va_arg(args, uint32_t);
     self->class = Int;

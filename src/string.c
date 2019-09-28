@@ -21,7 +21,7 @@ size_t String_get_size(const void * _self){
 }
 
 
-const void * __construct__String(const void * _self, va_list args) {
+const void *__construct__String(const void *_self, size_t argc, va_list args) {
     struct String * self = (struct String *) _self;
     const char * data = va_arg(args, const char *);
     if (! data){
@@ -99,7 +99,7 @@ bool String_equal(const void * _self, const void * _other){
     const struct class_header * other = (const struct class_header *) _other;
 
     if (type(other) == String){
-        return strcmp(str(self), str(other)) == 0;
+        return strcmp(c_str(self), c_str(other)) == 0;
     } else {
         printf("Cannot compare String to %s\n", clsname(other));
         exit(1);
@@ -150,7 +150,7 @@ struct StringClass string_class = {
               .object_init = __construct__String,
               .get_size = String_get_size,
               .get_len = String_get_len,
-              .str = String_str,
+              .c_str = String_str,
               .copy = String_copy,
               .append = String_append,
               .hash = String_hash,

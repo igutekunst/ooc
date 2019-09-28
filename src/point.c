@@ -5,7 +5,7 @@ struct PointClass{
     struct class_header class;
 };
 
-const void * __construct__Point(const void * const self, va_list args);
+const void *__construct__Point(const void *_self, size_t argc, va_list args);
 void print_Point(const void * _self);
 size_t get_size_Point(const void * _self);
 
@@ -31,7 +31,7 @@ size_t get_size_Point(const void * _self){
 }
 
 
-const void * __construct__Point(const void * _self, va_list args) {
+const void *__construct__Point(const void *_self, size_t argc, va_list args) {
     struct Point * self = (struct Point *) _self;
     self->class = Point;
     self->size = sizeof(struct Point);

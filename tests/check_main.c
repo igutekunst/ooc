@@ -4,6 +4,8 @@
 #include "check_string.h"
 #include "check_int.h"
 #include "check_list.h"
+#include "check_count_words.h"
+#include "check_tuple.h"
 
 int main(void){
     int number_failed;
@@ -11,11 +13,15 @@ int main(void){
     Suite* hashmap_suite = hashmap_suite_create();
     Suite* int_suite = int_suite_create();
     Suite* list_suite = list_suite_create();
+    Suite* counting_words_suite = counting_words_suite_create();
+    Suite* tuple_sutie = tuple_suite_create();
 
     SRunner *sr = srunner_create (ooc_suite);
     srunner_add_suite(sr, hashmap_suite);
     srunner_add_suite(sr, int_suite);
     srunner_add_suite(sr, list_suite);
+    srunner_add_suite(sr, counting_words_suite);
+    srunner_add_suite(sr, tuple_sutie);
 
     srunner_set_fork_status(sr, CK_NOFORK);
     srunner_run_all (sr, CK_VERBOSE);

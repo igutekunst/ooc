@@ -8,7 +8,7 @@ START_TEST(test_string_create_delete){
     const struct String * s;
     s = new(String, "Hello");
     ck_assert_msg(s != NULL, "Failed to create Hello string");
-    ck_assert_str_eq("Hello", str(s));
+    ck_assert_str_eq("Hello", c_str(s));
     del(s);
 
     s = new(String, NULL);
@@ -27,9 +27,9 @@ START_TEST(test_string_append){
 
     s = append(h, w);
 
-    ck_assert_str_eq(str(h), "Hello");
-    ck_assert_str_eq(str(w), " World");
-    ck_assert_str_eq(str(s), "Hello World");
+    ck_assert_str_eq(c_str(h), "Hello");
+    ck_assert_str_eq(c_str(w), " World");
+    ck_assert_str_eq(c_str(s), "Hello World");
     ck_assert_msg(s != w && h !=w, "New string has same address as existing string");
 
 
@@ -64,12 +64,12 @@ START_TEST(test_string_copy){
 
     c= copy(h);
 
-    ck_assert_str_eq(str(h), str(c));
+    ck_assert_str_eq(c_str(h), c_str(c));
     ck_assert(h != c);
 
     del(h);
     // ensure copy persists when source is deleted
-    ck_assert_str_eq(str(c), "Hello");
+    ck_assert_str_eq(c_str(c), "Hello");
 
     del(c);
 
@@ -86,7 +86,7 @@ START_TEST(test_string_hash_simple){
     c = new(String, "Hello");
     n = new(String, "hello");
 
-    ck_assert_str_eq(str(h), str(c));
+    ck_assert_str_eq(c_str(h), c_str(c));
     ck_assert(h != c);
     ck_assert(hash(h) == hash(c));
 }
@@ -105,7 +105,7 @@ START_TEST(test_string_hash_append){
 
         hello_world_constructed = append(append(hello, space), world);
 
-        ck_assert_str_eq(str(hello_world), str(hello_world_constructed));
+        ck_assert_str_eq(c_str(hello_world), c_str(hello_world_constructed));
         ck_assert(hash(hello_world) == hash(hello_world_constructed));
     }
 END_TEST
@@ -133,13 +133,13 @@ START_TEST(test_string_hashing_many) {
     for (size_t i = 0; i < NUM_ITERATIONS; i++) {
         ck_assert_int_eq(i - collisions, len(hashmap));
         void* item;
-        insert(hashmap, keys[i], values[i]);
+        set_item(hashmap, keys[i], values[i]);
 
     }
     clock_t insert_clocks = clock() - t;
     t = clock();
     for (size_t i = 0; i < NUM_ITERATIONS; i++) {
-        ck_assert_str_eq(str(values[i]), str(get_item(hashmap, keys[i])));
+        ck_assert_str_eq(c_str(values[i]), c_str(get_item(hashmap, keys[i])));
     }
     clock_t get_clocks = clock() - t;
     double insert_time = ((double)insert_clocks)/CLOCKS_PER_SEC; // in seconds

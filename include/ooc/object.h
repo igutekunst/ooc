@@ -7,6 +7,7 @@
 #include <stdarg.h>
 #include <stdbool.h>
 #include <stdint.h>
+#include <ooc/object_va_args.h>
 
 /**
  * @defgroup common Common functions
@@ -22,9 +23,10 @@
  * _class should be a pointer to an ooc class object, such as
  * String or HashMap.
  * @param class ooc class object
+ * @param argc number of arguments provided
  * @return new object or type class, or NULL
  */
-const void *new(const void *class, ...);
+const void *_new(size_t argc, ...);
 
 /**
  * @brief get ooc class object
@@ -65,28 +67,29 @@ bool equals(const void *_object, const void *_other);
  * */
 
 
-const char *str(const void *_object);
+const char *c_str(const void *_object);
+const char *c_str_repr(const void *_object);
 
 const void *to_String(const void *_object);
 
 
 /**
  *
- * @defgroup collection Functions for working with collections
+ * @defgroup collection Collections
  * @{
  */
 const void *append(const void *_object, const void *_other);
 
-void *insert(const void *_self,
-             const void *_key,
-             const void *item);
+void *set_item(const void *_self,
+               const void *_key,
+               const void *item);
 
 const void *get_item(const void *_self,
                      const void *_key);
 
 struct class_header *get_class_header_msg(const void *_self, const char *message);
 
-inline struct class_header *get_obj_type(const void *_self, const void *class, const char *message);
+inline const struct class_header *get_obj_type(const void *_self, const void *class, const char *message);
 
 const void *iter(const void *_object);
 
@@ -97,7 +100,45 @@ const void *next(const void *_self);
 void del_item(const void *_self, const void *key);
 
 /**
- * @}
+ * @brief Create an iterator for an collection's keys
+ *
+ * If object is a collection supporting a map of
+ * keys to values, such as a list or HashMap,
+ * return an iterator that iterates over the keys.
+ *
+ * The order of iteration is undefined any may change between
+ * calls.
+ *
+ * For a HashMap, this is the same as iter(hash_map), modelled
+ * after python.
+ * ```
+ *  foo = {'a' : 5, 'b' 2}
+ *  for f in foo:
+ *      print f
+ *
+ *  'a'
+ *  'b'
+ *  ```
+ *
+ * @param object Object supporting key:value pair mapping
+ */
+void keys(const void *object);
+
+/**
+ * @brief Create an iterator for an collection's values
+ *
+ * If object is a collection supporting a map of
+ * keys to values, such as a list or HashMap,
+ * return an iterator that iterates over the values
+ *
+ * The order of iteration is undefined any may change between
+ * calls.
+ *
+ * @param object Object supporting key:value pair mapping
+ */
+void values(const void *_self);
+
+/** @}
  */
 
 
@@ -105,6 +146,9 @@ extern const struct class_header Class;
 
 
 const struct class_header *get_class_header(const void *_self);
+
+
+#define new(...) _new(PP_NARG(__VA_ARGS__), __VA_ARGS__)
 
 #define typed_new(class_name, ...) \
     (struct class_name*) new(class_name, __VA_ARGS__)

@@ -6,5 +6,6 @@
 #define OOC_LIST_H
 
 extern void * List;
+extern void * ListIterator;
 
 #endif //OOC_LIST_H

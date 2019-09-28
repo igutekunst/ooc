@@ -23,6 +23,7 @@ struct List {
     struct class_header* class;
     size_t size;
     size_t len;
+    bool iterating;
     struct ListItem* head;
     struct ListItem* tail;
 };
@@ -32,18 +33,36 @@ struct ListClass {
     struct class_header class;
 };
 
-const void* List_init(const void* _self, va_list args) {
+struct ListIterator {
+    struct class_header *class;
+    struct List* list;
+    bool done;
+    ListItem* item;
+};
+
+struct ListIteratorClass {
+    struct class_header class;
+};
+
+const void* List_append(const void* _self, const void* _other);
+
+const void *List_init(const void *_self, size_t argc, va_list args) {
     struct List* self = (struct List*) _self;
     self->len = 0;
     self->size = sizeof(struct List);
     self->head = NULL;
     self->tail = NULL;
+    self->iterating = false;
+
+    if (argc > 1) {
+        for (size_t i = 0; i < argc; i++) {
+            const void* item = va_arg(args, const void*);
+            List_append(_self, item);
+        }
+    }
     return _self;
 }
 
-void List_print(const void* _self) {
-
-}
 
 size_t List_get_size(const void* _self) {
     struct List* self = (struct List*) _self;
@@ -95,7 +114,7 @@ const char* List_to_str(const void* _self) {
         item = item->next;
     }
     out = append(out, new(String, "]"));
-    return str(out);
+    return c_str(out);
     return "[]";
 }
 
@@ -134,8 +153,8 @@ const void* List_get_item(const void* _self, const void* _index) {
     ListItem* item = self->head;
     const struct String* out = typed_new(String, "[");
 
-    if (index >= len) {
-        fprintf(stderr, "Index %d is out of range\n", index);
+    if (index >= self->len) {
+        fprintf(stderr, "Index %zu is out of range\n", index);
     }
 
     for(size_t i = 0; i < index; i++) {
@@ -146,14 +165,59 @@ const void* List_get_item(const void* _self, const void* _index) {
 
 }
 
+const void* List_iter(const void * _self){
+    return new(ListIterator, _self);
+}
+
+
+const void *ListIterator_init(const void *_self, size_t argc, va_list args) {
+
+    struct ListIterator * self = (struct ListIterator *) _self;
+    // TODO Maybe redundant
+    self->class = ListIterator;
+
+    self->list =  (struct List *)  va_arg(args, const void *);
+    assert(self->list);
+
+    self->list->iterating = true;
+
+    self->item = self->list->head;
+    self->done = false;
+
+
+    return self;
+}
+
+
+const void * ListIterator_next(const void * _self) {
+
+    struct ListIterator * self = (struct ListIterator *) _self;
+
+    ListItem* item = NULL;
+    if (self->done != true) {
+
+        if (self->item == NULL)  {
+            self->list->iterating = false;
+            self->done = true;
+        }  else {
+            item = self->item;
+            self->item = self->item->next;
+        }
+    }
+    if (item) {
+        return item->value;
+    }
+    return NULL;
+}
+
+
 struct ListClass List_class = {
         .class = {.magic = MAGIC,
                 .size = sizeof(struct List),
                 .object_init = List_init,
-                .print = List_print,
                 .get_size = List_get_size,
                 .get_len = List_get_len,
-                .str = List_to_str,
+                .c_str = List_to_str,
                 .append = List_append,
                 .iter = List_iter,
                 .get_item = List_get_item,
@@ -161,5 +225,17 @@ struct ListClass List_class = {
         }
 };
 
+struct ListIteratorClass list_iterator_class = {
+        .class = {.magic = MAGIC,
+                .object_init = ListIterator_init,
+                .size = sizeof(struct ListIterator),
+                .next = ListIterator_next
+        }
+
+};
+
+void * ListIterator = &list_iterator_class;
+
 void* List = &List_class;
+
 

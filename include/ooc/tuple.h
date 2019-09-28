@@ -5,4 +5,6 @@
 #ifndef OOC_TUPLE_H
 #define OOC_TUPLE_H
 
+extern void * Tuple;
+extern void * TupleIterator;
 #endif //OOC_TUPLE_H

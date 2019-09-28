@@ -25,13 +25,13 @@ int main(int argc, char * argv[]){
     const struct String * k2 = new(String, "key2")  ;
     const struct String * k3 = new(String, "key3")  ;
 
-    insert(h_iter_test, k1, s1);
-    insert(h_iter_test, k2, s2);
-    insert(h_iter_test, k3, s3);
+    set_item(h_iter_test, k1, s1);
+    set_item(h_iter_test, k2, s2);
+    set_item(h_iter_test, k3, s3);
 
-    struct HashMap_iter * it =   iter(h_iter_test);
+    const struct HashMap_iter * it =   iter(h_iter_test);
 
-    for (void * item = next(it); item != NULL; item = next(it)){
+    for (const void * item = next(it); item != NULL; item = next(it)){
         if (item){
             print(item);
         }

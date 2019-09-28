@@ -24,33 +24,30 @@ struct class_header {
     size_t size;
 
     /**
-     * Get size of object in bytes
+     * @brief Get size of object in bytes
      * @param _self ooc object
      * @return  size in bytes
      */
     size_t (*get_size)(const void *_self);
 
     /**
-     * Get number of items in container object
+     * @brief Get number of items in container object
      * @param _self ooc object
      * @return number of items in container
      */
     size_t (*get_len)(const void *_self);
 
     /**
-     * Create and initialize an object
-     * Technically, _self needs to be the full class header for
-     * a concrete type, which starts with a class_header, followed by
-     * class specific fields.
+     * @brief Create and initialize an object
+     *
+     * It also correct to calll this the object constructor.
      *
      * @param _self ooc class like String or HashMap.
+     * @param argc number of arguments
      * @param args arguments to initialize object. Varies based on class type
      * @return
      */
-    const void *(*object_init )(
-            const void *_self,
-            va_list args
-    );
+    const void *(*object_init )(const void *_self, size_t argc, va_list args);
 
     /**
      * De-initialize and free resources used by _self.
@@ -67,6 +64,19 @@ struct class_header {
 
     /**
      * Return the c string (char*) representation of
+     * an object. This is intended to be more human readable.
+     *
+     * May be used by to_String to make an ooc String representation.
+     * Usually it's not necessary to implement to_String separately.
+     *
+     * @param _self ooc object
+     * @return c string representation
+     */
+
+    const char *(*c_str)(const void *_self);
+
+    /**
+     * Return the c string (char*) representation of
      * an object
      *
      * May be used by to_String to make an ooc String representation.
@@ -76,7 +86,7 @@ struct class_header {
      * @return c string representation
      */
 
-    const char *(*str)(const void *_self);
+    const char *(*c_str_repr)(const void *_self);
 
     /**
      * Return String representation of object.
@@ -212,6 +222,6 @@ struct class_header {
 };
 
 struct ObjectHeader {
-    struct class_header* class;
+    const struct class_header* class;
 };
 

@@ -32,7 +32,7 @@ add_library(ooc
         include/ooc/math.h
         src/list.c
         include/ooc/list.h
-        )
+        include/ooc/object_va_args.h src/tuple.c include/ooc/tuple.h)
 
 target_include_directories(ooc PRIVATE include)
 add_executable(main src/main.c )
@@ -53,7 +53,7 @@ add_executable(test_string
         tests/check_int.h
         tests/check_list.c
         tests/check_list.h
-)
+        tests/check_count_words.c tests/check_count_words.h tests/check_tuple.c tests/check_tuple.h)
 
 LINK_DIRECTORIES(/usr/local/lib)
 

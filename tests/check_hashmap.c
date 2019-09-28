@@ -19,12 +19,12 @@ START_TEST(test_hashmap_add_delete) {
 
             keys[i]  = new(String, key);
             values[i]  = new(String, value);
-            insert(hashmap, keys[i], values[i]);
+            set_item(hashmap, keys[i], values[i]);
         }
         ck_assert_int_eq(NUM_ITERATIONS, len(hashmap));
 
         for (size_t i = 0; i < NUM_ITERATIONS; i++) {
-            ck_assert_str_eq(str(values[i]), str(get_item(hashmap, keys[i])));
+            ck_assert_str_eq(c_str(values[i]), c_str(get_item(hashmap, keys[i])));
         }
 
         for (size_t i = 0; i < NUM_ITERATIONS; i++) {

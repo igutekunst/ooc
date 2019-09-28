@@ -3,7 +3,7 @@
 
 
 
-const void * __construct__Person(const void * self, va_list args);
+const void *__construct__Person(const void *_self, size_t argc, va_list args);
 void * __destruct__Person(const void * self, va_list args);
 void print_Person(const void * _self);
 size_t get_size_Person(const void * _self);
@@ -26,7 +26,7 @@ void * Person = &person_class;
 
 //TODO make maxlength values on names..
 //TODO determine whether to cache string length (probably yes)
-const void * __construct__Person(const void * _self, va_list args) {
+const void *__construct__Person(const void *_self, size_t argc, va_list args) {
     struct Person * self = (struct Person *) _self;
     char * first = va_arg(args, char *);
     char * last =  va_arg(args, char *);

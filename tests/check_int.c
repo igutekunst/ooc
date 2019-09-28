@@ -12,11 +12,11 @@
 START_TEST(test_int_create){
     const void* five = new(Int, 5);
     const void* two_thousand = new(Int, 2000);
-    ck_assert_str_eq("5", str(five));
+    ck_assert_str_eq("5", c_str(five));
 
     const void* two_thousand_five = obj_add(five, two_thousand);
 
-    ck_assert_str_eq("2005", str(two_thousand_five));
+    ck_assert_str_eq("2005", c_str(two_thousand_five));
     ck_assert_int_eq(2005,obj_to_int(two_thousand_five));
 
     del(five);

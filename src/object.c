@@ -9,29 +9,36 @@ const struct class_header Class = {
 
 /**
  *
- * @param _class
- * @param ...
+ *
+ * @param class OOC class to instantiate
+ * @param ... arguments to initialize class
  * @return
  */
-const void * new (const void * const _class, ...) {
+const void * _new (size_t argc, ...) {
+    va_list args;
+    va_start(args, argc);
+
+    assert(argc !=0);
+
+    const void * const _class = (const void*) va_arg(args, const void*);
+
     const struct class_header * class = (struct class_header * ) _class;
     if (!class || class->magic != MAGIC){
         fprintf(stderr, "new called with invalid class\n");
         exit(1);
     }
     struct ObjectHeader*  new_object = (struct ObjectHeader *) malloc(class->size);
-    va_list vl;
     if (class->object_init){
-        va_start(vl, _class);
         //TODO remove extra initialization from specific class constructors
         new_object->class = class;
-        new_object = class->object_init(new_object, vl);
-        va_end(vl);
+        new_object = (struct ObjectHeader*) class->object_init(new_object, argc - 1, args);
+        va_end(args);
     } else {
         printf("No default constructor. Allocating %zu bytes\n", class->size) ;
     }
     return new_object;
 }
+
 
 
 void del (const void *_object){
@@ -45,12 +52,23 @@ void del (const void *_object){
     }
 }
 
-
-const char *  str (const void * _self){
+const char *  c_str_repr(const void *_self){
     const struct class_header * class;
     if ((class = get_class_header_msg(_self, "str called on non object\n"))) {
-        if (class->str){
-            return class->str(_self);
+        if (class->c_str_repr){
+            return class->c_str_repr(_self);
+        }
+        else
+            return class->object_name;
+    }
+    return NULL;
+}
+
+const char *  c_str(const void *_self){
+    const struct class_header * class;
+    if ((class = get_class_header_msg(_self, "str called on non object\n"))) {
+        if (class->c_str){
+            return class->c_str(_self);
         }
         else
             return class->object_name;
@@ -59,7 +77,7 @@ const char *  str (const void * _self){
 }
 
 const void *to_String(const void *_object) {
-    return new(String, str(_object));
+    return new(String, c_str(_object));
 
 }
 
@@ -69,8 +87,8 @@ void print (const void * _self){
     if ((class = get_class_header_msg(_self, "Attempted to print non object\n"))) {
         if (class->print) {
             class->print(_self);
-        } else if (class->str) {
-            printf("%s", class->str(_self));
+        } else if (class->c_str) {
+            printf("%s\n", class->c_str(_self));
         } else
         printf("Object at %p\n", _self);
     }
@@ -144,7 +162,7 @@ bool equals(const void * _self, const void * _other){
     const struct class_header * class;
     const struct class_header * other;
 
-    if ((class = get_class_header_msg(_self, "attempted to append non object\n"))) {
+    if ((class = get_class_header_msg(_self, "Attempted to compare non object"))) {
         other = get_class_header_msg(_other, "attempted to compare non object\n");
         if(class->equals){
             return class->equals(_self, _other);
@@ -166,6 +184,9 @@ const void* append(const void * _self, const void * _other){
             exit(EXIT_FAILURE);
         }
     }
+
+    // Should not get here
+    assert(false);
 }
 
 
@@ -188,7 +209,7 @@ inline struct class_header * get_class_header_msg(const void * _self, const char
 }
 
 
-inline struct class_header * get_obj_type(const void * _self, const void* class, const char * message ){
+inline const struct class_header * get_obj_type(const void * _self, const void* class, const char * message ){
     struct class_header * class_header =  * (struct class_header ** ) _self;
     if (class_header && class_header->magic == MAGIC){
         if (class_header == class) {
@@ -219,9 +240,9 @@ uint64_t hash(const void * _self) {
     return 0;
 }
 
-void * insert(const void * _self, 
-                      const void * _key, 
-                      const void * _other) {
+void * set_item(const void *_self,
+                const void *_key,
+                const void *_other) {
     
     if(get_class_header_msg(_self, "Failed to insert into non collection\n")){
         const struct class_header * self = get_class_header(_self);
@@ -277,4 +298,12 @@ const void * next(const void * _self ) {
         }
     }
     return NULL;
+}
+
+void keys(const void *object) {
+    printf("wtata");
+
+}
+void values(const void *_self) {
+
 }
