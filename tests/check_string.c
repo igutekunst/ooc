@@ -144,10 +144,10 @@ START_TEST(test_string_hashing_many) {
     clock_t get_clocks = clock() - t;
     double insert_time = ((double)insert_clocks)/CLOCKS_PER_SEC; // in seconds
     double get_time = ((double)get_clocks)/CLOCKS_PER_SEC; // in seconds
-    printf("Inserted %zu items in %f seconds\n", NUM_ITERATIONS, insert_time);
-    printf("Retrieved %zu items in %f seconds\n", NUM_ITERATIONS, get_time);
+    //printf("Inserted %zu items in %f seconds\n", NUM_ITERATIONS, insert_time);
+    //printf("Retrieved %zu items in %f seconds\n", NUM_ITERATIONS, get_time);
 
-    printf("Detected %zu hash collisions\n", collisions);
+    //printf("Detected %zu hash collisions\n", collisions);
 
     del(hashmap);
 

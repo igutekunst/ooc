@@ -1,7 +1,7 @@
 #include <ooc/point.h>
 #include <ooc/person.h>
 #include <ooc/string.h>
-#include <ooc/Int.h>
+#include <ooc/int.h>
 #include <ooc/hashmap.h>
 #include <assert.h>
 

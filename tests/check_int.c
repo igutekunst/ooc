@@ -4,8 +4,9 @@
 
 #include "check_int.h"
 #include <check.h>
-#include <ooc/Int.h>
-#include <ooc/trait_math.h>
+#include <ooc/int.h>
+#include <ooc/math.h>
+#include <ooc/object.h>
 #include "check_utils.h"
 
 START_TEST(test_int_create){
@@ -15,8 +16,12 @@ START_TEST(test_int_create){
 
     const void* two_thousand_five = obj_add(five, two_thousand);
 
-    printf("five: %s\n", str(five));
-    printf("2k5: %s\n", str(two_thousand_five));
+    ck_assert_str_eq("2005", str(two_thousand_five));
+    ck_assert_int_eq(2005,obj_to_int(two_thousand_five));
+
+    del(five);
+    del(two_thousand);
+    del(two_thousand_five);
 }
 END_TEST
 

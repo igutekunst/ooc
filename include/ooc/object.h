@@ -67,7 +67,7 @@ bool equals(const void *_object, const void *_other);
 
 const char *str(const void *_object);
 
-void *to_String(const void *_object);
+const void *to_String(const void *_object);
 
 
 /**
@@ -84,7 +84,7 @@ void *insert(const void *_self,
 const void *get_item(const void *_self,
                      const void *_key);
 
-struct class_header *get_obj(const void *_self, const char *message);
+struct class_header *get_class_header_msg(const void *_self, const char *message);
 
 inline struct class_header *get_obj_type(const void *_self, const void *class, const char *message);
 
@@ -105,5 +105,8 @@ extern const struct class_header Class;
 
 
 const struct class_header *get_class_header(const void *_self);
+
+#define typed_new(class_name, ...) \
+    (struct class_name*) new(class_name, __VA_ARGS__)
 
 #endif

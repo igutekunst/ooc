@@ -13,23 +13,25 @@ find_package(check REQUIRED)
 
 add_library(ooc
         src/hashmap.c
-        src/Int.c
+        src/int.c
         src/iterator.c
         src/object.c
         src/person.c
         src/point.c
         src/string.c
-        src/trait_math.c
+        src/math.c
 
         include/ooc/person.h
         include/ooc/point.h
         include/ooc/string.h
         include/ooc/object.h
-        include/ooc/Int.h
+        include/ooc/int.h
         include/ooc/hashmap.h
 
         src/trait_math_internal.h
-        include/ooc/trait_math.h
+        include/ooc/math.h
+        src/list.c
+        include/ooc/list.h
         )
 
 target_include_directories(ooc PRIVATE include)
@@ -49,7 +51,9 @@ add_executable(test_string
         tests/check_main.c
         tests/check_int.c
         tests/check_int.h
-        )
+        tests/check_list.c
+        tests/check_list.h
+)
 
 LINK_DIRECTORIES(/usr/local/lib)
 

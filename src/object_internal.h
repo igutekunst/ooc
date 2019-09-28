@@ -160,7 +160,7 @@ struct class_header {
      * @param _key ooc object key
      * @return
      */
-    const void *(*get)(
+    const void *(*get_item)(
             const void *_self,
             const void *_key
     );
@@ -209,5 +209,9 @@ struct class_header {
      */
      struct OOCTraitMath math;
 
+};
+
+struct ObjectHeader {
+    struct class_header* class;
 };
 

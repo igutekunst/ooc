@@ -12,6 +12,7 @@ struct OOCTraitMath {
     const void* (*sub)(const void* lhs, const void* rhs);
     const void* (*mul)(const void* lhs, const void* rhs);
     const void* (*div)(const void* lhs, const void* rhs);
+    int (*to_int)(const void* _self);
 };
 
 

@@ -324,8 +324,8 @@ void insert_HashMap(const void * _self,
                       const void * _key,
                       const void * _value) {
     struct HashMap * self = (struct HashMap *) _self;
-    if (get_obj(_key, "Attempted to insert invalid key\n")) {
-        if (get_obj(_value, NULL) ){
+    if (get_class_header_msg(_key, "Attempted to insert invalid key\n")) {
+        if (get_class_header_msg(_value, NULL) ){
             const struct class_header * header = get_class_header(_key);
             if (!header->hash) {
                 fprintf(stderr, "Attempt to use unhashable type as key\n");
@@ -342,7 +342,7 @@ void insert_HashMap(const void * _self,
 const void * get_HashMap(const void * _self,
                    const void * _key ) {
     struct HashMap * self = (struct HashMap *) _self;
-    if (get_obj(_key, "Attempted to get with  invalid key\n")) {
+    if (get_class_header_msg(_key, "Attempted to get_item with  invalid key\n")) {
            const struct class_header * header = get_class_header(_key);
            if (!header->hash) {
                fprintf(stderr, "Attempt to use unhashable type as key\n");
@@ -378,8 +378,8 @@ void  del_item_HashMap(const void * _self,
                    const void * _key ) {
 
     struct HashMap *self = (struct HashMap *) _self;
-    if (get_obj(_key, "Attempted to delete an invalid key\n")) {
-        const struct class_header *key = get_obj(_key, NULL);
+    if (get_class_header_msg(_key, "Attempted to delete an invalid key\n")) {
+        const struct class_header *key = get_class_header_msg(_key, NULL);
         if (!key->hash) {
             fprintf(stderr, "Attempt to use unhashable type as key\n");
             exit(1);
@@ -526,7 +526,7 @@ struct HashMapClass hash_map_class = {
               .str = str_HashMap,
               .copy = copy_HashMap,
               .insert = insert_HashMap,
-              .get = get_HashMap,
+              .get_item = get_HashMap,
               .del_item = del_item_HashMap,
               .iter = iter_HashMap,
               .object_name = "HashMap"
