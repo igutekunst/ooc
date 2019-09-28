@@ -51,6 +51,9 @@ START_TEST(test_list_iterate)
                                       new(String, "One"),
                                       new(String, "Two"),
                                       new(String, "Two"),
+                                      new(String, "Two"),
+                                      new(String, "Two"),
+                                      new(String, "Two"),
                                       new(String, "Three"));
 
         const struct HashMap* counts = new(HashMap);
@@ -86,14 +89,10 @@ START_TEST(test_list_iterate)
         const void* ci = iter(counts_list);
         const struct Tuple* t;
 
-        printf("\n");
-        printf("|     Word       |  count  |\n");
-        printf("+----------------+---------+\n");
 
         for (t = next(ci); t != NULL; t = next(ci)) {
             // TODO consider making a integer only index function similar to get_item
-            printf("| %-14s | %-5d   |\n", c_str(get_item(t, new(Int, 1))), obj_to_int(get_item(t, new(Int, 0))));
-            printf("+----------------+---------+\n");
+            printf(" %d, %-14s\n", obj_to_int(get_item(t, new(Int, 0))), c_str(get_item(t, new(Int, 1))) );
         }
         printf("\n");
 

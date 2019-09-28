@@ -6,7 +6,8 @@
 #include <stdarg.h>
 #include <stdbool.h>
 #include <ooc/object.h>
-#include "trait_math_internal.h"
+#include "trait_math.h"
+#include "trait_file.h"
 
 #define MAGIC ((unsigned long ) 0xBD71472)
 
@@ -263,6 +264,7 @@ struct class_header {
      * Traits
      */
      struct OOCTraitMath math;
+     struct OOCTraitFile file;
 
 };
 

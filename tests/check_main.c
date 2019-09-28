@@ -6,6 +6,7 @@
 #include "check_list.h"
 #include "check_count_words.h"
 #include "check_tuple.h"
+#include "check_file.h"
 
 int main(void){
     int number_failed;
@@ -14,14 +15,16 @@ int main(void){
     Suite* int_suite = int_suite_create();
     Suite* list_suite = list_suite_create();
     Suite* counting_words_suite = counting_words_suite_create();
-    Suite* tuple_sutie = tuple_suite_create();
+    Suite* tuple_suite = tuple_suite_create();
+    Suite* file_suite = file_suite_create();
 
     SRunner *sr = srunner_create (ooc_suite);
     srunner_add_suite(sr, hashmap_suite);
     srunner_add_suite(sr, int_suite);
     srunner_add_suite(sr, list_suite);
     srunner_add_suite(sr, counting_words_suite);
-    srunner_add_suite(sr, tuple_sutie);
+    srunner_add_suite(sr, tuple_suite);
+    srunner_add_suite(sr, file_suite);
 
     srunner_set_fork_status(sr, CK_NOFORK);
     srunner_run_all (sr, CK_VERBOSE);

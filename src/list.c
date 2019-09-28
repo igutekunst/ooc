@@ -71,8 +71,7 @@ const void *List_init(const void *_self, size_t argc, va_list args) {
 
 size_t List_get_size(const void* _self) {
     struct List* self = (struct List*) _self;
-    //TODO update once list grows
-    return self->class->size;
+    return self->size;
 }
 
 size_t List_get_len(const void* _self) {

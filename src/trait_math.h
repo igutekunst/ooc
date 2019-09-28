@@ -1,5 +1,5 @@
-#ifndef OOC_TRAIT_MATH_INTERNAL_H
-#define OOC_TRAIT_MATH_INTERNAL_H
+#ifndef OOC_TRAIT_MATH_H
+#define OOC_TRAIT_MATH_H
 /**
  * This file defines the functions and data members required
  * by the math trait.

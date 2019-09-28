@@ -28,11 +28,18 @@ add_library(ooc
         include/ooc/int.h
         include/ooc/hashmap.h
 
-        src/trait_math_internal.h
+        src/trait_math.h
         include/ooc/math.h
         src/list.c
         include/ooc/list.h
-        include/ooc/object_va_args.h src/tuple.c include/ooc/tuple.h)
+        include/ooc/object_va_args.h
+        src/tuple.c
+        include/ooc/tuple.h
+        src/trait_file.c
+        src/file.c
+        src/trait_file.h
+        include/ooc/file.h
+    )
 
 target_include_directories(ooc PRIVATE include)
 add_executable(main src/main.c )
@@ -53,7 +60,7 @@ add_executable(test_string
         tests/check_int.h
         tests/check_list.c
         tests/check_list.h
-        tests/check_count_words.c tests/check_count_words.h tests/check_tuple.c tests/check_tuple.h)
+        tests/check_count_words.c tests/check_count_words.h tests/check_tuple.c tests/check_tuple.h tests/check_file.c tests/check_file.h)
 
 LINK_DIRECTORIES(/usr/local/lib)
 
