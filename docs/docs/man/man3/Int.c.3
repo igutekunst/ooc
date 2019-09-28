@@ -1,40 +1,68 @@
-.TH "/Users/igutek/Documents/Projects/ooc/src/Int.c" 3 "Fri Sep 27 2019" "Object-Oriented-C" \" -*- nroff -*-
+.TH "/Users/igutek/Documents/Projects/ooc/src/int.c" 3 "Sat Sep 28 2019" "Object-Oriented-C" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-/Users/igutek/Documents/Projects/ooc/src/Int.c
+/Users/igutek/Documents/Projects/ooc/src/int.c
 .SH SYNOPSIS
 .br
 .PP
-\fC#include <ooc/Int\&.h>\fP
+\fC#include <ooc/int\&.h>\fP
 .br
 \fC#include 'object_internal\&.h'\fP
+.br
+\fC#include <ooc/object\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <stdint\&.h>\fP
 .br
 
 .SS "Data Structures"
 
 .in +1c
 .ti -1c
+.RI "struct \fBInt\fP"
+.br
+.ti -1c
 .RI "struct \fBIntClass\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBMAX_STR_SIZE\fP   20"
 .br
 .in -1c
 .SS "Functions"
 
 .in +1c
 .ti -1c
-.RI "const void * \fB__construct__Int\fP (const void *self, va_list args)"
+.RI "const void * \fBInt_init\fP (const void *_self, size_t argc, va_list args)"
 .br
 .ti -1c
-.RI "void \fBprint_Int\fP (const void *_self)"
+.RI "void \fBInt_print\fP (const void *_self)"
 .br
 .ti -1c
-.RI "size_t \fBget_size_Int\fP (const void *_self)"
+.RI "size_t \fBInt_get_size\fP (const void *_self)"
 .br
 .ti -1c
-.RI "const char * \fBto_str_Int\fP (const void *_self)"
+.RI "const char * \fBInt_to_str\fP (const void *_self)"
 .br
 .ti -1c
-.RI "void * \fBappend_Int\fP (void *_self, void *_other)"
+.RI "const void * \fBInt_add\fP (const void *lhs, const void *rhs)"
+.br
+.ti -1c
+.RI "const void * \fBInt_sub\fP (const void *lhs, const void *rhs)"
+.br
+.ti -1c
+.RI "const void * \fBInt_mul\fP (const void *lhs, const void *rhs)"
+.br
+.ti -1c
+.RI "const void * \fBInt_div\fP (const void *lhs, const void *rhs)"
+.br
+.ti -1c
+.RI "int \fBInt_to_int\fP (const void *_self)"
 .br
 .ti -1c
 .RI "void \fBtest_int\fP ()"
@@ -50,59 +78,100 @@
 .RI "void * \fBInt\fP = &\fBint_class\fP"
 .br
 .in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define MAX_STR_SIZE   20"
+
+.PP
+Definition at line 6 of file int\&.c\&.
 .SH "Function Documentation"
 .PP 
-.SS "const void * __construct__Int (const void * self, va_list args)"
+.SS "const void * Int_add (const void * lhs, const void * rhs)"
 
 .PP
-Definition at line 34 of file Int\&.c\&.
+Definition at line 80 of file int\&.c\&.
 .PP
 References Int, and Int::value\&.
-.SS "void* append_Int (void * _self, void * _other)"
-
-.SS "size_t get_size_Int (const void * _self)"
+.SS "const void * Int_div (const void * lhs, const void * rhs)"
 
 .PP
-Definition at line 29 of file Int\&.c\&.
+Definition at line 100 of file int\&.c\&.
+.PP
+References Int, and Int::value\&.
+.SS "size_t Int_get_size (const void * _self)"
+
+.PP
+Definition at line 49 of file int\&.c\&.
 .PP
 References Int::size\&.
-.SS "void print_Int (const void * _self)"
+.SS "const void * Int_init (const void * _self, size_t argc, va_list args)"
 
 .PP
-Definition at line 44 of file Int\&.c\&.
+Definition at line 54 of file int\&.c\&.
+.PP
+References Int, and Int::value\&.
+.SS "const void * Int_mul (const void * lhs, const void * rhs)"
+
+.PP
+Definition at line 93 of file int\&.c\&.
+.PP
+References Int, and Int::value\&.
+.SS "void Int_print (const void * _self)"
+
+.PP
+Definition at line 64 of file int\&.c\&.
+.SS "const void * Int_sub (const void * lhs, const void * rhs)"
+
+.PP
+Definition at line 86 of file int\&.c\&.
+.PP
+References Int, and Int::value\&.
+.SS "int Int_to_int (const void * _self)"
+
+.PP
+Definition at line 107 of file int\&.c\&.
+.PP
+References Int::value\&.
+.SS "const char * Int_to_str (const void * _self)"
+
+.PP
+Definition at line 70 of file int\&.c\&.
 .SS "void test_int ()"
 
 .PP
-Definition at line 61 of file Int\&.c\&.
-.SS "const char * to_str_Int (const void * _self)"
-
-.PP
-Definition at line 50 of file Int\&.c\&.
+Definition at line 113 of file int\&.c\&.
 .SH "Variable Documentation"
 .PP 
 .SS "void* \fBInt\fP = &\fBint_class\fP"
 
 .PP
-Definition at line 27 of file Int\&.c\&.
+Definition at line 47 of file int\&.c\&.
 .PP
-Referenced by __construct__Int()\&.
+Referenced by Int_add(), Int_div(), Int_init(), Int_mul(), and Int_sub()\&.
 .SS "struct \fBIntClass\fP int_class"
 \fBInitial value:\fP
 .PP
 .nf
 = {
-    \&.class = {\&.magic = MAGIC,
-              \&.size = sizeof(struct Int),
-              \&.object_init = __construct__Int,
-              \&.print = print_Int,
-              \&.get_size = get_size_Int,
-              \&.str = to_str_Int
-             }
+        \&.class = {\&.magic = MAGIC,
+                \&.size = sizeof(struct Int),
+                \&.object_init = Int_init,
+                \&.print = Int_print,
+                \&.get_size = Int_get_size,
+                \&.str = Int_to_str,
+                \&.math  =  {\&.enabled = true,
+                        \&.add = Int_add,
+                        \&.sub = Int_sub,
+                        \&.mul = Int_mul,
+                        \&.div = Int_div,
+                        \&.to_int = Int_to_int
+                }
+        }
 
 }
 .fi
 .PP
-Definition at line 16 of file Int\&.c\&.
+Definition at line 29 of file int\&.c\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for Object-Oriented-C from the source code\&.

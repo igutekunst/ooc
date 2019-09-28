@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['person',['Person',['../structPerson.html',1,'']]],
-  ['personclass',['PersonClass',['../structPersonClass.html',1,'']]],
-  ['point',['Point',['../structPoint.html',1,'']]],
-  ['pointclass',['PointClass',['../structPointClass.html',1,'']]]
+  ['list',['List',['../structList.html',1,'']]],
+  ['listclass',['ListClass',['../structListClass.html',1,'']]],
+  ['listitem',['ListItem',['../structListItem.html',1,'']]],
+  ['listiterator',['ListIterator',['../structListIterator.html',1,'']]],
+  ['listiteratorclass',['ListIteratorClass',['../structListIteratorClass.html',1,'']]]
 ];

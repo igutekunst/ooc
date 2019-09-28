@@ -1,4 +1,4 @@
-.TH "/Users/igutek/Documents/Projects/ooc/src/hashmap.c" 3 "Fri Sep 27 2019" "Object-Oriented-C" \" -*- nroff -*-
+.TH "/Users/igutek/Documents/Projects/ooc/src/hashmap.c" 3 "Sat Sep 28 2019" "Object-Oriented-C" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -46,7 +46,7 @@
 .RI "#define \fBHASH_TABLE_DEFAULT_LEN\fP   4"
 .br
 .ti -1c
-.RI "#define \fBMAX_A\fP   18446744073709551615L"
+.RI "#define \fBMAX_A\fP   18446744073709551615UL"
 .br
 .ti -1c
 .RI "#define \fBHWM_FRACTION\fP   0\&.5"
@@ -63,7 +63,7 @@
 
 .in +1c
 .ti -1c
-.RI "const void * \fB__construct__HashMap\fP (const void *self, va_list args)"
+.RI "const void * \fB__construct__HashMap\fP (const void *_self, size_t argc, va_list args)"
 .br
 .ti -1c
 .RI "void \fBprint_HashMap\fP (void *_self)"
@@ -117,7 +117,7 @@
 .RI "size_t \fBinternal_count_HashMap\fP (struct \fBHashMap\fP *self)"
 .br
 .ti -1c
-.RI "void \fB__destruct__HashMap\fP (const void *_self, va_list args)"
+.RI "void \fB__destruct__HashMap\fP (const void *_self)"
 .br
 .ti -1c
 .RI "void \fBdel_item_HashMap\fP (const void *_self, const void *_key)"
@@ -126,7 +126,7 @@
 .RI "const void * \fBiter_HashMap\fP (const void *_self)"
 .br
 .ti -1c
-.RI "const void * \fB__construct__HashMap_iter\fP (const void *_self, va_list args)"
+.RI "const void * \fB__construct__HashMap_iter\fP (const void *_self, size_t argc, va_list args)"
 .br
 .in -1c
 .SS "Variables"
@@ -166,7 +166,7 @@ Referenced by __construct__HashMap(), and internal_resize_HashMap()\&.
 Definition at line 45 of file hashmap\&.c\&.
 .PP
 Referenced by __construct__HashMap(), and internal_resize_HashMap()\&.
-.SS "#define MAX_A   18446744073709551615L"
+.SS "#define MAX_A   18446744073709551615UL"
 
 .PP
 Definition at line 44 of file hashmap\&.c\&.
@@ -190,66 +190,66 @@ Referenced by internal_hash(), and random_b()\&.
 Definition at line 12 of file hashmap\&.c\&.
 .SH "Function Documentation"
 .PP 
-.SS "const void * __construct__HashMap (const void * self, va_list args)"
+.SS "const void * __construct__HashMap (const void * _self, size_t argc, va_list args)"
 
 .PP
-Definition at line 277 of file hashmap\&.c\&.
+Definition at line 284 of file hashmap\&.c\&.
 .PP
 References alloc_hash_items(), HASH_TABLE_DEFAULT_LEN, HashMap, HWM_FRACTION, lg(), random_a(), random_b(), rng_seeded, and HashMap::size\&.
-.SS "const void* __construct__HashMap_iter (const void * _self, va_list args)"
+.SS "const void* __construct__HashMap_iter (const void * _self, size_t argc, va_list args)"
 
 .PP
-Definition at line 500 of file hashmap\&.c\&.
+Definition at line 508 of file hashmap\&.c\&.
 .PP
 References HashMap_iter::class, and HashMap_iter\&.
-.SS "void __destruct__HashMap (const void * _self, va_list args)"
+.SS "void __destruct__HashMap (const void * _self)"
 
 .PP
-Definition at line 307 of file hashmap\&.c\&.
+Definition at line 313 of file hashmap\&.c\&.
 .SS "struct \fBHashItem\fP* alloc_hash_items (size_t n)"
 
 .PP
-Definition at line 73 of file hashmap\&.c\&.
+Definition at line 82 of file hashmap\&.c\&.
 .PP
 Referenced by __construct__HashMap(), and internal_resize_HashMap()\&.
 .SS "const void * copy_HashMap (const void * _self)"
 
 .PP
-Definition at line 514 of file hashmap\&.c\&.
+Definition at line 522 of file hashmap\&.c\&.
 .SS "void del_item_HashMap (const void * _self, const void * _key)"
 
 .PP
-Definition at line 378 of file hashmap\&.c\&.
+Definition at line 384 of file hashmap\&.c\&.
 .PP
-References get_obj(), class_header::hash, internal_hash(), HashItem::internal_key, internal_print_table(), internal_resize_HashMap(), HashItem::next, HashItem::present, and HashItem::value\&.
+References get_class_header_msg(), class_header::hash, internal_hash(), HashItem::internal_key, internal_print_table(), internal_resize_HashMap(), HashItem::next, HashItem::present, and HashItem::value\&.
 .SS "const void * get_HashMap (const void * _self, const void * key)"
 
 .PP
-Definition at line 343 of file hashmap\&.c\&.
+Definition at line 349 of file hashmap\&.c\&.
 .PP
-References equals(), get_class_header(), get_obj(), class_header::hash, internal_hash(), HashItem::internal_key, HashItem::key, HashItem::next, str(), and HashItem::value\&.
+References equals(), get_class_header(), get_class_header_msg(), class_header::hash, internal_hash(), HashItem::internal_key, HashItem::key, HashItem::next, str(), and HashItem::value\&.
 .SS "size_t get_len_HashMap (const void * _self)"
 
 .PP
-Definition at line 256 of file hashmap\&.c\&.
+Definition at line 265 of file hashmap\&.c\&.
 .PP
 References internal_count_HashMap(), and internal_print_table()\&.
 .SS "size_t get_size_HashMap (const void * _self)"
 
 .PP
-Definition at line 272 of file hashmap\&.c\&.
+Definition at line 279 of file hashmap\&.c\&.
 .PP
 References HashMap::size\&.
 .SS "void insert_HashMap (const void * _self, const void * key, const void * _other)"
 
 .PP
-Definition at line 324 of file hashmap\&.c\&.
+Definition at line 330 of file hashmap\&.c\&.
 .PP
-References get_class_header(), get_obj(), class_header::hash, internal_insert_HashMap(), and str()\&.
+References get_class_header(), get_class_header_msg(), class_header::hash, internal_insert_HashMap(), and str()\&.
 .SS "size_t internal_count_HashMap (struct \fBHashMap\fP * self)"
 
 .PP
-Definition at line 175 of file hashmap\&.c\&.
+Definition at line 184 of file hashmap\&.c\&.
 .PP
 References HashItem::next, and HashItem::present\&.
 .PP
@@ -257,7 +257,7 @@ Referenced by get_len_HashMap()\&.
 .SS "uint64_t internal_hash (uint64_t a, uint64_t b, uint64_t M, uint64_t key)"
 
 .PP
-Definition at line 102 of file hashmap\&.c\&.
+Definition at line 111 of file hashmap\&.c\&.
 .PP
 References HashItem::key, and W\&.
 .PP
@@ -265,7 +265,7 @@ Referenced by del_item_HashMap(), get_HashMap(), and internal_insert_HashMap()\&
 .SS "void internal_insert_HashMap (struct \fBHashMap\fP * self, const void * _key, const void * _value)"
 
 .PP
-Definition at line 107 of file hashmap\&.c\&.
+Definition at line 116 of file hashmap\&.c\&.
 .PP
 References equals(), get_class_header(), class_header::hash, internal_hash(), HashItem::internal_key, internal_resize_HashMap(), HashItem::key, HashItem::next, HashItem::present, and HashItem::value\&.
 .PP
@@ -273,7 +273,7 @@ Referenced by insert_HashMap(), and internal_resize_HashMap()\&.
 .SS "void internal_print_table (struct \fBHashMap\fP * self)"
 
 .PP
-Definition at line 152 of file hashmap\&.c\&.
+Definition at line 161 of file hashmap\&.c\&.
 .PP
 References HashItem::internal_key, HashItem::next, and HashItem::present\&.
 .PP
@@ -281,7 +281,7 @@ Referenced by del_item_HashMap(), get_len_HashMap(), and internal_resize_HashMap
 .SS "void internal_resize_HashMap (struct \fBHashMap\fP * self, uint64_t new_m)"
 
 .PP
-Definition at line 193 of file hashmap\&.c\&.
+Definition at line 203 of file hashmap\&.c\&.
 .PP
 References alloc_hash_items(), HASH_TABLE_DEFAULT_LEN, HWM_FRACTION, internal_insert_HashMap(), internal_print_table(), HashItem::key, lg(), HashItem::next, HashItem::present, random_a(), random_b(), and HashItem::value\&.
 .PP
@@ -289,29 +289,29 @@ Referenced by del_item_HashMap(), and internal_insert_HashMap()\&.
 .SS "const void* iter_HashMap (const void * _self)"
 
 .PP
-Definition at line 453 of file hashmap\&.c\&.
+Definition at line 459 of file hashmap\&.c\&.
 .PP
 References HashMap_iter\&.
 .SS "uint64_t lg (uint64_t n)"
 
 .PP
-Definition at line 87 of file hashmap\&.c\&.
+Definition at line 96 of file hashmap\&.c\&.
 .PP
 Referenced by __construct__HashMap(), internal_resize_HashMap(), and random_b()\&.
 .SS "const void * next_HashMap (const void * _self)"
 
 .PP
-Definition at line 464 of file hashmap\&.c\&.
+Definition at line 472 of file hashmap\&.c\&.
 .PP
-References HashItem::next, and HashItem::value\&.
+References HashItem::key, and HashItem::next\&.
 .SS "void print_HashMap (void * _self)"
 
 .PP
-Definition at line 311 of file hashmap\&.c\&.
+Definition at line 317 of file hashmap\&.c\&.
 .SS "uint64_t random_a ()"
 
 .PP
-Definition at line 80 of file hashmap\&.c\&.
+Definition at line 89 of file hashmap\&.c\&.
 .PP
 References MAX_A\&.
 .PP
@@ -319,7 +319,7 @@ Referenced by __construct__HashMap(), and internal_resize_HashMap()\&.
 .SS "uint64_t random_b (uint64_t m)"
 
 .PP
-Definition at line 96 of file hashmap\&.c\&.
+Definition at line 105 of file hashmap\&.c\&.
 .PP
 References lg(), and W\&.
 .PP
@@ -327,7 +327,7 @@ Referenced by __construct__HashMap(), and internal_resize_HashMap()\&.
 .SS "const char * str_HashMap (const void * _self)"
 
 .PP
-Definition at line 317 of file hashmap\&.c\&.
+Definition at line 323 of file hashmap\&.c\&.
 .SH "Variable Documentation"
 .PP 
 .SS "struct \fBHashMapClass\fP hash_map_class"
@@ -335,50 +335,50 @@ Definition at line 317 of file hashmap\&.c\&.
 .PP
 .nf
 = {
-    \&.class = {\&.magic = MAGIC,
-              \&.size = sizeof(struct HashMap),
-              \&.object_init = __construct__HashMap,
-              \&.object_deinit = __destruct__HashMap,
-              \&.get_size = get_size_HashMap,
-              \&.get_len = get_len_HashMap,
-              \&.str = str_HashMap,
-              \&.copy = copy_HashMap,
-              \&.insert = insert_HashMap,
-              \&.get = get_HashMap,
-              \&.del_item = del_item_HashMap,
-              \&.iter = iter_HashMap,
-              \&.object_name = "HashMap"
-             }
+        \&.class = {\&.magic = MAGIC,
+                \&.size = sizeof(struct HashMap),
+                \&.object_init = __construct__HashMap,
+                \&.object_deinit = __destruct__HashMap,
+                \&.get_size = get_size_HashMap,
+                \&.get_len = get_len_HashMap,
+                \&.str = str_HashMap,
+                \&.copy = copy_HashMap,
+                \&.insert = insert_HashMap,
+                \&.get_item = get_HashMap,
+                \&.del_item = del_item_HashMap,
+                \&.iter = iter_HashMap,
+                \&.object_name = "HashMap"
+        }
 
 }
 .fi
 .PP
-Definition at line 520 of file hashmap\&.c\&.
+Definition at line 528 of file hashmap\&.c\&.
 .SS "struct \fBHashMapClass_iter\fP hash_map_class_iter"
 \fBInitial value:\fP
 .PP
 .nf
 = {
-    \&.class = {\&.magic = MAGIC,
-              \&.object_init = __construct__HashMap_iter,
-              \&.size = sizeof(struct HashMap_iter),
-              \&.next = next_HashMap
-             }
+        \&.class = {\&.magic = MAGIC,
+                \&.object_init = __construct__HashMap_iter,
+                \&.size = sizeof(struct HashMap_iter),
+                \&.next = next_HashMap
+        }
 
 }
 .fi
 .PP
-Definition at line 541 of file hashmap\&.c\&.
+Definition at line 549 of file hashmap\&.c\&.
 .SS "void* \fBHashMap\fP = &\fBhash_map_class\fP"
 
 .PP
-Definition at line 539 of file hashmap\&.c\&.
+Definition at line 547 of file hashmap\&.c\&.
 .PP
 Referenced by __construct__HashMap(), and main()\&.
 .SS "void* \fBHashMap_iter\fP = &\fBhash_map_class_iter\fP"
 
 .PP
-Definition at line 549 of file hashmap\&.c\&.
+Definition at line 557 of file hashmap\&.c\&.
 .PP
 Referenced by __construct__HashMap_iter(), and iter_HashMap()\&.
 .SS "bool rng_seeded = false"

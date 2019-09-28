@@ -74,22 +74,27 @@ $(function() {
 <div class="contents">
 <div class="textblock"><code>#include &lt;assert.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="object_8h_source.html">ooc/object.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="string_8h_source.html">ooc/string.h</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="object__internal_8h_source.html">object_internal.h</a>&quot;</code><br />
 </div>
 <p><a href="object_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga621d73ced80293aaecd6839e6bdec30d"><td class="memItemLeft" align="right" valign="top">const void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common.html#ga621d73ced80293aaecd6839e6bdec30d">new</a> (const void *const _class,...)</td></tr>
-<tr class="memdesc:ga621d73ced80293aaecd6839e6bdec30d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new ooc object.  <a href="group__common.html#ga621d73ced80293aaecd6839e6bdec30d">More...</a><br /></td></tr>
-<tr class="separator:ga621d73ced80293aaecd6839e6bdec30d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae293fe2fbbf9f2e8a87c1141e7412814"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common.html#gae293fe2fbbf9f2e8a87c1141e7412814">del</a> (const void *_object)</td></tr>
-<tr class="separator:gae293fe2fbbf9f2e8a87c1141e7412814"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1c393167a5a06a566a2cc64133c1695f"><td class="memItemLeft" align="right" valign="top">const void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common.html#ga1c393167a5a06a566a2cc64133c1695f">_new</a> (size_t argc,...)</td></tr>
+<tr class="memdesc:ga1c393167a5a06a566a2cc64133c1695f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new ooc object.  <a href="group__common.html#ga1c393167a5a06a566a2cc64133c1695f">More...</a><br /></td></tr>
+<tr class="separator:ga1c393167a5a06a566a2cc64133c1695f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa32332a11f6b26468e618db044b95f75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common.html#gaa32332a11f6b26468e618db044b95f75">del</a> (const void *_object)</td></tr>
+<tr class="memdesc:gaa32332a11f6b26468e618db044b95f75"><td class="mdescLeft">&#160;</td><td class="mdescRight">delete an ooc object  <a href="group__common.html#gaa32332a11f6b26468e618db044b95f75">More...</a><br /></td></tr>
+<tr class="separator:gaa32332a11f6b26468e618db044b95f75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a317798c33e05ea3ca01d0a70148f61ad"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8c.html#a317798c33e05ea3ca01d0a70148f61ad">str</a> (const void *_self)</td></tr>
 <tr class="separator:a317798c33e05ea3ca01d0a70148f61ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23b80bc1ca4cac9bafcb0735aa404009"><td class="memItemLeft" align="right" valign="top">const void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8c.html#a23b80bc1ca4cac9bafcb0735aa404009">to_String</a> (const void *_object)</td></tr>
+<tr class="separator:a23b80bc1ca4cac9bafcb0735aa404009"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga34dc6ab72cfd51381e8173226484e827"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common.html#ga34dc6ab72cfd51381e8173226484e827">print</a> (const void *_self)</td></tr>
 <tr class="separator:ga34dc6ab72cfd51381e8173226484e827"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gafac8564ed88a6f8585f043fc6b2fa7e1"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common.html#gafac8564ed88a6f8585f043fc6b2fa7e1">size</a> (const void *_self)</td></tr>
+<tr class="memdesc:gafac8564ed88a6f8585f043fc6b2fa7e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">get size in bytes  <a href="group__common.html#gafac8564ed88a6f8585f043fc6b2fa7e1">More...</a><br /></td></tr>
 <tr class="separator:gafac8564ed88a6f8585f043fc6b2fa7e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga68940c707bbebe6946aeca72df1ee803"><td class="memItemLeft" align="right" valign="top">const void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__common.html#ga68940c707bbebe6946aeca72df1ee803">type</a> (const void *_self)</td></tr>
 <tr class="memdesc:ga68940c707bbebe6946aeca72df1ee803"><td class="mdescLeft">&#160;</td><td class="mdescRight">get ooc class object  <a href="group__common.html#ga68940c707bbebe6946aeca72df1ee803">More...</a><br /></td></tr>
@@ -104,14 +109,16 @@ Functions</h2></td></tr>
 <tr class="separator:ga4b83176929aeea62524d2a126d3c897f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2bd4216bcf1d5810032394f57fbf5c2f"><td class="memItemLeft" align="right" valign="top">const void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__collection.html#ga2bd4216bcf1d5810032394f57fbf5c2f">append</a> (const void *_self, const void *_other)</td></tr>
 <tr class="separator:ga2bd4216bcf1d5810032394f57fbf5c2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaaad95663edf19fd4b734bd9977976169"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structclass__header.html">class_header</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__collection.html#gaaad95663edf19fd4b734bd9977976169">get_obj</a> (const void *_self, const char *message)</td></tr>
-<tr class="separator:gaaad95663edf19fd4b734bd9977976169"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacfda61f6ab04bc36786ceb00fab70775"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structclass__header.html">class_header</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__collection.html#gacfda61f6ab04bc36786ceb00fab70775">get_class_header_msg</a> (const void *_self, const char *message)</td></tr>
+<tr class="separator:gacfda61f6ab04bc36786ceb00fab70775"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabf324b663150d7bbcfe0e3b84b21102f"><td class="memItemLeft" align="right" valign="top">const struct <a class="el" href="structclass__header.html">class_header</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__collection.html#gabf324b663150d7bbcfe0e3b84b21102f">get_obj_type</a> (const void *_self, const void *class, const char *message)</td></tr>
+<tr class="separator:gabf324b663150d7bbcfe0e3b84b21102f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8837e68ffda149b4f7015cafab0c2a3c"><td class="memItemLeft" align="right" valign="top">const struct <a class="el" href="structclass__header.html">class_header</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8c.html#a8837e68ffda149b4f7015cafab0c2a3c">get_class_header</a> (const void *_self)</td></tr>
 <tr class="separator:a8837e68ffda149b4f7015cafab0c2a3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae0b3682e6ff5038e94c9e551bdd0d489"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__collection.html#gae0b3682e6ff5038e94c9e551bdd0d489">hash</a> (const void *_self)</td></tr>
 <tr class="separator:gae0b3682e6ff5038e94c9e551bdd0d489"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa1b700b0fbad0b56b81291260569d8b2"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__collection.html#gaa1b700b0fbad0b56b81291260569d8b2">insert</a> (const void *_self, const void *_key, const void *_other)</td></tr>
-<tr class="separator:gaa1b700b0fbad0b56b81291260569d8b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6b0c20cd48a1ab79321a018d29037161"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__collection.html#ga6b0c20cd48a1ab79321a018d29037161">set_item</a> (const void *_self, const void *_key, const void *_other)</td></tr>
+<tr class="separator:ga6b0c20cd48a1ab79321a018d29037161"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8b99290b943601321e5bf291daecaae3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__collection.html#ga8b99290b943601321e5bf291daecaae3">del_item</a> (const void *_self, const void *_key)</td></tr>
 <tr class="separator:ga8b99290b943601321e5bf291daecaae3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa467fc1e6a3036f13ea20b36a6e672a1"><td class="memItemLeft" align="right" valign="top">const void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__collection.html#gaa467fc1e6a3036f13ea20b36a6e672a1">get_item</a> (const void *_self, const void *_key)</td></tr>
@@ -120,6 +127,10 @@ Functions</h2></td></tr>
 <tr class="separator:ga0cb67414335937707c9b92809a10895b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaecc46e74b03a83ca8a8023cc7264489c"><td class="memItemLeft" align="right" valign="top">const void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__collection.html#gaecc46e74b03a83ca8a8023cc7264489c">next</a> (const void *_self)</td></tr>
 <tr class="separator:gaecc46e74b03a83ca8a8023cc7264489c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68f404b6502dda7869a76b1ffcb9ffd6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8c.html#a68f404b6502dda7869a76b1ffcb9ffd6">keys</a> (const void *object)</td></tr>
+<tr class="separator:a68f404b6502dda7869a76b1ffcb9ffd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a413d87a43c15a9b014d672a91d8a1cd3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8c.html#a413d87a43c15a9b014d672a91d8a1cd3">values</a> (const void *_self)</td></tr>
+<tr class="separator:a413d87a43c15a9b014d672a91d8a1cd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -151,9 +162,29 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="object_8c_source.html#l00180">180</a> of file <a class="el" href="object_8c_source.html">object.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="object_8c_source.html#l00219">219</a> of file <a class="el" href="object_8c_source.html">object.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="object_8c_source.html#l00205">del_item()</a>, <a class="el" href="hashmap_8c_source.html#l00343">get_HashMap()</a>, <a class="el" href="object_8c_source.html#l00218">get_item()</a>, <a class="el" href="object_8c_source.html#l00184">hash()</a>, <a class="el" href="object_8c_source.html#l00193">insert()</a>, <a class="el" href="hashmap_8c_source.html#l00324">insert_HashMap()</a>, <a class="el" href="hashmap_8c_source.html#l00107">internal_insert_HashMap()</a>, <a class="el" href="object_8c_source.html#l00227">iter()</a>, and <a class="el" href="object_8c_source.html#l00236">next()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="object_8c_source.html#l00244">del_item()</a>, <a class="el" href="hashmap_8c_source.html#l00349">get_HashMap()</a>, <a class="el" href="object_8c_source.html#l00257">get_item()</a>, <a class="el" href="object_8c_source.html#l00223">hash()</a>, <a class="el" href="hashmap_8c_source.html#l00330">insert_HashMap()</a>, <a class="el" href="hashmap_8c_source.html#l00116">internal_insert_HashMap()</a>, <a class="el" href="object_8c_source.html#l00269">iter()</a>, <a class="el" href="object_8c_source.html#l00282">next()</a>, and <a class="el" href="object_8c_source.html#l00232">set_item()</a>.</p>
+
+</div>
+</div>
+<a id="a68f404b6502dda7869a76b1ffcb9ffd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68f404b6502dda7869a76b1ffcb9ffd6">&#9670;&nbsp;</a></span>keys()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void keys </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>object</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="object_8c_source.html#l00292">292</a> of file <a class="el" href="object_8c_source.html">object.c</a>.</p>
 
 </div>
 </div>
@@ -174,11 +205,55 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>End of Common functions </p>
 
-<p class="definition">Definition at line <a class="el" href="object_8c_source.html#l00046">46</a> of file <a class="el" href="object_8c_source.html">object.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="object_8c_source.html#l00056">56</a> of file <a class="el" href="object_8c_source.html">object.c</a>.</p>
 
-<p class="reference">References <a class="el" href="object_8c_source.html#l00164">get_obj()</a>, and <a class="el" href="object__internal_8h_source.html#l00078">class_header::str</a>.</p>
+<p class="reference">References <a class="el" href="object_8c_source.html#l00182">get_class_header_msg()</a>, and <a class="el" href="object__internal_8h_source.html#l00076">class_header::str</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="hashmap_8c_source.html#l00343">get_HashMap()</a>, <a class="el" href="hashmap_8c_source.html#l00324">insert_HashMap()</a>, and <a class="el" href="string_8c_source.html#l00097">String_equal()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="hashmap_8c_source.html#l00349">get_HashMap()</a>, <a class="el" href="hashmap_8c_source.html#l00330">insert_HashMap()</a>, <a class="el" href="list_8c_source.html#l00078">List_to_str()</a>, <a class="el" href="string_8c_source.html#l00097">String_equal()</a>, and <a class="el" href="object_8c_source.html#l00068">to_String()</a>.</p>
+
+</div>
+</div>
+<a id="a23b80bc1ca4cac9bafcb0735aa404009"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23b80bc1ca4cac9bafcb0735aa404009">&#9670;&nbsp;</a></span>to_String()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const void* to_String </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>_object</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="object_8c_source.html#l00068">68</a> of file <a class="el" href="object_8c_source.html">object.c</a>.</p>
+
+<p class="reference">References <a class="el" href="object_8c_source.html#l00056">str()</a>, and <a class="el" href="string_8c_source.html#l00163">String</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="list_8c_source.html#l00078">List_to_str()</a>.</p>
+
+</div>
+</div>
+<a id="a413d87a43c15a9b014d672a91d8a1cd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a413d87a43c15a9b014d672a91d8a1cd3">&#9670;&nbsp;</a></span>values()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void values </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>_self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="object_8c_source.html#l00296">296</a> of file <a class="el" href="object_8c_source.html">object.c</a>.</p>
 
 </div>
 </div>
@@ -194,16 +269,16 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {</div><div class="line">   .magic = <a class="code" href="object__internal_8h.html#a94630370ae389fb1189282fa0742f310">MAGIC</a></div><div class="line">}</div><div class="ttc" id="object__internal_8h_html_a94630370ae389fb1189282fa0742f310"><div class="ttname"><a href="object__internal_8h.html#a94630370ae389fb1189282fa0742f310">MAGIC</a></div><div class="ttdeci">#define MAGIC</div><div class="ttdef"><b>Definition:</b> <a href="object__internal_8h_source.html#l00006">object_internal.h:6</a></div></div>
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div><div class="line">   .magic = <a class="code" href="object__internal_8h.html#a94630370ae389fb1189282fa0742f310">MAGIC</a></div><div class="line">}</div><div class="ttc" id="object__internal_8h_html_a94630370ae389fb1189282fa0742f310"><div class="ttname"><a href="object__internal_8h.html#a94630370ae389fb1189282fa0742f310">MAGIC</a></div><div class="ttdeci">#define MAGIC</div><div class="ttdef"><b>Definition:</b> <a href="object__internal_8h_source.html#l00007">object_internal.h:7</a></div></div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="object_8c_source.html#l00005">5</a> of file <a class="el" href="object_8c_source.html">object.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="object_8c_source.html#l00006">6</a> of file <a class="el" href="object_8c_source.html">object.c</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Sep 27 2019 15:45:11 for Object-Oriented-C by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 28 2019 15:28:03 for Object-Oriented-C by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.14
 </small></address>

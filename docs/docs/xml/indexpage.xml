@@ -19,7 +19,7 @@
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting></para><para><heading level="2">Future Work</heading>
 </para><para><itemizedlist>
-<listitem><para>Add <ref refid="structInt" kindref="compound">Int</ref>, Float and BigInt support</para></listitem><listitem><para>Add list</para></listitem><listitem><para>Add referencing counting</para></listitem><listitem><para>Traits </para></listitem></itemizedlist>
+<listitem><para>Add functionality to <ref refid="structInt" kindref="compound">Int</ref></para></listitem><listitem><para>Add Float and BigInt support</para></listitem><listitem><para>Add list</para></listitem><listitem><para>Add referencing counting</para></listitem><listitem><para>Traits</para></listitem><listitem><para>Add functional functions such as map, reduce</para></listitem><listitem><para>Flesh out list</para></listitem><listitem><para>Add internal argument type checking macros/functions</para></listitem><listitem><para>Add error handling system, and unify error messages</para></listitem><listitem><para>Add global free list, so you can call <computeroutput>del_all</computeroutput> or similar</para></listitem><listitem><para>Add File type that supports iteration</para></listitem><listitem><para>Add more functions to <ref refid="structString" kindref="compound">String</ref></para></listitem><listitem><para>Adding sorting to list</para></listitem><listitem><para>Add Tuple type </para></listitem></itemizedlist>
 </para>    </detaileddescription>
   </compounddef>
 </doxygen>

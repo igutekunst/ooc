@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="structListIterator" kind="struct" language="C++" prot="public">
+    <compoundname>ListIterator</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structListIterator_1ab3502d78f7274e2ececbc7581bedff74" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structclass__header" kindref="compound">class_header</ref> *</type>
+        <definition>struct class_header* ListIterator::class</definition>
+        <argsstring></argsstring>
+        <name>class</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/list.c" line="37" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/list.c" bodystart="37" bodyend="-1"/>
+        <referencedby refid="list_8c_1abf7dbd1c02022ec5a52ff02008a0238e" compoundref="list_8c" startline="173" endline="189">ListIterator_init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structListIterator_1a6f7c700353a4ce4a687504ba0a0b35e0" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structList" kindref="compound">List</ref> *</type>
+        <definition>struct List* ListIterator::list</definition>
+        <argsstring></argsstring>
+        <name>list</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/list.c" line="38" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/list.c" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structListIterator_1a63d062a738f1a9278cb996d8d6abc262" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ListIterator::done</definition>
+        <argsstring></argsstring>
+        <name>done</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/list.c" line="39" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/list.c" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structListIterator_1a4be321bdc175ecfa3bc9e74e107e8fdd" prot="public" static="no" mutable="no">
+        <type><ref refid="structListItem" kindref="compound">ListItem</ref> *</type>
+        <definition>ListItem* ListIterator::item</definition>
+        <argsstring></argsstring>
+        <name>item</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/list.c" line="40" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/list.c" bodystart="40" bodyend="-1"/>
+        <referencedby refid="list_8c_1afb27ed3e1bca02101c0d251b7ae8b587" compoundref="list_8c" startline="192" endline="211">ListIterator_next</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="48">
+        <label>List</label>
+        <link refid="structList"/>
+        <childnode refid="45" relation="usage">
+          <edgelabel>head</edgelabel>
+          <edgelabel>tail</edgelabel>
+        </childnode>
+        <childnode refid="46" relation="usage">
+          <edgelabel>class</edgelabel>
+        </childnode>
+      </node>
+      <node id="46">
+        <label>class_header</label>
+        <link refid="structclass__header"/>
+        <childnode refid="47" relation="usage">
+          <edgelabel>math</edgelabel>
+        </childnode>
+      </node>
+      <node id="47">
+        <label>OOCTraitMath</label>
+        <link refid="structOOCTraitMath"/>
+      </node>
+      <node id="44">
+        <label>ListIterator</label>
+        <link refid="structListIterator"/>
+        <childnode refid="45" relation="usage">
+          <edgelabel>item</edgelabel>
+        </childnode>
+        <childnode refid="46" relation="usage">
+          <edgelabel>class</edgelabel>
+        </childnode>
+        <childnode refid="48" relation="usage">
+          <edgelabel>list</edgelabel>
+        </childnode>
+      </node>
+      <node id="45">
+        <label>ListItem</label>
+        <link refid="structListItem"/>
+        <childnode refid="45" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/igutek/Documents/Projects/ooc/src/list.c" line="36" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/list.c" bodystart="36" bodyend="41"/>
+    <listofallmembers>
+      <member refid="structListIterator_1ab3502d78f7274e2ececbc7581bedff74" prot="public" virt="non-virtual"><scope>ListIterator</scope><name>class</name></member>
+      <member refid="structListIterator_1a63d062a738f1a9278cb996d8d6abc262" prot="public" virt="non-virtual"><scope>ListIterator</scope><name>done</name></member>
+      <member refid="structListIterator_1a4be321bdc175ecfa3bc9e74e107e8fdd" prot="public" virt="non-virtual"><scope>ListIterator</scope><name>item</name></member>
+      <member refid="structListIterator_1a6f7c700353a4ce4a687504ba0a0b35e0" prot="public" virt="non-virtual"><scope>ListIterator</scope><name>list</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

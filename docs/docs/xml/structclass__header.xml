@@ -15,7 +15,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="22" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="22" bodyend="-1"/>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="23" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="23" bodyend="-1"/>
+        <referencedby refid="group__collection_1gabf324b663150d7bbcfe0e3b84b21102f" compoundref="object_8c" startline="201" endline="216">get_obj_type</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structclass__header_1a5ba6bf54fc12a2a31a2b39937cd50e84" prot="public" static="no" mutable="no">
         <type>size_t</type>
@@ -28,7 +29,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="23" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="23" bodyend="-1"/>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="24" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="24" bodyend="-1"/>
+        <referencedby refid="group__common_1ga1c393167a5a06a566a2cc64133c1695f" compoundref="object_8c" startline="17" endline="40">_new</referencedby>
+        <referencedby refid="list_8c_1ad5b8c50b806751b83a3aa63ff891ed70" compoundref="list_8c" startline="67" endline="71">List_get_size</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structclass__header_1a5c135b5316d0d9d22dce1f32fb8befb1" prot="public" static="no" mutable="no">
         <type>size_t(*</type>
@@ -36,9 +39,9 @@
         <argsstring>)(const void *_self)</argsstring>
         <name>get_size</name>
         <briefdescription>
-        </briefdescription>
+<para>Get size of object in bytes. </para>        </briefdescription>
         <detaileddescription>
-<para>Get size of object in bytes <parameterlist kind="param"><parameteritem>
+<para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>_self</parametername>
 </parameternamelist>
@@ -50,8 +53,8 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="30" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="30" bodyend="-1"/>
-        <referencedby refid="group__common_1gafac8564ed88a6f8585f043fc6b2fa7e1" compoundref="object_8c" startline="72" endline="80">size</referencedby>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="31" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="31" bodyend="-1"/>
+        <referencedby refid="group__common_1gafac8564ed88a6f8585f043fc6b2fa7e1" compoundref="object_8c" startline="87" endline="95">size</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structclass__header_1a1b7cb949741b9a64fd3569af94f30cba" prot="public" static="no" mutable="no">
         <type>size_t(*</type>
@@ -59,9 +62,9 @@
         <argsstring>)(const void *_self)</argsstring>
         <name>get_len</name>
         <briefdescription>
-        </briefdescription>
+<para>Get number of items in container object. </para>        </briefdescription>
         <detaileddescription>
-<para>Get number of items in container object <parameterlist kind="param"><parameteritem>
+<para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>_self</parametername>
 </parameternamelist>
@@ -73,23 +76,30 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="37" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="37" bodyend="-1"/>
-        <referencedby refid="group__common_1ga15be7f4a5b9c979feb83b76278f6716c" compoundref="object_8c" startline="91" endline="102">len</referencedby>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="38" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="38" bodyend="-1"/>
+        <referencedby refid="group__common_1ga15be7f4a5b9c979feb83b76278f6716c" compoundref="object_8c" startline="106" endline="117">len</referencedby>
       </memberdef>
-      <memberdef kind="variable" id="structclass__header_1a560f3c418eb904136bfcb91d3618430c" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structclass__header_1a11011a70a48768fbe95790914ea808c9" prot="public" static="no" mutable="no">
         <type>const void *(*</type>
-        <definition>const void*(* class_header::object_init) (const void *_self, va_list args)</definition>
-        <argsstring>)(const void *_self, va_list args)</argsstring>
+        <definition>const void*(* class_header::object_init) (const void *_self, size_t argc, va_list args)</definition>
+        <argsstring>)(const void *_self, size_t argc, va_list args)</argsstring>
         <name>object_init</name>
         <briefdescription>
-        </briefdescription>
+<para>Create and initialize an object. </para>        </briefdescription>
         <detaileddescription>
-<para>Create and initialize an object Technically, _self needs to be the full class header for a concrete type, which starts with a <ref refid="structclass__header" kindref="compound">class_header</ref>, followed by class specific fields.</para><para><parameterlist kind="param"><parameteritem>
+<para>It also correct to calll this the object constructor.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>_self</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>ooc class like <ref refid="structString" kindref="compound">String</ref> or <ref refid="structHashMap" kindref="compound">HashMap</ref>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>argc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of arguments </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -103,7 +113,8 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="49" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="49" bodyend="-1"/>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="50" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="50" bodyend="-1"/>
+        <referencedby refid="group__common_1ga1c393167a5a06a566a2cc64133c1695f" compoundref="object_8c" startline="17" endline="40">_new</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structclass__header_1aa07a11a17f5d79a66c9086b8d10969b7" prot="public" static="no" mutable="no">
         <type>void(*</type>
@@ -124,8 +135,8 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="59" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="59" bodyend="-1"/>
-        <referencedby refid="group__common_1gae293fe2fbbf9f2e8a87c1141e7412814" compoundref="object_8c" startline="34" endline="43">del</referencedby>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="57" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="57" bodyend="-1"/>
+        <referencedby refid="group__common_1gaa32332a11f6b26468e618db044b95f75" compoundref="object_8c" startline="44" endline="53">del</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structclass__header_1a23181c1eac1455a8f23dd9d14f8b6abd" prot="public" static="no" mutable="no">
         <type>void(*</type>
@@ -146,8 +157,8 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="65" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="65" bodyend="-1"/>
-        <referencedby refid="group__common_1ga34dc6ab72cfd51381e8173226484e827" compoundref="object_8c" startline="59" endline="69">print</referencedby>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="63" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="63" bodyend="-1"/>
+        <referencedby refid="group__common_1ga34dc6ab72cfd51381e8173226484e827" compoundref="object_8c" startline="74" endline="84">print</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structclass__header_1af8a0a6de1e1eb96faab68cc58fcf84d0" prot="public" static="no" mutable="no">
         <type>const char *(*</type>
@@ -169,8 +180,8 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="78" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="78" bodyend="-1"/>
-        <referencedby refid="object_8h_1a6ab4b3e256d10044340c1f861c031438" compoundref="object_8c" startline="46" endline="56">str</referencedby>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="76" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="76" bodyend="-1"/>
+        <referencedby refid="object_8h_1a6ab4b3e256d10044340c1f861c031438" compoundref="object_8c" startline="56" endline="66">str</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structclass__header_1a67a4f888ffa78b4905bc3585fe1f17a4" prot="public" static="no" mutable="no">
         <type>void *(*</type>
@@ -192,7 +203,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="91" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="91" bodyend="-1"/>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="89" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="89" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structclass__header_1a10e4c230bf810df38e3581caabad02bb" prot="public" static="no" mutable="no">
         <type>const void *(*</type>
@@ -220,8 +231,8 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="101" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="101" bodyend="-1"/>
-        <referencedby refid="group__collection_1ga2bd4216bcf1d5810032394f57fbf5c2f" compoundref="object_8c" startline="150" endline="161">append</referencedby>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="99" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="99" bodyend="-1"/>
+        <referencedby refid="group__collection_1ga2bd4216bcf1d5810032394f57fbf5c2f" compoundref="object_8c" startline="165" endline="179">append</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structclass__header_1a01dc6aae9011475ec7be8500d4f63c5b" prot="public" static="no" mutable="no">
         <type>bool(*</type>
@@ -250,7 +261,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="112" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="112" bodyend="-1"/>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="110" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="110" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structclass__header_1ab45bdc16b08b8cde751d161dd0c4f230" prot="public" static="no" mutable="no">
         <type>const void *(*</type>
@@ -272,7 +283,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="122" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="122" bodyend="-1"/>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="120" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="120" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structclass__header_1a26ec3e94c98bf5d3eff10d37cf2696ef" prot="public" static="no" mutable="no">
         <type>const void *(*</type>
@@ -294,8 +305,8 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="134" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="134" bodyend="-1"/>
-        <referencedby refid="group__common_1gab08ed4d7b5aa115383f38057e006be9d" compoundref="object_8c" startline="121" endline="132">copy</referencedby>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="132" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="132" bodyend="-1"/>
+        <referencedby refid="group__common_1gab08ed4d7b5aa115383f38057e006be9d" compoundref="object_8c" startline="136" endline="147">copy</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structclass__header_1ada4fc11b4f09e8248a28c7d2e39e17ea" prot="public" static="no" mutable="no">
         <type>void(*</type>
@@ -330,13 +341,13 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="145" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="145" bodyend="-1"/>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="143" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="143" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structclass__header_1ab2de24bb8c5d3b1b5e74a69bb6c307b2" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structclass__header_1ae59ea98ace6dc13ad2182a1433f78110" prot="public" static="no" mutable="no">
         <type>const void *(*</type>
-        <definition>const void*(* class_header::get) (const void *_self, const void *_key)</definition>
+        <definition>const void*(* class_header::get_item) (const void *_self, const void *_key)</definition>
         <argsstring>)(const void *_self, const void *_key)</argsstring>
-        <name>get</name>
+        <name>get_item</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -359,7 +370,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="162" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="162" bodyend="-1"/>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="160" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="160" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structclass__header_1a4d88d979ecf23c184577d937454ab973" prot="public" static="no" mutable="no">
         <type>void(*</type>
@@ -387,7 +398,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="172" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="172" bodyend="-1"/>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="170" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="170" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structclass__header_1aa0035a2c833b1e46f0ae401d6b44ee65" prot="public" static="no" mutable="no">
         <type>uint64_t(*</type>
@@ -409,11 +420,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="189" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="189" bodyend="-1"/>
-        <referencedby refid="hashmap_8c_1a10476d872d0cfcb234391cabf5e888a1" compoundref="hashmap_8c" startline="378" endline="448">del_item_HashMap</referencedby>
-        <referencedby refid="hashmap_8c_1aa88aa2ed0651f4feb2e275ba14114d14" compoundref="hashmap_8c" startline="343" endline="375">get_HashMap</referencedby>
-        <referencedby refid="hashmap_8c_1a2987322764f770f61fe71f0a1320fc7b" compoundref="hashmap_8c" startline="324" endline="341">insert_HashMap</referencedby>
-        <referencedby refid="hashmap_8c_1a8aa67d2dac0692c1128b50780ad9dfc1" compoundref="hashmap_8c" startline="107" endline="150">internal_insert_HashMap</referencedby>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="187" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="187" bodyend="-1"/>
+        <referencedby refid="hashmap_8c_1a10476d872d0cfcb234391cabf5e888a1" compoundref="hashmap_8c" startline="384" endline="454">del_item_HashMap</referencedby>
+        <referencedby refid="hashmap_8c_1aa88aa2ed0651f4feb2e275ba14114d14" compoundref="hashmap_8c" startline="349" endline="381">get_HashMap</referencedby>
+        <referencedby refid="hashmap_8c_1a2987322764f770f61fe71f0a1320fc7b" compoundref="hashmap_8c" startline="330" endline="347">insert_HashMap</referencedby>
+        <referencedby refid="hashmap_8c_1a8aa67d2dac0692c1128b50780ad9dfc1" compoundref="hashmap_8c" startline="116" endline="159">internal_insert_HashMap</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structclass__header_1a34b23ea4b047e4526bfb743d5be3e69c" prot="public" static="no" mutable="no">
         <type>const void *(*</type>
@@ -435,7 +446,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="199" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="199" bodyend="-1"/>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="197" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="197" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structclass__header_1af7f2f5623c98afb59519062172644350" prot="public" static="no" mutable="no">
         <type>const char *</type>
@@ -448,30 +459,59 @@
 <para>Object name as C string </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="204" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="204" bodyend="-1"/>
-        <referencedby refid="group__common_1gadcc35aece3f8a4c822a9bf2a591f087b" compoundref="object_8c" startline="105" endline="116">clsname</referencedby>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="202" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="202" bodyend="-1"/>
+        <referencedby refid="group__common_1gadcc35aece3f8a4c822a9bf2a591f087b" compoundref="object_8c" startline="120" endline="131">clsname</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structclass__header_1a119175910ca4b52e4671f04616dcd2f6" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structOOCTraitMath" kindref="compound">OOCTraitMath</ref></type>
+        <definition>struct OOCTraitMath class_header::math</definition>
+        <argsstring></argsstring>
+        <name>math</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Traits </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="202" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="207" bodyend="-1"/>
+        <referencedby refid="list_8c_1a975abd5adea5f2b1caa581cb8994dd9a" compoundref="list_8c" startline="142" endline="166">List_get_item</referencedby>
+        <referencedby refid="math_8h_1a8202f1cadbe86449c7f0f409c4854d54" compoundref="math_8c" startline="5" endline="16">obj_add</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
 <para>All ooc classes have a <ref refid="structclass__header" kindref="compound">class_header</ref>.</para><para>The header provides function pointers to implementations of all supported methods for a given class.</para><para>Each object (instantiation of a class) has a pointer to the per-class <ref refid="structclass__header" kindref="compound">class_header</ref>.</para><para>A minimum class must at least provide implementations for magic, size, object_init, object_deinit and object_name </para>    </detaileddescription>
-    <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="21" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="21" bodyend="206"/>
+    <collaborationgraph>
+      <node id="1">
+        <label>class_header</label>
+        <link refid="structclass__header"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>math</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>OOCTraitMath</label>
+        <link refid="structOOCTraitMath"/>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" line="22" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/object_internal.h" bodystart="22" bodyend="209"/>
     <listofallmembers>
       <member refid="structclass__header_1a10e4c230bf810df38e3581caabad02bb" prot="public" virt="non-virtual"><scope>class_header</scope><name>append</name></member>
       <member refid="structclass__header_1a26ec3e94c98bf5d3eff10d37cf2696ef" prot="public" virt="non-virtual"><scope>class_header</scope><name>copy</name></member>
       <member refid="structclass__header_1a4d88d979ecf23c184577d937454ab973" prot="public" virt="non-virtual"><scope>class_header</scope><name>del_item</name></member>
       <member refid="structclass__header_1a01dc6aae9011475ec7be8500d4f63c5b" prot="public" virt="non-virtual"><scope>class_header</scope><name>equals</name></member>
-      <member refid="structclass__header_1ab2de24bb8c5d3b1b5e74a69bb6c307b2" prot="public" virt="non-virtual"><scope>class_header</scope><name>get</name></member>
+      <member refid="structclass__header_1ae59ea98ace6dc13ad2182a1433f78110" prot="public" virt="non-virtual"><scope>class_header</scope><name>get_item</name></member>
       <member refid="structclass__header_1a1b7cb949741b9a64fd3569af94f30cba" prot="public" virt="non-virtual"><scope>class_header</scope><name>get_len</name></member>
       <member refid="structclass__header_1a5c135b5316d0d9d22dce1f32fb8befb1" prot="public" virt="non-virtual"><scope>class_header</scope><name>get_size</name></member>
       <member refid="structclass__header_1aa0035a2c833b1e46f0ae401d6b44ee65" prot="public" virt="non-virtual"><scope>class_header</scope><name>hash</name></member>
       <member refid="structclass__header_1ada4fc11b4f09e8248a28c7d2e39e17ea" prot="public" virt="non-virtual"><scope>class_header</scope><name>insert</name></member>
       <member refid="structclass__header_1ab45bdc16b08b8cde751d161dd0c4f230" prot="public" virt="non-virtual"><scope>class_header</scope><name>iter</name></member>
       <member refid="structclass__header_1aa98964036010ad63554856c5f4680cec" prot="public" virt="non-virtual"><scope>class_header</scope><name>magic</name></member>
+      <member refid="structclass__header_1a119175910ca4b52e4671f04616dcd2f6" prot="public" virt="non-virtual"><scope>class_header</scope><name>math</name></member>
       <member refid="structclass__header_1a34b23ea4b047e4526bfb743d5be3e69c" prot="public" virt="non-virtual"><scope>class_header</scope><name>next</name></member>
       <member refid="structclass__header_1aa07a11a17f5d79a66c9086b8d10969b7" prot="public" virt="non-virtual"><scope>class_header</scope><name>object_deinit</name></member>
-      <member refid="structclass__header_1a560f3c418eb904136bfcb91d3618430c" prot="public" virt="non-virtual"><scope>class_header</scope><name>object_init</name></member>
+      <member refid="structclass__header_1a11011a70a48768fbe95790914ea808c9" prot="public" virt="non-virtual"><scope>class_header</scope><name>object_init</name></member>
       <member refid="structclass__header_1af7f2f5623c98afb59519062172644350" prot="public" virt="non-virtual"><scope>class_header</scope><name>object_name</name></member>
       <member refid="structclass__header_1a23181c1eac1455a8f23dd9d14f8b6abd" prot="public" virt="non-virtual"><scope>class_header</scope><name>print</name></member>
       <member refid="structclass__header_1a5ba6bf54fc12a2a31a2b39937cd50e84" prot="public" virt="non-virtual"><scope>class_header</scope><name>size</name></member>

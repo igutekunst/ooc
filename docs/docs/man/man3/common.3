@@ -1,4 +1,4 @@
-.TH "common" 3 "Fri Sep 27 2019" "Object-Oriented-C" \" -*- nroff -*-
+.TH "common" 3 "Sat Sep 28 2019" "Object-Oriented-C" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -10,7 +10,7 @@ common
 
 .in +1c
 .ti -1c
-.RI "const void * \fBnew\fP (const void *class,\&.\&.\&.)"
+.RI "const void * \fB_new\fP (size_t argc,\&.\&.\&.)"
 .br
 .RI "Create a new ooc object\&. "
 .ti -1c
@@ -18,11 +18,13 @@ common
 .br
 .RI "get ooc class object "
 .ti -1c
-.RI "void \fBdel\fP (const void *_object)"
+.RI "void \fBdel\fP (const void *object)"
 .br
+.RI "delete an ooc object "
 .ti -1c
 .RI "size_t \fBsize\fP (const void *_object)"
 .br
+.RI "get size in bytes "
 .ti -1c
 .RI "const char * \fBclsname\fP (const void *_self)"
 .br
@@ -44,45 +46,7 @@ common
 
 .SH "Function Documentation"
 .PP 
-.SS "const char* clsname (const void * _self)"
-
-.PP
-Definition at line 105 of file object\&.c\&.
-.PP
-References get_obj(), and class_header::object_name\&.
-.PP
-Referenced by main(), and String_equal()\&.
-.SS "const void* copy (const void * _object)"
-
-.PP
-Definition at line 121 of file object\&.c\&.
-.PP
-References class_header::copy, and get_obj()\&.
-.PP
-Referenced by main()\&.
-.SS "void del (const void * _object)"
-
-.PP
-Definition at line 34 of file object\&.c\&.
-.PP
-References get_obj(), and class_header::object_deinit\&.
-.SS "bool equals (const void * _object, const void * _other)"
-
-.PP
-Definition at line 135 of file object\&.c\&.
-.PP
-References get_obj()\&.
-.PP
-Referenced by get_HashMap(), and internal_insert_HashMap()\&.
-.SS "size_t len (const void * _object)"
-
-.PP
-Definition at line 91 of file object\&.c\&.
-.PP
-References class_header::get_len, and get_obj()\&.
-.PP
-Referenced by __construct__String(), FNV32(), and String_append()\&.
-.SS "const void* new (const void *const _class,  \&.\&.\&.)"
+.SS "const void* _new (size_t argc,  \&.\&.\&.)"
 
 .PP
 Create a new ooc object\&. This function allocates memory and returns a void* to a newly allocated ooc object, or NULL on failure\&.
@@ -92,6 +56,8 @@ _class should be a pointer to an ooc class object, such as \fBString\fP or \fBHa
 \fBParameters:\fP
 .RS 4
 \fIclass\fP ooc class object 
+.br
+\fIargc\fP number of arguments provided 
 .RE
 .PP
 \fBReturns:\fP
@@ -101,9 +67,9 @@ new object or type class, or NULL
 .PP
 \fBParameters:\fP
 .RS 4
-\fI_class\fP 
+\fIclass\fP OOC class to instantiate 
 .br
-\fI\&.\&.\&.\fP 
+\fI\&.\&.\&.\fP arguments to initialize class 
 .RE
 .PP
 \fBReturns:\fP
@@ -112,23 +78,84 @@ new object or type class, or NULL
 .PP
 
 .PP
-Definition at line 15 of file object\&.c\&.
+Definition at line 17 of file object\&.c\&.
 .PP
-References MAGIC\&.
+References ObjectHeader::class, MAGIC, class_header::object_init, and class_header::size\&.
+.SS "const char* clsname (const void * _self)"
+
+.PP
+Definition at line 120 of file object\&.c\&.
+.PP
+References get_class_header_msg(), and class_header::object_name\&.
+.PP
+Referenced by append(), get_item(), iter(), len(), List_get_item(), obj_add(), obj_to_int(), and String_equal()\&.
+.SS "const void* copy (const void * _object)"
+
+.PP
+Definition at line 136 of file object\&.c\&.
+.PP
+References class_header::copy, and get_class_header_msg()\&.
+.PP
+Referenced by main()\&.
+.SS "void del (const void * object)"
+
+.PP
+delete an ooc object 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIobject\fP 
+.RE
+.PP
+
+.PP
+Definition at line 44 of file object\&.c\&.
+.PP
+References get_class_header_msg(), and class_header::object_deinit\&.
+.SS "bool equals (const void * _object, const void * _other)"
+
+.PP
+Definition at line 150 of file object\&.c\&.
+.PP
+References get_class_header_msg()\&.
+.PP
+Referenced by get_HashMap(), and internal_insert_HashMap()\&.
+.SS "size_t len (const void * _object)"
+
+.PP
+Definition at line 106 of file object\&.c\&.
+.PP
+References clsname(), get_class_header_msg(), and class_header::get_len\&.
+.PP
+Referenced by __construct__String(), FNV32(), and String_append()\&.
 .SS "void print (const void * _object)"
 
 .PP
-Definition at line 59 of file object\&.c\&.
+Definition at line 74 of file object\&.c\&.
 .PP
-References get_obj(), and class_header::print\&.
+References get_class_header_msg(), and class_header::print\&.
 .PP
 Referenced by main()\&.
 .SS "size_t size (const void * _object)"
 
 .PP
-Definition at line 72 of file object\&.c\&.
+get size in bytes Get the full size in bytes of an ooc object\&. This is implementation defined, and may not include the size of items contained in a collection for example 
 .PP
-References get_obj(), and class_header::get_size\&.
+\fBParameters:\fP
+.RS 4
+\fI_object\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+size in bytes of object 
+.RE
+.PP
+
+.PP
+Definition at line 87 of file object\&.c\&.
+.PP
+References get_class_header_msg(), and class_header::get_size\&.
 .PP
 Referenced by __construct__Person(), __construct__String(), and String_append()\&.
 .SS "const void* type (const void * self)"
@@ -148,9 +175,9 @@ ooc class of a given ooc object
 .PP
 
 .PP
-Definition at line 83 of file object\&.c\&.
+Definition at line 98 of file object\&.c\&.
 .PP
-References get_obj()\&.
+References get_class_header_msg()\&.
 .PP
 Referenced by String_append(), and String_equal()\&.
 .SH "Author"

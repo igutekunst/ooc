@@ -5,74 +5,88 @@
     <includes refid="person_8h" local="no">ooc/person.h</includes>
     <includes refid="object__internal_8h" local="yes">object_internal.h</includes>
     <incdepgraph>
-      <node id="168">
+      <node id="219">
         <label>stdbool.h</label>
       </node>
-      <node id="161">
+      <node id="212">
         <label>/Users/igutek/Documents/Projects/ooc/src/person.c</label>
         <link refid="person_8c"/>
-        <childnode refid="162" relation="include">
+        <childnode refid="213" relation="include">
         </childnode>
-        <childnode refid="171" relation="include">
+        <childnode refid="223" relation="include">
         </childnode>
       </node>
-      <node id="167">
+      <node id="218">
         <label>stdarg.h</label>
       </node>
-      <node id="169">
+      <node id="220">
         <label>stdint.h</label>
       </node>
-      <node id="166">
+      <node id="217">
         <label>stdlib.h</label>
       </node>
-      <node id="171">
+      <node id="223">
         <label>object_internal.h</label>
         <link refid="object__internal_8h"/>
-        <childnode refid="169" relation="include">
+        <childnode refid="220" relation="include">
         </childnode>
-        <childnode refid="166" relation="include">
+        <childnode refid="217" relation="include">
         </childnode>
-        <childnode refid="167" relation="include">
+        <childnode refid="218" relation="include">
         </childnode>
-        <childnode refid="168" relation="include">
+        <childnode refid="219" relation="include">
+        </childnode>
+        <childnode refid="224" relation="include">
         </childnode>
       </node>
-      <node id="162">
+      <node id="213">
         <label>ooc/person.h</label>
         <link refid="person_8h"/>
-        <childnode refid="163" relation="include">
+        <childnode refid="214" relation="include">
         </childnode>
-        <childnode refid="170" relation="include">
+        <childnode refid="222" relation="include">
         </childnode>
       </node>
-      <node id="164">
+      <node id="215">
         <label>stddef.h</label>
       </node>
-      <node id="163">
+      <node id="224">
+        <label>trait_math_internal.h</label>
+        <link refid="trait__math__internal_8h"/>
+      </node>
+      <node id="221">
+        <label>ooc/object_va_args.h</label>
+        <link refid="object__va__args_8h"/>
+        <childnode refid="217" relation="include">
+        </childnode>
+      </node>
+      <node id="214">
         <label>object.h</label>
         <link refid="object_8h"/>
-        <childnode refid="164" relation="include">
+        <childnode refid="215" relation="include">
         </childnode>
-        <childnode refid="165" relation="include">
+        <childnode refid="216" relation="include">
         </childnode>
-        <childnode refid="166" relation="include">
+        <childnode refid="217" relation="include">
         </childnode>
-        <childnode refid="167" relation="include">
+        <childnode refid="218" relation="include">
         </childnode>
-        <childnode refid="168" relation="include">
+        <childnode refid="219" relation="include">
         </childnode>
-        <childnode refid="169" relation="include">
+        <childnode refid="220" relation="include">
+        </childnode>
+        <childnode refid="221" relation="include">
         </childnode>
       </node>
-      <node id="170">
+      <node id="222">
         <label>string.h</label>
         <link refid="string_8h"/>
-        <childnode refid="163" relation="include">
+        <childnode refid="214" relation="include">
         </childnode>
-        <childnode refid="170" relation="include">
+        <childnode refid="222" relation="include">
         </childnode>
       </node>
-      <node id="165">
+      <node id="216">
         <label>stdio.h</label>
       </node>
     </incdepgraph>
@@ -88,7 +102,7 @@
               .<ref refid="group__common_1gafac8564ed88a6f8585f043fc6b2fa7e1" kindref="member">size</ref>  = (sizeof(struct <ref refid="structPerson" kindref="compound">Person</ref>)),
               .<ref refid="group__common_1ga34dc6ab72cfd51381e8173226484e827" kindref="member">print</ref> = <ref refid="person_8c_1ac8f165e3cdab75026b74bdb45923d84c" kindref="member">print_Person</ref>,
               .get_size = <ref refid="person_8c_1ac756035079421633f84f42223847fbc4" kindref="member">get_size_Person</ref>,
-              .object_init = <ref refid="person_8c_1a479eaa947f7de8878921d30df63875eb" kindref="member">__construct__Person</ref>,
+              .object_init = <ref refid="person_8c_1adaf633e0102ae03a6b233de044b1f162" kindref="member">__construct__Person</ref>,
              }
 }</initializer>
         <briefdescription>
@@ -112,18 +126,22 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/igutek/Documents/Projects/ooc/src/person.c" line="24" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/person.c" bodystart="24" bodyend="-1"/>
-        <referencedby refid="person_8c_1a479eaa947f7de8878921d30df63875eb" compoundref="person_8c" startline="29" endline="46">__construct__Person</referencedby>
+        <referencedby refid="person_8c_1adaf633e0102ae03a6b233de044b1f162" compoundref="person_8c" startline="29" endline="46">__construct__Person</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
-      <memberdef kind="function" id="person_8c_1a479eaa947f7de8878921d30df63875eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="person_8c_1adaf633e0102ae03a6b233de044b1f162" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>const void *</type>
         <definition>const void * __construct__Person</definition>
-        <argsstring>(const void *self, va_list args)</argsstring>
+        <argsstring>(const void *_self, size_t argc, va_list args)</argsstring>
         <name>__construct__Person</name>
         <param>
           <type>const void *</type>
-          <declname>self</declname>
+          <declname>_self</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>argc</declname>
         </param>
         <param>
           <type>va_list</type>
@@ -140,7 +158,7 @@
         <references refid="structPerson_1a680212888ba741ce822803812588fbcf" compoundref="person_8h" startline="10">Person::last</references>
         <references refid="person_8c_1a588179b669d31ab467e542d8b997361f" compoundref="person_8c" startline="24">Person</references>
         <references refid="structPerson_1afcedcdc3dc5eba7d989eeaa55d236a11" compoundref="person_8h" startline="8">Person::size</references>
-        <references refid="group__common_1gafac8564ed88a6f8585f043fc6b2fa7e1" compoundref="object_8c" startline="72" endline="80">size</references>
+        <references refid="group__common_1gafac8564ed88a6f8585f043fc6b2fa7e1" compoundref="object_8c" startline="87" endline="95">size</references>
       </memberdef>
       <memberdef kind="function" id="person_8c_1a0108e77460f7fc9f156aa8ff2919c496" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void *</type>
@@ -209,7 +227,7 @@
 <codeline lineno="3"><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/><ref refid="person_8c_1a479eaa947f7de8878921d30df63875eb" kindref="member">__construct__Person</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">,<sp/>va_list<sp/>args);</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="person_8c_1adaf633e0102ae03a6b233de044b1f162" kindref="member">__construct__Person</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_self,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>argc,<sp/>va_list<sp/>args);</highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/><ref refid="person_8c_1a0108e77460f7fc9f156aa8ff2919c496" kindref="member">__destruct__Person</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">,<sp/>va_list<sp/>args);</highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="person_8c_1ac8f165e3cdab75026b74bdb45923d84c" kindref="member">print_Person</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>_self);</highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="person_8c_1ac756035079421633f84f42223847fbc4" kindref="member">get_size_Person</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>_self);</highlight></codeline>
@@ -223,7 +241,7 @@
 <codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.size<sp/><sp/>=<sp/>(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structPerson" kindref="compound">Person</ref>)),</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.<ref refid="group__common_1ga34dc6ab72cfd51381e8173226484e827" kindref="member">print</ref><sp/>=<sp/><ref refid="person_8c_1ac8f165e3cdab75026b74bdb45923d84c" kindref="member">print_Person</ref>,</highlight></codeline>
 <codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.get_size<sp/>=<sp/><ref refid="person_8c_1ac756035079421633f84f42223847fbc4" kindref="member">get_size_Person</ref>,</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.object_init<sp/>=<sp/><ref refid="person_8c_1a479eaa947f7de8878921d30df63875eb" kindref="member">__construct__Person</ref>,</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.object_init<sp/>=<sp/><ref refid="person_8c_1adaf633e0102ae03a6b233de044b1f162" kindref="member">__construct__Person</ref>,</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="22"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight></codeline>
@@ -232,7 +250,7 @@
 <codeline lineno="26"><highlight class="normal"></highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">//TODO<sp/>make<sp/>maxlength<sp/>values<sp/>on<sp/>names..</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">//TODO<sp/>determine<sp/>whether<sp/>to<sp/>cache<sp/>string<sp/>length<sp/>(probably<sp/>yes)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="29" refid="person_8c_1a479eaa947f7de8878921d30df63875eb" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/><ref refid="person_8c_1a479eaa947f7de8878921d30df63875eb" kindref="member">__construct__Person</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>_self,<sp/>va_list<sp/>args)<sp/>{</highlight></codeline>
+<codeline lineno="29" refid="person_8c_1adaf633e0102ae03a6b233de044b1f162" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="person_8c_1adaf633e0102ae03a6b233de044b1f162" kindref="member">__construct__Person</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_self,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>argc,<sp/>va_list<sp/>args)<sp/>{</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structPerson" kindref="compound">Person</ref><sp/>*<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal"><sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structPerson" kindref="compound">Person</ref><sp/>*)<sp/>_self;</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="structPerson_1a38f2f16e85640e2f851e46319735dc2a" kindref="member">first</ref><sp/>=<sp/>va_arg(args,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="structPerson_1a680212888ba741ce822803812588fbcf" kindref="member">last</ref><sp/>=<sp/><sp/>va_arg(args,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*);</highlight></codeline>

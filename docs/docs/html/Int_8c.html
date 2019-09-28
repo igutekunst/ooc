@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Object-Oriented-C: /Users/igutek/Documents/Projects/ooc/src/Int.c File Reference</title>
+<title>Object-Oriented-C: /Users/igutek/Documents/Projects/ooc/src/int.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -67,56 +67,184 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">Int.c File Reference</div>  </div>
+<div class="title">int.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="Int_8h_source.html">ooc/Int.h</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="int_8h_source.html">ooc/int.h</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="object__internal_8h_source.html">object_internal.h</a>&quot;</code><br />
+<code>#include &lt;<a class="el" href="object_8h_source.html">ooc/object.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="string_8h_source.html">string.h</a>&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
 </div>
-<p><a href="Int_8c_source.html">Go to the source code of this file.</a></p>
+<p><a href="int_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structInt.html">Int</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structIntClass.html">IntClass</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a9c6918fbdb610a62c848aa680b81eb9a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="int_8c.html#a9c6918fbdb610a62c848aa680b81eb9a">MAX_STR_SIZE</a>&#160;&#160;&#160;20</td></tr>
+<tr class="separator:a9c6918fbdb610a62c848aa680b81eb9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae873d36964132e55e78d420070550a21"><td class="memItemLeft" align="right" valign="top">const void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Int_8c.html#ae873d36964132e55e78d420070550a21">__construct__Int</a> (const void *self, va_list args)</td></tr>
-<tr class="separator:ae873d36964132e55e78d420070550a21"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6100918901d95112924d8135157c5f3e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Int_8c.html#a6100918901d95112924d8135157c5f3e">print_Int</a> (const void *_self)</td></tr>
-<tr class="separator:a6100918901d95112924d8135157c5f3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb3319f5992def2d229948d2ed6599b9"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Int_8c.html#abb3319f5992def2d229948d2ed6599b9">get_size_Int</a> (const void *_self)</td></tr>
-<tr class="separator:abb3319f5992def2d229948d2ed6599b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f323fab797bbc86aac561ba2e5e4007"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Int_8c.html#a5f323fab797bbc86aac561ba2e5e4007">to_str_Int</a> (const void *_self)</td></tr>
-<tr class="separator:a5f323fab797bbc86aac561ba2e5e4007"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1691ac04f4e88ad79d85283840d6f151"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Int_8c.html#a1691ac04f4e88ad79d85283840d6f151">append_Int</a> (void *_self, void *_other)</td></tr>
-<tr class="separator:a1691ac04f4e88ad79d85283840d6f151"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d622faaba5978eeafe94e22c341faeb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Int_8c.html#a6d622faaba5978eeafe94e22c341faeb">test_int</a> ()</td></tr>
+<tr class="memitem:a7dc53a21b3398adfbc1cbc480e8a5c8a"><td class="memItemLeft" align="right" valign="top">const void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="int_8c.html#a7dc53a21b3398adfbc1cbc480e8a5c8a">Int_init</a> (const void *_self, size_t argc, va_list args)</td></tr>
+<tr class="separator:a7dc53a21b3398adfbc1cbc480e8a5c8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a708091bca901de1b68b1ec246f8adffc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="int_8c.html#a708091bca901de1b68b1ec246f8adffc">Int_print</a> (const void *_self)</td></tr>
+<tr class="separator:a708091bca901de1b68b1ec246f8adffc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a732a138a63b0f5c3f25c18e6983e43a7"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="int_8c.html#a732a138a63b0f5c3f25c18e6983e43a7">Int_get_size</a> (const void *_self)</td></tr>
+<tr class="separator:a732a138a63b0f5c3f25c18e6983e43a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab90bad1ffdc0df48932efeb24f834f2e"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="int_8c.html#ab90bad1ffdc0df48932efeb24f834f2e">Int_to_str</a> (const void *_self)</td></tr>
+<tr class="separator:ab90bad1ffdc0df48932efeb24f834f2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ee11528e9e9edd386cfc6b5d2b84490"><td class="memItemLeft" align="right" valign="top">const void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="int_8c.html#a5ee11528e9e9edd386cfc6b5d2b84490">Int_add</a> (const void *lhs, const void *rhs)</td></tr>
+<tr class="separator:a5ee11528e9e9edd386cfc6b5d2b84490"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7e968a6838e99204647de44c4aca4c7"><td class="memItemLeft" align="right" valign="top">const void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="int_8c.html#ab7e968a6838e99204647de44c4aca4c7">Int_sub</a> (const void *lhs, const void *rhs)</td></tr>
+<tr class="separator:ab7e968a6838e99204647de44c4aca4c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5606319e57bb3b2e475024318f23a589"><td class="memItemLeft" align="right" valign="top">const void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="int_8c.html#a5606319e57bb3b2e475024318f23a589">Int_mul</a> (const void *lhs, const void *rhs)</td></tr>
+<tr class="separator:a5606319e57bb3b2e475024318f23a589"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e6bebbc74025fe9ba93bf207150cb27"><td class="memItemLeft" align="right" valign="top">const void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="int_8c.html#a4e6bebbc74025fe9ba93bf207150cb27">Int_div</a> (const void *lhs, const void *rhs)</td></tr>
+<tr class="separator:a4e6bebbc74025fe9ba93bf207150cb27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e38771d97a50fb7c2d292a454c0abfb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="int_8c.html#a7e38771d97a50fb7c2d292a454c0abfb">Int_to_int</a> (const void *_self)</td></tr>
+<tr class="separator:a7e38771d97a50fb7c2d292a454c0abfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d622faaba5978eeafe94e22c341faeb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="int_8c.html#a6d622faaba5978eeafe94e22c341faeb">test_int</a> ()</td></tr>
 <tr class="separator:a6d622faaba5978eeafe94e22c341faeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a51f8590f130ffc55b99a4c1b67d5e6fa"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structIntClass.html">IntClass</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Int_8c.html#a51f8590f130ffc55b99a4c1b67d5e6fa">int_class</a></td></tr>
+<tr class="memitem:a51f8590f130ffc55b99a4c1b67d5e6fa"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structIntClass.html">IntClass</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="int_8c.html#a51f8590f130ffc55b99a4c1b67d5e6fa">int_class</a></td></tr>
 <tr class="separator:a51f8590f130ffc55b99a4c1b67d5e6fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58f95e509cb472a46236fb2ba211af09"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Int_8c.html#a58f95e509cb472a46236fb2ba211af09">Int</a> = &amp;<a class="el" href="Int_8c.html#a51f8590f130ffc55b99a4c1b67d5e6fa">int_class</a></td></tr>
+<tr class="memitem:a58f95e509cb472a46236fb2ba211af09"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="int_8c.html#a58f95e509cb472a46236fb2ba211af09">Int</a> = &amp;<a class="el" href="int_8c.html#a51f8590f130ffc55b99a4c1b67d5e6fa">int_class</a></td></tr>
 <tr class="separator:a58f95e509cb472a46236fb2ba211af09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="ae873d36964132e55e78d420070550a21"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae873d36964132e55e78d420070550a21">&#9670;&nbsp;</a></span>__construct__Int()</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a9c6918fbdb610a62c848aa680b81eb9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c6918fbdb610a62c848aa680b81eb9a">&#9670;&nbsp;</a></span>MAX_STR_SIZE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const void * __construct__Int </td>
+          <td class="memname">#define MAX_STR_SIZE&#160;&#160;&#160;20</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="int_8c_source.html#l00006">6</a> of file <a class="el" href="int_8c_source.html">int.c</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a5ee11528e9e9edd386cfc6b5d2b84490"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ee11528e9e9edd386cfc6b5d2b84490">&#9670;&nbsp;</a></span>Int_add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const void * Int_add </td>
           <td>(</td>
           <td class="paramtype">const void *&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="int_8c_source.html#l00080">80</a> of file <a class="el" href="int_8c_source.html">int.c</a>.</p>
+
+<p class="reference">References <a class="el" href="int_8c_source.html#l00047">Int</a>, and <a class="el" href="int_8c_source.html#l00010">Int::value</a>.</p>
+
+</div>
+</div>
+<a id="a4e6bebbc74025fe9ba93bf207150cb27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e6bebbc74025fe9ba93bf207150cb27">&#9670;&nbsp;</a></span>Int_div()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const void * Int_div </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="int_8c_source.html#l00100">100</a> of file <a class="el" href="int_8c_source.html">int.c</a>.</p>
+
+<p class="reference">References <a class="el" href="int_8c_source.html#l00047">Int</a>, and <a class="el" href="int_8c_source.html#l00010">Int::value</a>.</p>
+
+</div>
+</div>
+<a id="a732a138a63b0f5c3f25c18e6983e43a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a732a138a63b0f5c3f25c18e6983e43a7">&#9670;&nbsp;</a></span>Int_get_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Int_get_size </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>_self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="int_8c_source.html#l00049">49</a> of file <a class="el" href="int_8c_source.html">int.c</a>.</p>
+
+<p class="reference">References <a class="el" href="int_8c_source.html#l00009">Int::size</a>.</p>
+
+</div>
+</div>
+<a id="a7dc53a21b3398adfbc1cbc480e8a5c8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dc53a21b3398adfbc1cbc480e8a5c8a">&#9670;&nbsp;</a></span>Int_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const void * Int_init </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>_self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -132,29 +260,29 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Int_8c_source.html#l00034">34</a> of file <a class="el" href="Int_8c_source.html">Int.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="int_8c_source.html#l00054">54</a> of file <a class="el" href="int_8c_source.html">int.c</a>.</p>
 
-<p class="reference">References <a class="el" href="Int_8c_source.html#l00027">Int</a>, and <a class="el" href="Int_8h_source.html#l00010">Int::value</a>.</p>
+<p class="reference">References <a class="el" href="int_8c_source.html#l00047">Int</a>, and <a class="el" href="int_8c_source.html#l00010">Int::value</a>.</p>
 
 </div>
 </div>
-<a id="a1691ac04f4e88ad79d85283840d6f151"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1691ac04f4e88ad79d85283840d6f151">&#9670;&nbsp;</a></span>append_Int()</h2>
+<a id="a5606319e57bb3b2e475024318f23a589"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5606319e57bb3b2e475024318f23a589">&#9670;&nbsp;</a></span>Int_mul()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void* append_Int </td>
+          <td class="memname">const void * Int_mul </td>
           <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>_self</em>, </td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>_other</em>&#160;</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -164,16 +292,20 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="int_8c_source.html#l00093">93</a> of file <a class="el" href="int_8c_source.html">int.c</a>.</p>
+
+<p class="reference">References <a class="el" href="int_8c_source.html#l00047">Int</a>, and <a class="el" href="int_8c_source.html#l00010">Int::value</a>.</p>
+
 </div>
 </div>
-<a id="abb3319f5992def2d229948d2ed6599b9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb3319f5992def2d229948d2ed6599b9">&#9670;&nbsp;</a></span>get_size_Int()</h2>
+<a id="a708091bca901de1b68b1ec246f8adffc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a708091bca901de1b68b1ec246f8adffc">&#9670;&nbsp;</a></span>Int_print()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">size_t get_size_Int </td>
+          <td class="memname">void Int_print </td>
           <td>(</td>
           <td class="paramtype">const void *&#160;</td>
           <td class="paramname"><em>_self</em></td><td>)</td>
@@ -182,20 +314,50 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Int_8c_source.html#l00029">29</a> of file <a class="el" href="Int_8c_source.html">Int.c</a>.</p>
-
-<p class="reference">References <a class="el" href="Int_8h_source.html#l00009">Int::size</a>.</p>
+<p class="definition">Definition at line <a class="el" href="int_8c_source.html#l00064">64</a> of file <a class="el" href="int_8c_source.html">int.c</a>.</p>
 
 </div>
 </div>
-<a id="a6100918901d95112924d8135157c5f3e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6100918901d95112924d8135157c5f3e">&#9670;&nbsp;</a></span>print_Int()</h2>
+<a id="ab7e968a6838e99204647de44c4aca4c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7e968a6838e99204647de44c4aca4c7">&#9670;&nbsp;</a></span>Int_sub()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void print_Int </td>
+          <td class="memname">const void * Int_sub </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="int_8c_source.html#l00086">86</a> of file <a class="el" href="int_8c_source.html">int.c</a>.</p>
+
+<p class="reference">References <a class="el" href="int_8c_source.html#l00047">Int</a>, and <a class="el" href="int_8c_source.html#l00010">Int::value</a>.</p>
+
+</div>
+</div>
+<a id="a7e38771d97a50fb7c2d292a454c0abfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e38771d97a50fb7c2d292a454c0abfb">&#9670;&nbsp;</a></span>Int_to_int()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Int_to_int </td>
           <td>(</td>
           <td class="paramtype">const void *&#160;</td>
           <td class="paramname"><em>_self</em></td><td>)</td>
@@ -204,7 +366,29 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Int_8c_source.html#l00044">44</a> of file <a class="el" href="Int_8c_source.html">Int.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="int_8c_source.html#l00107">107</a> of file <a class="el" href="int_8c_source.html">int.c</a>.</p>
+
+<p class="reference">References <a class="el" href="int_8c_source.html#l00010">Int::value</a>.</p>
+
+</div>
+</div>
+<a id="ab90bad1ffdc0df48932efeb24f834f2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab90bad1ffdc0df48932efeb24f834f2e">&#9670;&nbsp;</a></span>Int_to_str()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * Int_to_str </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>_self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="int_8c_source.html#l00070">70</a> of file <a class="el" href="int_8c_source.html">int.c</a>.</p>
 
 </div>
 </div>
@@ -223,27 +407,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Int_8c_source.html#l00061">61</a> of file <a class="el" href="Int_8c_source.html">Int.c</a>.</p>
-
-</div>
-</div>
-<a id="a5f323fab797bbc86aac561ba2e5e4007"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5f323fab797bbc86aac561ba2e5e4007">&#9670;&nbsp;</a></span>to_str_Int()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char * to_str_Int </td>
-          <td>(</td>
-          <td class="paramtype">const void *&#160;</td>
-          <td class="paramname"><em>_self</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="Int_8c_source.html#l00050">50</a> of file <a class="el" href="Int_8c_source.html">Int.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="int_8c_source.html#l00113">113</a> of file <a class="el" href="int_8c_source.html">int.c</a>.</p>
 
 </div>
 </div>
@@ -255,14 +419,14 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void* <a class="el" href="structInt.html">Int</a> = &amp;<a class="el" href="Int_8c.html#a51f8590f130ffc55b99a4c1b67d5e6fa">int_class</a></td>
+          <td class="memname">void* <a class="el" href="structInt.html">Int</a> = &amp;<a class="el" href="int_8c.html#a51f8590f130ffc55b99a4c1b67d5e6fa">int_class</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Int_8c_source.html#l00027">27</a> of file <a class="el" href="Int_8c_source.html">Int.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="int_8c_source.html#l00047">47</a> of file <a class="el" href="int_8c_source.html">int.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Int_8c_source.html#l00034">__construct__Int()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="int_8c_source.html#l00080">Int_add()</a>, <a class="el" href="int_8c_source.html#l00100">Int_div()</a>, <a class="el" href="int_8c_source.html#l00054">Int_init()</a>, <a class="el" href="int_8c_source.html#l00093">Int_mul()</a>, and <a class="el" href="int_8c_source.html#l00086">Int_sub()</a>.</p>
 
 </div>
 </div>
@@ -277,21 +441,26 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {</div><div class="line">    .class = {.magic = <a class="code" href="object__internal_8h.html#a94630370ae389fb1189282fa0742f310">MAGIC</a>,</div><div class="line">              .size = <span class="keyword">sizeof</span>(<span class="keyword">struct </span><a class="code" href="structInt.html">Int</a>),</div><div class="line">              .object_init = <a class="code" href="Int_8c.html#ae873d36964132e55e78d420070550a21">__construct__Int</a>,</div><div class="line">              .print = <a class="code" href="Int_8c.html#a6100918901d95112924d8135157c5f3e">print_Int</a>,</div><div class="line">              .get_size = <a class="code" href="Int_8c.html#abb3319f5992def2d229948d2ed6599b9">get_size_Int</a>,</div><div class="line">              .str = <a class="code" href="Int_8c.html#a5f323fab797bbc86aac561ba2e5e4007">to_str_Int</a></div><div class="line">             }</div><div class="line"></div><div class="line">}</div><div class="ttc" id="Int_8c_html_a5f323fab797bbc86aac561ba2e5e4007"><div class="ttname"><a href="Int_8c.html#a5f323fab797bbc86aac561ba2e5e4007">to_str_Int</a></div><div class="ttdeci">const char * to_str_Int(const void *_self)</div><div class="ttdef"><b>Definition:</b> <a href="Int_8c_source.html#l00050">Int.c:50</a></div></div>
-<div class="ttc" id="Int_8c_html_a6100918901d95112924d8135157c5f3e"><div class="ttname"><a href="Int_8c.html#a6100918901d95112924d8135157c5f3e">print_Int</a></div><div class="ttdeci">void print_Int(const void *_self)</div><div class="ttdef"><b>Definition:</b> <a href="Int_8c_source.html#l00044">Int.c:44</a></div></div>
-<div class="ttc" id="Int_8c_html_abb3319f5992def2d229948d2ed6599b9"><div class="ttname"><a href="Int_8c.html#abb3319f5992def2d229948d2ed6599b9">get_size_Int</a></div><div class="ttdeci">size_t get_size_Int(const void *_self)</div><div class="ttdef"><b>Definition:</b> <a href="Int_8c_source.html#l00029">Int.c:29</a></div></div>
-<div class="ttc" id="structInt_html"><div class="ttname"><a href="structInt.html">Int</a></div><div class="ttdef"><b>Definition:</b> <a href="Int_8h_source.html#l00007">Int.h:7</a></div></div>
-<div class="ttc" id="object__internal_8h_html_a94630370ae389fb1189282fa0742f310"><div class="ttname"><a href="object__internal_8h.html#a94630370ae389fb1189282fa0742f310">MAGIC</a></div><div class="ttdeci">#define MAGIC</div><div class="ttdef"><b>Definition:</b> <a href="object__internal_8h_source.html#l00006">object_internal.h:6</a></div></div>
-<div class="ttc" id="Int_8c_html_ae873d36964132e55e78d420070550a21"><div class="ttname"><a href="Int_8c.html#ae873d36964132e55e78d420070550a21">__construct__Int</a></div><div class="ttdeci">const void * __construct__Int(const void *self, va_list args)</div><div class="ttdef"><b>Definition:</b> <a href="Int_8c_source.html#l00034">Int.c:34</a></div></div>
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div><div class="line">        .class = {.magic = <a class="code" href="object__internal_8h.html#a94630370ae389fb1189282fa0742f310">MAGIC</a>,</div><div class="line">                .size = <span class="keyword">sizeof</span>(<span class="keyword">struct </span><a class="code" href="structInt.html">Int</a>),</div><div class="line">                .object_init = <a class="code" href="int_8c.html#a7dc53a21b3398adfbc1cbc480e8a5c8a">Int_init</a>,</div><div class="line">                .print = <a class="code" href="int_8c.html#a708091bca901de1b68b1ec246f8adffc">Int_print</a>,</div><div class="line">                .get_size = <a class="code" href="int_8c.html#a732a138a63b0f5c3f25c18e6983e43a7">Int_get_size</a>,</div><div class="line">                .str = <a class="code" href="int_8c.html#ab90bad1ffdc0df48932efeb24f834f2e">Int_to_str</a>,</div><div class="line">                .math  =  {.enabled = <span class="keyword">true</span>,</div><div class="line">                        .add = <a class="code" href="int_8c.html#a5ee11528e9e9edd386cfc6b5d2b84490">Int_add</a>,</div><div class="line">                        .sub = <a class="code" href="int_8c.html#ab7e968a6838e99204647de44c4aca4c7">Int_sub</a>,</div><div class="line">                        .mul = <a class="code" href="int_8c.html#a5606319e57bb3b2e475024318f23a589">Int_mul</a>,</div><div class="line">                        .div = <a class="code" href="int_8c.html#a4e6bebbc74025fe9ba93bf207150cb27">Int_div</a>,</div><div class="line">                        .to_int = <a class="code" href="int_8c.html#a7e38771d97a50fb7c2d292a454c0abfb">Int_to_int</a></div><div class="line">                }</div><div class="line">        }</div><div class="line"></div><div class="line">}</div><div class="ttc" id="int_8c_html_a5606319e57bb3b2e475024318f23a589"><div class="ttname"><a href="int_8c.html#a5606319e57bb3b2e475024318f23a589">Int_mul</a></div><div class="ttdeci">const void * Int_mul(const void *lhs, const void *rhs)</div><div class="ttdef"><b>Definition:</b> <a href="int_8c_source.html#l00093">int.c:93</a></div></div>
+<div class="ttc" id="int_8c_html_a732a138a63b0f5c3f25c18e6983e43a7"><div class="ttname"><a href="int_8c.html#a732a138a63b0f5c3f25c18e6983e43a7">Int_get_size</a></div><div class="ttdeci">size_t Int_get_size(const void *_self)</div><div class="ttdef"><b>Definition:</b> <a href="int_8c_source.html#l00049">int.c:49</a></div></div>
+<div class="ttc" id="int_8c_html_a5ee11528e9e9edd386cfc6b5d2b84490"><div class="ttname"><a href="int_8c.html#a5ee11528e9e9edd386cfc6b5d2b84490">Int_add</a></div><div class="ttdeci">const void * Int_add(const void *lhs, const void *rhs)</div><div class="ttdef"><b>Definition:</b> <a href="int_8c_source.html#l00080">int.c:80</a></div></div>
+<div class="ttc" id="int_8c_html_a708091bca901de1b68b1ec246f8adffc"><div class="ttname"><a href="int_8c.html#a708091bca901de1b68b1ec246f8adffc">Int_print</a></div><div class="ttdeci">void Int_print(const void *_self)</div><div class="ttdef"><b>Definition:</b> <a href="int_8c_source.html#l00064">int.c:64</a></div></div>
+<div class="ttc" id="int_8c_html_a4e6bebbc74025fe9ba93bf207150cb27"><div class="ttname"><a href="int_8c.html#a4e6bebbc74025fe9ba93bf207150cb27">Int_div</a></div><div class="ttdeci">const void * Int_div(const void *lhs, const void *rhs)</div><div class="ttdef"><b>Definition:</b> <a href="int_8c_source.html#l00100">int.c:100</a></div></div>
+<div class="ttc" id="structInt_html"><div class="ttname"><a href="structInt.html">Int</a></div><div class="ttdef"><b>Definition:</b> <a href="int_8c_source.html#l00007">int.c:7</a></div></div>
+<div class="ttc" id="int_8c_html_ab7e968a6838e99204647de44c4aca4c7"><div class="ttname"><a href="int_8c.html#ab7e968a6838e99204647de44c4aca4c7">Int_sub</a></div><div class="ttdeci">const void * Int_sub(const void *lhs, const void *rhs)</div><div class="ttdef"><b>Definition:</b> <a href="int_8c_source.html#l00086">int.c:86</a></div></div>
+<div class="ttc" id="object__internal_8h_html_a94630370ae389fb1189282fa0742f310"><div class="ttname"><a href="object__internal_8h.html#a94630370ae389fb1189282fa0742f310">MAGIC</a></div><div class="ttdeci">#define MAGIC</div><div class="ttdef"><b>Definition:</b> <a href="object__internal_8h_source.html#l00007">object_internal.h:7</a></div></div>
+<div class="ttc" id="int_8c_html_a7dc53a21b3398adfbc1cbc480e8a5c8a"><div class="ttname"><a href="int_8c.html#a7dc53a21b3398adfbc1cbc480e8a5c8a">Int_init</a></div><div class="ttdeci">const void * Int_init(const void *_self, size_t argc, va_list args)</div><div class="ttdef"><b>Definition:</b> <a href="int_8c_source.html#l00054">int.c:54</a></div></div>
+<div class="ttc" id="int_8c_html_ab90bad1ffdc0df48932efeb24f834f2e"><div class="ttname"><a href="int_8c.html#ab90bad1ffdc0df48932efeb24f834f2e">Int_to_str</a></div><div class="ttdeci">const char * Int_to_str(const void *_self)</div><div class="ttdef"><b>Definition:</b> <a href="int_8c_source.html#l00070">int.c:70</a></div></div>
+<div class="ttc" id="int_8c_html_a7e38771d97a50fb7c2d292a454c0abfb"><div class="ttname"><a href="int_8c.html#a7e38771d97a50fb7c2d292a454c0abfb">Int_to_int</a></div><div class="ttdeci">int Int_to_int(const void *_self)</div><div class="ttdef"><b>Definition:</b> <a href="int_8c_source.html#l00107">int.c:107</a></div></div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="Int_8c_source.html#l00016">16</a> of file <a class="el" href="Int_8c_source.html">Int.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="int_8c_source.html#l00029">29</a> of file <a class="el" href="int_8c_source.html">int.c</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Sep 27 2019 15:45:11 for Object-Oriented-C by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 28 2019 15:28:03 for Object-Oriented-C by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.14
 </small></address>

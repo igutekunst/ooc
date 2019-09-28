@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="list_8h" kind="file" language="C++">
+    <compoundname>list.h</compoundname>
+    <includedby refid="list_8c" local="yes">/Users/igutek/Documents/Projects/ooc/src/list.c</includedby>
+    <invincdepgraph>
+      <node id="18">
+        <label>/Users/igutek/Documents/Projects/ooc/src/list.c</label>
+        <link refid="list_8c"/>
+      </node>
+      <node id="17">
+        <label>/Users/igutek/Documents/Projects/ooc/include/ooc/list.h</label>
+        <link refid="list_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="list_8h_1a39f007643f44b8d0b58dab4137284af4" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* List</definition>
+        <argsstring></argsstring>
+        <name>List</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/include/ooc/list.h" line="8" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/list.c" bodystart="239" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="list_8h_1a3950860ae6bd717891393bc705572d34" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* ListIterator</definition>
+        <argsstring></argsstring>
+        <name>ListIterator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/include/ooc/list.h" line="9" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/list.c" bodystart="237" bodyend="-1"/>
+        <referencedby refid="list_8c_1a4f41f9ad2faf8659af62e4b1fbd264ee" compoundref="list_8c" startline="168" endline="170">List_iter</referencedby>
+        <referencedby refid="list_8c_1abf7dbd1c02022ec5a52ff02008a0238e" compoundref="list_8c" startline="173" endline="189">ListIterator_init</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>Isaac<sp/>Gutekunst<sp/>on<sp/>9/28/19.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>OOC_LIST_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>OOC_LIST_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/><ref refid="list_8h_1a39f007643f44b8d0b58dab4137284af4" kindref="member">List</ref>;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/><ref refid="list_8h_1a3950860ae6bd717891393bc705572d34" kindref="member">ListIterator</ref>;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//OOC_LIST_H</highlight></codeline>
+    </programlisting>
+    <location file="/Users/igutek/Documents/Projects/ooc/include/ooc/list.h"/>
+  </compounddef>
+</doxygen>

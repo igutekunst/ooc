@@ -22,16 +22,23 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="30">
+      <node id="65">
         <label>class_header</label>
         <link refid="structclass__header"/>
+        <childnode refid="66" relation="usage">
+          <edgelabel>math</edgelabel>
+        </childnode>
       </node>
-      <node id="29">
+      <node id="64">
         <label>PersonClass</label>
         <link refid="structPersonClass"/>
-        <childnode refid="30" relation="usage">
+        <childnode refid="65" relation="usage">
           <edgelabel>class</edgelabel>
         </childnode>
+      </node>
+      <node id="66">
+        <label>OOCTraitMath</label>
+        <link refid="structOOCTraitMath"/>
       </node>
     </collaborationgraph>
     <location file="/Users/igutek/Documents/Projects/ooc/src/person.c" line="12" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/person.c" bodystart="12" bodyend="14"/>

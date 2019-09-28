@@ -66,16 +66,23 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="39">
+      <node id="77">
         <label>class_header</label>
         <link refid="structclass__header"/>
+        <childnode refid="78" relation="usage">
+          <edgelabel>math</edgelabel>
+        </childnode>
       </node>
-      <node id="38">
+      <node id="76">
         <label>String</label>
         <link refid="structString"/>
-        <childnode refid="39" relation="usage">
+        <childnode refid="77" relation="usage">
           <edgelabel>class</edgelabel>
         </childnode>
+      </node>
+      <node id="78">
+        <label>OOCTraitMath</label>
+        <link refid="structOOCTraitMath"/>
       </node>
     </collaborationgraph>
     <location file="/Users/igutek/Documents/Projects/ooc/include/ooc/string.h" line="8" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/include/ooc/string.h" bodystart="8" bodyend="13"/>

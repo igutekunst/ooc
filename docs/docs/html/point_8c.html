@@ -85,8 +85,8 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a939d6d31946f042260f6b45f0d51ae12"><td class="memItemLeft" align="right" valign="top">const void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="point_8c.html#a939d6d31946f042260f6b45f0d51ae12">__construct__Point</a> (const void *const self, va_list args)</td></tr>
-<tr class="separator:a939d6d31946f042260f6b45f0d51ae12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aceb361b54e6321dcf7a9cc0aab6f967c"><td class="memItemLeft" align="right" valign="top">const void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="point_8c.html#aceb361b54e6321dcf7a9cc0aab6f967c">__construct__Point</a> (const void *_self, size_t argc, va_list args)</td></tr>
+<tr class="separator:aceb361b54e6321dcf7a9cc0aab6f967c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75983d2ec5626f7206475606900aac49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="point_8c.html#a75983d2ec5626f7206475606900aac49">print_Point</a> (const void *_self)</td></tr>
 <tr class="separator:a75983d2ec5626f7206475606900aac49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f564f5c32ae82a07d198437f1c3ed6c"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="point_8c.html#a1f564f5c32ae82a07d198437f1c3ed6c">get_size_Point</a> (const void *_self)</td></tr>
@@ -100,8 +100,8 @@ Variables</h2></td></tr>
 <tr class="separator:a1a395805ca983410ef1ba6e0b1e5924f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a939d6d31946f042260f6b45f0d51ae12"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a939d6d31946f042260f6b45f0d51ae12">&#9670;&nbsp;</a></span>__construct__Point()</h2>
+<a id="aceb361b54e6321dcf7a9cc0aab6f967c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aceb361b54e6321dcf7a9cc0aab6f967c">&#9670;&nbsp;</a></span>__construct__Point()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -109,8 +109,14 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">const void * __construct__Point </td>
           <td>(</td>
-          <td class="paramtype">const void *const&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>_self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -204,11 +210,11 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {</div><div class="line">    .class = {.magic = <a class="code" href="object__internal_8h.html#a94630370ae389fb1189282fa0742f310">MAGIC</a>,</div><div class="line">              .size = <span class="keyword">sizeof</span>(<span class="keyword">struct </span><a class="code" href="structPoint.html">Point</a>),</div><div class="line">              .object_init = <a class="code" href="point_8c.html#a939d6d31946f042260f6b45f0d51ae12">__construct__Point</a>,</div><div class="line">              .print = <a class="code" href="point_8c.html#a75983d2ec5626f7206475606900aac49">print_Point</a>,</div><div class="line">              .get_size = <a class="code" href="point_8c.html#a1f564f5c32ae82a07d198437f1c3ed6c">get_size_Point</a>,</div><div class="line">              .get_len = 0</div><div class="line">             }</div><div class="line"></div><div class="line">}</div><div class="ttc" id="point_8c_html_a1f564f5c32ae82a07d198437f1c3ed6c"><div class="ttname"><a href="point_8c.html#a1f564f5c32ae82a07d198437f1c3ed6c">get_size_Point</a></div><div class="ttdeci">size_t get_size_Point(const void *_self)</div><div class="ttdef"><b>Definition:</b> <a href="point_8c_source.html#l00028">point.c:28</a></div></div>
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div><div class="line">    .class = {.magic = <a class="code" href="object__internal_8h.html#a94630370ae389fb1189282fa0742f310">MAGIC</a>,</div><div class="line">              .size = <span class="keyword">sizeof</span>(<span class="keyword">struct </span><a class="code" href="structPoint.html">Point</a>),</div><div class="line">              .object_init = <a class="code" href="point_8c.html#aceb361b54e6321dcf7a9cc0aab6f967c">__construct__Point</a>,</div><div class="line">              .print = <a class="code" href="point_8c.html#a75983d2ec5626f7206475606900aac49">print_Point</a>,</div><div class="line">              .get_size = <a class="code" href="point_8c.html#a1f564f5c32ae82a07d198437f1c3ed6c">get_size_Point</a>,</div><div class="line">              .get_len = 0</div><div class="line">             }</div><div class="line"></div><div class="line">}</div><div class="ttc" id="point_8c_html_a1f564f5c32ae82a07d198437f1c3ed6c"><div class="ttname"><a href="point_8c.html#a1f564f5c32ae82a07d198437f1c3ed6c">get_size_Point</a></div><div class="ttdeci">size_t get_size_Point(const void *_self)</div><div class="ttdef"><b>Definition:</b> <a href="point_8c_source.html#l00028">point.c:28</a></div></div>
 <div class="ttc" id="point_8c_html_a75983d2ec5626f7206475606900aac49"><div class="ttname"><a href="point_8c.html#a75983d2ec5626f7206475606900aac49">print_Point</a></div><div class="ttdeci">void print_Point(const void *_self)</div><div class="ttdef"><b>Definition:</b> <a href="point_8c_source.html#l00044">point.c:44</a></div></div>
-<div class="ttc" id="object__internal_8h_html_a94630370ae389fb1189282fa0742f310"><div class="ttname"><a href="object__internal_8h.html#a94630370ae389fb1189282fa0742f310">MAGIC</a></div><div class="ttdeci">#define MAGIC</div><div class="ttdef"><b>Definition:</b> <a href="object__internal_8h_source.html#l00006">object_internal.h:6</a></div></div>
-<div class="ttc" id="point_8c_html_a939d6d31946f042260f6b45f0d51ae12"><div class="ttname"><a href="point_8c.html#a939d6d31946f042260f6b45f0d51ae12">__construct__Point</a></div><div class="ttdeci">const void * __construct__Point(const void *const self, va_list args)</div><div class="ttdef"><b>Definition:</b> <a href="point_8c_source.html#l00034">point.c:34</a></div></div>
+<div class="ttc" id="object__internal_8h_html_a94630370ae389fb1189282fa0742f310"><div class="ttname"><a href="object__internal_8h.html#a94630370ae389fb1189282fa0742f310">MAGIC</a></div><div class="ttdeci">#define MAGIC</div><div class="ttdef"><b>Definition:</b> <a href="object__internal_8h_source.html#l00007">object_internal.h:7</a></div></div>
 <div class="ttc" id="structPoint_html"><div class="ttname"><a href="structPoint.html">Point</a></div><div class="ttdef"><b>Definition:</b> <a href="point_8h_source.html#l00005">point.h:5</a></div></div>
+<div class="ttc" id="point_8c_html_aceb361b54e6321dcf7a9cc0aab6f967c"><div class="ttname"><a href="point_8c.html#aceb361b54e6321dcf7a9cc0aab6f967c">__construct__Point</a></div><div class="ttdeci">const void * __construct__Point(const void *_self, size_t argc, va_list args)</div><div class="ttdef"><b>Definition:</b> <a href="point_8c_source.html#l00034">point.c:34</a></div></div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="point_8c_source.html#l00014">14</a> of file <a class="el" href="point_8c_source.html">point.c</a>.</p>
 
@@ -217,7 +223,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Sep 27 2019 15:45:11 for Object-Oriented-C by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 28 2019 15:28:03 for Object-Oriented-C by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.14
 </small></address>

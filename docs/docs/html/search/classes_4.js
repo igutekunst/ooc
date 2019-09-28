@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['string',['String',['../structString.html',1,'']]],
-  ['stringclass',['StringClass',['../structStringClass.html',1,'']]]
+  ['objectheader',['ObjectHeader',['../structObjectHeader.html',1,'']]],
+  ['ooctraitmath',['OOCTraitMath',['../structOOCTraitMath.html',1,'']]]
 ];

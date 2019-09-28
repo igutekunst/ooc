@@ -3,14 +3,14 @@
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-const void $\ast$ \mbox{\hyperlink{group__common_ga621d73ced80293aaecd6839e6bdec30d}{new}} (const void $\ast$class,...)
+const void $\ast$ \mbox{\hyperlink{group__common_ga1c393167a5a06a566a2cc64133c1695f}{\+\_\+new}} (size\+\_\+t argc,...)
 \begin{DoxyCompactList}\small\item\em Create a new ooc object. \end{DoxyCompactList}\item 
 const void $\ast$ \mbox{\hyperlink{group__common_ga68940c707bbebe6946aeca72df1ee803}{type}} (const void $\ast$self)
 \begin{DoxyCompactList}\small\item\em get ooc class object \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{group__common_gae293fe2fbbf9f2e8a87c1141e7412814}{del}} (const void $\ast$\+\_\+object)
-\item 
+void \mbox{\hyperlink{group__common_gaa32332a11f6b26468e618db044b95f75}{del}} (const void $\ast$object)
+\begin{DoxyCompactList}\small\item\em delete an ooc object \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{group__common_gafac8564ed88a6f8585f043fc6b2fa7e1}{size}} (const void $\ast$\+\_\+object)
-\item 
+\begin{DoxyCompactList}\small\item\em get size in bytes \end{DoxyCompactList}\item 
 const char $\ast$ \mbox{\hyperlink{group__common_gadcc35aece3f8a4c822a9bf2a591f087b}{clsname}} (const void $\ast$\+\_\+self)
 \item 
 void \mbox{\hyperlink{group__common_ga34dc6ab72cfd51381e8173226484e827}{print}} (const void $\ast$\+\_\+object)
@@ -27,6 +27,46 @@ bool \mbox{\hyperlink{group__common_ga4b83176929aeea62524d2a126d3c897f}{equals}}
 
 
 \subsection{Function Documentation}
+\mbox{\Hypertarget{group__common_ga1c393167a5a06a566a2cc64133c1695f}\label{group__common_ga1c393167a5a06a566a2cc64133c1695f}} 
+\index{Common functions@{Common functions}!\+\_\+new@{\+\_\+new}}
+\index{\+\_\+new@{\+\_\+new}!Common functions@{Common functions}}
+\subsubsection{\texorpdfstring{\+\_\+new()}{\_new()}}
+{\footnotesize\ttfamily const void$\ast$ \+\_\+new (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{argc,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Create a new ooc object. 
+
+This function allocates memory and returns a void$\ast$ to a newly allocated ooc object, or N\+U\+LL on failure.
+
+\+\_\+class should be a pointer to an ooc class object, such as \mbox{\hyperlink{structString}{String}} or \mbox{\hyperlink{structHashMap}{Hash\+Map}}. 
+\begin{DoxyParams}{Parameters}
+{\em class} & ooc class object \\
+\hline
+{\em argc} & number of arguments provided \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+new object or type class, or N\+U\+LL
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em class} & O\+OC class to instantiate \\
+\hline
+{\em ...} & arguments to initialize class \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 17 of file object.\+c.
+
+
+
+References Object\+Header\+::class, M\+A\+G\+IC, class\+\_\+header\+::object\+\_\+init, and class\+\_\+header\+::size.
+
 \mbox{\Hypertarget{group__common_gadcc35aece3f8a4c822a9bf2a591f087b}\label{group__common_gadcc35aece3f8a4c822a9bf2a591f087b}} 
 \index{Common functions@{Common functions}!clsname@{clsname}}
 \index{clsname@{clsname}!Common functions@{Common functions}}
@@ -35,15 +75,15 @@ bool \mbox{\hyperlink{group__common_ga4b83176929aeea62524d2a126d3c897f}{equals}}
 
 
 
-Definition at line 105 of file object.\+c.
+Definition at line 120 of file object.\+c.
 
 
 
-References get\+\_\+obj(), and class\+\_\+header\+::object\+\_\+name.
+References get\+\_\+class\+\_\+header\+\_\+msg(), and class\+\_\+header\+::object\+\_\+name.
 
 
 
-Referenced by main(), and String\+\_\+equal().
+Referenced by append(), get\+\_\+item(), iter(), len(), List\+\_\+get\+\_\+item(), obj\+\_\+add(), obj\+\_\+to\+\_\+int(), and String\+\_\+equal().
 
 \mbox{\Hypertarget{group__common_gab08ed4d7b5aa115383f38057e006be9d}\label{group__common_gab08ed4d7b5aa115383f38057e006be9d}} 
 \index{Common functions@{Common functions}!copy@{copy}}
@@ -53,29 +93,38 @@ Referenced by main(), and String\+\_\+equal().
 
 
 
-Definition at line 121 of file object.\+c.
+Definition at line 136 of file object.\+c.
 
 
 
-References class\+\_\+header\+::copy, and get\+\_\+obj().
+References class\+\_\+header\+::copy, and get\+\_\+class\+\_\+header\+\_\+msg().
 
 
 
 Referenced by main().
 
-\mbox{\Hypertarget{group__common_gae293fe2fbbf9f2e8a87c1141e7412814}\label{group__common_gae293fe2fbbf9f2e8a87c1141e7412814}} 
+\mbox{\Hypertarget{group__common_gaa32332a11f6b26468e618db044b95f75}\label{group__common_gaa32332a11f6b26468e618db044b95f75}} 
 \index{Common functions@{Common functions}!del@{del}}
 \index{del@{del}!Common functions@{Common functions}}
 \subsubsection{\texorpdfstring{del()}{del()}}
-{\footnotesize\ttfamily void del (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+object }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void del (\begin{DoxyParamCaption}\item[{const void $\ast$}]{object }\end{DoxyParamCaption})}
 
 
 
-Definition at line 34 of file object.\+c.
+delete an ooc object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 44 of file object.\+c.
 
 
 
-References get\+\_\+obj(), and class\+\_\+header\+::object\+\_\+deinit.
+References get\+\_\+class\+\_\+header\+\_\+msg(), and class\+\_\+header\+::object\+\_\+deinit.
 
 \mbox{\Hypertarget{group__common_ga4b83176929aeea62524d2a126d3c897f}\label{group__common_ga4b83176929aeea62524d2a126d3c897f}} 
 \index{Common functions@{Common functions}!equals@{equals}}
@@ -85,11 +134,11 @@ References get\+\_\+obj(), and class\+\_\+header\+::object\+\_\+deinit.
 
 
 
-Definition at line 135 of file object.\+c.
+Definition at line 150 of file object.\+c.
 
 
 
-References get\+\_\+obj().
+References get\+\_\+class\+\_\+header\+\_\+msg().
 
 
 
@@ -103,53 +152,15 @@ Referenced by get\+\_\+\+Hash\+Map(), and internal\+\_\+insert\+\_\+\+Hash\+Map(
 
 
 
-Definition at line 91 of file object.\+c.
+Definition at line 106 of file object.\+c.
 
 
 
-References class\+\_\+header\+::get\+\_\+len, and get\+\_\+obj().
+References clsname(), get\+\_\+class\+\_\+header\+\_\+msg(), and class\+\_\+header\+::get\+\_\+len.
 
 
 
 Referenced by \+\_\+\+\_\+construct\+\_\+\+\_\+\+String(), F\+N\+V32(), and String\+\_\+append().
-
-\mbox{\Hypertarget{group__common_ga621d73ced80293aaecd6839e6bdec30d}\label{group__common_ga621d73ced80293aaecd6839e6bdec30d}} 
-\index{Common functions@{Common functions}!new@{new}}
-\index{new@{new}!Common functions@{Common functions}}
-\subsubsection{\texorpdfstring{new()}{new()}}
-{\footnotesize\ttfamily const void$\ast$ new (\begin{DoxyParamCaption}\item[{const void $\ast$const}]{\+\_\+class,  }\item[{}]{... }\end{DoxyParamCaption})}
-
-
-
-Create a new ooc object. 
-
-This function allocates memory and returns a void$\ast$ to a newly allocated ooc object, or N\+U\+LL on failure.
-
-\+\_\+class should be a pointer to an ooc class object, such as \mbox{\hyperlink{structString}{String}} or \mbox{\hyperlink{structHashMap}{Hash\+Map}}. 
-\begin{DoxyParams}{Parameters}
-{\em class} & ooc class object \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-new object or type class, or N\+U\+LL
-\end{DoxyReturn}
-
-\begin{DoxyParams}{Parameters}
-{\em \+\_\+class} & \\
-\hline
-{\em ...} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-
-\end{DoxyReturn}
-
-
-Definition at line 15 of file object.\+c.
-
-
-
-References M\+A\+G\+IC.
 
 \mbox{\Hypertarget{group__common_ga34dc6ab72cfd51381e8173226484e827}\label{group__common_ga34dc6ab72cfd51381e8173226484e827}} 
 \index{Common functions@{Common functions}!print@{print}}
@@ -159,11 +170,11 @@ References M\+A\+G\+IC.
 
 
 
-Definition at line 59 of file object.\+c.
+Definition at line 74 of file object.\+c.
 
 
 
-References get\+\_\+obj(), and class\+\_\+header\+::print.
+References get\+\_\+class\+\_\+header\+\_\+msg(), and class\+\_\+header\+::print.
 
 
 
@@ -177,11 +188,23 @@ Referenced by main().
 
 
 
-Definition at line 72 of file object.\+c.
+get size in bytes 
+
+Get the full size in bytes of an ooc object. This is implementation defined, and may not include the size of items contained in a collection for example 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+object} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+size in bytes of object 
+\end{DoxyReturn}
+
+
+Definition at line 87 of file object.\+c.
 
 
 
-References get\+\_\+obj(), and class\+\_\+header\+::get\+\_\+size.
+References get\+\_\+class\+\_\+header\+\_\+msg(), and class\+\_\+header\+::get\+\_\+size.
 
 
 
@@ -207,11 +230,11 @@ ooc class of a given ooc object
 \end{DoxyReturn}
 
 
-Definition at line 83 of file object.\+c.
+Definition at line 98 of file object.\+c.
 
 
 
-References get\+\_\+obj().
+References get\+\_\+class\+\_\+header\+\_\+msg().
 
 
 

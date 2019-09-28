@@ -5,7 +5,7 @@
     <member refid="structclass__header_1a5ba6bf54fc12a2a31a2b39937cd50e84" kind="variable"><name>size</name></member>
     <member refid="structclass__header_1a5c135b5316d0d9d22dce1f32fb8befb1" kind="variable"><name>get_size</name></member>
     <member refid="structclass__header_1a1b7cb949741b9a64fd3569af94f30cba" kind="variable"><name>get_len</name></member>
-    <member refid="structclass__header_1a560f3c418eb904136bfcb91d3618430c" kind="variable"><name>object_init</name></member>
+    <member refid="structclass__header_1a11011a70a48768fbe95790914ea808c9" kind="variable"><name>object_init</name></member>
     <member refid="structclass__header_1aa07a11a17f5d79a66c9086b8d10969b7" kind="variable"><name>object_deinit</name></member>
     <member refid="structclass__header_1a23181c1eac1455a8f23dd9d14f8b6abd" kind="variable"><name>print</name></member>
     <member refid="structclass__header_1af8a0a6de1e1eb96faab68cc58fcf84d0" kind="variable"><name>str</name></member>
@@ -15,11 +15,12 @@
     <member refid="structclass__header_1ab45bdc16b08b8cde751d161dd0c4f230" kind="variable"><name>iter</name></member>
     <member refid="structclass__header_1a26ec3e94c98bf5d3eff10d37cf2696ef" kind="variable"><name>copy</name></member>
     <member refid="structclass__header_1ada4fc11b4f09e8248a28c7d2e39e17ea" kind="variable"><name>insert</name></member>
-    <member refid="structclass__header_1ab2de24bb8c5d3b1b5e74a69bb6c307b2" kind="variable"><name>get</name></member>
+    <member refid="structclass__header_1ae59ea98ace6dc13ad2182a1433f78110" kind="variable"><name>get_item</name></member>
     <member refid="structclass__header_1a4d88d979ecf23c184577d937454ab973" kind="variable"><name>del_item</name></member>
     <member refid="structclass__header_1aa0035a2c833b1e46f0ae401d6b44ee65" kind="variable"><name>hash</name></member>
     <member refid="structclass__header_1a34b23ea4b047e4526bfb743d5be3e69c" kind="variable"><name>next</name></member>
     <member refid="structclass__header_1af7f2f5623c98afb59519062172644350" kind="variable"><name>object_name</name></member>
+    <member refid="structclass__header_1a119175910ca4b52e4671f04616dcd2f6" kind="variable"><name>math</name></member>
   </compound>
   <compound refid="structHashItem" kind="struct"><name>HashItem</name>
     <member refid="structHashItem_1ab70c6466a57bc6f281a7943350a74329" kind="variable"><name>internal_key</name></member>
@@ -58,10 +59,45 @@
     <member refid="structInt_1aa497eee8de1a0588fe99440e34089b89" kind="variable"><name>class</name></member>
     <member refid="structInt_1a9a4308bb1dff85cd00c70f97bf4fbb8b" kind="variable"><name>size</name></member>
     <member refid="structInt_1ab131a0721b22e28accfb39f0195413ab" kind="variable"><name>value</name></member>
-    <member refid="structInt_1aedf38abd9d2da54ad7b8889b97024d9c" kind="variable"><name>str_value</name></member>
+    <member refid="structInt_1a22a0684391962593f1320ab5039e4642" kind="variable"><name>str_value</name></member>
   </compound>
   <compound refid="structIntClass" kind="struct"><name>IntClass</name>
     <member refid="structIntClass_1a434c7c785b8a61096c69491220ab8543" kind="variable"><name>class</name></member>
+  </compound>
+  <compound refid="structList" kind="struct"><name>List</name>
+    <member refid="structList_1a39a6fe2bfe1c66b66ca966e87241b1ca" kind="variable"><name>class</name></member>
+    <member refid="structList_1a166530a166abd81afec0e6b0283f7e80" kind="variable"><name>size</name></member>
+    <member refid="structList_1ac7c599366a5b35b3d8725df1b6239955" kind="variable"><name>len</name></member>
+    <member refid="structList_1ac4c33942be7f3c4ae0d6d836fc9aaf25" kind="variable"><name>iterating</name></member>
+    <member refid="structList_1abba5cd8966cc47ab6cb0b3cead7b5106" kind="variable"><name>head</name></member>
+    <member refid="structList_1a6d4b5761bf36f1d143057557e034eb0b" kind="variable"><name>tail</name></member>
+  </compound>
+  <compound refid="structListClass" kind="struct"><name>ListClass</name>
+    <member refid="structListClass_1a8e823d87f5a5919ed02857462c475c91" kind="variable"><name>class</name></member>
+  </compound>
+  <compound refid="structListItem" kind="struct"><name>ListItem</name>
+    <member refid="structListItem_1a4726bec30855b9d9776368f3b6fad191" kind="variable"><name>value</name></member>
+    <member refid="structListItem_1a3a9c06ae85f60557666cb569b36072a9" kind="variable"><name>next</name></member>
+  </compound>
+  <compound refid="structListIterator" kind="struct"><name>ListIterator</name>
+    <member refid="structListIterator_1ab3502d78f7274e2ececbc7581bedff74" kind="variable"><name>class</name></member>
+    <member refid="structListIterator_1a6f7c700353a4ce4a687504ba0a0b35e0" kind="variable"><name>list</name></member>
+    <member refid="structListIterator_1a63d062a738f1a9278cb996d8d6abc262" kind="variable"><name>done</name></member>
+    <member refid="structListIterator_1a4be321bdc175ecfa3bc9e74e107e8fdd" kind="variable"><name>item</name></member>
+  </compound>
+  <compound refid="structListIteratorClass" kind="struct"><name>ListIteratorClass</name>
+    <member refid="structListIteratorClass_1a2bcc85fff2e5dc6d0a984dc1f1536a78" kind="variable"><name>class</name></member>
+  </compound>
+  <compound refid="structObjectHeader" kind="struct"><name>ObjectHeader</name>
+    <member refid="structObjectHeader_1a35e7f1485a6bee012c479fe61ff8717d" kind="variable"><name>class</name></member>
+  </compound>
+  <compound refid="structOOCTraitMath" kind="struct"><name>OOCTraitMath</name>
+    <member refid="structOOCTraitMath_1aa41fea83145bd51c3104475b895126bd" kind="variable"><name>enabled</name></member>
+    <member refid="structOOCTraitMath_1ab5bd3c26fffceb4281e8a7a6c670bd28" kind="variable"><name>add</name></member>
+    <member refid="structOOCTraitMath_1af9091282b3de5e335a75e51e54240ec5" kind="variable"><name>sub</name></member>
+    <member refid="structOOCTraitMath_1a17d60591640141c98fdba744a034a766" kind="variable"><name>mul</name></member>
+    <member refid="structOOCTraitMath_1af0d15ca84de8dcdf95ab3a57f567d3c5" kind="variable"><name>div</name></member>
+    <member refid="structOOCTraitMath_1adb6702c7794b114f252fba89f58342cc" kind="variable"><name>to_int</name></member>
   </compound>
   <compound refid="structPerson" kind="struct"><name>Person</name>
     <member refid="structPerson_1ac2d72607b366d6b5520a340b3deaced4" kind="variable"><name>class</name></member>
@@ -95,14 +131,24 @@
     <member refid="hashmap_8h_1a460bbbf2046f6aaf34ce30bb2be13939" kind="variable"><name>HashMap</name></member>
     <member refid="hashmap_8h_1a45019180cc2e660110ceabdc4b807f3e" kind="variable"><name>HashMap_iter</name></member>
   </compound>
-  <compound refid="Int_8h" kind="file"><name>Int.h</name>
-    <member refid="Int_8h_1a58f95e509cb472a46236fb2ba211af09" kind="variable"><name>Int</name></member>
+  <compound refid="int_8h" kind="file"><name>int.h</name>
+    <member refid="int_8h_1a58f95e509cb472a46236fb2ba211af09" kind="variable"><name>Int</name></member>
+  </compound>
+  <compound refid="list_8h" kind="file"><name>list.h</name>
+    <member refid="list_8h_1a39f007643f44b8d0b58dab4137284af4" kind="variable"><name>List</name></member>
+    <member refid="list_8h_1a3950860ae6bd717891393bc705572d34" kind="variable"><name>ListIterator</name></member>
+  </compound>
+  <compound refid="math_8h" kind="file"><name>math.h</name>
+    <member refid="math_8h_1a8202f1cadbe86449c7f0f409c4854d54" kind="function"><name>obj_add</name></member>
+    <member refid="math_8h_1a82f3a0320d669e42238ee3b55c8f479c" kind="function"><name>obj_sub</name></member>
+    <member refid="math_8h_1ab0b1bdb9d3e15efa8081302d3aa3b4ef" kind="function"><name>obj_mul</name></member>
+    <member refid="math_8h_1aa41a0a240aae5f092e00c6fc722517fd" kind="function"><name>obj_div</name></member>
+    <member refid="math_8h_1a2ee0ad7da46b9225036ceafdf742282b" kind="function"><name>obj_to_int</name></member>
   </compound>
   <compound refid="object_8h" kind="file"><name>object.h</name>
-    <member refid="object_8h_1a48931ea75855e6980404ced5938a79ec" kind="variable"><name>Class</name></member>
-    <member refid="group__common_1ga621d73ced80293aaecd6839e6bdec30d" kind="function"><name>new</name></member>
+    <member refid="group__common_1ga1c393167a5a06a566a2cc64133c1695f" kind="function"><name>_new</name></member>
     <member refid="group__common_1ga68940c707bbebe6946aeca72df1ee803" kind="function"><name>type</name></member>
-    <member refid="group__common_1gae293fe2fbbf9f2e8a87c1141e7412814" kind="function"><name>del</name></member>
+    <member refid="group__common_1gaa32332a11f6b26468e618db044b95f75" kind="function"><name>del</name></member>
     <member refid="group__common_1gafac8564ed88a6f8585f043fc6b2fa7e1" kind="function"><name>size</name></member>
     <member refid="group__common_1gadcc35aece3f8a4c822a9bf2a591f087b" kind="function"><name>clsname</name></member>
     <member refid="group__common_1ga34dc6ab72cfd51381e8173226484e827" kind="function"><name>print</name></member>
@@ -110,16 +156,22 @@
     <member refid="group__common_1gab08ed4d7b5aa115383f38057e006be9d" kind="function"><name>copy</name></member>
     <member refid="group__common_1ga4b83176929aeea62524d2a126d3c897f" kind="function"><name>equals</name></member>
     <member refid="object_8h_1a6ab4b3e256d10044340c1f861c031438" kind="function"><name>str</name></member>
-    <member refid="object_8h_1a0260ca338ae2a831d9a9aa244da5560d" kind="function"><name>to_String</name></member>
+    <member refid="object_8h_1a23b80bc1ca4cac9bafcb0735aa404009" kind="function"><name>to_String</name></member>
     <member refid="group__collection_1ga2bd4216bcf1d5810032394f57fbf5c2f" kind="function"><name>append</name></member>
-    <member refid="group__collection_1gaa1b700b0fbad0b56b81291260569d8b2" kind="function"><name>insert</name></member>
+    <member refid="group__collection_1ga6b0c20cd48a1ab79321a018d29037161" kind="function"><name>set_item</name></member>
     <member refid="group__collection_1gaa467fc1e6a3036f13ea20b36a6e672a1" kind="function"><name>get_item</name></member>
-    <member refid="group__collection_1gaaad95663edf19fd4b734bd9977976169" kind="function"><name>get_obj</name></member>
+    <member refid="group__collection_1gacfda61f6ab04bc36786ceb00fab70775" kind="function"><name>get_class_header_msg</name></member>
+    <member refid="group__collection_1gabf324b663150d7bbcfe0e3b84b21102f" kind="function"><name>get_obj_type</name></member>
     <member refid="group__collection_1ga0cb67414335937707c9b92809a10895b" kind="function"><name>iter</name></member>
     <member refid="group__collection_1gae0b3682e6ff5038e94c9e551bdd0d489" kind="function"><name>hash</name></member>
     <member refid="group__collection_1gaecc46e74b03a83ca8a8023cc7264489c" kind="function"><name>next</name></member>
     <member refid="group__collection_1ga8b99290b943601321e5bf291daecaae3" kind="function"><name>del_item</name></member>
-    <member refid="object_8h_1a8837e68ffda149b4f7015cafab0c2a3c" kind="function"><name>get_class_header</name></member>
+  </compound>
+  <compound refid="object__va__args_8h" kind="file"><name>object_va_args.h</name>
+    <member refid="object__va__args_8h_1a31b9bcd0e7f30adb8ed947d86d4ae11b" kind="define"><name>PP_NARG</name></member>
+    <member refid="object__va__args_8h_1a1b4b6dfcca38ee665c4c88c07d58c4f0" kind="define"><name>PP_NARG_</name></member>
+    <member refid="object__va__args_8h_1a0dc8e546426e1aa2bff01b22f80c4c5f" kind="define"><name>PP_ARG_N</name></member>
+    <member refid="object__va__args_8h_1a15967218850ac6ac5ffd777368fec7fd" kind="define"><name>PP_RSEQ_N</name></member>
   </compound>
   <compound refid="person_8h" kind="file"><name>person.h</name>
     <member refid="person_8h_1a588179b669d31ab467e542d8b997361f" kind="variable"><name>Person</name></member>
@@ -145,7 +197,7 @@
     <member refid="hashmap_8c_1a460bbbf2046f6aaf34ce30bb2be13939" kind="variable"><name>HashMap</name></member>
     <member refid="hashmap_8c_1a19a320a0fb44773b7b2edde8b06f7e0b" kind="variable"><name>hash_map_class_iter</name></member>
     <member refid="hashmap_8c_1a45019180cc2e660110ceabdc4b807f3e" kind="variable"><name>HashMap_iter</name></member>
-    <member refid="hashmap_8c_1a91f44dc50fe5d24c4970a8772347bef7" kind="function"><name>__construct__HashMap</name></member>
+    <member refid="hashmap_8c_1ad4de73a10996248c06b40c4c391066b3" kind="function"><name>__construct__HashMap</name></member>
     <member refid="hashmap_8c_1ade2afccd37e881325eb1ce005a1d8d1e" kind="function"><name>print_HashMap</name></member>
     <member refid="hashmap_8c_1a700517ea0c1ffc800b7c93b475a5e78a" kind="function"><name>get_size_HashMap</name></member>
     <member refid="hashmap_8c_1a79dcb455435133253d86b70e31e3cba3" kind="function"><name>get_len_HashMap</name></member>
@@ -163,31 +215,60 @@
     <member refid="hashmap_8c_1a62d30d0ca399807fa03a80759da17168" kind="function"><name>internal_hash</name></member>
     <member refid="hashmap_8c_1a8aa67d2dac0692c1128b50780ad9dfc1" kind="function"><name>internal_insert_HashMap</name></member>
     <member refid="hashmap_8c_1a3941f840164dd3ce845aec0bd5fc5652" kind="function"><name>internal_count_HashMap</name></member>
-    <member refid="hashmap_8c_1a4425bb488e5bfb1e9244675a31df3470" kind="function"><name>__destruct__HashMap</name></member>
+    <member refid="hashmap_8c_1aecd90da1441575a53cb0e715108ef1ba" kind="function"><name>__destruct__HashMap</name></member>
     <member refid="hashmap_8c_1a10476d872d0cfcb234391cabf5e888a1" kind="function"><name>del_item_HashMap</name></member>
     <member refid="hashmap_8c_1aa1645276039a5f13164347699538139b" kind="function"><name>iter_HashMap</name></member>
-    <member refid="hashmap_8c_1ae8c6201244c05c149ee58f00693fbe18" kind="function"><name>__construct__HashMap_iter</name></member>
+    <member refid="hashmap_8c_1a7472518034803385044e43d8edeb1e79" kind="function"><name>__construct__HashMap_iter</name></member>
   </compound>
-  <compound refid="Int_8c" kind="file"><name>Int.c</name>
-    <member refid="Int_8c_1a51f8590f130ffc55b99a4c1b67d5e6fa" kind="variable"><name>int_class</name></member>
-    <member refid="Int_8c_1a58f95e509cb472a46236fb2ba211af09" kind="variable"><name>Int</name></member>
-    <member refid="Int_8c_1ae873d36964132e55e78d420070550a21" kind="function"><name>__construct__Int</name></member>
-    <member refid="Int_8c_1a6100918901d95112924d8135157c5f3e" kind="function"><name>print_Int</name></member>
-    <member refid="Int_8c_1abb3319f5992def2d229948d2ed6599b9" kind="function"><name>get_size_Int</name></member>
-    <member refid="Int_8c_1a5f323fab797bbc86aac561ba2e5e4007" kind="function"><name>to_str_Int</name></member>
-    <member refid="Int_8c_1a1691ac04f4e88ad79d85283840d6f151" kind="function"><name>append_Int</name></member>
-    <member refid="Int_8c_1a6d622faaba5978eeafe94e22c341faeb" kind="function"><name>test_int</name></member>
+  <compound refid="int_8c" kind="file"><name>int.c</name>
+    <member refid="int_8c_1a9c6918fbdb610a62c848aa680b81eb9a" kind="define"><name>MAX_STR_SIZE</name></member>
+    <member refid="int_8c_1a51f8590f130ffc55b99a4c1b67d5e6fa" kind="variable"><name>int_class</name></member>
+    <member refid="int_8c_1a58f95e509cb472a46236fb2ba211af09" kind="variable"><name>Int</name></member>
+    <member refid="int_8c_1a7dc53a21b3398adfbc1cbc480e8a5c8a" kind="function"><name>Int_init</name></member>
+    <member refid="int_8c_1a708091bca901de1b68b1ec246f8adffc" kind="function"><name>Int_print</name></member>
+    <member refid="int_8c_1a732a138a63b0f5c3f25c18e6983e43a7" kind="function"><name>Int_get_size</name></member>
+    <member refid="int_8c_1ab90bad1ffdc0df48932efeb24f834f2e" kind="function"><name>Int_to_str</name></member>
+    <member refid="int_8c_1a5ee11528e9e9edd386cfc6b5d2b84490" kind="function"><name>Int_add</name></member>
+    <member refid="int_8c_1ab7e968a6838e99204647de44c4aca4c7" kind="function"><name>Int_sub</name></member>
+    <member refid="int_8c_1a5606319e57bb3b2e475024318f23a589" kind="function"><name>Int_mul</name></member>
+    <member refid="int_8c_1a4e6bebbc74025fe9ba93bf207150cb27" kind="function"><name>Int_div</name></member>
+    <member refid="int_8c_1a7e38771d97a50fb7c2d292a454c0abfb" kind="function"><name>Int_to_int</name></member>
+    <member refid="int_8c_1a6d622faaba5978eeafe94e22c341faeb" kind="function"><name>test_int</name></member>
   </compound>
   <compound refid="iterator_8c" kind="file"><name>iterator.c</name>
+  </compound>
+  <compound refid="list_8c" kind="file"><name>list.c</name>
+    <member refid="list_8c_1a02e13bf283b917663439262e144cff2b" kind="typedef"><name>ListItem</name></member>
+    <member refid="list_8c_1a0496ad68b20ba8adb788b32302d0180d" kind="variable"><name>List_class</name></member>
+    <member refid="list_8c_1a98d6a985ab39515bc1b47478f23be031" kind="variable"><name>list_iterator_class</name></member>
+    <member refid="list_8c_1a3950860ae6bd717891393bc705572d34" kind="variable"><name>ListIterator</name></member>
+    <member refid="list_8c_1a39f007643f44b8d0b58dab4137284af4" kind="variable"><name>List</name></member>
+    <member refid="list_8c_1a6f7e71341da2330ce5bc61e15f9f2652" kind="function"><name>List_append</name></member>
+    <member refid="list_8c_1a90058f3a1ebf8b3af93fae2eeaf5a722" kind="function"><name>List_init</name></member>
+    <member refid="list_8c_1ad5b8c50b806751b83a3aa63ff891ed70" kind="function"><name>List_get_size</name></member>
+    <member refid="list_8c_1a0c90ae4a31e56f8604eddae05240ef9f" kind="function"><name>List_get_len</name></member>
+    <member refid="list_8c_1aec387646791ce579c16e3ef129c32f74" kind="function"><name>List_to_str</name></member>
+    <member refid="list_8c_1a975abd5adea5f2b1caa581cb8994dd9a" kind="function"><name>List_get_item</name></member>
+    <member refid="list_8c_1a4f41f9ad2faf8659af62e4b1fbd264ee" kind="function"><name>List_iter</name></member>
+    <member refid="list_8c_1abf7dbd1c02022ec5a52ff02008a0238e" kind="function"><name>ListIterator_init</name></member>
+    <member refid="list_8c_1afb27ed3e1bca02101c0d251b7ae8b587" kind="function"><name>ListIterator_next</name></member>
   </compound>
   <compound refid="main_8c" kind="file"><name>main.c</name>
     <member refid="main_8c_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
   </compound>
+  <compound refid="math_8c" kind="file"><name>math.c</name>
+    <member refid="math_8c_1a4516cd731815124e497769241604dadf" kind="function"><name>obj_add</name></member>
+    <member refid="math_8c_1a82f3a0320d669e42238ee3b55c8f479c" kind="function"><name>obj_sub</name></member>
+    <member refid="math_8c_1ab0b1bdb9d3e15efa8081302d3aa3b4ef" kind="function"><name>obj_mul</name></member>
+    <member refid="math_8c_1aa41a0a240aae5f092e00c6fc722517fd" kind="function"><name>obj_div</name></member>
+    <member refid="math_8c_1a99b390d28968e75dde77f9b0db79eb5f" kind="function"><name>obj_to_int</name></member>
+  </compound>
   <compound refid="object_8c" kind="file"><name>object.c</name>
     <member refid="object_8c_1a48931ea75855e6980404ced5938a79ec" kind="variable"><name>Class</name></member>
-    <member refid="group__common_1ga621d73ced80293aaecd6839e6bdec30d" kind="function"><name>new</name></member>
-    <member refid="group__common_1gae293fe2fbbf9f2e8a87c1141e7412814" kind="function"><name>del</name></member>
+    <member refid="group__common_1ga1c393167a5a06a566a2cc64133c1695f" kind="function"><name>_new</name></member>
+    <member refid="group__common_1gaa32332a11f6b26468e618db044b95f75" kind="function"><name>del</name></member>
     <member refid="object_8c_1a317798c33e05ea3ca01d0a70148f61ad" kind="function"><name>str</name></member>
+    <member refid="object_8c_1a23b80bc1ca4cac9bafcb0735aa404009" kind="function"><name>to_String</name></member>
     <member refid="group__common_1ga34dc6ab72cfd51381e8173226484e827" kind="function"><name>print</name></member>
     <member refid="group__common_1gafac8564ed88a6f8585f043fc6b2fa7e1" kind="function"><name>size</name></member>
     <member refid="group__common_1ga68940c707bbebe6946aeca72df1ee803" kind="function"><name>type</name></member>
@@ -196,14 +277,17 @@
     <member refid="group__common_1gab08ed4d7b5aa115383f38057e006be9d" kind="function"><name>copy</name></member>
     <member refid="group__common_1ga4b83176929aeea62524d2a126d3c897f" kind="function"><name>equals</name></member>
     <member refid="group__collection_1ga2bd4216bcf1d5810032394f57fbf5c2f" kind="function"><name>append</name></member>
-    <member refid="group__collection_1gaaad95663edf19fd4b734bd9977976169" kind="function"><name>get_obj</name></member>
+    <member refid="group__collection_1gacfda61f6ab04bc36786ceb00fab70775" kind="function"><name>get_class_header_msg</name></member>
+    <member refid="group__collection_1gabf324b663150d7bbcfe0e3b84b21102f" kind="function"><name>get_obj_type</name></member>
     <member refid="object_8c_1a8837e68ffda149b4f7015cafab0c2a3c" kind="function"><name>get_class_header</name></member>
     <member refid="group__collection_1gae0b3682e6ff5038e94c9e551bdd0d489" kind="function"><name>hash</name></member>
-    <member refid="group__collection_1gaa1b700b0fbad0b56b81291260569d8b2" kind="function"><name>insert</name></member>
+    <member refid="group__collection_1ga6b0c20cd48a1ab79321a018d29037161" kind="function"><name>set_item</name></member>
     <member refid="group__collection_1ga8b99290b943601321e5bf291daecaae3" kind="function"><name>del_item</name></member>
     <member refid="group__collection_1gaa467fc1e6a3036f13ea20b36a6e672a1" kind="function"><name>get_item</name></member>
     <member refid="group__collection_1ga0cb67414335937707c9b92809a10895b" kind="function"><name>iter</name></member>
     <member refid="group__collection_1gaecc46e74b03a83ca8a8023cc7264489c" kind="function"><name>next</name></member>
+    <member refid="object_8c_1a68f404b6502dda7869a76b1ffcb9ffd6" kind="function"><name>keys</name></member>
+    <member refid="object_8c_1a413d87a43c15a9b014d672a91d8a1cd3" kind="function"><name>values</name></member>
   </compound>
   <compound refid="object__internal_8h" kind="file"><name>object_internal.h</name>
     <member refid="object__internal_8h_1a94630370ae389fb1189282fa0742f310" kind="define"><name>MAGIC</name></member>
@@ -211,7 +295,7 @@
   <compound refid="person_8c" kind="file"><name>person.c</name>
     <member refid="person_8c_1ae629a5cc6fd7522471c9556267053bff" kind="variable"><name>person_class</name></member>
     <member refid="person_8c_1a588179b669d31ab467e542d8b997361f" kind="variable"><name>Person</name></member>
-    <member refid="person_8c_1a479eaa947f7de8878921d30df63875eb" kind="function"><name>__construct__Person</name></member>
+    <member refid="person_8c_1adaf633e0102ae03a6b233de044b1f162" kind="function"><name>__construct__Person</name></member>
     <member refid="person_8c_1a0108e77460f7fc9f156aa8ff2919c496" kind="function"><name>__destruct__Person</name></member>
     <member refid="person_8c_1ac8f165e3cdab75026b74bdb45923d84c" kind="function"><name>print_Person</name></member>
     <member refid="person_8c_1ac756035079421633f84f42223847fbc4" kind="function"><name>get_size_Person</name></member>
@@ -219,7 +303,7 @@
   <compound refid="point_8c" kind="file"><name>point.c</name>
     <member refid="point_8c_1a1e029dbe8c0d15fbc7460d432de86510" kind="variable"><name>point_class</name></member>
     <member refid="point_8c_1a1a395805ca983410ef1ba6e0b1e5924f" kind="variable"><name>Point</name></member>
-    <member refid="point_8c_1a939d6d31946f042260f6b45f0d51ae12" kind="function"><name>__construct__Point</name></member>
+    <member refid="point_8c_1aceb361b54e6321dcf7a9cc0aab6f967c" kind="function"><name>__construct__Point</name></member>
     <member refid="point_8c_1a75983d2ec5626f7206475606900aac49" kind="function"><name>print_Point</name></member>
     <member refid="point_8c_1a1f564f5c32ae82a07d198437f1c3ed6c" kind="function"><name>get_size_Point</name></member>
   </compound>
@@ -230,7 +314,7 @@
     <member refid="string_8c_1a7b896f7c16c20c94b9b961fe9e926a4f" kind="variable"><name>String</name></member>
     <member refid="string_8c_1ad9f87c949c08dce2651433d0cc06d8dd" kind="function"><name>String_get_len</name></member>
     <member refid="string_8c_1a4b419646ac4f54ba6302b8e4e58c9678" kind="function"><name>String_get_size</name></member>
-    <member refid="string_8c_1a2e1266f696c96e5bfd8ffbed7be891fa" kind="function"><name>__construct__String</name></member>
+    <member refid="string_8c_1ae55182aad42d41b3d50d6a078f74e0ed" kind="function"><name>__construct__String</name></member>
     <member refid="string_8c_1ad43e4d63a18fb1a7eebfc5291f704966" kind="function"><name>print_String</name></member>
     <member refid="string_8c_1a9a56d1c8e084d0302f33b3b90260693d" kind="function"><name>String_str</name></member>
     <member refid="string_8c_1ad84cbc93082cb73a0aeb9911e2768c90" kind="function"><name>String_append</name></member>
@@ -239,10 +323,12 @@
     <member refid="string_8c_1a0861087e40ab0649cb2c5ce91798171b" kind="function"><name>FNV32</name></member>
     <member refid="string_8c_1a518744bdc3e883cc2349d5b4cd32cb95" kind="function"><name>String_hash</name></member>
   </compound>
+  <compound refid="trait__math__internal_8h" kind="file"><name>trait_math_internal.h</name>
+  </compound>
   <compound refid="group__common" kind="group"><name>common</name>
-    <member refid="group__common_1ga621d73ced80293aaecd6839e6bdec30d" kind="function"><name>new</name></member>
+    <member refid="group__common_1ga1c393167a5a06a566a2cc64133c1695f" kind="function"><name>_new</name></member>
     <member refid="group__common_1ga68940c707bbebe6946aeca72df1ee803" kind="function"><name>type</name></member>
-    <member refid="group__common_1gae293fe2fbbf9f2e8a87c1141e7412814" kind="function"><name>del</name></member>
+    <member refid="group__common_1gaa32332a11f6b26468e618db044b95f75" kind="function"><name>del</name></member>
     <member refid="group__common_1gafac8564ed88a6f8585f043fc6b2fa7e1" kind="function"><name>size</name></member>
     <member refid="group__common_1gadcc35aece3f8a4c822a9bf2a591f087b" kind="function"><name>clsname</name></member>
     <member refid="group__common_1ga34dc6ab72cfd51381e8173226484e827" kind="function"><name>print</name></member>
@@ -252,9 +338,10 @@
   </compound>
   <compound refid="group__collection" kind="group"><name>collection</name>
     <member refid="group__collection_1ga2bd4216bcf1d5810032394f57fbf5c2f" kind="function"><name>append</name></member>
-    <member refid="group__collection_1gaa1b700b0fbad0b56b81291260569d8b2" kind="function"><name>insert</name></member>
+    <member refid="group__collection_1ga6b0c20cd48a1ab79321a018d29037161" kind="function"><name>set_item</name></member>
     <member refid="group__collection_1gaa467fc1e6a3036f13ea20b36a6e672a1" kind="function"><name>get_item</name></member>
-    <member refid="group__collection_1gaaad95663edf19fd4b734bd9977976169" kind="function"><name>get_obj</name></member>
+    <member refid="group__collection_1gacfda61f6ab04bc36786ceb00fab70775" kind="function"><name>get_class_header_msg</name></member>
+    <member refid="group__collection_1gabf324b663150d7bbcfe0e3b84b21102f" kind="function"><name>get_obj_type</name></member>
     <member refid="group__collection_1ga0cb67414335937707c9b92809a10895b" kind="function"><name>iter</name></member>
     <member refid="group__collection_1gae0b3682e6ff5038e94c9e551bdd0d489" kind="function"><name>hash</name></member>
     <member refid="group__collection_1gaecc46e74b03a83ca8a8023cc7264489c" kind="function"><name>next</name></member>

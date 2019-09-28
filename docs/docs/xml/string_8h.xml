@@ -4,129 +4,128 @@
     <compoundname>string.h</compoundname>
     <includes refid="object_8h" local="yes">object.h</includes>
     <includes refid="string_8h" local="no">string.h</includes>
+    <includedby refid="int_8c" local="no">/Users/igutek/Documents/Projects/ooc/src/int.c</includedby>
+    <includedby refid="list_8c" local="no">/Users/igutek/Documents/Projects/ooc/src/list.c</includedby>
     <includedby refid="main_8c" local="no">/Users/igutek/Documents/Projects/ooc/src/main.c</includedby>
+    <includedby refid="object_8c" local="no">/Users/igutek/Documents/Projects/ooc/src/object.c</includedby>
     <includedby refid="string_8c" local="no">/Users/igutek/Documents/Projects/ooc/src/string.c</includedby>
-    <includedby refid="hashmap_8h" local="no">/Users/igutek/Documents/Projects/ooc/include/ooc/hashmap.h</includedby>
-    <includedby refid="Int_8h" local="no">/Users/igutek/Documents/Projects/ooc/include/ooc/Int.h</includedby>
     <includedby refid="person_8h" local="yes">/Users/igutek/Documents/Projects/ooc/include/ooc/person.h</includedby>
     <includedby refid="string_8h" local="no">/Users/igutek/Documents/Projects/ooc/include/ooc/string.h</includedby>
     <includedby refid="point_8h" local="no">/Users/igutek/Documents/Projects/ooc/include/ooc/point.h</includedby>
     <incdepgraph>
-      <node id="77">
+      <node id="94">
         <label>stdbool.h</label>
       </node>
-      <node id="76">
+      <node id="93">
         <label>stdarg.h</label>
       </node>
-      <node id="78">
+      <node id="95">
         <label>stdint.h</label>
       </node>
-      <node id="75">
+      <node id="92">
         <label>stdlib.h</label>
       </node>
-      <node id="73">
+      <node id="90">
         <label>stddef.h</label>
       </node>
-      <node id="72">
-        <label>object.h</label>
-        <link refid="object_8h"/>
-        <childnode refid="73" relation="include">
-        </childnode>
-        <childnode refid="74" relation="include">
-        </childnode>
-        <childnode refid="75" relation="include">
-        </childnode>
-        <childnode refid="76" relation="include">
-        </childnode>
-        <childnode refid="77" relation="include">
-        </childnode>
-        <childnode refid="78" relation="include">
-        </childnode>
-      </node>
-      <node id="71">
-        <label>/Users/igutek/Documents/Projects/ooc/include/ooc/string.h</label>
-        <link refid="string_8h"/>
-        <childnode refid="72" relation="include">
-        </childnode>
-        <childnode refid="71" relation="include">
-        </childnode>
-      </node>
-      <node id="74">
-        <label>stdio.h</label>
-      </node>
-    </incdepgraph>
-    <invincdepgraph>
-      <node id="87">
-        <label>/Users/igutek/Documents/Projects/ooc/src/person.c</label>
-        <link refid="person_8c"/>
-      </node>
-      <node id="83">
-        <label>/Users/igutek/Documents/Projects/ooc/src/hashmap.c</label>
-        <link refid="hashmap_8c"/>
-      </node>
-      <node id="88">
-        <label>/Users/igutek/Documents/Projects/ooc/include/ooc/point.h</label>
-        <link refid="point_8h"/>
-        <childnode refid="80" relation="include">
-        </childnode>
-        <childnode refid="89" relation="include">
-        </childnode>
-      </node>
-      <node id="82">
-        <label>/Users/igutek/Documents/Projects/ooc/include/ooc/hashmap.h</label>
-        <link refid="hashmap_8h"/>
-        <childnode refid="83" relation="include">
-        </childnode>
-        <childnode refid="80" relation="include">
+      <node id="96">
+        <label>ooc/object_va_args.h</label>
+        <link refid="object__va__args_8h"/>
+        <childnode refid="92" relation="include">
         </childnode>
       </node>
       <node id="89">
-        <label>/Users/igutek/Documents/Projects/ooc/src/point.c</label>
-        <link refid="point_8c"/>
-      </node>
-      <node id="86">
-        <label>/Users/igutek/Documents/Projects/ooc/include/ooc/person.h</label>
-        <link refid="person_8h"/>
-        <childnode refid="80" relation="include">
+        <label>object.h</label>
+        <link refid="object_8h"/>
+        <childnode refid="90" relation="include">
         </childnode>
-        <childnode refid="87" relation="include">
+        <childnode refid="91" relation="include">
         </childnode>
-      </node>
-      <node id="84">
-        <label>/Users/igutek/Documents/Projects/ooc/include/ooc/Int.h</label>
-        <link refid="Int_8h"/>
-        <childnode refid="85" relation="include">
+        <childnode refid="92" relation="include">
         </childnode>
-        <childnode refid="80" relation="include">
+        <childnode refid="93" relation="include">
+        </childnode>
+        <childnode refid="94" relation="include">
+        </childnode>
+        <childnode refid="95" relation="include">
+        </childnode>
+        <childnode refid="96" relation="include">
         </childnode>
       </node>
-      <node id="85">
-        <label>/Users/igutek/Documents/Projects/ooc/src/Int.c</label>
-        <link refid="Int_8c"/>
-      </node>
-      <node id="81">
-        <label>/Users/igutek/Documents/Projects/ooc/src/string.c</label>
-        <link refid="string_8c"/>
-      </node>
-      <node id="79">
+      <node id="88">
         <label>/Users/igutek/Documents/Projects/ooc/include/ooc/string.h</label>
         <link refid="string_8h"/>
-        <childnode refid="80" relation="include">
-        </childnode>
-        <childnode refid="81" relation="include">
-        </childnode>
-        <childnode refid="82" relation="include">
-        </childnode>
-        <childnode refid="84" relation="include">
-        </childnode>
-        <childnode refid="86" relation="include">
-        </childnode>
-        <childnode refid="79" relation="include">
+        <childnode refid="89" relation="include">
         </childnode>
         <childnode refid="88" relation="include">
         </childnode>
       </node>
-      <node id="80">
+      <node id="91">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="104">
+        <label>/Users/igutek/Documents/Projects/ooc/src/person.c</label>
+        <link refid="person_8c"/>
+      </node>
+      <node id="101">
+        <label>/Users/igutek/Documents/Projects/ooc/src/object.c</label>
+        <link refid="object_8c"/>
+      </node>
+      <node id="99">
+        <label>/Users/igutek/Documents/Projects/ooc/src/list.c</label>
+        <link refid="list_8c"/>
+      </node>
+      <node id="98">
+        <label>/Users/igutek/Documents/Projects/ooc/src/int.c</label>
+        <link refid="int_8c"/>
+      </node>
+      <node id="105">
+        <label>/Users/igutek/Documents/Projects/ooc/include/ooc/point.h</label>
+        <link refid="point_8h"/>
+        <childnode refid="100" relation="include">
+        </childnode>
+        <childnode refid="106" relation="include">
+        </childnode>
+      </node>
+      <node id="106">
+        <label>/Users/igutek/Documents/Projects/ooc/src/point.c</label>
+        <link refid="point_8c"/>
+      </node>
+      <node id="103">
+        <label>/Users/igutek/Documents/Projects/ooc/include/ooc/person.h</label>
+        <link refid="person_8h"/>
+        <childnode refid="100" relation="include">
+        </childnode>
+        <childnode refid="104" relation="include">
+        </childnode>
+      </node>
+      <node id="102">
+        <label>/Users/igutek/Documents/Projects/ooc/src/string.c</label>
+        <link refid="string_8c"/>
+      </node>
+      <node id="97">
+        <label>/Users/igutek/Documents/Projects/ooc/include/ooc/string.h</label>
+        <link refid="string_8h"/>
+        <childnode refid="98" relation="include">
+        </childnode>
+        <childnode refid="99" relation="include">
+        </childnode>
+        <childnode refid="100" relation="include">
+        </childnode>
+        <childnode refid="101" relation="include">
+        </childnode>
+        <childnode refid="102" relation="include">
+        </childnode>
+        <childnode refid="103" relation="include">
+        </childnode>
+        <childnode refid="97" relation="include">
+        </childnode>
+        <childnode refid="105" relation="include">
+        </childnode>
+      </node>
+      <node id="100">
         <label>/Users/igutek/Documents/Projects/ooc/src/main.c</label>
         <link refid="main_8c"/>
       </node>
@@ -145,11 +144,12 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/igutek/Documents/Projects/ooc/include/ooc/string.h" line="15" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/string.c" bodystart="163" bodyend="-1"/>
-        <referencedby refid="string_8c_1a2e1266f696c96e5bfd8ffbed7be891fa" compoundref="string_8c" startline="24" endline="41">__construct__String</referencedby>
-        <referencedby refid="main_8c_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8c" startline="8" endline="43">main</referencedby>
+        <referencedby refid="string_8c_1ae55182aad42d41b3d50d6a078f74e0ed" compoundref="string_8c" startline="24" endline="41">__construct__String</referencedby>
+        <referencedby refid="main_8c_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8c" startline="8" endline="42">main</referencedby>
         <referencedby refid="string_8c_1ad84cbc93082cb73a0aeb9911e2768c90" compoundref="string_8c" startline="56" endline="94">String_append</referencedby>
         <referencedby refid="string_8c_1a1742803c7014bd0c59f1072d54e1a023" compoundref="string_8c" startline="110" endline="113">String_copy</referencedby>
         <referencedby refid="string_8c_1a1908c7dc8629ec342445a6e2a7c247f2" compoundref="string_8c" startline="97" endline="107">String_equal</referencedby>
+        <referencedby refid="object_8h_1a23b80bc1ca4cac9bafcb0735aa404009" compoundref="object_8c" startline="68" endline="71">to_String</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>

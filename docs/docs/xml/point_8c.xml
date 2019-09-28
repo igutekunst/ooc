@@ -5,74 +5,88 @@
     <includes refid="point_8h" local="no">ooc/point.h</includes>
     <includes refid="object__internal_8h" local="yes">object_internal.h</includes>
     <incdepgraph>
-      <node id="180">
+      <node id="233">
         <label>stdbool.h</label>
       </node>
-      <node id="179">
+      <node id="232">
         <label>stdarg.h</label>
       </node>
-      <node id="181">
+      <node id="234">
         <label>stdint.h</label>
       </node>
-      <node id="178">
+      <node id="231">
         <label>stdlib.h</label>
       </node>
-      <node id="183">
+      <node id="237">
         <label>object_internal.h</label>
         <link refid="object__internal_8h"/>
-        <childnode refid="181" relation="include">
+        <childnode refid="234" relation="include">
         </childnode>
-        <childnode refid="178" relation="include">
+        <childnode refid="231" relation="include">
         </childnode>
-        <childnode refid="179" relation="include">
+        <childnode refid="232" relation="include">
         </childnode>
-        <childnode refid="180" relation="include">
+        <childnode refid="233" relation="include">
+        </childnode>
+        <childnode refid="238" relation="include">
         </childnode>
       </node>
-      <node id="174">
+      <node id="227">
         <label>ooc/point.h</label>
         <link refid="point_8h"/>
-        <childnode refid="175" relation="include">
+        <childnode refid="228" relation="include">
         </childnode>
-        <childnode refid="182" relation="include">
+        <childnode refid="236" relation="include">
         </childnode>
       </node>
-      <node id="173">
+      <node id="226">
         <label>/Users/igutek/Documents/Projects/ooc/src/point.c</label>
         <link refid="point_8c"/>
-        <childnode refid="174" relation="include">
+        <childnode refid="227" relation="include">
         </childnode>
-        <childnode refid="183" relation="include">
+        <childnode refid="237" relation="include">
         </childnode>
       </node>
-      <node id="176">
+      <node id="229">
         <label>stddef.h</label>
       </node>
-      <node id="175">
+      <node id="238">
+        <label>trait_math_internal.h</label>
+        <link refid="trait__math__internal_8h"/>
+      </node>
+      <node id="235">
+        <label>ooc/object_va_args.h</label>
+        <link refid="object__va__args_8h"/>
+        <childnode refid="231" relation="include">
+        </childnode>
+      </node>
+      <node id="228">
         <label>object.h</label>
         <link refid="object_8h"/>
-        <childnode refid="176" relation="include">
+        <childnode refid="229" relation="include">
         </childnode>
-        <childnode refid="177" relation="include">
+        <childnode refid="230" relation="include">
         </childnode>
-        <childnode refid="178" relation="include">
+        <childnode refid="231" relation="include">
         </childnode>
-        <childnode refid="179" relation="include">
+        <childnode refid="232" relation="include">
         </childnode>
-        <childnode refid="180" relation="include">
+        <childnode refid="233" relation="include">
         </childnode>
-        <childnode refid="181" relation="include">
+        <childnode refid="234" relation="include">
+        </childnode>
+        <childnode refid="235" relation="include">
         </childnode>
       </node>
-      <node id="182">
+      <node id="236">
         <label>string.h</label>
         <link refid="string_8h"/>
-        <childnode refid="175" relation="include">
+        <childnode refid="228" relation="include">
         </childnode>
-        <childnode refid="182" relation="include">
+        <childnode refid="236" relation="include">
         </childnode>
       </node>
-      <node id="177">
+      <node id="230">
         <label>stdio.h</label>
       </node>
     </incdepgraph>
@@ -86,7 +100,7 @@
         <initializer>= {
     .class = {.magic = <ref refid="object__internal_8h_1a94630370ae389fb1189282fa0742f310" kindref="member">MAGIC</ref>,
               .<ref refid="group__common_1gafac8564ed88a6f8585f043fc6b2fa7e1" kindref="member">size</ref> = sizeof(struct <ref refid="structPoint" kindref="compound">Point</ref>),
-              .object_init = <ref refid="point_8c_1a939d6d31946f042260f6b45f0d51ae12" kindref="member">__construct__Point</ref>,
+              .object_init = <ref refid="point_8c_1aceb361b54e6321dcf7a9cc0aab6f967c" kindref="member">__construct__Point</ref>,
               .<ref refid="group__common_1ga34dc6ab72cfd51381e8173226484e827" kindref="member">print</ref> = <ref refid="point_8c_1a75983d2ec5626f7206475606900aac49" kindref="member">print_Point</ref>,
               .get_size = <ref refid="point_8c_1a1f564f5c32ae82a07d198437f1c3ed6c" kindref="member">get_size_Point</ref>,
               .get_len = 0
@@ -114,19 +128,23 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/igutek/Documents/Projects/ooc/src/point.c" line="25" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/point.c" bodystart="25" bodyend="-1"/>
-        <referencedby refid="point_8c_1a939d6d31946f042260f6b45f0d51ae12" compoundref="point_8c" startline="34" endline="41">__construct__Point</referencedby>
-        <referencedby refid="main_8c_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8c" startline="8" endline="43">main</referencedby>
+        <referencedby refid="point_8c_1aceb361b54e6321dcf7a9cc0aab6f967c" compoundref="point_8c" startline="34" endline="41">__construct__Point</referencedby>
+        <referencedby refid="main_8c_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8c" startline="8" endline="42">main</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
-      <memberdef kind="function" id="point_8c_1a939d6d31946f042260f6b45f0d51ae12" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="point_8c_1aceb361b54e6321dcf7a9cc0aab6f967c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>const void *</type>
         <definition>const void * __construct__Point</definition>
-        <argsstring>(const void *const self, va_list args)</argsstring>
+        <argsstring>(const void *_self, size_t argc, va_list args)</argsstring>
         <name>__construct__Point</name>
         <param>
-          <type>const void *const</type>
-          <declname>self</declname>
+          <type>const void *</type>
+          <declname>_self</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>argc</declname>
         </param>
         <param>
           <type>va_list</type>
@@ -190,7 +208,7 @@
 <codeline lineno="5" refid="structPointClass_1a5cd748e94a0c1b180bdd11f423af212e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structclass__header" kindref="compound">class_header</ref><sp/><ref refid="structPointClass_1a5cd748e94a0c1b180bdd11f423af212e" kindref="member">class</ref>;</highlight></codeline>
 <codeline lineno="6"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/><ref refid="point_8c_1a939d6d31946f042260f6b45f0d51ae12" kindref="member">__construct__Point</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">,<sp/>va_list<sp/>args);</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="point_8c_1aceb361b54e6321dcf7a9cc0aab6f967c" kindref="member">__construct__Point</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_self,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>argc,<sp/>va_list<sp/>args);</highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="point_8c_1a75983d2ec5626f7206475606900aac49" kindref="member">print_Point</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>_self);</highlight></codeline>
 <codeline lineno="10"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="point_8c_1a1f564f5c32ae82a07d198437f1c3ed6c" kindref="member">get_size_Point</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>_self);</highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight></codeline>
@@ -199,7 +217,7 @@
 <codeline lineno="14" refid="point_8c_1a1e029dbe8c0d15fbc7460d432de86510" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structPointClass" kindref="compound">PointClass</ref><sp/><ref refid="point_8c_1a1e029dbe8c0d15fbc7460d432de86510" kindref="member">point_class</ref><sp/>=<sp/>{</highlight></codeline>
 <codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>.<ref refid="structPointClass_1a5cd748e94a0c1b180bdd11f423af212e" kindref="member">class</ref><sp/>=<sp/>{.<ref refid="structclass__header_1aa98964036010ad63554856c5f4680cec" kindref="member">magic</ref><sp/>=<sp/><ref refid="object__internal_8h_1a94630370ae389fb1189282fa0742f310" kindref="member">MAGIC</ref>,</highlight></codeline>
 <codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.size<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structPoint" kindref="compound">Point</ref>),</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.object_init<sp/>=<sp/><ref refid="point_8c_1a939d6d31946f042260f6b45f0d51ae12" kindref="member">__construct__Point</ref>,</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.object_init<sp/>=<sp/><ref refid="point_8c_1aceb361b54e6321dcf7a9cc0aab6f967c" kindref="member">__construct__Point</ref>,</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.print<sp/>=<sp/><ref refid="point_8c_1a75983d2ec5626f7206475606900aac49" kindref="member">print_Point</ref>,</highlight></codeline>
 <codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.get_size<sp/>=<sp/><ref refid="point_8c_1a1f564f5c32ae82a07d198437f1c3ed6c" kindref="member">get_size_Point</ref>,</highlight></codeline>
 <codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.get_len<sp/>=<sp/>0</highlight></codeline>
@@ -216,7 +234,7 @@
 <codeline lineno="31"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"></highlight></codeline>
 <codeline lineno="33"><highlight class="normal"></highlight></codeline>
-<codeline lineno="34" refid="point_8c_1a939d6d31946f042260f6b45f0d51ae12" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/><ref refid="point_8c_1a939d6d31946f042260f6b45f0d51ae12" kindref="member">__construct__Point</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>_self,<sp/>va_list<sp/>args)<sp/>{</highlight></codeline>
+<codeline lineno="34" refid="point_8c_1aceb361b54e6321dcf7a9cc0aab6f967c" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="point_8c_1aceb361b54e6321dcf7a9cc0aab6f967c" kindref="member">__construct__Point</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_self,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>argc,<sp/>va_list<sp/>args)<sp/>{</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structPoint" kindref="compound">Point</ref><sp/>*<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal"><sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structPoint" kindref="compound">Point</ref><sp/>*)<sp/>_self;</highlight></codeline>
 <codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;<ref refid="structPoint_1a5c33b351426ea2f85e8bcd748a287055" kindref="member">class</ref><sp/>=<sp/><ref refid="point_8c_1a1a395805ca983410ef1ba6e0b1e5924f" kindref="member">Point</ref>;</highlight></codeline>
 <codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;size<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structPoint" kindref="compound">Point</ref>);</highlight></codeline>

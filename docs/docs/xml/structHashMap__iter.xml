@@ -15,7 +15,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/igutek/Documents/Projects/ooc/src/hashmap.c" line="30" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/hashmap.c" bodystart="30" bodyend="-1"/>
-        <referencedby refid="hashmap_8c_1ae8c6201244c05c149ee58f00693fbe18" compoundref="hashmap_8c" startline="500" endline="512">__construct__HashMap_iter</referencedby>
+        <referencedby refid="hashmap_8c_1a7472518034803385044e43d8edeb1e79" compoundref="hashmap_8c" startline="508" endline="520">__construct__HashMap_iter</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structHashMap__iter_1a298e8fda407d7e5baeff91ef0e312780" prot="public" static="no" mutable="no">
         <type>struct <ref refid="structHashItem" kindref="compound">HashItem</ref> *</type>
@@ -75,37 +75,44 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="12">
+      <node id="15">
         <label>HashMap</label>
         <link refid="structHashMap"/>
-        <childnode refid="10" relation="usage">
+        <childnode refid="12" relation="usage">
           <edgelabel>items</edgelabel>
         </childnode>
-        <childnode refid="11" relation="usage">
+        <childnode refid="13" relation="usage">
           <edgelabel>class</edgelabel>
+        </childnode>
+      </node>
+      <node id="13">
+        <label>class_header</label>
+        <link refid="structclass__header"/>
+        <childnode refid="14" relation="usage">
+          <edgelabel>math</edgelabel>
         </childnode>
       </node>
       <node id="11">
-        <label>class_header</label>
-        <link refid="structclass__header"/>
-      </node>
-      <node id="9">
         <label>HashMap_iter</label>
         <link refid="structHashMap__iter"/>
-        <childnode refid="10" relation="usage">
+        <childnode refid="12" relation="usage">
           <edgelabel>current_item</edgelabel>
         </childnode>
-        <childnode refid="11" relation="usage">
+        <childnode refid="13" relation="usage">
           <edgelabel>class</edgelabel>
         </childnode>
-        <childnode refid="12" relation="usage">
+        <childnode refid="15" relation="usage">
           <edgelabel>hash_map</edgelabel>
         </childnode>
       </node>
-      <node id="10">
+      <node id="14">
+        <label>OOCTraitMath</label>
+        <link refid="structOOCTraitMath"/>
+      </node>
+      <node id="12">
         <label>HashItem</label>
         <link refid="structHashItem"/>
-        <childnode refid="10" relation="usage">
+        <childnode refid="12" relation="usage">
           <edgelabel>next</edgelabel>
         </childnode>
       </node>

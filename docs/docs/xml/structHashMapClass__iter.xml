@@ -22,14 +22,21 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="18">
+      <node id="22">
         <label>class_header</label>
         <link refid="structclass__header"/>
+        <childnode refid="23" relation="usage">
+          <edgelabel>math</edgelabel>
+        </childnode>
       </node>
-      <node id="17">
+      <node id="23">
+        <label>OOCTraitMath</label>
+        <link refid="structOOCTraitMath"/>
+      </node>
+      <node id="21">
         <label>HashMapClass_iter</label>
         <link refid="structHashMapClass__iter"/>
-        <childnode refid="18" relation="usage">
+        <childnode refid="22" relation="usage">
           <edgelabel>class</edgelabel>
         </childnode>
       </node>

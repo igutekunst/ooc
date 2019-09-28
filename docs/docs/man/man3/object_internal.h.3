@@ -1,4 +1,4 @@
-.TH "/Users/igutek/Documents/Projects/ooc/src/object_internal.h" 3 "Fri Sep 27 2019" "Object-Oriented-C" \" -*- nroff -*-
+.TH "/Users/igutek/Documents/Projects/ooc/src/object_internal.h" 3 "Sat Sep 28 2019" "Object-Oriented-C" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -14,12 +14,17 @@
 .br
 \fC#include <stdbool\&.h>\fP
 .br
+\fC#include 'trait_math_internal\&.h'\fP
+.br
 
 .SS "Data Structures"
 
 .in +1c
 .ti -1c
 .RI "struct \fBclass_header\fP"
+.br
+.ti -1c
+.RI "struct \fBObjectHeader\fP"
 .br
 .in -1c
 .SS "Macros"
@@ -34,9 +39,9 @@
 .SS "#define MAGIC   ((unsigned long ) 0xBD71472)"
 
 .PP
-Definition at line 6 of file object_internal\&.h\&.
+Definition at line 7 of file object_internal\&.h\&.
 .PP
-Referenced by get_obj(), and new()\&.
+Referenced by _new(), get_class_header_msg(), and get_obj_type()\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for Object-Oriented-C from the source code\&.

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['object_2ec',['object.c',['../object_8c.html',1,'']]],
-  ['object_2eh',['object.h',['../object_8h.html',1,'']]],
-  ['object_5finternal_2eh',['object_internal.h',['../object__internal_8h.html',1,'']]]
+  ['main_2ec',['main.c',['../main_8c.html',1,'']]],
+  ['math_2ec',['math.c',['../math_8c.html',1,'']]],
+  ['math_2eh',['math.h',['../math_8h.html',1,'']]]
 ];

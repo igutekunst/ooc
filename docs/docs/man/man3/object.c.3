@@ -1,4 +1,4 @@
-.TH "/Users/igutek/Documents/Projects/ooc/src/object.c" 3 "Fri Sep 27 2019" "Object-Oriented-C" \" -*- nroff -*-
+.TH "/Users/igutek/Documents/Projects/ooc/src/object.c" 3 "Sat Sep 28 2019" "Object-Oriented-C" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -10,6 +10,8 @@
 .br
 \fC#include <ooc/object\&.h>\fP
 .br
+\fC#include <ooc/string\&.h>\fP
+.br
 \fC#include 'object_internal\&.h'\fP
 .br
 
@@ -17,14 +19,18 @@
 
 .in +1c
 .ti -1c
-.RI "const void * \fBnew\fP (const void *const _class,\&.\&.\&.)"
+.RI "const void * \fB_new\fP (size_t argc,\&.\&.\&.)"
 .br
 .RI "Create a new ooc object\&. "
 .ti -1c
 .RI "void \fBdel\fP (const void *_object)"
 .br
+.RI "delete an ooc object "
 .ti -1c
 .RI "const char * \fBstr\fP (const void *_self)"
+.br
+.ti -1c
+.RI "const void * \fBto_String\fP (const void *_object)"
 .br
 .ti -1c
 .RI "void \fBprint\fP (const void *_self)"
@@ -32,6 +38,7 @@
 .ti -1c
 .RI "size_t \fBsize\fP (const void *_self)"
 .br
+.RI "get size in bytes "
 .ti -1c
 .RI "const void * \fBtype\fP (const void *_self)"
 .br
@@ -52,7 +59,10 @@
 .RI "const void * \fBappend\fP (const void *_self, const void *_other)"
 .br
 .ti -1c
-.RI "struct \fBclass_header\fP * \fBget_obj\fP (const void *_self, const char *message)"
+.RI "struct \fBclass_header\fP * \fBget_class_header_msg\fP (const void *_self, const char *message)"
+.br
+.ti -1c
+.RI "const struct \fBclass_header\fP * \fBget_obj_type\fP (const void *_self, const void *class, const char *message)"
 .br
 .ti -1c
 .RI "const struct \fBclass_header\fP * \fBget_class_header\fP (const void *_self)"
@@ -61,7 +71,7 @@
 .RI "uint64_t \fBhash\fP (const void *_self)"
 .br
 .ti -1c
-.RI "void * \fBinsert\fP (const void *_self, const void *_key, const void *_other)"
+.RI "void * \fBset_item\fP (const void *_self, const void *_key, const void *_other)"
 .br
 .ti -1c
 .RI "void \fBdel_item\fP (const void *_self, const void *_key)"
@@ -74,6 +84,12 @@
 .br
 .ti -1c
 .RI "const void * \fBnext\fP (const void *_self)"
+.br
+.ti -1c
+.RI "void \fBkeys\fP (const void *object)"
+.br
+.ti -1c
+.RI "void \fBvalues\fP (const void *_self)"
 .br
 .in -1c
 .SS "Variables"
@@ -88,17 +104,33 @@
 .SS "const struct \fBclass_header\fP* get_class_header (const void * _self)\fC [inline]\fP"
 
 .PP
-Definition at line 180 of file object\&.c\&.
+Definition at line 219 of file object\&.c\&.
 .PP
-Referenced by del_item(), get_HashMap(), get_item(), hash(), insert(), insert_HashMap(), internal_insert_HashMap(), iter(), and next()\&.
+Referenced by del_item(), get_HashMap(), get_item(), hash(), insert_HashMap(), internal_insert_HashMap(), iter(), next(), and set_item()\&.
+.SS "void keys (const void * object)"
+
+.PP
+Definition at line 292 of file object\&.c\&.
 .SS "const char* str (const void * _object)"
 End of Common functions 
 .PP
-Definition at line 46 of file object\&.c\&.
+Definition at line 56 of file object\&.c\&.
 .PP
-References get_obj(), and class_header::str\&.
+References get_class_header_msg(), and class_header::str\&.
 .PP
-Referenced by get_HashMap(), insert_HashMap(), and String_equal()\&.
+Referenced by get_HashMap(), insert_HashMap(), List_to_str(), String_equal(), and to_String()\&.
+.SS "const void* to_String (const void * _object)"
+
+.PP
+Definition at line 68 of file object\&.c\&.
+.PP
+References str(), and String\&.
+.PP
+Referenced by List_to_str()\&.
+.SS "void values (const void * _self)"
+
+.PP
+Definition at line 296 of file object\&.c\&.
 .SH "Variable Documentation"
 .PP 
 .SS "const struct \fBclass_header\fP Class"
@@ -110,7 +142,7 @@ Referenced by get_HashMap(), insert_HashMap(), and String_equal()\&.
 }
 .fi
 .PP
-Definition at line 5 of file object\&.c\&.
+Definition at line 6 of file object\&.c\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for Object-Oriented-C from the source code\&.

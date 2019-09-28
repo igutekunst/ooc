@@ -85,8 +85,8 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a479eaa947f7de8878921d30df63875eb"><td class="memItemLeft" align="right" valign="top">const void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="person_8c.html#a479eaa947f7de8878921d30df63875eb">__construct__Person</a> (const void *self, va_list args)</td></tr>
-<tr class="separator:a479eaa947f7de8878921d30df63875eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adaf633e0102ae03a6b233de044b1f162"><td class="memItemLeft" align="right" valign="top">const void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="person_8c.html#adaf633e0102ae03a6b233de044b1f162">__construct__Person</a> (const void *_self, size_t argc, va_list args)</td></tr>
+<tr class="separator:adaf633e0102ae03a6b233de044b1f162"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0108e77460f7fc9f156aa8ff2919c496"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="person_8c.html#a0108e77460f7fc9f156aa8ff2919c496">__destruct__Person</a> (const void *self, va_list args)</td></tr>
 <tr class="separator:a0108e77460f7fc9f156aa8ff2919c496"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8f165e3cdab75026b74bdb45923d84c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="person_8c.html#ac8f165e3cdab75026b74bdb45923d84c">print_Person</a> (const void *_self)</td></tr>
@@ -102,8 +102,8 @@ Variables</h2></td></tr>
 <tr class="separator:a588179b669d31ab467e542d8b997361f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a479eaa947f7de8878921d30df63875eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a479eaa947f7de8878921d30df63875eb">&#9670;&nbsp;</a></span>__construct__Person()</h2>
+<a id="adaf633e0102ae03a6b233de044b1f162"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adaf633e0102ae03a6b233de044b1f162">&#9670;&nbsp;</a></span>__construct__Person()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -112,7 +112,13 @@ Variables</h2></td></tr>
           <td class="memname">const void * __construct__Person </td>
           <td>(</td>
           <td class="paramtype">const void *&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
+          <td class="paramname"><em>_self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -130,7 +136,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="person_8c_source.html#l00029">29</a> of file <a class="el" href="person_8c_source.html">person.c</a>.</p>
 
-<p class="reference">References <a class="el" href="person_8h_source.html#l00009">Person::first</a>, <a class="el" href="person_8h_source.html#l00010">Person::last</a>, <a class="el" href="person_8c_source.html#l00024">Person</a>, <a class="el" href="person_8h_source.html#l00008">Person::size</a>, and <a class="el" href="object_8c_source.html#l00072">size()</a>.</p>
+<p class="reference">References <a class="el" href="person_8h_source.html#l00009">Person::first</a>, <a class="el" href="person_8h_source.html#l00010">Person::last</a>, <a class="el" href="person_8c_source.html#l00024">Person</a>, <a class="el" href="person_8h_source.html#l00008">Person::size</a>, and <a class="el" href="object_8c_source.html#l00087">size()</a>.</p>
 
 </div>
 </div>
@@ -234,12 +240,12 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {</div><div class="line">    .class = {.magic = <a class="code" href="object__internal_8h.html#a94630370ae389fb1189282fa0742f310">MAGIC</a>, </div><div class="line">              .size  = (<span class="keyword">sizeof</span>(<span class="keyword">struct </span><a class="code" href="structPerson.html">Person</a>)),</div><div class="line">              .<a class="code" href="group__common.html#ga34dc6ab72cfd51381e8173226484e827">print</a> = <a class="code" href="person_8c.html#ac8f165e3cdab75026b74bdb45923d84c">print_Person</a>,</div><div class="line">              .get_size = <a class="code" href="person_8c.html#ac756035079421633f84f42223847fbc4">get_size_Person</a>,</div><div class="line">              .object_init = <a class="code" href="person_8c.html#a479eaa947f7de8878921d30df63875eb">__construct__Person</a>,</div><div class="line">             }</div><div class="line">}</div><div class="ttc" id="person_8c_html_ac756035079421633f84f42223847fbc4"><div class="ttname"><a href="person_8c.html#ac756035079421633f84f42223847fbc4">get_size_Person</a></div><div class="ttdeci">size_t get_size_Person(const void *_self)</div><div class="ttdef"><b>Definition:</b> <a href="person_8c_source.html#l00048">person.c:48</a></div></div>
-<div class="ttc" id="person_8c_html_a479eaa947f7de8878921d30df63875eb"><div class="ttname"><a href="person_8c.html#a479eaa947f7de8878921d30df63875eb">__construct__Person</a></div><div class="ttdeci">const void * __construct__Person(const void *self, va_list args)</div><div class="ttdef"><b>Definition:</b> <a href="person_8c_source.html#l00029">person.c:29</a></div></div>
-<div class="ttc" id="object__internal_8h_html_a94630370ae389fb1189282fa0742f310"><div class="ttname"><a href="object__internal_8h.html#a94630370ae389fb1189282fa0742f310">MAGIC</a></div><div class="ttdeci">#define MAGIC</div><div class="ttdef"><b>Definition:</b> <a href="object__internal_8h_source.html#l00006">object_internal.h:6</a></div></div>
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div><div class="line">    .class = {.magic = <a class="code" href="object__internal_8h.html#a94630370ae389fb1189282fa0742f310">MAGIC</a>, </div><div class="line">              .size  = (<span class="keyword">sizeof</span>(<span class="keyword">struct </span><a class="code" href="structPerson.html">Person</a>)),</div><div class="line">              .<a class="code" href="group__common.html#ga34dc6ab72cfd51381e8173226484e827">print</a> = <a class="code" href="person_8c.html#ac8f165e3cdab75026b74bdb45923d84c">print_Person</a>,</div><div class="line">              .get_size = <a class="code" href="person_8c.html#ac756035079421633f84f42223847fbc4">get_size_Person</a>,</div><div class="line">              .object_init = <a class="code" href="person_8c.html#adaf633e0102ae03a6b233de044b1f162">__construct__Person</a>,</div><div class="line">             }</div><div class="line">}</div><div class="ttc" id="person_8c_html_ac756035079421633f84f42223847fbc4"><div class="ttname"><a href="person_8c.html#ac756035079421633f84f42223847fbc4">get_size_Person</a></div><div class="ttdeci">size_t get_size_Person(const void *_self)</div><div class="ttdef"><b>Definition:</b> <a href="person_8c_source.html#l00048">person.c:48</a></div></div>
+<div class="ttc" id="object__internal_8h_html_a94630370ae389fb1189282fa0742f310"><div class="ttname"><a href="object__internal_8h.html#a94630370ae389fb1189282fa0742f310">MAGIC</a></div><div class="ttdeci">#define MAGIC</div><div class="ttdef"><b>Definition:</b> <a href="object__internal_8h_source.html#l00007">object_internal.h:7</a></div></div>
 <div class="ttc" id="person_8c_html_ac8f165e3cdab75026b74bdb45923d84c"><div class="ttname"><a href="person_8c.html#ac8f165e3cdab75026b74bdb45923d84c">print_Person</a></div><div class="ttdeci">void print_Person(const void *_self)</div><div class="ttdef"><b>Definition:</b> <a href="person_8c_source.html#l00053">person.c:53</a></div></div>
 <div class="ttc" id="structPerson_html"><div class="ttname"><a href="structPerson.html">Person</a></div><div class="ttdef"><b>Definition:</b> <a href="person_8h_source.html#l00006">person.h:6</a></div></div>
-<div class="ttc" id="group__common_html_ga34dc6ab72cfd51381e8173226484e827"><div class="ttname"><a href="group__common.html#ga34dc6ab72cfd51381e8173226484e827">print</a></div><div class="ttdeci">void print(const void *_self)</div><div class="ttdef"><b>Definition:</b> <a href="object_8c_source.html#l00059">object.c:59</a></div></div>
+<div class="ttc" id="person_8c_html_adaf633e0102ae03a6b233de044b1f162"><div class="ttname"><a href="person_8c.html#adaf633e0102ae03a6b233de044b1f162">__construct__Person</a></div><div class="ttdeci">const void * __construct__Person(const void *_self, size_t argc, va_list args)</div><div class="ttdef"><b>Definition:</b> <a href="person_8c_source.html#l00029">person.c:29</a></div></div>
+<div class="ttc" id="group__common_html_ga34dc6ab72cfd51381e8173226484e827"><div class="ttname"><a href="group__common.html#ga34dc6ab72cfd51381e8173226484e827">print</a></div><div class="ttdeci">void print(const void *_self)</div><div class="ttdef"><b>Definition:</b> <a href="object_8c_source.html#l00074">object.c:74</a></div></div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="person_8c_source.html#l00015">15</a> of file <a class="el" href="person_8c_source.html">person.c</a>.</p>
 
@@ -248,7 +254,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Sep 27 2019 15:45:11 for Object-Oriented-C by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 28 2019 15:28:03 for Object-Oriented-C by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.14
 </small></address>

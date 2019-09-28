@@ -29,7 +29,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/igutek/Documents/Projects/ooc/include/ooc/person.h" line="8" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/include/ooc/person.h" bodystart="8" bodyend="-1"/>
-        <referencedby refid="person_8c_1a479eaa947f7de8878921d30df63875eb" compoundref="person_8c" startline="29" endline="46">__construct__Person</referencedby>
+        <referencedby refid="person_8c_1adaf633e0102ae03a6b233de044b1f162" compoundref="person_8c" startline="29" endline="46">__construct__Person</referencedby>
         <referencedby refid="person_8c_1ac756035079421633f84f42223847fbc4" compoundref="person_8c" startline="48" endline="51">get_size_Person</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structPerson_1a38f2f16e85640e2f851e46319735dc2a" prot="public" static="no" mutable="no">
@@ -44,7 +44,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/igutek/Documents/Projects/ooc/include/ooc/person.h" line="9" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/include/ooc/person.h" bodystart="9" bodyend="-1"/>
-        <referencedby refid="person_8c_1a479eaa947f7de8878921d30df63875eb" compoundref="person_8c" startline="29" endline="46">__construct__Person</referencedby>
+        <referencedby refid="person_8c_1adaf633e0102ae03a6b233de044b1f162" compoundref="person_8c" startline="29" endline="46">__construct__Person</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structPerson_1a680212888ba741ce822803812588fbcf" prot="public" static="no" mutable="no">
         <type>char *</type>
@@ -58,7 +58,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/igutek/Documents/Projects/ooc/include/ooc/person.h" line="10" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/include/ooc/person.h" bodystart="10" bodyend="-1"/>
-        <referencedby refid="person_8c_1a479eaa947f7de8878921d30df63875eb" compoundref="person_8c" startline="29" endline="46">__construct__Person</referencedby>
+        <referencedby refid="person_8c_1adaf633e0102ae03a6b233de044b1f162" compoundref="person_8c" startline="29" endline="46">__construct__Person</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structPerson_1a821d801ffc30ff9d5f12c4be38f03aec" prot="public" static="no" mutable="no">
         <type>unsigned int</type>
@@ -79,14 +79,21 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="27">
+      <node id="61">
         <label>class_header</label>
         <link refid="structclass__header"/>
+        <childnode refid="62" relation="usage">
+          <edgelabel>math</edgelabel>
+        </childnode>
       </node>
-      <node id="26">
+      <node id="62">
+        <label>OOCTraitMath</label>
+        <link refid="structOOCTraitMath"/>
+      </node>
+      <node id="60">
         <label>Person</label>
         <link refid="structPerson"/>
-        <childnode refid="27" relation="usage">
+        <childnode refid="61" relation="usage">
           <edgelabel>class</edgelabel>
         </childnode>
       </node>

@@ -1,98 +1,136 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
-  <compounddef id="Int_8c" kind="file" language="C++">
-    <compoundname>Int.c</compoundname>
-    <includes refid="Int_8h" local="no">ooc/Int.h</includes>
+  <compounddef id="int_8c" kind="file" language="C++">
+    <compoundname>int.c</compoundname>
+    <includes refid="int_8h" local="no">ooc/int.h</includes>
     <includes refid="object__internal_8h" local="yes">object_internal.h</includes>
+    <includes refid="object_8h" local="no">ooc/object.h</includes>
+    <includes refid="string_8h" local="no">string.h</includes>
+    <includes local="no">stdint.h</includes>
     <incdepgraph>
-      <node id="114">
+      <node id="128">
         <label>stdbool.h</label>
       </node>
-      <node id="113">
+      <node id="127">
         <label>stdarg.h</label>
       </node>
-      <node id="115">
+      <node id="122">
+        <label>/Users/igutek/Documents/Projects/ooc/src/int.c</label>
+        <link refid="int_8c"/>
+        <childnode refid="123" relation="include">
+        </childnode>
+        <childnode refid="124" relation="include">
+        </childnode>
+        <childnode refid="130" relation="include">
+        </childnode>
+        <childnode refid="134" relation="include">
+        </childnode>
+        <childnode refid="125" relation="include">
+        </childnode>
+      </node>
+      <node id="125">
         <label>stdint.h</label>
       </node>
-      <node id="112">
+      <node id="126">
         <label>stdlib.h</label>
       </node>
-      <node id="117">
+      <node id="124">
         <label>object_internal.h</label>
         <link refid="object__internal_8h"/>
-        <childnode refid="115" relation="include">
+        <childnode refid="125" relation="include">
         </childnode>
-        <childnode refid="112" relation="include">
+        <childnode refid="126" relation="include">
         </childnode>
-        <childnode refid="113" relation="include">
+        <childnode refid="127" relation="include">
         </childnode>
-        <childnode refid="114" relation="include">
+        <childnode refid="128" relation="include">
+        </childnode>
+        <childnode refid="129" relation="include">
         </childnode>
       </node>
-      <node id="110">
+      <node id="123">
+        <label>ooc/int.h</label>
+        <link refid="int_8h"/>
+      </node>
+      <node id="131">
         <label>stddef.h</label>
       </node>
-      <node id="108">
-        <label>ooc/Int.h</label>
-        <link refid="Int_8h"/>
-        <childnode refid="109" relation="include">
-        </childnode>
-        <childnode refid="116" relation="include">
-        </childnode>
-        <childnode refid="115" relation="include">
+      <node id="129">
+        <label>trait_math_internal.h</label>
+        <link refid="trait__math__internal_8h"/>
+      </node>
+      <node id="133">
+        <label>ooc/object_va_args.h</label>
+        <link refid="object__va__args_8h"/>
+        <childnode refid="126" relation="include">
         </childnode>
       </node>
-      <node id="109">
-        <label>object.h</label>
+      <node id="130">
+        <label>ooc/object.h</label>
         <link refid="object_8h"/>
-        <childnode refid="110" relation="include">
+        <childnode refid="131" relation="include">
         </childnode>
-        <childnode refid="111" relation="include">
+        <childnode refid="132" relation="include">
         </childnode>
-        <childnode refid="112" relation="include">
+        <childnode refid="126" relation="include">
         </childnode>
-        <childnode refid="113" relation="include">
+        <childnode refid="127" relation="include">
         </childnode>
-        <childnode refid="114" relation="include">
+        <childnode refid="128" relation="include">
         </childnode>
-        <childnode refid="115" relation="include">
+        <childnode refid="125" relation="include">
         </childnode>
-      </node>
-      <node id="107">
-        <label>/Users/igutek/Documents/Projects/ooc/src/Int.c</label>
-        <link refid="Int_8c"/>
-        <childnode refid="108" relation="include">
-        </childnode>
-        <childnode refid="117" relation="include">
+        <childnode refid="133" relation="include">
         </childnode>
       </node>
-      <node id="116">
+      <node id="134">
         <label>string.h</label>
         <link refid="string_8h"/>
-        <childnode refid="109" relation="include">
+        <childnode refid="130" relation="include">
         </childnode>
-        <childnode refid="116" relation="include">
+        <childnode refid="134" relation="include">
         </childnode>
       </node>
-      <node id="111">
+      <node id="132">
         <label>stdio.h</label>
       </node>
     </incdepgraph>
+    <innerclass refid="structInt" prot="public">Int</innerclass>
     <innerclass refid="structIntClass" prot="public">IntClass</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="int_8c_1a9c6918fbdb610a62c848aa680b81eb9a" prot="public" static="no">
+        <name>MAX_STR_SIZE</name>
+        <initializer>20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/int.c" line="6" column="14" bodyfile="/Users/igutek/Documents/Projects/ooc/src/int.c" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
       <sectiondef kind="var">
-      <memberdef kind="variable" id="Int_8c_1a51f8590f130ffc55b99a4c1b67d5e6fa" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="int_8c_1a51f8590f130ffc55b99a4c1b67d5e6fa" prot="public" static="no" mutable="no">
         <type>struct <ref refid="structIntClass" kindref="compound">IntClass</ref></type>
         <definition>struct IntClass int_class</definition>
         <argsstring></argsstring>
         <name>int_class</name>
         <initializer>= {
-    .class = {.magic = <ref refid="object__internal_8h_1a94630370ae389fb1189282fa0742f310" kindref="member">MAGIC</ref>,
-              .<ref refid="group__common_1gafac8564ed88a6f8585f043fc6b2fa7e1" kindref="member">size</ref> = sizeof(struct <ref refid="structInt" kindref="compound">Int</ref>),
-              .object_init = <ref refid="Int_8c_1ae873d36964132e55e78d420070550a21" kindref="member">__construct__Int</ref>,
-              .<ref refid="group__common_1ga34dc6ab72cfd51381e8173226484e827" kindref="member">print</ref> = <ref refid="Int_8c_1a6100918901d95112924d8135157c5f3e" kindref="member">print_Int</ref>,
-              .get_size = <ref refid="Int_8c_1abb3319f5992def2d229948d2ed6599b9" kindref="member">get_size_Int</ref>,
-              .<ref refid="object_8h_1a6ab4b3e256d10044340c1f861c031438" kindref="member">str</ref> = <ref refid="Int_8c_1a5f323fab797bbc86aac561ba2e5e4007" kindref="member">to_str_Int</ref>
-             }
+        .class = {.magic = <ref refid="object__internal_8h_1a94630370ae389fb1189282fa0742f310" kindref="member">MAGIC</ref>,
+                .<ref refid="group__common_1gafac8564ed88a6f8585f043fc6b2fa7e1" kindref="member">size</ref> = sizeof(struct <ref refid="structInt" kindref="compound">Int</ref>),
+                .object_init = <ref refid="int_8c_1a7dc53a21b3398adfbc1cbc480e8a5c8a" kindref="member">Int_init</ref>,
+                .<ref refid="group__common_1ga34dc6ab72cfd51381e8173226484e827" kindref="member">print</ref> = <ref refid="int_8c_1a708091bca901de1b68b1ec246f8adffc" kindref="member">Int_print</ref>,
+                .get_size = <ref refid="int_8c_1a732a138a63b0f5c3f25c18e6983e43a7" kindref="member">Int_get_size</ref>,
+                .<ref refid="object_8h_1a6ab4b3e256d10044340c1f861c031438" kindref="member">str</ref> = <ref refid="int_8c_1ab90bad1ffdc0df48932efeb24f834f2e" kindref="member">Int_to_str</ref>,
+                .math  =  {.enabled = true,
+                        .add = <ref refid="int_8c_1a5ee11528e9e9edd386cfc6b5d2b84490" kindref="member">Int_add</ref>,
+                        .sub = <ref refid="int_8c_1ab7e968a6838e99204647de44c4aca4c7" kindref="member">Int_sub</ref>,
+                        .mul = <ref refid="int_8c_1a5606319e57bb3b2e475024318f23a589" kindref="member">Int_mul</ref>,
+                        .div = <ref refid="int_8c_1a4e6bebbc74025fe9ba93bf207150cb27" kindref="member">Int_div</ref>,
+                        .to_int = <ref refid="int_8c_1a7e38771d97a50fb7c2d292a454c0abfb" kindref="member">Int_to_int</ref>
+                }
+        }
 
 }</initializer>
         <briefdescription>
@@ -101,33 +139,41 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/igutek/Documents/Projects/ooc/src/Int.c" line="14" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/Int.c" bodystart="16" bodyend="-1"/>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/int.c" line="27" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/int.c" bodystart="29" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="Int_8c_1a58f95e509cb472a46236fb2ba211af09" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="int_8c_1a58f95e509cb472a46236fb2ba211af09" prot="public" static="no" mutable="no">
         <type>void *</type>
         <definition>void* Int</definition>
         <argsstring></argsstring>
         <name>Int</name>
-        <initializer>= &amp;<ref refid="Int_8c_1a51f8590f130ffc55b99a4c1b67d5e6fa" kindref="member">int_class</ref></initializer>
+        <initializer>= &amp;<ref refid="int_8c_1a51f8590f130ffc55b99a4c1b67d5e6fa" kindref="member">int_class</ref></initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/igutek/Documents/Projects/ooc/src/Int.c" line="27" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/Int.c" bodystart="27" bodyend="-1"/>
-        <referencedby refid="Int_8c_1ae873d36964132e55e78d420070550a21" compoundref="Int_8c" startline="34" endline="42">__construct__Int</referencedby>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/int.c" line="47" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/int.c" bodystart="47" bodyend="-1"/>
+        <referencedby refid="int_8c_1a5ee11528e9e9edd386cfc6b5d2b84490" compoundref="int_8c" startline="80" endline="84">Int_add</referencedby>
+        <referencedby refid="int_8c_1a4e6bebbc74025fe9ba93bf207150cb27" compoundref="int_8c" startline="100" endline="105">Int_div</referencedby>
+        <referencedby refid="int_8c_1a7dc53a21b3398adfbc1cbc480e8a5c8a" compoundref="int_8c" startline="54" endline="62">Int_init</referencedby>
+        <referencedby refid="int_8c_1a5606319e57bb3b2e475024318f23a589" compoundref="int_8c" startline="93" endline="98">Int_mul</referencedby>
+        <referencedby refid="int_8c_1ab7e968a6838e99204647de44c4aca4c7" compoundref="int_8c" startline="86" endline="91">Int_sub</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
-      <memberdef kind="function" id="Int_8c_1ae873d36964132e55e78d420070550a21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="int_8c_1a7dc53a21b3398adfbc1cbc480e8a5c8a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>const void *</type>
-        <definition>const void * __construct__Int</definition>
-        <argsstring>(const void *self, va_list args)</argsstring>
-        <name>__construct__Int</name>
+        <definition>const void * Int_init</definition>
+        <argsstring>(const void *_self, size_t argc, va_list args)</argsstring>
+        <name>Int_init</name>
         <param>
           <type>const void *</type>
-          <declname>self</declname>
+          <declname>_self</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>argc</declname>
         </param>
         <param>
           <type>va_list</type>
@@ -139,15 +185,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/igutek/Documents/Projects/ooc/src/Int.c" line="9" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/Int.c" bodystart="34" bodyend="42"/>
-        <references refid="Int_8c_1a58f95e509cb472a46236fb2ba211af09" compoundref="Int_8c" startline="27">Int</references>
-        <references refid="structInt_1ab131a0721b22e28accfb39f0195413ab" compoundref="Int_8h" startline="10">Int::value</references>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/int.c" line="18" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/int.c" bodystart="54" bodyend="62"/>
+        <references refid="int_8c_1a58f95e509cb472a46236fb2ba211af09" compoundref="int_8c" startline="47">Int</references>
+        <references refid="structInt_1ab131a0721b22e28accfb39f0195413ab" compoundref="int_8c" startline="10">Int::value</references>
       </memberdef>
-      <memberdef kind="function" id="Int_8c_1a6100918901d95112924d8135157c5f3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="int_8c_1a708091bca901de1b68b1ec246f8adffc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void print_Int</definition>
+        <definition>void Int_print</definition>
         <argsstring>(const void *_self)</argsstring>
-        <name>print_Int</name>
+        <name>Int_print</name>
         <param>
           <type>const void *</type>
           <declname>_self</declname>
@@ -158,13 +204,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/igutek/Documents/Projects/ooc/src/Int.c" line="10" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/Int.c" bodystart="44" bodyend="47"/>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/int.c" line="19" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/int.c" bodystart="64" bodyend="67"/>
       </memberdef>
-      <memberdef kind="function" id="Int_8c_1abb3319f5992def2d229948d2ed6599b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="int_8c_1a732a138a63b0f5c3f25c18e6983e43a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>size_t</type>
-        <definition>size_t get_size_Int</definition>
+        <definition>size_t Int_get_size</definition>
         <argsstring>(const void *_self)</argsstring>
-        <name>get_size_Int</name>
+        <name>Int_get_size</name>
         <param>
           <type>const void *</type>
           <declname>_self</declname>
@@ -175,14 +221,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/igutek/Documents/Projects/ooc/src/Int.c" line="11" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/Int.c" bodystart="29" bodyend="32"/>
-        <references refid="structInt_1a9a4308bb1dff85cd00c70f97bf4fbb8b" compoundref="Int_8h" startline="9">Int::size</references>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/int.c" line="20" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/int.c" bodystart="49" bodyend="52"/>
+        <references refid="structInt_1a9a4308bb1dff85cd00c70f97bf4fbb8b" compoundref="int_8c" startline="9">Int::size</references>
       </memberdef>
-      <memberdef kind="function" id="Int_8c_1a5f323fab797bbc86aac561ba2e5e4007" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="int_8c_1ab90bad1ffdc0df48932efeb24f834f2e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>const char *</type>
-        <definition>const char * to_str_Int</definition>
+        <definition>const char * Int_to_str</definition>
         <argsstring>(const void *_self)</argsstring>
-        <name>to_str_Int</name>
+        <name>Int_to_str</name>
         <param>
           <type>const void *</type>
           <declname>_self</declname>
@@ -193,20 +239,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/igutek/Documents/Projects/ooc/src/Int.c" line="12" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/Int.c" bodystart="50" bodyend="57"/>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/int.c" line="21" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/int.c" bodystart="70" bodyend="78"/>
       </memberdef>
-      <memberdef kind="function" id="Int_8c_1a1691ac04f4e88ad79d85283840d6f151" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void *</type>
-        <definition>void* append_Int</definition>
-        <argsstring>(void *_self, void *_other)</argsstring>
-        <name>append_Int</name>
+      <memberdef kind="function" id="int_8c_1a5ee11528e9e9edd386cfc6b5d2b84490" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const void *</type>
+        <definition>const void * Int_add</definition>
+        <argsstring>(const void *lhs, const void *rhs)</argsstring>
+        <name>Int_add</name>
         <param>
-          <type>void *</type>
-          <declname>_self</declname>
+          <type>const void *</type>
+          <declname>lhs</declname>
         </param>
         <param>
-          <type>void *</type>
-          <declname>_other</declname>
+          <type>const void *</type>
+          <declname>rhs</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -214,9 +260,98 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/igutek/Documents/Projects/ooc/src/Int.c" line="14" column="1"/>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/int.c" line="23" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/int.c" bodystart="80" bodyend="84"/>
+        <references refid="int_8c_1a58f95e509cb472a46236fb2ba211af09" compoundref="int_8c" startline="47">Int</references>
+        <references refid="structInt_1ab131a0721b22e28accfb39f0195413ab" compoundref="int_8c" startline="10">Int::value</references>
       </memberdef>
-      <memberdef kind="function" id="Int_8c_1a6d622faaba5978eeafe94e22c341faeb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="int_8c_1ab7e968a6838e99204647de44c4aca4c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const void *</type>
+        <definition>const void * Int_sub</definition>
+        <argsstring>(const void *lhs, const void *rhs)</argsstring>
+        <name>Int_sub</name>
+        <param>
+          <type>const void *</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/int.c" line="24" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/int.c" bodystart="86" bodyend="91"/>
+        <references refid="int_8c_1a58f95e509cb472a46236fb2ba211af09" compoundref="int_8c" startline="47">Int</references>
+        <references refid="structInt_1ab131a0721b22e28accfb39f0195413ab" compoundref="int_8c" startline="10">Int::value</references>
+      </memberdef>
+      <memberdef kind="function" id="int_8c_1a5606319e57bb3b2e475024318f23a589" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const void *</type>
+        <definition>const void * Int_mul</definition>
+        <argsstring>(const void *lhs, const void *rhs)</argsstring>
+        <name>Int_mul</name>
+        <param>
+          <type>const void *</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/int.c" line="25" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/int.c" bodystart="93" bodyend="98"/>
+        <references refid="int_8c_1a58f95e509cb472a46236fb2ba211af09" compoundref="int_8c" startline="47">Int</references>
+        <references refid="structInt_1ab131a0721b22e28accfb39f0195413ab" compoundref="int_8c" startline="10">Int::value</references>
+      </memberdef>
+      <memberdef kind="function" id="int_8c_1a4e6bebbc74025fe9ba93bf207150cb27" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const void *</type>
+        <definition>const void * Int_div</definition>
+        <argsstring>(const void *lhs, const void *rhs)</argsstring>
+        <name>Int_div</name>
+        <param>
+          <type>const void *</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/int.c" line="26" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/int.c" bodystart="100" bodyend="105"/>
+        <references refid="int_8c_1a58f95e509cb472a46236fb2ba211af09" compoundref="int_8c" startline="47">Int</references>
+        <references refid="structInt_1ab131a0721b22e28accfb39f0195413ab" compoundref="int_8c" startline="10">Int::value</references>
+      </memberdef>
+      <memberdef kind="function" id="int_8c_1a7e38771d97a50fb7c2d292a454c0abfb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Int_to_int</definition>
+        <argsstring>(const void *_self)</argsstring>
+        <name>Int_to_int</name>
+        <param>
+          <type>const void *</type>
+          <declname>_self</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/int.c" line="27" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/int.c" bodystart="107" bodyend="110"/>
+        <references refid="structInt_1ab131a0721b22e28accfb39f0195413ab" compoundref="int_8c" startline="10">Int::value</references>
+      </memberdef>
+      <memberdef kind="function" id="int_8c_1a6d622faaba5978eeafe94e22c341faeb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void test_int</definition>
         <argsstring>()</argsstring>
@@ -227,7 +362,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/igutek/Documents/Projects/ooc/src/Int.c" line="61" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/Int.c" bodystart="61" bodyend="63"/>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/int.c" line="113" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/int.c" bodystart="113" bodyend="115"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -235,70 +370,122 @@
     <detaileddescription>
     </detaileddescription>
     <programlisting>
-<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;<ref refid="Int_8h" kindref="compound">ooc/Int.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;<ref refid="int_8h" kindref="compound">ooc/int.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="object__internal_8h" kindref="compound">object_internal.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight></codeline>
-<codeline lineno="5" refid="structIntClass" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structIntClass" kindref="compound">IntClass</ref>{</highlight></codeline>
-<codeline lineno="6" refid="structIntClass_1a434c7c785b8a61096c69491220ab8543" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structclass__header" kindref="compound">class_header</ref><sp/><ref refid="structIntClass_1a434c7c785b8a61096c69491220ab8543" kindref="member">class</ref>;</highlight></codeline>
-<codeline lineno="7"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/><ref refid="Int_8c_1ae873d36964132e55e78d420070550a21" kindref="member">__construct__Int</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">,<sp/>va_list<sp/>args);</highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="Int_8c_1a6100918901d95112924d8135157c5f3e" kindref="member">print_Int</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>_self);</highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="Int_8c_1abb3319f5992def2d229948d2ed6599b9" kindref="member">get_size_Int</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>_self);</highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="Int_8c_1a5f323fab797bbc86aac561ba2e5e4007" kindref="member">to_str_Int</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>_self);</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="object_8h" kindref="compound">ooc/object.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="string_8h" kindref="compound">string.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="int_8c_1a9c6918fbdb610a62c848aa680b81eb9a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAX_STR_SIZE<sp/>20</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="structInt" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInt" kindref="compound">Int</ref>{</highlight></codeline>
+<codeline lineno="8" refid="structInt_1aa497eee8de1a0588fe99440e34089b89" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structclass__header" kindref="compound">class_header</ref><sp/>*<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="9" refid="structInt_1a9a4308bb1dff85cd00c70f97bf4fbb8b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structInt_1a9a4308bb1dff85cd00c70f97bf4fbb8b" kindref="member">size</ref>;</highlight></codeline>
+<codeline lineno="10" refid="structInt_1ab131a0721b22e28accfb39f0195413ab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structInt_1ab131a0721b22e28accfb39f0195413ab" kindref="member">value</ref>;</highlight></codeline>
+<codeline lineno="11" refid="structInt_1a22a0684391962593f1320ab5039e4642" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="structInt_1a22a0684391962593f1320ab5039e4642" kindref="member">str_value</ref>[<ref refid="int_8c_1a9c6918fbdb610a62c848aa680b81eb9a" kindref="member">MAX_STR_SIZE</ref>];</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/><ref refid="Int_8c_1a1691ac04f4e88ad79d85283840d6f151" kindref="member">append_Int</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>_self,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>_other);</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight></codeline>
-<codeline lineno="16" refid="Int_8c_1a51f8590f130ffc55b99a4c1b67d5e6fa" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structIntClass" kindref="compound">IntClass</ref><sp/><ref refid="Int_8c_1a51f8590f130ffc55b99a4c1b67d5e6fa" kindref="member">int_class</ref><sp/>=<sp/>{</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>.<ref refid="structIntClass_1a434c7c785b8a61096c69491220ab8543" kindref="member">class</ref><sp/>=<sp/>{.<ref refid="structclass__header_1aa98964036010ad63554856c5f4680cec" kindref="member">magic</ref><sp/>=<sp/><ref refid="object__internal_8h_1a94630370ae389fb1189282fa0742f310" kindref="member">MAGIC</ref>,</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.size<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInt" kindref="compound">Int</ref>),</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.object_init<sp/>=<sp/><ref refid="Int_8c_1ae873d36964132e55e78d420070550a21" kindref="member">__construct__Int</ref>,</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.print<sp/>=<sp/><ref refid="Int_8c_1a6100918901d95112924d8135157c5f3e" kindref="member">print_Int</ref>,</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.get_size<sp/>=<sp/><ref refid="Int_8c_1abb3319f5992def2d229948d2ed6599b9" kindref="member">get_size_Int</ref>,</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.str<sp/>=<sp/><ref refid="Int_8c_1a5f323fab797bbc86aac561ba2e5e4007" kindref="member">to_str_Int</ref></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight></codeline>
-<codeline lineno="27" refid="Int_8h_1a58f95e509cb472a46236fb2ba211af09" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/><ref refid="structInt" kindref="compound">Int</ref><sp/>=<sp/>&amp;<ref refid="Int_8c_1a51f8590f130ffc55b99a4c1b67d5e6fa" kindref="member">int_class</ref>;</highlight></codeline>
+<codeline lineno="14" refid="structIntClass" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structIntClass" kindref="compound">IntClass</ref><sp/>{</highlight></codeline>
+<codeline lineno="15" refid="structIntClass_1a434c7c785b8a61096c69491220ab8543" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structclass__header" kindref="compound">class_header</ref><sp/><ref refid="structIntClass_1a434c7c785b8a61096c69491220ab8543" kindref="member">class</ref>;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="int_8c_1a7dc53a21b3398adfbc1cbc480e8a5c8a" kindref="member">Int_init</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_self,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>argc,<sp/>va_list<sp/>args);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="int_8c_1a708091bca901de1b68b1ec246f8adffc" kindref="member">Int_print</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>_self);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="int_8c_1a732a138a63b0f5c3f25c18e6983e43a7" kindref="member">Int_get_size</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>_self);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="int_8c_1ab90bad1ffdc0df48932efeb24f834f2e" kindref="member">Int_to_str</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>_self);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="int_8c_1a5ee11528e9e9edd386cfc6b5d2b84490" kindref="member">Int_add</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>lhs,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>rhs);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="int_8c_1ab7e968a6838e99204647de44c4aca4c7" kindref="member">Int_sub</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>lhs,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>rhs);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="int_8c_1a5606319e57bb3b2e475024318f23a589" kindref="member">Int_mul</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>lhs,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>rhs);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="int_8c_1a4e6bebbc74025fe9ba93bf207150cb27" kindref="member">Int_div</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>lhs,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>rhs);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="int_8c_1a7e38771d97a50fb7c2d292a454c0abfb" kindref="member">Int_to_int</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>_self);</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight></codeline>
-<codeline lineno="29" refid="Int_8c_1abb3319f5992def2d229948d2ed6599b9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="Int_8c_1abb3319f5992def2d229948d2ed6599b9" kindref="member">get_size_Int</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>_self){</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInt" kindref="compound">Int</ref><sp/>*<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal"><sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInt" kindref="compound">Int</ref><sp/>*)<sp/>_self;</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;<ref refid="structInt_1a9a4308bb1dff85cd00c70f97bf4fbb8b" kindref="member">size</ref>;</highlight></codeline>
-<codeline lineno="32"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"></highlight></codeline>
-<codeline lineno="34" refid="Int_8c_1ae873d36964132e55e78d420070550a21" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/><ref refid="Int_8c_1ae873d36964132e55e78d420070550a21" kindref="member">__construct__Int</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>_self,<sp/>va_list<sp/>args)<sp/>{</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInt" kindref="compound">Int</ref><sp/>*<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal"><sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInt" kindref="compound">Int</ref><sp/>*)<sp/>_self;</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><ref refid="structInt_1ab131a0721b22e28accfb39f0195413ab" kindref="member">value</ref><sp/>=<sp/>va_arg(args,<sp/>uint32_t);</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;class<sp/>=<sp/><ref refid="Int_8c_1a58f95e509cb472a46236fb2ba211af09" kindref="member">Int</ref>;</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;str_value<sp/>=<sp/>NULL;</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;value<sp/>=<sp/><ref refid="structInt_1ab131a0721b22e28accfb39f0195413ab" kindref="member">value</ref>;</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;size<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInt" kindref="compound">Int</ref>);</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="42"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"></highlight></codeline>
-<codeline lineno="44" refid="Int_8c_1a6100918901d95112924d8135157c5f3e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="Int_8c_1a6100918901d95112924d8135157c5f3e" kindref="member">print_Int</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>_self)<sp/>{</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInt" kindref="compound">Int</ref><sp/>*<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal"><sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInt" kindref="compound">Int</ref><sp/>*)<sp/>_self;</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%d&quot;</highlight><highlight class="normal">,<sp/>self-&gt;value);</highlight></codeline>
-<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="29" refid="int_8c_1a51f8590f130ffc55b99a4c1b67d5e6fa" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structIntClass" kindref="compound">IntClass</ref><sp/><ref refid="int_8c_1a51f8590f130ffc55b99a4c1b67d5e6fa" kindref="member">int_class</ref><sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.<ref refid="structIntClass_1a434c7c785b8a61096c69491220ab8543" kindref="member">class</ref><sp/>=<sp/>{.<ref refid="structclass__header_1aa98964036010ad63554856c5f4680cec" kindref="member">magic</ref><sp/>=<sp/><ref refid="object__internal_8h_1a94630370ae389fb1189282fa0742f310" kindref="member">MAGIC</ref>,</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.size<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInt" kindref="compound">Int</ref>),</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.object_init<sp/>=<sp/><ref refid="int_8c_1a7dc53a21b3398adfbc1cbc480e8a5c8a" kindref="member">Int_init</ref>,</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.print<sp/>=<sp/><ref refid="int_8c_1a708091bca901de1b68b1ec246f8adffc" kindref="member">Int_print</ref>,</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.get_size<sp/>=<sp/><ref refid="int_8c_1a732a138a63b0f5c3f25c18e6983e43a7" kindref="member">Int_get_size</ref>,</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.str<sp/>=<sp/><ref refid="int_8c_1ab90bad1ffdc0df48932efeb24f834f2e" kindref="member">Int_to_str</ref>,</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.math<sp/><sp/>=<sp/><sp/>{.enabled<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.add<sp/>=<sp/><ref refid="int_8c_1a5ee11528e9e9edd386cfc6b5d2b84490" kindref="member">Int_add</ref>,</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.sub<sp/>=<sp/><ref refid="int_8c_1ab7e968a6838e99204647de44c4aca4c7" kindref="member">Int_sub</ref>,</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.mul<sp/>=<sp/><ref refid="int_8c_1a5606319e57bb3b2e475024318f23a589" kindref="member">Int_mul</ref>,</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.div<sp/>=<sp/><ref refid="int_8c_1a4e6bebbc74025fe9ba93bf207150cb27" kindref="member">Int_div</ref>,</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.to_int<sp/>=<sp/><ref refid="int_8c_1a7e38771d97a50fb7c2d292a454c0abfb" kindref="member">Int_to_int</ref></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="int_8h_1a58f95e509cb472a46236fb2ba211af09" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="structInt" kindref="compound">Int</ref><sp/>=<sp/>&amp;<ref refid="int_8c_1a51f8590f130ffc55b99a4c1b67d5e6fa" kindref="member">int_class</ref>;</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"></highlight></codeline>
-<codeline lineno="49"><highlight class="normal"></highlight></codeline>
-<codeline lineno="50" refid="Int_8c_1a5f323fab797bbc86aac561ba2e5e4007" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="Int_8c_1a5f323fab797bbc86aac561ba2e5e4007" kindref="member">to_str_Int</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>_self){</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInt" kindref="compound">Int</ref><sp/>*<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal"><sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInt" kindref="compound">Int</ref><sp/>*)<sp/>_self;</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;printing<sp/>int\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(self-&gt;str_value)</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;str_value;</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"></highlight></codeline>
-<codeline lineno="57"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"></highlight></codeline>
-<codeline lineno="59"><highlight class="normal"></highlight></codeline>
-<codeline lineno="60"><highlight class="normal"></highlight></codeline>
-<codeline lineno="61" refid="Int_8c_1a6d622faaba5978eeafe94e22c341faeb" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="Int_8c_1a6d622faaba5978eeafe94e22c341faeb" kindref="member">test_int</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"></highlight></codeline>
-<codeline lineno="63"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="49" refid="int_8c_1a732a138a63b0f5c3f25c18e6983e43a7" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="int_8c_1a732a138a63b0f5c3f25c18e6983e43a7" kindref="member">Int_get_size</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>_self)<sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInt" kindref="compound">Int</ref>*<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal"><sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInt" kindref="compound">Int</ref>*)<sp/>_self;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;<ref refid="structInt_1a9a4308bb1dff85cd00c70f97bf4fbb8b" kindref="member">size</ref>;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="int_8c_1a7dc53a21b3398adfbc1cbc480e8a5c8a" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="int_8c_1a7dc53a21b3398adfbc1cbc480e8a5c8a" kindref="member">Int_init</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_self,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>argc,<sp/>va_list<sp/>args)<sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInt" kindref="compound">Int</ref>*<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal"><sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInt" kindref="compound">Int</ref>*)<sp/>_self;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structInt_1ab131a0721b22e28accfb39f0195413ab" kindref="member">value</ref><sp/>=<sp/>va_arg(args,<sp/>uint32_t);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;class<sp/>=<sp/><ref refid="int_8c_1a58f95e509cb472a46236fb2ba211af09" kindref="member">Int</ref>;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;str_value[0]<sp/>=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;value<sp/>=<sp/><ref refid="structInt_1ab131a0721b22e28accfb39f0195413ab" kindref="member">value</ref>;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;size<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInt" kindref="compound">Int</ref>);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="int_8c_1a708091bca901de1b68b1ec246f8adffc" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="int_8c_1a708091bca901de1b68b1ec246f8adffc" kindref="member">Int_print</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>_self)<sp/>{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInt" kindref="compound">Int</ref>*<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal"><sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInt" kindref="compound">Int</ref>*)<sp/>_self;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%d&quot;</highlight><highlight class="normal">,<sp/>self-&gt;value);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="int_8c_1ab90bad1ffdc0df48932efeb24f834f2e" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="int_8c_1ab90bad1ffdc0df48932efeb24f834f2e" kindref="member">Int_to_str</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>_self)<sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInt" kindref="compound">Int</ref>*<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal"><sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInt" kindref="compound">Int</ref>*)<sp/>_self;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(self-&gt;str_value[0]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>snprintf(self-&gt;str_value,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(self-&gt;str_value),<sp/></highlight><highlight class="stringliteral">&quot;%d&quot;</highlight><highlight class="normal">,<sp/>self-&gt;value);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;str_value;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="int_8c_1a5ee11528e9e9edd386cfc6b5d2b84490" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="int_8c_1a5ee11528e9e9edd386cfc6b5d2b84490" kindref="member">Int_add</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>_lhs,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>_rhs)<sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInt" kindref="compound">Int</ref>*<sp/>lhs<sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInt" kindref="compound">Int</ref>*)<sp/>_lhs;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInt" kindref="compound">Int</ref>*<sp/>rhs<sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInt" kindref="compound">Int</ref>*)<sp/>_rhs;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">(<ref refid="int_8c_1a58f95e509cb472a46236fb2ba211af09" kindref="member">Int</ref>,<sp/>lhs-&gt;<ref refid="structInt_1ab131a0721b22e28accfb39f0195413ab" kindref="member">value</ref><sp/>+<sp/>rhs-&gt;<ref refid="structInt_1ab131a0721b22e28accfb39f0195413ab" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="int_8c_1ab7e968a6838e99204647de44c4aca4c7" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="int_8c_1ab7e968a6838e99204647de44c4aca4c7" kindref="member">Int_sub</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>_lhs,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>_rhs)<sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInt" kindref="compound">Int</ref>*<sp/>lhs<sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInt" kindref="compound">Int</ref>*)<sp/>_lhs;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInt" kindref="compound">Int</ref>*<sp/>rhs<sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInt" kindref="compound">Int</ref>*)<sp/>_lhs;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">(<ref refid="int_8c_1a58f95e509cb472a46236fb2ba211af09" kindref="member">Int</ref>,<sp/>lhs-&gt;<ref refid="structInt_1ab131a0721b22e28accfb39f0195413ab" kindref="member">value</ref><sp/>-<sp/>rhs-&gt;<ref refid="structInt_1ab131a0721b22e28accfb39f0195413ab" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="int_8c_1a5606319e57bb3b2e475024318f23a589" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="int_8c_1a5606319e57bb3b2e475024318f23a589" kindref="member">Int_mul</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>_lhs,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>_rhs)<sp/>{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInt" kindref="compound">Int</ref>*<sp/>lhs<sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInt" kindref="compound">Int</ref>*)<sp/>_lhs;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInt" kindref="compound">Int</ref>*<sp/>rhs<sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInt" kindref="compound">Int</ref>*)<sp/>_lhs;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">(<ref refid="int_8c_1a58f95e509cb472a46236fb2ba211af09" kindref="member">Int</ref>,<sp/>lhs-&gt;<ref refid="structInt_1ab131a0721b22e28accfb39f0195413ab" kindref="member">value</ref><sp/>*<sp/>rhs-&gt;<ref refid="structInt_1ab131a0721b22e28accfb39f0195413ab" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="int_8c_1a4e6bebbc74025fe9ba93bf207150cb27" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="int_8c_1a4e6bebbc74025fe9ba93bf207150cb27" kindref="member">Int_div</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>_lhs,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>_rhs)<sp/>{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInt" kindref="compound">Int</ref>*<sp/>lhs<sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInt" kindref="compound">Int</ref>*)<sp/>_lhs;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInt" kindref="compound">Int</ref>*<sp/>rhs<sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInt" kindref="compound">Int</ref>*)<sp/>_lhs;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">(<ref refid="int_8c_1a58f95e509cb472a46236fb2ba211af09" kindref="member">Int</ref>,<sp/>lhs-&gt;<ref refid="structInt_1ab131a0721b22e28accfb39f0195413ab" kindref="member">value</ref><sp/>/<sp/>rhs-&gt;<ref refid="structInt_1ab131a0721b22e28accfb39f0195413ab" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="int_8c_1a7e38771d97a50fb7c2d292a454c0abfb" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="int_8c_1a7e38771d97a50fb7c2d292a454c0abfb" kindref="member">Int_to_int</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>_self)<sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInt" kindref="compound">Int</ref>*<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal"><sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInt" kindref="compound">Int</ref>*)<sp/>_self;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;<ref refid="structInt_1ab131a0721b22e28accfb39f0195413ab" kindref="member">value</ref>;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="int_8c_1a6d622faaba5978eeafe94e22c341faeb" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="int_8c_1a6d622faaba5978eeafe94e22c341faeb" kindref="member">test_int</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal">}</highlight></codeline>
     </programlisting>
-    <location file="/Users/igutek/Documents/Projects/ooc/src/Int.c"/>
+    <location file="/Users/igutek/Documents/Projects/ooc/src/int.c"/>
   </compounddef>
 </doxygen>

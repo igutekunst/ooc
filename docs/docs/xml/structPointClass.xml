@@ -22,16 +22,23 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="35">
+      <node id="72">
         <label>PointClass</label>
         <link refid="structPointClass"/>
-        <childnode refid="36" relation="usage">
+        <childnode refid="73" relation="usage">
           <edgelabel>class</edgelabel>
         </childnode>
       </node>
-      <node id="36">
+      <node id="73">
         <label>class_header</label>
         <link refid="structclass__header"/>
+        <childnode refid="74" relation="usage">
+          <edgelabel>math</edgelabel>
+        </childnode>
+      </node>
+      <node id="74">
+        <label>OOCTraitMath</label>
+        <link refid="structOOCTraitMath"/>
       </node>
     </collaborationgraph>
     <location file="/Users/igutek/Documents/Projects/ooc/src/point.c" line="4" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/point.c" bodystart="4" bodyend="6"/>

@@ -26,7 +26,7 @@ struct \mbox{\hyperlink{structHashMapClass__iter}{Hash\+Map\+Class\+\_\+iter}}
 \item 
 \#define \mbox{\hyperlink{hashmap_8c_a513c061a66f664105b12ff672419fc39}{H\+A\+S\+H\+\_\+\+T\+A\+B\+L\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+L\+EN}}~4
 \item 
-\#define \mbox{\hyperlink{hashmap_8c_a4e74c4d2d47cb63f124c970895846958}{M\+A\+X\+\_\+A}}~18446744073709551615L
+\#define \mbox{\hyperlink{hashmap_8c_a4e74c4d2d47cb63f124c970895846958}{M\+A\+X\+\_\+A}}~18446744073709551615\+UL
 \item 
 \#define \mbox{\hyperlink{hashmap_8c_ac5b763fe6cba352a54dc5d482b587329}{H\+W\+M\+\_\+\+F\+R\+A\+C\+T\+I\+ON}}~0.\+5
 \end{DoxyCompactItemize}
@@ -38,7 +38,7 @@ typedef struct \mbox{\hyperlink{structHashItem}{Hash\+Item}} \mbox{\hyperlink{ha
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-const void $\ast$ \mbox{\hyperlink{hashmap_8c_a91f44dc50fe5d24c4970a8772347bef7}{\+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map}} (const void $\ast$self, va\+\_\+list args)
+const void $\ast$ \mbox{\hyperlink{hashmap_8c_ad4de73a10996248c06b40c4c391066b3}{\+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map}} (const void $\ast$\+\_\+self, size\+\_\+t argc, va\+\_\+list args)
 \item 
 void \mbox{\hyperlink{hashmap_8c_ade2afccd37e881325eb1ce005a1d8d1e}{print\+\_\+\+Hash\+Map}} (void $\ast$\+\_\+self)
 \item 
@@ -74,13 +74,13 @@ void \mbox{\hyperlink{hashmap_8c_a8aa67d2dac0692c1128b50780ad9dfc1}{internal\+\_
 \item 
 size\+\_\+t \mbox{\hyperlink{hashmap_8c_a3941f840164dd3ce845aec0bd5fc5652}{internal\+\_\+count\+\_\+\+Hash\+Map}} (struct \mbox{\hyperlink{structHashMap}{Hash\+Map}} $\ast$self)
 \item 
-void \mbox{\hyperlink{hashmap_8c_a4425bb488e5bfb1e9244675a31df3470}{\+\_\+\+\_\+destruct\+\_\+\+\_\+\+Hash\+Map}} (const void $\ast$\+\_\+self, va\+\_\+list args)
+void \mbox{\hyperlink{hashmap_8c_aecd90da1441575a53cb0e715108ef1ba}{\+\_\+\+\_\+destruct\+\_\+\+\_\+\+Hash\+Map}} (const void $\ast$\+\_\+self)
 \item 
 void \mbox{\hyperlink{hashmap_8c_a10476d872d0cfcb234391cabf5e888a1}{del\+\_\+item\+\_\+\+Hash\+Map}} (const void $\ast$\+\_\+self, const void $\ast$\+\_\+key)
 \item 
 const void $\ast$ \mbox{\hyperlink{hashmap_8c_aa1645276039a5f13164347699538139b}{iter\+\_\+\+Hash\+Map}} (const void $\ast$\+\_\+self)
 \item 
-const void $\ast$ \mbox{\hyperlink{hashmap_8c_ae8c6201244c05c149ee58f00693fbe18}{\+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map\+\_\+iter}} (const void $\ast$\+\_\+self, va\+\_\+list args)
+const void $\ast$ \mbox{\hyperlink{hashmap_8c_a7472518034803385044e43d8edeb1e79}{\+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map\+\_\+iter}} (const void $\ast$\+\_\+self, size\+\_\+t argc, va\+\_\+list args)
 \end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -140,7 +140,7 @@ Referenced by \+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map(), and internal\+\_\+
 \index{hashmap.\+c@{hashmap.\+c}!M\+A\+X\+\_\+A@{M\+A\+X\+\_\+A}}
 \index{M\+A\+X\+\_\+A@{M\+A\+X\+\_\+A}!hashmap.\+c@{hashmap.\+c}}
 \subsubsection{\texorpdfstring{M\+A\+X\+\_\+A}{MAX\_A}}
-{\footnotesize\ttfamily \#define M\+A\+X\+\_\+A~18446744073709551615L}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+A~18446744073709551615\+UL}
 
 
 
@@ -190,43 +190,43 @@ Definition at line 12 of file hashmap.\+c.
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{hashmap_8c_a91f44dc50fe5d24c4970a8772347bef7}\label{hashmap_8c_a91f44dc50fe5d24c4970a8772347bef7}} 
+\mbox{\Hypertarget{hashmap_8c_ad4de73a10996248c06b40c4c391066b3}\label{hashmap_8c_ad4de73a10996248c06b40c4c391066b3}} 
 \index{hashmap.\+c@{hashmap.\+c}!\+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map@{\+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map}}
 \index{\+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map@{\+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map}!hashmap.\+c@{hashmap.\+c}}
 \subsubsection{\texorpdfstring{\+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map()}{\_\_construct\_\_HashMap()}}
-{\footnotesize\ttfamily const void $\ast$ \+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map (\begin{DoxyParamCaption}\item[{const void $\ast$}]{self,  }\item[{va\+\_\+list}]{args }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily const void $\ast$ \+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+self,  }\item[{size\+\_\+t}]{argc,  }\item[{va\+\_\+list}]{args }\end{DoxyParamCaption})}
 
 
 
-Definition at line 277 of file hashmap.\+c.
+Definition at line 284 of file hashmap.\+c.
 
 
 
 References alloc\+\_\+hash\+\_\+items(), H\+A\+S\+H\+\_\+\+T\+A\+B\+L\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+L\+EN, Hash\+Map, H\+W\+M\+\_\+\+F\+R\+A\+C\+T\+I\+ON, lg(), random\+\_\+a(), random\+\_\+b(), rng\+\_\+seeded, and Hash\+Map\+::size.
 
-\mbox{\Hypertarget{hashmap_8c_ae8c6201244c05c149ee58f00693fbe18}\label{hashmap_8c_ae8c6201244c05c149ee58f00693fbe18}} 
+\mbox{\Hypertarget{hashmap_8c_a7472518034803385044e43d8edeb1e79}\label{hashmap_8c_a7472518034803385044e43d8edeb1e79}} 
 \index{hashmap.\+c@{hashmap.\+c}!\+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map\+\_\+iter@{\+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map\+\_\+iter}}
 \index{\+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map\+\_\+iter@{\+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map\+\_\+iter}!hashmap.\+c@{hashmap.\+c}}
 \subsubsection{\texorpdfstring{\+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map\+\_\+iter()}{\_\_construct\_\_HashMap\_iter()}}
-{\footnotesize\ttfamily const void$\ast$ \+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map\+\_\+iter (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+self,  }\item[{va\+\_\+list}]{args }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily const void$\ast$ \+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map\+\_\+iter (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+self,  }\item[{size\+\_\+t}]{argc,  }\item[{va\+\_\+list}]{args }\end{DoxyParamCaption})}
 
 
 
-Definition at line 500 of file hashmap.\+c.
+Definition at line 508 of file hashmap.\+c.
 
 
 
 References Hash\+Map\+\_\+iter\+::class, and Hash\+Map\+\_\+iter.
 
-\mbox{\Hypertarget{hashmap_8c_a4425bb488e5bfb1e9244675a31df3470}\label{hashmap_8c_a4425bb488e5bfb1e9244675a31df3470}} 
+\mbox{\Hypertarget{hashmap_8c_aecd90da1441575a53cb0e715108ef1ba}\label{hashmap_8c_aecd90da1441575a53cb0e715108ef1ba}} 
 \index{hashmap.\+c@{hashmap.\+c}!\+\_\+\+\_\+destruct\+\_\+\+\_\+\+Hash\+Map@{\+\_\+\+\_\+destruct\+\_\+\+\_\+\+Hash\+Map}}
 \index{\+\_\+\+\_\+destruct\+\_\+\+\_\+\+Hash\+Map@{\+\_\+\+\_\+destruct\+\_\+\+\_\+\+Hash\+Map}!hashmap.\+c@{hashmap.\+c}}
 \subsubsection{\texorpdfstring{\+\_\+\+\_\+destruct\+\_\+\+\_\+\+Hash\+Map()}{\_\_destruct\_\_HashMap()}}
-{\footnotesize\ttfamily void \+\_\+\+\_\+destruct\+\_\+\+\_\+\+Hash\+Map (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+self,  }\item[{va\+\_\+list}]{args }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void \+\_\+\+\_\+destruct\+\_\+\+\_\+\+Hash\+Map (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+self }\end{DoxyParamCaption})}
 
 
 
-Definition at line 307 of file hashmap.\+c.
+Definition at line 313 of file hashmap.\+c.
 
 \mbox{\Hypertarget{hashmap_8c_a5c97b94958e87967d62dc8832202aabc}\label{hashmap_8c_a5c97b94958e87967d62dc8832202aabc}} 
 \index{hashmap.\+c@{hashmap.\+c}!alloc\+\_\+hash\+\_\+items@{alloc\+\_\+hash\+\_\+items}}
@@ -236,7 +236,7 @@ Definition at line 307 of file hashmap.\+c.
 
 
 
-Definition at line 73 of file hashmap.\+c.
+Definition at line 82 of file hashmap.\+c.
 
 
 
@@ -250,7 +250,7 @@ Referenced by \+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map(), and internal\+\_\+
 
 
 
-Definition at line 514 of file hashmap.\+c.
+Definition at line 522 of file hashmap.\+c.
 
 \mbox{\Hypertarget{hashmap_8c_a10476d872d0cfcb234391cabf5e888a1}\label{hashmap_8c_a10476d872d0cfcb234391cabf5e888a1}} 
 \index{hashmap.\+c@{hashmap.\+c}!del\+\_\+item\+\_\+\+Hash\+Map@{del\+\_\+item\+\_\+\+Hash\+Map}}
@@ -260,11 +260,11 @@ Definition at line 514 of file hashmap.\+c.
 
 
 
-Definition at line 378 of file hashmap.\+c.
+Definition at line 384 of file hashmap.\+c.
 
 
 
-References get\+\_\+obj(), class\+\_\+header\+::hash, internal\+\_\+hash(), Hash\+Item\+::internal\+\_\+key, internal\+\_\+print\+\_\+table(), internal\+\_\+resize\+\_\+\+Hash\+Map(), Hash\+Item\+::next, Hash\+Item\+::present, and Hash\+Item\+::value.
+References get\+\_\+class\+\_\+header\+\_\+msg(), class\+\_\+header\+::hash, internal\+\_\+hash(), Hash\+Item\+::internal\+\_\+key, internal\+\_\+print\+\_\+table(), internal\+\_\+resize\+\_\+\+Hash\+Map(), Hash\+Item\+::next, Hash\+Item\+::present, and Hash\+Item\+::value.
 
 \mbox{\Hypertarget{hashmap_8c_aa88aa2ed0651f4feb2e275ba14114d14}\label{hashmap_8c_aa88aa2ed0651f4feb2e275ba14114d14}} 
 \index{hashmap.\+c@{hashmap.\+c}!get\+\_\+\+Hash\+Map@{get\+\_\+\+Hash\+Map}}
@@ -274,11 +274,11 @@ References get\+\_\+obj(), class\+\_\+header\+::hash, internal\+\_\+hash(), Hash
 
 
 
-Definition at line 343 of file hashmap.\+c.
+Definition at line 349 of file hashmap.\+c.
 
 
 
-References equals(), get\+\_\+class\+\_\+header(), get\+\_\+obj(), class\+\_\+header\+::hash, internal\+\_\+hash(), Hash\+Item\+::internal\+\_\+key, Hash\+Item\+::key, Hash\+Item\+::next, str(), and Hash\+Item\+::value.
+References equals(), get\+\_\+class\+\_\+header(), get\+\_\+class\+\_\+header\+\_\+msg(), class\+\_\+header\+::hash, internal\+\_\+hash(), Hash\+Item\+::internal\+\_\+key, Hash\+Item\+::key, Hash\+Item\+::next, str(), and Hash\+Item\+::value.
 
 \mbox{\Hypertarget{hashmap_8c_a79dcb455435133253d86b70e31e3cba3}\label{hashmap_8c_a79dcb455435133253d86b70e31e3cba3}} 
 \index{hashmap.\+c@{hashmap.\+c}!get\+\_\+len\+\_\+\+Hash\+Map@{get\+\_\+len\+\_\+\+Hash\+Map}}
@@ -288,7 +288,7 @@ References equals(), get\+\_\+class\+\_\+header(), get\+\_\+obj(), class\+\_\+he
 
 
 
-Definition at line 256 of file hashmap.\+c.
+Definition at line 265 of file hashmap.\+c.
 
 
 
@@ -302,7 +302,7 @@ References internal\+\_\+count\+\_\+\+Hash\+Map(), and internal\+\_\+print\+\_\+
 
 
 
-Definition at line 272 of file hashmap.\+c.
+Definition at line 279 of file hashmap.\+c.
 
 
 
@@ -316,11 +316,11 @@ References Hash\+Map\+::size.
 
 
 
-Definition at line 324 of file hashmap.\+c.
+Definition at line 330 of file hashmap.\+c.
 
 
 
-References get\+\_\+class\+\_\+header(), get\+\_\+obj(), class\+\_\+header\+::hash, internal\+\_\+insert\+\_\+\+Hash\+Map(), and str().
+References get\+\_\+class\+\_\+header(), get\+\_\+class\+\_\+header\+\_\+msg(), class\+\_\+header\+::hash, internal\+\_\+insert\+\_\+\+Hash\+Map(), and str().
 
 \mbox{\Hypertarget{hashmap_8c_a3941f840164dd3ce845aec0bd5fc5652}\label{hashmap_8c_a3941f840164dd3ce845aec0bd5fc5652}} 
 \index{hashmap.\+c@{hashmap.\+c}!internal\+\_\+count\+\_\+\+Hash\+Map@{internal\+\_\+count\+\_\+\+Hash\+Map}}
@@ -330,7 +330,7 @@ References get\+\_\+class\+\_\+header(), get\+\_\+obj(), class\+\_\+header\+::ha
 
 
 
-Definition at line 175 of file hashmap.\+c.
+Definition at line 184 of file hashmap.\+c.
 
 
 
@@ -348,7 +348,7 @@ Referenced by get\+\_\+len\+\_\+\+Hash\+Map().
 
 
 
-Definition at line 102 of file hashmap.\+c.
+Definition at line 111 of file hashmap.\+c.
 
 
 
@@ -366,7 +366,7 @@ Referenced by del\+\_\+item\+\_\+\+Hash\+Map(), get\+\_\+\+Hash\+Map(), and inte
 
 
 
-Definition at line 107 of file hashmap.\+c.
+Definition at line 116 of file hashmap.\+c.
 
 
 
@@ -384,7 +384,7 @@ Referenced by insert\+\_\+\+Hash\+Map(), and internal\+\_\+resize\+\_\+\+Hash\+M
 
 
 
-Definition at line 152 of file hashmap.\+c.
+Definition at line 161 of file hashmap.\+c.
 
 
 
@@ -402,7 +402,7 @@ Referenced by del\+\_\+item\+\_\+\+Hash\+Map(), get\+\_\+len\+\_\+\+Hash\+Map(),
 
 
 
-Definition at line 193 of file hashmap.\+c.
+Definition at line 203 of file hashmap.\+c.
 
 
 
@@ -420,7 +420,7 @@ Referenced by del\+\_\+item\+\_\+\+Hash\+Map(), and internal\+\_\+insert\+\_\+\+
 
 
 
-Definition at line 453 of file hashmap.\+c.
+Definition at line 459 of file hashmap.\+c.
 
 
 
@@ -434,7 +434,7 @@ References Hash\+Map\+\_\+iter.
 
 
 
-Definition at line 87 of file hashmap.\+c.
+Definition at line 96 of file hashmap.\+c.
 
 
 
@@ -448,11 +448,11 @@ Referenced by \+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map(), internal\+\_\+resi
 
 
 
-Definition at line 464 of file hashmap.\+c.
+Definition at line 472 of file hashmap.\+c.
 
 
 
-References Hash\+Item\+::next, and Hash\+Item\+::value.
+References Hash\+Item\+::key, and Hash\+Item\+::next.
 
 \mbox{\Hypertarget{hashmap_8c_ade2afccd37e881325eb1ce005a1d8d1e}\label{hashmap_8c_ade2afccd37e881325eb1ce005a1d8d1e}} 
 \index{hashmap.\+c@{hashmap.\+c}!print\+\_\+\+Hash\+Map@{print\+\_\+\+Hash\+Map}}
@@ -462,7 +462,7 @@ References Hash\+Item\+::next, and Hash\+Item\+::value.
 
 
 
-Definition at line 311 of file hashmap.\+c.
+Definition at line 317 of file hashmap.\+c.
 
 \mbox{\Hypertarget{hashmap_8c_a2f99243b32985f56493f04b192071dc7}\label{hashmap_8c_a2f99243b32985f56493f04b192071dc7}} 
 \index{hashmap.\+c@{hashmap.\+c}!random\+\_\+a@{random\+\_\+a}}
@@ -472,7 +472,7 @@ Definition at line 311 of file hashmap.\+c.
 
 
 
-Definition at line 80 of file hashmap.\+c.
+Definition at line 89 of file hashmap.\+c.
 
 
 
@@ -490,7 +490,7 @@ Referenced by \+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map(), and internal\+\_\+
 
 
 
-Definition at line 96 of file hashmap.\+c.
+Definition at line 105 of file hashmap.\+c.
 
 
 
@@ -508,7 +508,7 @@ Referenced by \+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map(), and internal\+\_\+
 
 
 
-Definition at line 317 of file hashmap.\+c.
+Definition at line 323 of file hashmap.\+c.
 
 
 
@@ -522,26 +522,26 @@ Definition at line 317 of file hashmap.\+c.
 {\bfseries Initial value\+:}
 \begin{DoxyCode}
 = \{
-    .class = \{.magic = \mbox{\hyperlink{object__internal_8h_a94630370ae389fb1189282fa0742f310}{MAGIC}},
-              .size = \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct }\mbox{\hyperlink{structHashMap}{HashMap}}),
-              .object\_init = \mbox{\hyperlink{hashmap_8c_a91f44dc50fe5d24c4970a8772347bef7}{\_\_construct\_\_HashMap}},
-              .object\_deinit = \mbox{\hyperlink{hashmap_8c_a4425bb488e5bfb1e9244675a31df3470}{\_\_destruct\_\_HashMap}},
-              .get\_size = \mbox{\hyperlink{hashmap_8c_a700517ea0c1ffc800b7c93b475a5e78a}{get\_size\_HashMap}},
-              .get\_len = \mbox{\hyperlink{hashmap_8c_a79dcb455435133253d86b70e31e3cba3}{get\_len\_HashMap}},
-              .str = \mbox{\hyperlink{hashmap_8c_a12bafd8be5b1e7cee7f0d61a2a7a4c2e}{str\_HashMap}},
-              .copy = \mbox{\hyperlink{hashmap_8c_a92b093655c1077032c065f51aed37652}{copy\_HashMap}},
-              .insert = \mbox{\hyperlink{hashmap_8c_a2987322764f770f61fe71f0a1320fc7b}{insert\_HashMap}},
-              .get = \mbox{\hyperlink{hashmap_8c_aa88aa2ed0651f4feb2e275ba14114d14}{get\_HashMap}},
-              .del\_item = \mbox{\hyperlink{hashmap_8c_a10476d872d0cfcb234391cabf5e888a1}{del\_item\_HashMap}},
-              .iter = \mbox{\hyperlink{hashmap_8c_aa1645276039a5f13164347699538139b}{iter\_HashMap}},
-              .object\_name = \textcolor{stringliteral}{"HashMap"}
-             \}
+        .class = \{.magic = \mbox{\hyperlink{object__internal_8h_a94630370ae389fb1189282fa0742f310}{MAGIC}},
+                .size = \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct }\mbox{\hyperlink{structHashMap}{HashMap}}),
+                .object\_init = \mbox{\hyperlink{hashmap_8c_ad4de73a10996248c06b40c4c391066b3}{\_\_construct\_\_HashMap}},
+                .object\_deinit = \mbox{\hyperlink{hashmap_8c_aecd90da1441575a53cb0e715108ef1ba}{\_\_destruct\_\_HashMap}},
+                .get\_size = \mbox{\hyperlink{hashmap_8c_a700517ea0c1ffc800b7c93b475a5e78a}{get\_size\_HashMap}},
+                .get\_len = \mbox{\hyperlink{hashmap_8c_a79dcb455435133253d86b70e31e3cba3}{get\_len\_HashMap}},
+                .str = \mbox{\hyperlink{hashmap_8c_a12bafd8be5b1e7cee7f0d61a2a7a4c2e}{str\_HashMap}},
+                .copy = \mbox{\hyperlink{hashmap_8c_a92b093655c1077032c065f51aed37652}{copy\_HashMap}},
+                .insert = \mbox{\hyperlink{hashmap_8c_a2987322764f770f61fe71f0a1320fc7b}{insert\_HashMap}},
+                .get\_item = \mbox{\hyperlink{hashmap_8c_aa88aa2ed0651f4feb2e275ba14114d14}{get\_HashMap}},
+                .del\_item = \mbox{\hyperlink{hashmap_8c_a10476d872d0cfcb234391cabf5e888a1}{del\_item\_HashMap}},
+                .iter = \mbox{\hyperlink{hashmap_8c_aa1645276039a5f13164347699538139b}{iter\_HashMap}},
+                .object\_name = \textcolor{stringliteral}{"HashMap"}
+        \}
 
 \}
 \end{DoxyCode}
 
 
-Definition at line 520 of file hashmap.\+c.
+Definition at line 528 of file hashmap.\+c.
 
 \mbox{\Hypertarget{hashmap_8c_a19a320a0fb44773b7b2edde8b06f7e0b}\label{hashmap_8c_a19a320a0fb44773b7b2edde8b06f7e0b}} 
 \index{hashmap.\+c@{hashmap.\+c}!hash\+\_\+map\+\_\+class\+\_\+iter@{hash\+\_\+map\+\_\+class\+\_\+iter}}
@@ -552,17 +552,17 @@ Definition at line 520 of file hashmap.\+c.
 {\bfseries Initial value\+:}
 \begin{DoxyCode}
 = \{
-    .class = \{.magic = \mbox{\hyperlink{object__internal_8h_a94630370ae389fb1189282fa0742f310}{MAGIC}},
-              .object\_init = \mbox{\hyperlink{hashmap_8c_ae8c6201244c05c149ee58f00693fbe18}{\_\_construct\_\_HashMap\_iter}},
-              .size = \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct }\mbox{\hyperlink{structHashMap__iter}{HashMap\_iter}}),
-              .\mbox{\hyperlink{group__collection_gaecc46e74b03a83ca8a8023cc7264489c}{next}} = \mbox{\hyperlink{hashmap_8c_a5601cd221918b26557f36f577c909407}{next\_HashMap}}
-             \}
+        .class = \{.magic = \mbox{\hyperlink{object__internal_8h_a94630370ae389fb1189282fa0742f310}{MAGIC}},
+                .object\_init = \mbox{\hyperlink{hashmap_8c_a7472518034803385044e43d8edeb1e79}{\_\_construct\_\_HashMap\_iter}},
+                .size = \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct }\mbox{\hyperlink{structHashMap__iter}{HashMap\_iter}}),
+                .\mbox{\hyperlink{group__collection_gaecc46e74b03a83ca8a8023cc7264489c}{next}} = \mbox{\hyperlink{hashmap_8c_a5601cd221918b26557f36f577c909407}{next\_HashMap}}
+        \}
 
 \}
 \end{DoxyCode}
 
 
-Definition at line 541 of file hashmap.\+c.
+Definition at line 549 of file hashmap.\+c.
 
 \mbox{\Hypertarget{hashmap_8c_a460bbbf2046f6aaf34ce30bb2be13939}\label{hashmap_8c_a460bbbf2046f6aaf34ce30bb2be13939}} 
 \index{hashmap.\+c@{hashmap.\+c}!Hash\+Map@{Hash\+Map}}
@@ -572,7 +572,7 @@ Definition at line 541 of file hashmap.\+c.
 
 
 
-Definition at line 539 of file hashmap.\+c.
+Definition at line 547 of file hashmap.\+c.
 
 
 
@@ -586,7 +586,7 @@ Referenced by \+\_\+\+\_\+construct\+\_\+\+\_\+\+Hash\+Map(), and main().
 
 
 
-Definition at line 549 of file hashmap.\+c.
+Definition at line 557 of file hashmap.\+c.
 
 
 

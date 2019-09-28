@@ -6,68 +6,82 @@
     <includes refid="object__internal_8h" local="yes">object_internal.h</includes>
     <includes local="no">stdlib.h</includes>
     <incdepgraph>
-      <node id="192">
+      <node id="247">
         <label>stdbool.h</label>
       </node>
-      <node id="191">
+      <node id="246">
         <label>stdarg.h</label>
       </node>
-      <node id="193">
+      <node id="248">
         <label>stdint.h</label>
       </node>
-      <node id="190">
+      <node id="245">
         <label>stdlib.h</label>
       </node>
-      <node id="194">
+      <node id="250">
         <label>object_internal.h</label>
         <link refid="object__internal_8h"/>
-        <childnode refid="193" relation="include">
+        <childnode refid="248" relation="include">
         </childnode>
-        <childnode refid="190" relation="include">
+        <childnode refid="245" relation="include">
         </childnode>
-        <childnode refid="191" relation="include">
+        <childnode refid="246" relation="include">
         </childnode>
-        <childnode refid="192" relation="include">
+        <childnode refid="247" relation="include">
+        </childnode>
+        <childnode refid="251" relation="include">
         </childnode>
       </node>
-      <node id="188">
+      <node id="243">
         <label>stddef.h</label>
       </node>
-      <node id="187">
+      <node id="251">
+        <label>trait_math_internal.h</label>
+        <link refid="trait__math__internal_8h"/>
+      </node>
+      <node id="249">
+        <label>ooc/object_va_args.h</label>
+        <link refid="object__va__args_8h"/>
+        <childnode refid="245" relation="include">
+        </childnode>
+      </node>
+      <node id="242">
         <label>object.h</label>
         <link refid="object_8h"/>
-        <childnode refid="188" relation="include">
+        <childnode refid="243" relation="include">
         </childnode>
-        <childnode refid="189" relation="include">
+        <childnode refid="244" relation="include">
         </childnode>
-        <childnode refid="190" relation="include">
+        <childnode refid="245" relation="include">
         </childnode>
-        <childnode refid="191" relation="include">
+        <childnode refid="246" relation="include">
         </childnode>
-        <childnode refid="192" relation="include">
+        <childnode refid="247" relation="include">
         </childnode>
-        <childnode refid="193" relation="include">
+        <childnode refid="248" relation="include">
+        </childnode>
+        <childnode refid="249" relation="include">
         </childnode>
       </node>
-      <node id="185">
+      <node id="240">
         <label>/Users/igutek/Documents/Projects/ooc/src/string.c</label>
         <link refid="string_8c"/>
-        <childnode refid="186" relation="include">
+        <childnode refid="241" relation="include">
         </childnode>
-        <childnode refid="194" relation="include">
+        <childnode refid="250" relation="include">
         </childnode>
-        <childnode refid="190" relation="include">
+        <childnode refid="245" relation="include">
         </childnode>
       </node>
-      <node id="186">
+      <node id="241">
         <label>ooc/string.h</label>
         <link refid="string_8h"/>
-        <childnode refid="187" relation="include">
+        <childnode refid="242" relation="include">
         </childnode>
-        <childnode refid="186" relation="include">
+        <childnode refid="241" relation="include">
         </childnode>
       </node>
-      <node id="189">
+      <node id="244">
         <label>stdio.h</label>
       </node>
     </incdepgraph>
@@ -107,7 +121,7 @@
         <initializer>= {
     .class = {.magic = <ref refid="object__internal_8h_1a94630370ae389fb1189282fa0742f310" kindref="member">MAGIC</ref>,
               .<ref refid="group__common_1gafac8564ed88a6f8585f043fc6b2fa7e1" kindref="member">size</ref> = sizeof(struct <ref refid="structString" kindref="compound">String</ref>),
-              .object_init = <ref refid="string_8c_1a2e1266f696c96e5bfd8ffbed7be891fa" kindref="member">__construct__String</ref>,
+              .object_init = <ref refid="string_8c_1ae55182aad42d41b3d50d6a078f74e0ed" kindref="member">__construct__String</ref>,
               .get_size = <ref refid="string_8c_1a4b419646ac4f54ba6302b8e4e58c9678" kindref="member">String_get_size</ref>,
               .get_len = <ref refid="string_8c_1ad9f87c949c08dce2651433d0cc06d8dd" kindref="member">String_get_len</ref>,
               .<ref refid="object_8h_1a6ab4b3e256d10044340c1f861c031438" kindref="member">str</ref> = <ref refid="string_8c_1a9a56d1c8e084d0302f33b3b90260693d" kindref="member">String_str</ref>,
@@ -140,11 +154,12 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/igutek/Documents/Projects/ooc/src/string.c" line="163" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/string.c" bodystart="163" bodyend="-1"/>
-        <referencedby refid="string_8c_1a2e1266f696c96e5bfd8ffbed7be891fa" compoundref="string_8c" startline="24" endline="41">__construct__String</referencedby>
-        <referencedby refid="main_8c_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8c" startline="8" endline="43">main</referencedby>
+        <referencedby refid="string_8c_1ae55182aad42d41b3d50d6a078f74e0ed" compoundref="string_8c" startline="24" endline="41">__construct__String</referencedby>
+        <referencedby refid="main_8c_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8c" startline="8" endline="42">main</referencedby>
         <referencedby refid="string_8c_1ad84cbc93082cb73a0aeb9911e2768c90" compoundref="string_8c" startline="56" endline="94">String_append</referencedby>
         <referencedby refid="string_8c_1a1742803c7014bd0c59f1072d54e1a023" compoundref="string_8c" startline="110" endline="113">String_copy</referencedby>
         <referencedby refid="string_8c_1a1908c7dc8629ec342445a6e2a7c247f2" compoundref="string_8c" startline="97" endline="107">String_equal</referencedby>
+        <referencedby refid="object_8h_1a23b80bc1ca4cac9bafcb0735aa404009" compoundref="object_8c" startline="68" endline="71">to_String</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -184,14 +199,18 @@
         <location file="/Users/igutek/Documents/Projects/ooc/src/string.c" line="18" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/string.c" bodystart="18" bodyend="21"/>
         <references refid="structString_1a467ea29ffa5dd45a89f7c01e199fd104" compoundref="string_8h" startline="10">String::size</references>
       </memberdef>
-      <memberdef kind="function" id="string_8c_1a2e1266f696c96e5bfd8ffbed7be891fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="string_8c_1ae55182aad42d41b3d50d6a078f74e0ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>const void *</type>
         <definition>const void* __construct__String</definition>
-        <argsstring>(const void *_self, va_list args)</argsstring>
+        <argsstring>(const void *_self, size_t argc, va_list args)</argsstring>
         <name>__construct__String</name>
         <param>
           <type>const void *</type>
           <declname>_self</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>argc</declname>
         </param>
         <param>
           <type>va_list</type>
@@ -204,8 +223,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/igutek/Documents/Projects/ooc/src/string.c" line="24" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/string.c" bodystart="24" bodyend="41"/>
-        <references refid="group__common_1ga15be7f4a5b9c979feb83b76278f6716c" compoundref="object_8c" startline="91" endline="102">len</references>
-        <references refid="group__common_1gafac8564ed88a6f8585f043fc6b2fa7e1" compoundref="object_8c" startline="72" endline="80">size</references>
+        <references refid="group__common_1ga15be7f4a5b9c979feb83b76278f6716c" compoundref="object_8c" startline="106" endline="117">len</references>
+        <references refid="group__common_1gafac8564ed88a6f8585f043fc6b2fa7e1" compoundref="object_8c" startline="87" endline="95">size</references>
         <references refid="string_8c_1a7b896f7c16c20c94b9b961fe9e926a4f" compoundref="string_8c" startline="163">String</references>
       </memberdef>
       <memberdef kind="function" id="string_8c_1ad43e4d63a18fb1a7eebfc5291f704966" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -263,11 +282,11 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/igutek/Documents/Projects/ooc/src/string.c" line="56" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/string.c" bodystart="56" bodyend="94"/>
-        <references refid="group__common_1ga15be7f4a5b9c979feb83b76278f6716c" compoundref="object_8c" startline="91" endline="102">len</references>
-        <references refid="group__common_1gafac8564ed88a6f8585f043fc6b2fa7e1" compoundref="object_8c" startline="72" endline="80">size</references>
+        <references refid="group__common_1ga15be7f4a5b9c979feb83b76278f6716c" compoundref="object_8c" startline="106" endline="117">len</references>
+        <references refid="group__common_1gafac8564ed88a6f8585f043fc6b2fa7e1" compoundref="object_8c" startline="87" endline="95">size</references>
         <references refid="string_8c_1a7b896f7c16c20c94b9b961fe9e926a4f" compoundref="string_8c" startline="163">String</references>
         <references refid="structString_1ac529e31052a3b2f49fd1f80cbe2327bb" compoundref="string_8h" startline="12">String::string_data</references>
-        <references refid="group__common_1ga68940c707bbebe6946aeca72df1ee803" compoundref="object_8c" startline="83" endline="88">type</references>
+        <references refid="group__common_1ga68940c707bbebe6946aeca72df1ee803" compoundref="object_8c" startline="98" endline="103">type</references>
       </memberdef>
       <memberdef kind="function" id="string_8c_1a1908c7dc8629ec342445a6e2a7c247f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -289,10 +308,10 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/igutek/Documents/Projects/ooc/src/string.c" line="97" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/string.c" bodystart="97" bodyend="107"/>
-        <references refid="group__common_1gadcc35aece3f8a4c822a9bf2a591f087b" compoundref="object_8c" startline="105" endline="116">clsname</references>
-        <references refid="object_8c_1a317798c33e05ea3ca01d0a70148f61ad" compoundref="object_8c" startline="46" endline="56">str</references>
+        <references refid="group__common_1gadcc35aece3f8a4c822a9bf2a591f087b" compoundref="object_8c" startline="120" endline="131">clsname</references>
+        <references refid="object_8c_1a317798c33e05ea3ca01d0a70148f61ad" compoundref="object_8c" startline="56" endline="66">str</references>
         <references refid="string_8c_1a7b896f7c16c20c94b9b961fe9e926a4f" compoundref="string_8c" startline="163">String</references>
-        <references refid="group__common_1ga68940c707bbebe6946aeca72df1ee803" compoundref="object_8c" startline="83" endline="88">type</references>
+        <references refid="group__common_1ga68940c707bbebe6946aeca72df1ee803" compoundref="object_8c" startline="98" endline="103">type</references>
       </memberdef>
       <memberdef kind="function" id="string_8c_1a1742803c7014bd0c59f1072d54e1a023" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>const void *</type>
@@ -334,8 +353,8 @@
         <location file="/Users/igutek/Documents/Projects/ooc/src/string.c" line="115" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/string.c" bodystart="115" bodyend="124"/>
         <references refid="string_8c_1a09402fb28fe13d84677fb8a90c3955c5" compoundref="string_8c" startline="6">FNV_OFFSET_32</references>
         <references refid="string_8c_1a6a18c840bbf00da32a4e35a85342095a" compoundref="string_8c" startline="5">FNV_PRIME_32</references>
-        <references refid="group__collection_1gae0b3682e6ff5038e94c9e551bdd0d489" compoundref="object_8c" startline="184" endline="191">hash</references>
-        <references refid="group__common_1ga15be7f4a5b9c979feb83b76278f6716c" compoundref="object_8c" startline="91" endline="102">len</references>
+        <references refid="group__collection_1gae0b3682e6ff5038e94c9e551bdd0d489" compoundref="object_8c" startline="223" endline="230">hash</references>
+        <references refid="group__common_1ga15be7f4a5b9c979feb83b76278f6716c" compoundref="object_8c" startline="106" endline="117">len</references>
         <referencedby refid="string_8c_1a518744bdc3e883cc2349d5b4cd32cb95" compoundref="string_8c" startline="126" endline="144">String_hash</referencedby>
       </memberdef>
       <memberdef kind="function" id="string_8c_1a518744bdc3e883cc2349d5b4cd32cb95" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -385,7 +404,7 @@
 <codeline lineno="21"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight></codeline>
-<codeline lineno="24" refid="string_8c_1a2e1266f696c96e5bfd8ffbed7be891fa" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/><ref refid="string_8c_1a2e1266f696c96e5bfd8ffbed7be891fa" kindref="member">__construct__String</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>_self,<sp/>va_list<sp/>args)<sp/>{</highlight></codeline>
+<codeline lineno="24" refid="string_8c_1ae55182aad42d41b3d50d6a078f74e0ed" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="string_8c_1ae55182aad42d41b3d50d6a078f74e0ed" kindref="member">__construct__String</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_self,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>argc,<sp/>va_list<sp/>args)<sp/>{</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structString" kindref="compound">String</ref><sp/>*<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal"><sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structString" kindref="compound">String</ref><sp/>*)<sp/>_self;</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>data<sp/>=<sp/>va_arg(args,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<sp/>data){</highlight></codeline>
@@ -511,7 +530,7 @@
 <codeline lineno="147" refid="string_8c_1a46e31843df274eb8ce4b256dc005df49" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structStringClass" kindref="compound">StringClass</ref><sp/><ref refid="string_8c_1a46e31843df274eb8ce4b256dc005df49" kindref="member">string_class</ref><sp/>=<sp/>{</highlight></codeline>
 <codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>.<ref refid="structStringClass_1a8c8d1fa459fe14f1514f9b06982710d2" kindref="member">class</ref><sp/>=<sp/>{.<ref refid="structclass__header_1aa98964036010ad63554856c5f4680cec" kindref="member">magic</ref><sp/>=<sp/><ref refid="object__internal_8h_1a94630370ae389fb1189282fa0742f310" kindref="member">MAGIC</ref>,</highlight></codeline>
 <codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.size<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structString" kindref="compound">String</ref>),</highlight></codeline>
-<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.object_init<sp/>=<sp/><ref refid="string_8c_1a2e1266f696c96e5bfd8ffbed7be891fa" kindref="member">__construct__String</ref>,</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.object_init<sp/>=<sp/><ref refid="string_8c_1ae55182aad42d41b3d50d6a078f74e0ed" kindref="member">__construct__String</ref>,</highlight></codeline>
 <codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.get_size<sp/>=<sp/><ref refid="string_8c_1a4b419646ac4f54ba6302b8e4e58c9678" kindref="member">String_get_size</ref>,</highlight></codeline>
 <codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.get_len<sp/>=<sp/><ref refid="string_8c_1ad9f87c949c08dce2651433d0cc06d8dd" kindref="member">String_get_len</ref>,</highlight></codeline>
 <codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.str<sp/>=<sp/><ref refid="string_8c_1a9a56d1c8e084d0302f33b3b90260693d" kindref="member">String_str</ref>,</highlight></codeline>

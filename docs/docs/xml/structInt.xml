@@ -2,7 +2,6 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
   <compounddef id="structInt" kind="struct" language="C++" prot="public">
     <compoundname>Int</compoundname>
-    <includes refid="Int_8h" local="no">Int.h</includes>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structInt_1aa497eee8de1a0588fe99440e34089b89" prot="public" static="no" mutable="no">
         <type>struct <ref refid="structclass__header" kindref="compound">class_header</ref> *</type>
@@ -15,7 +14,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/igutek/Documents/Projects/ooc/include/ooc/Int.h" line="8" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/include/ooc/Int.h" bodystart="8" bodyend="-1"/>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/int.c" line="8" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/int.c" bodystart="8" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structInt_1a9a4308bb1dff85cd00c70f97bf4fbb8b" prot="public" static="no" mutable="no">
         <type>size_t</type>
@@ -28,8 +27,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/igutek/Documents/Projects/ooc/include/ooc/Int.h" line="9" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/include/ooc/Int.h" bodystart="9" bodyend="-1"/>
-        <referencedby refid="Int_8c_1abb3319f5992def2d229948d2ed6599b9" compoundref="Int_8c" startline="29" endline="32">get_size_Int</referencedby>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/int.c" line="9" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/int.c" bodystart="9" bodyend="-1"/>
+        <referencedby refid="int_8c_1a732a138a63b0f5c3f25c18e6983e43a7" compoundref="int_8c" startline="49" endline="52">Int_get_size</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structInt_1ab131a0721b22e28accfb39f0195413ab" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -42,13 +41,18 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/igutek/Documents/Projects/ooc/include/ooc/Int.h" line="10" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/include/ooc/Int.h" bodystart="10" bodyend="-1"/>
-        <referencedby refid="Int_8c_1ae873d36964132e55e78d420070550a21" compoundref="Int_8c" startline="34" endline="42">__construct__Int</referencedby>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/int.c" line="10" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/int.c" bodystart="10" bodyend="-1"/>
+        <referencedby refid="int_8c_1a5ee11528e9e9edd386cfc6b5d2b84490" compoundref="int_8c" startline="80" endline="84">Int_add</referencedby>
+        <referencedby refid="int_8c_1a4e6bebbc74025fe9ba93bf207150cb27" compoundref="int_8c" startline="100" endline="105">Int_div</referencedby>
+        <referencedby refid="int_8c_1a7dc53a21b3398adfbc1cbc480e8a5c8a" compoundref="int_8c" startline="54" endline="62">Int_init</referencedby>
+        <referencedby refid="int_8c_1a5606319e57bb3b2e475024318f23a589" compoundref="int_8c" startline="93" endline="98">Int_mul</referencedby>
+        <referencedby refid="int_8c_1ab7e968a6838e99204647de44c4aca4c7" compoundref="int_8c" startline="86" endline="91">Int_sub</referencedby>
+        <referencedby refid="int_8c_1a7e38771d97a50fb7c2d292a454c0abfb" compoundref="int_8c" startline="107" endline="110">Int_to_int</referencedby>
       </memberdef>
-      <memberdef kind="variable" id="structInt_1aedf38abd9d2da54ad7b8889b97024d9c" prot="public" static="no" mutable="no">
-        <type>char *</type>
-        <definition>char* Int::str_value</definition>
-        <argsstring></argsstring>
+      <memberdef kind="variable" id="structInt_1a22a0684391962593f1320ab5039e4642" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char Int::str_value[MAX_STR_SIZE]</definition>
+        <argsstring>[MAX_STR_SIZE]</argsstring>
         <name>str_value</name>
         <briefdescription>
         </briefdescription>
@@ -56,7 +60,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/igutek/Documents/Projects/ooc/include/ooc/Int.h" line="11" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/include/ooc/Int.h" bodystart="11" bodyend="-1"/>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/int.c" line="11" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/int.c" bodystart="11" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -64,23 +68,30 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="21">
+      <node id="26">
         <label>class_header</label>
         <link refid="structclass__header"/>
+        <childnode refid="27" relation="usage">
+          <edgelabel>math</edgelabel>
+        </childnode>
       </node>
-      <node id="20">
+      <node id="25">
         <label>Int</label>
         <link refid="structInt"/>
-        <childnode refid="21" relation="usage">
+        <childnode refid="26" relation="usage">
           <edgelabel>class</edgelabel>
         </childnode>
       </node>
+      <node id="27">
+        <label>OOCTraitMath</label>
+        <link refid="structOOCTraitMath"/>
+      </node>
     </collaborationgraph>
-    <location file="/Users/igutek/Documents/Projects/ooc/include/ooc/Int.h" line="7" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/include/ooc/Int.h" bodystart="7" bodyend="12"/>
+    <location file="/Users/igutek/Documents/Projects/ooc/src/int.c" line="7" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/int.c" bodystart="7" bodyend="12"/>
     <listofallmembers>
       <member refid="structInt_1aa497eee8de1a0588fe99440e34089b89" prot="public" virt="non-virtual"><scope>Int</scope><name>class</name></member>
       <member refid="structInt_1a9a4308bb1dff85cd00c70f97bf4fbb8b" prot="public" virt="non-virtual"><scope>Int</scope><name>size</name></member>
-      <member refid="structInt_1aedf38abd9d2da54ad7b8889b97024d9c" prot="public" virt="non-virtual"><scope>Int</scope><name>str_value</name></member>
+      <member refid="structInt_1a22a0684391962593f1320ab5039e4642" prot="public" virt="non-virtual"><scope>Int</scope><name>str_value</name></member>
       <member refid="structInt_1ab131a0721b22e28accfb39f0195413ab" prot="public" virt="non-virtual"><scope>Int</scope><name>value</name></member>
     </listofallmembers>
   </compounddef>

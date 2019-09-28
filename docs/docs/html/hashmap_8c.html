@@ -103,7 +103,7 @@ Macros</h2></td></tr>
 <tr class="separator:a649b8f01fd6c0f47ff3cbddaeba63bfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a513c061a66f664105b12ff672419fc39"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hashmap_8c.html#a513c061a66f664105b12ff672419fc39">HASH_TABLE_DEFAULT_LEN</a>&#160;&#160;&#160;4</td></tr>
 <tr class="separator:a513c061a66f664105b12ff672419fc39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e74c4d2d47cb63f124c970895846958"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hashmap_8c.html#a4e74c4d2d47cb63f124c970895846958">MAX_A</a>&#160;&#160;&#160;18446744073709551615L</td></tr>
+<tr class="memitem:a4e74c4d2d47cb63f124c970895846958"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hashmap_8c.html#a4e74c4d2d47cb63f124c970895846958">MAX_A</a>&#160;&#160;&#160;18446744073709551615UL</td></tr>
 <tr class="separator:a4e74c4d2d47cb63f124c970895846958"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5b763fe6cba352a54dc5d482b587329"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hashmap_8c.html#ac5b763fe6cba352a54dc5d482b587329">HWM_FRACTION</a>&#160;&#160;&#160;0.5</td></tr>
 <tr class="separator:ac5b763fe6cba352a54dc5d482b587329"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -115,8 +115,8 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a91f44dc50fe5d24c4970a8772347bef7"><td class="memItemLeft" align="right" valign="top">const void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hashmap_8c.html#a91f44dc50fe5d24c4970a8772347bef7">__construct__HashMap</a> (const void *self, va_list args)</td></tr>
-<tr class="separator:a91f44dc50fe5d24c4970a8772347bef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4de73a10996248c06b40c4c391066b3"><td class="memItemLeft" align="right" valign="top">const void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hashmap_8c.html#ad4de73a10996248c06b40c4c391066b3">__construct__HashMap</a> (const void *_self, size_t argc, va_list args)</td></tr>
+<tr class="separator:ad4de73a10996248c06b40c4c391066b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade2afccd37e881325eb1ce005a1d8d1e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hashmap_8c.html#ade2afccd37e881325eb1ce005a1d8d1e">print_HashMap</a> (void *_self)</td></tr>
 <tr class="separator:ade2afccd37e881325eb1ce005a1d8d1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a700517ea0c1ffc800b7c93b475a5e78a"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hashmap_8c.html#a700517ea0c1ffc800b7c93b475a5e78a">get_size_HashMap</a> (const void *_self)</td></tr>
@@ -151,14 +151,14 @@ Functions</h2></td></tr>
 <tr class="separator:a8aa67d2dac0692c1128b50780ad9dfc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3941f840164dd3ce845aec0bd5fc5652"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hashmap_8c.html#a3941f840164dd3ce845aec0bd5fc5652">internal_count_HashMap</a> (struct <a class="el" href="structHashMap.html">HashMap</a> *self)</td></tr>
 <tr class="separator:a3941f840164dd3ce845aec0bd5fc5652"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4425bb488e5bfb1e9244675a31df3470"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hashmap_8c.html#a4425bb488e5bfb1e9244675a31df3470">__destruct__HashMap</a> (const void *_self, va_list args)</td></tr>
-<tr class="separator:a4425bb488e5bfb1e9244675a31df3470"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecd90da1441575a53cb0e715108ef1ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hashmap_8c.html#aecd90da1441575a53cb0e715108ef1ba">__destruct__HashMap</a> (const void *_self)</td></tr>
+<tr class="separator:aecd90da1441575a53cb0e715108ef1ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10476d872d0cfcb234391cabf5e888a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hashmap_8c.html#a10476d872d0cfcb234391cabf5e888a1">del_item_HashMap</a> (const void *_self, const void *_key)</td></tr>
 <tr class="separator:a10476d872d0cfcb234391cabf5e888a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1645276039a5f13164347699538139b"><td class="memItemLeft" align="right" valign="top">const void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hashmap_8c.html#aa1645276039a5f13164347699538139b">iter_HashMap</a> (const void *_self)</td></tr>
 <tr class="separator:aa1645276039a5f13164347699538139b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8c6201244c05c149ee58f00693fbe18"><td class="memItemLeft" align="right" valign="top">const void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hashmap_8c.html#ae8c6201244c05c149ee58f00693fbe18">__construct__HashMap_iter</a> (const void *_self, va_list args)</td></tr>
-<tr class="separator:ae8c6201244c05c149ee58f00693fbe18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7472518034803385044e43d8edeb1e79"><td class="memItemLeft" align="right" valign="top">const void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hashmap_8c.html#a7472518034803385044e43d8edeb1e79">__construct__HashMap_iter</a> (const void *_self, size_t argc, va_list args)</td></tr>
+<tr class="separator:a7472518034803385044e43d8edeb1e79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -204,7 +204,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00043">43</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="hashmap_8c_source.html#l00277">__construct__HashMap()</a>, and <a class="el" href="hashmap_8c_source.html#l00193">internal_resize_HashMap()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="hashmap_8c_source.html#l00284">__construct__HashMap()</a>, and <a class="el" href="hashmap_8c_source.html#l00203">internal_resize_HashMap()</a>.</p>
 
 </div>
 </div>
@@ -222,7 +222,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00045">45</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="hashmap_8c_source.html#l00277">__construct__HashMap()</a>, and <a class="el" href="hashmap_8c_source.html#l00193">internal_resize_HashMap()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="hashmap_8c_source.html#l00284">__construct__HashMap()</a>, and <a class="el" href="hashmap_8c_source.html#l00203">internal_resize_HashMap()</a>.</p>
 
 </div>
 </div>
@@ -233,14 +233,14 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define MAX_A&#160;&#160;&#160;18446744073709551615L</td>
+          <td class="memname">#define MAX_A&#160;&#160;&#160;18446744073709551615UL</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00044">44</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="hashmap_8c_source.html#l00080">random_a()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="hashmap_8c_source.html#l00089">random_a()</a>.</p>
 
 </div>
 </div>
@@ -274,7 +274,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00042">42</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="hashmap_8c_source.html#l00102">internal_hash()</a>, and <a class="el" href="hashmap_8c_source.html#l00096">random_b()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="hashmap_8c_source.html#l00111">internal_hash()</a>, and <a class="el" href="hashmap_8c_source.html#l00105">random_b()</a>.</p>
 
 </div>
 </div>
@@ -296,8 +296,8 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a91f44dc50fe5d24c4970a8772347bef7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a91f44dc50fe5d24c4970a8772347bef7">&#9670;&nbsp;</a></span>__construct__HashMap()</h2>
+<a id="ad4de73a10996248c06b40c4c391066b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4de73a10996248c06b40c4c391066b3">&#9670;&nbsp;</a></span>__construct__HashMap()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -306,7 +306,13 @@ Variables</h2></td></tr>
           <td class="memname">const void * __construct__HashMap </td>
           <td>(</td>
           <td class="paramtype">const void *&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
+          <td class="paramname"><em>_self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -322,14 +328,14 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00277">277</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00284">284</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
 
-<p class="reference">References <a class="el" href="hashmap_8c_source.html#l00073">alloc_hash_items()</a>, <a class="el" href="hashmap_8c_source.html#l00043">HASH_TABLE_DEFAULT_LEN</a>, <a class="el" href="hashmap_8c_source.html#l00539">HashMap</a>, <a class="el" href="hashmap_8c_source.html#l00045">HWM_FRACTION</a>, <a class="el" href="hashmap_8c_source.html#l00087">lg()</a>, <a class="el" href="hashmap_8c_source.html#l00080">random_a()</a>, <a class="el" href="hashmap_8c_source.html#l00096">random_b()</a>, <a class="el" href="hashmap_8c_source.html#l00055">rng_seeded</a>, and <a class="el" href="hashmap_8c_source.html#l00016">HashMap::size</a>.</p>
+<p class="reference">References <a class="el" href="hashmap_8c_source.html#l00082">alloc_hash_items()</a>, <a class="el" href="hashmap_8c_source.html#l00043">HASH_TABLE_DEFAULT_LEN</a>, <a class="el" href="hashmap_8c_source.html#l00547">HashMap</a>, <a class="el" href="hashmap_8c_source.html#l00045">HWM_FRACTION</a>, <a class="el" href="hashmap_8c_source.html#l00096">lg()</a>, <a class="el" href="hashmap_8c_source.html#l00089">random_a()</a>, <a class="el" href="hashmap_8c_source.html#l00105">random_b()</a>, <a class="el" href="hashmap_8c_source.html#l00055">rng_seeded</a>, and <a class="el" href="hashmap_8c_source.html#l00016">HashMap::size</a>.</p>
 
 </div>
 </div>
-<a id="ae8c6201244c05c149ee58f00693fbe18"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae8c6201244c05c149ee58f00693fbe18">&#9670;&nbsp;</a></span>__construct__HashMap_iter()</h2>
+<a id="a7472518034803385044e43d8edeb1e79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7472518034803385044e43d8edeb1e79">&#9670;&nbsp;</a></span>__construct__HashMap_iter()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -343,34 +349,8 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">va_list&#160;</td>
-          <td class="paramname"><em>args</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00500">500</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
-
-<p class="reference">References <a class="el" href="hashmap_8c_source.html#l00030">HashMap_iter::class</a>, and <a class="el" href="hashmap_8c_source.html#l00549">HashMap_iter</a>.</p>
-
-</div>
-</div>
-<a id="a4425bb488e5bfb1e9244675a31df3470"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4425bb488e5bfb1e9244675a31df3470">&#9670;&nbsp;</a></span>__destruct__HashMap()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void __destruct__HashMap </td>
-          <td>(</td>
-          <td class="paramtype">const void *&#160;</td>
-          <td class="paramname"><em>_self</em>, </td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -386,7 +366,29 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00307">307</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00508">508</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
+
+<p class="reference">References <a class="el" href="hashmap_8c_source.html#l00030">HashMap_iter::class</a>, and <a class="el" href="hashmap_8c_source.html#l00557">HashMap_iter</a>.</p>
+
+</div>
+</div>
+<a id="aecd90da1441575a53cb0e715108ef1ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecd90da1441575a53cb0e715108ef1ba">&#9670;&nbsp;</a></span>__destruct__HashMap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void __destruct__HashMap </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>_self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00313">313</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
 
 </div>
 </div>
@@ -406,9 +408,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00073">73</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00082">82</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="hashmap_8c_source.html#l00277">__construct__HashMap()</a>, and <a class="el" href="hashmap_8c_source.html#l00193">internal_resize_HashMap()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="hashmap_8c_source.html#l00284">__construct__HashMap()</a>, and <a class="el" href="hashmap_8c_source.html#l00203">internal_resize_HashMap()</a>.</p>
 
 </div>
 </div>
@@ -428,7 +430,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00514">514</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00522">522</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
 
 </div>
 </div>
@@ -458,9 +460,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00378">378</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00384">384</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
 
-<p class="reference">References <a class="el" href="object_8c_source.html#l00164">get_obj()</a>, <a class="el" href="object__internal_8h_source.html#l00189">class_header::hash</a>, <a class="el" href="hashmap_8c_source.html#l00102">internal_hash()</a>, <a class="el" href="hashmap_8c_source.html#l00006">HashItem::internal_key</a>, <a class="el" href="hashmap_8c_source.html#l00152">internal_print_table()</a>, <a class="el" href="hashmap_8c_source.html#l00193">internal_resize_HashMap()</a>, <a class="el" href="hashmap_8c_source.html#l00009">HashItem::next</a>, <a class="el" href="hashmap_8c_source.html#l00010">HashItem::present</a>, and <a class="el" href="hashmap_8c_source.html#l00008">HashItem::value</a>.</p>
+<p class="reference">References <a class="el" href="object_8c_source.html#l00182">get_class_header_msg()</a>, <a class="el" href="object__internal_8h_source.html#l00187">class_header::hash</a>, <a class="el" href="hashmap_8c_source.html#l00111">internal_hash()</a>, <a class="el" href="hashmap_8c_source.html#l00006">HashItem::internal_key</a>, <a class="el" href="hashmap_8c_source.html#l00161">internal_print_table()</a>, <a class="el" href="hashmap_8c_source.html#l00203">internal_resize_HashMap()</a>, <a class="el" href="hashmap_8c_source.html#l00009">HashItem::next</a>, <a class="el" href="hashmap_8c_source.html#l00010">HashItem::present</a>, and <a class="el" href="hashmap_8c_source.html#l00008">HashItem::value</a>.</p>
 
 </div>
 </div>
@@ -490,9 +492,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00343">343</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00349">349</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
 
-<p class="reference">References <a class="el" href="object_8c_source.html#l00135">equals()</a>, <a class="el" href="object_8c_source.html#l00180">get_class_header()</a>, <a class="el" href="object_8c_source.html#l00164">get_obj()</a>, <a class="el" href="object__internal_8h_source.html#l00189">class_header::hash</a>, <a class="el" href="hashmap_8c_source.html#l00102">internal_hash()</a>, <a class="el" href="hashmap_8c_source.html#l00006">HashItem::internal_key</a>, <a class="el" href="hashmap_8c_source.html#l00007">HashItem::key</a>, <a class="el" href="hashmap_8c_source.html#l00009">HashItem::next</a>, <a class="el" href="object_8c_source.html#l00046">str()</a>, and <a class="el" href="hashmap_8c_source.html#l00008">HashItem::value</a>.</p>
+<p class="reference">References <a class="el" href="object_8c_source.html#l00150">equals()</a>, <a class="el" href="object_8c_source.html#l00219">get_class_header()</a>, <a class="el" href="object_8c_source.html#l00182">get_class_header_msg()</a>, <a class="el" href="object__internal_8h_source.html#l00187">class_header::hash</a>, <a class="el" href="hashmap_8c_source.html#l00111">internal_hash()</a>, <a class="el" href="hashmap_8c_source.html#l00006">HashItem::internal_key</a>, <a class="el" href="hashmap_8c_source.html#l00007">HashItem::key</a>, <a class="el" href="hashmap_8c_source.html#l00009">HashItem::next</a>, <a class="el" href="object_8c_source.html#l00056">str()</a>, and <a class="el" href="hashmap_8c_source.html#l00008">HashItem::value</a>.</p>
 
 </div>
 </div>
@@ -512,9 +514,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00256">256</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00265">265</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
 
-<p class="reference">References <a class="el" href="hashmap_8c_source.html#l00175">internal_count_HashMap()</a>, and <a class="el" href="hashmap_8c_source.html#l00152">internal_print_table()</a>.</p>
+<p class="reference">References <a class="el" href="hashmap_8c_source.html#l00184">internal_count_HashMap()</a>, and <a class="el" href="hashmap_8c_source.html#l00161">internal_print_table()</a>.</p>
 
 </div>
 </div>
@@ -534,7 +536,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00272">272</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00279">279</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
 
 <p class="reference">References <a class="el" href="hashmap_8c_source.html#l00016">HashMap::size</a>.</p>
 
@@ -572,9 +574,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00324">324</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00330">330</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
 
-<p class="reference">References <a class="el" href="object_8c_source.html#l00180">get_class_header()</a>, <a class="el" href="object_8c_source.html#l00164">get_obj()</a>, <a class="el" href="object__internal_8h_source.html#l00189">class_header::hash</a>, <a class="el" href="hashmap_8c_source.html#l00107">internal_insert_HashMap()</a>, and <a class="el" href="object_8c_source.html#l00046">str()</a>.</p>
+<p class="reference">References <a class="el" href="object_8c_source.html#l00219">get_class_header()</a>, <a class="el" href="object_8c_source.html#l00182">get_class_header_msg()</a>, <a class="el" href="object__internal_8h_source.html#l00187">class_header::hash</a>, <a class="el" href="hashmap_8c_source.html#l00116">internal_insert_HashMap()</a>, and <a class="el" href="object_8c_source.html#l00056">str()</a>.</p>
 
 </div>
 </div>
@@ -594,11 +596,11 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00175">175</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00184">184</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
 
 <p class="reference">References <a class="el" href="hashmap_8c_source.html#l00009">HashItem::next</a>, and <a class="el" href="hashmap_8c_source.html#l00010">HashItem::present</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="hashmap_8c_source.html#l00256">get_len_HashMap()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="hashmap_8c_source.html#l00265">get_len_HashMap()</a>.</p>
 
 </div>
 </div>
@@ -640,11 +642,11 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00102">102</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00111">111</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
 
 <p class="reference">References <a class="el" href="hashmap_8c_source.html#l00007">HashItem::key</a>, and <a class="el" href="hashmap_8c_source.html#l00042">W</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="hashmap_8c_source.html#l00378">del_item_HashMap()</a>, <a class="el" href="hashmap_8c_source.html#l00343">get_HashMap()</a>, and <a class="el" href="hashmap_8c_source.html#l00107">internal_insert_HashMap()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="hashmap_8c_source.html#l00384">del_item_HashMap()</a>, <a class="el" href="hashmap_8c_source.html#l00349">get_HashMap()</a>, and <a class="el" href="hashmap_8c_source.html#l00116">internal_insert_HashMap()</a>.</p>
 
 </div>
 </div>
@@ -680,11 +682,11 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00107">107</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00116">116</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
 
-<p class="reference">References <a class="el" href="object_8c_source.html#l00135">equals()</a>, <a class="el" href="object_8c_source.html#l00180">get_class_header()</a>, <a class="el" href="object__internal_8h_source.html#l00189">class_header::hash</a>, <a class="el" href="hashmap_8c_source.html#l00102">internal_hash()</a>, <a class="el" href="hashmap_8c_source.html#l00006">HashItem::internal_key</a>, <a class="el" href="hashmap_8c_source.html#l00193">internal_resize_HashMap()</a>, <a class="el" href="hashmap_8c_source.html#l00007">HashItem::key</a>, <a class="el" href="hashmap_8c_source.html#l00009">HashItem::next</a>, <a class="el" href="hashmap_8c_source.html#l00010">HashItem::present</a>, and <a class="el" href="hashmap_8c_source.html#l00008">HashItem::value</a>.</p>
+<p class="reference">References <a class="el" href="object_8c_source.html#l00150">equals()</a>, <a class="el" href="object_8c_source.html#l00219">get_class_header()</a>, <a class="el" href="object__internal_8h_source.html#l00187">class_header::hash</a>, <a class="el" href="hashmap_8c_source.html#l00111">internal_hash()</a>, <a class="el" href="hashmap_8c_source.html#l00006">HashItem::internal_key</a>, <a class="el" href="hashmap_8c_source.html#l00203">internal_resize_HashMap()</a>, <a class="el" href="hashmap_8c_source.html#l00007">HashItem::key</a>, <a class="el" href="hashmap_8c_source.html#l00009">HashItem::next</a>, <a class="el" href="hashmap_8c_source.html#l00010">HashItem::present</a>, and <a class="el" href="hashmap_8c_source.html#l00008">HashItem::value</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="hashmap_8c_source.html#l00324">insert_HashMap()</a>, and <a class="el" href="hashmap_8c_source.html#l00193">internal_resize_HashMap()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="hashmap_8c_source.html#l00330">insert_HashMap()</a>, and <a class="el" href="hashmap_8c_source.html#l00203">internal_resize_HashMap()</a>.</p>
 
 </div>
 </div>
@@ -704,11 +706,11 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00152">152</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00161">161</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
 
 <p class="reference">References <a class="el" href="hashmap_8c_source.html#l00006">HashItem::internal_key</a>, <a class="el" href="hashmap_8c_source.html#l00009">HashItem::next</a>, and <a class="el" href="hashmap_8c_source.html#l00010">HashItem::present</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="hashmap_8c_source.html#l00378">del_item_HashMap()</a>, <a class="el" href="hashmap_8c_source.html#l00256">get_len_HashMap()</a>, and <a class="el" href="hashmap_8c_source.html#l00193">internal_resize_HashMap()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="hashmap_8c_source.html#l00384">del_item_HashMap()</a>, <a class="el" href="hashmap_8c_source.html#l00265">get_len_HashMap()</a>, and <a class="el" href="hashmap_8c_source.html#l00203">internal_resize_HashMap()</a>.</p>
 
 </div>
 </div>
@@ -738,11 +740,11 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00193">193</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00203">203</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
 
-<p class="reference">References <a class="el" href="hashmap_8c_source.html#l00073">alloc_hash_items()</a>, <a class="el" href="hashmap_8c_source.html#l00043">HASH_TABLE_DEFAULT_LEN</a>, <a class="el" href="hashmap_8c_source.html#l00045">HWM_FRACTION</a>, <a class="el" href="hashmap_8c_source.html#l00107">internal_insert_HashMap()</a>, <a class="el" href="hashmap_8c_source.html#l00152">internal_print_table()</a>, <a class="el" href="hashmap_8c_source.html#l00007">HashItem::key</a>, <a class="el" href="hashmap_8c_source.html#l00087">lg()</a>, <a class="el" href="hashmap_8c_source.html#l00009">HashItem::next</a>, <a class="el" href="hashmap_8c_source.html#l00010">HashItem::present</a>, <a class="el" href="hashmap_8c_source.html#l00080">random_a()</a>, <a class="el" href="hashmap_8c_source.html#l00096">random_b()</a>, and <a class="el" href="hashmap_8c_source.html#l00008">HashItem::value</a>.</p>
+<p class="reference">References <a class="el" href="hashmap_8c_source.html#l00082">alloc_hash_items()</a>, <a class="el" href="hashmap_8c_source.html#l00043">HASH_TABLE_DEFAULT_LEN</a>, <a class="el" href="hashmap_8c_source.html#l00045">HWM_FRACTION</a>, <a class="el" href="hashmap_8c_source.html#l00116">internal_insert_HashMap()</a>, <a class="el" href="hashmap_8c_source.html#l00161">internal_print_table()</a>, <a class="el" href="hashmap_8c_source.html#l00007">HashItem::key</a>, <a class="el" href="hashmap_8c_source.html#l00096">lg()</a>, <a class="el" href="hashmap_8c_source.html#l00009">HashItem::next</a>, <a class="el" href="hashmap_8c_source.html#l00010">HashItem::present</a>, <a class="el" href="hashmap_8c_source.html#l00089">random_a()</a>, <a class="el" href="hashmap_8c_source.html#l00105">random_b()</a>, and <a class="el" href="hashmap_8c_source.html#l00008">HashItem::value</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="hashmap_8c_source.html#l00378">del_item_HashMap()</a>, and <a class="el" href="hashmap_8c_source.html#l00107">internal_insert_HashMap()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="hashmap_8c_source.html#l00384">del_item_HashMap()</a>, and <a class="el" href="hashmap_8c_source.html#l00116">internal_insert_HashMap()</a>.</p>
 
 </div>
 </div>
@@ -762,9 +764,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00453">453</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00459">459</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
 
-<p class="reference">References <a class="el" href="hashmap_8c_source.html#l00549">HashMap_iter</a>.</p>
+<p class="reference">References <a class="el" href="hashmap_8c_source.html#l00557">HashMap_iter</a>.</p>
 
 </div>
 </div>
@@ -784,9 +786,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00087">87</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00096">96</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="hashmap_8c_source.html#l00277">__construct__HashMap()</a>, <a class="el" href="hashmap_8c_source.html#l00193">internal_resize_HashMap()</a>, and <a class="el" href="hashmap_8c_source.html#l00096">random_b()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="hashmap_8c_source.html#l00284">__construct__HashMap()</a>, <a class="el" href="hashmap_8c_source.html#l00203">internal_resize_HashMap()</a>, and <a class="el" href="hashmap_8c_source.html#l00105">random_b()</a>.</p>
 
 </div>
 </div>
@@ -806,9 +808,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00464">464</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00472">472</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
 
-<p class="reference">References <a class="el" href="hashmap_8c_source.html#l00009">HashItem::next</a>, and <a class="el" href="hashmap_8c_source.html#l00008">HashItem::value</a>.</p>
+<p class="reference">References <a class="el" href="hashmap_8c_source.html#l00007">HashItem::key</a>, and <a class="el" href="hashmap_8c_source.html#l00009">HashItem::next</a>.</p>
 
 </div>
 </div>
@@ -828,7 +830,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00311">311</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00317">317</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
 
 </div>
 </div>
@@ -847,11 +849,11 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00080">80</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00089">89</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
 
 <p class="reference">References <a class="el" href="hashmap_8c_source.html#l00044">MAX_A</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="hashmap_8c_source.html#l00277">__construct__HashMap()</a>, and <a class="el" href="hashmap_8c_source.html#l00193">internal_resize_HashMap()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="hashmap_8c_source.html#l00284">__construct__HashMap()</a>, and <a class="el" href="hashmap_8c_source.html#l00203">internal_resize_HashMap()</a>.</p>
 
 </div>
 </div>
@@ -871,11 +873,11 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00096">96</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00105">105</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
 
-<p class="reference">References <a class="el" href="hashmap_8c_source.html#l00087">lg()</a>, and <a class="el" href="hashmap_8c_source.html#l00042">W</a>.</p>
+<p class="reference">References <a class="el" href="hashmap_8c_source.html#l00096">lg()</a>, and <a class="el" href="hashmap_8c_source.html#l00042">W</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="hashmap_8c_source.html#l00277">__construct__HashMap()</a>, and <a class="el" href="hashmap_8c_source.html#l00193">internal_resize_HashMap()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="hashmap_8c_source.html#l00284">__construct__HashMap()</a>, and <a class="el" href="hashmap_8c_source.html#l00203">internal_resize_HashMap()</a>.</p>
 
 </div>
 </div>
@@ -895,7 +897,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00317">317</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00323">323</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
 
 </div>
 </div>
@@ -911,20 +913,20 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {</div><div class="line">    .class = {.magic = <a class="code" href="object__internal_8h.html#a94630370ae389fb1189282fa0742f310">MAGIC</a>,</div><div class="line">              .size = <span class="keyword">sizeof</span>(<span class="keyword">struct </span><a class="code" href="structHashMap.html">HashMap</a>),</div><div class="line">              .object_init = <a class="code" href="hashmap_8c.html#a91f44dc50fe5d24c4970a8772347bef7">__construct__HashMap</a>,</div><div class="line">              .object_deinit = <a class="code" href="hashmap_8c.html#a4425bb488e5bfb1e9244675a31df3470">__destruct__HashMap</a>,</div><div class="line">              .get_size = <a class="code" href="hashmap_8c.html#a700517ea0c1ffc800b7c93b475a5e78a">get_size_HashMap</a>,</div><div class="line">              .get_len = <a class="code" href="hashmap_8c.html#a79dcb455435133253d86b70e31e3cba3">get_len_HashMap</a>,</div><div class="line">              .str = <a class="code" href="hashmap_8c.html#a12bafd8be5b1e7cee7f0d61a2a7a4c2e">str_HashMap</a>,</div><div class="line">              .copy = <a class="code" href="hashmap_8c.html#a92b093655c1077032c065f51aed37652">copy_HashMap</a>,</div><div class="line">              .insert = <a class="code" href="hashmap_8c.html#a2987322764f770f61fe71f0a1320fc7b">insert_HashMap</a>,</div><div class="line">              .get = <a class="code" href="hashmap_8c.html#aa88aa2ed0651f4feb2e275ba14114d14">get_HashMap</a>,</div><div class="line">              .del_item = <a class="code" href="hashmap_8c.html#a10476d872d0cfcb234391cabf5e888a1">del_item_HashMap</a>,</div><div class="line">              .iter = <a class="code" href="hashmap_8c.html#aa1645276039a5f13164347699538139b">iter_HashMap</a>,</div><div class="line">              .object_name = <span class="stringliteral">&quot;HashMap&quot;</span></div><div class="line">             }</div><div class="line"></div><div class="line">}</div><div class="ttc" id="hashmap_8c_html_a2987322764f770f61fe71f0a1320fc7b"><div class="ttname"><a href="hashmap_8c.html#a2987322764f770f61fe71f0a1320fc7b">insert_HashMap</a></div><div class="ttdeci">void insert_HashMap(const void *_self, const void *key, const void *_other)</div><div class="ttdef"><b>Definition:</b> <a href="hashmap_8c_source.html#l00324">hashmap.c:324</a></div></div>
-<div class="ttc" id="hashmap_8c_html_a79dcb455435133253d86b70e31e3cba3"><div class="ttname"><a href="hashmap_8c.html#a79dcb455435133253d86b70e31e3cba3">get_len_HashMap</a></div><div class="ttdeci">size_t get_len_HashMap(const void *_self)</div><div class="ttdef"><b>Definition:</b> <a href="hashmap_8c_source.html#l00256">hashmap.c:256</a></div></div>
-<div class="ttc" id="hashmap_8c_html_a700517ea0c1ffc800b7c93b475a5e78a"><div class="ttname"><a href="hashmap_8c.html#a700517ea0c1ffc800b7c93b475a5e78a">get_size_HashMap</a></div><div class="ttdeci">size_t get_size_HashMap(const void *_self)</div><div class="ttdef"><b>Definition:</b> <a href="hashmap_8c_source.html#l00272">hashmap.c:272</a></div></div>
-<div class="ttc" id="hashmap_8c_html_a4425bb488e5bfb1e9244675a31df3470"><div class="ttname"><a href="hashmap_8c.html#a4425bb488e5bfb1e9244675a31df3470">__destruct__HashMap</a></div><div class="ttdeci">void __destruct__HashMap(const void *_self, va_list args)</div><div class="ttdef"><b>Definition:</b> <a href="hashmap_8c_source.html#l00307">hashmap.c:307</a></div></div>
-<div class="ttc" id="hashmap_8c_html_aa88aa2ed0651f4feb2e275ba14114d14"><div class="ttname"><a href="hashmap_8c.html#aa88aa2ed0651f4feb2e275ba14114d14">get_HashMap</a></div><div class="ttdeci">const void * get_HashMap(const void *_self, const void *key)</div><div class="ttdef"><b>Definition:</b> <a href="hashmap_8c_source.html#l00343">hashmap.c:343</a></div></div>
-<div class="ttc" id="hashmap_8c_html_a12bafd8be5b1e7cee7f0d61a2a7a4c2e"><div class="ttname"><a href="hashmap_8c.html#a12bafd8be5b1e7cee7f0d61a2a7a4c2e">str_HashMap</a></div><div class="ttdeci">const char * str_HashMap(const void *_self)</div><div class="ttdef"><b>Definition:</b> <a href="hashmap_8c_source.html#l00317">hashmap.c:317</a></div></div>
-<div class="ttc" id="hashmap_8c_html_a92b093655c1077032c065f51aed37652"><div class="ttname"><a href="hashmap_8c.html#a92b093655c1077032c065f51aed37652">copy_HashMap</a></div><div class="ttdeci">const void * copy_HashMap(const void *_self)</div><div class="ttdef"><b>Definition:</b> <a href="hashmap_8c_source.html#l00514">hashmap.c:514</a></div></div>
-<div class="ttc" id="object__internal_8h_html_a94630370ae389fb1189282fa0742f310"><div class="ttname"><a href="object__internal_8h.html#a94630370ae389fb1189282fa0742f310">MAGIC</a></div><div class="ttdeci">#define MAGIC</div><div class="ttdef"><b>Definition:</b> <a href="object__internal_8h_source.html#l00006">object_internal.h:6</a></div></div>
-<div class="ttc" id="hashmap_8c_html_a10476d872d0cfcb234391cabf5e888a1"><div class="ttname"><a href="hashmap_8c.html#a10476d872d0cfcb234391cabf5e888a1">del_item_HashMap</a></div><div class="ttdeci">void del_item_HashMap(const void *_self, const void *_key)</div><div class="ttdef"><b>Definition:</b> <a href="hashmap_8c_source.html#l00378">hashmap.c:378</a></div></div>
-<div class="ttc" id="hashmap_8c_html_a91f44dc50fe5d24c4970a8772347bef7"><div class="ttname"><a href="hashmap_8c.html#a91f44dc50fe5d24c4970a8772347bef7">__construct__HashMap</a></div><div class="ttdeci">const void * __construct__HashMap(const void *self, va_list args)</div><div class="ttdef"><b>Definition:</b> <a href="hashmap_8c_source.html#l00277">hashmap.c:277</a></div></div>
-<div class="ttc" id="hashmap_8c_html_aa1645276039a5f13164347699538139b"><div class="ttname"><a href="hashmap_8c.html#aa1645276039a5f13164347699538139b">iter_HashMap</a></div><div class="ttdeci">const void * iter_HashMap(const void *_self)</div><div class="ttdef"><b>Definition:</b> <a href="hashmap_8c_source.html#l00453">hashmap.c:453</a></div></div>
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div><div class="line">        .class = {.magic = <a class="code" href="object__internal_8h.html#a94630370ae389fb1189282fa0742f310">MAGIC</a>,</div><div class="line">                .size = <span class="keyword">sizeof</span>(<span class="keyword">struct </span><a class="code" href="structHashMap.html">HashMap</a>),</div><div class="line">                .object_init = <a class="code" href="hashmap_8c.html#ad4de73a10996248c06b40c4c391066b3">__construct__HashMap</a>,</div><div class="line">                .object_deinit = <a class="code" href="hashmap_8c.html#aecd90da1441575a53cb0e715108ef1ba">__destruct__HashMap</a>,</div><div class="line">                .get_size = <a class="code" href="hashmap_8c.html#a700517ea0c1ffc800b7c93b475a5e78a">get_size_HashMap</a>,</div><div class="line">                .get_len = <a class="code" href="hashmap_8c.html#a79dcb455435133253d86b70e31e3cba3">get_len_HashMap</a>,</div><div class="line">                .str = <a class="code" href="hashmap_8c.html#a12bafd8be5b1e7cee7f0d61a2a7a4c2e">str_HashMap</a>,</div><div class="line">                .copy = <a class="code" href="hashmap_8c.html#a92b093655c1077032c065f51aed37652">copy_HashMap</a>,</div><div class="line">                .insert = <a class="code" href="hashmap_8c.html#a2987322764f770f61fe71f0a1320fc7b">insert_HashMap</a>,</div><div class="line">                .get_item = <a class="code" href="hashmap_8c.html#aa88aa2ed0651f4feb2e275ba14114d14">get_HashMap</a>,</div><div class="line">                .del_item = <a class="code" href="hashmap_8c.html#a10476d872d0cfcb234391cabf5e888a1">del_item_HashMap</a>,</div><div class="line">                .iter = <a class="code" href="hashmap_8c.html#aa1645276039a5f13164347699538139b">iter_HashMap</a>,</div><div class="line">                .object_name = <span class="stringliteral">&quot;HashMap&quot;</span></div><div class="line">        }</div><div class="line"></div><div class="line">}</div><div class="ttc" id="hashmap_8c_html_a2987322764f770f61fe71f0a1320fc7b"><div class="ttname"><a href="hashmap_8c.html#a2987322764f770f61fe71f0a1320fc7b">insert_HashMap</a></div><div class="ttdeci">void insert_HashMap(const void *_self, const void *key, const void *_other)</div><div class="ttdef"><b>Definition:</b> <a href="hashmap_8c_source.html#l00330">hashmap.c:330</a></div></div>
+<div class="ttc" id="hashmap_8c_html_a79dcb455435133253d86b70e31e3cba3"><div class="ttname"><a href="hashmap_8c.html#a79dcb455435133253d86b70e31e3cba3">get_len_HashMap</a></div><div class="ttdeci">size_t get_len_HashMap(const void *_self)</div><div class="ttdef"><b>Definition:</b> <a href="hashmap_8c_source.html#l00265">hashmap.c:265</a></div></div>
+<div class="ttc" id="hashmap_8c_html_a700517ea0c1ffc800b7c93b475a5e78a"><div class="ttname"><a href="hashmap_8c.html#a700517ea0c1ffc800b7c93b475a5e78a">get_size_HashMap</a></div><div class="ttdeci">size_t get_size_HashMap(const void *_self)</div><div class="ttdef"><b>Definition:</b> <a href="hashmap_8c_source.html#l00279">hashmap.c:279</a></div></div>
+<div class="ttc" id="hashmap_8c_html_ad4de73a10996248c06b40c4c391066b3"><div class="ttname"><a href="hashmap_8c.html#ad4de73a10996248c06b40c4c391066b3">__construct__HashMap</a></div><div class="ttdeci">const void * __construct__HashMap(const void *_self, size_t argc, va_list args)</div><div class="ttdef"><b>Definition:</b> <a href="hashmap_8c_source.html#l00284">hashmap.c:284</a></div></div>
+<div class="ttc" id="hashmap_8c_html_aa88aa2ed0651f4feb2e275ba14114d14"><div class="ttname"><a href="hashmap_8c.html#aa88aa2ed0651f4feb2e275ba14114d14">get_HashMap</a></div><div class="ttdeci">const void * get_HashMap(const void *_self, const void *key)</div><div class="ttdef"><b>Definition:</b> <a href="hashmap_8c_source.html#l00349">hashmap.c:349</a></div></div>
+<div class="ttc" id="hashmap_8c_html_a12bafd8be5b1e7cee7f0d61a2a7a4c2e"><div class="ttname"><a href="hashmap_8c.html#a12bafd8be5b1e7cee7f0d61a2a7a4c2e">str_HashMap</a></div><div class="ttdeci">const char * str_HashMap(const void *_self)</div><div class="ttdef"><b>Definition:</b> <a href="hashmap_8c_source.html#l00323">hashmap.c:323</a></div></div>
+<div class="ttc" id="hashmap_8c_html_a92b093655c1077032c065f51aed37652"><div class="ttname"><a href="hashmap_8c.html#a92b093655c1077032c065f51aed37652">copy_HashMap</a></div><div class="ttdeci">const void * copy_HashMap(const void *_self)</div><div class="ttdef"><b>Definition:</b> <a href="hashmap_8c_source.html#l00522">hashmap.c:522</a></div></div>
+<div class="ttc" id="object__internal_8h_html_a94630370ae389fb1189282fa0742f310"><div class="ttname"><a href="object__internal_8h.html#a94630370ae389fb1189282fa0742f310">MAGIC</a></div><div class="ttdeci">#define MAGIC</div><div class="ttdef"><b>Definition:</b> <a href="object__internal_8h_source.html#l00007">object_internal.h:7</a></div></div>
+<div class="ttc" id="hashmap_8c_html_a10476d872d0cfcb234391cabf5e888a1"><div class="ttname"><a href="hashmap_8c.html#a10476d872d0cfcb234391cabf5e888a1">del_item_HashMap</a></div><div class="ttdeci">void del_item_HashMap(const void *_self, const void *_key)</div><div class="ttdef"><b>Definition:</b> <a href="hashmap_8c_source.html#l00384">hashmap.c:384</a></div></div>
+<div class="ttc" id="hashmap_8c_html_aecd90da1441575a53cb0e715108ef1ba"><div class="ttname"><a href="hashmap_8c.html#aecd90da1441575a53cb0e715108ef1ba">__destruct__HashMap</a></div><div class="ttdeci">void __destruct__HashMap(const void *_self)</div><div class="ttdef"><b>Definition:</b> <a href="hashmap_8c_source.html#l00313">hashmap.c:313</a></div></div>
+<div class="ttc" id="hashmap_8c_html_aa1645276039a5f13164347699538139b"><div class="ttname"><a href="hashmap_8c.html#aa1645276039a5f13164347699538139b">iter_HashMap</a></div><div class="ttdeci">const void * iter_HashMap(const void *_self)</div><div class="ttdef"><b>Definition:</b> <a href="hashmap_8c_source.html#l00459">hashmap.c:459</a></div></div>
 <div class="ttc" id="structHashMap_html"><div class="ttname"><a href="structHashMap.html">HashMap</a></div><div class="ttdef"><b>Definition:</b> <a href="hashmap_8c_source.html#l00014">hashmap.c:14</a></div></div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00520">520</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00528">528</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
 
 </div>
 </div>
@@ -939,13 +941,13 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {</div><div class="line">    .class = {.magic = <a class="code" href="object__internal_8h.html#a94630370ae389fb1189282fa0742f310">MAGIC</a>,</div><div class="line">              .object_init = <a class="code" href="hashmap_8c.html#ae8c6201244c05c149ee58f00693fbe18">__construct__HashMap_iter</a>,</div><div class="line">              .size = <span class="keyword">sizeof</span>(<span class="keyword">struct </span><a class="code" href="structHashMap__iter.html">HashMap_iter</a>),</div><div class="line">              .<a class="code" href="group__collection.html#gaecc46e74b03a83ca8a8023cc7264489c">next</a> = <a class="code" href="hashmap_8c.html#a5601cd221918b26557f36f577c909407">next_HashMap</a></div><div class="line">             }</div><div class="line"></div><div class="line">}</div><div class="ttc" id="hashmap_8c_html_ae8c6201244c05c149ee58f00693fbe18"><div class="ttname"><a href="hashmap_8c.html#ae8c6201244c05c149ee58f00693fbe18">__construct__HashMap_iter</a></div><div class="ttdeci">const void * __construct__HashMap_iter(const void *_self, va_list args)</div><div class="ttdef"><b>Definition:</b> <a href="hashmap_8c_source.html#l00500">hashmap.c:500</a></div></div>
-<div class="ttc" id="object__internal_8h_html_a94630370ae389fb1189282fa0742f310"><div class="ttname"><a href="object__internal_8h.html#a94630370ae389fb1189282fa0742f310">MAGIC</a></div><div class="ttdeci">#define MAGIC</div><div class="ttdef"><b>Definition:</b> <a href="object__internal_8h_source.html#l00006">object_internal.h:6</a></div></div>
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div><div class="line">        .class = {.magic = <a class="code" href="object__internal_8h.html#a94630370ae389fb1189282fa0742f310">MAGIC</a>,</div><div class="line">                .object_init = <a class="code" href="hashmap_8c.html#a7472518034803385044e43d8edeb1e79">__construct__HashMap_iter</a>,</div><div class="line">                .size = <span class="keyword">sizeof</span>(<span class="keyword">struct </span><a class="code" href="structHashMap__iter.html">HashMap_iter</a>),</div><div class="line">                .<a class="code" href="group__collection.html#gaecc46e74b03a83ca8a8023cc7264489c">next</a> = <a class="code" href="hashmap_8c.html#a5601cd221918b26557f36f577c909407">next_HashMap</a></div><div class="line">        }</div><div class="line"></div><div class="line">}</div><div class="ttc" id="object__internal_8h_html_a94630370ae389fb1189282fa0742f310"><div class="ttname"><a href="object__internal_8h.html#a94630370ae389fb1189282fa0742f310">MAGIC</a></div><div class="ttdeci">#define MAGIC</div><div class="ttdef"><b>Definition:</b> <a href="object__internal_8h_source.html#l00007">object_internal.h:7</a></div></div>
+<div class="ttc" id="hashmap_8c_html_a7472518034803385044e43d8edeb1e79"><div class="ttname"><a href="hashmap_8c.html#a7472518034803385044e43d8edeb1e79">__construct__HashMap_iter</a></div><div class="ttdeci">const void * __construct__HashMap_iter(const void *_self, size_t argc, va_list args)</div><div class="ttdef"><b>Definition:</b> <a href="hashmap_8c_source.html#l00508">hashmap.c:508</a></div></div>
 <div class="ttc" id="structHashMap__iter_html"><div class="ttname"><a href="structHashMap__iter.html">HashMap_iter</a></div><div class="ttdef"><b>Definition:</b> <a href="hashmap_8c_source.html#l00029">hashmap.c:29</a></div></div>
-<div class="ttc" id="hashmap_8c_html_a5601cd221918b26557f36f577c909407"><div class="ttname"><a href="hashmap_8c.html#a5601cd221918b26557f36f577c909407">next_HashMap</a></div><div class="ttdeci">const void * next_HashMap(const void *_self)</div><div class="ttdef"><b>Definition:</b> <a href="hashmap_8c_source.html#l00464">hashmap.c:464</a></div></div>
-<div class="ttc" id="group__collection_html_gaecc46e74b03a83ca8a8023cc7264489c"><div class="ttname"><a href="group__collection.html#gaecc46e74b03a83ca8a8023cc7264489c">next</a></div><div class="ttdeci">const void * next(const void *_self)</div><div class="ttdef"><b>Definition:</b> <a href="object_8c_source.html#l00236">object.c:236</a></div></div>
+<div class="ttc" id="hashmap_8c_html_a5601cd221918b26557f36f577c909407"><div class="ttname"><a href="hashmap_8c.html#a5601cd221918b26557f36f577c909407">next_HashMap</a></div><div class="ttdeci">const void * next_HashMap(const void *_self)</div><div class="ttdef"><b>Definition:</b> <a href="hashmap_8c_source.html#l00472">hashmap.c:472</a></div></div>
+<div class="ttc" id="group__collection_html_gaecc46e74b03a83ca8a8023cc7264489c"><div class="ttname"><a href="group__collection.html#gaecc46e74b03a83ca8a8023cc7264489c">next</a></div><div class="ttdeci">const void * next(const void *_self)</div><div class="ttdef"><b>Definition:</b> <a href="object_8c_source.html#l00282">object.c:282</a></div></div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00541">541</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00549">549</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
 
 </div>
 </div>
@@ -961,9 +963,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00539">539</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00547">547</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="hashmap_8c_source.html#l00277">__construct__HashMap()</a>, and <a class="el" href="main_8c_source.html#l00008">main()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="hashmap_8c_source.html#l00284">__construct__HashMap()</a>, and <a class="el" href="main_8c_source.html#l00008">main()</a>.</p>
 
 </div>
 </div>
@@ -979,9 +981,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00549">549</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00557">557</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="hashmap_8c_source.html#l00500">__construct__HashMap_iter()</a>, and <a class="el" href="hashmap_8c_source.html#l00453">iter_HashMap()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="hashmap_8c_source.html#l00508">__construct__HashMap_iter()</a>, and <a class="el" href="hashmap_8c_source.html#l00459">iter_HashMap()</a>.</p>
 
 </div>
 </div>
@@ -999,14 +1001,14 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="hashmap_8c_source.html#l00055">55</a> of file <a class="el" href="hashmap_8c_source.html">hashmap.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="hashmap_8c_source.html#l00277">__construct__HashMap()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="hashmap_8c_source.html#l00284">__construct__HashMap()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Sep 27 2019 15:45:11 for Object-Oriented-C by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 28 2019 15:28:03 for Object-Oriented-C by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.14
 </small></address>

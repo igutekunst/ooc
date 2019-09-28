@@ -1,0 +1,365 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="object__va__args_8h" kind="file" language="C++">
+    <compoundname>object_va_args.h</compoundname>
+    <includes local="no">stdlib.h</includes>
+    <includedby refid="object_8h" local="no">/Users/igutek/Documents/Projects/ooc/include/ooc/object.h</includedby>
+    <incdepgraph>
+      <node id="46">
+        <label>stdlib.h</label>
+      </node>
+      <node id="45">
+        <label>/Users/igutek/Documents/Projects/ooc/include/ooc/object_va_args.h</label>
+        <link refid="object__va__args_8h"/>
+        <childnode refid="46" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="56">
+        <label>/Users/igutek/Documents/Projects/ooc/src/person.c</label>
+        <link refid="person_8c"/>
+      </node>
+      <node id="51">
+        <label>/Users/igutek/Documents/Projects/ooc/src/object.c</label>
+        <link refid="object_8c"/>
+      </node>
+      <node id="53">
+        <label>/Users/igutek/Documents/Projects/ooc/src/hashmap.c</label>
+        <link refid="hashmap_8c"/>
+      </node>
+      <node id="58">
+        <label>/Users/igutek/Documents/Projects/ooc/src/list.c</label>
+        <link refid="list_8c"/>
+      </node>
+      <node id="49">
+        <label>/Users/igutek/Documents/Projects/ooc/src/int.c</label>
+        <link refid="int_8c"/>
+      </node>
+      <node id="60">
+        <label>/Users/igutek/Documents/Projects/ooc/include/ooc/point.h</label>
+        <link refid="point_8h"/>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+      </node>
+      <node id="52">
+        <label>/Users/igutek/Documents/Projects/ooc/include/ooc/hashmap.h</label>
+        <link refid="hashmap_8h"/>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+      </node>
+      <node id="61">
+        <label>/Users/igutek/Documents/Projects/ooc/src/point.c</label>
+        <link refid="point_8c"/>
+      </node>
+      <node id="55">
+        <label>/Users/igutek/Documents/Projects/ooc/include/ooc/person.h</label>
+        <link refid="person_8h"/>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+      </node>
+      <node id="47">
+        <label>/Users/igutek/Documents/Projects/ooc/include/ooc/object_va_args.h</label>
+        <link refid="object__va__args_8h"/>
+        <childnode refid="48" relation="include">
+        </childnode>
+      </node>
+      <node id="48">
+        <label>/Users/igutek/Documents/Projects/ooc/include/ooc/object.h</label>
+        <link refid="object_8h"/>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+      </node>
+      <node id="50">
+        <label>/Users/igutek/Documents/Projects/ooc/src/math.c</label>
+        <link refid="math_8c"/>
+      </node>
+      <node id="59">
+        <label>/Users/igutek/Documents/Projects/ooc/src/string.c</label>
+        <link refid="string_8c"/>
+      </node>
+      <node id="57">
+        <label>/Users/igutek/Documents/Projects/ooc/include/ooc/string.h</label>
+        <link refid="string_8h"/>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+      </node>
+      <node id="54">
+        <label>/Users/igutek/Documents/Projects/ooc/src/main.c</label>
+        <link refid="main_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="object__va__args_8h_1a31b9bcd0e7f30adb8ed947d86d4ae11b" prot="public" static="no">
+        <name>PP_NARG</name>
+        <param><defname>...</defname></param>
+        <initializer><ref refid="object__va__args_8h_1a1b4b6dfcca38ee665c4c88c07d58c4f0" kindref="member">PP_NARG_</ref>(__VA_ARGS__,<ref refid="object__va__args_8h_1a15967218850ac6ac5ffd777368fec7fd" kindref="member">PP_RSEQ_N</ref>())</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/include/ooc/object_va_args.h" line="9" column="9" bodyfile="/Users/igutek/Documents/Projects/ooc/include/ooc/object_va_args.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="object__va__args_8h_1a1b4b6dfcca38ee665c4c88c07d58c4f0" prot="public" static="no">
+        <name>PP_NARG_</name>
+        <param><defname>...</defname></param>
+        <initializer><ref refid="object__va__args_8h_1a0dc8e546426e1aa2bff01b22f80c4c5f" kindref="member">PP_ARG_N</ref>(__VA_ARGS__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/include/ooc/object_va_args.h" line="11" column="9" bodyfile="/Users/igutek/Documents/Projects/ooc/include/ooc/object_va_args.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="object__va__args_8h_1a0dc8e546426e1aa2bff01b22f80c4c5f" prot="public" static="no">
+        <name>PP_ARG_N</name>
+        <param><defname>_1</defname></param>
+        <param><defname>_2</defname></param>
+        <param><defname>_3</defname></param>
+        <param><defname>_4</defname></param>
+        <param><defname>_5</defname></param>
+        <param><defname>_6</defname></param>
+        <param><defname>_7</defname></param>
+        <param><defname>_8</defname></param>
+        <param><defname>_9</defname></param>
+        <param><defname>_10</defname></param>
+        <param><defname>_11</defname></param>
+        <param><defname>_12</defname></param>
+        <param><defname>_13</defname></param>
+        <param><defname>_14</defname></param>
+        <param><defname>_15</defname></param>
+        <param><defname>_16</defname></param>
+        <param><defname>_17</defname></param>
+        <param><defname>_18</defname></param>
+        <param><defname>_19</defname></param>
+        <param><defname>_20</defname></param>
+        <param><defname>_21</defname></param>
+        <param><defname>_22</defname></param>
+        <param><defname>_23</defname></param>
+        <param><defname>_24</defname></param>
+        <param><defname>_25</defname></param>
+        <param><defname>_26</defname></param>
+        <param><defname>_27</defname></param>
+        <param><defname>_28</defname></param>
+        <param><defname>_29</defname></param>
+        <param><defname>_30</defname></param>
+        <param><defname>_31</defname></param>
+        <param><defname>_32</defname></param>
+        <param><defname>_33</defname></param>
+        <param><defname>_34</defname></param>
+        <param><defname>_35</defname></param>
+        <param><defname>_36</defname></param>
+        <param><defname>_37</defname></param>
+        <param><defname>_38</defname></param>
+        <param><defname>_39</defname></param>
+        <param><defname>_40</defname></param>
+        <param><defname>_41</defname></param>
+        <param><defname>_42</defname></param>
+        <param><defname>_43</defname></param>
+        <param><defname>_44</defname></param>
+        <param><defname>_45</defname></param>
+        <param><defname>_46</defname></param>
+        <param><defname>_47</defname></param>
+        <param><defname>_48</defname></param>
+        <param><defname>_49</defname></param>
+        <param><defname>_50</defname></param>
+        <param><defname>_51</defname></param>
+        <param><defname>_52</defname></param>
+        <param><defname>_53</defname></param>
+        <param><defname>_54</defname></param>
+        <param><defname>_55</defname></param>
+        <param><defname>_56</defname></param>
+        <param><defname>_57</defname></param>
+        <param><defname>_58</defname></param>
+        <param><defname>_59</defname></param>
+        <param><defname>_60</defname></param>
+        <param><defname>_61</defname></param>
+        <param><defname>_62</defname></param>
+        <param><defname>_63</defname></param>
+        <param><defname>_64</defname></param>
+        <param><defname>_65</defname></param>
+        <param><defname>_66</defname></param>
+        <param><defname>_67</defname></param>
+        <param><defname>_68</defname></param>
+        <param><defname>_69</defname></param>
+        <param><defname>_70</defname></param>
+        <param><defname>_71</defname></param>
+        <param><defname>_72</defname></param>
+        <param><defname>_73</defname></param>
+        <param><defname>_74</defname></param>
+        <param><defname>_75</defname></param>
+        <param><defname>_76</defname></param>
+        <param><defname>_77</defname></param>
+        <param><defname>_78</defname></param>
+        <param><defname>_79</defname></param>
+        <param><defname>_80</defname></param>
+        <param><defname>_81</defname></param>
+        <param><defname>_82</defname></param>
+        <param><defname>_83</defname></param>
+        <param><defname>_84</defname></param>
+        <param><defname>_85</defname></param>
+        <param><defname>_86</defname></param>
+        <param><defname>_87</defname></param>
+        <param><defname>_88</defname></param>
+        <param><defname>_89</defname></param>
+        <param><defname>_90</defname></param>
+        <param><defname>_91</defname></param>
+        <param><defname>_92</defname></param>
+        <param><defname>_93</defname></param>
+        <param><defname>_94</defname></param>
+        <param><defname>_95</defname></param>
+        <param><defname>_96</defname></param>
+        <param><defname>_97</defname></param>
+        <param><defname>_98</defname></param>
+        <param><defname>_99</defname></param>
+        <param><defname>_100</defname></param>
+        <param><defname>_101</defname></param>
+        <param><defname>_102</defname></param>
+        <param><defname>_103</defname></param>
+        <param><defname>_104</defname></param>
+        <param><defname>_105</defname></param>
+        <param><defname>_106</defname></param>
+        <param><defname>_107</defname></param>
+        <param><defname>_108</defname></param>
+        <param><defname>_109</defname></param>
+        <param><defname>_110</defname></param>
+        <param><defname>_111</defname></param>
+        <param><defname>_112</defname></param>
+        <param><defname>_113</defname></param>
+        <param><defname>_114</defname></param>
+        <param><defname>_115</defname></param>
+        <param><defname>_116</defname></param>
+        <param><defname>_117</defname></param>
+        <param><defname>_118</defname></param>
+        <param><defname>_119</defname></param>
+        <param><defname>_120</defname></param>
+        <param><defname>_121</defname></param>
+        <param><defname>_122</defname></param>
+        <param><defname>_123</defname></param>
+        <param><defname>_124</defname></param>
+        <param><defname>_125</defname></param>
+        <param><defname>_126</defname></param>
+        <param><defname>_127</defname></param>
+        <param><defname>N</defname></param>
+        <param><defname>...</defname></param>
+        <initializer>N</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/include/ooc/object_va_args.h" line="26" column="9" bodyfile="/Users/igutek/Documents/Projects/ooc/include/ooc/object_va_args.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="object__va__args_8h_1a15967218850ac6ac5ffd777368fec7fd" prot="public" static="no">
+        <name>PP_RSEQ_N</name>
+        <param></param>
+        <initializer>127,126,125,124,123,122,121,120, \
+         119,118,117,116,115,114,113,112,111,110, \
+         109,108,107,106,105,104,103,102,101,100, \
+         99,98,97,96,95,94,93,92,91,90, \
+         89,88,87,86,85,84,83,82,81,80, \
+         79,78,77,76,75,74,73,72,71,70, \
+         69,68,67,66,65,64,63,62,61,60, \
+         59,58,57,56,55,54,53,52,51,50, \
+         49,48,47,46,45,44,43,42,41,40, \
+         39,38,37,36,35,34,33,32,31,30, \
+         29,28,27,26,25,24,23,22,21,20, \
+         19,18,17,16,15,14,13,12,11,10, \
+         9,8,7,6,5,4,3,2,1,0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/include/ooc/object_va_args.h" line="27" column="9" bodyfile="/Users/igutek/Documents/Projects/ooc/include/ooc/object_va_args.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>Isaac<sp/>Gutekunst<sp/>on<sp/>2019-09-28.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>OOC_OBJECT_VA_ARGS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>OOC_OBJECT_VA_ARGS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="object__va__args_8h_1a31b9bcd0e7f30adb8ed947d86d4ae11b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP_NARG(...)<sp/>\</highlight></codeline>
+<codeline lineno="10"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PP_NARG_(__VA_ARGS__,PP_RSEQ_N())</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="object__va__args_8h_1a1b4b6dfcca38ee665c4c88c07d58c4f0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP_NARG_(...)<sp/>\</highlight></codeline>
+<codeline lineno="12"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PP_ARG_N(__VA_ARGS__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="object__va__args_8h_1a0dc8e546426e1aa2bff01b22f80c4c5f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP_ARG_N(<sp/>\</highlight></codeline>
+<codeline lineno="14"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_1,<sp/>_2,<sp/>_3,<sp/>_4,<sp/>_5,<sp/>_6,<sp/>_7,<sp/>_8,<sp/>_9,_10,<sp/>\</highlight></codeline>
+<codeline lineno="15"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_11,_12,_13,_14,_15,_16,_17,_18,_19,_20,<sp/>\</highlight></codeline>
+<codeline lineno="16"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_21,_22,_23,_24,_25,_26,_27,_28,_29,_30,<sp/>\</highlight></codeline>
+<codeline lineno="17"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_31,_32,_33,_34,_35,_36,_37,_38,_39,_40,<sp/>\</highlight></codeline>
+<codeline lineno="18"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_41,_42,_43,_44,_45,_46,_47,_48,_49,_50,<sp/>\</highlight></codeline>
+<codeline lineno="19"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_51,_52,_53,_54,_55,_56,_57,_58,_59,_60,<sp/>\</highlight></codeline>
+<codeline lineno="20"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_61,_62,_63,_64,_65,_66,_67,_68,_69,_70,<sp/>\</highlight></codeline>
+<codeline lineno="21"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_71,_72,_73,_74,_75,_76,_77,_78,_79,_80,<sp/>\</highlight></codeline>
+<codeline lineno="22"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_81,_82,_83,_84,_85,_86,_87,_88,_89,_90,<sp/>\</highlight></codeline>
+<codeline lineno="23"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_91,_92,_93,_94,_95,_96,_97,_98,_99,_100,<sp/>\</highlight></codeline>
+<codeline lineno="24"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_101,_102,_103,_104,_105,_106,_107,_108,_109,_110,<sp/>\</highlight></codeline>
+<codeline lineno="25"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_111,_112,_113,_114,_115,_116,_117,_118,_119,_120,<sp/>\</highlight></codeline>
+<codeline lineno="26"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_121,_122,_123,_124,_125,_126,_127,N,...)<sp/>N</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="object__va__args_8h_1a15967218850ac6ac5ffd777368fec7fd" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PP_RSEQ_N()<sp/>\</highlight></codeline>
+<codeline lineno="28"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>127,126,125,124,123,122,121,120,<sp/>\</highlight></codeline>
+<codeline lineno="29"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>119,118,117,116,115,114,113,112,111,110,<sp/>\</highlight></codeline>
+<codeline lineno="30"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>109,108,107,106,105,104,103,102,101,100,<sp/>\</highlight></codeline>
+<codeline lineno="31"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>99,98,97,96,95,94,93,92,91,90,<sp/>\</highlight></codeline>
+<codeline lineno="32"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>89,88,87,86,85,84,83,82,81,80,<sp/>\</highlight></codeline>
+<codeline lineno="33"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>79,78,77,76,75,74,73,72,71,70,<sp/>\</highlight></codeline>
+<codeline lineno="34"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>69,68,67,66,65,64,63,62,61,60,<sp/>\</highlight></codeline>
+<codeline lineno="35"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>59,58,57,56,55,54,53,52,51,50,<sp/>\</highlight></codeline>
+<codeline lineno="36"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>49,48,47,46,45,44,43,42,41,40,<sp/>\</highlight></codeline>
+<codeline lineno="37"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>39,38,37,36,35,34,33,32,31,30,<sp/>\</highlight></codeline>
+<codeline lineno="38"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>29,28,27,26,25,24,23,22,21,20,<sp/>\</highlight></codeline>
+<codeline lineno="39"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>19,18,17,16,15,14,13,12,11,10,<sp/>\</highlight></codeline>
+<codeline lineno="40"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>9,8,7,6,5,4,3,2,1,0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//OOC_OBJECT_VA_ARGS_H</highlight></codeline>
+    </programlisting>
+    <location file="/Users/igutek/Documents/Projects/ooc/include/ooc/object_va_args.h"/>
+  </compounddef>
+</doxygen>

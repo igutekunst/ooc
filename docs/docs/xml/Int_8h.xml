@@ -1,87 +1,29 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
-  <compounddef id="Int_8h" kind="file" language="C++">
-    <compoundname>Int.h</compoundname>
-    <includes refid="object_8h" local="yes">object.h</includes>
-    <includes refid="string_8h" local="no">string.h</includes>
-    <includes local="no">stdint.h</includes>
-    <includedby refid="Int_8c" local="no">/Users/igutek/Documents/Projects/ooc/src/Int.c</includedby>
+  <compounddef id="int_8h" kind="file" language="C++">
+    <compoundname>int.h</compoundname>
+    <includedby refid="int_8c" local="no">/Users/igutek/Documents/Projects/ooc/src/int.c</includedby>
     <includedby refid="main_8c" local="no">/Users/igutek/Documents/Projects/ooc/src/main.c</includedby>
-    <incdepgraph>
-      <node id="21">
-        <label>stdbool.h</label>
+    <invincdepgraph>
+      <node id="14">
+        <label>/Users/igutek/Documents/Projects/ooc/src/int.c</label>
+        <link refid="int_8c"/>
       </node>
-      <node id="20">
-        <label>stdarg.h</label>
-      </node>
-      <node id="22">
-        <label>stdint.h</label>
-      </node>
-      <node id="19">
-        <label>stdlib.h</label>
-      </node>
-      <node id="17">
-        <label>stddef.h</label>
+      <node id="13">
+        <label>/Users/igutek/Documents/Projects/ooc/include/ooc/int.h</label>
+        <link refid="int_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
       </node>
       <node id="15">
-        <label>/Users/igutek/Documents/Projects/ooc/include/ooc/Int.h</label>
-        <link refid="Int_8h"/>
-        <childnode refid="16" relation="include">
-        </childnode>
-        <childnode refid="23" relation="include">
-        </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
-      </node>
-      <node id="16">
-        <label>object.h</label>
-        <link refid="object_8h"/>
-        <childnode refid="17" relation="include">
-        </childnode>
-        <childnode refid="18" relation="include">
-        </childnode>
-        <childnode refid="19" relation="include">
-        </childnode>
-        <childnode refid="20" relation="include">
-        </childnode>
-        <childnode refid="21" relation="include">
-        </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
-      </node>
-      <node id="23">
-        <label>string.h</label>
-        <link refid="string_8h"/>
-        <childnode refid="16" relation="include">
-        </childnode>
-        <childnode refid="23" relation="include">
-        </childnode>
-      </node>
-      <node id="18">
-        <label>stdio.h</label>
-      </node>
-    </incdepgraph>
-    <invincdepgraph>
-      <node id="24">
-        <label>/Users/igutek/Documents/Projects/ooc/include/ooc/Int.h</label>
-        <link refid="Int_8h"/>
-        <childnode refid="25" relation="include">
-        </childnode>
-        <childnode refid="26" relation="include">
-        </childnode>
-      </node>
-      <node id="25">
-        <label>/Users/igutek/Documents/Projects/ooc/src/Int.c</label>
-        <link refid="Int_8c"/>
-      </node>
-      <node id="26">
         <label>/Users/igutek/Documents/Projects/ooc/src/main.c</label>
         <link refid="main_8c"/>
       </node>
     </invincdepgraph>
-    <innerclass refid="structInt" prot="public">Int</innerclass>
       <sectiondef kind="var">
-      <memberdef kind="variable" id="Int_8h_1a58f95e509cb472a46236fb2ba211af09" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="int_8h_1a58f95e509cb472a46236fb2ba211af09" prot="public" static="no" mutable="no">
         <type>void *</type>
         <definition>void* Int</definition>
         <argsstring></argsstring>
@@ -92,8 +34,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/igutek/Documents/Projects/ooc/include/ooc/Int.h" line="13" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/Int.c" bodystart="27" bodyend="-1"/>
-        <referencedby refid="Int_8c_1ae873d36964132e55e78d420070550a21" compoundref="Int_8c" startline="34" endline="42">__construct__Int</referencedby>
+        <location file="/Users/igutek/Documents/Projects/ooc/include/ooc/int.h" line="3" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/int.c" bodystart="47" bodyend="-1"/>
+        <referencedby refid="int_8c_1a5ee11528e9e9edd386cfc6b5d2b84490" compoundref="int_8c" startline="80" endline="84">Int_add</referencedby>
+        <referencedby refid="int_8c_1a4e6bebbc74025fe9ba93bf207150cb27" compoundref="int_8c" startline="100" endline="105">Int_div</referencedby>
+        <referencedby refid="int_8c_1a7dc53a21b3398adfbc1cbc480e8a5c8a" compoundref="int_8c" startline="54" endline="62">Int_init</referencedby>
+        <referencedby refid="int_8c_1a5606319e57bb3b2e475024318f23a589" compoundref="int_8c" startline="93" endline="98">Int_mul</referencedby>
+        <referencedby refid="int_8c_1ab7e968a6838e99204647de44c4aca4c7" compoundref="int_8c" startline="86" endline="91">Int_sub</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -103,20 +49,9 @@
     <programlisting>
 <codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>OBJ_INT_H</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>OBJ_INT_H</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="object_8h" kindref="compound">object.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="string_8h" kindref="compound">string.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="7" refid="structInt" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structInt" kindref="compound">Int</ref>{</highlight></codeline>
-<codeline lineno="8" refid="structInt_1aa497eee8de1a0588fe99440e34089b89" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structclass__header" kindref="compound">class_header</ref><sp/>*<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="9" refid="structInt_1a9a4308bb1dff85cd00c70f97bf4fbb8b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structInt_1a9a4308bb1dff85cd00c70f97bf4fbb8b" kindref="member">size</ref>;</highlight></codeline>
-<codeline lineno="10" refid="structInt_1ab131a0721b22e28accfb39f0195413ab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structInt_1ab131a0721b22e28accfb39f0195413ab" kindref="member">value</ref>;</highlight></codeline>
-<codeline lineno="11" refid="structInt_1aedf38abd9d2da54ad7b8889b97024d9c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="structInt_1aedf38abd9d2da54ad7b8889b97024d9c" kindref="member">str_value</ref>;</highlight></codeline>
-<codeline lineno="12"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/><ref refid="Int_8h_1a58f95e509cb472a46236fb2ba211af09" kindref="member">Int</ref>;</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/><ref refid="int_8h_1a58f95e509cb472a46236fb2ba211af09" kindref="member">Int</ref>;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
-    <location file="/Users/igutek/Documents/Projects/ooc/include/ooc/Int.h"/>
+    <location file="/Users/igutek/Documents/Projects/ooc/include/ooc/int.h"/>
   </compounddef>
 </doxygen>

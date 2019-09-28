@@ -3,8 +3,11 @@
   <compounddef id="dir_835e52100f67d4a26caaf16568a08a31" kind="dir">
     <compoundname>/Users/igutek/Documents/Projects/ooc/include/ooc</compoundname>
     <innerfile refid="hashmap_8h">hashmap.h</innerfile>
-    <innerfile refid="Int_8h">Int.h</innerfile>
+    <innerfile refid="int_8h">int.h</innerfile>
+    <innerfile refid="list_8h">list.h</innerfile>
+    <innerfile refid="math_8h">math.h</innerfile>
     <innerfile refid="object_8h">object.h</innerfile>
+    <innerfile refid="object__va__args_8h">object_va_args.h</innerfile>
     <innerfile refid="person_8h">person.h</innerfile>
     <innerfile refid="point_8h">point.h</innerfile>
     <innerfile refid="string_8h">string.h</innerfile>

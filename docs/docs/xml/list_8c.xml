@@ -1,0 +1,667 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="list_8c" kind="file" language="C++">
+    <compoundname>list.c</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">stdarg.h</includes>
+    <includes refid="string_8h" local="no">ooc/string.h</includes>
+    <includes refid="math_8h" local="no">ooc/math.h</includes>
+    <includes local="no">assert.h</includes>
+    <includes refid="list_8h" local="yes">ooc/list.h</includes>
+    <includes refid="object__internal_8h" local="yes">object_internal.h</includes>
+    <incdepgraph>
+      <node id="146">
+        <label>stdbool.h</label>
+      </node>
+      <node id="141">
+        <label>stdarg.h</label>
+      </node>
+      <node id="149">
+        <label>assert.h</label>
+      </node>
+      <node id="138">
+        <label>/Users/igutek/Documents/Projects/ooc/src/list.c</label>
+        <link refid="list_8c"/>
+        <childnode refid="139" relation="include">
+        </childnode>
+        <childnode refid="140" relation="include">
+        </childnode>
+        <childnode refid="141" relation="include">
+        </childnode>
+        <childnode refid="142" relation="include">
+        </childnode>
+        <childnode refid="148" relation="include">
+        </childnode>
+        <childnode refid="149" relation="include">
+        </childnode>
+        <childnode refid="150" relation="include">
+        </childnode>
+        <childnode refid="151" relation="include">
+        </childnode>
+      </node>
+      <node id="139">
+        <label>stdint.h</label>
+      </node>
+      <node id="140">
+        <label>stdlib.h</label>
+      </node>
+      <node id="151">
+        <label>object_internal.h</label>
+        <link refid="object__internal_8h"/>
+        <childnode refid="139" relation="include">
+        </childnode>
+        <childnode refid="140" relation="include">
+        </childnode>
+        <childnode refid="141" relation="include">
+        </childnode>
+        <childnode refid="146" relation="include">
+        </childnode>
+        <childnode refid="152" relation="include">
+        </childnode>
+      </node>
+      <node id="148">
+        <label>ooc/math.h</label>
+        <link refid="math_8h"/>
+      </node>
+      <node id="150">
+        <label>ooc/list.h</label>
+        <link refid="list_8h"/>
+      </node>
+      <node id="144">
+        <label>stddef.h</label>
+      </node>
+      <node id="152">
+        <label>trait_math_internal.h</label>
+        <link refid="trait__math__internal_8h"/>
+      </node>
+      <node id="147">
+        <label>ooc/object_va_args.h</label>
+        <link refid="object__va__args_8h"/>
+        <childnode refid="140" relation="include">
+        </childnode>
+      </node>
+      <node id="143">
+        <label>object.h</label>
+        <link refid="object_8h"/>
+        <childnode refid="144" relation="include">
+        </childnode>
+        <childnode refid="145" relation="include">
+        </childnode>
+        <childnode refid="140" relation="include">
+        </childnode>
+        <childnode refid="141" relation="include">
+        </childnode>
+        <childnode refid="146" relation="include">
+        </childnode>
+        <childnode refid="139" relation="include">
+        </childnode>
+        <childnode refid="147" relation="include">
+        </childnode>
+      </node>
+      <node id="142">
+        <label>ooc/string.h</label>
+        <link refid="string_8h"/>
+        <childnode refid="143" relation="include">
+        </childnode>
+        <childnode refid="142" relation="include">
+        </childnode>
+      </node>
+      <node id="145">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structListItem" prot="public">ListItem</innerclass>
+    <innerclass refid="structList" prot="public">List</innerclass>
+    <innerclass refid="structListClass" prot="public">ListClass</innerclass>
+    <innerclass refid="structListIterator" prot="public">ListIterator</innerclass>
+    <innerclass refid="structListIteratorClass" prot="public">ListIteratorClass</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="list_8c_1a02e13bf283b917663439262e144cff2b" prot="public" static="no">
+        <type>struct <ref refid="structListItem" kindref="compound">ListItem</ref></type>
+        <definition>typedef struct ListItem ListItem</definition>
+        <argsstring></argsstring>
+        <name>ListItem</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/list.c" line="11" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/list.c" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="list_8c_1a0496ad68b20ba8adb788b32302d0180d" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structListClass" kindref="compound">ListClass</ref></type>
+        <definition>struct ListClass List_class</definition>
+        <argsstring></argsstring>
+        <name>List_class</name>
+        <initializer>= {
+        .class = {.magic = <ref refid="object__internal_8h_1a94630370ae389fb1189282fa0742f310" kindref="member">MAGIC</ref>,
+                .<ref refid="group__common_1gafac8564ed88a6f8585f043fc6b2fa7e1" kindref="member">size</ref> = sizeof(struct <ref refid="structList" kindref="compound">List</ref>),
+                .object_init = <ref refid="list_8c_1a90058f3a1ebf8b3af93fae2eeaf5a722" kindref="member">List_init</ref>,
+                .get_size = <ref refid="list_8c_1ad5b8c50b806751b83a3aa63ff891ed70" kindref="member">List_get_size</ref>,
+                .get_len = <ref refid="list_8c_1a0c90ae4a31e56f8604eddae05240ef9f" kindref="member">List_get_len</ref>,
+                .<ref refid="object_8h_1a6ab4b3e256d10044340c1f861c031438" kindref="member">str</ref> = <ref refid="list_8c_1aec387646791ce579c16e3ef129c32f74" kindref="member">List_to_str</ref>,
+                .<ref refid="group__collection_1ga2bd4216bcf1d5810032394f57fbf5c2f" kindref="member">append</ref> = <ref refid="list_8c_1a6f7e71341da2330ce5bc61e15f9f2652" kindref="member">List_append</ref>,
+                .<ref refid="group__collection_1ga0cb67414335937707c9b92809a10895b" kindref="member">iter</ref> = <ref refid="list_8c_1a4f41f9ad2faf8659af62e4b1fbd264ee" kindref="member">List_iter</ref>,
+                .<ref refid="group__collection_1gaa467fc1e6a3036f13ea20b36a6e672a1" kindref="member">get_item</ref> = <ref refid="list_8c_1a975abd5adea5f2b1caa581cb8994dd9a" kindref="member">List_get_item</ref>,
+                .object_name = &quot;List&quot;
+        }
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/list.c" line="192" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/list.c" bodystart="214" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="list_8c_1a98d6a985ab39515bc1b47478f23be031" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structListIteratorClass" kindref="compound">ListIteratorClass</ref></type>
+        <definition>struct ListIteratorClass list_iterator_class</definition>
+        <argsstring></argsstring>
+        <name>list_iterator_class</name>
+        <initializer>= {
+        .class = {.magic = <ref refid="object__internal_8h_1a94630370ae389fb1189282fa0742f310" kindref="member">MAGIC</ref>,
+                .object_init = <ref refid="list_8c_1abf7dbd1c02022ec5a52ff02008a0238e" kindref="member">ListIterator_init</ref>,
+                .<ref refid="group__common_1gafac8564ed88a6f8585f043fc6b2fa7e1" kindref="member">size</ref> = sizeof(struct <ref refid="structListIterator" kindref="compound">ListIterator</ref>),
+                .<ref refid="group__collection_1gaecc46e74b03a83ca8a8023cc7264489c" kindref="member">next</ref> = <ref refid="list_8c_1afb27ed3e1bca02101c0d251b7ae8b587" kindref="member">ListIterator_next</ref>
+        }
+
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/list.c" line="192" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/list.c" bodystart="228" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="list_8c_1a3950860ae6bd717891393bc705572d34" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* ListIterator</definition>
+        <argsstring></argsstring>
+        <name>ListIterator</name>
+        <initializer>= &amp;<ref refid="list_8c_1a98d6a985ab39515bc1b47478f23be031" kindref="member">list_iterator_class</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/list.c" line="237" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/list.c" bodystart="237" bodyend="-1"/>
+        <referencedby refid="list_8c_1a4f41f9ad2faf8659af62e4b1fbd264ee" compoundref="list_8c" startline="168" endline="170">List_iter</referencedby>
+        <referencedby refid="list_8c_1abf7dbd1c02022ec5a52ff02008a0238e" compoundref="list_8c" startline="173" endline="189">ListIterator_init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="list_8c_1a39f007643f44b8d0b58dab4137284af4" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* List</definition>
+        <argsstring></argsstring>
+        <name>List</name>
+        <initializer>= &amp;<ref refid="list_8c_1a0496ad68b20ba8adb788b32302d0180d" kindref="member">List_class</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/list.c" line="239" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/list.c" bodystart="239" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="list_8c_1a6f7e71341da2330ce5bc61e15f9f2652" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const void *</type>
+        <definition>const void * List_append</definition>
+        <argsstring>(const void *_self, const void *_other)</argsstring>
+        <name>List_append</name>
+        <param>
+          <type>const void *</type>
+          <declname>_self</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>_other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/list.c" line="47" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/list.c" bodystart="121" bodyend="139"/>
+        <references refid="structListItem_1a3a9c06ae85f60557666cb569b36072a9" compoundref="list_8c" startline="18">ListItem::next</references>
+        <references refid="structListItem_1a4726bec30855b9d9776368f3b6fad191" compoundref="list_8c" startline="17">ListItem::value</references>
+        <referencedby refid="list_8c_1a90058f3a1ebf8b3af93fae2eeaf5a722" compoundref="list_8c" startline="49" endline="64">List_init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="list_8c_1a90058f3a1ebf8b3af93fae2eeaf5a722" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const void *</type>
+        <definition>const void* List_init</definition>
+        <argsstring>(const void *_self, size_t argc, va_list args)</argsstring>
+        <name>List_init</name>
+        <param>
+          <type>const void *</type>
+          <declname>_self</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>va_list</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/list.c" line="49" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/list.c" bodystart="49" bodyend="64"/>
+        <references refid="structList_1ac7c599366a5b35b3d8725df1b6239955" compoundref="list_8c" startline="25">List::len</references>
+        <references refid="list_8c_1a6f7e71341da2330ce5bc61e15f9f2652" compoundref="list_8c" startline="121" endline="139">List_append</references>
+      </memberdef>
+      <memberdef kind="function" id="list_8c_1ad5b8c50b806751b83a3aa63ff891ed70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t List_get_size</definition>
+        <argsstring>(const void *_self)</argsstring>
+        <name>List_get_size</name>
+        <param>
+          <type>const void *</type>
+          <declname>_self</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/list.c" line="67" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/list.c" bodystart="67" bodyend="71"/>
+        <references refid="structList_1a39a6fe2bfe1c66b66ca966e87241b1ca" compoundref="list_8c" startline="23">List::class</references>
+        <references refid="structclass__header_1a5ba6bf54fc12a2a31a2b39937cd50e84" compoundref="object__internal_8h" startline="24">class_header::size</references>
+      </memberdef>
+      <memberdef kind="function" id="list_8c_1a0c90ae4a31e56f8604eddae05240ef9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t List_get_len</definition>
+        <argsstring>(const void *_self)</argsstring>
+        <name>List_get_len</name>
+        <param>
+          <type>const void *</type>
+          <declname>_self</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/list.c" line="73" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/list.c" bodystart="73" bodyend="76"/>
+        <references refid="structList_1ac7c599366a5b35b3d8725df1b6239955" compoundref="list_8c" startline="25">List::len</references>
+      </memberdef>
+      <memberdef kind="function" id="list_8c_1aec387646791ce579c16e3ef129c32f74" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* List_to_str</definition>
+        <argsstring>(const void *_self)</argsstring>
+        <name>List_to_str</name>
+        <param>
+          <type>const void *</type>
+          <declname>_self</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/list.c" line="78" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/list.c" bodystart="78" bodyend="119"/>
+        <references refid="group__collection_1ga2bd4216bcf1d5810032394f57fbf5c2f" compoundref="object_8c" startline="165" endline="179">append</references>
+        <references refid="structListItem_1a3a9c06ae85f60557666cb569b36072a9" compoundref="list_8c" startline="18">ListItem::next</references>
+        <references refid="object_8c_1a317798c33e05ea3ca01d0a70148f61ad" compoundref="object_8c" startline="56" endline="66">str</references>
+        <references refid="object_8c_1a23b80bc1ca4cac9bafcb0735aa404009" compoundref="object_8c" startline="68" endline="71">to_String</references>
+        <references refid="structListItem_1a4726bec30855b9d9776368f3b6fad191" compoundref="list_8c" startline="17">ListItem::value</references>
+      </memberdef>
+      <memberdef kind="function" id="list_8c_1a975abd5adea5f2b1caa581cb8994dd9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const void *</type>
+        <definition>const void* List_get_item</definition>
+        <argsstring>(const void *_self, const void *_index)</argsstring>
+        <name>List_get_item</name>
+        <param>
+          <type>const void *</type>
+          <declname>_self</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>_index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/list.c" line="142" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/list.c" bodystart="142" bodyend="166"/>
+        <references refid="group__common_1gadcc35aece3f8a4c822a9bf2a591f087b" compoundref="object_8c" startline="120" endline="131">clsname</references>
+        <references refid="group__collection_1gacfda61f6ab04bc36786ceb00fab70775" compoundref="object_8c" startline="182" endline="198">get_class_header_msg</references>
+        <references refid="structclass__header_1a119175910ca4b52e4671f04616dcd2f6" compoundref="object__internal_8h" startline="207">class_header::math</references>
+        <references refid="structListItem_1a3a9c06ae85f60557666cb569b36072a9" compoundref="list_8c" startline="18">ListItem::next</references>
+        <references refid="math_8c_1a99b390d28968e75dde77f9b0db79eb5f" compoundref="math_8c" startline="34" endline="42">obj_to_int</references>
+        <references refid="structOOCTraitMath_1adb6702c7794b114f252fba89f58342cc" compoundref="trait__math__internal_8h" startline="15">OOCTraitMath::to_int</references>
+        <references refid="structListItem_1a4726bec30855b9d9776368f3b6fad191" compoundref="list_8c" startline="17">ListItem::value</references>
+      </memberdef>
+      <memberdef kind="function" id="list_8c_1a4f41f9ad2faf8659af62e4b1fbd264ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const void *</type>
+        <definition>const void* List_iter</definition>
+        <argsstring>(const void *_self)</argsstring>
+        <name>List_iter</name>
+        <param>
+          <type>const void *</type>
+          <declname>_self</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/list.c" line="168" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/list.c" bodystart="168" bodyend="170"/>
+        <references refid="list_8c_1a3950860ae6bd717891393bc705572d34" compoundref="list_8c" startline="237">ListIterator</references>
+      </memberdef>
+      <memberdef kind="function" id="list_8c_1abf7dbd1c02022ec5a52ff02008a0238e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const void *</type>
+        <definition>const void* ListIterator_init</definition>
+        <argsstring>(const void *_self, size_t argc, va_list args)</argsstring>
+        <name>ListIterator_init</name>
+        <param>
+          <type>const void *</type>
+          <declname>_self</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>va_list</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/list.c" line="173" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/list.c" bodystart="173" bodyend="189"/>
+        <references refid="structListIterator_1ab3502d78f7274e2ececbc7581bedff74" compoundref="list_8c" startline="37">ListIterator::class</references>
+        <references refid="list_8c_1a3950860ae6bd717891393bc705572d34" compoundref="list_8c" startline="237">ListIterator</references>
+      </memberdef>
+      <memberdef kind="function" id="list_8c_1afb27ed3e1bca02101c0d251b7ae8b587" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const void *</type>
+        <definition>const void* ListIterator_next</definition>
+        <argsstring>(const void *_self)</argsstring>
+        <name>ListIterator_next</name>
+        <param>
+          <type>const void *</type>
+          <declname>_self</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/list.c" line="192" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/list.c" bodystart="192" bodyend="211"/>
+        <references refid="structListIterator_1a4be321bdc175ecfa3bc9e74e107e8fdd" compoundref="list_8c" startline="40">ListIterator::item</references>
+        <references refid="structListItem_1a3a9c06ae85f60557666cb569b36072a9" compoundref="list_8c" startline="18">ListItem::next</references>
+        <references refid="structListItem_1a4726bec30855b9d9776368f3b6fad191" compoundref="list_8c" startline="17">ListItem::value</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>Isaac<sp/>Gutekunst<sp/>on<sp/>9/28/19.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdarg.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="string_8h" kindref="compound">ooc/string.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="math_8h" kindref="compound">ooc/math.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;assert.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="list_8h" kindref="compound">ooc/list.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="object__internal_8h" kindref="compound">object_internal.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="structListItem" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structListItem" kindref="compound">ListItem</ref><sp/>{</highlight></codeline>
+<codeline lineno="17" refid="structListItem_1a4726bec30855b9d9776368f3b6fad191" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="structListItem_1a4726bec30855b9d9776368f3b6fad191" kindref="member">value</ref>;</highlight></codeline>
+<codeline lineno="18" refid="structListItem_1a3a9c06ae85f60557666cb569b36072a9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structListItem" kindref="compound">ListItem</ref>*<sp/><ref refid="structListItem_1a3a9c06ae85f60557666cb569b36072a9" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="20" refid="list_8c_1a02e13bf283b917663439262e144cff2b" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structListItem" kindref="compound">ListItem</ref><sp/><ref refid="structListItem" kindref="compound">ListItem</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="structList" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structList" kindref="compound">List</ref><sp/>{</highlight></codeline>
+<codeline lineno="23" refid="structList_1a39a6fe2bfe1c66b66ca966e87241b1ca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structclass__header" kindref="compound">class_header</ref>*<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="24" refid="structList_1a166530a166abd81afec0e6b0283f7e80" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structList_1a166530a166abd81afec0e6b0283f7e80" kindref="member">size</ref>;</highlight></codeline>
+<codeline lineno="25" refid="structList_1ac7c599366a5b35b3d8725df1b6239955" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structList_1ac7c599366a5b35b3d8725df1b6239955" kindref="member">len</ref>;</highlight></codeline>
+<codeline lineno="26" refid="structList_1ac4c33942be7f3c4ae0d6d836fc9aaf25" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structList_1ac4c33942be7f3c4ae0d6d836fc9aaf25" kindref="member">iterating</ref>;</highlight></codeline>
+<codeline lineno="27" refid="structList_1abba5cd8966cc47ab6cb0b3cead7b5106" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structListItem" kindref="compound">ListItem</ref>*<sp/><ref refid="structList_1abba5cd8966cc47ab6cb0b3cead7b5106" kindref="member">head</ref>;</highlight></codeline>
+<codeline lineno="28" refid="structList_1a6d4b5761bf36f1d143057557e034eb0b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structListItem" kindref="compound">ListItem</ref>*<sp/><ref refid="structList_1a6d4b5761bf36f1d143057557e034eb0b" kindref="member">tail</ref>;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="structListClass" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structListClass" kindref="compound">ListClass</ref><sp/>{</highlight></codeline>
+<codeline lineno="33" refid="structListClass_1a8e823d87f5a5919ed02857462c475c91" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structclass__header" kindref="compound">class_header</ref><sp/><ref refid="structListClass_1a8e823d87f5a5919ed02857462c475c91" kindref="member">class</ref>;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="structListIterator" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structListIterator" kindref="compound">ListIterator</ref><sp/>{</highlight></codeline>
+<codeline lineno="37" refid="structListIterator_1ab3502d78f7274e2ececbc7581bedff74" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structclass__header" kindref="compound">class_header</ref><sp/>*</highlight><highlight class="keyword">class</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38" refid="structListIterator_1a6f7c700353a4ce4a687504ba0a0b35e0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structList" kindref="compound">List</ref>*<sp/><ref refid="structListIterator_1a6f7c700353a4ce4a687504ba0a0b35e0" kindref="member">list</ref>;</highlight></codeline>
+<codeline lineno="39" refid="structListIterator_1a63d062a738f1a9278cb996d8d6abc262" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structListIterator_1a63d062a738f1a9278cb996d8d6abc262" kindref="member">done</ref>;</highlight></codeline>
+<codeline lineno="40" refid="structListIterator_1a4be321bdc175ecfa3bc9e74e107e8fdd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structListItem" kindref="compound">ListItem</ref>*<sp/><ref refid="structListIterator_1a4be321bdc175ecfa3bc9e74e107e8fdd" kindref="member">item</ref>;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="structListIteratorClass" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structListIteratorClass" kindref="compound">ListIteratorClass</ref><sp/>{</highlight></codeline>
+<codeline lineno="44" refid="structListIteratorClass_1a2bcc85fff2e5dc6d0a984dc1f1536a78" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structclass__header" kindref="compound">class_header</ref><sp/><ref refid="structListIteratorClass_1a2bcc85fff2e5dc6d0a984dc1f1536a78" kindref="member">class</ref>;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="list_8c_1a6f7e71341da2330ce5bc61e15f9f2652" kindref="member">List_append</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>_self,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>_other);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="list_8c_1a90058f3a1ebf8b3af93fae2eeaf5a722" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="list_8c_1a90058f3a1ebf8b3af93fae2eeaf5a722" kindref="member">List_init</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_self,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>argc,<sp/>va_list<sp/>args)<sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structList" kindref="compound">List</ref>*<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal"><sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structList" kindref="compound">List</ref>*)<sp/>_self;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;<ref refid="structList_1ac7c599366a5b35b3d8725df1b6239955" kindref="member">len</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;size<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structList" kindref="compound">List</ref>);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;head<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;tail<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;iterating<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(argc<sp/>&gt;<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>argc;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>item<sp/>=<sp/>va_arg(args,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="list_8c_1a6f7e71341da2330ce5bc61e15f9f2652" kindref="member">List_append</ref>(_self,<sp/>item);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_self;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="list_8c_1ad5b8c50b806751b83a3aa63ff891ed70" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="list_8c_1ad5b8c50b806751b83a3aa63ff891ed70" kindref="member">List_get_size</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>_self)<sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structList" kindref="compound">List</ref>*<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal"><sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structList" kindref="compound">List</ref>*)<sp/>_self;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//TODO<sp/>update<sp/>once<sp/>list<sp/>grows</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;<ref refid="structList_1a39a6fe2bfe1c66b66ca966e87241b1ca" kindref="member">class</ref>-&gt;<ref refid="structclass__header_1a5ba6bf54fc12a2a31a2b39937cd50e84" kindref="member">size</ref>;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="list_8c_1a0c90ae4a31e56f8604eddae05240ef9f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="list_8c_1a0c90ae4a31e56f8604eddae05240ef9f" kindref="member">List_get_len</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>_self)<sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structList" kindref="compound">List</ref>*<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal"><sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structList" kindref="compound">List</ref>*)<sp/>_self;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;<ref refid="structList_1ac7c599366a5b35b3d8725df1b6239955" kindref="member">len</ref>;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="list_8c_1aec387646791ce579c16e3ef129c32f74" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="list_8c_1aec387646791ce579c16e3ef129c32f74" kindref="member">List_to_str</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>_self)<sp/>{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structList" kindref="compound">List</ref>*<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal"><sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structList" kindref="compound">List</ref>*)<sp/>_self;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO<sp/>don&apos;t<sp/>leak<sp/>memory.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>//<sp/>This<sp/>next<sp/>part<sp/>leaks<sp/>memory<sp/>like<sp/>crazy.<sp/>It&apos;s<sp/>only<sp/>for<sp/>a<sp/>POC</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>//<sp/>Future<sp/>versions<sp/>will<sp/>support<sp/>reference<sp/>counting,<sp/>so<sp/>this<sp/>would<sp/>look<sp/>like</highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>void*<sp/>frame<sp/>=<sp/>alloc(1);</highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>out<sp/>=<sp/>new_rc(pool,<sp/>String,<sp/>&quot;[&quot;);</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>...</highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>//<sp/>In<sp/>this<sp/>case,<sp/>each<sp/>_rc<sp/>function<sp/>will<sp/>retain<sp/>a<sp/>pointer<sp/>to<sp/>any<sp/>allocated</highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>//<sp/>objects<sp/>in<sp/>the<sp/>first<sp/>argument<sp/>(frame)</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>out<sp/>=<sp/>append_rc(frame,<sp/>new_rc(frame,<sp/>String,<sp/>&quot;\&quot;&quot;));</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>//<sp/>We<sp/>don&apos;t<sp/>want<sp/>to<sp/>free<sp/>the<sp/>memory<sp/>since<sp/>we<sp/>want<sp/>to</highlight></codeline>
+<codeline lineno="93"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>//<sp/>return<sp/>a<sp/>string,<sp/>so<sp/>we<sp/>retain<sp/>(increase<sp/>reference<sp/>count)</highlight></codeline>
+<codeline lineno="94"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>//<sp/>before<sp/>releasing<sp/>the<sp/>frame</highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>retain(out);</highlight></codeline>
+<codeline lineno="96"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="97"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>//<sp/>This<sp/>will<sp/>decrease<sp/>the<sp/>refcount,<sp/>and<sp/>free<sp/>all<sp/>the<sp/>intermediate<sp/>strings</highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/>used<sp/>above.</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/>Alternatively,<sp/>there<sp/>could<sp/>be<sp/>an<sp/>append_destructive,<sp/>that<sp/>modifies<sp/>the<sp/>first</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/>argument.<sp/>This<sp/>is<sp/>how<sp/>lists<sp/>work<sp/>in<sp/>python,<sp/>but<sp/>not<sp/>strings.</highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>release(frame);</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>return<sp/>out;</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structListItem" kindref="compound">ListItem</ref>*<sp/>item<sp/>=<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;head;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structString" kindref="compound">String</ref>*<sp/>out<sp/>=<sp/>typed_new(<ref refid="structString" kindref="compound">String</ref>,<sp/></highlight><highlight class="stringliteral">&quot;[&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(item<sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>out<sp/>=<sp/><ref refid="group__collection_1ga2bd4216bcf1d5810032394f57fbf5c2f" kindref="member">append</ref>(out,<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">(<ref refid="structString" kindref="compound">String</ref>,<sp/></highlight><highlight class="stringliteral">&quot;\&quot;&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>out<sp/>=<sp/><ref refid="group__collection_1ga2bd4216bcf1d5810032394f57fbf5c2f" kindref="member">append</ref>(out,<sp/><ref refid="object_8c_1a23b80bc1ca4cac9bafcb0735aa404009" kindref="member">to_String</ref>(item-&gt;<ref refid="structListItem_1a4726bec30855b9d9776368f3b6fad191" kindref="member">value</ref>));</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>out<sp/>=<sp/><ref refid="group__collection_1ga2bd4216bcf1d5810032394f57fbf5c2f" kindref="member">append</ref>(out,<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">(<ref refid="structString" kindref="compound">String</ref>,<sp/></highlight><highlight class="stringliteral">&quot;\&quot;&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(item-&gt;<ref refid="structListItem_1a3a9c06ae85f60557666cb569b36072a9" kindref="member">next</ref><sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>out<sp/>=<sp/><ref refid="group__collection_1ga2bd4216bcf1d5810032394f57fbf5c2f" kindref="member">append</ref>(out,<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">(<ref refid="structString" kindref="compound">String</ref>,<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item<sp/>=<sp/>item-&gt;<ref refid="structListItem_1a3a9c06ae85f60557666cb569b36072a9" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>out<sp/>=<sp/><ref refid="group__collection_1ga2bd4216bcf1d5810032394f57fbf5c2f" kindref="member">append</ref>(out,<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">(<ref refid="structString" kindref="compound">String</ref>,<sp/></highlight><highlight class="stringliteral">&quot;]&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="object_8c_1a317798c33e05ea3ca01d0a70148f61ad" kindref="member">str</ref>(out);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;[]&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121" refid="list_8c_1a6f7e71341da2330ce5bc61e15f9f2652" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="list_8c_1a6f7e71341da2330ce5bc61e15f9f2652" kindref="member">List_append</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>_self,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>_other)<sp/>{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structList" kindref="compound">List</ref>*<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal"><sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structList" kindref="compound">List</ref>*)<sp/>_self;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structListItem" kindref="compound">ListItem</ref>*<sp/>new_item<sp/>=<sp/>(<ref refid="structListItem" kindref="compound">ListItem</ref>*)<sp/>malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structListItem" kindref="compound">ListItem</ref>));</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>new_item-&gt;<ref refid="structListItem_1a4726bec30855b9d9776368f3b6fad191" kindref="member">value</ref><sp/>=<sp/>_other;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>new_item-&gt;<ref refid="structListItem_1a3a9c06ae85f60557666cb569b36072a9" kindref="member">next</ref><sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(self-&gt;head<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>assert(self-&gt;tail<sp/>==<sp/>NULL);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;head<sp/>=<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;tail<sp/>=<sp/>new_item;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;tail-&gt;<ref refid="structListItem_1a3a9c06ae85f60557666cb569b36072a9" kindref="member">next</ref><sp/>=<sp/>new_item;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;tail<sp/>=<sp/>new_item;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;len++;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;size<sp/>+=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="list_8c_1a02e13bf283b917663439262e144cff2b" kindref="member">ListItem</ref>);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_self;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142" refid="list_8c_1a975abd5adea5f2b1caa581cb8994dd9a" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="list_8c_1a975abd5adea5f2b1caa581cb8994dd9a" kindref="member">List_get_item</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>_self,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>_index)<sp/>{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structList" kindref="compound">List</ref>*<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal"><sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structList" kindref="compound">List</ref>*)<sp/>_self;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structclass__header" kindref="compound">class_header</ref><sp/>*<sp/>index_class;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>index_class<sp/>=<sp/><ref refid="group__collection_1gacfda61f6ab04bc36786ceb00fab70775" kindref="member">get_class_header_msg</ref>(_index,<sp/></highlight><highlight class="stringliteral">&quot;List<sp/>get_item<sp/>called<sp/>with<sp/>invalid<sp/>index\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(index_class-&gt;<ref refid="structclass__header_1a119175910ca4b52e4671f04616dcd2f6" kindref="member">math</ref>.<ref refid="structOOCTraitMath_1adb6702c7794b114f252fba89f58342cc" kindref="member">to_int</ref><sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(stderr,<sp/></highlight><highlight class="stringliteral">&quot;List<sp/>get_item<sp/>called<sp/>with<sp/>invalid<sp/>index<sp/>of<sp/>type<sp/>%s&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Index<sp/>must<sp/>be<sp/>support<sp/>math.to_int\n&quot;</highlight><highlight class="normal">,<sp/><ref refid="group__common_1gadcc35aece3f8a4c822a9bf2a591f087b" kindref="member">clsname</ref>(_index));</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(EXIT_FAILURE);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>index<sp/>=<sp/><ref refid="math_8c_1a99b390d28968e75dde77f9b0db79eb5f" kindref="member">obj_to_int</ref>(_index);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structListItem" kindref="compound">ListItem</ref>*<sp/>item<sp/>=<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;head;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structString" kindref="compound">String</ref>*<sp/>out<sp/>=<sp/>typed_new(<ref refid="structString" kindref="compound">String</ref>,<sp/></highlight><highlight class="stringliteral">&quot;[&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(index<sp/>&gt;=<sp/>self-&gt;len)<sp/>{</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(stderr,<sp/></highlight><highlight class="stringliteral">&quot;Index<sp/>%zu<sp/>is<sp/>out<sp/>of<sp/>range\n&quot;</highlight><highlight class="normal">,<sp/>index);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>index;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>assert(item<sp/>!=<sp/>NULL);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item<sp/>=<sp/>item-&gt;<ref refid="structListItem_1a3a9c06ae85f60557666cb569b36072a9" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>item-&gt;<ref refid="structListItem_1a4726bec30855b9d9776368f3b6fad191" kindref="member">value</ref>;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168" refid="list_8c_1a4f41f9ad2faf8659af62e4b1fbd264ee" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="list_8c_1a4f41f9ad2faf8659af62e4b1fbd264ee" kindref="member">List_iter</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>_self){</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">(<ref refid="list_8c_1a3950860ae6bd717891393bc705572d34" kindref="member">ListIterator</ref>,<sp/>_self);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173" refid="list_8c_1abf7dbd1c02022ec5a52ff02008a0238e" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="list_8c_1abf7dbd1c02022ec5a52ff02008a0238e" kindref="member">ListIterator_init</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_self,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>argc,<sp/>va_list<sp/>args)<sp/>{</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structListIterator" kindref="compound">ListIterator</ref><sp/>*<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal"><sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structListIterator" kindref="compound">ListIterator</ref><sp/>*)<sp/>_self;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO<sp/>Maybe<sp/>redundant</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;<ref refid="structListIterator_1ab3502d78f7274e2ececbc7581bedff74" kindref="member">class</ref><sp/>=<sp/><ref refid="list_8c_1a3950860ae6bd717891393bc705572d34" kindref="member">ListIterator</ref>;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;list<sp/>=<sp/><sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structList" kindref="compound">List</ref><sp/>*)<sp/><sp/>va_arg(args,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(self-&gt;list);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;list-&gt;iterating<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;item<sp/>=<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;list-&gt;head;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;done<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192" refid="list_8c_1afb27ed3e1bca02101c0d251b7ae8b587" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/><ref refid="list_8c_1afb27ed3e1bca02101c0d251b7ae8b587" kindref="member">ListIterator_next</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>_self)<sp/>{</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structListIterator" kindref="compound">ListIterator</ref><sp/>*<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal"><sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structListIterator" kindref="compound">ListIterator</ref><sp/>*)<sp/>_self;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structListItem" kindref="compound">ListItem</ref>*<sp/><ref refid="structListIterator_1a4be321bdc175ecfa3bc9e74e107e8fdd" kindref="member">item</ref><sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(self-&gt;done<sp/>!=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(self-&gt;item<sp/>==<sp/>NULL)<sp/><sp/>{</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;list-&gt;iterating<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;done<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structListIterator_1a4be321bdc175ecfa3bc9e74e107e8fdd" kindref="member">item</ref><sp/>=<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;item;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;item<sp/>=<sp/></highlight><highlight class="keyword">self</highlight><highlight class="normal">-&gt;item-&gt;<ref refid="structListItem_1a3a9c06ae85f60557666cb569b36072a9" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="structListIterator_1a4be321bdc175ecfa3bc9e74e107e8fdd" kindref="member">item</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structListIterator_1a4be321bdc175ecfa3bc9e74e107e8fdd" kindref="member">item</ref>-&gt;<ref refid="structListItem_1a4726bec30855b9d9776368f3b6fad191" kindref="member">value</ref>;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="211"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="214" refid="list_8c_1a0496ad68b20ba8adb788b32302d0180d" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structListClass" kindref="compound">ListClass</ref><sp/><ref refid="list_8c_1a0496ad68b20ba8adb788b32302d0180d" kindref="member">List_class</ref><sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.<ref refid="structListClass_1a8e823d87f5a5919ed02857462c475c91" kindref="member">class</ref><sp/>=<sp/>{.<ref refid="structclass__header_1aa98964036010ad63554856c5f4680cec" kindref="member">magic</ref><sp/>=<sp/><ref refid="object__internal_8h_1a94630370ae389fb1189282fa0742f310" kindref="member">MAGIC</ref>,</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.size<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structList" kindref="compound">List</ref>),</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.object_init<sp/>=<sp/><ref refid="list_8c_1a90058f3a1ebf8b3af93fae2eeaf5a722" kindref="member">List_init</ref>,</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.get_size<sp/>=<sp/><ref refid="list_8c_1ad5b8c50b806751b83a3aa63ff891ed70" kindref="member">List_get_size</ref>,</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.get_len<sp/>=<sp/><ref refid="list_8c_1a0c90ae4a31e56f8604eddae05240ef9f" kindref="member">List_get_len</ref>,</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.str<sp/>=<sp/><ref refid="list_8c_1aec387646791ce579c16e3ef129c32f74" kindref="member">List_to_str</ref>,</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.append<sp/>=<sp/><ref refid="list_8c_1a6f7e71341da2330ce5bc61e15f9f2652" kindref="member">List_append</ref>,</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.iter<sp/>=<sp/><ref refid="list_8c_1a4f41f9ad2faf8659af62e4b1fbd264ee" kindref="member">List_iter</ref>,</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.get_item<sp/>=<sp/><ref refid="list_8c_1a975abd5adea5f2b1caa581cb8994dd9a" kindref="member">List_get_item</ref>,</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.object_name<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;List&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="226"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228" refid="list_8c_1a98d6a985ab39515bc1b47478f23be031" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structListIteratorClass" kindref="compound">ListIteratorClass</ref><sp/><ref refid="list_8c_1a98d6a985ab39515bc1b47478f23be031" kindref="member">list_iterator_class</ref><sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.<ref refid="structListIteratorClass_1a2bcc85fff2e5dc6d0a984dc1f1536a78" kindref="member">class</ref><sp/>=<sp/>{.<ref refid="structclass__header_1aa98964036010ad63554856c5f4680cec" kindref="member">magic</ref><sp/>=<sp/><ref refid="object__internal_8h_1a94630370ae389fb1189282fa0742f310" kindref="member">MAGIC</ref>,</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.object_init<sp/>=<sp/><ref refid="list_8c_1abf7dbd1c02022ec5a52ff02008a0238e" kindref="member">ListIterator_init</ref>,</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.size<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structListIterator" kindref="compound">ListIterator</ref>),</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.<ref refid="group__collection_1gaecc46e74b03a83ca8a8023cc7264489c" kindref="member">next</ref><sp/>=<sp/><ref refid="list_8c_1afb27ed3e1bca02101c0d251b7ae8b587" kindref="member">ListIterator_next</ref></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237" refid="list_8h_1a3950860ae6bd717891393bc705572d34" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/><ref refid="structListIterator" kindref="compound">ListIterator</ref><sp/>=<sp/>&amp;<ref refid="list_8c_1a98d6a985ab39515bc1b47478f23be031" kindref="member">list_iterator_class</ref>;</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239" refid="list_8h_1a39f007643f44b8d0b58dab4137284af4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="structList" kindref="compound">List</ref><sp/>=<sp/>&amp;<ref refid="list_8c_1a0496ad68b20ba8adb788b32302d0180d" kindref="member">List_class</ref>;</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/igutek/Documents/Projects/ooc/src/list.c"/>
+  </compounddef>
+</doxygen>

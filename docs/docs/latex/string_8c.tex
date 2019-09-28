@@ -22,7 +22,7 @@ size\+\_\+t \mbox{\hyperlink{string_8c_ad9f87c949c08dce2651433d0cc06d8dd}{String
 \item 
 size\+\_\+t \mbox{\hyperlink{string_8c_a4b419646ac4f54ba6302b8e4e58c9678}{String\+\_\+get\+\_\+size}} (const void $\ast$\+\_\+self)
 \item 
-const void $\ast$ \mbox{\hyperlink{string_8c_a2e1266f696c96e5bfd8ffbed7be891fa}{\+\_\+\+\_\+construct\+\_\+\+\_\+\+String}} (const void $\ast$\+\_\+self, va\+\_\+list args)
+const void $\ast$ \mbox{\hyperlink{string_8c_ae55182aad42d41b3d50d6a078f74e0ed}{\+\_\+\+\_\+construct\+\_\+\+\_\+\+String}} (const void $\ast$\+\_\+self, size\+\_\+t argc, va\+\_\+list args)
 \item 
 void \mbox{\hyperlink{string_8c_ad43e4d63a18fb1a7eebfc5291f704966}{print\+\_\+\+String}} (void $\ast$\+\_\+self)
 \item 
@@ -79,11 +79,11 @@ Referenced by F\+N\+V32().
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{string_8c_a2e1266f696c96e5bfd8ffbed7be891fa}\label{string_8c_a2e1266f696c96e5bfd8ffbed7be891fa}} 
+\mbox{\Hypertarget{string_8c_ae55182aad42d41b3d50d6a078f74e0ed}\label{string_8c_ae55182aad42d41b3d50d6a078f74e0ed}} 
 \index{string.\+c@{string.\+c}!\+\_\+\+\_\+construct\+\_\+\+\_\+\+String@{\+\_\+\+\_\+construct\+\_\+\+\_\+\+String}}
 \index{\+\_\+\+\_\+construct\+\_\+\+\_\+\+String@{\+\_\+\+\_\+construct\+\_\+\+\_\+\+String}!string.\+c@{string.\+c}}
 \subsubsection{\texorpdfstring{\+\_\+\+\_\+construct\+\_\+\+\_\+\+String()}{\_\_construct\_\_String()}}
-{\footnotesize\ttfamily const void$\ast$ \+\_\+\+\_\+construct\+\_\+\+\_\+\+String (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+self,  }\item[{va\+\_\+list}]{args }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily const void$\ast$ \+\_\+\+\_\+construct\+\_\+\+\_\+\+String (\begin{DoxyParamCaption}\item[{const void $\ast$}]{\+\_\+self,  }\item[{size\+\_\+t}]{argc,  }\item[{va\+\_\+list}]{args }\end{DoxyParamCaption})}
 
 
 
@@ -234,7 +234,7 @@ Definition at line 163 of file string.\+c.
 
 
 
-Referenced by \+\_\+\+\_\+construct\+\_\+\+\_\+\+String(), main(), String\+\_\+append(), String\+\_\+copy(), and String\+\_\+equal().
+Referenced by \+\_\+\+\_\+construct\+\_\+\+\_\+\+String(), main(), String\+\_\+append(), String\+\_\+copy(), String\+\_\+equal(), and to\+\_\+\+String().
 
 \mbox{\Hypertarget{string_8c_a46e31843df274eb8ce4b256dc005df49}\label{string_8c_a46e31843df274eb8ce4b256dc005df49}} 
 \index{string.\+c@{string.\+c}!string\+\_\+class@{string\+\_\+class}}
@@ -247,7 +247,7 @@ Referenced by \+\_\+\+\_\+construct\+\_\+\+\_\+\+String(), main(), String\+\_\+a
 = \{
     .class = \{.magic = \mbox{\hyperlink{object__internal_8h_a94630370ae389fb1189282fa0742f310}{MAGIC}},
               .size = \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct }\mbox{\hyperlink{structString}{String}}),
-              .object\_init = \mbox{\hyperlink{string_8c_a2e1266f696c96e5bfd8ffbed7be891fa}{\_\_construct\_\_String}},
+              .object\_init = \mbox{\hyperlink{string_8c_ae55182aad42d41b3d50d6a078f74e0ed}{\_\_construct\_\_String}},
               .get\_size = \mbox{\hyperlink{string_8c_a4b419646ac4f54ba6302b8e4e58c9678}{String\_get\_size}},
               .get\_len = \mbox{\hyperlink{string_8c_ad9f87c949c08dce2651433d0cc06d8dd}{String\_get\_len}},
               .str = \mbox{\hyperlink{string_8c_a9a56d1c8e084d0302f33b3b90260693d}{String\_str}},

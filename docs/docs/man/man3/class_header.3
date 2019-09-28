@@ -1,4 +1,4 @@
-.TH "class_header" 3 "Fri Sep 27 2019" "Object-Oriented-C" \" -*- nroff -*-
+.TH "class_header" 3 "Sat Sep 28 2019" "Object-Oriented-C" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -20,12 +20,15 @@ class_header
 .ti -1c
 .RI "size_t(* \fBget_size\fP )(const void *_self)"
 .br
+.RI "Get size of object in bytes\&. "
 .ti -1c
 .RI "size_t(* \fBget_len\fP )(const void *_self)"
 .br
+.RI "Get number of items in container object\&. "
 .ti -1c
-.RI "const void *(* \fBobject_init\fP )(const void *_self, va_list args)"
+.RI "const void *(* \fBobject_init\fP )(const void *_self, size_t argc, va_list args)"
 .br
+.RI "Create and initialize an object\&. "
 .ti -1c
 .RI "void(* \fBobject_deinit\fP )(const void *_self)"
 .br
@@ -54,7 +57,7 @@ class_header
 .RI "void(* \fBinsert\fP )(const void *_self, const void *_key, const void *item)"
 .br
 .ti -1c
-.RI "const void *(* \fBget\fP )(const void *_self, const void *_key)"
+.RI "const void *(* \fBget_item\fP )(const void *_self, const void *_key)"
 .br
 .ti -1c
 .RI "void(* \fBdel_item\fP )(const void *_self, const void *key)"
@@ -68,6 +71,9 @@ class_header
 .ti -1c
 .RI "const char * \fBobject_name\fP"
 .br
+.ti -1c
+.RI "struct \fBOOCTraitMath\fP \fBmath\fP"
+.br
 .in -1c
 .SH "Detailed Description"
 .PP 
@@ -79,7 +85,7 @@ Each object (instantiation of a class) has a pointer to the per-class \fBclass_h
 .PP
 A minimum class must at least provide implementations for magic, size, object_init, object_deinit and object_name 
 .PP
-Definition at line 21 of file object_internal\&.h\&.
+Definition at line 22 of file object_internal\&.h\&.
 .SH "Field Documentation"
 .PP 
 .SS "const void*(* class_header::append) (const void *_self, const void *_other)"
@@ -94,7 +100,7 @@ Implement to enable appending items to an class\&. If an class supports appendin
 .PP
 
 .PP
-Definition at line 101 of file object_internal\&.h\&.
+Definition at line 99 of file object_internal\&.h\&.
 .PP
 Referenced by append()\&.
 .SS "const void*(* class_header::copy) (const void *_self)"
@@ -114,7 +120,7 @@ copy of _self
 .PP
 
 .PP
-Definition at line 134 of file object_internal\&.h\&.
+Definition at line 132 of file object_internal\&.h\&.
 .PP
 Referenced by copy()\&.
 .SS "void(* class_header::del_item) (const void *_self, const void *key)"
@@ -129,7 +135,7 @@ Implement to enabled indexed deletion from a collection\&.
 .PP
 
 .PP
-Definition at line 172 of file object_internal\&.h\&.
+Definition at line 170 of file object_internal\&.h\&.
 .SS "bool(* class_header::equals) (const void *_self, const void *_other)"
 Implement to allow objects to be compared with a custom function\&. 
 .PP
@@ -147,8 +153,8 @@ true if objects are equal\&. If not implemented, equals will compare pointers
 .PP
 
 .PP
-Definition at line 112 of file object_internal\&.h\&.
-.SS "const void*(* class_header::get) (const void *_self, const void *_key)"
+Definition at line 110 of file object_internal\&.h\&.
+.SS "const void*(* class_header::get_item) (const void *_self, const void *_key)"
 Implement to enable indexed access\&. value = get(collection, key) value = collection[key]
 .PP
 Typically, key must be in collection, or this function should exit early with an error\&. 
@@ -166,9 +172,11 @@ Typically, key must be in collection, or this function should exit early with an
 .PP
 
 .PP
-Definition at line 162 of file object_internal\&.h\&.
+Definition at line 160 of file object_internal\&.h\&.
 .SS "size_t(* class_header::get_len) (const void *_self)"
-Get number of items in container object 
+
+.PP
+Get number of items in container object\&. 
 .PP
 \fBParameters:\fP
 .RS 4
@@ -182,11 +190,13 @@ number of items in container
 .PP
 
 .PP
-Definition at line 37 of file object_internal\&.h\&.
+Definition at line 38 of file object_internal\&.h\&.
 .PP
 Referenced by len()\&.
 .SS "size_t(* class_header::get_size) (const void *_self)"
-Get size of object in bytes 
+
+.PP
+Get size of object in bytes\&. 
 .PP
 \fBParameters:\fP
 .RS 4
@@ -200,7 +210,7 @@ size in bytes
 .PP
 
 .PP
-Definition at line 30 of file object_internal\&.h\&.
+Definition at line 31 of file object_internal\&.h\&.
 .PP
 Referenced by size()\&.
 .SS "uint64_t(* class_header::hash) (const void *_self)"
@@ -220,7 +230,7 @@ Note: as of now, HashTables will also use \fBequals()\fP to confirm keys are uni
 .PP
 
 .PP
-Definition at line 189 of file object_internal\&.h\&.
+Definition at line 187 of file object_internal\&.h\&.
 .PP
 Referenced by del_item_HashMap(), get_HashMap(), insert_HashMap(), and internal_insert_HashMap()\&.
 .SS "void(* class_header::insert) (const void *_self, const void *_key, const void *item)"
@@ -237,7 +247,7 @@ Implement to enable indexed assignment\&. insert(collection, key, value) is equi
 .PP
 
 .PP
-Definition at line 145 of file object_internal\&.h\&.
+Definition at line 143 of file object_internal\&.h\&.
 .SS "const void*(* class_header::iter) (const void *_object)"
 Return an iterator to support iteration\&. 
 .PP
@@ -253,11 +263,19 @@ ooc iterator
 .PP
 
 .PP
-Definition at line 122 of file object_internal\&.h\&.
+Definition at line 120 of file object_internal\&.h\&.
 .SS "unsigned long class_header::magic"
 
 .PP
-Definition at line 22 of file object_internal\&.h\&.
+Definition at line 23 of file object_internal\&.h\&.
+.PP
+Referenced by get_obj_type()\&.
+.SS "struct \fBOOCTraitMath\fP class_header::math"
+Traits 
+.PP
+Definition at line 207 of file object_internal\&.h\&.
+.PP
+Referenced by List_get_item(), and obj_add()\&.
 .SS "const void*(* class_header::next) (const void *_self)"
 Implement to support iteration\&. You must implement \fBiter()\fP and \fBnext()\fP to support iteration\&.
 .PP
@@ -273,7 +291,7 @@ next item in iteration\&.
 .PP
 
 .PP
-Definition at line 199 of file object_internal\&.h\&.
+Definition at line 197 of file object_internal\&.h\&.
 .SS "void(* class_header::object_deinit) (const void *_self)"
 De-initialize and free resources used by _self\&.
 .PP
@@ -284,15 +302,19 @@ De-initialize and free resources used by _self\&.
 .PP
 
 .PP
-Definition at line 59 of file object_internal\&.h\&.
+Definition at line 57 of file object_internal\&.h\&.
 .PP
 Referenced by del()\&.
-.SS "const void*(* class_header::object_init) (const void *_self, va_list args)"
-Create and initialize an object Technically, _self needs to be the full class header for a concrete type, which starts with a \fBclass_header\fP, followed by class specific fields\&.
+.SS "const void*(* class_header::object_init) (const void *_self, size_t argc, va_list args)"
+
+.PP
+Create and initialize an object\&. It also correct to calll this the object constructor\&.
 .PP
 \fBParameters:\fP
 .RS 4
 \fI_self\fP ooc class like \fBString\fP or \fBHashMap\fP\&. 
+.br
+\fIargc\fP number of arguments 
 .br
 \fIargs\fP arguments to initialize object\&. Varies based on class type 
 .RE
@@ -303,11 +325,13 @@ Create and initialize an object Technically, _self needs to be the full class he
 .PP
 
 .PP
-Definition at line 49 of file object_internal\&.h\&.
+Definition at line 50 of file object_internal\&.h\&.
+.PP
+Referenced by _new()\&.
 .SS "const char* class_header::object_name"
 Object name as C string 
 .PP
-Definition at line 204 of file object_internal\&.h\&.
+Definition at line 202 of file object_internal\&.h\&.
 .PP
 Referenced by clsname()\&.
 .SS "void(* class_header::print) (const void *_self)"
@@ -320,13 +344,15 @@ Print and object to stdout
 .PP
 
 .PP
-Definition at line 65 of file object_internal\&.h\&.
+Definition at line 63 of file object_internal\&.h\&.
 .PP
 Referenced by print()\&.
 .SS "size_t class_header::size"
 
 .PP
-Definition at line 23 of file object_internal\&.h\&.
+Definition at line 24 of file object_internal\&.h\&.
+.PP
+Referenced by _new(), and List_get_size()\&.
 .SS "const char*(* class_header::str) (const void *_self)"
 Return the c string (char*) representation of an object
 .PP
@@ -344,7 +370,7 @@ c string representation
 .PP
 
 .PP
-Definition at line 78 of file object_internal\&.h\&.
+Definition at line 76 of file object_internal\&.h\&.
 .PP
 Referenced by str()\&.
 .SS "void*(* class_header::to_String) (const void *_self)"
@@ -366,7 +392,7 @@ ooc \fBString\fP object
 .PP
 
 .PP
-Definition at line 91 of file object_internal\&.h\&.
+Definition at line 89 of file object_internal\&.h\&.
 
 .SH "Author"
 .PP 

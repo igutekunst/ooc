@@ -14,7 +14,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/igutek/Documents/Projects/ooc/src/Int.c" line="61" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/Int.c" bodystart="6" bodyend="-1"/>
+        <location file="/Users/igutek/Documents/Projects/ooc/src/int.c" line="11" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/int.c" bodystart="15" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -22,19 +22,26 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="24">
+      <node id="30">
         <label>class_header</label>
         <link refid="structclass__header"/>
+        <childnode refid="31" relation="usage">
+          <edgelabel>math</edgelabel>
+        </childnode>
       </node>
-      <node id="23">
+      <node id="31">
+        <label>OOCTraitMath</label>
+        <link refid="structOOCTraitMath"/>
+      </node>
+      <node id="29">
         <label>IntClass</label>
         <link refid="structIntClass"/>
-        <childnode refid="24" relation="usage">
+        <childnode refid="30" relation="usage">
           <edgelabel>class</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/Users/igutek/Documents/Projects/ooc/src/Int.c" line="5" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/Int.c" bodystart="5" bodyend="7"/>
+    <location file="/Users/igutek/Documents/Projects/ooc/src/int.c" line="14" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/int.c" bodystart="14" bodyend="16"/>
     <listofallmembers>
       <member refid="structIntClass_1a434c7c785b8a61096c69491220ab8543" prot="public" virt="non-virtual"><scope>IntClass</scope><name>class</name></member>
     </listofallmembers>

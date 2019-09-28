@@ -15,10 +15,10 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/igutek/Documents/Projects/ooc/src/hashmap.c" line="6" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/hashmap.c" bodystart="6" bodyend="-1"/>
-        <referencedby refid="hashmap_8c_1a10476d872d0cfcb234391cabf5e888a1" compoundref="hashmap_8c" startline="378" endline="448">del_item_HashMap</referencedby>
-        <referencedby refid="hashmap_8c_1aa88aa2ed0651f4feb2e275ba14114d14" compoundref="hashmap_8c" startline="343" endline="375">get_HashMap</referencedby>
-        <referencedby refid="hashmap_8c_1a8aa67d2dac0692c1128b50780ad9dfc1" compoundref="hashmap_8c" startline="107" endline="150">internal_insert_HashMap</referencedby>
-        <referencedby refid="hashmap_8c_1ab39c45942b557d7634a849c1292b9522" compoundref="hashmap_8c" startline="152" endline="173">internal_print_table</referencedby>
+        <referencedby refid="hashmap_8c_1a10476d872d0cfcb234391cabf5e888a1" compoundref="hashmap_8c" startline="384" endline="454">del_item_HashMap</referencedby>
+        <referencedby refid="hashmap_8c_1aa88aa2ed0651f4feb2e275ba14114d14" compoundref="hashmap_8c" startline="349" endline="381">get_HashMap</referencedby>
+        <referencedby refid="hashmap_8c_1a8aa67d2dac0692c1128b50780ad9dfc1" compoundref="hashmap_8c" startline="116" endline="159">internal_insert_HashMap</referencedby>
+        <referencedby refid="hashmap_8c_1ab39c45942b557d7634a849c1292b9522" compoundref="hashmap_8c" startline="161" endline="182">internal_print_table</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structHashItem_1a0bd79196ef574b956a40b009950a1ef4" prot="public" static="no" mutable="no">
         <type>const void *</type>
@@ -32,10 +32,11 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/igutek/Documents/Projects/ooc/src/hashmap.c" line="7" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/hashmap.c" bodystart="7" bodyend="-1"/>
-        <referencedby refid="hashmap_8c_1aa88aa2ed0651f4feb2e275ba14114d14" compoundref="hashmap_8c" startline="343" endline="375">get_HashMap</referencedby>
-        <referencedby refid="hashmap_8c_1a62d30d0ca399807fa03a80759da17168" compoundref="hashmap_8c" startline="102" endline="105">internal_hash</referencedby>
-        <referencedby refid="hashmap_8c_1a8aa67d2dac0692c1128b50780ad9dfc1" compoundref="hashmap_8c" startline="107" endline="150">internal_insert_HashMap</referencedby>
-        <referencedby refid="hashmap_8c_1aa3b3074d83ff5a38f6164c7e4b459fa5" compoundref="hashmap_8c" startline="193" endline="252">internal_resize_HashMap</referencedby>
+        <referencedby refid="hashmap_8c_1aa88aa2ed0651f4feb2e275ba14114d14" compoundref="hashmap_8c" startline="349" endline="381">get_HashMap</referencedby>
+        <referencedby refid="hashmap_8c_1a62d30d0ca399807fa03a80759da17168" compoundref="hashmap_8c" startline="111" endline="114">internal_hash</referencedby>
+        <referencedby refid="hashmap_8c_1a8aa67d2dac0692c1128b50780ad9dfc1" compoundref="hashmap_8c" startline="116" endline="159">internal_insert_HashMap</referencedby>
+        <referencedby refid="hashmap_8c_1aa3b3074d83ff5a38f6164c7e4b459fa5" compoundref="hashmap_8c" startline="203" endline="262">internal_resize_HashMap</referencedby>
+        <referencedby refid="hashmap_8c_1a5601cd221918b26557f36f577c909407" compoundref="hashmap_8c" startline="472" endline="506">next_HashMap</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structHashItem_1abb041948b3408787c4d46d9afd8fb793" prot="public" static="no" mutable="no">
         <type>const void *</type>
@@ -49,11 +50,10 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/igutek/Documents/Projects/ooc/src/hashmap.c" line="8" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/hashmap.c" bodystart="8" bodyend="-1"/>
-        <referencedby refid="hashmap_8c_1a10476d872d0cfcb234391cabf5e888a1" compoundref="hashmap_8c" startline="378" endline="448">del_item_HashMap</referencedby>
-        <referencedby refid="hashmap_8c_1aa88aa2ed0651f4feb2e275ba14114d14" compoundref="hashmap_8c" startline="343" endline="375">get_HashMap</referencedby>
-        <referencedby refid="hashmap_8c_1a8aa67d2dac0692c1128b50780ad9dfc1" compoundref="hashmap_8c" startline="107" endline="150">internal_insert_HashMap</referencedby>
-        <referencedby refid="hashmap_8c_1aa3b3074d83ff5a38f6164c7e4b459fa5" compoundref="hashmap_8c" startline="193" endline="252">internal_resize_HashMap</referencedby>
-        <referencedby refid="hashmap_8c_1a5601cd221918b26557f36f577c909407" compoundref="hashmap_8c" startline="464" endline="498">next_HashMap</referencedby>
+        <referencedby refid="hashmap_8c_1a10476d872d0cfcb234391cabf5e888a1" compoundref="hashmap_8c" startline="384" endline="454">del_item_HashMap</referencedby>
+        <referencedby refid="hashmap_8c_1aa88aa2ed0651f4feb2e275ba14114d14" compoundref="hashmap_8c" startline="349" endline="381">get_HashMap</referencedby>
+        <referencedby refid="hashmap_8c_1a8aa67d2dac0692c1128b50780ad9dfc1" compoundref="hashmap_8c" startline="116" endline="159">internal_insert_HashMap</referencedby>
+        <referencedby refid="hashmap_8c_1aa3b3074d83ff5a38f6164c7e4b459fa5" compoundref="hashmap_8c" startline="203" endline="262">internal_resize_HashMap</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structHashItem_1a623917e154bb2a360da5cbc9d3329171" prot="public" static="no" mutable="no">
         <type>struct <ref refid="structHashItem" kindref="compound">HashItem</ref> *</type>
@@ -67,13 +67,13 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/igutek/Documents/Projects/ooc/src/hashmap.c" line="9" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/hashmap.c" bodystart="9" bodyend="-1"/>
-        <referencedby refid="hashmap_8c_1a10476d872d0cfcb234391cabf5e888a1" compoundref="hashmap_8c" startline="378" endline="448">del_item_HashMap</referencedby>
-        <referencedby refid="hashmap_8c_1aa88aa2ed0651f4feb2e275ba14114d14" compoundref="hashmap_8c" startline="343" endline="375">get_HashMap</referencedby>
-        <referencedby refid="hashmap_8c_1a3941f840164dd3ce845aec0bd5fc5652" compoundref="hashmap_8c" startline="175" endline="192">internal_count_HashMap</referencedby>
-        <referencedby refid="hashmap_8c_1a8aa67d2dac0692c1128b50780ad9dfc1" compoundref="hashmap_8c" startline="107" endline="150">internal_insert_HashMap</referencedby>
-        <referencedby refid="hashmap_8c_1ab39c45942b557d7634a849c1292b9522" compoundref="hashmap_8c" startline="152" endline="173">internal_print_table</referencedby>
-        <referencedby refid="hashmap_8c_1aa3b3074d83ff5a38f6164c7e4b459fa5" compoundref="hashmap_8c" startline="193" endline="252">internal_resize_HashMap</referencedby>
-        <referencedby refid="hashmap_8c_1a5601cd221918b26557f36f577c909407" compoundref="hashmap_8c" startline="464" endline="498">next_HashMap</referencedby>
+        <referencedby refid="hashmap_8c_1a10476d872d0cfcb234391cabf5e888a1" compoundref="hashmap_8c" startline="384" endline="454">del_item_HashMap</referencedby>
+        <referencedby refid="hashmap_8c_1aa88aa2ed0651f4feb2e275ba14114d14" compoundref="hashmap_8c" startline="349" endline="381">get_HashMap</referencedby>
+        <referencedby refid="hashmap_8c_1a3941f840164dd3ce845aec0bd5fc5652" compoundref="hashmap_8c" startline="184" endline="201">internal_count_HashMap</referencedby>
+        <referencedby refid="hashmap_8c_1a8aa67d2dac0692c1128b50780ad9dfc1" compoundref="hashmap_8c" startline="116" endline="159">internal_insert_HashMap</referencedby>
+        <referencedby refid="hashmap_8c_1ab39c45942b557d7634a849c1292b9522" compoundref="hashmap_8c" startline="161" endline="182">internal_print_table</referencedby>
+        <referencedby refid="hashmap_8c_1aa3b3074d83ff5a38f6164c7e4b459fa5" compoundref="hashmap_8c" startline="203" endline="262">internal_resize_HashMap</referencedby>
+        <referencedby refid="hashmap_8c_1a5601cd221918b26557f36f577c909407" compoundref="hashmap_8c" startline="472" endline="506">next_HashMap</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structHashItem_1a7fe892239fc6fb4cef7e2f2cf1581b1f" prot="public" static="no" mutable="no">
         <type>bool</type>
@@ -87,11 +87,11 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/igutek/Documents/Projects/ooc/src/hashmap.c" line="10" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/hashmap.c" bodystart="10" bodyend="-1"/>
-        <referencedby refid="hashmap_8c_1a10476d872d0cfcb234391cabf5e888a1" compoundref="hashmap_8c" startline="378" endline="448">del_item_HashMap</referencedby>
-        <referencedby refid="hashmap_8c_1a3941f840164dd3ce845aec0bd5fc5652" compoundref="hashmap_8c" startline="175" endline="192">internal_count_HashMap</referencedby>
-        <referencedby refid="hashmap_8c_1a8aa67d2dac0692c1128b50780ad9dfc1" compoundref="hashmap_8c" startline="107" endline="150">internal_insert_HashMap</referencedby>
-        <referencedby refid="hashmap_8c_1ab39c45942b557d7634a849c1292b9522" compoundref="hashmap_8c" startline="152" endline="173">internal_print_table</referencedby>
-        <referencedby refid="hashmap_8c_1aa3b3074d83ff5a38f6164c7e4b459fa5" compoundref="hashmap_8c" startline="193" endline="252">internal_resize_HashMap</referencedby>
+        <referencedby refid="hashmap_8c_1a10476d872d0cfcb234391cabf5e888a1" compoundref="hashmap_8c" startline="384" endline="454">del_item_HashMap</referencedby>
+        <referencedby refid="hashmap_8c_1a3941f840164dd3ce845aec0bd5fc5652" compoundref="hashmap_8c" startline="184" endline="201">internal_count_HashMap</referencedby>
+        <referencedby refid="hashmap_8c_1a8aa67d2dac0692c1128b50780ad9dfc1" compoundref="hashmap_8c" startline="116" endline="159">internal_insert_HashMap</referencedby>
+        <referencedby refid="hashmap_8c_1ab39c45942b557d7634a849c1292b9522" compoundref="hashmap_8c" startline="161" endline="182">internal_print_table</referencedby>
+        <referencedby refid="hashmap_8c_1aa3b3074d83ff5a38f6164c7e4b459fa5" compoundref="hashmap_8c" startline="203" endline="262">internal_resize_HashMap</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -99,10 +99,10 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="3">
+      <node id="4">
         <label>HashItem</label>
         <link refid="structHashItem"/>
-        <childnode refid="3" relation="usage">
+        <childnode refid="4" relation="usage">
           <edgelabel>next</edgelabel>
         </childnode>
       </node>

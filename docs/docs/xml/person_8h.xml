@@ -7,71 +7,79 @@
     <includedby refid="main_8c" local="no">/Users/igutek/Documents/Projects/ooc/src/main.c</includedby>
     <includedby refid="person_8c" local="no">/Users/igutek/Documents/Projects/ooc/src/person.c</includedby>
     <incdepgraph>
-      <node id="53">
+      <node id="68">
         <label>stdbool.h</label>
       </node>
-      <node id="52">
+      <node id="67">
         <label>stdarg.h</label>
       </node>
-      <node id="54">
+      <node id="69">
         <label>stdint.h</label>
       </node>
-      <node id="51">
+      <node id="66">
         <label>stdlib.h</label>
       </node>
-      <node id="47">
+      <node id="62">
         <label>/Users/igutek/Documents/Projects/ooc/include/ooc/person.h</label>
         <link refid="person_8h"/>
-        <childnode refid="48" relation="include">
+        <childnode refid="63" relation="include">
         </childnode>
-        <childnode refid="55" relation="include">
+        <childnode refid="71" relation="include">
         </childnode>
       </node>
-      <node id="49">
+      <node id="64">
         <label>stddef.h</label>
       </node>
-      <node id="48">
+      <node id="70">
+        <label>ooc/object_va_args.h</label>
+        <link refid="object__va__args_8h"/>
+        <childnode refid="66" relation="include">
+        </childnode>
+      </node>
+      <node id="63">
         <label>object.h</label>
         <link refid="object_8h"/>
-        <childnode refid="49" relation="include">
+        <childnode refid="64" relation="include">
         </childnode>
-        <childnode refid="50" relation="include">
+        <childnode refid="65" relation="include">
         </childnode>
-        <childnode refid="51" relation="include">
+        <childnode refid="66" relation="include">
         </childnode>
-        <childnode refid="52" relation="include">
+        <childnode refid="67" relation="include">
         </childnode>
-        <childnode refid="53" relation="include">
+        <childnode refid="68" relation="include">
         </childnode>
-        <childnode refid="54" relation="include">
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
         </childnode>
       </node>
-      <node id="55">
+      <node id="71">
         <label>string.h</label>
         <link refid="string_8h"/>
-        <childnode refid="48" relation="include">
+        <childnode refid="63" relation="include">
         </childnode>
-        <childnode refid="55" relation="include">
+        <childnode refid="71" relation="include">
         </childnode>
       </node>
-      <node id="50">
+      <node id="65">
         <label>stdio.h</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="58">
+      <node id="74">
         <label>/Users/igutek/Documents/Projects/ooc/src/person.c</label>
         <link refid="person_8c"/>
       </node>
-      <node id="56">
+      <node id="72">
         <label>/Users/igutek/Documents/Projects/ooc/include/ooc/person.h</label>
         <link refid="person_8h"/>
-        <childnode refid="57" relation="include">
+        <childnode refid="73" relation="include">
         </childnode>
-        <childnode refid="58" relation="include">
+        <childnode refid="74" relation="include">
         </childnode>
       </node>
-      <node id="57">
+      <node id="73">
         <label>/Users/igutek/Documents/Projects/ooc/src/main.c</label>
         <link refid="main_8c"/>
       </node>
@@ -90,7 +98,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/igutek/Documents/Projects/ooc/include/ooc/person.h" line="13" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/person.c" bodystart="24" bodyend="-1"/>
-        <referencedby refid="person_8c_1a479eaa947f7de8878921d30df63875eb" compoundref="person_8c" startline="29" endline="46">__construct__Person</referencedby>
+        <referencedby refid="person_8c_1adaf633e0102ae03a6b233de044b1f162" compoundref="person_8c" startline="29" endline="46">__construct__Person</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>

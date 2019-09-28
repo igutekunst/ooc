@@ -22,16 +22,23 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="14">
+      <node id="17">
         <label>HashMapClass</label>
         <link refid="structHashMapClass"/>
-        <childnode refid="15" relation="usage">
+        <childnode refid="18" relation="usage">
           <edgelabel>class</edgelabel>
         </childnode>
       </node>
-      <node id="15">
+      <node id="18">
         <label>class_header</label>
         <link refid="structclass__header"/>
+        <childnode refid="19" relation="usage">
+          <edgelabel>math</edgelabel>
+        </childnode>
+      </node>
+      <node id="19">
+        <label>OOCTraitMath</label>
+        <link refid="structOOCTraitMath"/>
       </node>
     </collaborationgraph>
     <location file="/Users/igutek/Documents/Projects/ooc/src/hashmap.c" line="47" column="1" bodyfile="/Users/igutek/Documents/Projects/ooc/src/hashmap.c" bodystart="47" bodyend="49"/>

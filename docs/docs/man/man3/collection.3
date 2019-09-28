@@ -1,4 +1,4 @@
-.TH "collection" 3 "Fri Sep 27 2019" "Object-Oriented-C" \" -*- nroff -*-
+.TH "collection" 3 "Sat Sep 28 2019" "Object-Oriented-C" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -13,13 +13,16 @@ collection
 .RI "const void * \fBappend\fP (const void *_object, const void *_other)"
 .br
 .ti -1c
-.RI "void * \fBinsert\fP (const void *_self, const void *_key, const void *item)"
+.RI "void * \fBset_item\fP (const void *_self, const void *_key, const void *item)"
 .br
 .ti -1c
 .RI "const void * \fBget_item\fP (const void *_self, const void *_key)"
 .br
 .ti -1c
-.RI "struct \fBclass_header\fP * \fBget_obj\fP (const void *_self, const char *message)"
+.RI "struct \fBclass_header\fP * \fBget_class_header_msg\fP (const void *_self, const char *message)"
+.br
+.ti -1c
+.RI "const struct \fBclass_header\fP * \fBget_obj_type\fP (const void *_self, const void *class, const char *message)"
 .br
 .ti -1c
 .RI "const void * \fBiter\fP (const void *_object)"
@@ -42,59 +45,67 @@ collection
 .SS "const void* append (const void * _object, const void * _other)"
 
 .PP
-Definition at line 150 of file object\&.c\&.
+Definition at line 165 of file object\&.c\&.
 .PP
-References class_header::append, and get_obj()\&.
+References class_header::append, clsname(), and get_class_header_msg()\&.
+.PP
+Referenced by List_to_str()\&.
 .SS "void del_item (const void * _self, const void * key)"
 
 .PP
-Definition at line 205 of file object\&.c\&.
+Definition at line 244 of file object\&.c\&.
 .PP
-References get_class_header(), and get_obj()\&.
-.SS "const void* get_item (const void * _self, const void * _key)"
+References get_class_header(), and get_class_header_msg()\&.
+.SS "struct \fBclass_header\fP* get_class_header_msg (const void * _self, const char * message)\fC [inline]\fP"
 
 .PP
-Definition at line 218 of file object\&.c\&.
-.PP
-References get_class_header(), and get_obj()\&.
-.SS "struct \fBclass_header\fP* get_obj (const void * _self, const char * message)\fC [inline]\fP"
-
-.PP
-Definition at line 164 of file object\&.c\&.
+Definition at line 182 of file object\&.c\&.
 .PP
 References MAGIC\&.
 .PP
-Referenced by append(), clsname(), copy(), del(), del_item(), del_item_HashMap(), equals(), get_HashMap(), get_item(), hash(), insert(), insert_HashMap(), iter(), len(), next(), print(), size(), str(), and type()\&.
+Referenced by append(), clsname(), copy(), del(), del_item(), del_item_HashMap(), equals(), get_HashMap(), get_item(), hash(), insert_HashMap(), iter(), len(), List_get_item(), next(), obj_add(), obj_to_int(), print(), set_item(), size(), str(), and type()\&.
+.SS "const void* get_item (const void * _self, const void * _key)"
+
+.PP
+Definition at line 257 of file object\&.c\&.
+.PP
+References clsname(), get_class_header(), and get_class_header_msg()\&.
+.SS "const struct \fBclass_header\fP* get_obj_type (const void * _self, const void * class, const char * message)\fC [inline]\fP"
+
+.PP
+Definition at line 201 of file object\&.c\&.
+.PP
+References MAGIC, and class_header::magic\&.
 .SS "uint64_t hash (const void * _self)"
 
 .PP
-Definition at line 184 of file object\&.c\&.
+Definition at line 223 of file object\&.c\&.
 .PP
-References get_class_header(), and get_obj()\&.
+References get_class_header(), and get_class_header_msg()\&.
 .PP
 Referenced by FNV32()\&.
-.SS "void* insert (const void * _self, const void * _key, const void * item)"
-
-.PP
-Definition at line 193 of file object\&.c\&.
-.PP
-References get_class_header(), and get_obj()\&.
-.PP
-Referenced by main()\&.
 .SS "const void* iter (const void * _object)"
 
 .PP
-Definition at line 227 of file object\&.c\&.
+Definition at line 269 of file object\&.c\&.
 .PP
-References get_class_header(), and get_obj()\&.
+References clsname(), get_class_header(), and get_class_header_msg()\&.
 .PP
 Referenced by main()\&.
 .SS "const void* next (const void * _self)"
 
 .PP
-Definition at line 236 of file object\&.c\&.
+Definition at line 282 of file object\&.c\&.
 .PP
-References get_class_header(), and get_obj()\&.
+References get_class_header(), and get_class_header_msg()\&.
+.PP
+Referenced by main()\&.
+.SS "void* set_item (const void * _self, const void * _key, const void * item)"
+
+.PP
+Definition at line 232 of file object\&.c\&.
+.PP
+References get_class_header(), and get_class_header_msg()\&.
 .PP
 Referenced by main()\&.
 .SH "Author"

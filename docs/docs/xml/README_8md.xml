@@ -47,10 +47,20 @@
 <codeline><highlight class="normal">````</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">##Future<sp/>Work</highlight></codeline>
-<codeline><highlight class="normal">*<sp/>Add<sp/>Int,<sp/>Float<sp/>and<sp/>BigInt<sp/>support</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Add<sp/>functionality<sp/>to<sp/>Int</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Add<sp/>Float<sp/>and<sp/>BigInt<sp/>support</highlight></codeline>
 <codeline><highlight class="normal">*<sp/>Add<sp/>list</highlight></codeline>
 <codeline><highlight class="normal">*<sp/>Add<sp/>referencing<sp/>counting</highlight></codeline>
 <codeline><highlight class="normal">*<sp/>Traits</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Add<sp/>functional<sp/>functions<sp/>such<sp/>as<sp/>map,<sp/>reduce</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Flesh<sp/>out<sp/>list</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Add<sp/>internal<sp/>argument<sp/>type<sp/>checking<sp/>macros/functions</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Add<sp/>error<sp/>handling<sp/>system,<sp/>and<sp/>unify<sp/>error<sp/>messages</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Add<sp/>global<sp/>free<sp/>list,<sp/>so<sp/>you<sp/>can<sp/>call<sp/>`del_all`<sp/>or<sp/>similar</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Add<sp/>File<sp/>type<sp/>that<sp/>supports<sp/>iteration</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Add<sp/>more<sp/>functions<sp/>to<sp/>String</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Adding<sp/>sorting<sp/>to<sp/>list</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Add<sp/>Tuple<sp/>type</highlight></codeline>
 <codeline></codeline>
     </programlisting>
     <location file="/Users/igutek/Documents/Projects/ooc/README.md"/>

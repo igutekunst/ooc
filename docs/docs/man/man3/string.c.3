@@ -1,4 +1,4 @@
-.TH "/Users/igutek/Documents/Projects/ooc/src/string.c" 3 "Fri Sep 27 2019" "Object-Oriented-C" \" -*- nroff -*-
+.TH "/Users/igutek/Documents/Projects/ooc/src/string.c" 3 "Sat Sep 28 2019" "Object-Oriented-C" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -40,7 +40,7 @@
 .RI "size_t \fBString_get_size\fP (const void *_self)"
 .br
 .ti -1c
-.RI "const void * \fB__construct__String\fP (const void *_self, va_list args)"
+.RI "const void * \fB__construct__String\fP (const void *_self, size_t argc, va_list args)"
 .br
 .ti -1c
 .RI "void \fBprint_String\fP (void *_self)"
@@ -90,7 +90,7 @@ Definition at line 5 of file string\&.c\&.
 Referenced by FNV32()\&.
 .SH "Function Documentation"
 .PP 
-.SS "const void* __construct__String (const void * _self, va_list args)"
+.SS "const void* __construct__String (const void * _self, size_t argc, va_list args)"
 
 .PP
 Definition at line 24 of file string\&.c\&.
@@ -157,7 +157,7 @@ References String::string_data\&.
 .PP
 Definition at line 163 of file string\&.c\&.
 .PP
-Referenced by __construct__String(), main(), String_append(), String_copy(), and String_equal()\&.
+Referenced by __construct__String(), main(), String_append(), String_copy(), String_equal(), and to_String()\&.
 .SS "struct \fBStringClass\fP string_class"
 \fBInitial value:\fP
 .PP
