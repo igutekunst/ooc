@@ -11,9 +11,8 @@ Table of Contents
    :caption: Table of Contents
 
    intro
-   implementation
    api
-   heap
+   hashmap
 
 
 

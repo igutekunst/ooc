@@ -82,9 +82,6 @@ int main(int argc, char* argv[]) {
         }
         del(list);
         full_line = file_read_line(f);
-        if (full_line == NULL) {
-            printf("end\n");
-        }
 
     }
 

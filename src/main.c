@@ -28,6 +28,7 @@ int main(int argc, char * argv[]){
     set_item(h_iter_test, k1, s1);
     set_item(h_iter_test, k2, s2);
     set_item(h_iter_test, k3, s3);
+    hash(k3);
 
     const struct HashMap_iter * it =   iter(h_iter_test);
 

@@ -275,6 +275,14 @@ struct ObjectHeader {
     const struct class_header* class;
 };
 
+const struct class_header* get_class_header(const void* self);
+
+struct class_header* get_class_header_msg(const void* self, const char* message);
+
+inline const struct class_header* get_obj_type(const void* self, const void* class, const char* message);
+
+
 #define COUNTOF(x) (sizeof((x))/ sizeof((x[0])))
+
 
 #endif

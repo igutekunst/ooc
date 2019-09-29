@@ -1,5 +1,4 @@
-# Object files
-*.o
+# Object files *.o
 
 # Libraries
 *.lib
@@ -33,3 +32,4 @@ tags
 cmake-build-debug
 docs/docs
 docs/_build
+.DS_Store

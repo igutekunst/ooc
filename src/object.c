@@ -215,8 +215,8 @@ void _obj_sort(size_t argc, ...) {
 }
 
 
-
 const void* append(const void * _self, const void * _other){
+    //TODO string concatenation should probably be a different function
     const struct class_header * class;
 
     if ((class = get_class_header_msg(_self, "Attempted to append non object\n"))) {
@@ -231,8 +231,6 @@ const void* append(const void * _self, const void * _other){
     // Should not get here
     assert(false);
 }
-
-
 
 
 inline struct class_header * get_class_header_msg(const void * _self, const char * message){

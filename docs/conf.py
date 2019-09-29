@@ -36,7 +36,7 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
     'sphinx.ext.mathjax',
-    'breathe'
+    'breathe',
 ]
 
 breathe_projects = {'ooc' : './docs/xml'}
