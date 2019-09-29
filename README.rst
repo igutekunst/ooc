@@ -44,7 +44,7 @@ Working Modules
 Getting Started Tutorial
 ------------------------
 
-See ``examples/count_words.c``
+See `examples/count_words.c <https://github.com/igutekunst/ooc/blob/master/examples/count_words.c>`
 
 
 
