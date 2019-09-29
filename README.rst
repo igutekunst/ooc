@@ -18,9 +18,9 @@ enable dynamic dispatch and polymorphism of a set of carefully written `classes`
 
 This library aims to enable:
 
-  - Less boilerplate code to do common tasks
-  - A friendlier standard library
-  - A `batteries included` C like environment.
+- Less boilerplate code to do common tasks
+- A friendlier standard library
+- A `batteries included` C like environment.
 
 The design of both the API and internals are inspired by Python, though
 no attempt has been made to mimic python APIs exactly, or interface with
