@@ -47,14 +47,14 @@ Getting Started Tutorial
 See `examples/count_words.c <https://github.com/igutekunst/ooc/blob/master/examples/count_words.c>`_
 
 This tutorial shows complete basic usage of the OOC library.
-It is modelled after the a common interview question, given below.
+It is modelled after a common interview question, given below.
 
 **Interview Problem Statement:**
-Given a file full of words, count the time every word occurs. For bonus
-points, print the counts in sorted order.
+Given a file full of words, count how many times every word occurs. For bonus
+points, display the counts in descending order, with the most common word and its count shown first.
 
 A word is defined as one or more non-space characters. For now, only consider the space character
-as a separator and treat the tab character as part of a word.
+as a separator and treat any other characters as a part of a word.
 
 Also, it is okay to do a case-sensitive word count. You may have separate counts for *the* and **The**.
 
