@@ -39,7 +39,7 @@ add_library(ooc
         src/file.c
         src/trait_file.h
         include/ooc/file.h
-    )
+        src/trait_string.c src/trait_string.h)
 
 target_include_directories(ooc PRIVATE include)
 add_executable(main src/main.c )
@@ -48,7 +48,7 @@ target_include_directories(main PRIVATE include)
 target_link_libraries(main ooc)
 
 
-add_executable(test_string
+add_executable(test_all
         tests/check_utils.c
         tests/check_utils.h
         tests/check_string.c
@@ -64,9 +64,17 @@ add_executable(test_string
 
 LINK_DIRECTORIES(/usr/local/lib)
 
-target_link_libraries(test_string ${CHECK_LIBRARIES} ooc)
-target_include_directories(test_string PRIVATE ${CHECK_INCLUDE_DIRS})
+target_link_libraries(test_all ${CHECK_LIBRARIES} ooc)
+target_include_directories(test_all PRIVATE ${CHECK_INCLUDE_DIRS})
 
-target_include_directories(test_string PRIVATE include)
+target_include_directories(test_all PRIVATE include)
+target_include_directories(test_all PRIVATE src)
+
+add_executable(count_words
+        examples/count_words.c
+        )
+
+target_include_directories(count_words PRIVATE include)
+target_link_libraries(count_words ooc)
 
 

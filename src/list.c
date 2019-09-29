@@ -49,7 +49,7 @@ struct ListIteratorClass {
 };
 
 const void* List_append(const void* _self, const void* _other);
-void MergeSort(struct ListItem** headRef);
+void MergeSort(struct ListItem** headRef, SortDirection sort_direction);
 
 const void *List_init(const void *_self, size_t argc, va_list args) {
     struct List* self = (struct List*) _self;
@@ -147,16 +147,17 @@ const void* List_get_item(const void* _self, const void* _index) {
     index_class = get_class_header_msg(_index, "List get_item called with invalid index\n");
     if (index_class->math.to_int == NULL) {
         fprintf(stderr, "List get_item called with invalid index of type %s"
-                        "Index must be support math.to_int\n", clsname(_index));
+                        "Index must be support math.to_int\n", class_name(_index));
         exit(EXIT_FAILURE);
     }
 
-    size_t index = obj_to_int(_index);
+    ssize_t index = obj_to_int(_index);
+
     ListItem* item = self->head;
     const struct String* out = typed_new(String, "[");
 
-    if (index >= self->len) {
-        fprintf(stderr, "Index %zu is out of range\n", index);
+    if (index >= self->len || index < 0) {
+        fprintf(stderr, "Index %zd is out of range\n", index);
     }
 
     for(size_t i = 0; i < index; i++) {
@@ -173,6 +174,7 @@ const void* List_iter(const void * _self){
 
 
 const void *ListIterator_init(const void *_self, size_t argc, va_list args) {
+    (void) argc;
 
     struct ListIterator * self = (struct ListIterator *) _self;
     // TODO Maybe redundant
@@ -211,21 +213,22 @@ const void * ListIterator_next(const void * _self) {
     return NULL;
 }
 
-void List_sort(const void * _self) {
+void List_sort(const void * _self, SortDirection sort_direction) {
+    (void) sort_direction;
     struct List* self = (struct List*) _self;
-    MergeSort(&self->head);
+    MergeSort(&self->head, sort_direction);
 }
 
 
 // List Sorting
 // Adapted from https://www.geeksforgeeks.org/merge-sort-for-linked-list/
 
-struct ListItem* SortedMerge(struct ListItem* a, struct ListItem* b);
+struct ListItem* SortedMerge(struct ListItem* a, struct ListItem* b, SortDirection sort_direction);
 void FrontBackSplit(struct ListItem* source,
                     struct ListItem** frontRef, struct ListItem** backRef);
 
 /* sorts the linked list by changing next pointers (not data) */
-void MergeSort(struct ListItem** headRef)
+void MergeSort(struct ListItem** headRef, SortDirection sort_direction)
 {
     struct ListItem* head = *headRef;
     struct ListItem* a;
@@ -236,20 +239,20 @@ void MergeSort(struct ListItem** headRef)
         return;
     }
 
-    /* Split head into 'a' and 'b' sublists */
+    /* Split head into 'a' and 'b' sub-lists */
     FrontBackSplit(head, &a, &b);
 
-    /* Recursively obj_sort the sublists */
-    MergeSort(&a);
-    MergeSort(&b);
+    /* Recursively obj_sort the sub-lists */
+    MergeSort(&a, sort_direction);
+    MergeSort(&b, sort_direction);
 
     /* answer = merge the two sorted lists together */
-    *headRef = SortedMerge(a, b);
+    *headRef = SortedMerge(a, b, sort_direction);
 }
 
 /* See https:// www.geeksforgeeks.org/?p=3622 for details of this
 function */
-struct ListItem* SortedMerge(struct ListItem* a, struct ListItem* b)
+struct ListItem* SortedMerge(struct ListItem* a, struct ListItem* b, SortDirection sort_direction)
 {
     struct ListItem* result = NULL;
 
@@ -261,13 +264,21 @@ struct ListItem* SortedMerge(struct ListItem* a, struct ListItem* b)
 
     /* Pick either a or b, and recur */
     CompareValue c = compare(a->value, b->value) ;
-    if (c == COMPARE_LT || c == COMPARE_EQ) {
-        result = a;
-        result->next = SortedMerge(a->next, b);
+
+    // TODO see if this logic can be simplified
+    bool a_first;
+    if (sort_direction == SORT_ASCENDING) {
+        a_first = (c == COMPARE_LT || c == COMPARE_EQ);
+    } else {
+        a_first = (c == COMPARE_GT || c == COMPARE_EQ);
     }
-    else {
+
+    if (a_first) {
+        result = a;
+        result->next = SortedMerge(a->next, b, sort_direction);
+    } else {
         result = b;
-        result->next = SortedMerge(a, b->next);
+        result->next = SortedMerge(a, b->next, sort_direction);
     }
     return (result);
 }

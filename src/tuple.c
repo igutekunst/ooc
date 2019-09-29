@@ -88,7 +88,6 @@ const char* Tuple_to_str(const void* _self) {
     }
     out = append(out, new(String, ")"));
     return c_str(out);
-    return "[]";
 }
 
 
@@ -98,14 +97,14 @@ const void* Tuple_get_item(const void* _self, const void* _index) {
     index_class = get_class_header_msg(_index, "Tuple get_item called with invalid index\n");
     if (index_class->math.to_int == NULL) {
         fprintf(stderr, "Tuple get_item called with invalid index of type %s"
-                        "Index must be support math.to_int\n", clsname(_index));
+                        "Index must be support math.to_int\n", class_name(_index));
         exit(EXIT_FAILURE);
     }
 
     size_t index = obj_to_int(_index);
 
-    if (index >= self->len) {
-        fprintf(stderr, "Index %zu is out of range\n", index);
+    if (index >= self->len || index < 0) {
+        fprintf(stderr, "Index %zd is out of range\n", index);
     }
 
     return self->items[index].value;
@@ -117,7 +116,7 @@ const void* Tuple_iter(const void* _self) {
 
 
 const void* TupleIterator_init(const void* _self, size_t argc, va_list args) {
-
+    (void) argc;
     struct TupleIterator* self = (struct TupleIterator*) _self;
     // TODO Maybe redundant
     self->class = TupleIterator;

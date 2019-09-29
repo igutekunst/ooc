@@ -20,7 +20,7 @@ const void * _new (size_t argc, ...) {
 
     assert(argc !=0);
 
-    const void * const _class = (const void*) va_arg(args, const void*);
+    const void * const _class = va_arg(args, const void*);
 
     const struct class_header * class = (struct class_header * ) _class;
     if (!class || class->magic != MAGIC){
@@ -32,10 +32,10 @@ const void * _new (size_t argc, ...) {
         //TODO remove extra initialization from specific class constructors
         new_object->class = class;
         new_object = (struct ObjectHeader*) class->object_init(new_object, argc - 1, args);
-        va_end(args);
     } else {
         printf("No default constructor. Allocating %zu bytes\n", class->size) ;
     }
+    va_end(args);
     return new_object;
 }
 
@@ -120,7 +120,7 @@ size_t len(const void * _self) {
         if (class->get_len) 
             return class->get_len(_self);
         else {
-            fprintf(stderr, "TypeError: %s does not support len\n", clsname(_self));
+            fprintf(stderr, "TypeError: %s does not support len\n", class_name(_self));
             exit(1);
         }
     }
@@ -128,7 +128,7 @@ size_t len(const void * _self) {
 }
 
 
-const char* clsname(const void * _self) {
+const char* class_name(const void* _self) {
     const struct class_header * class;
     if ((class = get_class_header_msg(_self, "Attempted to get name of invalid object\n"))) {
         if (class->object_name)
@@ -177,7 +177,7 @@ CompareValue compare(const void * _self, const void * _other){
     const struct class_header * class;
     if ((class = get_class_header_msg(_self, "Attempted to compare non object"))) {
         if (class->compare == NULL) {
-            fprintf(stderr, "%s does not support comparison\n", clsname(_self));
+            fprintf(stderr, "%s does not support comparison\n", class_name(_self));
             exit(EXIT_FAILURE);
         }
         return class->compare(_self, _other);
@@ -191,16 +191,27 @@ CompareValue compare(const void * _self, const void * _other){
  * @brief Sort a collection in place
  * @param _self
  */
-void obj_sort(const void* _self) {
+void _obj_sort(size_t argc, ...) {
+    va_list args;
+    va_start(args, argc);
+    assert(argc == 1 || argc == 2);
+
+    const void * const _self =  va_arg(args, const void*);
+
     if(get_class_header_msg(_self, "Failed to create iterator from non collection\n")){
         const struct class_header * self = get_class_header(_self);
         if(self->sort == NULL ) {
-            fprintf(stderr, "Class %s does not support sort.\n", clsname(_self));
+            fprintf(stderr, "Class %s does not support sort.\n", class_name(_self));
             exit(EXIT_FAILURE);
 
         }
-        self->sort(_self);
+        SortDirection sort_direction = SORT_ASCENDING;
+        if (argc == 2)  {
+            sort_direction = (SortDirection) va_arg(args, SortDirection);
+        }
+        self->sort(_self, sort_direction);
     }
+    va_end(args);
 }
 
 
@@ -212,7 +223,7 @@ const void* append(const void * _self, const void * _other){
         if(class->append) {
             return class->append(_self, _other);
         } else {
-            fprintf(stderr, "Type %s does not support append\n", clsname(_self));
+            fprintf(stderr, "Type %s does not support append\n", class_name(_self));
             exit(EXIT_FAILURE);
         }
     }
@@ -296,7 +307,6 @@ void del_item(const void * _self, const void * _key) {
             exit(1);
         }
     }
-    return ;
 }
 
 // TODO consider a shortcut for get_item(object, new(Int, xx)) for handling integer keys for convenience
@@ -304,7 +314,7 @@ const void * get_item(const void * _self, const void * _key ) {
     if(get_class_header_msg(_self, "get_item called on invalid object")){
         const struct class_header * self = get_class_header(_self);
         if (self->get_item == NULL) {
-            fprintf(stderr, "%s does not support get_item\n", clsname(_self));
+            fprintf(stderr, "%s does not support get_item\n", class_name(_self));
             exit(EXIT_FAILURE);
         }
         return self->get_item(_self, _key) ;
@@ -316,7 +326,7 @@ const void * iter(const void * _self ) {
     if(get_class_header_msg(_self, "Failed to create iterator from non collection\n")){
         const struct class_header * self = get_class_header(_self);
         if(self->iter == NULL ) {
-            fprintf(stderr, "Class %s does not support iteration.\n", clsname(_self));
+            fprintf(stderr, "Class %s does not support iteration.\n", class_name(_self));
             exit(EXIT_FAILURE);
 
         }
@@ -335,10 +345,3 @@ const void * next(const void * _self ) {
     return NULL;
 }
 
-void keys(const void *object) {
-    printf("wtata");
-
-}
-void values(const void *_self) {
-
-}

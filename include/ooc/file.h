@@ -7,7 +7,7 @@
 #include <ooc/object_va_args.h>
 
 // Actual function
-const void* _file_read(const void* file, size_t argc, ...);
+const void* _file_read(size_t argc, ...);
 
 /**
  * @brief read a file
@@ -23,6 +23,15 @@ const void* _file_read(const void* file, size_t argc, ...);
  * @return ooc String object
  */
 #define file_read(...) _file_read(PP_NARG(__VA_ARGS__), __VA_ARGS__)
+
+/**
+ * @brief read one line from a file
+ * allocating as much memory as needed. Returns a new ooc String
+ * object, or NULL if no bytes are read.
+ * @param _file
+ * @return ooc File object, or NULL
+ */
+const void* file_read_line(const void* _file);
 
 extern void * FileIterator;
 extern void * File;

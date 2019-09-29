@@ -14,6 +14,7 @@
  * @{
  */
 
+const void* _new(size_t argc, ...);
 /**
  * @brief Create a new ooc object.
  *
@@ -26,7 +27,7 @@
  * @param argc number of arguments provided
  * @return new object or type class, or NULL
  */
-const void* _new(size_t argc, ...);
+#define new(...) _new(PP_NARG(__VA_ARGS__), __VA_ARGS__)
 
 /**
  * @brief get ooc class object
@@ -52,7 +53,7 @@ void del(const void* object);
  */
 size_t size(const void* _object);
 
-const char* clsname(const void* _self);
+const char* class_name(const void* _self);
 
 void print(const void* _object);
 
@@ -70,17 +71,25 @@ typedef enum {
 
 CompareValue compare(const void* _self, const void* _other);
 
+typedef enum{
+    SORT_ASCENDING,
+    SORT_DESCENDING
+} SortDirection;
+
+
+void _obj_sort(size_t argc, ...);
+
 /**
  * @brief Sort a collection in place
+ * @param direction either SORT_ASCENDING, or SORT_DESCENDING
  * @param _self
  */
-void obj_sort(const void* object);
+#define obj_sort(...) _obj_sort(PP_NARG(__VA_ARGS__), __VA_ARGS__)
 
 const void* sorted(const void* _self);
 
 
-/**  @}
- * End of Common functions
+/** @}
  * */
 
 
@@ -167,9 +176,8 @@ extern const struct class_header Class;
 const struct class_header* get_class_header(const void* _self);
 
 
-#define new(...) _new(PP_NARG(__VA_ARGS__), __VA_ARGS__)
 
 #define typed_new(class_name, ...) \
-    (struct class_name*) new(class_name, __VA_ARGS__)
+    (const struct class_name*) new(class_name, __VA_ARGS__)
 
 #endif

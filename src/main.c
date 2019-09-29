@@ -32,9 +32,7 @@ int main(int argc, char * argv[]){
     const struct HashMap_iter * it =   iter(h_iter_test);
 
     for (const void * item = next(it); item != NULL; item = next(it)){
-        if (item){
-            print(item);
-        }
+        print(item);
     }
 
 

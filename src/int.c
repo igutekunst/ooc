@@ -33,6 +33,8 @@ size_t Int_get_size(const void* _self) {
 }
 
 const void *Int_init(const void *_self, size_t argc, va_list args) {
+    (void) argc;
+
     struct Int* self = (struct Int*) _self;
     uint32_t value = va_arg(args, uint32_t);
     self->class = Int;
@@ -53,9 +55,7 @@ const char* Int_to_str(const void* _self) {
     if (self->str_value[0] == '\0') {
         snprintf(self->str_value, sizeof(self->str_value), "%d", self->value);
     }
-        return self->str_value;
-    return NULL;
-
+    return self->str_value;
 }
 
 const void* Int_add(const void* _lhs, const void* _rhs) {
@@ -66,21 +66,21 @@ const void* Int_add(const void* _lhs, const void* _rhs) {
 
 const void* Int_sub(const void* _lhs, const void* _rhs) {
     struct Int* lhs = (struct Int*) _lhs;
-    struct Int* rhs = (struct Int*) _lhs;
+    struct Int* rhs = (struct Int*) _rhs;
     return new(Int, lhs->value - rhs->value);
 
 }
 
 const void* Int_mul(const void* _lhs, const void* _rhs) {
     struct Int* lhs = (struct Int*) _lhs;
-    struct Int* rhs = (struct Int*) _lhs;
+    struct Int* rhs = (struct Int*) _rhs;
     return new(Int, lhs->value * rhs->value);
 
 }
 
 const void* Int_div(const void* _lhs, const void* _rhs) {
     struct Int* lhs = (struct Int*) _lhs;
-    struct Int* rhs = (struct Int*) _lhs;
+    struct Int* rhs = (struct Int*) _rhs;
     return new(Int, lhs->value / rhs->value);
 
 }

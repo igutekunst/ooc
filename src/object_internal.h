@@ -8,6 +8,7 @@
 #include <ooc/object.h>
 #include "trait_math.h"
 #include "trait_file.h"
+#include "trait_string.h"
 
 #define MAGIC ((unsigned long ) 0xBD71472)
 
@@ -45,7 +46,7 @@ struct class_header {
     /**
      * @brief Create and initialize an object
      *
-     * It also correct to calll this the object constructor.
+     * It also correct to call this the object constructor.
      *
      * @param _self ooc class like String or HashMap.
      * @param argc number of arguments
@@ -101,7 +102,7 @@ struct class_header {
      *
      * Usually it is sufficient to implement str.
      *
-     * @param _self  ooc objet
+     * @param _self  ooc object
      * @return ooc String object
      */
     void *(*to_String)(const void *_self);
@@ -154,7 +155,8 @@ struct class_header {
      * @param _self container to be sorted
      */
     void (*sort)(
-            const void *_self
+            const void *_self,
+            SortDirection direction
     );
 
     /**
@@ -265,11 +267,14 @@ struct class_header {
      */
      struct OOCTraitMath math;
      struct OOCTraitFile file;
+     struct OOCTraitString string;
 
 };
 
 struct ObjectHeader {
     const struct class_header* class;
 };
+
+#define COUNTOF(x) (sizeof((x))/ sizeof((x[0])))
 
 #endif

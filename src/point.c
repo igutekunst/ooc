@@ -32,6 +32,8 @@ size_t get_size_Point(const void * _self){
 
 
 const void *__construct__Point(const void *_self, size_t argc, va_list args) {
+    (void) argc;
+
     struct Point * self = (struct Point *) _self;
     self->class = Point;
     self->size = sizeof(struct Point);

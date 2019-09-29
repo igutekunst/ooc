@@ -15,10 +15,10 @@ struct HashMap {
     struct class_header *class;
     size_t size;
     size_t len;
-    size_t m;
-    size_t M;
-    size_t hwm;
-    size_t lwm;
+    uint64_t m;
+    uint64_t M;
+    uint64_t hwm;
+    uint64_t lwm;
     uint64_t a;
     uint64_t b;
     bool debug;
@@ -34,9 +34,7 @@ struct HashMap_iter {
     int position;
 };
 
-#define ODD 1
-#define EVEN 0
-// Hash Paramters.
+// Hash Parameters.
 // See https://en.wikipedia.org/wiki/Universal_hashing
 // For explanations of parameters
 #define W   64
@@ -66,7 +64,7 @@ const char *str_HashMap(const void *_self);
 
 void insert_HashMap(const void *_self,
                     const void *key,
-                    const void *_other);
+                    const void *_value);
 
 const void *get_HashMap(const void *_self,
                         const void *key);
@@ -88,7 +86,7 @@ struct HashItem *alloc_hash_items(size_t n) {
 
 uint64_t random_a() {
     uint64_t a = random() % MAX_A;
-    while (!(a & 0x01))
+    while (!(a & 0x01U))
         a = random() % MAX_A;
     return a;
 }
@@ -96,16 +94,17 @@ uint64_t random_a() {
 uint64_t lg(uint64_t n) {
     uint64_t ans = 0;
     while (n) {
-        n >>= 1;
+        n >>= 1U;
         ans++;
     }
-    return ans - 1;
+    return ans - 1U;
 }
 
 uint64_t random_b(uint64_t m) {
 
     uint64_t M = lg(m);
-    return random() % (2 << (W - M));
+    // TODO random might return a negative number?
+    return (uint64_t) random() % (2U << (W - M));
 }
 
 uint64_t internal_hash(uint64_t a, uint64_t b, uint64_t M, uint64_t key) {
@@ -203,7 +202,7 @@ size_t internal_count_HashMap(struct HashMap *self) {
 void internal_resize_HashMap(struct HashMap *self, uint64_t new_m) {
     //hold onto items, so we can insert them into the new structure
     // TODO this is wrong
-    assert(!(new_m & 0x01)); // make sure it's a power of two
+    assert(!(new_m & 0x01U)); // make sure it's a power of two
 
     if (new_m < HASH_TABLE_DEFAULT_LEN) {
         if (self->debug) {
@@ -213,7 +212,7 @@ void internal_resize_HashMap(struct HashMap *self, uint64_t new_m) {
     }
 
     if (self->debug) {
-        printf("Resizing from %zu to %llu\n", self->m, new_m);
+        printf("Resizing from %llu to %llu\n", self->m, new_m);
         internal_print_table(self);
     }
 
@@ -224,8 +223,8 @@ void internal_resize_HashMap(struct HashMap *self, uint64_t new_m) {
     // If m didn't change, the hash algorithm would put items in old positions
     self->m = new_m;
     self->M = lg(self->m);
-    self->hwm = self->m * HWM_FRACTION;
-    self->lwm = self->m * HWM_FRACTION * 0.5;
+    self->hwm = (uint64_t) (self->m * HWM_FRACTION);
+    self->lwm = (uint64_t) (self->m * HWM_FRACTION * 0.5);
 
     self->a = random_a();
     self->b = random_b(self->m);
@@ -282,6 +281,10 @@ size_t get_size_HashMap(const void *_self) {
 }
 
 const void *__construct__HashMap(const void *_self, size_t argc, va_list args) {
+    //TODO support interesting constructor stuff
+    (void) argc;
+    (void) args;
+
     struct HashMap *self = (struct HashMap *) _self;
     //const char * data = va_arg(args, const char *);
     // for now only support empty constructor
@@ -289,7 +292,7 @@ const void *__construct__HashMap(const void *_self, size_t argc, va_list args) {
     self->len = 0;
     self->m = HASH_TABLE_DEFAULT_LEN;
     self->M = lg(HASH_TABLE_DEFAULT_LEN);
-    //set the highwater mark
+    //set the high water mark
     self->hwm = self->m * HWM_FRACTION;
     self->lwm = 1;
     self->class = HashMap;
@@ -298,7 +301,6 @@ const void *__construct__HashMap(const void *_self, size_t argc, va_list args) {
     if (!rng_seeded) {
         srandom(time(NULL));
     }
-    bool static_params = false;
     self->a = random_a();
     self->b = random_b(HASH_TABLE_DEFAULT_LEN);
 
@@ -352,13 +354,13 @@ const void *get_HashMap(const void *_self,
     if (get_class_header_msg(_key, "Attempted to get_item with  invalid key\n")) {
         const struct class_header *header = get_class_header(_key);
         if (!header->hash) {
-            fprintf(stderr, "Attempt to use unhashable type as key\n");
+            fprintf(stderr, "%s does not support hashing\n", class_name(_key));
             exit(1);
         }
         uint64_t internal_key = header->hash(_key);
         uint64_t h = internal_hash(self->a, self->b, self->M, internal_key);
         struct HashItem *item = &self->items[h];
-        int depth;
+        int depth = 0;
         while (item) {
             if (item->internal_key == internal_key
                 && equals(item->key, _key)) {
@@ -368,8 +370,6 @@ const void *get_HashMap(const void *_self,
                 depth++;
             } else {
                 return NULL;
-                fprintf(stderr, "KeyError: %s", c_str(_key));
-                exit(EXIT_FAILURE);
             }
         }
 
@@ -377,7 +377,6 @@ const void *get_HashMap(const void *_self,
     // TODO make a 'contains' or 'in' function to test without causing an error
     fprintf(stderr, "KeyError: %s", c_str(_key));
     exit(EXIT_FAILURE);
-    return NULL;
 }
 
 
@@ -388,7 +387,7 @@ void del_item_HashMap(const void *_self,
     if (get_class_header_msg(_key, "Attempted to delete an invalid key\n")) {
         const struct class_header *key = get_class_header_msg(_key, NULL);
         if (!key->hash) {
-            fprintf(stderr, "Attempt to use unhashable type as key\n");
+            fprintf(stderr, "%s does not support hashing\n", class_name(_self));
             exit(1);
         }
 

@@ -9,7 +9,7 @@ void fill_random_str(char* str, size_t len) {
    for (size_t i = 0; i < len -1; i++)  {
        char c = 0;
        do {
-           c = 'a' + random() % 25;
+           c = (char) 'a' + random() % 25;
        } while (c == 0);
 
       str[i] = c;

@@ -42,7 +42,7 @@ END_TEST
 START_TEST(test_list_get)
     {
         const size_t NUM_ITERATIONS = 1000;
-        struct String *strings[NUM_ITERATIONS];
+        const struct String *strings[NUM_ITERATIONS];
 
         const void *list = new(List);
 
@@ -94,7 +94,7 @@ START_TEST(test_list_get_wrong_index_type)
     {
         const void *list = new(List);
         //TODO should fail
-        const struct String *string = get_item(list, new(String, "asdf"));
+        const struct String *string = get_item(list, new(String, "test string"));
     }
 END_TEST
 
@@ -105,7 +105,7 @@ START_TEST(test_list_va_args)
                                       new(String, "Two"),
                                       new(String, "Three"));
         ck_assert_int_eq(3, len(list));
-        print(list);
+        ck_assert_str_eq("[One, Two, Three]", c_str(list));
 
     }
 END_TEST
@@ -119,6 +119,7 @@ START_TEST(test_list_sort)
                                       new(Int, 4),
                                       new(Int, 3));
         obj_sort(list);
+        ck_assert_str_eq("[2, 3, 4, 5, 10]", c_str(list));
         print(list);
 
     }

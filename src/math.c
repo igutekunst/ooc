@@ -11,7 +11,7 @@ const void *obj_add(const void *_lhs, const void *_rhs) {
         return lhs_header->math.add(_lhs, _rhs);
     }
 
-    fprintf(stderr, "TypeError: Could not add %s and %s", clsname(_lhs), clsname(_rhs));
+    fprintf(stderr, "TypeError: Could not add %s and %s", class_name(_lhs), class_name(_rhs));
     exit(EXIT_FAILURE);
 }
 
@@ -37,7 +37,7 @@ int obj_to_int(const void *_self) {
         return self->math.to_int(_self);
     }
 
-    fprintf(stderr, "%s does not support obj_to_int\n", clsname(_self));
+    fprintf(stderr, "%s does not support obj_to_int\n", class_name(_self));
     exit(EXIT_FAILURE);
 }
 
