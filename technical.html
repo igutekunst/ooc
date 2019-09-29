@@ -16,7 +16,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="unit_testing.html" />
+    <link rel="next" title="Unit Testing" href="unit_testing.html" />
     <link rel="prev" title="OOC API Documentation" href="api.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -26,7 +26,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="unit_testing.html" title="&lt;no title&gt;"
+          <a href="unit_testing.html" title="Unit Testing"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="api.html" title="OOC API Documentation"
@@ -43,12 +43,12 @@
   <div class="section" id="technical-details">
 <h1>Technical Details<a class="headerlink" href="#technical-details" title="Permalink to this headline">¶</a></h1>
 <p>All actions performed with OOC objects is done through a uniform API, exposed through a
-set of header files. Core functionality is included in <code class="docutils literal notranslate"><span class="pre">ooc/object.h</span></code>, with additional
+set of header files. Core functionality is included in <code class="docutils literal notranslate"><span class="pre">OOC/object.h</span></code>, with additional
 functionality exposed through additional headers.</p>
 <p>From a user’s perspective, every OOC object is a const void*, or an opaque struct. This enables perfect
 data hiding, allowing the API implementation to change without affecting user code.</p>
-<p>Of course, this has the downside of <cite>breaking</cite> the C type system, which makes catching errors at compile time harder.</p>
-<p>What this enables however, is using the same set of functions to operate on a variety of types.</p>
+<p>Of course, this has the downside of breaking the C type system, which makes catching errors at compile time harder.</p>
+<p>However, this enables the same set of functions to operate on a variety of types.</p>
 <div class="section" id="implementation-details">
 <h2>Implementation Details<a class="headerlink" href="#implementation-details" title="Permalink to this headline">¶</a></h2>
 <p>Every OOC <code class="docutils literal notranslate"><span class="pre">Class</span></code> has an associated <a class="reference internal" href="object_internal.html#class-header"><span class="std std-ref">ClassHeader</span></a> that describes its functionality.</p>
@@ -77,18 +77,17 @@ will do dynamic dispatch to the correct “method” at runtime.</p>
 <span class="p">};</span>
 </pre></div>
 </div>
-<p>The interesting thing to note here is the first item in the struct is a <code class="docutils literal notranslate"><span class="pre">ClassHeader*.</span></code>. This is the
-crucial technique that allows a a given object, in the form of a void* to identified, and the correct methods
-to be called.</p>
-<p>Every top level OOC function will first do a NULL check, and then cast the object into a <code class="docutils literal notranslate"><span class="pre">ClassHeader*</span></code>, to
-determine what to do next. This might involve some pre-processing of arguments, followed by a call to the
-appropriate method, stored as a function pointer in the <a class="reference internal" href="object_internal.html#class-header"><span class="std std-ref">ClassHeader</span></a>.</p>
-<p>This function pointer will be implemented as a function in per-class implementation file. For example, <cite>src/string.c</cite> contains
+<p>The interesting thing to note here is the first item in the struct is a <code class="docutils literal notranslate"><span class="pre">ClassHeader*.</span></code>. This is a
+crucial technique that allows a void* to be identified. After it is extracted, the correct methods can be called.</p>
+<p>Every top level OOC function will perform a NULL check, and then cast the object into a <code class="docutils literal notranslate"><span class="pre">ClassHeader*</span></code>.
+This may involve some argument pre-processing, followed by a call to the
+appropriate method stored as a function pointer in the <a class="reference internal" href="object_internal.html#class-header"><span class="std std-ref">ClassHeader</span></a>.</p>
+<p>This function pointer will be implemented as a function in a per-class implementation file. For example, <cite>src/string.c</cite> contains
 the implementation of all the <code class="docutils literal notranslate"><span class="pre">String</span></code> functions.</p>
 </div>
 <div class="section" id="implementing-an-instance">
 <h3>Implementing an Instance<a class="headerlink" href="#implementing-an-instance" title="Permalink to this headline">¶</a></h3>
-<p>The implementation of a given class is relatively straightforward, though involves a good amount of boilerplate code,
+<p>The implementation of a given class is relatively straightforward, although it involves a good amount of boilerplate code,
 which seems unavoidable in C.</p>
 <p>Let’s look at a simplified part of the <code class="docutils literal notranslate"><span class="pre">String</span></code> implementation:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>struct StringClass string_class = {
@@ -111,8 +110,8 @@ which seems unavoidable in C.</p>
 <dl class="simple">
 <dt>Here we can see a few important things:</dt><dd><ol class="arabic simple">
 <li><p>The MAGIC must be set here. Otherwise, <code class="docutils literal notranslate"><span class="pre">new</span></code> may try to construct objects out of invalid pointers.</p></li>
-<li><p>The size of the object before initialization is specified. This is used by new to allocate memoery</p></li>
-<li><p>Some function pointers are in <code class="docutils literal notranslate"><span class="pre">.class</span></code>, and are considered common, and implemented for many objects.
+<li><p>The size of the object before initialization is specified. This is used by new to allocate memory.</p></li>
+<li><p>Some function pointers are in <code class="docutils literal notranslate"><span class="pre">.class</span></code> These are considered common, and implemented for many objects.
 Some more specific functionality is included in <em>Traits</em>, which are extensions to the ClassHeader, and will be
 discussed later.</p></li>
 </ol>
@@ -143,15 +142,15 @@ discussed later.</p></li>
 </pre></div>
 </div>
 <p>Here we can again see a few important things.</p>
-<p>The signature might look a bit weird. There is the void* _self, which might make sense, but
-there’s also an <code class="docutils literal notranslate"><span class="pre">argc</span></code>, and a <code class="docutils literal notranslate"><span class="pre">va_list</span></code>. This is do to how <code class="docutils literal notranslate"><span class="pre">new</span></code> is implemented.</p>
+<p>The signature might look a bit confusing. There is the void* _self, which might make sense, but
+there’s also an <code class="docutils literal notranslate"><span class="pre">argc</span></code>, and a <code class="docutils literal notranslate"><span class="pre">va_list</span></code>. This is due to how <code class="docutils literal notranslate"><span class="pre">new</span></code> is implemented.</p>
 <p><code class="docutils literal notranslate"><span class="pre">new</span></code> uses a bit of macro magic ( <code class="docutils literal notranslate"><span class="pre">src/object_internal.h</span></code>) to capture the number of arguments passed to it, and
 passes this in argc. Similarly, all the arguments are passed in va_arg.</p>
 </div>
 <div class="section" id="traits">
 <h3>Traits<a class="headerlink" href="#traits" title="Permalink to this headline">¶</a></h3>
-<p>Traits are a concept borrowed from languages such as Rust that have strong type systems. The idea, is that
-various types can implement different Traits, and then be compatible with functions that require those traits.</p>
+<p>Traits are a concept borrowed from languages such as Rust that have strong type systems.
+Various types can implement different Traits, making them compatible with functions that require those traits.</p>
 <p>For example, a class could implement the <code class="docutils literal notranslate"><span class="pre">Orderable</span></code>, trait, and immediately be sortable. Similarly, a class
 could implement the <code class="docutils literal notranslate"><span class="pre">Iterable</span></code> trait, and be usable with functional programming functions such as <code class="docutils literal notranslate"><span class="pre">map</span></code> and <code class="docutils literal notranslate"><span class="pre">reduce</span></code>.</p>
 <p>Of course you lose a bunch of the value of <em>Traits</em> without having static typing, but it will enable better error messages
@@ -172,12 +171,12 @@ and runtime type checking.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>This would greatly simply how type checking is done. This can be accomplished pretty easily by
+<p>This would greatly simplify how type checking is done. This can be accomplished pretty easily by
 adding some boolean fields to the ClassHeader, one for each <cite>Trait</cite> available in OOC. The assertion
-would then easily be able to verify the type supports some functionality.</p>
-<p>Right now, most type checking is done only for the first argument for a function. It’s done in the
+could then easily verify the type supports some functionality.</p>
+<p>Right now, OOC only performs type checking for the first argument for a function. It’s done in the
 top level function, for example <code class="docutils literal notranslate"><span class="pre">obj_insert(const</span> <span class="pre">void*</span> <span class="pre">_self,</span> <span class="pre">...)</span></code>. This function ensures the
-object _self at least has a non-NULL unction pointer <code class="docutils literal notranslate"><span class="pre">obj_insert</span></code>.</p>
+object _self  has a non-NULL unction pointer <code class="docutils literal notranslate"><span class="pre">obj_insert</span></code>, but doesn’t do any other checking.</p>
 </div>
 </div>
 </div>
@@ -202,6 +201,7 @@ object _self at least has a non-NULL unction pointer <code class="docutils liter
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="unit_testing.html">Unit Testing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="object_internal.html">Class Header</a></li>
 </ul>
 
@@ -210,7 +210,7 @@ object _self at least has a non-NULL unction pointer <code class="docutils liter
                         title="previous chapter">OOC API Documentation</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="unit_testing.html"
-                        title="next chapter">&lt;no title&gt;</a></p>
+                        title="next chapter">Unit Testing</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -239,7 +239,7 @@ object _self at least has a non-NULL unction pointer <code class="docutils liter
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="unit_testing.html" title="&lt;no title&gt;"
+          <a href="unit_testing.html" title="Unit Testing"
              >next</a> |</li>
         <li class="right" >
           <a href="api.html" title="OOC API Documentation"

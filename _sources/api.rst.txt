@@ -49,8 +49,10 @@ Most objects also support a handful of basic functions to print t
 Collections
 -----------
 
-OOC has several functions and built in types that behave like *collections*. Collections are
-objects that support a subset of features such as len, iter, next, get_item, del_item.
+OOC has several functions and built in types that behave like *collections*. Collections are objects that
+contain other objects. Their contents can be accessed in variety of ways, depending on the type of collection.
+
+Technically, collections are simply objects that support a subset of features such as len, iter, next, get_item, del_item.
 
 These functions, if available will work on any collection, but will behave differently. For example,
 append(string, new(String, "world")), is different than append(list, new(String, "world")). In the

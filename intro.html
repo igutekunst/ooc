@@ -42,7 +42,7 @@
             
   <div class="section" id="objected-oriented-c">
 <span id="mainpage"></span><h1>Objected Oriented C<a class="headerlink" href="#objected-oriented-c" title="Permalink to this headline">¶</a></h1>
-<img alt="https://img.shields.io/badge/License-GPLv3-blue.svg" src="https://img.shields.io/badge/License-GPLv3-blue.svg" /><p><cite>Documentation Table of Contents &lt;http://igutekunst.github.io/ooc/intro.html&gt;</cite></p>
+<img alt="https://img.shields.io/badge/License-GPLv3-blue.svg" src="https://img.shields.io/badge/License-GPLv3-blue.svg" /><p><cite>Documentation Table of Contents &lt;http://igutekunst.github.io/OOC/intro.html&gt;</cite></p>
 <p>Experimenting with <cite>Object Oriented C</cite>.</p>
 <p>This library is a toy implementation of “objects” in C, with the idea to
 enable dynamic dispatch and polymorphism of a set of carefully written <cite>classes</cite>.</p>
@@ -128,15 +128,15 @@ as a separator and ignore the tab character.</p>
 </div>
 <div class="section" id="step-by-step">
 <h3>Step By Step<a class="headerlink" href="#step-by-step" title="Permalink to this headline">¶</a></h3>
-<p>First we need to include a bunch of headers that we will need.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &lt;ooc/list.h&gt;</span>
-<span class="c1">#include &lt;ooc/hashmap.h&gt;</span>
-<span class="c1">#include &lt;ooc/math.h&gt;</span>
-<span class="c1">#include &lt;ooc/int.h&gt;</span>
-<span class="c1">#include &lt;ooc/string.h&gt;</span>
-<span class="c1">#include &lt;ooc/object.h&gt;</span>
-<span class="c1">#include &lt;ooc/tuple.h&gt;</span>
-<span class="c1">#include &lt;ooc/file.h&gt;</span>
+<p>First we will include several headers that we will need later.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &lt;OOC/list.h&gt;</span>
+<span class="c1">#include &lt;OOC/hashmap.h&gt;</span>
+<span class="c1">#include &lt;OOC/math.h&gt;</span>
+<span class="c1">#include &lt;OOC/int.h&gt;</span>
+<span class="c1">#include &lt;OOC/string.h&gt;</span>
+<span class="c1">#include &lt;OOC/object.h&gt;</span>
+<span class="c1">#include &lt;OOC/tuple.h&gt;</span>
+<span class="c1">#include &lt;OOC/file.h&gt;</span>
 </pre></div>
 </div>
 <p>Then we create a basic C program main function. Our function will take one argument,
@@ -151,9 +151,9 @@ a filename to process.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The general idea is to store the count of all seen words in a HashMap, and
-then sort the results later for printing.</p>
-<p>First we open a file, and read on line at a time</p>
+<p>The general idea is to store the count of all seen words in a HashMap.
+Next we sort the results for printing.</p>
+<p>First we open a file, and read one line at a time</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="p">(</span><span class="n">full_line</span> <span class="o">!=</span> <span class="n">NULL</span><span class="p">)</span> <span class="p">{</span>
 
     <span class="o">//</span> <span class="n">Remove</span> <span class="n">trailing</span> <span class="n">newline</span>
@@ -208,7 +208,7 @@ the word as a key. Then the count is incremented.</p>
     <span class="k">del</span><span class="p">(</span><span class="nb">list</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Note that we are leaking a bit of memory here using temporary Int objects.</p>
+<p>Note that we are leaking a bit of memory by using temporary Int objects.</p>
 <p>Next we put the results into a List of Tuple objects for sorting.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Put</span> <span class="n">the</span> <span class="n">results</span> <span class="n">into</span> <span class="n">a</span> <span class="n">List</span> <span class="n">of</span> <span class="n">Tuples</span> <span class="k">for</span> <span class="n">sorting</span>
 <span class="n">const</span> <span class="n">void</span><span class="o">*</span> <span class="n">count_it</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">counts</span><span class="p">);</span>
@@ -222,7 +222,7 @@ the word as a key. Then the count is incremented.</p>
 <span class="n">obj_sort</span><span class="p">(</span><span class="n">counts_list</span><span class="p">,</span> <span class="n">SORT_DESCENDING</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>At the end, the totals are printed by looping over the HashTable keys.
+<p>At the end, the totals are printed by looping over the HashMap keys.
 The keys are sorted by getting a tuple for each (key,value) pair, and sorting the list</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Iterate</span> <span class="n">over</span> <span class="n">the</span> <span class="n">tuples</span> <span class="k">for</span> <span class="n">printing</span>
 <span class="n">const</span> <span class="n">void</span><span class="o">*</span> <span class="n">ci</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">counts_list</span><span class="p">);</span>
@@ -234,10 +234,10 @@ The keys are sorted by getting a tuple for each (key,value) pair, and sorting th
 <span class="n">printf</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Note: The ooc library does not support referencing counting, and as such, allocates
-lots of memory that we don’t free. Notable examples are temporary variables used
-to make calculations, and because almost all ooc functions require ooc objects as arguments.</p>
-<p>In the future, referencing counting will make avoiding memory leaks much easier.</p>
+<p>Note: The OOC library does not support referencing counting, and as such, allocates memory that we don’t free.
+Notable examples are temporary variables used to make calculations.
+This is because almost all OOC functions require OOC objects as arguments.</p>
+<p>In the future, referencing counting will make it easier to avoid memory leaks.</p>
 </div>
 <div class="section" id="full-source-code">
 <h3>Full Source Code<a class="headerlink" href="#full-source-code" title="Permalink to this headline">¶</a></h3>
@@ -296,7 +296,7 @@ to make calculations, and because almost all ooc functions require ooc objects a
 
 
     <span class="o">//</span> <span class="n">Note</span><span class="p">:</span> <span class="n">There</span> <span class="n">are</span> <span class="n">several</span> <span class="n">memory</span> <span class="n">leaks</span><span class="o">.</span> <span class="n">These</span> <span class="n">are</span> <span class="s2">&quot;intentional&quot;</span><span class="p">,</span> <span class="n">because</span> <span class="n">the</span>
-    <span class="o">//</span> <span class="n">goal</span> <span class="n">of</span> <span class="n">the</span> <span class="n">ooc</span> <span class="n">project</span> <span class="ow">is</span> <span class="n">first</span> <span class="n">to</span> <span class="n">develop</span> <span class="n">okay</span> <span class="n">ergonomics</span><span class="o">.</span> <span class="n">After</span> <span class="n">that</span><span class="p">,</span> <span class="n">referencing</span> <span class="n">counting</span>
+    <span class="o">//</span> <span class="n">goal</span> <span class="n">of</span> <span class="n">the</span> <span class="n">OOC</span> <span class="n">project</span> <span class="ow">is</span> <span class="n">first</span> <span class="n">to</span> <span class="n">develop</span> <span class="n">okay</span> <span class="n">ergonomics</span><span class="o">.</span> <span class="n">After</span> <span class="n">that</span><span class="p">,</span> <span class="n">referencing</span> <span class="n">counting</span>
     <span class="o">//</span> <span class="n">will</span> <span class="n">be</span> <span class="n">added</span><span class="p">,</span> <span class="n">making</span> <span class="n">it</span> <span class="n">far</span> <span class="n">easier</span> <span class="n">to</span> <span class="n">manage</span> <span class="n">memory</span><span class="o">.</span>
     <span class="k">del</span><span class="p">(</span><span class="n">count_it</span><span class="p">);</span>
     <span class="k">del</span><span class="p">(</span><span class="n">ci</span><span class="p">);</span>
