@@ -57,7 +57,7 @@ const void* String_init(const void* _self, size_t argc, va_list args) {
 }
 
 
-void print_String(void* _self) {
+void Stirng_print(void* _self) {
     struct String* self = (struct String*) _self;
     printf("%s", self->string_data);
 }

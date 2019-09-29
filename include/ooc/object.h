@@ -12,16 +12,18 @@
 
 const void* _new(size_t argc, ...);
 /**
- * @brief Create a new ooc object.
+ * @brief Create a new ooc object
  *
  * This function allocates memory and returns a void* to a
  * newly allocated ooc object, or NULL on failure.
  *
- * The first argument, class, is an OOC "Class", and
- * is exposed to the user layer as an extern void*. New
- * is able to unwrap the void*, and call the appropriate constructor
- * for a type, and allocate a new OOC object. On failure, new will
- * exit the program and print an error message.
+ * The first argument is an OOC "Class".
+ *
+ * It is exposed to the user layer as an extern void*. New
+ * unwraps the void*, calls the appropriate constructor
+ * for the type, and allocate a new OOC object.
+ *
+ * On failure, new will exit the program and print an error message.
  *
  * @param class ooc class object
  * @param argc number of arguments provided
@@ -30,18 +32,19 @@ const void* _new(size_t argc, ...);
 #define new(...) _new(PP_NARG(__VA_ARGS__), __VA_ARGS__)
 
 /**
- * @brief get ooc class object
+ * @brief Get an ooc class object
  *
- * This will return a pointer to the global void* representing
- * an ooc class. This can be used to test of two objects are of the same type,
- * or even to create new classes of the same type with new.
+ * Get returns a pointer to the global void* representing
+ * an ooc class. This is used to test if two objects are the same type.
+ * It can also be used  to create new classes of the same type with new.
+ *
  * @param self ooc object
  * @return ooc class of a given ooc object
  */
 const void* type(const void* self);
 
 /**
- * @brief delete an ooc object
+ * @brief Delete an ooc object
  *
  * This will call the object destructor if present, or simply
  * free the memory if no destructor is present
@@ -50,7 +53,7 @@ const void* type(const void* self);
 void del(const void* self);
 
 /**
- * @brief get size in bytes
+ * @brief Get size in bytes
  *
  * Get the full size in bytes of an ooc object.
  * This is implementation defined, and may not include the
@@ -61,7 +64,7 @@ void del(const void* self);
 size_t size(const void* self);
 
 /**
- * @brief get class name
+ * @brief Get class name
  *
  * If supported, return the class name such as "String" or "HashMap"
  * as a c string. This is used mostly internally for error reporting.
@@ -72,25 +75,26 @@ size_t size(const void* self);
 const char* class_name(const void* self);
 
 /**
- * @brief
- * Print a human friendly representation of an object to stdout
+ * @brief Print an object
+ * Print a human-friendly representation of an object to stdout.
  * @param self
  */
 void print(const void* self);
 
 
 /**
- * @brief get the length of a collection object
+ * @brief Get the length of a collection object
  *
- * This function is usually implemented for objects that are collections of other objects.
- * For example, List, Tuple, HashMap, and File.
+ * Usually this function is implemented for objects that are collections of other objects.
+ *
+ * For example, List, Tuple, HashMap, and File all implement len.
  * @param self ooc Collection object
  * @return number of items in collection
  */
 size_t len(const void* self);
 
 /**
- * @brief copy an object
+ * @brief Copy an object
  *
  * Perform a dep copy of an object. This is only supported by some types.
  *
@@ -100,10 +104,10 @@ size_t len(const void* self);
 const void* copy(const void* self);
 
 /**
- * @brief compare two objects for equality
+ * @brief Compare two objects for equality
  *
- * Some objects have support for customized equality. In this case,
- * equality will be based on the contents of the objects. For example,
+ * Some objects support customized equality. In some cases,
+ * equality based on the contents of the objects. For example,
  * two different String objects with the same contents will compare as
  * equal.
  *
@@ -232,8 +236,8 @@ void* set_item(const void* self,
  * **Example**
  * @see get_item
  *
- * @note Right now, HashMaps return NULL if an item wasn't found.
- *       This might change in future versions, to perhaps raise an error.
+ * Note Right now, HashMaps return NULL if an item wasn't found.
+ *       This might change in future versions.
  *
  * @param self ooc Collection
  * @param key ooc object key

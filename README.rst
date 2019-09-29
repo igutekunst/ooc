@@ -6,7 +6,7 @@ Objected Oriented C
 
 .. image:: https://img.shields.io/badge/License-GPLv3-blue.svg
 
-`Documentation Table of Contents <http://igutekunst.github.io/ooc/intro.html>`
+`Documentation Table of Contents <http://igutekunst.github.io/OOC/intro.html>`
 
 Experimenting with `Object Oriented C`.
 
@@ -109,14 +109,14 @@ Step By Step
 
 First we will include several headers that we will need later. ::
 
-   #include <ooc/list.h>
-   #include <ooc/hashmap.h>
-   #include <ooc/math.h>
-   #include <ooc/int.h>
-   #include <ooc/string.h>
-   #include <ooc/object.h>
-   #include <ooc/tuple.h>
-   #include <ooc/file.h>
+   #include <OOC/list.h>
+   #include <OOC/hashmap.h>
+   #include <OOC/math.h>
+   #include <OOC/int.h>
+   #include <OOC/string.h>
+   #include <OOC/object.h>
+   #include <OOC/tuple.h>
+   #include <OOC/file.h>
 
 Then we create a basic C program main function. Our function will take one argument,
 a filename to process. ::
@@ -189,7 +189,7 @@ the word as a key. Then the count is incremented. ::
         }
         del(list);
 
-Note that we are leaking a bit of memory here using temporary Int objects.
+Note that we are leaking a bit of memory by using temporary Int objects.
 
 Next we put the results into a List of Tuple objects for sorting. ::
 
@@ -204,7 +204,7 @@ Next we put the results into a List of Tuple objects for sorting. ::
     }
     obj_sort(counts_list, SORT_DESCENDING);
 
-At the end, the totals are printed by looping over the HashTable keys.
+At the end, the totals are printed by looping over the HashMap keys.
 The keys are sorted by getting a tuple for each (key,value) pair, and sorting the list ::
 
        // Iterate over the tuples for printing
@@ -216,11 +216,11 @@ The keys are sorted by getting a tuple for each (key,value) pair, and sorting th
        }
        printf("\n");
 
-Note: The ooc library does not support referencing counting, and as such, allocates
-lots of memory that we don't free. Notable examples are temporary variables used
-to make calculations, and because almost all ooc functions require ooc objects as arguments.
+Note: The OOC library does not support referencing counting, and as such, allocates memory that we don't free.
+Notable examples are temporary variables used to make calculations.
+This is because almost all OOC functions require OOC objects as arguments.
 
-In the future, referencing counting will make avoiding memory leaks much easier.
+In the future, referencing counting will make it easier to avoid memory leaks.
 
 Full Source Code
 ++++++++++++++++
@@ -281,7 +281,7 @@ Full Source Code
 
 
        // Note: There are several memory leaks. These are "intentional", because the
-       // goal of the ooc project is first to develop okay ergonomics. After that, referencing counting
+       // goal of the OOC project is first to develop okay ergonomics. After that, referencing counting
        // will be added, making it far easier to manage memory.
        del(count_it);
        del(ci);

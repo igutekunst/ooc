@@ -3,15 +3,15 @@ Technical Details
 
 
 All actions performed with OOC objects is done through a uniform API, exposed through a
-set of header files. Core functionality is included in ``ooc/object.h``, with additional
+set of header files. Core functionality is included in ``OOC/object.h``, with additional
 functionality exposed through additional headers.
 
 From a user's perspective, every OOC object is a const void*, or an opaque struct. This enables perfect
 data hiding, allowing the API implementation to change without affecting user code.
 
-Of course, this has the downside of `breaking` the C type system, which makes catching errors at compile time harder.
+Of course, this has the downside of breaking the C type system, which makes catching errors at compile time harder.
 
-What this enables however, is using the same set of functions to operate on a variety of types.
+However, this enables the same set of functions to operate on a variety of types.
 
 Implementation Details
 ----------------------
@@ -47,21 +47,20 @@ Here's the :ref:`ClassHeader <class_header>` for the ``String`` class:::
         char* string_data;
     };
 
-The interesting thing to note here is the first item in the struct is a ``ClassHeader*.``. This is the
-crucial technique that allows a a given object, in the form of a void* to identified, and the correct methods
-to be called.
+The interesting thing to note here is the first item in the struct is a ``ClassHeader*.``. This is a
+crucial technique that allows a void* to be identified. After it is extracted, the correct methods can be called.
 
-Every top level OOC function will first do a NULL check, and then cast the object into a ``ClassHeader*``, to
-determine what to do next. This might involve some pre-processing of arguments, followed by a call to the
-appropriate method, stored as a function pointer in the :ref:`ClassHeader <class_header>`.
+Every top level OOC function will perform a NULL check, and then cast the object into a ``ClassHeader*``.
+This may involve some argument pre-processing, followed by a call to the
+appropriate method stored as a function pointer in the :ref:`ClassHeader <class_header>`.
 
-This function pointer will be implemented as a function in per-class implementation file. For example, `src/string.c` contains
+This function pointer will be implemented as a function in a per-class implementation file. For example, `src/string.c` contains
 the implementation of all the ``String`` functions.
 
 Implementing an Instance
 ++++++++++++++++++++++++
 
-The implementation of a given class is relatively straightforward, though involves a good amount of boilerplate code,
+The implementation of a given class is relatively straightforward, although it involves a good amount of boilerplate code,
 which seems unavoidable in C.
 
 Let's look at a simplified part of the ``String`` implementation::
@@ -84,8 +83,8 @@ Let's look at a simplified part of the ``String`` implementation::
 
 Here we can see a few important things:
     1. The MAGIC must be set here. Otherwise, ``new`` may try to construct objects out of invalid pointers.
-    2. The size of the object before initialization is specified. This is used by new to allocate memoery
-    3. Some function pointers are in ``.class``, and are considered common, and implemented for many objects.
+    2. The size of the object before initialization is specified. This is used by new to allocate memory.
+    3. Some function pointers are in ``.class`` These are considered common, and implemented for many objects.
        Some more specific functionality is included in *Traits*, which are extensions to the ClassHeader, and will be
        discussed later.
 
@@ -115,8 +114,8 @@ Here's the full implementation of ``String__init``::
 
 Here we can again see a few important things.
 
-The signature might look a bit weird. There is the void* _self, which might make sense, but
-there's also an ``argc``, and a ``va_list``. This is do to how ``new`` is implemented.
+The signature might look a bit confusing. There is the void* _self, which might make sense, but
+there's also an ``argc``, and a ``va_list``. This is due to how ``new`` is implemented.
 
 ``new`` uses a bit of macro magic ( ``src/object_internal.h``) to capture the number of arguments passed to it, and
 passes this in argc. Similarly, all the arguments are passed in va_arg.
@@ -125,8 +124,8 @@ passes this in argc. Similarly, all the arguments are passed in va_arg.
 Traits
 ++++++
 
-Traits are a concept borrowed from languages such as Rust that have strong type systems. The idea, is that
-various types can implement different Traits, and then be compatible with functions that require those traits.
+Traits are a concept borrowed from languages such as Rust that have strong type systems.
+Various types can implement different Traits, making them compatible with functions that require those traits.
 
 For example, a class could implement the ``Orderable``, trait, and immediately be sortable. Similarly, a class
 could implement the ``Iterable`` trait, and be usable with functional programming functions such as ``map`` and ``reduce``.
@@ -151,13 +150,13 @@ Or for a HashMap::
         ASSERT_SUPPORTS_TRAIT(_other, Hashable, Equality);
     }
 
-This would greatly simply how type checking is done. This can be accomplished pretty easily by
+This would greatly simplify how type checking is done. This can be accomplished pretty easily by
 adding some boolean fields to the ClassHeader, one for each `Trait` available in OOC. The assertion
-would then easily be able to verify the type supports some functionality.
+could then easily verify the type supports some functionality.
 
-Right now, most type checking is done only for the first argument for a function. It's done in the
+Right now, OOC only performs type checking for the first argument for a function. It's done in the
 top level function, for example ``obj_insert(const void* _self, ...)``. This function ensures the
-object _self at least has a non-NULL unction pointer ``obj_insert``.
+object _self  has a non-NULL unction pointer ``obj_insert``, but doesn't do any other checking.
 
 
 

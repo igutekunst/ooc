@@ -54,40 +54,37 @@ struct HashMapClass_iter {
 bool rng_seeded = false;
 
 
-const void* __construct__HashMap(const void* _self, size_t argc, va_list args);
+static const void* HashMap_init(const void* _self, size_t argc, va_list args);
 
 
-void print_HashMap(void* _self);
+static size_t HashMap_get_size(const void* _self);
 
 
-size_t get_size_HashMap(const void* _self);
+static size_t HashMap_get_len(const void* _self);
 
 
-size_t get_len_HashMap(const void* _self);
+static const char* HashMap_str(const void* _self);
 
 
-const char* str_HashMap(const void* _self);
-
-
-void insert_HashMap(const void* _self,
-                    const void* key,
+static void HashMap_insert(const void* _self,
+                    const void* _key,
                     const void* _value);
 
 
-const void* get_HashMap(const void* _self,
-                        const void* key);
+static const void* HashMap_get(const void* _self,
+                        const void* _key);
 
 
-const void* copy_HashMap(const void* _self);
+static const void* HashMap_copy(const void* _self);
 
 
-const void* next_HashMap(const void* _self);
+static const void* HashMap_next(const void* _self);
 
 
-void internal_resize_HashMap(struct HashMap* self, uint64_t new_m);
+static void internal_resize_HashMap(struct HashMap* self, uint64_t new_m);
 
 
-void internal_print_table(struct HashMap* self);
+static void internal_print_table(struct HashMap* self);
 
 
 struct HashItem* alloc_hash_items(size_t n) {
@@ -97,7 +94,7 @@ struct HashItem* alloc_hash_items(size_t n) {
 }
 
 
-uint64_t random_a() {
+static uint64_t random_a() {
     uint64_t a = random() % MAX_A;
     while (!(a & 0x01U))
         a = random() % MAX_A;
@@ -105,7 +102,7 @@ uint64_t random_a() {
 }
 
 
-uint64_t lg(uint64_t n) {
+static uint64_t lg(uint64_t n) {
     uint64_t ans = 0;
     while (n) {
         n >>= 1U;
@@ -115,7 +112,7 @@ uint64_t lg(uint64_t n) {
 }
 
 
-uint64_t random_b(uint64_t m) {
+static uint64_t random_b(uint64_t m) {
 
     uint64_t M = lg(m);
     // TODO random might return a negative number?
@@ -123,13 +120,13 @@ uint64_t random_b(uint64_t m) {
 }
 
 
-uint64_t internal_hash(uint64_t a, uint64_t b, uint64_t M, uint64_t key) {
+static uint64_t internal_hash(uint64_t a, uint64_t b, uint64_t M, uint64_t key) {
     uint64_t h = (uint64_t) (a * key + b) >> (W - M);
     return h;
 }
 
 
-void internal_insert_HashMap(struct HashMap* self,
+static void internal_insert_HashMap(struct HashMap* self,
                              const void* _key,
                              const void* _value) {
 
@@ -175,7 +172,7 @@ void internal_insert_HashMap(struct HashMap* self,
 }
 
 
-void internal_print_table(struct HashMap* self) {
+static void internal_print_table(struct HashMap* self) {
 
     size_t count = 0;
     struct HashItem* item;
@@ -281,7 +278,7 @@ void internal_resize_HashMap(struct HashMap* self, uint64_t new_m) {
 }
 
 
-size_t get_len_HashMap(const void* _self) {
+size_t HashMap_get_len(const void* _self) {
     struct HashMap* self = (struct HashMap*) _self;
     if (self->debug) {
         size_t counted_size = internal_count_HashMap(self);
@@ -295,13 +292,13 @@ size_t get_len_HashMap(const void* _self) {
 }
 
 
-size_t get_size_HashMap(const void* _self) {
+size_t HashMap_get_size(const void* _self) {
     struct HashMap* self = (struct HashMap*) _self;
     return self->size + self->len * sizeof(HashItem);
 }
 
 
-const void* __construct__HashMap(const void* _self, size_t argc, va_list args) {
+const void* HashMap_init(const void* _self, size_t argc, va_list args) {
     //TODO support interesting constructor stuff
     (void) argc;
     (void) args;
@@ -333,7 +330,7 @@ const void* __construct__HashMap(const void* _self, size_t argc, va_list args) {
 }
 
 
-void __destruct__HashMap(const void* _self) {
+void HashMap_deinit(const void* _self) {
     struct HashMap* self = (struct HashMap*) _self;
 }
 
@@ -344,14 +341,14 @@ void print_HashMap(void* _self) {
 }
 
 
-const char* str_HashMap(const void* _self) {
+static const char* HashMap_str(const void* _self) {
     struct HashMap* self = (struct HashMap*) _self;
     fprintf(stderr, "str not implemented");
     exit(EXIT_FAILURE);
 }
 
 
-void insert_HashMap(const void* _self,
+static void HashMap_insert(const void* _self,
                     const void* _key,
                     const void* _value) {
     struct HashMap* self = (struct HashMap*) _self;
@@ -371,7 +368,7 @@ void insert_HashMap(const void* _self,
 }
 
 
-const void* get_HashMap(const void* _self,
+const void* HashMap_get(const void* _self,
                         const void* _key) {
     struct HashMap* self = (struct HashMap*) _self;
     if (get_class_header_msg(_key, "Attempted to get_item with  invalid key\n")) {
@@ -403,8 +400,8 @@ const void* get_HashMap(const void* _self,
 }
 
 
-void del_item_HashMap(const void* _self,
-                      const void* _key) {
+static void HashMap_del_item(const void* _self,
+                             const void* _key) {
 
     struct HashMap* self = (struct HashMap*) _self;
     if (get_class_header_msg(_key, "Attempted to delete an invalid key\n")) {
@@ -479,26 +476,16 @@ void del_item_HashMap(const void* _self,
 /* Iterable HashMap methods
  */
 
-const void* iter_HashMap(const void* _self) {
+static const void* iter_HashMap(const void* _self) {
     return new(HashMap_iter, _self);
 }
 
 
-// Implementation notes
-// The iterator needs to remember the place in the iteration
-// For performance reasons, it should cache 
-//      A pointer the current  item in the current linked list
-//      An index into the hash table
-//
-// Initially, the  pointer will be initialized to the first item in the table (could be empty)
-//          and the index will be zero
 /**
- * @internal
- * @private
  * @param _self
  * @return
  */
-const void* next_HashMap(const void* _self) {
+const void* HashMap_next(const void* _self) {
     struct HashMap_iter* self = (struct HashMap_iter*) _self;
     struct HashMap* hash_map = self->hash_map;
     assert(hash_map);
@@ -527,11 +514,9 @@ const void* next_HashMap(const void* _self) {
                 continue;
             }
         }
-
     } else {
         return 0;
     }
-
 }
 
 
@@ -550,39 +535,37 @@ const void* __construct__HashMap_iter(const void* _self, size_t argc, va_list ar
 }
 
 
-const void* copy_HashMap(const void* _self) {
+const void* HashMap_copy(const void* _self) {
     struct HashMap* self = (struct HashMap*) _self;
     return NULL;
 }
 
 
-/** @private */
 struct HashMapClass hash_map_class = {
         .class = {.magic = MAGIC,
                 .size = sizeof(struct HashMap),
-                .object_init = __construct__HashMap,
-                .object_deinit = __destruct__HashMap,
-                .get_size = get_size_HashMap,
-                .get_len = get_len_HashMap,
-                .c_str = str_HashMap,
-                .copy = copy_HashMap,
-                .insert = insert_HashMap,
-                .get_item = get_HashMap,
-                .del_item = del_item_HashMap,
+                .object_init = HashMap_init,
+                .object_deinit = HashMap_deinit,
+                .get_size = HashMap_get_size,
+                .get_len = HashMap_get_len,
+                .c_str = HashMap_str,
+                .copy = HashMap_copy,
+                .insert = HashMap_insert,
+                .get_item = HashMap_get,
+                .del_item = HashMap_del_item,
                 .iter = iter_HashMap,
                 .object_name = "HashMap"
         }
 
 };
 
-// set the HashMap variable to serve as the type of a HashMap
 void* HashMap = &hash_map_class;
 
 static struct HashMapClass_iter hash_map_class_iter = {
         .class = {.magic = MAGIC,
                 .object_init = __construct__HashMap_iter,
                 .size = sizeof(struct HashMap_iter),
-                .next = next_HashMap
+                .next = HashMap_next
         }
 
 };
