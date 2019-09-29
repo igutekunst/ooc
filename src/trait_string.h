@@ -4,10 +4,12 @@
 
 #ifndef OOC_TRAIT_STRING_H
 #define OOC_TRAIT_STRING_H
+
 #include <stdlib.h>
 
 struct OOCTraitString {
     const void* (* string_split)(const void* string, const void* _sep);
+
 
     //TODO maybe this goes somewhere else, like in collections
     //TODO maybe use Int instead

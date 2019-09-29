@@ -38,7 +38,7 @@ struct ListClass {
 };
 
 struct ListIterator {
-    struct ClassHeader *class;
+    struct ClassHeader* class;
     struct List* list;
     bool done;
     ListItem* item;
@@ -48,10 +48,14 @@ struct ListIteratorClass {
     struct ClassHeader class;
 };
 
+
 const void* List_append(const void* _self, const void* _other);
+
+
 void MergeSort(struct ListItem** headRef, SortDirection sort_direction);
 
-const void *List_init(const void *_self, size_t argc, va_list args) {
+
+const void* List_init(const void* _self, size_t argc, va_list args) {
     struct List* self = (struct List*) _self;
     self->len = 0;
     self->size = sizeof(struct List);
@@ -143,7 +147,7 @@ const void* List_append(const void* _self, const void* _other) {
 
 const void* List_get_item(const void* _self, const void* _index) {
     struct List* self = (struct List*) _self;
-    const struct ClassHeader * index_class;
+    const struct ClassHeader* index_class;
     index_class = get_class_header_msg(_index, "List get_item called with invalid index\n");
     if (index_class->math.to_int == NULL) {
         fprintf(stderr, "List get_item called with invalid index of type %s"
@@ -160,7 +164,7 @@ const void* List_get_item(const void* _self, const void* _index) {
         fprintf(stderr, "Index %zd is out of range\n", index);
     }
 
-    for(size_t i = 0; i < index; i++) {
+    for (size_t i = 0; i < index; i++) {
         assert(item != NULL);
         item = item->next;
     }
@@ -168,19 +172,19 @@ const void* List_get_item(const void* _self, const void* _index) {
 
 }
 
-const void* List_iter(const void * _self){
+const void* List_iter(const void* _self) {
     return new(ListIterator, _self);
 }
 
 
-const void *ListIterator_init(const void *_self, size_t argc, va_list args) {
+const void* ListIterator_init(const void* _self, size_t argc, va_list args) {
     (void) argc;
 
-    struct ListIterator * self = (struct ListIterator *) _self;
+    struct ListIterator* self = (struct ListIterator*) _self;
     // TODO Maybe redundant
     self->class = ListIterator;
 
-    self->list =  (struct List *)  va_arg(args, const void *);
+    self->list = (struct List*) va_arg(args, const void *);
     assert(self->list);
 
     self->list->iterating = true;
@@ -193,16 +197,16 @@ const void *ListIterator_init(const void *_self, size_t argc, va_list args) {
 }
 
 
-const void * ListIterator_next(const void * _self) {
-    struct ListIterator * self = (struct ListIterator *) _self;
+const void* ListIterator_next(const void* _self) {
+    struct ListIterator* self = (struct ListIterator*) _self;
 
     ListItem* item = NULL;
     if (self->done != true) {
 
-        if (self->item == NULL)  {
+        if (self->item == NULL) {
             self->list->iterating = false;
             self->done = true;
-        }  else {
+        } else {
             item = self->item;
             self->item = self->item->next;
         }
@@ -213,7 +217,7 @@ const void * ListIterator_next(const void * _self) {
     return NULL;
 }
 
-void List_sort(const void * _self, SortDirection sort_direction) {
+void List_sort(const void* _self, SortDirection sort_direction) {
     (void) sort_direction;
     struct List* self = (struct List*) _self;
     MergeSort(&self->head, sort_direction);
@@ -224,12 +228,14 @@ void List_sort(const void * _self, SortDirection sort_direction) {
 // Adapted from https://www.geeksforgeeks.org/merge-sort-for-linked-list/
 
 struct ListItem* SortedMerge(struct ListItem* a, struct ListItem* b, SortDirection sort_direction);
+
+
 void FrontBackSplit(struct ListItem* source,
                     struct ListItem** frontRef, struct ListItem** backRef);
 
+
 /* sorts the linked list by changing next pointers (not data) */
-void MergeSort(struct ListItem** headRef, SortDirection sort_direction)
-{
+void MergeSort(struct ListItem** headRef, SortDirection sort_direction) {
     struct ListItem* head = *headRef;
     struct ListItem* a;
     struct ListItem* b;
@@ -252,8 +258,7 @@ void MergeSort(struct ListItem** headRef, SortDirection sort_direction)
 
 /* See https:// www.geeksforgeeks.org/?p=3622 for details of this
 function */
-struct ListItem* SortedMerge(struct ListItem* a, struct ListItem* b, SortDirection sort_direction)
-{
+struct ListItem* SortedMerge(struct ListItem* a, struct ListItem* b, SortDirection sort_direction) {
     struct ListItem* result = NULL;
 
     /* Base cases */
@@ -263,7 +268,7 @@ struct ListItem* SortedMerge(struct ListItem* a, struct ListItem* b, SortDirecti
         return (a);
 
     /* Pick either a or b, and recur */
-    CompareValue c = compare(a->value, b->value) ;
+    CompareValue c = compare(a->value, b->value);
 
     // TODO see if this logic can be simplified
     bool a_first;
@@ -289,8 +294,7 @@ struct ListItem* SortedMerge(struct ListItem* a, struct ListItem* b, SortDirecti
 	If the length is odd, the extra node should go in the front list.
 	Uses the fast/slow pointer strategy. */
 void FrontBackSplit(struct ListItem* source,
-                    struct ListItem** frontRef, struct ListItem** backRef)
-{
+                    struct ListItem** frontRef, struct ListItem** backRef) {
     struct ListItem* fast;
     struct ListItem* slow;
     slow = source;
@@ -311,8 +315,6 @@ void FrontBackSplit(struct ListItem* source,
     *backRef = slow->next;
     slow->next = NULL;
 }
-
-
 
 
 struct ListClass List_class = {
@@ -339,7 +341,7 @@ struct ListIteratorClass list_iterator_class = {
 
 };
 
-void * ListIterator = &list_iterator_class;
+void* ListIterator = &list_iterator_class;
 
 void* List = &List_class;
 

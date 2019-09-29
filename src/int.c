@@ -3,9 +3,10 @@
 #include <ooc/object.h>
 #include <string.h>
 #include <stdint.h>
+
 #define MAX_STR_SIZE 20
-struct Int{
-    struct ClassHeader * class;
+struct Int {
+    struct ClassHeader* class;
     size_t size;
     int value;
     char str_value[MAX_STR_SIZE];
@@ -15,15 +16,31 @@ struct IntClass {
     struct ClassHeader class;
 };
 
-const void *Int_init(const void *_self, size_t argc, va_list args);
+
+const void* Int_init(const void* _self, size_t argc, va_list args);
+
+
 void Int_print(const void* _self);
+
+
 size_t Int_get_size(const void* _self);
+
+
 const char* Int_to_str(const void* _self);
 
+
 const void* Int_add(const void* lhs, const void* rhs);
+
+
 const void* Int_sub(const void* lhs, const void* rhs);
+
+
 const void* Int_mul(const void* lhs, const void* rhs);
+
+
 const void* Int_div(const void* lhs, const void* rhs);
+
+
 int Int_to_int(const void* _self);
 
 
@@ -32,7 +49,7 @@ size_t Int_get_size(const void* _self) {
     return self->size;
 }
 
-const void *Int_init(const void *_self, size_t argc, va_list args) {
+const void* Int_init(const void* _self, size_t argc, va_list args) {
     (void) argc;
 
     struct Int* self = (struct Int*) _self;
@@ -94,9 +111,9 @@ CompareValue Int_compare(const void* _lhs, const void* _rhs) {
     struct Int* lhs = (struct Int*) _lhs;
     struct Int* rhs = (struct Int*) _rhs;
     if (lhs->value > rhs->value) {
-       return COMPARE_GT;
-    } else if (lhs->value == rhs->value){
-       return COMPARE_EQ;
+        return COMPARE_GT;
+    } else if (lhs->value == rhs->value) {
+        return COMPARE_EQ;
     } else {
         return COMPARE_LT;
     }

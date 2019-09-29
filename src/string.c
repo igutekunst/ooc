@@ -128,7 +128,7 @@ const void* String_split(const void* _self, const void* _sep) {
 
     token = strtok((char*) str, sep);
 
-    while( token != NULL ) {
+    while (token != NULL) {
 
         append(list, new(String, token));
         token = strtok(NULL, sep);
@@ -139,7 +139,7 @@ const void* String_split(const void* _self, const void* _sep) {
 
 }
 
-const void* String_slice (const void* _self, ssize_t start, ssize_t end) {
+const void* String_slice(const void* _self, ssize_t start, ssize_t end) {
     struct String* self = (struct String*) _self;
     const struct String* self_copy = copy(_self);
 
@@ -161,7 +161,7 @@ const void* String_slice (const void* _self, ssize_t start, ssize_t end) {
 
     const struct String* out = NULL;
     if (start >= len(_self)) {
-       start = len(_self);
+        start = len(_self);
     }
 
 

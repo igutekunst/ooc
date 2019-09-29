@@ -9,8 +9,10 @@
 #include <stddef.h>
 
 struct OOCTraitFile {
-    const void* (*_file_read)(const void* file, size_t bytes_to_read, bool read_all);
-    const void* (*file_read_line)(const void* _self);
+    const void* (* _file_read)(const void* file, size_t bytes_to_read, bool read_all);
+
+
+    const void* (* file_read_line)(const void* _self);
 };
 
 #endif //OOC_TRAIT_FILE_H

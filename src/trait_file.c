@@ -18,7 +18,7 @@ const void* _file_read(size_t argc, ...) {
     }
     va_list args;
     va_start(args, argc);
-    const void * _file = va_arg(args, const void*);
+    const void* _file = va_arg(args, const void*);
 
     struct ClassHeader* file_class_header = get_class_header_msg(_file, "_file_read: invalid argument\n");
     size_t bytes_to_read = 0;

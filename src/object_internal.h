@@ -31,21 +31,24 @@ struct ClassHeader {
     /**
      * Object name as C string
      */
-    const char *object_name;
+    const char* object_name;
+
 
     /**
      * @brief Get size of object in bytes
      * @param _self ooc object
      * @return  size in bytes
      */
-    size_t (*get_size)(const void *_self);
+    size_t (* get_size)(const void* _self);
+
 
     /**
      * @brief Get number of items in container object
      * @param _self ooc object
      * @return number of items in container
      */
-    size_t (*get_len)(const void *_self);
+    size_t (* get_len)(const void* _self);
+
 
     /**
      * @brief Create and initialize an object
@@ -57,20 +60,23 @@ struct ClassHeader {
      * @param args arguments to initialize object. Varies based on class type
      * @return
      */
-    const void *(*object_init )(const void *_self, size_t argc, va_list args);
+    const void* (* object_init )(const void* _self, size_t argc, va_list args);
+
 
     /**
      * De-initialize and free resources used by _self.
      *
      * @param _self ooc object
      */
-    void (*object_deinit)(const void *_self);
+    void (* object_deinit)(const void* _self);
+
 
     /**
      * Print and object to stdout
      * @param _self ooc object
      */
-    void (*print)(const void *_self);
+    void (* print)(const void* _self);
+
 
     /**
      * Return the c string (char*) representation of
@@ -83,7 +89,8 @@ struct ClassHeader {
      * @return c string representation
      */
 
-    const char *(*c_str)(const void *_self);
+    const char* (* c_str)(const void* _self);
+
 
     /**
      * Return the c string (char*) representation of
@@ -96,7 +103,8 @@ struct ClassHeader {
      * @return c string representation
      */
 
-    const char *(*c_str_repr)(const void *_self);
+    const char* (* c_str_repr)(const void* _self);
+
 
     /**
      * Return String representation of object.
@@ -109,7 +117,8 @@ struct ClassHeader {
      * @param _self  ooc object
      * @return ooc String object
      */
-    void *(*to_String)(const void *_self);
+    void* (* to_String)(const void* _self);
+
 
     /**
      * Implement to enable appending items to an class.
@@ -119,9 +128,9 @@ struct ClassHeader {
      * @param _self ooc container object
      * @param _other ooc object supported by container
      */
-    const void *(*append)(
-            const void *_self,
-            const void *_other
+    const void* (* append)(
+            const void* _self,
+            const void* _other
     );
 
     /**
@@ -130,10 +139,11 @@ struct ClassHeader {
      * @param _other
      * @return true if objects are equal. If not implemented, equals will compare pointers
      */
-    bool (*equals)(
-            const void *_self,
-            const void *_other
+    bool (* equals)(
+            const void* _self,
+            const void* _other
     );
+
 
     /**
      * Implement to allow objects to be compared for ordering.
@@ -143,10 +153,11 @@ struct ClassHeader {
      *         COMPARE_EQ if _self == _other
      *         COMPARE_LT if _self < other
      */
-     CompareValue (*compare)(
-            const void *_self,
-            const void *_other
+    CompareValue (* compare)(
+            const void* _self,
+            const void* _other
     );
+
 
     /**
      *
@@ -158,10 +169,11 @@ struct ClassHeader {
      *
      * @param _self container to be sorted
      */
-    void (*sort)(
-            const void *_self,
+    void (* sort)(
+            const void* _self,
             SortDirection direction
     );
+
 
     /**
      *
@@ -173,16 +185,18 @@ struct ClassHeader {
      *
      * @param _self container to be sorted
      */
-    const void* (*sorted)(
-            const void *_self
+    const void* (* sorted)(
+            const void* _self
     );
+
 
     /**
      * Return an iterator to support iteration.
      * @param _object ooc object
      * @return ooc iterator
      */
-    const void *(*iter)(const void *_object);
+    const void* (* iter)(const void* _object);
+
 
     /**
      * Copy an ooc object.
@@ -194,7 +208,8 @@ struct ClassHeader {
      * @param _self
      * @return copy of _self
      */
-    const void *(*copy)(const void *_self);
+    const void* (* copy)(const void* _self);
+
 
     /**
      * Implement to enable indexed assignment.
@@ -205,11 +220,12 @@ struct ClassHeader {
      * @param _key ooc object key to index into collection
      * @param item value to store at given index
      */
-    void (*insert)(
-            const void *_self,
-            const void *_key,
-            const void *item
+    void (* insert)(
+            const void* _self,
+            const void* _key,
+            const void* item
     );
+
 
     /**
      * Implement to enable indexed access.
@@ -222,19 +238,20 @@ struct ClassHeader {
      * @param _key ooc object key
      * @return
      */
-    const void *(*get_item)(
-            const void *_self,
-            const void *_key
+    const void* (* get_item)(
+            const void* _self,
+            const void* _key
     );
+
 
     /**
      * Implement to enabled indexed deletion from a collection.
      * @param _self ooc object
      * @param key key to delete
      */
-    void (*del_item)(
-            const void *_self,
-            const void *key
+    void (* del_item)(
+            const void* _self,
+            const void* key
     );
 
 
@@ -249,7 +266,8 @@ struct ClassHeader {
      * @param _self ooc object
      * @return 64 bit user defined hash
      */
-    uint64_t (*hash)(const void *_self);
+    uint64_t (* hash)(const void* _self);
+
 
     /**
      * Implement to support iteration.
@@ -259,15 +277,15 @@ struct ClassHeader {
      * @param _self iterable returned from iter()
      * @return next item in iteration.
      */
-    const void *(*next)(const void *_self);
+    const void* (* next)(const void* _self);
 
 
     /**
      * Traits
      */
-     struct OOCTraitMath math;
-     struct OOCTraitFile file;
-     struct OOCTraitString string;
+    struct OOCTraitMath math;
+    struct OOCTraitFile file;
+    struct OOCTraitString string;
 
 };
 
@@ -276,9 +294,12 @@ struct ObjectHeader {
     //TODO consider putting some common things like size here
 };
 
+
 const struct ClassHeader* get_class_header(const void* self);
 
+
 struct ClassHeader* get_class_header_msg(const void* self, const char* message);
+
 
 inline const struct ClassHeader* get_obj_type(const void* self, const void* class, const char* message);
 

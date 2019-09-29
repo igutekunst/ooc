@@ -95,8 +95,8 @@ const void* File_init(const void* _self, size_t argc, va_list args) {
     fseek(self->file, 0, SEEK_SET);
 
     if (file_length < 0) {
-       fprintf(stderr, "File_init:ftell error %s\n", strerror(errno));
-       exit(EXIT_FAILURE);
+        fprintf(stderr, "File_init:ftell error %s\n", strerror(errno));
+        exit(EXIT_FAILURE);
     }
 
     // Length is the length of the "collection"
@@ -113,15 +113,18 @@ size_t File_get_size(const void* _self) {
     return self->size;
 }
 
+
 size_t File_get_len(const void* _self) {
     struct File* self = (struct File*) _self;
     return self->len;
 }
 
+
 const char* File_to_str(const void* _self) {
     struct File* self = (struct File*) _self;
     return c_str(self->str_repr);
 }
+
 
 /** @brief Return a line of text from a file
  *  allocating as much memory as necessary
@@ -151,7 +154,7 @@ static ssize_t internal_File_read_line(FILE* file, char** out_line) {
         strcpy(buffer, "");
         line_length = strlen(*out_line);
 
-        if ((*out_line)[line_length -1] == '\n') {
+        if ((*out_line)[line_length - 1] == '\n') {
             break;
         }
     }
@@ -166,8 +169,8 @@ const void* File_read_line(const void* _self) {
     int bytes_read = internal_File_read_line(self->file, &out_line);
 
     if (bytes_read < 0) {
-       fprintf(stderr,"File_read_line error\n");
-       exit(EXIT_FAILURE);
+        fprintf(stderr, "File_read_line error\n");
+        exit(EXIT_FAILURE);
     }
     const struct String* out = NULL;
     if (bytes_read > 0) {
@@ -177,6 +180,7 @@ const void* File_read_line(const void* _self) {
     free(out_line);
     return out;
 }
+
 
 const void* File_read(const void* _self, size_t bytes_to_read, bool read_all) {
     struct File* self = (struct File*) _self;

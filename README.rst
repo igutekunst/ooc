@@ -6,10 +6,7 @@ Objected Oriented C
 
 .. image:: https://img.shields.io/badge/License-GPLv3-blue.svg
 
-Please read the full docs here_.
-
- .. _here: http://igutekunst.github.io/ooc/index.html
-
+`Documentation Table of Contents <http://igutekunst.github.io/ooc/intro.html>`
 
 Experimenting with `Object Oriented C`.
 
@@ -20,18 +17,18 @@ This library aims to enable:
 
 - Less boilerplate code to do common tasks
 - A friendlier standard library
-- A `batteries included` C like environment.
+- A `batteries included` C environment with dynamic typing
 
-The design of both the API and internals are inspired by Python, though
-no attempt has been made to mimic python APIs exactly, or interface with
-Python, though this may be a goal in the future.
+The design of both the API and internals are inspired by Python.
+No attempt has been made to mimic python APIs exactly.
+Future versions may integrate with Python.
 
-This library is completely experimental, and has not been used in any
+This library is experimental and has not been used in any
 real projects as far as I know.
 
-It’s here to share some ideas with friends and the world. My hope is it
-will be useful one day, at which point I will promote it with more
-confidence!
+In the future, I hope to use OOC to build some larger personal projects and improve it to the
+point where other people will chose to use it.
+
 
 Working Modules
 ---------------
@@ -54,16 +51,33 @@ See ``examples/count_words.c``
 This test shows a more complete usage of the OOC library to solve a common
 interview question.
 
-**Problem Statement**
+**Problem Statement:**
 Given a file full of words, count the time every word occurs. For bonus
 points, print the counts in sorted order.
 
-A word is defined as one or more non space characters. For now, only the space character needs
-to be considered, but also treating tab a separator is even better.
+A word is defined as one or more non-space characters. For now, only consider the space character
+as a separator and ignore the tab character.
+
+For Example, given the following file::
+
+    one two three four five
+    two three four five
+    three four five
+    four five
+    five
+
+The output should be::
+
+     5, five
+     4, four
+     3, three
+     2, two
+     1, one
+
 
 Running Example
 +++++++++++++++
-If you just want to run the example, run the following commands::
+If you only want to run the example, run the following commands::
 
     mkdir cmake-build
     cd cmake-build
@@ -93,7 +107,7 @@ Output::
 Step By Step
 ++++++++++++
 
-First we need to include a bunch of headers that we will need. ::
+First we will include several headers that we will need later. ::
 
    #include <ooc/list.h>
    #include <ooc/hashmap.h>
@@ -116,10 +130,10 @@ a filename to process. ::
         return (EXIT_SUCCESS);
    }
 
-The general idea is to store the count of all seen words in a HashMap, and
-then sort the results later for printing.
+The general idea is to store the count of all seen words in a HashMap.
+Next we sort the results for printing.
 
-First we open a file, and read on line at a time ::
+First we open a file, and read one line at a time ::
 
        while (full_line != NULL) {
 

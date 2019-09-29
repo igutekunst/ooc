@@ -149,8 +149,8 @@ CompareValue Tuple_compare(const void* _lhs, const void* _rhs) {
     struct ClassHeader* lhs_class = get_class_header_msg(lhs->items[0].value,
                                                          "Tuple_compare failed because item[0] is invalid\n");
     if (lhs_class->compare == NULL) {
-       fprintf(stderr, "Tuple compare failed because item[0] does not support compare\n");
-       exit(EXIT_FAILURE);
+        fprintf(stderr, "Tuple compare failed because item[0] does not support compare\n");
+        exit(EXIT_FAILURE);
     }
 
     return compare(lhs->items[0].value, rhs->items[0].value);
