@@ -42,9 +42,7 @@
             
   <div class="section" id="objected-oriented-c">
 <span id="mainpage"></span><h1>Objected Oriented C<a class="headerlink" href="#objected-oriented-c" title="Permalink to this headline">¶</a></h1>
-<img alt="https://img.shields.io/badge/License-GPLv3-blue.svg" src="https://img.shields.io/badge/License-GPLv3-blue.svg" /><p>Please read the full docs <a class="reference external" href="http://igutekunst.github.io/ooc/index.html">here</a>.</p>
-<blockquote>
-<div></div></blockquote>
+<img alt="https://img.shields.io/badge/License-GPLv3-blue.svg" src="https://img.shields.io/badge/License-GPLv3-blue.svg" /><p><cite>Documentation Table of Contents &lt;http://igutekunst.github.io/ooc/intro.html&gt;</cite></p>
 <p>Experimenting with <cite>Object Oriented C</cite>.</p>
 <p>This library is a toy implementation of “objects” in C, with the idea to
 enable dynamic dispatch and polymorphism of a set of carefully written <cite>classes</cite>.</p>
@@ -52,16 +50,15 @@ enable dynamic dispatch and polymorphism of a set of carefully written <cite>cla
 <ul class="simple">
 <li><p>Less boilerplate code to do common tasks</p></li>
 <li><p>A friendlier standard library</p></li>
-<li><p>A <cite>batteries included</cite> C like environment.</p></li>
+<li><p>A <cite>batteries included</cite> C environment with dynamic typing</p></li>
 </ul>
-<p>The design of both the API and internals are inspired by Python, though
-no attempt has been made to mimic python APIs exactly, or interface with
-Python, though this may be a goal in the future.</p>
-<p>This library is completely experimental, and has not been used in any
+<p>The design of both the API and internals are inspired by Python.
+No attempt has been made to mimic python APIs exactly.
+Future versions may integrate with Python.</p>
+<p>This library is experimental and has not been used in any
 real projects as far as I know.</p>
-<p>It’s here to share some ideas with friends and the world. My hope is it
-will be useful one day, at which point I will promote it with more
-confidence!</p>
+<p>In the future, I hope to use OOC to build some larger personal projects and improve it to the
+point where other people will chose to use it.</p>
 <div class="section" id="working-modules">
 <h2>Working Modules<a class="headerlink" href="#working-modules" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -78,14 +75,30 @@ confidence!</p>
 <p>See <code class="docutils literal notranslate"><span class="pre">examples/count_words.c</span></code></p>
 <p>This test shows a more complete usage of the OOC library to solve a common
 interview question.</p>
-<p><strong>Problem Statement</strong>
+<p><strong>Problem Statement:</strong>
 Given a file full of words, count the time every word occurs. For bonus
 points, print the counts in sorted order.</p>
-<p>A word is defined as one or more non space characters. For now, only the space character needs
-to be considered, but also treating tab a separator is even better.</p>
+<p>A word is defined as one or more non-space characters. For now, only consider the space character
+as a separator and ignore the tab character.</p>
+<p>For Example, given the following file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">one</span> <span class="n">two</span> <span class="n">three</span> <span class="n">four</span> <span class="n">five</span>
+<span class="n">two</span> <span class="n">three</span> <span class="n">four</span> <span class="n">five</span>
+<span class="n">three</span> <span class="n">four</span> <span class="n">five</span>
+<span class="n">four</span> <span class="n">five</span>
+<span class="n">five</span>
+</pre></div>
+</div>
+<p>The output should be:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span><span class="p">,</span> <span class="n">five</span>
+<span class="mi">4</span><span class="p">,</span> <span class="n">four</span>
+<span class="mi">3</span><span class="p">,</span> <span class="n">three</span>
+<span class="mi">2</span><span class="p">,</span> <span class="n">two</span>
+<span class="mi">1</span><span class="p">,</span> <span class="n">one</span>
+</pre></div>
+</div>
 <div class="section" id="running-example">
 <h3>Running Example<a class="headerlink" href="#running-example" title="Permalink to this headline">¶</a></h3>
-<p>If you just want to run the example, run the following commands:</p>
+<p>If you only want to run the example, run the following commands:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">cmake</span><span class="o">-</span><span class="n">build</span>
 <span class="n">cd</span> <span class="n">cmake</span><span class="o">-</span><span class="n">build</span>
 <span class="n">make</span>
