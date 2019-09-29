@@ -72,7 +72,7 @@ point where other people will chose to use it.</p>
 </div>
 <div class="section" id="getting-started-tutorial">
 <h2>Getting Started Tutorial<a class="headerlink" href="#getting-started-tutorial" title="Permalink to this headline">¶</a></h2>
-<p>See <code class="docutils literal notranslate"><span class="pre">examples/count_words.c</span></code></p>
+<p>See <a class="reference external" href="https://github.com/igutekunst/ooc/blob/master/examples/count_words.c">examples/count_words.c</a></p>
 <p>This test shows a more complete usage of the OOC library to solve a common
 interview question.</p>
 <p><strong>Problem Statement:</strong>
@@ -129,21 +129,21 @@ as a separator and ignore the tab character.</p>
 <div class="section" id="step-by-step">
 <h3>Step By Step<a class="headerlink" href="#step-by-step" title="Permalink to this headline">¶</a></h3>
 <p>First we will include several headers that we will need later.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &lt;OOC/list.h&gt;</span>
-<span class="c1">#include &lt;OOC/hashmap.h&gt;</span>
-<span class="c1">#include &lt;OOC/math.h&gt;</span>
-<span class="c1">#include &lt;OOC/int.h&gt;</span>
-<span class="c1">#include &lt;OOC/string.h&gt;</span>
-<span class="c1">#include &lt;OOC/object.h&gt;</span>
-<span class="c1">#include &lt;OOC/tuple.h&gt;</span>
-<span class="c1">#include &lt;OOC/file.h&gt;</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;OOC/list.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;OOC/hashmap.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;OOC/math.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;OOC/int.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;OOC/string.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;OOC/object.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;OOC/tuple.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;OOC/file.h&gt;</span><span class="cp"></span>
 </pre></div>
 </div>
 <p>Then we create a basic C program main function. Our function will take one argument,
 a filename to process.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">main</span><span class="p">(</span><span class="nb">int</span> <span class="n">argc</span><span class="p">,</span> <span class="n">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">printf</span><span class="p">(</span><span class="s2">&quot;Usage: </span><span class="si">%s</span><span class="s2"> file</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Usage: %s file</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
         <span class="n">exit</span><span class="p">(</span><span class="n">EXIT_FAILURE</span><span class="p">);</span>
     <span class="p">}</span>
 
@@ -154,11 +154,11 @@ a filename to process.</p>
 <p>The general idea is to store the count of all seen words in a HashMap.
 Next we sort the results for printing.</p>
 <p>First we open a file, and read one line at a time</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="p">(</span><span class="n">full_line</span> <span class="o">!=</span> <span class="n">NULL</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="p">(</span><span class="n">full_line</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
 
-    <span class="o">//</span> <span class="n">Remove</span> <span class="n">trailing</span> <span class="n">newline</span>
-    <span class="n">const</span> <span class="n">struct</span> <span class="n">String</span><span class="o">*</span> <span class="n">line</span> <span class="o">=</span> <span class="n">string_slice</span><span class="p">(</span><span class="n">full_line</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
-    <span class="k">del</span><span class="p">(</span><span class="n">full_line</span><span class="p">);</span>
+    <span class="c1">// Remove trailing newline</span>
+    <span class="k">const</span> <span class="k">struct</span> <span class="n">String</span><span class="o">*</span> <span class="n">line</span> <span class="o">=</span> <span class="n">string_slice</span><span class="p">(</span><span class="n">full_line</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+    <span class="n">del</span><span class="p">(</span><span class="n">full_line</span><span class="p">);</span>
 
     <span class="n">full_line</span> <span class="o">=</span> <span class="n">file_read_line</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
 <span class="p">}</span>
@@ -166,46 +166,46 @@ Next we sort the results for printing.</p>
 </div>
 <p>Then we split the line into words using the space character,
 and then iterate over the words.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="p">(</span><span class="n">full_line</span> <span class="o">!=</span> <span class="n">NULL</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="p">(</span><span class="n">full_line</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
 
-    <span class="o">//</span> <span class="n">Remove</span> <span class="n">trailing</span> <span class="n">newline</span>
-    <span class="n">const</span> <span class="n">struct</span> <span class="n">String</span><span class="o">*</span> <span class="n">line</span> <span class="o">=</span> <span class="n">string_slice</span><span class="p">(</span><span class="n">full_line</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
-    <span class="k">del</span><span class="p">(</span><span class="n">full_line</span><span class="p">);</span>
+    <span class="c1">// Remove trailing newline</span>
+    <span class="k">const</span> <span class="k">struct</span> <span class="n">String</span><span class="o">*</span> <span class="n">line</span> <span class="o">=</span> <span class="n">string_slice</span><span class="p">(</span><span class="n">full_line</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+    <span class="n">del</span><span class="p">(</span><span class="n">full_line</span><span class="p">);</span>
 
-    <span class="n">const</span> <span class="n">struct</span> <span class="n">List</span><span class="o">*</span> <span class="nb">list</span> <span class="o">=</span> <span class="n">string_split</span><span class="p">(</span><span class="n">line</span><span class="p">);</span>
+    <span class="k">const</span> <span class="k">struct</span> <span class="n">List</span><span class="o">*</span> <span class="n">list</span> <span class="o">=</span> <span class="n">string_split</span><span class="p">(</span><span class="n">line</span><span class="p">);</span>
 
-    <span class="o">//</span> <span class="n">Iterate</span> <span class="n">over</span> <span class="n">the</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">words</span><span class="p">,</span> <span class="n">inserting</span> <span class="n">them</span> <span class="n">into</span> <span class="n">the</span> <span class="n">HashMap</span>
-    <span class="n">const</span> <span class="n">void</span><span class="o">*</span> <span class="n">it</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="nb">list</span><span class="p">);</span>
-    <span class="n">const</span> <span class="n">struct</span> <span class="n">String</span><span class="o">*</span> <span class="n">string</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="n">string</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">);</span> <span class="n">string</span> <span class="o">!=</span> <span class="n">NULL</span><span class="p">;</span> <span class="n">string</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">))</span> <span class="p">{</span>
-         <span class="o">//</span> <span class="n">Process</span> <span class="n">words</span> <span class="ow">in</span> <span class="n">here</span>
+    <span class="c1">// Iterate over the list of words, inserting them into the HashMap</span>
+    <span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">it</span> <span class="o">=</span> <span class="n">iter</span><span class="p">(</span><span class="n">list</span><span class="p">);</span>
+    <span class="k">const</span> <span class="k">struct</span> <span class="n">String</span><span class="o">*</span> <span class="n">string</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">string</span> <span class="o">=</span> <span class="n">next</span><span class="p">(</span><span class="n">it</span><span class="p">);</span> <span class="n">string</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">;</span> <span class="n">string</span> <span class="o">=</span> <span class="n">next</span><span class="p">(</span><span class="n">it</span><span class="p">))</span> <span class="p">{</span>
+         <span class="c1">// Process words in here</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>If a word has not been seen before, a 0 is inserted into the HashMap using
 the word as a key. Then the count is incremented.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="p">(</span><span class="n">full_line</span> <span class="o">!=</span> <span class="n">NULL</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="p">(</span><span class="n">full_line</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
 
-    <span class="o">//</span> <span class="n">Remove</span> <span class="n">trailing</span> <span class="n">newline</span>
-    <span class="n">const</span> <span class="n">struct</span> <span class="n">String</span><span class="o">*</span> <span class="n">line</span> <span class="o">=</span> <span class="n">string_slice</span><span class="p">(</span><span class="n">full_line</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
-    <span class="k">del</span><span class="p">(</span><span class="n">full_line</span><span class="p">);</span>
+    <span class="c1">// Remove trailing newline</span>
+    <span class="k">const</span> <span class="k">struct</span> <span class="n">String</span><span class="o">*</span> <span class="n">line</span> <span class="o">=</span> <span class="n">string_slice</span><span class="p">(</span><span class="n">full_line</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+    <span class="n">del</span><span class="p">(</span><span class="n">full_line</span><span class="p">);</span>
 
-    <span class="n">const</span> <span class="n">struct</span> <span class="n">List</span><span class="o">*</span> <span class="nb">list</span> <span class="o">=</span> <span class="n">string_split</span><span class="p">(</span><span class="n">line</span><span class="p">);</span>
+    <span class="k">const</span> <span class="k">struct</span> <span class="n">List</span><span class="o">*</span> <span class="n">list</span> <span class="o">=</span> <span class="n">string_split</span><span class="p">(</span><span class="n">line</span><span class="p">);</span>
 
-    <span class="o">//</span> <span class="n">Iterate</span> <span class="n">over</span> <span class="n">the</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">words</span><span class="p">,</span> <span class="n">inserting</span> <span class="n">them</span> <span class="n">into</span> <span class="n">the</span> <span class="n">HashMap</span>
-    <span class="n">const</span> <span class="n">void</span><span class="o">*</span> <span class="n">it</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="nb">list</span><span class="p">);</span>
-    <span class="n">const</span> <span class="n">struct</span> <span class="n">String</span><span class="o">*</span> <span class="n">string</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="n">string</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">);</span> <span class="n">string</span> <span class="o">!=</span> <span class="n">NULL</span><span class="p">;</span> <span class="n">string</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">))</span> <span class="p">{</span>
-        <span class="n">const</span> <span class="n">struct</span> <span class="n">Int</span><span class="o">*</span> <span class="n">temp_count</span> <span class="o">=</span> <span class="n">NULL</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">((</span><span class="n">temp_count</span> <span class="o">=</span> <span class="n">get_item</span><span class="p">(</span><span class="n">counts</span><span class="p">,</span> <span class="n">string</span><span class="p">))</span> <span class="o">==</span> <span class="n">NULL</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Iterate over the list of words, inserting them into the HashMap</span>
+    <span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">it</span> <span class="o">=</span> <span class="n">iter</span><span class="p">(</span><span class="n">list</span><span class="p">);</span>
+    <span class="k">const</span> <span class="k">struct</span> <span class="n">String</span><span class="o">*</span> <span class="n">string</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">string</span> <span class="o">=</span> <span class="n">next</span><span class="p">(</span><span class="n">it</span><span class="p">);</span> <span class="n">string</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">;</span> <span class="n">string</span> <span class="o">=</span> <span class="n">next</span><span class="p">(</span><span class="n">it</span><span class="p">))</span> <span class="p">{</span>
+        <span class="k">const</span> <span class="k">struct</span> <span class="n">Int</span><span class="o">*</span> <span class="n">temp_count</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">((</span><span class="n">temp_count</span> <span class="o">=</span> <span class="n">get_item</span><span class="p">(</span><span class="n">counts</span><span class="p">,</span> <span class="n">string</span><span class="p">))</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
             <span class="n">temp_count</span> <span class="o">=</span> <span class="n">new</span><span class="p">(</span><span class="n">Int</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
             <span class="n">set_item</span><span class="p">(</span><span class="n">counts</span><span class="p">,</span> <span class="n">string</span><span class="p">,</span> <span class="n">temp_count</span><span class="p">);</span>
         <span class="p">}</span>
         <span class="n">set_item</span><span class="p">(</span><span class="n">counts</span><span class="p">,</span> <span class="n">string</span><span class="p">,</span> <span class="n">obj_add</span><span class="p">(</span><span class="n">temp_count</span><span class="p">,</span> <span class="n">new</span><span class="p">(</span><span class="n">Int</span><span class="p">,</span> <span class="mi">1</span><span class="p">)));</span>
-        <span class="k">del</span><span class="p">(</span><span class="n">temp_count</span><span class="p">);</span>
+        <span class="n">del</span><span class="p">(</span><span class="n">temp_count</span><span class="p">);</span>
     <span class="p">}</span>
-    <span class="k">del</span><span class="p">(</span><span class="nb">list</span><span class="p">);</span>
+    <span class="n">del</span><span class="p">(</span><span class="n">list</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Note that we are leaking a bit of memory by using temporary Int objects.</p>
@@ -224,14 +224,14 @@ the word as a key. Then the count is incremented.</p>
 </div>
 <p>At the end, the totals are printed by looping over the HashMap keys.
 The keys are sorted by getting a tuple for each (key,value) pair, and sorting the list</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Iterate</span> <span class="n">over</span> <span class="n">the</span> <span class="n">tuples</span> <span class="k">for</span> <span class="n">printing</span>
-<span class="n">const</span> <span class="n">void</span><span class="o">*</span> <span class="n">ci</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">counts_list</span><span class="p">);</span>
-<span class="n">const</span> <span class="n">struct</span> <span class="n">Tuple</span><span class="o">*</span> <span class="n">t</span><span class="p">;</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// Iterate over the tuples for printing</span>
+<span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">ci</span> <span class="o">=</span> <span class="n">iter</span><span class="p">(</span><span class="n">counts_list</span><span class="p">);</span>
+<span class="k">const</span> <span class="k">struct</span> <span class="n">Tuple</span><span class="o">*</span> <span class="n">t</span><span class="p">;</span>
 
-<span class="k">for</span> <span class="p">(</span><span class="n">t</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">ci</span><span class="p">);</span> <span class="n">t</span> <span class="o">!=</span> <span class="n">NULL</span><span class="p">;</span> <span class="n">t</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">ci</span><span class="p">))</span> <span class="p">{</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s2">&quot; </span><span class="si">%d</span><span class="s2">, </span><span class="si">%-14s</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">obj_to_int</span><span class="p">(</span><span class="n">get_item</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">new</span><span class="p">(</span><span class="n">Int</span><span class="p">,</span> <span class="mi">0</span><span class="p">))),</span> <span class="n">c_str</span><span class="p">(</span><span class="n">get_item</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">new</span><span class="p">(</span><span class="n">Int</span><span class="p">,</span> <span class="mi">1</span><span class="p">))));</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">t</span> <span class="o">=</span> <span class="n">next</span><span class="p">(</span><span class="n">ci</span><span class="p">);</span> <span class="n">t</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">next</span><span class="p">(</span><span class="n">ci</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot; %d, %-14s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">obj_to_int</span><span class="p">(</span><span class="n">get_item</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">new</span><span class="p">(</span><span class="n">Int</span><span class="p">,</span> <span class="mi">0</span><span class="p">))),</span> <span class="n">c_str</span><span class="p">(</span><span class="n">get_item</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">new</span><span class="p">(</span><span class="n">Int</span><span class="p">,</span> <span class="mi">1</span><span class="p">))));</span>
 <span class="p">}</span>
-<span class="n">printf</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Note: The OOC library does not support referencing counting, and as such, allocates memory that we don’t free.
@@ -241,68 +241,68 @@ This is because almost all OOC functions require OOC objects as arguments.</p>
 </div>
 <div class="section" id="full-source-code">
 <h3>Full Source Code<a class="headerlink" href="#full-source-code" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">const</span> <span class="n">struct</span> <span class="n">HashMap</span><span class="o">*</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">new</span><span class="p">(</span><span class="n">HashMap</span><span class="p">);</span>
-    <span class="n">const</span> <span class="n">struct</span> <span class="n">File</span><span class="o">*</span> <span class="n">f</span> <span class="o">=</span> <span class="n">new</span><span class="p">(</span><span class="n">File</span><span class="p">,</span> <span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>    <span class="k">const</span> <span class="k">struct</span> <span class="n">HashMap</span><span class="o">*</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">new</span><span class="p">(</span><span class="n">HashMap</span><span class="p">);</span>
+    <span class="k">const</span> <span class="k">struct</span> <span class="n">File</span><span class="o">*</span> <span class="n">f</span> <span class="o">=</span> <span class="n">new</span><span class="p">(</span><span class="n">File</span><span class="p">,</span> <span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
 
-    <span class="n">const</span> <span class="n">struct</span> <span class="n">String</span><span class="o">*</span> <span class="n">full_line</span> <span class="o">=</span> <span class="n">file_read_line</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
+    <span class="k">const</span> <span class="k">struct</span> <span class="n">String</span><span class="o">*</span> <span class="n">full_line</span> <span class="o">=</span> <span class="n">file_read_line</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
 
 
-    <span class="k">while</span> <span class="p">(</span><span class="n">full_line</span> <span class="o">!=</span> <span class="n">NULL</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">full_line</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
 
-        <span class="o">//</span> <span class="n">Remove</span> <span class="n">trailing</span> <span class="n">newline</span>
-        <span class="n">const</span> <span class="n">struct</span> <span class="n">String</span><span class="o">*</span> <span class="n">line</span> <span class="o">=</span> <span class="n">string_slice</span><span class="p">(</span><span class="n">full_line</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
-        <span class="k">del</span><span class="p">(</span><span class="n">full_line</span><span class="p">);</span>
+        <span class="c1">// Remove trailing newline</span>
+        <span class="k">const</span> <span class="k">struct</span> <span class="n">String</span><span class="o">*</span> <span class="n">line</span> <span class="o">=</span> <span class="n">string_slice</span><span class="p">(</span><span class="n">full_line</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+        <span class="n">del</span><span class="p">(</span><span class="n">full_line</span><span class="p">);</span>
 
-        <span class="n">const</span> <span class="n">struct</span> <span class="n">List</span><span class="o">*</span> <span class="nb">list</span> <span class="o">=</span> <span class="n">string_split</span><span class="p">(</span><span class="n">line</span><span class="p">);</span>
+        <span class="k">const</span> <span class="k">struct</span> <span class="n">List</span><span class="o">*</span> <span class="n">list</span> <span class="o">=</span> <span class="n">string_split</span><span class="p">(</span><span class="n">line</span><span class="p">);</span>
 
-        <span class="o">//</span> <span class="n">Iterate</span> <span class="n">over</span> <span class="n">the</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">words</span><span class="p">,</span> <span class="n">inserting</span> <span class="n">them</span> <span class="n">into</span> <span class="n">the</span> <span class="n">HashMap</span>
-        <span class="n">const</span> <span class="n">void</span><span class="o">*</span> <span class="n">it</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="nb">list</span><span class="p">);</span>
-        <span class="n">const</span> <span class="n">struct</span> <span class="n">String</span><span class="o">*</span> <span class="n">string</span><span class="p">;</span>
-        <span class="k">for</span> <span class="p">(</span><span class="n">string</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">);</span> <span class="n">string</span> <span class="o">!=</span> <span class="n">NULL</span><span class="p">;</span> <span class="n">string</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">))</span> <span class="p">{</span>
-            <span class="n">const</span> <span class="n">struct</span> <span class="n">Int</span><span class="o">*</span> <span class="n">temp_count</span> <span class="o">=</span> <span class="n">NULL</span><span class="p">;</span>
-            <span class="k">if</span> <span class="p">((</span><span class="n">temp_count</span> <span class="o">=</span> <span class="n">get_item</span><span class="p">(</span><span class="n">counts</span><span class="p">,</span> <span class="n">string</span><span class="p">))</span> <span class="o">==</span> <span class="n">NULL</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Iterate over the list of words, inserting them into the HashMap</span>
+        <span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">it</span> <span class="o">=</span> <span class="n">iter</span><span class="p">(</span><span class="n">list</span><span class="p">);</span>
+        <span class="k">const</span> <span class="k">struct</span> <span class="n">String</span><span class="o">*</span> <span class="n">string</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">string</span> <span class="o">=</span> <span class="n">next</span><span class="p">(</span><span class="n">it</span><span class="p">);</span> <span class="n">string</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">;</span> <span class="n">string</span> <span class="o">=</span> <span class="n">next</span><span class="p">(</span><span class="n">it</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">const</span> <span class="k">struct</span> <span class="n">Int</span><span class="o">*</span> <span class="n">temp_count</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">((</span><span class="n">temp_count</span> <span class="o">=</span> <span class="n">get_item</span><span class="p">(</span><span class="n">counts</span><span class="p">,</span> <span class="n">string</span><span class="p">))</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
                 <span class="n">temp_count</span> <span class="o">=</span> <span class="n">new</span><span class="p">(</span><span class="n">Int</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
                 <span class="n">set_item</span><span class="p">(</span><span class="n">counts</span><span class="p">,</span> <span class="n">string</span><span class="p">,</span> <span class="n">temp_count</span><span class="p">);</span>
             <span class="p">}</span>
             <span class="n">set_item</span><span class="p">(</span><span class="n">counts</span><span class="p">,</span> <span class="n">string</span><span class="p">,</span> <span class="n">obj_add</span><span class="p">(</span><span class="n">temp_count</span><span class="p">,</span> <span class="n">new</span><span class="p">(</span><span class="n">Int</span><span class="p">,</span> <span class="mi">1</span><span class="p">)));</span>
-            <span class="k">del</span><span class="p">(</span><span class="n">temp_count</span><span class="p">);</span>
+            <span class="n">del</span><span class="p">(</span><span class="n">temp_count</span><span class="p">);</span>
         <span class="p">}</span>
-        <span class="k">del</span><span class="p">(</span><span class="nb">list</span><span class="p">);</span>
+        <span class="n">del</span><span class="p">(</span><span class="n">list</span><span class="p">);</span>
         <span class="n">full_line</span> <span class="o">=</span> <span class="n">file_read_line</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
 
     <span class="p">}</span>
 
 
-    <span class="o">//</span> <span class="n">Put</span> <span class="n">the</span> <span class="n">results</span> <span class="n">into</span> <span class="n">a</span> <span class="n">List</span> <span class="n">of</span> <span class="n">Tuples</span> <span class="k">for</span> <span class="n">sorting</span>
-    <span class="n">const</span> <span class="n">void</span><span class="o">*</span> <span class="n">count_it</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">counts</span><span class="p">);</span>
+    <span class="c1">// Put the results into a List of Tuples for sorting</span>
+    <span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">count_it</span> <span class="o">=</span> <span class="n">iter</span><span class="p">(</span><span class="n">counts</span><span class="p">);</span>
 
-    <span class="n">const</span> <span class="n">struct</span> <span class="n">List</span><span class="o">*</span> <span class="n">counts_list</span> <span class="o">=</span> <span class="n">new</span><span class="p">(</span><span class="n">List</span><span class="p">);</span>
+    <span class="k">const</span> <span class="k">struct</span> <span class="n">List</span><span class="o">*</span> <span class="n">counts_list</span> <span class="o">=</span> <span class="n">new</span><span class="p">(</span><span class="n">List</span><span class="p">);</span>
 
-    <span class="k">for</span> <span class="p">(</span><span class="n">const</span> <span class="n">void</span><span class="o">*</span> <span class="n">key</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">count_it</span><span class="p">);</span> <span class="n">key</span> <span class="o">!=</span> <span class="n">NULL</span><span class="p">;</span> <span class="n">key</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">count_it</span><span class="p">))</span> <span class="p">{</span>
-        <span class="n">const</span> <span class="n">struct</span> <span class="n">Tuple</span><span class="o">*</span> <span class="n">t</span> <span class="o">=</span> <span class="n">new</span><span class="p">(</span><span class="n">Tuple</span><span class="p">,</span> <span class="n">get_item</span><span class="p">(</span><span class="n">counts</span><span class="p">,</span> <span class="n">key</span><span class="p">),</span> <span class="n">key</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">key</span> <span class="o">=</span> <span class="n">next</span><span class="p">(</span><span class="n">count_it</span><span class="p">);</span> <span class="n">key</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">;</span> <span class="n">key</span> <span class="o">=</span> <span class="n">next</span><span class="p">(</span><span class="n">count_it</span><span class="p">))</span> <span class="p">{</span>
+        <span class="k">const</span> <span class="k">struct</span> <span class="n">Tuple</span><span class="o">*</span> <span class="n">t</span> <span class="o">=</span> <span class="n">new</span><span class="p">(</span><span class="n">Tuple</span><span class="p">,</span> <span class="n">get_item</span><span class="p">(</span><span class="n">counts</span><span class="p">,</span> <span class="n">key</span><span class="p">),</span> <span class="n">key</span><span class="p">);</span>
         <span class="n">append</span><span class="p">(</span><span class="n">counts_list</span><span class="p">,</span> <span class="n">t</span><span class="p">);</span>
     <span class="p">}</span>
     <span class="n">obj_sort</span><span class="p">(</span><span class="n">counts_list</span><span class="p">,</span> <span class="n">SORT_DESCENDING</span><span class="p">);</span>
 
 
-    <span class="o">//</span> <span class="n">Iterate</span> <span class="n">over</span> <span class="n">the</span> <span class="n">tuples</span> <span class="k">for</span> <span class="n">printing</span>
-    <span class="n">const</span> <span class="n">void</span><span class="o">*</span> <span class="n">ci</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">counts_list</span><span class="p">);</span>
-    <span class="n">const</span> <span class="n">struct</span> <span class="n">Tuple</span><span class="o">*</span> <span class="n">t</span><span class="p">;</span>
+    <span class="c1">// Iterate over the tuples for printing</span>
+    <span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">ci</span> <span class="o">=</span> <span class="n">iter</span><span class="p">(</span><span class="n">counts_list</span><span class="p">);</span>
+    <span class="k">const</span> <span class="k">struct</span> <span class="n">Tuple</span><span class="o">*</span> <span class="n">t</span><span class="p">;</span>
 
-    <span class="k">for</span> <span class="p">(</span><span class="n">t</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">ci</span><span class="p">);</span> <span class="n">t</span> <span class="o">!=</span> <span class="n">NULL</span><span class="p">;</span> <span class="n">t</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">ci</span><span class="p">))</span> <span class="p">{</span>
-        <span class="n">printf</span><span class="p">(</span><span class="s2">&quot; </span><span class="si">%d</span><span class="s2">, </span><span class="si">%-14s</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">obj_to_int</span><span class="p">(</span><span class="n">get_item</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">new</span><span class="p">(</span><span class="n">Int</span><span class="p">,</span> <span class="mi">0</span><span class="p">))),</span> <span class="n">c_str</span><span class="p">(</span><span class="n">get_item</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">new</span><span class="p">(</span><span class="n">Int</span><span class="p">,</span> <span class="mi">1</span><span class="p">))));</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">t</span> <span class="o">=</span> <span class="n">next</span><span class="p">(</span><span class="n">ci</span><span class="p">);</span> <span class="n">t</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">next</span><span class="p">(</span><span class="n">ci</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot; %d, %-14s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">obj_to_int</span><span class="p">(</span><span class="n">get_item</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">new</span><span class="p">(</span><span class="n">Int</span><span class="p">,</span> <span class="mi">0</span><span class="p">))),</span> <span class="n">c_str</span><span class="p">(</span><span class="n">get_item</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">new</span><span class="p">(</span><span class="n">Int</span><span class="p">,</span> <span class="mi">1</span><span class="p">))));</span>
     <span class="p">}</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
 
 
-    <span class="o">//</span> <span class="n">Note</span><span class="p">:</span> <span class="n">There</span> <span class="n">are</span> <span class="n">several</span> <span class="n">memory</span> <span class="n">leaks</span><span class="o">.</span> <span class="n">These</span> <span class="n">are</span> <span class="s2">&quot;intentional&quot;</span><span class="p">,</span> <span class="n">because</span> <span class="n">the</span>
-    <span class="o">//</span> <span class="n">goal</span> <span class="n">of</span> <span class="n">the</span> <span class="n">OOC</span> <span class="n">project</span> <span class="ow">is</span> <span class="n">first</span> <span class="n">to</span> <span class="n">develop</span> <span class="n">okay</span> <span class="n">ergonomics</span><span class="o">.</span> <span class="n">After</span> <span class="n">that</span><span class="p">,</span> <span class="n">referencing</span> <span class="n">counting</span>
-    <span class="o">//</span> <span class="n">will</span> <span class="n">be</span> <span class="n">added</span><span class="p">,</span> <span class="n">making</span> <span class="n">it</span> <span class="n">far</span> <span class="n">easier</span> <span class="n">to</span> <span class="n">manage</span> <span class="n">memory</span><span class="o">.</span>
-    <span class="k">del</span><span class="p">(</span><span class="n">count_it</span><span class="p">);</span>
-    <span class="k">del</span><span class="p">(</span><span class="n">ci</span><span class="p">);</span>
-    <span class="k">del</span><span class="p">(</span><span class="n">counts_list</span><span class="p">);</span>
-    <span class="k">del</span><span class="p">(</span><span class="n">counts</span><span class="p">);</span>
-    <span class="k">del</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
+    <span class="c1">// Note: There are several memory leaks. These are &quot;intentional&quot;, because the</span>
+    <span class="c1">// goal of the OOC project is first to develop okay ergonomics. After that, referencing counting</span>
+    <span class="c1">// will be added, making it far easier to manage memory.</span>
+    <span class="n">del</span><span class="p">(</span><span class="n">count_it</span><span class="p">);</span>
+    <span class="n">del</span><span class="p">(</span><span class="n">ci</span><span class="p">);</span>
+    <span class="n">del</span><span class="p">(</span><span class="n">counts_list</span><span class="p">);</span>
+    <span class="n">del</span><span class="p">(</span><span class="n">counts</span><span class="p">);</span>
+    <span class="n">del</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
 
     <span class="k">return</span> <span class="n">EXIT_SUCCESS</span><span class="p">;</span>
 <span class="p">}</span>

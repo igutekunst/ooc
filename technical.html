@@ -52,7 +52,7 @@ data hiding, allowing the API implementation to change without affecting user co
 <div class="section" id="implementation-details">
 <h2>Implementation Details<a class="headerlink" href="#implementation-details" title="Permalink to this headline">¶</a></h2>
 <p>Every OOC <code class="docutils literal notranslate"><span class="pre">Class</span></code> has an associated <a class="reference internal" href="object_internal.html#class-header"><span class="std std-ref">ClassHeader</span></a> that describes its functionality.</p>
-<p>Here’s an abbreviated code sample:</p>
+<p>Here’s an abbreviated code sample</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">struct</span> <span class="n">ClassHeader</span> <span class="p">{</span>
     <span class="n">unsigned</span> <span class="n">long</span> <span class="n">magic</span><span class="p">;</span>
     <span class="n">size_t</span> <span class="n">size</span><span class="p">;</span>
@@ -68,7 +68,7 @@ other non-NULL pointer.</p>
 <h3>Instances<a class="headerlink" href="#instances" title="Permalink to this headline">¶</a></h3>
 <p>Every instance of an OOC <code class="docutils literal notranslate"><span class="pre">Class</span></code>, called objects, has a pointer to its associated header, which
 will do dynamic dispatch to the correct “method” at runtime.</p>
-<p>Here’s the <a class="reference internal" href="object_internal.html#class-header"><span class="std std-ref">ClassHeader</span></a> for the <code class="docutils literal notranslate"><span class="pre">String</span></code> class::</p>
+<p>Here’s the <a class="reference internal" href="object_internal.html#class-header"><span class="std std-ref">ClassHeader</span></a> for the <code class="docutils literal notranslate"><span class="pre">String</span></code> class</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">struct</span> <span class="n">String</span> <span class="p">{</span>
     <span class="n">struct</span> <span class="n">ClassHeader</span><span class="o">*</span> <span class="n">class</span><span class="p">;</span>
     <span class="n">size_t</span> <span class="n">size</span><span class="p">;</span>
@@ -82,14 +82,14 @@ crucial technique that allows a void* to be identified. After it is extracted, t
 <p>Every top level OOC function will perform a NULL check, and then cast the object into a <code class="docutils literal notranslate"><span class="pre">ClassHeader*</span></code>.
 This may involve some argument pre-processing, followed by a call to the
 appropriate method stored as a function pointer in the <a class="reference internal" href="object_internal.html#class-header"><span class="std std-ref">ClassHeader</span></a>.</p>
-<p>This function pointer will be implemented as a function in a per-class implementation file. For example, <cite>src/string.c</cite> contains
+<p>This function pointer will be implemented as a function in a per-class implementation file. For .. code-block:: c, <cite>src/string.c</cite> contains
 the implementation of all the <code class="docutils literal notranslate"><span class="pre">String</span></code> functions.</p>
 </div>
 <div class="section" id="implementing-an-instance">
 <h3>Implementing an Instance<a class="headerlink" href="#implementing-an-instance" title="Permalink to this headline">¶</a></h3>
 <p>The implementation of a given class is relatively straightforward, although it involves a good amount of boilerplate code,
 which seems unavoidable in C.</p>
-<p>Let’s look at a simplified part of the <code class="docutils literal notranslate"><span class="pre">String</span></code> implementation:</p>
+<p>Let’s look at a simplified part of the <code class="docutils literal notranslate"><span class="pre">String</span></code> implementation</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>struct StringClass string_class = {
         .class = {
                 .magic = MAGIC,
@@ -117,7 +117,7 @@ discussed later.</p></li>
 </ol>
 </dd>
 </dl>
-<p>Here’s the full implementation of <code class="docutils literal notranslate"><span class="pre">String__init</span></code>:</p>
+<p>Here’s the full implementation of <code class="docutils literal notranslate"><span class="pre">String__init</span></code></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>const void* String_init(const void* _self, size_t argc, va_list args) {
     (void) argc;
     struct String* self = (struct String*) _self;
@@ -151,19 +151,19 @@ passes this in argc. Similarly, all the arguments are passed in va_arg.</p>
 <h3>Traits<a class="headerlink" href="#traits" title="Permalink to this headline">¶</a></h3>
 <p>Traits are a concept borrowed from languages such as Rust that have strong type systems.
 Various types can implement different Traits, making them compatible with functions that require those traits.</p>
-<p>For example, a class could implement the <code class="docutils literal notranslate"><span class="pre">Orderable</span></code>, trait, and immediately be sortable. Similarly, a class
+<p>For .. code-block:: c, a class could implement the <code class="docutils literal notranslate"><span class="pre">Orderable</span></code>, trait, and immediately be sortable. Similarly, a class
 could implement the <code class="docutils literal notranslate"><span class="pre">Iterable</span></code> trait, and be usable with functional programming functions such as <code class="docutils literal notranslate"><span class="pre">map</span></code> and <code class="docutils literal notranslate"><span class="pre">reduce</span></code>.</p>
 <p>Of course you lose a bunch of the value of <em>Traits</em> without having static typing, but it will enable better error messages
 and runtime type checking.</p>
 <p>Right now this isn’t implemented, but it’s easy to imagine some functions that check that arguments implement certain traits.</p>
-<p>For example:</p>
+<p>For .. code-block:: c:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">const</span> <span class="n">void</span><span class="o">*</span> <span class="n">String_append</span><span class="p">(</span><span class="n">const</span> <span class="n">void</span><span class="o">*</span> <span class="n">_self</span><span class="p">,</span> <span class="n">const</span> <span class="n">void</span><span class="o">*</span> <span class="n">_other</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">ASSERT_SUPPORTS_TRAIT</span><span class="p">(</span><span class="n">_other</span><span class="p">,</span> <span class="n">ToSring</span><span class="p">);</span>
     <span class="o">...</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Or for a HashMap:</p>
+<p>Or for a HashMap</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="n">internal_insert_HashMap</span><span class="p">(</span><span class="n">struct</span> <span class="n">HashMap</span> <span class="o">*</span><span class="bp">self</span><span class="p">,</span>
                          <span class="n">const</span> <span class="n">void</span> <span class="o">*</span><span class="n">_key</span><span class="p">,</span>
                          <span class="n">const</span> <span class="n">void</span> <span class="o">*</span><span class="n">_value</span><span class="p">)</span> <span class="p">{</span>
@@ -175,7 +175,7 @@ and runtime type checking.</p>
 adding some boolean fields to the ClassHeader, one for each <cite>Trait</cite> available in OOC. The assertion
 could then easily verify the type supports some functionality.</p>
 <p>Right now, OOC only performs type checking for the first argument for a function. It’s done in the
-top level function, for example <code class="docutils literal notranslate"><span class="pre">obj_insert(const</span> <span class="pre">void*</span> <span class="pre">_self,</span> <span class="pre">...)</span></code>. This function ensures the
+top level function, for .. code-block:: c <code class="docutils literal notranslate"><span class="pre">obj_insert(const</span> <span class="pre">void*</span> <span class="pre">_self,</span> <span class="pre">...)</span></code>. This function ensures the
 object _self  has a non-NULL unction pointer <code class="docutils literal notranslate"><span class="pre">obj_insert</span></code>, but doesn’t do any other checking.</p>
 </div>
 </div>

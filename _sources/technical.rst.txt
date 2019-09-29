@@ -19,7 +19,9 @@ Implementation Details
 Every OOC ``Class`` has an associated :ref:`ClassHeader <class_header>` that describes its functionality.
 
 
-Here's an abbreviated code sample::
+Here's an abbreviated code sample
+
+::
 
     struct ClassHeader {
         unsigned long magic;
@@ -38,7 +40,9 @@ Instances
 Every instance of an OOC ``Class``, called objects, has a pointer to its associated header, which
 will do dynamic dispatch to the correct "method" at runtime.
 
-Here's the :ref:`ClassHeader <class_header>` for the ``String`` class:::
+Here's the :ref:`ClassHeader <class_header>` for the ``String`` class
+
+::
 
     struct String {
         struct ClassHeader* class;
@@ -54,7 +58,7 @@ Every top level OOC function will perform a NULL check, and then cast the object
 This may involve some argument pre-processing, followed by a call to the
 appropriate method stored as a function pointer in the :ref:`ClassHeader <class_header>`.
 
-This function pointer will be implemented as a function in a per-class implementation file. For example, `src/string.c` contains
+This function pointer will be implemented as a function in a per-class implementation file. For .. code-block:: c, `src/string.c` contains
 the implementation of all the ``String`` functions.
 
 Implementing an Instance
@@ -63,7 +67,9 @@ Implementing an Instance
 The implementation of a given class is relatively straightforward, although it involves a good amount of boilerplate code,
 which seems unavoidable in C.
 
-Let's look at a simplified part of the ``String`` implementation::
+Let's look at a simplified part of the ``String`` implementation
+
+::
 
     struct StringClass string_class = {
             .class = {
@@ -88,7 +94,9 @@ Here we can see a few important things:
        Some more specific functionality is included in *Traits*, which are extensions to the ClassHeader, and will be
        discussed later.
 
-Here's the full implementation of ``String__init``::
+Here's the full implementation of ``String__init``
+
+::
 
     const void* String_init(const void* _self, size_t argc, va_list args) {
         (void) argc;
@@ -127,7 +135,7 @@ Traits
 Traits are a concept borrowed from languages such as Rust that have strong type systems.
 Various types can implement different Traits, making them compatible with functions that require those traits.
 
-For example, a class could implement the ``Orderable``, trait, and immediately be sortable. Similarly, a class
+For .. code-block:: c, a class could implement the ``Orderable``, trait, and immediately be sortable. Similarly, a class
 could implement the ``Iterable`` trait, and be usable with functional programming functions such as ``map`` and ``reduce``.
 
 Of course you lose a bunch of the value of *Traits* without having static typing, but it will enable better error messages
@@ -135,14 +143,16 @@ and runtime type checking.
 
 Right now this isn't implemented, but it's easy to imagine some functions that check that arguments implement certain traits.
 
-For example::
+For .. code-block:: c::
 
     const void* String_append(const void* _self, const void* _other) {
         ASSERT_SUPPORTS_TRAIT(_other, ToSring);
         ...
     }
 
-Or for a HashMap::
+Or for a HashMap
+
+::
 
     void internal_insert_HashMap(struct HashMap *self,
                              const void *_key,
@@ -155,7 +165,7 @@ adding some boolean fields to the ClassHeader, one for each `Trait` available in
 could then easily verify the type supports some functionality.
 
 Right now, OOC only performs type checking for the first argument for a function. It's done in the
-top level function, for example ``obj_insert(const void* _self, ...)``. This function ensures the
+top level function, for .. code-block:: c ``obj_insert(const void* _self, ...)``. This function ensures the
 object _self  has a non-NULL unction pointer ``obj_insert``, but doesn't do any other checking.
 
 
