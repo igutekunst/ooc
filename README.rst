@@ -6,7 +6,9 @@ Objected Oriented C
 
 .. image:: https://img.shields.io/badge/License-GPLv3-blue.svg
 
-`Documentation Table of Contents <http://igutekunst.github.io/OOC/intro.html>`
+`Documentation Table of Contents`_
+
+.. _`Documentation Table of Contents`: : http://igutekunst.github.io/OOC/intro.html>
 
 Experimenting with `Object Oriented C`.
 
