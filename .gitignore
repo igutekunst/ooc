@@ -31,3 +31,4 @@ config.h
 tags
 
 cmake-build-debug
+docs/docs
