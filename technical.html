@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Technical Details &#8212; ooc  documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="unit_testing.html" />
+    <link rel="prev" title="OOC API Documentation" href="api.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="unit_testing.html" title="&lt;no title&gt;"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="api.html" title="OOC API Documentation"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ooc  documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="technical-details">
+<h1>Technical Details<a class="headerlink" href="#technical-details" title="Permalink to this headline">¶</a></h1>
+<p>All actions performed with OOC objects is done through a uniform API, exposed through a
+set of header files. Core functionality is included in <code class="docutils literal notranslate"><span class="pre">ooc/object.h</span></code>, with additional
+functionality exposed through additional headers.</p>
+<p>From a user’s perspective, every OOC object is a const void*, or an opaque struct. This enables perfect
+data hiding, allowing the API implementation to change without affecting user code.</p>
+<p>Of course, this has the downside of <cite>breaking</cite> the C type system, which makes catching errors at compile time harder.</p>
+<p>What this enables however, is using the same set of functions to operate on a variety of types.</p>
+<div class="section" id="implementation-details">
+<h2>Implementation Details<a class="headerlink" href="#implementation-details" title="Permalink to this headline">¶</a></h2>
+<p>Every OOC <code class="docutils literal notranslate"><span class="pre">Class</span></code> has an associated <a class="reference internal" href="object_internal.html#class-header"><span class="std std-ref">ClassHeader</span></a> that describes its functionality.</p>
+<p>Here’s an abbreviated code sample:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">struct</span> <span class="n">ClassHeader</span> <span class="p">{</span>
+    <span class="n">unsigned</span> <span class="n">long</span> <span class="n">magic</span><span class="p">;</span>
+    <span class="n">size_t</span> <span class="n">size</span><span class="p">;</span>
+    <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">object_name</span><span class="p">;</span>
+    <span class="n">size_t</span> <span class="p">(</span><span class="o">*</span><span class="n">get_size</span><span class="p">)(</span><span class="n">const</span> <span class="n">void</span> <span class="o">*</span><span class="n">_self</span><span class="p">);</span>
+    <span class="n">size_t</span> <span class="p">(</span><span class="o">*</span><span class="n">get_len</span><span class="p">)(</span><span class="n">const</span> <span class="n">void</span> <span class="o">*</span><span class="n">_self</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The magic number is used to determine if a <code class="docutils literal notranslate"><span class="pre">void*</span></code> passed to a function is really an OOC object, or some
+other non-NULL pointer.</p>
+<div class="section" id="instances">
+<h3>Instances<a class="headerlink" href="#instances" title="Permalink to this headline">¶</a></h3>
+<p>Every instance of an OOC <code class="docutils literal notranslate"><span class="pre">Class</span></code>, called objects, has a pointer to its associated header, which
+will do dynamic dispatch to the correct “method” at runtime.</p>
+<p>Here’s the <a class="reference internal" href="object_internal.html#class-header"><span class="std std-ref">ClassHeader</span></a> for the <code class="docutils literal notranslate"><span class="pre">String</span></code> class::</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">struct</span> <span class="n">String</span> <span class="p">{</span>
+    <span class="n">struct</span> <span class="n">ClassHeader</span><span class="o">*</span> <span class="n">class</span><span class="p">;</span>
+    <span class="n">size_t</span> <span class="n">size</span><span class="p">;</span>
+    <span class="n">size_t</span> <span class="nb">len</span><span class="p">;</span>
+    <span class="n">char</span><span class="o">*</span> <span class="n">string_data</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>The interesting thing to note here is the first item in the struct is a <code class="docutils literal notranslate"><span class="pre">ClassHeader*.</span></code>. This is the
+crucial technique that allows a a given object, in the form of a void* to identified, and the correct methods
+to be called.</p>
+<p>Every top level OOC function will first do a NULL check, and then cast the object into a <code class="docutils literal notranslate"><span class="pre">ClassHeader*</span></code>, to
+determine what to do next. This might involve some pre-processing of arguments, followed by a call to the
+appropriate method, stored as a function pointer in the <a class="reference internal" href="object_internal.html#class-header"><span class="std std-ref">ClassHeader</span></a>.</p>
+<p>This function pointer will be implemented as a function in per-class implementation file. For example, <cite>src/string.c</cite> contains
+the implementation of all the <code class="docutils literal notranslate"><span class="pre">String</span></code> functions.</p>
+</div>
+<div class="section" id="implementing-an-instance">
+<h3>Implementing an Instance<a class="headerlink" href="#implementing-an-instance" title="Permalink to this headline">¶</a></h3>
+<p>The implementation of a given class is relatively straightforward, though involves a good amount of boilerplate code,
+which seems unavoidable in C.</p>
+<p>Let’s look at a simplified part of the <code class="docutils literal notranslate"><span class="pre">String</span></code> implementation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>struct StringClass string_class = {
+        .class = {
+                .magic = MAGIC,
+                .size = sizeof(struct String),
+                .object_init = String_init,
+                .get_size = String_get_size,
+                .equals = String_equal,
+                .object_name = &quot;String&quot;,
+                .string = {
+                        .string_split = String_split,
+                        .string_slice = String_slice
+                }
+        }
+
+};
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Here we can see a few important things:</dt><dd><ol class="arabic simple">
+<li><p>The MAGIC must be set here. Otherwise, <code class="docutils literal notranslate"><span class="pre">new</span></code> may try to construct objects out of invalid pointers.</p></li>
+<li><p>The size of the object before initialization is specified. This is used by new to allocate memoery</p></li>
+<li><p>Some function pointers are in <code class="docutils literal notranslate"><span class="pre">.class</span></code>, and are considered common, and implemented for many objects.
+Some more specific functionality is included in <em>Traits</em>, which are extensions to the ClassHeader, and will be
+discussed later.</p></li>
+</ol>
+</dd>
+</dl>
+<p>Here’s the full implementation of <code class="docutils literal notranslate"><span class="pre">String__init</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>const void* String_init(const void* _self, size_t argc, va_list args) {
+    (void) argc;
+    struct String* self = (struct String*) _self;
+    const char* data = va_arg(args, const char *);
+    if (!data) {
+        free(self);
+        return NULL;
+    }
+
+    // TODO allow string to be created using data without copying
+
+    size_t len = strlen(data);
+    size_t size = sizeof(struct String) + len + 1;
+    self = (struct String*) realloc(self, size);
+    self-&gt;class = String;
+    void* space = (void*) &amp;self[1];
+    self-&gt;string_data = strcpy(space, data);
+    self-&gt;size = size;
+    self-&gt;len = len;
+    return self;
+}
+</pre></div>
+</div>
+<p>Here we can again see a few important things.</p>
+<p>The signature might look a bit weird. There is the void* _self, which might make sense, but
+there’s also an <code class="docutils literal notranslate"><span class="pre">argc</span></code>, and a <code class="docutils literal notranslate"><span class="pre">va_list</span></code>. This is do to how <code class="docutils literal notranslate"><span class="pre">new</span></code> is implemented.</p>
+<p><code class="docutils literal notranslate"><span class="pre">new</span></code> uses a bit of macro magic ( <code class="docutils literal notranslate"><span class="pre">src/object_internal.h</span></code>) to capture the number of arguments passed to it, and
+passes this in argc. Similarly, all the arguments are passed in va_arg.</p>
+</div>
+<div class="section" id="traits">
+<h3>Traits<a class="headerlink" href="#traits" title="Permalink to this headline">¶</a></h3>
+<p>Traits are a concept borrowed from languages such as Rust that have strong type systems. The idea, is that
+various types can implement different Traits, and then be compatible with functions that require those traits.</p>
+<p>For example, a class could implement the <code class="docutils literal notranslate"><span class="pre">Orderable</span></code>, trait, and immediately be sortable. Similarly, a class
+could implement the <code class="docutils literal notranslate"><span class="pre">Iterable</span></code> trait, and be usable with functional programming functions such as <code class="docutils literal notranslate"><span class="pre">map</span></code> and <code class="docutils literal notranslate"><span class="pre">reduce</span></code>.</p>
+<p>Of course you lose a bunch of the value of <em>Traits</em> without having static typing, but it will enable better error messages
+and runtime type checking.</p>
+<p>Right now this isn’t implemented, but it’s easy to imagine some functions that check that arguments implement certain traits.</p>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">const</span> <span class="n">void</span><span class="o">*</span> <span class="n">String_append</span><span class="p">(</span><span class="n">const</span> <span class="n">void</span><span class="o">*</span> <span class="n">_self</span><span class="p">,</span> <span class="n">const</span> <span class="n">void</span><span class="o">*</span> <span class="n">_other</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">ASSERT_SUPPORTS_TRAIT</span><span class="p">(</span><span class="n">_other</span><span class="p">,</span> <span class="n">ToSring</span><span class="p">);</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Or for a HashMap:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="n">internal_insert_HashMap</span><span class="p">(</span><span class="n">struct</span> <span class="n">HashMap</span> <span class="o">*</span><span class="bp">self</span><span class="p">,</span>
+                         <span class="n">const</span> <span class="n">void</span> <span class="o">*</span><span class="n">_key</span><span class="p">,</span>
+                         <span class="n">const</span> <span class="n">void</span> <span class="o">*</span><span class="n">_value</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">ASSERT_SUPPORTS_TRAIT</span><span class="p">(</span><span class="n">_other</span><span class="p">,</span> <span class="n">Hashable</span><span class="p">,</span> <span class="n">Equality</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This would greatly simply how type checking is done. This can be accomplished pretty easily by
+adding some boolean fields to the ClassHeader, one for each <cite>Trait</cite> available in OOC. The assertion
+would then easily be able to verify the type supports some functionality.</p>
+<p>Right now, most type checking is done only for the first argument for a function. It’s done in the
+top level function, for example <code class="docutils literal notranslate"><span class="pre">obj_insert(const</span> <span class="pre">void*</span> <span class="pre">_self,</span> <span class="pre">...)</span></code>. This function ensures the
+object _self at least has a non-NULL unction pointer <code class="docutils literal notranslate"><span class="pre">obj_insert</span></code>.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table of Contents</a></h3>
+<p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Objected Oriented C</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">OOC API Documentation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Technical Details</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#implementation-details">Implementation Details</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#instances">Instances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#implementing-an-instance">Implementing an Instance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#traits">Traits</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="object_internal.html">Class Header</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="api.html"
+                        title="previous chapter">OOC API Documentation</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="unit_testing.html"
+                        title="next chapter">&lt;no title&gt;</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/technical.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="unit_testing.html" title="&lt;no title&gt;"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="api.html" title="OOC API Documentation"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ooc  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016, Isaac Gutekunst.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+    </div>
+  </body>
+</html>

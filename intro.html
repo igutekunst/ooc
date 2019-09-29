@@ -17,7 +17,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="OOC API Documentation" href="api.html" />
-    <link rel="prev" title="Table of Contents" href="index.html" /> 
+    <link rel="prev" title="Object Oriented C" href="index.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -29,7 +29,7 @@
           <a href="api.html" title="OOC API Documentation"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="index.html" title="Table of Contents"
+          <a href="index.html" title="Object Oriented C"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">ooc  documentation</a> &#187;</li> 
       </ul>
@@ -42,17 +42,20 @@
             
   <div class="section" id="objected-oriented-c">
 <span id="mainpage"></span><h1>Objected Oriented C<a class="headerlink" href="#objected-oriented-c" title="Permalink to this headline">¶</a></h1>
+<img alt="https://img.shields.io/badge/License-GPLv3-blue.svg" src="https://img.shields.io/badge/License-GPLv3-blue.svg" /><p>Please read the full docs <a class="reference external" href="http://igutekunst.github.io/ooc/index.html">here</a>.</p>
+<blockquote>
+<div></div></blockquote>
 <p>Experimenting with <cite>Object Oriented C</cite>.</p>
 <p>This library is a toy implementation of “objects” in C, with the idea to
 enable dynamic dispatch and polymorphism of a set of carefully written <cite>classes</cite>.</p>
-<dl class="simple">
-<dt>This library aims to enable:</dt><dd><ul class="simple">
+<p>This library aims to enable:</p>
+<blockquote>
+<div><ul class="simple">
 <li><p>Less boilerplate code to do common tasks</p></li>
 <li><p>A friendlier standard library</p></li>
 <li><p>A <cite>batteries included</cite> C like environment.</p></li>
 </ul>
-</dd>
-</dl>
+</div></blockquote>
 <p>The design of both the API and internals are inspired by Python, though
 no attempt has been made to mimic python APIs exactly, or interface with
 Python, though this may be a goal in the future.</p>
@@ -82,6 +85,36 @@ Given a file full of words, count the time every word occurs. For bonus
 points, print the counts in sorted order.</p>
 <p>A word is defined as one or more non space characters. For now, only the space character needs
 to be considered, but also treating tab a separator is even better.</p>
+<div class="section" id="running-example">
+<h3>Running Example<a class="headerlink" href="#running-example" title="Permalink to this headline">¶</a></h3>
+<p>If you just want to run the example, run the following commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">cmake</span><span class="o">-</span><span class="n">build</span>
+<span class="n">cd</span> <span class="n">cmake</span><span class="o">-</span><span class="n">build</span>
+<span class="n">make</span>
+<span class="o">./</span><span class="n">count_words</span> <span class="n">test_files</span><span class="o">/</span><span class="n">test</span><span class="o">-</span><span class="mf">3.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span><span class="p">,</span> <span class="n">five</span>
+<span class="mi">4</span><span class="p">,</span> <span class="n">four</span>
+<span class="mi">3</span><span class="p">,</span> <span class="n">three</span>
+<span class="mi">2</span><span class="p">,</span> <span class="n">two</span>
+<span class="mi">1</span><span class="p">,</span> <span class="n">one</span>
+</pre></div>
+</div>
+<p>Another Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">count_words</span> <span class="n">test_files</span><span class="o">/</span><span class="n">declaration</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">80</span><span class="p">,</span> <span class="n">of</span>
+<span class="mi">76</span><span class="p">,</span> <span class="n">the</span>
+<span class="mi">64</span><span class="p">,</span> <span class="n">to</span>
+<span class="mi">56</span><span class="p">,</span> <span class="ow">and</span>
+<span class="o">...</span> <span class="n">etc</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="step-by-step">
 <h3>Step By Step<a class="headerlink" href="#step-by-step" title="Permalink to this headline">¶</a></h3>
 <p>First we need to include a bunch of headers that we will need.</p>
@@ -280,6 +313,7 @@ to make calculations, and because almost all ooc functions require ooc objects a
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Objected Oriented C</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#working-modules">Working Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#getting-started-tutorial">Getting Started Tutorial</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#running-example">Running Example</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#step-by-step">Step By Step</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#full-source-code">Full Source Code</a></li>
 </ul>
@@ -287,12 +321,14 @@ to make calculations, and because almost all ooc functions require ooc objects a
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">OOC API Documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hashmap.html">HashMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technical.html">Technical Details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unit_testing.html">Unit Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="object_internal.html">Class Header</a></li>
 </ul>
 
   <h4>Previous topic</h4>
   <p class="topless"><a href="index.html"
-                        title="previous chapter">Table of Contents</a></p>
+                        title="previous chapter">Object Oriented C</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="api.html"
                         title="next chapter">OOC API Documentation</a></p>
@@ -327,7 +363,7 @@ to make calculations, and because almost all ooc functions require ooc objects a
           <a href="api.html" title="OOC API Documentation"
              >next</a> |</li>
         <li class="right" >
-          <a href="index.html" title="Table of Contents"
+          <a href="index.html" title="Object Oriented C"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">ooc  documentation</a> &#187;</li> 
       </ul>
