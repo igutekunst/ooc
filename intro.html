@@ -80,49 +80,49 @@ Given a file full of words, count the time every word occurs. For bonus
 points, print the counts in sorted order.</p>
 <p>A word is defined as one or more non-space characters. For now, only consider the space character
 as a separator and ignore the tab character.</p>
-<p>For Example, given the following file:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">one</span> <span class="n">two</span> <span class="n">three</span> <span class="n">four</span> <span class="n">five</span>
-<span class="n">two</span> <span class="n">three</span> <span class="n">four</span> <span class="n">five</span>
-<span class="n">three</span> <span class="n">four</span> <span class="n">five</span>
-<span class="n">four</span> <span class="n">five</span>
-<span class="n">five</span>
+<p>For Example, given the following file</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>one two three four five
+two three four five
+three four five
+four five
+five
 </pre></div>
 </div>
-<p>The output should be:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span><span class="p">,</span> <span class="n">five</span>
-<span class="mi">4</span><span class="p">,</span> <span class="n">four</span>
-<span class="mi">3</span><span class="p">,</span> <span class="n">three</span>
-<span class="mi">2</span><span class="p">,</span> <span class="n">two</span>
-<span class="mi">1</span><span class="p">,</span> <span class="n">one</span>
+<p>The output should be</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>5, five
+4, four
+3, three
+2, two
+1, one
 </pre></div>
 </div>
 <div class="section" id="running-example">
 <h3>Running Example<a class="headerlink" href="#running-example" title="Permalink to this headline">¶</a></h3>
-<p>If you only want to run the example, run the following commands:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">cmake</span><span class="o">-</span><span class="n">build</span>
-<span class="n">cd</span> <span class="n">cmake</span><span class="o">-</span><span class="n">build</span>
-<span class="n">make</span>
-<span class="o">./</span><span class="n">count_words</span> <span class="n">test_files</span><span class="o">/</span><span class="n">test</span><span class="o">-</span><span class="mf">3.</span><span class="n">txt</span>
+<p>If you only want to run the example, run the following commands</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir cmake-build
+<span class="nb">cd</span> cmake-build
+make
+./count_words test_files/test-3.txt
 </pre></div>
 </div>
-<p>Output:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span><span class="p">,</span> <span class="n">five</span>
-<span class="mi">4</span><span class="p">,</span> <span class="n">four</span>
-<span class="mi">3</span><span class="p">,</span> <span class="n">three</span>
-<span class="mi">2</span><span class="p">,</span> <span class="n">two</span>
-<span class="mi">1</span><span class="p">,</span> <span class="n">one</span>
+<p>Output</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>5, five
+4, four
+3, three
+2, two
+1, one
 </pre></div>
 </div>
-<p>Another Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">count_words</span> <span class="n">test_files</span><span class="o">/</span><span class="n">declaration</span><span class="o">.</span><span class="n">txt</span>
+<p>Another Example</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./count_words test_files/declaration.txt
 </pre></div>
 </div>
-<p>Output:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">80</span><span class="p">,</span> <span class="n">of</span>
-<span class="mi">76</span><span class="p">,</span> <span class="n">the</span>
-<span class="mi">64</span><span class="p">,</span> <span class="n">to</span>
-<span class="mi">56</span><span class="p">,</span> <span class="ow">and</span>
-<span class="o">...</span> <span class="n">etc</span>
+<p>Output</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>80, of
+76, the
+64, to
+56, and
+... etc
 </pre></div>
 </div>
 </div>
