@@ -58,7 +58,7 @@ points, print the counts in sorted order.
 A word is defined as one or more non-space characters. For now, only consider the space character
 as a separator and ignore the tab character.
 
-For Example, given the following file
+For example, given the following file:
 
 .. code-block:: text
 
@@ -68,7 +68,7 @@ For Example, given the following file
     four five
     five
 
-The output should be
+The output should be:
 
 .. code-block:: text
 
@@ -81,7 +81,7 @@ The output should be
 
 Running Example
 +++++++++++++++
-If you only want to run the example, run the following commands
+If you only want to run the example, run the following commands:
 
 .. code-block:: bash
 
@@ -90,7 +90,7 @@ If you only want to run the example, run the following commands
     make
     ./count_words test_files/test-3.txt
 
-Output
+Output:
 
 .. code-block:: text
 
@@ -100,7 +100,7 @@ Output
      2, two
      1, one
 
-Another Example
+Another Example:
 
 .. code-block:: bash
 
@@ -149,7 +149,7 @@ a filename to process.
 The general idea is to store the count of all seen words in a HashMap.
 Next we sort the results for printing.
 
-First we open a file, and read one line at a time
+First we open a file, and read one line at a time.
 
 .. code-block:: c
 
@@ -213,7 +213,9 @@ the word as a key. Then the count is incremented.
 
 Note that we are leaking a bit of memory by using temporary Int objects.
 
-Next we put the results into a List of Tuple objects for sorting. ::
+Next we put the results into a List of Tuple objects for sorting.
+
+.. code-block:: c
 
     // Put the results into a List of Tuples for sorting
     const void* count_it = iter(counts);
@@ -227,7 +229,7 @@ Next we put the results into a List of Tuple objects for sorting. ::
     obj_sort(counts_list, SORT_DESCENDING);
 
 At the end, the totals are printed by looping over the HashMap keys.
-The keys are sorted by getting a tuple for each (key,value) pair, and sorting the list
+The keys are sorted by getting a tuple for each (key,value) pair, and sorting the list.
 
 .. code-block:: c
 
