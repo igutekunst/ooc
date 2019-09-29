@@ -107,7 +107,9 @@ Output::
 Step By Step
 ++++++++++++
 
-First we will include several headers that we will need later. ::
+First we will include several headers that we will need later. 
+
+.. code-block:: c
 
    #include <OOC/list.h>
    #include <OOC/hashmap.h>
