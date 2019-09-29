@@ -20,7 +20,7 @@
 
 
 struct File {
-    struct class_header* class;
+    struct ClassHeader* class;
     const struct String* str_repr;
     const struct String* filename;
     const struct String* mode;
@@ -32,17 +32,17 @@ struct File {
 
 
 struct FileClass {
-    struct class_header class;
+    struct ClassHeader class;
 };
 
 struct FileIterator {
-    struct class_header* class;
+    struct ClassHeader* class;
     struct File* file;
     bool done;
 };
 
 struct FileIteratorClass {
-    struct class_header class;
+    struct ClassHeader class;
 };
 
 
@@ -68,7 +68,7 @@ const void* File_init(const void* _self, size_t argc, va_list args) {
     // Open the file
     self->file = fopen(filename, mode);
     if (self->file == NULL) {
-        fprintf(stderr, "Failed to open file %s in mode %s. Error: %s",
+        fprintf(stderr, "Failed to open file %s in mode %s. Error: %s\n",
                 filename, mode, strerror(errno));
         exit(EXIT_FAILURE);
     }

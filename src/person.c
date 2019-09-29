@@ -10,7 +10,7 @@ size_t get_size_Person(const void * _self);
 
 
 struct PersonClass{
-    struct class_header class;
+    struct ClassHeader class;
 };
 struct PersonClass person_class = {
     .class = {.magic = MAGIC, 

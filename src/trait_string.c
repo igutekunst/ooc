@@ -23,7 +23,7 @@ const void* _string_split(size_t argc, ... ) {
 
     va_end(args);
 
-    struct class_header* file_class_header = get_class_header_msg(_string, "string_split: invalid argument\n");
+    struct ClassHeader* file_class_header = get_class_header_msg(_string, "string_split: invalid argument\n");
     if (file_class_header->string.string_split == NULL) {
         fprintf(stderr, "string_split: %s does not support string_split\n", class_name(_string));
         exit(EXIT_FAILURE);
@@ -35,7 +35,7 @@ const void* _string_split(size_t argc, ... ) {
 
 
 const void* string_slice (const void* _string, ssize_t start, ssize_t end) {
-    struct class_header* file_class_header = get_class_header_msg(_string, "string_split: invalid argument\n");
+    struct ClassHeader* file_class_header = get_class_header_msg(_string, "string_split: invalid argument\n");
     if (file_class_header->string.string_slice == NULL) {
         fprintf(stderr, "string_slice: %s does not support string_slice\n", class_name(_string));
         exit(EXIT_FAILURE);

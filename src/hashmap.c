@@ -12,7 +12,7 @@ struct HashItem {
 typedef struct HashItem HashItem;
 
 struct HashMap {
-    struct class_header *class;
+    struct ClassHeader *class;
     size_t size;
     size_t len;
     uint64_t m;
@@ -27,7 +27,7 @@ struct HashMap {
 };
 
 struct HashMap_iter {
-    struct class_header *class;
+    struct ClassHeader *class;
     struct HashItem *current_item;
     int index;
     struct HashMap *hash_map;
@@ -43,11 +43,11 @@ struct HashMap_iter {
 #define HWM_FRACTION 0.5
 
 struct HashMapClass {
-    struct class_header class;
+    struct ClassHeader class;
 };
 
 struct HashMapClass_iter {
-    struct class_header class;
+    struct ClassHeader class;
 };
 
 bool rng_seeded = false;
@@ -116,7 +116,7 @@ void internal_insert_HashMap(struct HashMap *self,
                              const void *_key,
                              const void *_value) {
 
-    const struct class_header *header = get_class_header(_key);
+    const struct ClassHeader *header = get_class_header(_key);
     uint64_t internal_key = header->hash(_key);
     uint64_t h = internal_hash(self->a, self->b, self->M, internal_key);
     struct HashItem *dest = &self->items[h];
@@ -335,7 +335,7 @@ void insert_HashMap(const void *_self,
     struct HashMap *self = (struct HashMap *) _self;
     if (get_class_header_msg(_key, "Attempted to insert invalid key\n")) {
         if (get_class_header_msg(_value, NULL)) {
-            const struct class_header *header = get_class_header(_key);
+            const struct ClassHeader *header = get_class_header(_key);
             if (!header->hash) {
                 fprintf(stderr, "Attempt to use unhashable type as key\n");
                 exit(1);
@@ -352,7 +352,7 @@ const void *get_HashMap(const void *_self,
                         const void *_key) {
     struct HashMap *self = (struct HashMap *) _self;
     if (get_class_header_msg(_key, "Attempted to get_item with  invalid key\n")) {
-        const struct class_header *header = get_class_header(_key);
+        const struct ClassHeader *header = get_class_header(_key);
         if (!header->hash) {
             fprintf(stderr, "%s does not support hashing\n", class_name(_key));
             exit(1);
@@ -385,7 +385,7 @@ void del_item_HashMap(const void *_self,
 
     struct HashMap *self = (struct HashMap *) _self;
     if (get_class_header_msg(_key, "Attempted to delete an invalid key\n")) {
-        const struct class_header *key = get_class_header_msg(_key, NULL);
+        const struct ClassHeader *key = get_class_header_msg(_key, NULL);
         if (!key->hash) {
             fprintf(stderr, "%s does not support hashing\n", class_name(_self));
             exit(1);

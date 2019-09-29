@@ -2,7 +2,7 @@
 #include "object_internal.h"
 
 struct PointClass{
-    struct class_header class;
+    struct ClassHeader class;
 };
 
 const void *__construct__Point(const void *_self, size_t argc, va_list args);

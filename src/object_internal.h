@@ -25,9 +25,13 @@
  * magic, size, object_init, object_deinit and object_name
  *
  */
-struct class_header {
+struct ClassHeader {
     unsigned long magic;
     size_t size;
+    /**
+     * Object name as C string
+     */
+    const char *object_name;
 
     /**
      * @brief Get size of object in bytes
@@ -257,10 +261,6 @@ struct class_header {
      */
     const void *(*next)(const void *_self);
 
-    /**
-     * Object name as C string
-     */
-    const char *object_name;
 
     /**
      * Traits
@@ -272,14 +272,15 @@ struct class_header {
 };
 
 struct ObjectHeader {
-    const struct class_header* class;
+    const struct ClassHeader* class;
+    //TODO consider putting some common things like size here
 };
 
-const struct class_header* get_class_header(const void* self);
+const struct ClassHeader* get_class_header(const void* self);
 
-struct class_header* get_class_header_msg(const void* self, const char* message);
+struct ClassHeader* get_class_header_msg(const void* self, const char* message);
 
-inline const struct class_header* get_obj_type(const void* self, const void* class, const char* message);
+inline const struct ClassHeader* get_obj_type(const void* self, const void* class, const char* message);
 
 
 #define COUNTOF(x) (sizeof((x))/ sizeof((x[0])))

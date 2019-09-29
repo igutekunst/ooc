@@ -3,7 +3,7 @@
 #include <ooc/string.h>
 #include "object_internal.h"
 
-const struct class_header Class = {
+const struct ClassHeader Class = {
    .magic = MAGIC
 };
 
@@ -22,7 +22,7 @@ const void * _new (size_t argc, ...) {
 
     const void * const _class = va_arg(args, const void*);
 
-    const struct class_header * class = (struct class_header * ) _class;
+    const struct ClassHeader * class = (struct ClassHeader * ) _class;
     if (!class || class->magic != MAGIC){
         fprintf(stderr, "new called with invalid class\n");
         exit(1);
@@ -42,7 +42,7 @@ const void * _new (size_t argc, ...) {
 
 
 void del (const void *_object){
-    const struct class_header * class;
+    const struct ClassHeader * class;
     if ((class = get_class_header_msg(_object, "Attempt to delete non object\n"))) {
         if( class->object_deinit) {
             class->object_deinit(_object);
@@ -53,7 +53,7 @@ void del (const void *_object){
 }
 
 const char *  c_str_repr(const void *_self){
-    const struct class_header * class;
+    const struct ClassHeader * class;
     if ((class = get_class_header_msg(_self, "str called on non object\n"))) {
         if (class->c_str_repr){
             return class->c_str_repr(_self);
@@ -65,7 +65,7 @@ const char *  c_str_repr(const void *_self){
 }
 
 const char *  c_str(const void *_self){
-    const struct class_header * class;
+    const struct ClassHeader * class;
     if ((class = get_class_header_msg(_self, "str called on non object\n"))) {
         if (class->c_str){
             return class->c_str(_self);
@@ -83,7 +83,7 @@ const void *to_String(const void *_object) {
 
 
 void print (const void * _self){
-    const struct class_header * class;
+    const struct ClassHeader * class;
     if ((class = get_class_header_msg(_self, "Attempted to print non object\n"))) {
         if (class->print) {
             class->print(_self);
@@ -96,7 +96,7 @@ void print (const void * _self){
 
 
 size_t size(const void * _self) {
-    const struct class_header * class;
+    const struct ClassHeader * class;
     if ((class = get_class_header_msg(_self, "Attempted to get type of non object\n"))) {
         if (class->get_size)
             return class->get_size(_self);
@@ -107,15 +107,15 @@ size_t size(const void * _self) {
 
 
 const void * type(const void * _self){
-    const struct class_header * class;
+    const struct ClassHeader * class;
     if ((class = get_class_header_msg(_self, "Attempted to get type of non object\n")))
-        return * (struct class_header **) _self;
+        return * (struct ClassHeader **) _self;
     return NULL;
 }
 
 
 size_t len(const void * _self) {
-    const struct class_header * class;
+    const struct ClassHeader * class;
     if ((class = get_class_header_msg(_self, "Attempted to get len of non object\n"))) {
         if (class->get_len) 
             return class->get_len(_self);
@@ -129,7 +129,7 @@ size_t len(const void * _self) {
 
 
 const char* class_name(const void* _self) {
-    const struct class_header * class;
+    const struct ClassHeader * class;
     if ((class = get_class_header_msg(_self, "Attempted to get name of invalid object\n"))) {
         if (class->object_name)
             return class->object_name;
@@ -145,7 +145,7 @@ const char* class_name(const void* _self) {
 
 
 const void * copy(const void * _self) {
-    const struct class_header * class;
+    const struct ClassHeader * class;
     if ((class = get_class_header_msg(_self, "Attempted to get len of non object\n"))){
         if (class->copy) 
             return class->copy(_self);
@@ -159,8 +159,8 @@ const void * copy(const void * _self) {
 
 
 bool equals(const void * _self, const void * _other){
-    const struct class_header * class;
-    const struct class_header * other;
+    const struct ClassHeader * class;
+    const struct ClassHeader * other;
 
     if ((class = get_class_header_msg(_self, "Attempted to compare non object"))) {
         other = get_class_header_msg(_other, "attempted to compare non object\n");
@@ -174,7 +174,7 @@ bool equals(const void * _self, const void * _other){
 }
 
 CompareValue compare(const void * _self, const void * _other){
-    const struct class_header * class;
+    const struct ClassHeader * class;
     if ((class = get_class_header_msg(_self, "Attempted to compare non object"))) {
         if (class->compare == NULL) {
             fprintf(stderr, "%s does not support comparison\n", class_name(_self));
@@ -199,7 +199,7 @@ void _obj_sort(size_t argc, ...) {
     const void * const _self =  va_arg(args, const void*);
 
     if(get_class_header_msg(_self, "Failed to create iterator from non collection\n")){
-        const struct class_header * self = get_class_header(_self);
+        const struct ClassHeader * self = get_class_header(_self);
         if(self->sort == NULL ) {
             fprintf(stderr, "Class %s does not support sort.\n", class_name(_self));
             exit(EXIT_FAILURE);
@@ -217,7 +217,7 @@ void _obj_sort(size_t argc, ...) {
 
 const void* append(const void * _self, const void * _other){
     //TODO string concatenation should probably be a different function
-    const struct class_header * class;
+    const struct ClassHeader * class;
 
     if ((class = get_class_header_msg(_self, "Attempted to append non object\n"))) {
         if(class->append) {
@@ -233,12 +233,12 @@ const void* append(const void * _self, const void * _other){
 }
 
 
-inline struct class_header * get_class_header_msg(const void * _self, const char * message){
+inline struct ClassHeader * get_class_header_msg(const void * _self, const char * message){
     if (_self == NULL) {
         fprintf(stderr, "get_class_header_msg called with NULL object. Message: %s\n", message);
         exit(1);
     }
-    struct class_header * class =  * (struct class_header ** ) _self;
+    struct ClassHeader * class =  * (struct ClassHeader ** ) _self;
     if (class && class->magic == MAGIC){
         return class;
     }
@@ -252,8 +252,8 @@ inline struct class_header * get_class_header_msg(const void * _self, const char
 }
 
 
-inline const struct class_header * get_obj_type(const void * _self, const void* class, const char * message ){
-    struct class_header * class_header =  * (struct class_header ** ) _self;
+inline const struct ClassHeader * get_obj_type(const void * _self, const void* class, const char * message ){
+    struct ClassHeader * class_header =  * (struct ClassHeader ** ) _self;
     if (class_header && class_header->magic == MAGIC){
         if (class_header == class) {
             return class;
@@ -270,14 +270,14 @@ inline const struct class_header * get_obj_type(const void * _self, const void* 
 }
 
 
-inline const struct class_header * get_class_header(const void * _self){
-    return   * (struct class_header ** ) _self;
+inline const struct ClassHeader * get_class_header(const void * _self){
+    return   * (struct ClassHeader ** ) _self;
 }
 
 uint64_t hash(const void * _self) {
     
     if(get_class_header_msg(_self, "hash called with invalid object")){
-        const struct class_header * self = get_class_header(_self);
+        const struct ClassHeader * self = get_class_header(_self);
         return self->hash(_self) ;
     }
     return 0;
@@ -288,7 +288,7 @@ void * set_item(const void *_self,
                 const void *_other) {
     
     if(get_class_header_msg(_self, "Failed to insert into non collection\n")){
-        const struct class_header * self = get_class_header(_self);
+        const struct ClassHeader * self = get_class_header(_self);
         assert(self->insert);
             self->insert(_self, _key, _other) ;
     }
@@ -297,7 +297,7 @@ void * set_item(const void *_self,
 
 void del_item(const void * _self, const void * _key) {
     if(get_class_header_msg(_self, "Failed to get from non collection\n")){
-        const struct class_header * self = get_class_header(_self);
+        const struct ClassHeader * self = get_class_header(_self);
         if (self->del_item) {
             self->del_item(_self, _key);
         } else {
@@ -310,7 +310,7 @@ void del_item(const void * _self, const void * _key) {
 // TODO consider a shortcut for get_item(object, new(Int, xx)) for handling integer keys for convenience
 const void * get_item(const void * _self, const void * _key ) {
     if(get_class_header_msg(_self, "get_item called on invalid object")){
-        const struct class_header * self = get_class_header(_self);
+        const struct ClassHeader * self = get_class_header(_self);
         if (self->get_item == NULL) {
             fprintf(stderr, "%s does not support get_item\n", class_name(_self));
             exit(EXIT_FAILURE);
@@ -322,7 +322,7 @@ const void * get_item(const void * _self, const void * _key ) {
 
 const void * iter(const void * _self ) {
     if(get_class_header_msg(_self, "Failed to create iterator from non collection\n")){
-        const struct class_header * self = get_class_header(_self);
+        const struct ClassHeader * self = get_class_header(_self);
         if(self->iter == NULL ) {
             fprintf(stderr, "Class %s does not support iteration.\n", class_name(_self));
             exit(EXIT_FAILURE);
@@ -335,7 +335,7 @@ const void * iter(const void * _self ) {
 
 const void * next(const void * _self ) {
     if(get_class_header_msg(_self, "Failed to get next on non object\n")){
-        const struct class_header * self = get_class_header(_self);
+        const struct ClassHeader * self = get_class_header(_self);
         if(self->next){
             return self->next(_self) ;
         }

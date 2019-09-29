@@ -70,6 +70,9 @@ target_include_directories(test_all PRIVATE ${CHECK_INCLUDE_DIRS})
 target_include_directories(test_all PRIVATE include)
 target_include_directories(test_all PRIVATE src)
 
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/tests/test_files
+        DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+
 add_executable(count_words
         examples/count_words.c
         )

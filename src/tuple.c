@@ -23,7 +23,7 @@ struct TupleItem {
 typedef struct TupleItem TupleItem;
 
 struct Tuple {
-    struct class_header* class;
+    struct ClassHeader* class;
     size_t size;
     size_t len;
     TupleItem* items;
@@ -31,18 +31,18 @@ struct Tuple {
 
 
 struct TupleClass {
-    struct class_header class;
+    struct ClassHeader class;
 };
 
 struct TupleIterator {
-    struct class_header* class;
+    struct ClassHeader* class;
     struct Tuple* tuple;
     bool done;
     size_t index;
 };
 
 struct TupleIteratorClass {
-    struct class_header class;
+    struct ClassHeader class;
 };
 
 
@@ -93,7 +93,7 @@ const char* Tuple_to_str(const void* _self) {
 
 const void* Tuple_get_item(const void* _self, const void* _index) {
     struct Tuple* self = (struct Tuple*) _self;
-    const struct class_header* index_class;
+    const struct ClassHeader* index_class;
     index_class = get_class_header_msg(_index, "Tuple get_item called with invalid index\n");
     if (index_class->math.to_int == NULL) {
         fprintf(stderr, "Tuple get_item called with invalid index of type %s"
@@ -146,8 +146,8 @@ const void* TupleIterator_next(const void* _self) {
 CompareValue Tuple_compare(const void* _lhs, const void* _rhs) {
     struct Tuple* lhs = (struct Tuple*) _lhs;
     struct Tuple* rhs = (struct Tuple*) _rhs;
-    struct class_header* lhs_class = get_class_header_msg(lhs->items[0].value,
-            "Tuple_compare failed because item[0] is invalid\n");
+    struct ClassHeader* lhs_class = get_class_header_msg(lhs->items[0].value,
+                                                         "Tuple_compare failed because item[0] is invalid\n");
     if (lhs_class->compare == NULL) {
        fprintf(stderr, "Tuple compare failed because item[0] does not support compare\n");
        exit(EXIT_FAILURE);

@@ -3,12 +3,21 @@
 Objected Oriented C
 ===================
 
+
+.. image:: https://img.shields.io/badge/License-GPLv3-blue.svg
+
+Please read the full docs here_.
+
+ .. _here: http://igutekunst.github.io/ooc/index.html
+
+
 Experimenting with `Object Oriented C`.
 
 This library is a toy implementation of “objects” in C, with the idea to
 enable dynamic dispatch and polymorphism of a set of carefully written `classes`.
 
 This library aims to enable:
+
   - Less boilerplate code to do common tasks
   - A friendlier standard library
   - A `batteries included` C like environment.
@@ -51,6 +60,35 @@ points, print the counts in sorted order.
 
 A word is defined as one or more non space characters. For now, only the space character needs
 to be considered, but also treating tab a separator is even better.
+
+Running Example
++++++++++++++++
+If you just want to run the example, run the following commands::
+
+    mkdir cmake-build
+    cd cmake-build
+    make
+    ./count_words test_files/test-3.txt
+
+Output::
+
+     5, five
+     4, four
+     3, three
+     2, two
+     1, one
+
+Another Example::
+
+    ./count_words test_files/declaration.txt
+
+Output::
+
+     80, of
+     76, the
+     64, to
+     56, and
+     ... etc
 
 Step By Step
 ++++++++++++
@@ -239,6 +277,7 @@ Full Source Code
 
        return EXIT_SUCCESS;
    }
+
 
 
 

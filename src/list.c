@@ -24,7 +24,7 @@ struct ListItem {
 typedef struct ListItem ListItem;
 
 struct List {
-    struct class_header* class;
+    struct ClassHeader* class;
     size_t size;
     size_t len;
     bool iterating;
@@ -34,18 +34,18 @@ struct List {
 
 
 struct ListClass {
-    struct class_header class;
+    struct ClassHeader class;
 };
 
 struct ListIterator {
-    struct class_header *class;
+    struct ClassHeader *class;
     struct List* list;
     bool done;
     ListItem* item;
 };
 
 struct ListIteratorClass {
-    struct class_header class;
+    struct ClassHeader class;
 };
 
 const void* List_append(const void* _self, const void* _other);
@@ -143,7 +143,7 @@ const void* List_append(const void* _self, const void* _other) {
 
 const void* List_get_item(const void* _self, const void* _index) {
     struct List* self = (struct List*) _self;
-    const struct class_header * index_class;
+    const struct ClassHeader * index_class;
     index_class = get_class_header_msg(_index, "List get_item called with invalid index\n");
     if (index_class->math.to_int == NULL) {
         fprintf(stderr, "List get_item called with invalid index of type %s"

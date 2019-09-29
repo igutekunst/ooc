@@ -12,14 +12,14 @@
 #include "object_internal.h"
 
 struct String {
-    struct class_header* class;
+    struct ClassHeader* class;
     size_t size;
     size_t len;
     char* string_data;
 };
 
 struct StringClass {
-    struct class_header class;
+    struct ClassHeader class;
 };
 
 size_t String_get_len(const void* _self) {
@@ -34,7 +34,7 @@ size_t String_get_size(const void* _self) {
 }
 
 
-const void* __construct__String(const void* _self, size_t argc, va_list args) {
+const void* String_init(const void* _self, size_t argc, va_list args) {
     (void) argc;
     struct String* self = (struct String*) _self;
     const char* data = va_arg(args, const char *);
@@ -92,7 +92,7 @@ const void* String_append(const void* _self, const void* _other) {
 
 bool String_equal(const void* _self, const void* _other) {
     struct String* self = (struct String*) _self;
-    const struct class_header* other = (const struct class_header*) _other;
+    const struct ClassHeader* other = (const struct ClassHeader*) _other;
 
     if (type(other) == String) {
         return strcmp(c_str(self), c_str(other)) == 0;
@@ -198,7 +198,7 @@ struct StringClass string_class = {
         .class = {
                 .magic = MAGIC,
                 .size = sizeof(struct String),
-                .object_init = __construct__String,
+                .object_init = String_init,
                 .get_size = String_get_size,
                 .get_len = String_get_len,
                 .c_str = String_str,
@@ -210,7 +210,6 @@ struct StringClass string_class = {
                 .string = {
                         .string_split = String_split,
                         .string_slice = String_slice
-
                 }
         }
 

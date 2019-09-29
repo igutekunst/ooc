@@ -20,7 +20,7 @@ const void* _file_read(size_t argc, ...) {
     va_start(args, argc);
     const void * _file = va_arg(args, const void*);
 
-    struct class_header* file_class_header = get_class_header_msg(_file, "_file_read: invalid argument\n");
+    struct ClassHeader* file_class_header = get_class_header_msg(_file, "_file_read: invalid argument\n");
     size_t bytes_to_read = 0;
     if (file_class_header->file._file_read == NULL) {
         fprintf(stderr, "_file_read: %s does not support file_read\n", class_name(_file));
@@ -40,7 +40,7 @@ const void* _file_read(size_t argc, ...) {
 }
 
 const void* file_read_line(const void* _file) {
-    struct class_header* file_class_header = get_class_header_msg(_file, "_file_read_line: invalid argument\n");
+    struct ClassHeader* file_class_header = get_class_header_msg(_file, "_file_read_line: invalid argument\n");
     if (file_class_header->file._file_read == NULL) {
         fprintf(stderr, "_file_read_line: %s does not support file_read\n", class_name(_file));
         exit(EXIT_FAILURE);

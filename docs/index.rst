@@ -1,4 +1,4 @@
-Table of Contents
+Object Oriented C
 =================
 .. Node documentation master file, created by
    sphinx-quickstart on Wed Dec  2 16:22:59 2015.
@@ -12,7 +12,9 @@ Table of Contents
 
    intro
    api
-   hashmap
+   technical
+   unit_testing
+   object_internal
 
 
 
