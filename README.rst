@@ -46,17 +46,17 @@ Getting Started Tutorial
 
 See `examples/count_words.c <https://github.com/igutekunst/ooc/blob/master/examples/count_words.c>`_
 
+This tutorial shows complete basic usage of the OOC library.
+It is modelled after the a common interview question, given below.
 
-
-This test shows a more complete usage of the OOC library to solve a common
-interview question.
-
-**Problem Statement:**
+**Interview Problem Statement:**
 Given a file full of words, count the time every word occurs. For bonus
 points, print the counts in sorted order.
 
 A word is defined as one or more non-space characters. For now, only consider the space character
-as a separator and ignore the tab character.
+as a separator and treat the tab character as part of a word.
+
+Also, it is okay to do a case-sensitive word count. You may have separate counts for *the* and **The**.
 
 For example, given the following file:
 
@@ -79,8 +79,8 @@ The output should be:
      1, one
 
 
-Running Example
-+++++++++++++++
+Running The Example
++++++++++++++++++++
 If you only want to run the example, run the following commands:
 
 .. code-block:: bash
