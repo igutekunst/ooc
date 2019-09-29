@@ -1,0 +1,499 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>OOC API Documentation &#8212; ooc  documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="HashMap" href="hashmap.html" />
+    <link rel="prev" title="Objected Oriented C" href="intro.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="hashmap.html" title="HashMap"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="intro.html" title="Objected Oriented C"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ooc  documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="ooc-api-documentation">
+<h1>OOC API Documentation<a class="headerlink" href="#ooc-api-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="basic-object-management">
+<h2>Basic Object Management<a class="headerlink" href="#basic-object-management" title="Permalink to this headline">¶</a></h2>
+<p>OOC objects are created with <cite>new</cite>. This is the most commonly used function when
+using OOC. New was named after new in C++, and performs a similar allocation and initialization.</p>
+<p>Most objects also support a handful of basic functions to print t</p>
+<dl class="macro">
+<dt id="c.new">
+<span class="target" id="object_8h_1ab0fc0cde005253df0bb21ef018bedf11"></span><code class="sig-name descname">new</code><span class="sig-paren">(</span>...<span class="sig-paren">)</span><a class="headerlink" href="#c.new" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new ooc object. </p>
+<p>This function allocates memory and returns a void* to a newly allocated ooc object, or NULL on failure.</p>
+<p>The first argument, class, is an OOC “Class”, and is exposed to the user layer as an extern void*. New is able to unwrap the void*, and call the appropriate constructor for a type, and allocate a new OOC object. On failure, new will exit the program and print an error message.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>new object or type class, or NULL </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">class</span></code>: ooc class object </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">argc</span></code>: number of arguments provided </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv43delPKv">
+<span id="_CPPv33delPKv"></span><span id="_CPPv23delPKv"></span><span id="del__voidCP"></span><span class="target" id="object_8h_1ae55f06af6b01f76390fec837d46e4096"></span>void <code class="sig-name descname">del</code><span class="sig-paren">(</span><em class="property">const</em> void *<em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv43delPKv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>delete an ooc object </p>
+<p>This will call the object destructor if present, or simply free the memory if no destructor is present <dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">object</span></code>: </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv44typePKv">
+<span id="_CPPv34typePKv"></span><span id="_CPPv24typePKv"></span><span id="type__voidCP"></span><span class="target" id="object_8h_1a68940c707bbebe6946aeca72df1ee803"></span><em class="property">const</em> void *<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="property">const</em> void *<em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv44typePKv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>get ooc class object </p>
+<p>This will return a pointer to the global void* representing an ooc class. This can be used to test of two objects are of the same type, or even to create new classes of the same type with new. <dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>ooc class of a given ooc object </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">self</span></code>: ooc object </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv412get_obj_typePKvPKvPKc">
+<span id="_CPPv312get_obj_typePKvPKvPKc"></span><span id="_CPPv212get_obj_typePKvPKvPKc"></span><span id="get_obj_type__voidCP.voidCP.cCP"></span><span class="target" id="object__internal_8h_1ad70005400fadaafac1ac64f9ae2bd0a4"></span><em class="property">const</em> <em class="property">struct</em> class_header *<code class="sig-name descname">get_obj_type</code><span class="sig-paren">(</span><em class="property">const</em> void *<em>self</em>, <em class="property">const</em> void *<em>class</em>, <em class="property">const</em> char *<em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412get_obj_typePKvPKvPKc" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv44sizePKv">
+<span id="_CPPv34sizePKv"></span><span id="_CPPv24sizePKv"></span><span id="size__voidCP"></span><span class="target" id="object_8h_1abd39c9e17e7a19cdeb83a387c46e259f"></span>size_t <code class="sig-name descname">size</code><span class="sig-paren">(</span><em class="property">const</em> void *<em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv44sizePKv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>get size in bytes </p>
+<p>Get the full size in bytes of an ooc object. This is implementation defined, and may not include the size of items contained in a collection for example <dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>size in bytes of object </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">self</span></code>: </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv410class_namePKv">
+<span id="_CPPv310class_namePKv"></span><span id="_CPPv210class_namePKv"></span><span id="class_name__voidCP"></span><span class="target" id="object_8h_1abe2f1f3a0e7d7b8a0271a72680ec8d50"></span><em class="property">const</em> char *<code class="sig-name descname">class_name</code><span class="sig-paren">(</span><em class="property">const</em> void *<em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410class_namePKv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>get class name </p>
+<p>If supported, return the class name such as “String” or “HashMap” as a c string. This is used mostly internally for error reporting.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>object name as c string </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">self</span></code>: ooc object instance </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv45printPKv">
+<span id="_CPPv35printPKv"></span><span id="_CPPv25printPKv"></span><span id="print__voidCP"></span><span class="target" id="object_8h_1a94818d3043e9a412216f2456de47d0f5"></span>void <code class="sig-name descname">print</code><span class="sig-paren">(</span><em class="property">const</em> void *<em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv45printPKv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Print a human friendly representation of an object to stdout. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">self</span></code>: </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv44copyPKv">
+<span id="_CPPv34copyPKv"></span><span id="_CPPv24copyPKv"></span><span id="copy__voidCP"></span><span class="target" id="object_8h_1a657c693ea0d56a57bd9306dc7eb69e0f"></span><em class="property">const</em> void *<code class="sig-name descname">copy</code><span class="sig-paren">(</span><em class="property">const</em> void *<em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv44copyPKv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>copy an object </p>
+<p>Perform a dep copy of an object. This is only supported by some types.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>copy of self </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">self</span></code>: ooc object </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv46equalsPKvPKv">
+<span id="_CPPv36equalsPKvPKv"></span><span id="_CPPv26equalsPKvPKv"></span><span id="equals__voidCP.voidCP"></span><span class="target" id="object_8h_1a12fc66431174307a2e5dbb9a00f9a6c2"></span>bool <code class="sig-name descname">equals</code><span class="sig-paren">(</span><em class="property">const</em> void *<em>self</em>, <em class="property">const</em> void *<em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv46equalsPKvPKv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>compare two objects for equality </p>
+<p>Some objects have support for customized equality. In this case, equality will be based on the contents of the objects. For example, two different String objects with the same contents will compare as equal.</p>
+<p>If objects don’t implement a special copy, pointers will be compared.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>true if the objects compare as equal </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">self</span></code>: </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="enum">
+<dt id="_CPPv412CompareValue">
+<span id="_CPPv312CompareValue"></span><span id="_CPPv212CompareValue"></span><span class="target" id="object_8h_1a9b00941099728be59e5e827a72373a61"></span><em class="property">enum </em><code class="sig-name descname">CompareValue</code><a class="headerlink" href="#_CPPv412CompareValue" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="enumerator">
+<dt id="_CPPv410COMPARE_GT">
+<span id="_CPPv310COMPARE_GT"></span><span id="_CPPv210COMPARE_GT"></span><span class="target" id="object_8h_1a9b00941099728be59e5e827a72373a61a6c04039294380f01429e6dca93fb1bf6"></span><code class="sig-name descname">COMPARE_GT</code><a class="headerlink" href="#_CPPv410COMPARE_GT" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv410COMPARE_EQ">
+<span id="_CPPv310COMPARE_EQ"></span><span id="_CPPv210COMPARE_EQ"></span><span class="target" id="object_8h_1a9b00941099728be59e5e827a72373a61a849642b2e075c51f05812ca901993b9d"></span><code class="sig-name descname">COMPARE_EQ</code><a class="headerlink" href="#_CPPv410COMPARE_EQ" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv410COMPARE_LT">
+<span id="_CPPv310COMPARE_LT"></span><span id="_CPPv210COMPARE_LT"></span><span class="target" id="object_8h_1a9b00941099728be59e5e827a72373a61ac17d8561230a79e6577a9895f4d6a9ad"></span><code class="sig-name descname">COMPARE_LT</code><a class="headerlink" href="#_CPPv410COMPARE_LT" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv47comparePKvPKv">
+<span id="_CPPv37comparePKvPKv"></span><span id="_CPPv27comparePKvPKv"></span><span id="compare__voidCP.voidCP"></span><span class="target" id="object_8h_1aae1a70516506896354265c860f912d87"></span><a class="reference internal" href="#_CPPv412CompareValue" title="CompareValue">CompareValue</a> <code class="sig-name descname">compare</code><span class="sig-paren">(</span><em class="property">const</em> void *<em>lhs</em>, <em class="property">const</em> void *<em>rhs</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv47comparePKvPKv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>compare two objects for ordering/sorting </p>
+<p>This function will compare two objects for ordering. Not all objects support ordering.</p>
+<p>For example, numbers have a natural order. Strings can be sorted in alphabetic order, but it doesn’t make sense to compare two Files.</p>
+<p>Objects supporting ordering can be sorted in collections that maintain ordering, such as Lists.</p>
+<p>Note: This function will use the comparison function from the left argument. Usually, it only makes sense to compare objects of the same type, but for now, this is left somewhat underspecified, and the lhs comparison function needs to determine what to do.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>COMPARE_GT if lhs &gt; rhs COMPARE_EQ if lhs == rhs COMPARE_LT if lhs &lt; rhs </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">lhs</span></code>: </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rhs</span></code>: </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="collections">
+<h2>Collections<a class="headerlink" href="#collections" title="Permalink to this headline">¶</a></h2>
+<p>OOC has several functions and built in types that behave like <em>collections</em>. Collections are
+objects that support a subset of features such as len, iter, next, get_item, del_item.</p>
+<p>These functions, if available will work on any collection, but will behave differently. For example,
+append(string, new(String, “world”)), is different than append(list, new(String, “world”)). In the
+string example, a new String is return, with string concatenated with “world”. In the list example,
+the list will have a new entry, the String with contents “world”.</p>
+<dl class="function">
+<dt id="_CPPv43lenPKv">
+<span id="_CPPv33lenPKv"></span><span id="_CPPv23lenPKv"></span><span id="len__voidCP"></span><span class="target" id="object_8h_1ac79aa17025549cead3d5a0294b4e7592"></span>size_t <code class="sig-name descname">len</code><span class="sig-paren">(</span><em class="property">const</em> void *<em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv43lenPKv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>get the length of a collection object </p>
+<p>This function is usually implemented for objects that are collections of other objects. For example, List, Tuple, HashMap, and File. <dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>number of items in collection </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">self</span></code>: ooc Collection object </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv48get_itemPKvPKv">
+<span id="_CPPv38get_itemPKvPKv"></span><span id="_CPPv28get_itemPKvPKv"></span><span id="get_item__voidCP.voidCP"></span><span class="target" id="object_8h_1a52cc061184173053407334a01eca89ce"></span><em class="property">const</em> void *<code class="sig-name descname">get_item</code><span class="sig-paren">(</span><em class="property">const</em> void *<em>self</em>, <em class="property">const</em> void *<em>key</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv48get_itemPKvPKv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>indexed access into a collection </p>
+<p>value = get(collection, key) value = collection[key]</p>
+<p><strong>Example</strong> <dl class="simple">
+<dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#object_8h_1a52cc061184173053407334a01eca89ce"><span class="std std-ref">get_item</span></a></p>
+</dd>
+<dt><strong>Note</strong></dt><dd><p>Right now, HashMaps return NULL if an item wasn’t found. This might change in future versions, to perhaps raise an error.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>item from collection or NULL if it wasn’t present </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">self</span></code>: ooc Collection </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: ooc object key </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv48set_itemPKvPKvPKv">
+<span id="_CPPv38set_itemPKvPKvPKv"></span><span id="_CPPv28set_itemPKvPKvPKv"></span><span id="set_item__voidCP.voidCP.voidCP"></span><span class="target" id="object_8h_1a274f83a1f3fb00e2850c87aad7b6f88d"></span>void *<code class="sig-name descname">set_item</code><span class="sig-paren">(</span><em class="property">const</em> void *<em>self</em>, <em class="property">const</em> void *<em>key</em>, <em class="property">const</em> void *<em>item</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv48set_itemPKvPKvPKv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Indexed assignment into a collection. </p>
+<p>set_item(collection, key, value) is equivalent to collection[key] = value in python</p>
+<p><strong>Example</strong> <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">const</span> <span class="n">struct</span> <span class="n">HashMap</span><span class="o">*</span> <span class="nb">map</span> <span class="o">=</span> <span class="n">new</span><span class="p">(</span><span class="n">HashMap</span><span class="p">);</span>
+ <span class="n">const</span> <span class="n">struct</span> <span class="n">String</span><span class="o">*</span> <span class="n">key</span> <span class="o">=</span> <span class="n">new</span><span class="p">(</span><span class="n">String</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">);</span>
+ <span class="n">const</span> <span class="n">struct</span> <span class="n">String</span><span class="o">*</span> <span class="n">name</span> <span class="o">=</span> <span class="n">new</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="s2">&quot;Isaac Newton&quot;</span><span class="p">);</span>
+
+ <span class="n">set_item</span><span class="p">(</span><span class="nb">map</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">name</span><span class="p">);</span>
+ <span class="k">assert</span><span class="p">(</span><span class="n">equals</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">get_item</span><span class="p">(</span><span class="nb">map</span><span class="p">,</span> <span class="n">key</span><span class="p">)));</span>
+</pre></div>
+</div>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>self </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">self</span></code>: ooc Collection </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">item</span></code>: </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv46appendPKvPKv">
+<span id="_CPPv36appendPKvPKv"></span><span id="_CPPv26appendPKvPKv"></span><span id="append__voidCP.voidCP"></span><span class="target" id="object_8h_1ab2940926b60c93b3fc7e1ee79d948e31"></span><em class="property">const</em> void *<code class="sig-name descname">append</code><span class="sig-paren">(</span><em class="property">const</em> void *<em>self</em>, <em class="property">const</em> void *<em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv46appendPKvPKv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>add an item to the end of an ordered collection </p>
+<p>For a list, append a new item. For a string, concatenate a string.</p>
+<p><strong>Example</strong> <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">const</span> <span class="n">void</span> <span class="o">*</span><span class="nb">list</span> <span class="o">=</span> <span class="n">new</span><span class="p">(</span><span class="n">List</span><span class="p">);</span>
+ <span class="n">append</span><span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="n">new</span><span class="p">(</span><span class="n">String</span><span class="p">,</span> <span class="s2">&quot;One&quot;</span><span class="p">));</span>
+ <span class="n">append</span><span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="n">new</span><span class="p">(</span><span class="n">String</span><span class="p">,</span> <span class="s2">&quot;Two&quot;</span><span class="p">));</span>
+ <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">);</span>
+</pre></div>
+</div>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>self </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">self</span></code>: ooc Collection object </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code>: object to append </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="macro">
+<dt id="c.obj_sort">
+<span class="target" id="object_8h_1a5d512f5bc075468c736f9219b304f06f"></span><code class="sig-name descname">obj_sort</code><span class="sig-paren">(</span>...<span class="sig-paren">)</span><a class="headerlink" href="#c.obj_sort" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sort a collection in place. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">direction</span></code>: either SORT_ASCENDING, or SORT_DESCENDING </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">self</span></code>: </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<div class="section" id="iteration">
+<h3>Iteration<a class="headerlink" href="#iteration" title="Permalink to this headline">¶</a></h3>
+<p>OOC has basic support for iteration. Iteration allows us to traverse a collection
+one item at a time, without needing to know indexes. In the future it will allow
+functional features, such as <code class="docutils literal notranslate"><span class="pre">map</span></code> and <code class="docutils literal notranslate"><span class="pre">reduce</span></code>.</p>
+<dl class="function">
+<dt id="_CPPv44iterPKv">
+<span id="_CPPv34iterPKv"></span><span id="_CPPv24iterPKv"></span><span id="iter__voidCP"></span><span class="target" id="object_8h_1a7a21f46573160274166f42d540f79cf3"></span><em class="property">const</em> void *<code class="sig-name descname">iter</code><span class="sig-paren">(</span><em class="property">const</em> void *<em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv44iterPKv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>create an Iterator object </p>
+<p>Iterators enable accessing items in a collection one at a time.</p>
+<p>Use the returned iterator with <dl class="simple">
+<dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#object_8h_1a74d9dba5e06aee5d5d28ce374f097379"><span class="std std-ref">next</span></a></p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>iterator for ooc Collection </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">self</span></code>: ooc Collection </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv44nextPKv">
+<span id="_CPPv34nextPKv"></span><span id="_CPPv24nextPKv"></span><span id="next__voidCP"></span><span class="target" id="object_8h_1a74d9dba5e06aee5d5d28ce374f097379"></span><em class="property">const</em> void *<code class="sig-name descname">next</code><span class="sig-paren">(</span><em class="property">const</em> void *<em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv44nextPKv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>get the next item from an Iterator </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>next item, or NULL </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">self</span></code>: ooc Iterator </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="hashing">
+<h3>Hashing<a class="headerlink" href="#hashing" title="Permalink to this headline">¶</a></h3>
+<p>Some objects support hashing. Objects that support hashing
+can be stored in HashMaps.</p>
+<dl class="function">
+<dt id="_CPPv44hashPKv">
+<span id="_CPPv34hashPKv"></span><span id="_CPPv24hashPKv"></span><span id="hash__voidCP"></span><span class="target" id="object_8h_1a8d80c31c3d420729cccbc2a13c42286e"></span>uint64_t <code class="sig-name descname">hash</code><span class="sig-paren">(</span><em class="property">const</em> void *<em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv44hashPKv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>get an internal hash of an object </p>
+<p>The hash algorithm is different for different kinds of objects.</p>
+<p>Note: A hash may or may not be consistent between multiple runs of a program.</p>
+<p>The returned hash can be used by user programs. It is used internally by the HashMap to determine if objects are unique. The HashMap will also use equals, to ensure different objects will not overwrite each other.</p>
+<p><strong>Example</strong> <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">const</span> <span class="n">size_t</span> <span class="n">NUM_ITERATIONS</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span>
+ <span class="n">const</span> <span class="n">struct</span> <span class="n">String</span> <span class="o">*</span><span class="n">strings</span><span class="p">[</span><span class="n">NUM_ITERATIONS</span><span class="p">];</span>
+
+ <span class="n">const</span> <span class="n">void</span> <span class="o">*</span><span class="nb">list</span> <span class="o">=</span> <span class="n">new</span><span class="p">(</span><span class="n">List</span><span class="p">);</span>
+
+ <span class="k">for</span> <span class="p">(</span><span class="n">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">NUM_ITERATIONS</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+     <span class="n">char</span> <span class="n">test_string</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+     <span class="n">fill_random_str</span><span class="p">(</span><span class="n">test_string</span><span class="p">,</span> <span class="n">sizeof</span><span class="p">(</span><span class="n">test_string</span><span class="p">));</span>
+     <span class="n">strings</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">typed_new</span><span class="p">(</span><span class="n">String</span><span class="p">,</span> <span class="n">test_string</span><span class="p">);</span>
+
+     <span class="n">ck_assert_int_eq</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">));</span>
+     <span class="n">append</span><span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="n">strings</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+ <span class="p">}</span>
+
+ <span class="n">const</span> <span class="n">void</span> <span class="o">*</span><span class="n">list_it</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="nb">list</span><span class="p">);</span>
+ <span class="k">for</span> <span class="p">(</span><span class="n">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">NUM_ITERATIONS</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+     <span class="n">const</span> <span class="n">struct</span> <span class="n">String</span> <span class="o">*</span><span class="n">string</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">list_it</span><span class="p">);</span>
+     <span class="n">ck_assert</span><span class="p">(</span><span class="n">equals</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">strings</span><span class="p">[</span><span class="n">i</span><span class="p">]));</span>
+     <span class="k">del</span><span class="p">(</span><span class="n">strings</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+ <span class="p">}</span>
+ <span class="k">del</span><span class="p">(</span><span class="nb">list</span><span class="p">);</span>
+</pre></div>
+</div>
+</p>
+<p><dl class="simple">
+<dt><strong>See</strong></dt><dd><p>tests/check_utils.c for fill_random_str implementation</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>integer hash used internally by HashMaps </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">self</span></code>: object to hash </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="internal-functions">
+<h3>Internal Functions<a class="headerlink" href="#internal-functions" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="_CPPv420get_class_header_msgPKvPKc">
+<span id="_CPPv320get_class_header_msgPKvPKc"></span><span id="_CPPv220get_class_header_msgPKvPKc"></span><span id="get_class_header_msg__voidCP.cCP"></span><span class="target" id="object__internal_8h_1a69bc17c8b14df649b92638e38efa21ad"></span><em class="property">struct</em> class_header *<code class="sig-name descname">get_class_header_msg</code><span class="sig-paren">(</span><em class="property">const</em> void *<em>self</em>, <em class="property">const</em> char *<em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420get_class_header_msgPKvPKc" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table of Contents</a></h3>
+<p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Objected Oriented C</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">OOC API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#basic-object-management">Basic Object Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#collections">Collections</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#iteration">Iteration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hashing">Hashing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#internal-functions">Internal Functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hashmap.html">HashMap</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="intro.html"
+                        title="previous chapter">Objected Oriented C</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="hashmap.html"
+                        title="next chapter">HashMap</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/api.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="hashmap.html" title="HashMap"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="intro.html" title="Objected Oriented C"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ooc  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016, Isaac Gutekunst.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+    </div>
+  </body>
+</html>
