@@ -191,12 +191,12 @@ const void* to_String(const void* self);
  * For a list, append a new item. For a string, concatenate a string.
  *
  * **Example**
- *
+ * @code
  *      const void *list = new(List);
  *      append(list, new(String, "One"));
  *      append(list, new(String, "Two"));
  *      print(list);
- *
+ * @endcode
  * @param self ooc Collection object
  * @param other object to append
  * @return self
@@ -210,13 +210,14 @@ const void* append(const void* self, const void* other);
  * collection[key] = value in python
  *
  * **Example**
- *
+ * @code{.c}
  *      const struct HashMap* map = new(HashMap);
  *      const struct String* key = new(String, "name");
  *      const struct String* name = new(string, "Isaac Newton");
  *
  *      set_item(map, key, name);
  *      assert(equals(name, get_item(map, key)));
+ * @endcode
  *
  * @param self ooc Collection
  * @param key
@@ -273,7 +274,7 @@ const void* iter(const void* self);
  *       objects will not overwrite each other.
  *
  * **Example**
- *
+ * @code
  *      const size_t NUM_ITERATIONS = 1000;
  *      const struct String *strings[NUM_ITERATIONS];
  *
@@ -295,6 +296,7 @@ const void* iter(const void* self);
  *          del(strings[i]);
  *      }
  *      del(list);
+ * @endcode
  *
  * @see tests/check_utils.c for fill_random_str implementation
  *

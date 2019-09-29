@@ -119,7 +119,9 @@ First we will include several headers that we will need later. ::
    #include <OOC/file.h>
 
 Then we create a basic C program main function. Our function will take one argument,
-a filename to process. ::
+a filename to process.
+
+.. code-block:: c
 
    int main(int argc, char* argv[]) {
        if (argc != 2) {
@@ -133,7 +135,9 @@ a filename to process. ::
 The general idea is to store the count of all seen words in a HashMap.
 Next we sort the results for printing.
 
-First we open a file, and read one line at a time ::
+First we open a file, and read one line at a time
+
+.. code-block:: c
 
        while (full_line != NULL) {
 
@@ -146,7 +150,9 @@ First we open a file, and read one line at a time ::
 
 
 Then we split the line into words using the space character,
-and then iterate over the words. ::
+and then iterate over the words.
+
+.. code-block:: c
 
        while (full_line != NULL) {
 
@@ -165,7 +171,9 @@ and then iterate over the words. ::
        }
 
 If a word has not been seen before, a 0 is inserted into the HashMap using
-the word as a key. Then the count is incremented. ::
+the word as a key. Then the count is incremented.
+
+.. code-block:: c
 
     while (full_line != NULL) {
 
@@ -205,7 +213,9 @@ Next we put the results into a List of Tuple objects for sorting. ::
     obj_sort(counts_list, SORT_DESCENDING);
 
 At the end, the totals are printed by looping over the HashMap keys.
-The keys are sorted by getting a tuple for each (key,value) pair, and sorting the list ::
+The keys are sorted by getting a tuple for each (key,value) pair, and sorting the list
+
+.. code-block:: c
 
        // Iterate over the tuples for printing
        const void* ci = iter(counts_list);
@@ -224,7 +234,8 @@ In the future, referencing counting will make it easier to avoid memory leaks.
 
 Full Source Code
 ++++++++++++++++
-::
+
+.. code-block:: c
 
        const struct HashMap* counts = new(HashMap);
        const struct File* f = new(File, argv[1]);

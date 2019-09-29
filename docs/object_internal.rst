@@ -7,4 +7,3 @@ This file is simple API dump of the main class header.
 .. doxygenstruct:: ClassHeader
     :project: ooc
     :members:
-
