@@ -80,7 +80,7 @@ Given a file full of words, count the time every word occurs. For bonus
 points, print the counts in sorted order.</p>
 <p>A word is defined as one or more non-space characters. For now, only consider the space character
 as a separator and ignore the tab character.</p>
-<p>For Example, given the following file</p>
+<p>For example, given the following file:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>one two three four five
 two three four five
 three four five
@@ -88,7 +88,7 @@ four five
 five
 </pre></div>
 </div>
-<p>The output should be</p>
+<p>The output should be:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>5, five
 4, four
 3, three
@@ -98,14 +98,14 @@ five
 </div>
 <div class="section" id="running-example">
 <h3>Running Example<a class="headerlink" href="#running-example" title="Permalink to this headline">¶</a></h3>
-<p>If you only want to run the example, run the following commands</p>
+<p>If you only want to run the example, run the following commands:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir cmake-build
 <span class="nb">cd</span> cmake-build
 make
 ./count_words test_files/test-3.txt
 </pre></div>
 </div>
-<p>Output</p>
+<p>Output:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>5, five
 4, four
 3, three
@@ -113,7 +113,7 @@ make
 1, one
 </pre></div>
 </div>
-<p>Another Example</p>
+<p>Another Example:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./count_words test_files/declaration.txt
 </pre></div>
 </div>
@@ -153,7 +153,7 @@ a filename to process.</p>
 </div>
 <p>The general idea is to store the count of all seen words in a HashMap.
 Next we sort the results for printing.</p>
-<p>First we open a file, and read one line at a time</p>
+<p>First we open a file, and read one line at a time.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="p">(</span><span class="n">full_line</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
 
     <span class="c1">// Remove trailing newline</span>
@@ -210,20 +210,20 @@ the word as a key. Then the count is incremented.</p>
 </div>
 <p>Note that we are leaking a bit of memory by using temporary Int objects.</p>
 <p>Next we put the results into a List of Tuple objects for sorting.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Put</span> <span class="n">the</span> <span class="n">results</span> <span class="n">into</span> <span class="n">a</span> <span class="n">List</span> <span class="n">of</span> <span class="n">Tuples</span> <span class="k">for</span> <span class="n">sorting</span>
-<span class="n">const</span> <span class="n">void</span><span class="o">*</span> <span class="n">count_it</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">counts</span><span class="p">);</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// Put the results into a List of Tuples for sorting</span>
+<span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">count_it</span> <span class="o">=</span> <span class="n">iter</span><span class="p">(</span><span class="n">counts</span><span class="p">);</span>
 
-<span class="n">const</span> <span class="n">struct</span> <span class="n">List</span><span class="o">*</span> <span class="n">counts_list</span> <span class="o">=</span> <span class="n">new</span><span class="p">(</span><span class="n">List</span><span class="p">);</span>
+<span class="k">const</span> <span class="k">struct</span> <span class="n">List</span><span class="o">*</span> <span class="n">counts_list</span> <span class="o">=</span> <span class="n">new</span><span class="p">(</span><span class="n">List</span><span class="p">);</span>
 
-<span class="k">for</span> <span class="p">(</span><span class="n">const</span> <span class="n">void</span><span class="o">*</span> <span class="n">key</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">count_it</span><span class="p">);</span> <span class="n">key</span> <span class="o">!=</span> <span class="n">NULL</span><span class="p">;</span> <span class="n">key</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">count_it</span><span class="p">))</span> <span class="p">{</span>
-    <span class="n">const</span> <span class="n">struct</span> <span class="n">Tuple</span><span class="o">*</span> <span class="n">t</span> <span class="o">=</span> <span class="n">new</span><span class="p">(</span><span class="n">Tuple</span><span class="p">,</span> <span class="n">get_item</span><span class="p">(</span><span class="n">counts</span><span class="p">,</span> <span class="n">key</span><span class="p">),</span> <span class="n">key</span><span class="p">);</span>
+<span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">key</span> <span class="o">=</span> <span class="n">next</span><span class="p">(</span><span class="n">count_it</span><span class="p">);</span> <span class="n">key</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">;</span> <span class="n">key</span> <span class="o">=</span> <span class="n">next</span><span class="p">(</span><span class="n">count_it</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">const</span> <span class="k">struct</span> <span class="n">Tuple</span><span class="o">*</span> <span class="n">t</span> <span class="o">=</span> <span class="n">new</span><span class="p">(</span><span class="n">Tuple</span><span class="p">,</span> <span class="n">get_item</span><span class="p">(</span><span class="n">counts</span><span class="p">,</span> <span class="n">key</span><span class="p">),</span> <span class="n">key</span><span class="p">);</span>
     <span class="n">append</span><span class="p">(</span><span class="n">counts_list</span><span class="p">,</span> <span class="n">t</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="n">obj_sort</span><span class="p">(</span><span class="n">counts_list</span><span class="p">,</span> <span class="n">SORT_DESCENDING</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>At the end, the totals are printed by looping over the HashMap keys.
-The keys are sorted by getting a tuple for each (key,value) pair, and sorting the list</p>
+The keys are sorted by getting a tuple for each (key,value) pair, and sorting the list.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// Iterate over the tuples for printing</span>
 <span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">ci</span> <span class="o">=</span> <span class="n">iter</span><span class="p">(</span><span class="n">counts_list</span><span class="p">);</span>
 <span class="k">const</span> <span class="k">struct</span> <span class="n">Tuple</span><span class="o">*</span> <span class="n">t</span><span class="p">;</span>
