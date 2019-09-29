@@ -10,8 +10,8 @@ Objected Oriented C
 
 Experimenting with `Object Oriented C`.
 
-This library is a toy implementation of “objects” in C, with the idea to
-enable dynamic dispatch and polymorphism of a set of carefully written `classes`.
+This library is a toy implementation of “objects” in C". It enables dynamic
+dispatch and runtime polymorphism with carefully written `classes`.
 
 This library aims to enable:
 
