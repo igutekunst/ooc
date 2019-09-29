@@ -58,7 +58,9 @@ points, print the counts in sorted order.
 A word is defined as one or more non-space characters. For now, only consider the space character
 as a separator and ignore the tab character.
 
-For Example, given the following file::
+For Example, given the following file
+
+.. code-block:: text
 
     one two three four five
     two three four five
@@ -66,7 +68,9 @@ For Example, given the following file::
     four five
     five
 
-The output should be::
+The output should be
+
+.. code-block:: text
 
      5, five
      4, four
@@ -77,14 +81,18 @@ The output should be::
 
 Running Example
 +++++++++++++++
-If you only want to run the example, run the following commands::
+If you only want to run the example, run the following commands
+
+.. code-block:: bash
 
     mkdir cmake-build
     cd cmake-build
     make
     ./count_words test_files/test-3.txt
 
-Output::
+Output
+
+.. code-block:: text
 
      5, five
      4, four
@@ -92,11 +100,15 @@ Output::
      2, two
      1, one
 
-Another Example::
+Another Example
+
+.. code-block:: bash
 
     ./count_words test_files/declaration.txt
 
-Output::
+Output
+
+.. code-block:: text
 
      80, of
      76, the
