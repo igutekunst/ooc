@@ -32,3 +32,4 @@ tags
 
 cmake-build-debug
 docs/docs
+docs/_build

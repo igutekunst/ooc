@@ -467,7 +467,13 @@ const void *iter_HashMap(const void *_self) {
 //      An index into the hash table
 //
 // Initially, the  pointer will be initialized to the first item in the table (could be empty)
-//          and the index will be zero 
+//          and the index will be zero
+/**
+ * @internal
+ * @private
+ * @param _self
+ * @return
+ */
 const void *next_HashMap(const void *_self) {
     struct HashMap_iter *self = (struct HashMap_iter *) _self;
     struct HashMap *hash_map = self->hash_map;
@@ -523,7 +529,7 @@ const void *copy_HashMap(const void *_self) {
     return NULL;
 }
 
-
+/** @private */
 struct HashMapClass hash_map_class = {
         .class = {.magic = MAGIC,
                 .size = sizeof(struct HashMap),
@@ -545,7 +551,7 @@ struct HashMapClass hash_map_class = {
 // set the HashMap variable to serve as the type of a HashMap
 void *HashMap = &hash_map_class;
 
-struct HashMapClass_iter hash_map_class_iter = {
+static struct HashMapClass_iter hash_map_class_iter = {
         .class = {.magic = MAGIC,
                 .object_init = __construct__HashMap_iter,
                 .size = sizeof(struct HashMap_iter),
