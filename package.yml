@@ -1,0 +1,12 @@
+name: ooc
+version: 0.1.0
+type: library
+language: c
+
+sources:
+  - src/lib.c
+
+cflags:
+  gcc: -Wall -Wextra
+
+requires: {} 
