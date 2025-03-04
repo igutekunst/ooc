@@ -1,6 +1,6 @@
+#include <string.h>
 #include <ooc/string.h>
 #include "object_internal.h"
-#include <string.h>
 #include <stdlib.h>
 
 #define FNV_PRIME_32 16777619
