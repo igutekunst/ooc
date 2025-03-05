@@ -1,5 +1,6 @@
-name: ooc
-version: 0.1.3
+---
+name: "@igutekunst/ooc"
+version: 0.1.4
 type: library
 language: c
 
